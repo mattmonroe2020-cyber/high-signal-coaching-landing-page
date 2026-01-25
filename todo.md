@@ -47,3 +47,15 @@
 - [x] Database migrations
 - [x] API routes for analytics
 - [x] Unit tests for core functionality
+
+## Critical Design Fixes (Pre-Launch)
+- [x] Logo: Increase to 180-200px width with 40px padding
+- [x] Headline: Reduce to 48px desktop / 36px mobile, line-height 1.2, semi-bold
+- [x] Headline: Add 60px top margin from nav
+- [x] Subheadline: Increase to 20px, line-height 1.6, max-width 700px centered
+- [x] Subheadline: Add 30px bottom margin before buttons
+- [x] Primary CTA: Add box-shadow, padding 16px 32px, font-size 18px, font-weight 600
+- [x] Secondary CTA: Border 2px solid copper, text copper, padding 14px 30px, font-size 16px
+- [x] Button hover states: darker copper + lift shadow for primary, light copper tint for secondary
+- [x] Hero section: minimum 70vh height, 80px top padding
+- [x] Buttons: Add 40px gap between buttons

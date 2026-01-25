@@ -88,19 +88,21 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       {/* Header/Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-        <div className="container flex items-center justify-between h-16 md:h-20">
-          <img src="/logo.png" alt="High Signal Coaching" className="h-10 md:h-12 w-auto" />
+        <div className="container flex items-center justify-between h-20 md:h-24">
+          <div className="p-[10px]">
+            <img src="/logo.png" alt="High Signal Coaching" className="nav-logo" style={{ width: '200px', minWidth: '200px' }} />
+          </div>
           <nav className="hidden md:flex items-center gap-8">
-            <button onClick={() => scrollToSection("problem")} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <button onClick={() => scrollToSection("problem")} className="nav-link text-muted-foreground hover:text-foreground transition-colors">
               The Problem
             </button>
-            <button onClick={() => scrollToSection("solution")} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <button onClick={() => scrollToSection("solution")} className="nav-link text-muted-foreground hover:text-foreground transition-colors">
               Solution
             </button>
-            <button onClick={() => scrollToSection("program")} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <button onClick={() => scrollToSection("program")} className="nav-link text-muted-foreground hover:text-foreground transition-colors">
               Program
             </button>
-            <button onClick={() => scrollToSection("faq")} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <button onClick={() => scrollToSection("faq")} className="nav-link text-muted-foreground hover:text-foreground transition-colors">
               FAQ
             </button>
           </nav>
@@ -111,21 +113,21 @@ export default function Home() {
       </header>
 
       {/* SECTION 1: HERO */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-32">
+      <section className="hero-section pt-24 md:pt-28">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 leading-tight">
+            <h1 className="hero-headline text-foreground tracking-tight">
               Ship Milestones Predictably<br className="hidden md:block" /> Without Founder Burnout
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
+            <p className="hero-subheadline text-muted-foreground text-center">
               IFS-informed executive function coaching for neurodivergent startup founders who know what to do but struggle with consistent execution
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="btn-copper text-base px-8 py-6" id="calendly">
+            <div className="hero-buttons">
+              <Button size="lg" className="btn-copper" id="calendly">
                 <Calendar className="mr-2 h-5 w-5" />
                 Book Your 30-Minute Founder Diagnostic
               </Button>
-              <Button size="lg" variant="outline" className="btn-copper-outline text-base px-8 py-6" onClick={openModal}>
+              <Button size="lg" variant="outline" className="btn-copper-outline" onClick={openModal}>
                 <Download className="mr-2 h-5 w-5" />
                 Download the Milestone Predictability Playbook
               </Button>
