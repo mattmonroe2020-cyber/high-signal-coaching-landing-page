@@ -216,39 +216,43 @@
   /* Hero section specific styles */
   .hero-section {
     min-height: 70vh;
-    padding-top: 80px;
+    padding-top: 64px;
+    padding-bottom: 48px;
     display: flex;
     align-items: center;
   }
 
+  @media (min-width: 768px) {
+    .hero-section {
+      padding-top: 80px;
+      padding-bottom: 56px;
+    }
+  }
+
   /* Hero headline typography */
   .hero-headline {
-    font-size: 36px;
-    line-height: 1.2;
+    font-size: clamp(40px, 4vw, 56px);
+    line-height: 1.08;
     font-weight: 600;
-    margin-top: 60px;
+    margin-top: 0;
+    margin-bottom: 16px;
   }
 
   @media (min-width: 768px) {
     .hero-headline {
-      font-size: 48px;
+      margin-bottom: 20px;
     }
   }
 
   /* Hero subheadline typography */
   .hero-subheadline {
-    font-size: 20px;
+    font-size: clamp(16px, 2.2vw, 20px);
     line-height: 1.6;
-    max-width: 700px;
+    max-width: 65ch;
+    margin-top: 0;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
-  }
-
-  @media (max-width: 767px) {
-    .hero-subheadline {
-      font-size: 18px;
-    }
   }
 
   /* Logo styling */

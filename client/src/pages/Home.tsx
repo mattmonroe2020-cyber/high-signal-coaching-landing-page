@@ -125,7 +125,7 @@ export default function Home() {
             <div className="hero-buttons">
               <Button size="lg" className="btn-copper" id="calendly">
                 <Calendar className="mr-2 h-5 w-5" />
-                Book Your 30-Minute Founder Diagnostic
+                Book a 30-Minute Founder Discovery Call
               </Button>
               <Button size="lg" variant="outline" className="btn-copper-outline" onClick={openModal}>
                 <Download className="mr-2 h-5 w-5" />
@@ -550,12 +550,12 @@ export default function Home() {
               Ready to Make Milestones Predictable?
             </h2>
             <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Book a free 30-minute Founder Diagnostic. We'll identify your top execution blocker and create a concrete plan for the next milestone.
+              Book a free 30-minute Founder Discovery Call. We'll identify your top execution blocker and create a concrete plan for the next milestone.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="btn-copper text-base px-8 py-6">
                 <Calendar className="mr-2 h-5 w-5" />
-                Book Your Diagnostic Call
+                Book Your Discovery Call
               </Button>
               <Button size="lg" variant="outline" className="btn-copper-outline text-base px-8 py-6" onClick={openModal}>
                 <Download className="mr-2 h-5 w-5" />
@@ -689,7 +689,7 @@ export default function Home() {
               </p>
               <Button className="btn-copper" onClick={() => setIsModalOpen(false)}>
                 <Calendar className="mr-2 h-5 w-5" />
-                Book Your Founder Diagnostic
+                Book Your Founder Discovery Call
               </Button>
             </div>
           )}
