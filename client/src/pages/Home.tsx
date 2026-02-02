@@ -42,7 +42,7 @@ export default function Home() {
   const submitLead = trpc.leads.submit.useMutation({
     onSuccess: () => {
       setShowThankYou(true);
-      toast.success("Success! Check your email for the Playbook.");
+      toast.success("Success! Check your email for the guide.");
     },
     onError: (error) => {
       toast.error(error.message || "Something went wrong. Please try again.");
@@ -88,25 +88,25 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       {/* Header/Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-        <div className="container flex items-center justify-between h-20 md:h-24">
-          <div className="p-[10px]">
-            <img src="/logo.png" alt="High Signal Coaching" className="nav-logo" style={{ width: '200px', minWidth: '200px' }} />
+        <div className="container flex items-center justify-between h-20 md:h-24 gap-4">
+          <div className="p-[10px] flex-shrink-0">
+            <img src="/logo.svg" alt="High Signal Coaching" className="nav-logo" style={{ width: '200px', minWidth: '200px' }} />
           </div>
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8 flex-1">
             <button onClick={() => scrollToSection("problem")} className="nav-link text-muted-foreground hover:text-foreground transition-colors">
-              The Problem
+              THE PROBLEM
             </button>
             <button onClick={() => scrollToSection("solution")} className="nav-link text-muted-foreground hover:text-foreground transition-colors">
-              Solution
+              SOLUTION
             </button>
             <button onClick={() => scrollToSection("program")} className="nav-link text-muted-foreground hover:text-foreground transition-colors">
-              Program
+              PROGRAM
             </button>
             <button onClick={() => scrollToSection("faq")} className="nav-link text-muted-foreground hover:text-foreground transition-colors">
               FAQ
             </button>
           </nav>
-          <Button className="btn-copper" onClick={() => window.open("#calendly", "_self")}>
+          <Button size="sm" className="btn-copper flex-shrink-0" onClick={() => window.open("#calendly", "_self")}>
             Book a Call
           </Button>
         </div>
@@ -129,7 +129,7 @@ export default function Home() {
               </Button>
               <Button size="lg" variant="outline" className="btn-copper-outline" onClick={openModal}>
                 <Download className="mr-2 h-5 w-5" />
-                Download the Milestone Predictability Playbook
+                Download the Guide
               </Button>
             </div>
           </div>
@@ -441,38 +441,38 @@ export default function Home() {
                     <span className="text-sm font-medium text-primary uppercase tracking-wide">Free Resource</span>
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                    The Milestone Predictability Playbook
+                    The 3 Parts That Block Every Founder
                   </h2>
                   <p className="text-muted-foreground mb-6">
-                    A 22-page founder's guide to removing parts-driven resistance and building execution scaffolds that match neurodivergent rhythms.
+                    A 3-page guide to identifying and negotiating with the internal parts sabotaging your execution.
                   </p>
                   <ul className="space-y-2 text-muted-foreground mb-8">
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
-                      High Signal Framework: Map internal resistance to practical agreements
+                      The Perfectionist: Why "not good enough" keeps you from shipping
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
-                      Parts-map templates (fillable PDFs)
+                      The Protector: How fear of judgment creates decision paralysis
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
-                      2-week scaffold experiment with measurement plan
+                      The Visionary: When big-picture thinking blocks tactical execution
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
-                      ROI calculator for milestone predictability
+                      Concrete negotiation scripts you can use today
                     </li>
                   </ul>
                   <Button size="lg" className="btn-copper" onClick={openModal}>
                     <Download className="mr-2 h-5 w-5" />
-                    Download the Playbook
+                    Download the Guide
                   </Button>
                 </div>
                 <div className="hidden md:block w-48 h-64 bg-card rounded-lg border border-border shadow-lg flex items-center justify-center">
                   <div className="text-center p-4">
                     <FileText className="h-16 w-16 text-primary mx-auto mb-4" />
-                    <p className="text-sm font-medium">Milestone Predictability Playbook</p>
+                    <p className="text-sm font-medium">The 3 Parts That Block Every Founder</p>
                   </div>
                 </div>
               </div>
@@ -559,11 +559,11 @@ export default function Home() {
               </Button>
               <Button size="lg" variant="outline" className="btn-copper-outline text-base px-8 py-6" onClick={openModal}>
                 <Download className="mr-2 h-5 w-5" />
-                Get the Playbook
+                Download the Guide
               </Button>
             </div>
             <p className="text-sm text-muted-foreground mt-6">
-              Not ready to book? Download the Milestone Predictability Playbook and see the framework in action.
+              Not ready to book? Download "The 3 Parts That Block Every Founder" and start identifying your execution blockers today.
             </p>
           </div>
         </div>
@@ -574,7 +574,7 @@ export default function Home() {
         <div className="container">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <img src="/logo.png" alt="High Signal Coaching" className="h-10 w-auto mb-4" />
+              <img src="/logo.svg" alt="High Signal Coaching" className="h-10 w-auto mb-4" />
               <div className="space-y-2 text-muted-foreground">
                 <a href="mailto:matt@highsignalcoaching.com" className="flex items-center gap-2 hover:text-foreground transition-colors">
                   <Mail className="h-4 w-4" />
@@ -613,9 +613,9 @@ export default function Home() {
           {!showThankYou ? (
             <>
               <DialogHeader>
-                <DialogTitle className="text-2xl">Download the Playbook</DialogTitle>
+                <DialogTitle className="text-2xl">Download the Free Guide</DialogTitle>
                 <DialogDescription>
-                  Get the Milestone Predictability Playbook delivered straight to your inbox.
+                  Get "The 3 Parts That Block Every Founder" delivered straight to your inbox.
                 </DialogDescription>
               </DialogHeader>
               <form onSubmit={handleSubmit} className="space-y-4 mt-4">
