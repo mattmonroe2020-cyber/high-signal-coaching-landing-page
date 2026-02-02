@@ -106,7 +106,7 @@ export default function Home() {
               FAQ
             </button>
           </nav>
-          <Button size="sm" className="btn-copper flex-shrink-0" onClick={() => window.open("#calendly", "_self")}>
+          <Button size="sm" className="btn-copper flex-shrink-0" onClick={() => window.open("https://calendly.com/matt-highsignal", "_blank")}>
             Book a Call
           </Button>
         </div>
@@ -123,7 +123,7 @@ export default function Home() {
               IFS-informed executive function coaching for neurodivergent startup founders who know what to do but struggle with consistent execution
             </p>
             <div className="hero-buttons">
-              <Button size="lg" className="btn-copper" id="calendly">
+              <Button size="lg" className="btn-copper" onClick={() => window.open("https://calendly.com/matt-highsignal", "_blank")}>
                 <Calendar className="mr-2 h-5 w-5" />
                 Book a 30-Minute Founder Discovery Call
               </Button>
@@ -553,7 +553,7 @@ export default function Home() {
               Book a free 30-minute Founder Discovery Call. We'll identify your top execution blocker and create a concrete plan for the next milestone.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="btn-copper text-base px-8 py-6">
+              <Button size="lg" className="btn-copper text-base px-8 py-6" onClick={() => window.open("https://calendly.com/matt-highsignal", "_blank")}>
                 <Calendar className="mr-2 h-5 w-5" />
                 Book Your Discovery Call
               </Button>
@@ -687,7 +687,7 @@ export default function Home() {
               <p className="text-muted-foreground mb-6">
                 The Milestone Predictability Playbook is on its way. Want to accelerate results?
               </p>
-              <Button className="btn-copper" onClick={() => setIsModalOpen(false)}>
+              <Button className="btn-copper" onClick={() => window.open("https://calendly.com/matt-highsignal", "_blank")}>
                 <Calendar className="mr-2 h-5 w-5" />
                 Book Your Founder Discovery Call
               </Button>
