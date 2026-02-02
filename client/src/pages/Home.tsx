@@ -125,11 +125,11 @@ export default function Home() {
             <div className="hero-buttons">
               <Button size="lg" className="btn-copper" onClick={() => window.open("https://calendly.com/matt-highsignal", "_blank")}>
                 <Calendar className="mr-2 h-5 w-5" />
-                Book a 30-Minute Founder Discovery Call
+                Book a 30-Minute Discovery Call
               </Button>
               <Button size="lg" variant="outline" className="btn-copper-outline" onClick={openModal}>
                 <Download className="mr-2 h-5 w-5" />
-                Download the Guide
+                Download "The 3 Parts That Block Every Founder" Guide
               </Button>
             </div>
           </div>
@@ -466,7 +466,7 @@ export default function Home() {
                   </ul>
                   <Button size="lg" className="btn-copper" onClick={openModal}>
                     <Download className="mr-2 h-5 w-5" />
-                    Download the Guide
+                    Download "The 3 Parts That Block Every Founder" Guide
                   </Button>
                 </div>
                 <div className="hidden md:block w-48 h-64 bg-card rounded-lg border border-border shadow-lg flex items-center justify-center">
@@ -559,7 +559,7 @@ export default function Home() {
               </Button>
               <Button size="lg" variant="outline" className="btn-copper-outline text-base px-8 py-6" onClick={openModal}>
                 <Download className="mr-2 h-5 w-5" />
-                Download the Guide
+                Download "The 3 Parts That Block Every Founder" Guide
               </Button>
             </div>
             <p className="text-sm text-muted-foreground mt-6">
