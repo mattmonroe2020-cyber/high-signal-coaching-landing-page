@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>High Signal Coaching | Executive Function Coaching for Neurodivergent Founders</title>
+  <meta name="description" content="IFS-informed executive function coaching for neurodivergent startup founders. Ship milestones predictably. End the burnout cycle. Work with Matthew Monroe Simpson." />
+  <meta name="keywords" content="executive function coaching ADHD founders, IFS-informed founder coaching, neurodivergent startup coaching, ADHD executive dysfunction coaching, executive coaching for neurodivergent leaders" />
+  <link rel="canonical" href="https://mattmonroe2020-cyber.github.io/high-signal-coaching-landing-page/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="High Signal Coaching | Executive Function Coaching for Neurodivergent Founders" />
+  <meta property="og:description" content="IFS-informed executive function coaching for neurodivergent startup founders. Stop the burnout cycle. Ship predictably." />
+  <meta property="og:url" content="https://mattmonroe2020-cyber.github.io/high-signal-coaching-landing-page/" />
+  <meta property="og:image" content="https://mattmonroe2020-cyber.github.io/high-signal-coaching-landing-page/og-image.png" />
+  <meta property="og:site_name" content="High Signal Coaching" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="High Signal Coaching" />
+  <meta name="twitter:description" content="IFS-informed executive function coaching for neurodivergent startup founders." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Google Fonts: Inter + Syne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Analytics placeholder: replace UA-XXXXXXXX with your GA4 or Plausible snippet -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+
+  <style>
+    /* ─── Design Tokens ─────────────────────────────── */
+    :root {
+      --bg:          #F7F7F5;
+      --text:        #2C3E50;
+      --green:       #4A7C59;
+      --gold:        #A4905E;
+      --gold-dark:   #8a7548;
+      --muted:       #6b7280;
+      --border:      #e5e3de;
+      --white:       #ffffff;
+
+      --font-body:   'Inter', system-ui, sans-serif;
+      --font-head:   'Syne', system-ui, sans-serif;
+
+      --max-w:       720px;
+      --max-w-wide:  960px;
+      --section-pad: clamp(4rem, 8vw, 7rem) 1.5rem;
+    }
+
+    /* ─── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ─── Typography ─────────────────────────────────── */
+    h1, h2, h3 {
+      font-family: var(--font-head);
+      line-height: 1.15;
+      color: var(--text);
+    }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; }
+    h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; }
+    h3 { font-size: clamp(1.1rem, 2.5vw, 1.3rem); font-weight: 600; }
+    p  { font-size: 1.05rem; color: var(--text); }
+    .muted { color: var(--muted); font-size: 0.95rem; }
+    .label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ─── Layout helpers ─────────────────────────────── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .container--wide {
+      max-width: var(--max-w-wide);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    section { padding: var(--section-pad); }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ─── Buttons ─────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: filter 0.15s ease, transform 0.1s ease;
+      border: none;
+      text-align: center;
+    }
+    .btn:hover  { filter: brightness(0.93); transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .btn--primary {
+      background: var(--gold);
+      color: var(--text);
+    }
+    .btn--outline {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid var(--text);
+    }
+    .btn--outline:hover { background: var(--text); color: var(--white); filter: none; }
+
+    /* ─── Nav ─────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 247, 245, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+    }
+    .nav__inner {
+      max-width: var(--max-w-wide);
+      margin: 0 auto;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav__logo {
+      font-family: var(--font-head);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+    .nav__logo span { color: var(--green); }
+    .nav__links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .nav__links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: color 0.15s;
+    }
+    .nav__links a:hover { color: var(--text); }
+    .nav__cta { display: none; }
+    @media (min-width: 640px) { .nav__cta { display: inline-block; } }
+    @media (max-width: 640px) {
+      .nav__links { gap: 1.25rem; }
+      .nav__links .nav__hide-sm { display: none; }
+    }
+
+    /* ─── Hero ────────────────────────────────────────── */
+    #hero {
+      padding: clamp(5rem, 10vw, 8rem) 1.5rem clamp(4rem, 8vw, 6rem);
+      text-align: left;
+    }
+    .hero__kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(74, 124, 89, 0.1);
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+    .hero__kicker::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+    .hero__h1 { margin-bottom: 1.5rem; max-width: 640px; }
+    .hero__sub {
+      font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+    .hero__ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .hero__signal {
+      margin-top: 4rem;
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .hero__signal-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .hero__signal-item strong {
+      font-family: var(--font-head);
+      font-size: 1.4rem;
+      color: var(--text);
+    }
+    .hero__signal-item span {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* ─── For You ─────────────────────────────────────── */
+    #for-you { background: var(--white); }
+    .for-you__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 640px) {
+      .for-you__grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .check-list li::before {
+      content: '✓';
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: rgba(74, 124, 89, 0.12);
+      color: var(--green);
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 1px;
+    }
+    .x-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .x-list li::before {
+      content: '×';
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: rgba(164, 144, 94, 0.12);
+      color: var(--gold-dark);
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 1px;
+    }
+
+    /* ─── How it Works ─────────────────────────────────── */
+    #how-it-works {}
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 640px) {
+      .steps { grid-template-columns: 1fr; }
+    }
+    .step {
+      position: relative;
+      padding: 2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .step__num {
+      font-family: var(--font-head);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: rgba(74, 124, 89, 0.15);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .step h3 { margin-bottom: 0.6rem; }
+    .step p { font-size: 0.95rem; color: var(--muted); }
+
+    /* ─── Program ─────────────────────────────────────── */
+    #program { background: var(--white); }
+    .outcomes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 640px) {
+      .outcomes { grid-template-columns: 1fr; }
+    }
+    .outcome-card {
+      padding: 1.75rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg);
+    }
+    .outcome-card__icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(74, 124, 89, 0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .outcome-card h3 { margin-bottom: 0.5rem; font-size: 1.1rem; }
+    .outcome-card p  { font-size: 0.92rem; color: var(--muted); }
+
+    .program__note {
+      margin-top: 2rem;
+      padding: 1.25rem 1.5rem;
+      background: rgba(164, 144, 94, 0.08);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+    }
+
+    /* ─── About ───────────────────────────────────────── */
+    #about {}
+    .about__inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    @media (max-width: 640px) {
+      .about__inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    .about__photo {
+      width: 100%;
+      max-width: 240px;
+      aspect-ratio: 3/4;
+      border-radius: 12px;
+      background: var(--border);
+      overflow: hidden;
+      object-fit: cover;
+    }
+    .about__photo-placeholder {
+      width: 100%;
+      max-width: 240px;
+      aspect-ratio: 3/4;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(74,124,89,0.12), rgba(164,144,94,0.12));
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 1rem;
+    }
+    .about__text h2 { margin-bottom: 1rem; }
+    .about__text p  { margin-bottom: 1rem; }
+    .cred-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    .cred-tag {
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--muted);
+    }
+
+    /* ─── FAQ ─────────────────────────────────────────── */
+    #faq { background: var(--white); }
+    .faq-list {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    details {
+      border-bottom: 1px solid var(--border);
+      padding: 1.4rem 1.75rem;
+    }
+    details:last-child { border-bottom: none; }
+    summary {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: '+';
+      font-size: 1.25rem;
+      color: var(--green);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    details[open] summary::after { transform: rotate(45deg); }
+    details[open] summary { color: var(--green); }
+    .faq-answer {
+      margin-top: 0.85rem;
+      font-size: 0.97rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ─── CTA Section ─────────────────────────────────── */
+    #cta {
+      background: var(--text);
+      color: var(--white);
+      text-align: center;
+    }
+    #cta .label { color: var(--gold); }
+    #cta h2 { color: var(--white); margin-bottom: 1rem; }
+    #cta p  { color: rgba(255,255,255,0.7); max-width: 500px; margin: 0 auto 2.5rem; }
+    .btn--cta {
+      background: var(--gold);
+      color: var(--text);
+      font-size: 1.05rem;
+      padding: 1rem 2.5rem;
+    }
+    .cta__sub {
+      margin-top: 1.25rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ─── Footer ──────────────────────────────────────── */
+    footer {
+      padding: 2rem 1.5rem;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
+    .footer__inner {
+      max-width: var(--max-w-wide);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer__logo {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text);
+    }
+    .footer__logo span { color: var(--green); }
+    footer p { font-size: 0.82rem; color: var(--muted); }
+    .footer__links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .footer__links a { font-size: 0.82rem; color: var(--muted); }
+    .footer__links a:hover { color: var(--text); }
+
+    /* ─── Utility ─────────────────────────────────────── */
+    .text-center { text-align: center; }
+    .mt-1  { margin-top: 0.5rem; }
+    .mt-2  { margin-top: 1rem; }
+    .mt-3  { margin-top: 1.5rem; }
+    .mt-4  { margin-top: 2rem; }
+    .mb-1  { margin-bottom: 0.5rem; }
+    .mb-2  { margin-bottom: 1rem; }
+    .mb-3  { margin-bottom: 1.5rem; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════ NAV -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">High <span>Signal</span></a>
+      <ul class="nav__links" role="list">
+        <li class="nav__hide-sm"><a href="#for-you">Who It's For</a></li>
+        <li class="nav__hide-sm"><a href="#how-it-works">How It Works</a></li>
+        <li class="nav__hide-sm"><a href="#about">About</a></li>
+        <li class="nav__hide-sm"><a href="#faq">FAQ</a></li>
+        <li>
+          <!-- Replace href with your Calendly or booking link -->
+          <a href="#cta" class="btn btn--primary nav__cta" style="padding:0.55rem 1.25rem; font-size:0.88rem;">
+            Book a Fit Call
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════ HERO -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero__kicker">Executive Function Coaching · Neurodivergent Founders</div>
+
+      <h1 class="hero__h1">
+        Stop performing productivity.<br />
+        Start shipping what matters.
+      </h1>
+
+      <p class="hero__sub">
+        IFS-informed executive function coaching for neurodivergent startup founders who are done
+        cycling through burnout, shame spirals, and systems that weren't built for their brain.
+      </p>
+
+      <div class="hero__ctas">
+        <!-- Replace href with your Calendly booking URL -->
+        <a href="#cta" class="btn btn--primary">Book a Fit Call →</a>
+        <a href="#how-it-works" class="btn btn--outline">See how it works</a>
+      </div>
+
+      <div class="hero__signal">
+        <div class="hero__signal-item">
+          <strong>IFS-Informed</strong>
+          <span>Not just tactics — root-cause change</span>
+        </div>
+        <div class="hero__signal-item">
+          <strong>Founder-Fluent</strong>
+          <span>Built for startup context, not generic "wellness"</span>
+        </div>
+        <div class="hero__signal-item">
+          <strong>Evidence-Based</strong>
+          <span>ADHD/ASD research — not neurotypical advice repackaged</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="divider" />
+
+  <!-- ═══════════════════════════════════════════════════ FOR YOU -->
+  <section id="for-you">
+    <div class="container">
+      <span class="label">Right fit?</span>
+      <h2>Honest about who this works for</h2>
+      <p class="mt-2" style="max-width:540px; color:var(--muted);">
+        Most coaching is built for people who already have consistent follow-through.
+        This isn't that.
+      </p>
+
+      <div class="for-you__grid">
+        <!-- YES column -->
+        <div>
+          <h3 class="mb-3" style="color:var(--green);">This is for you if —</h3>
+          <ul class="check-list" role="list">
+            <li>You're a startup founder or senior tech lead with ADHD, autism, or both</li>
+            <li>You have high cognitive horsepower but inconsistent follow-through</li>
+            <li>You've read every productivity book and nothing sticks longer than two weeks</li>
+            <li>You lose hours to task paralysis, then hyperfocus until 2am on the wrong thing</li>
+            <li>Rejection sensitivity (RSD) derails your team dynamics and investor relationships</li>
+            <li>You know something needs to change at the identity level — not just the calendar</li>
+          </ul>
+        </div>
+
+        <!-- NOT column -->
+        <div>
+          <h3 class="mb-3" style="color:var(--gold-dark);">This is not for you if —</h3>
+          <ul class="x-list" role="list">
+            <li>You're looking for a therapist (this is coaching, not clinical care)</li>
+            <li>You want someone to tell you what to do each week (you lead; I scaffold)</li>
+            <li>You're in acute crisis — please see a licensed clinician first</li>
+            <li>You're not willing to examine the internal patterns driving your external results</li>
+          </ul>
+          <p class="muted mt-3">
+            Not sure? The fit call is exactly for that.
+            No pressure, no pitch.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="divider" />
+
+  <!-- ═══════════════════════════════════════════════════ HOW IT WORKS -->
+  <section id="how-it-works">
+    <div class="container">
+      <span class="label">The process</span>
+      <h2>Simple. Not easy. Sequenced.</h2>
+      <p class="mt-2" style="max-width:540px; color:var(--muted);">
+        Three phases, built to work with your neurology — not against it.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step__num">01</div>
+          <h3>Stop the bleed</h3>
+          <p>
+            Before building new systems, we triage. Energy audit, stop list, and a clear-eyed look at what's
+            actually burning your bandwidth. Most clients feel relief in week one.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step__num">02</div>
+          <h3>Map the internal architecture</h3>
+          <p>
+            Using IFS, we identify the internal parts driving procrastination, perfectionism, and admin
+            avoidance — so we're working with your psychology, not lecturing at it.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step__num">03</div>
+          <h3>Build the scaffold</h3>
+          <p>
+            External systems, AI-assisted workflows, and an execution protocol designed for
+            ADHD-adjusted time reality — so follow-through becomes structural, not heroic.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="divider" />
+
+  <!-- ═══════════════════════════════════════════════════ PROGRAM -->
+  <section id="program">
+    <div class="container">
+      <span class="label">The High Signal Founder System</span>
+      <h2>What you'll walk away with</h2>
+      <p class="mt-2" style="max-width:560px; color:var(--muted);">
+        Eight modules, sequenced over 90 days. These are the outcomes — not the modalities.
+      </p>
+
+      <div class="outcomes">
+        <div class="outcome-card">
+          <div class="outcome-card__icon">🧭</div>
+          <h3>Predictable follow-through</h3>
+          <p>A weekly execution rhythm that holds across high-stakes sprints — without the
+          hyperfocus crash that wipes out the gains.</p>
+        </div>
+
+        <div class="outcome-card">
+          <div class="outcome-card__icon">🧠</div>
+          <h3>An external prefrontal cortex</h3>
+          <p>A custom external-brain system (Notion, AI tools, SOPs) that makes you reliable
+          to your team and investors without relying on willpower.</p>
+        </div>
+
+        <div class="outcome-card">
+          <div class="outcome-card__icon">🛡️</div>
+          <h3>RSD inoculation</h3>
+          <p>Concrete strategies for rejection sensitivity — so feedback, investor pressure,
+          and team friction stop derailing your decision-making.</p>
+        </div>
+
+        <div class="outcome-card">
+          <div class="outcome-card__icon">⚙️</div>
+          <h3>Automated administration</h3>
+          <p>AI-assisted workflows and SOPs that handle the admin drag your brain rejects —
+          so you stop losing days to low-signal, high-friction tasks.</p>
+        </div>
+      </div>
+
+      <div class="program__note">
+        <strong>The engine is IFS. The output is business performance.</strong><br />
+        We use Internal Family Systems not as therapy, but as a precision tool for identifying
+        the internal patterns that protect you from the very results you're trying to create.
+        This isn't about talking about your feelings — it's about changing what's driving your behavior.
+      </div>
+    </div>
+  </section>
+  <hr class="divider" />
+
+  <!-- ═══════════════════════════════════════════════════ ABOUT -->
+  <section id="about">
+    <div class="container--wide">
+      <div class="about__inner">
+
+        <!-- Photo -->
+        <div>
+          <!--
+            Replace the placeholder below with an actual <img> once you have your headshot:
+            <img src="matthew-monroe-simpson.jpg" alt="Matthew Monroe Simpson, High Signal Coaching" class="about__photo" />
+          -->
+          <div class="about__photo-placeholder" aria-label="Photo of Matthew Monroe Simpson">
+            [Headshot coming soon]
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="about__text">
+          <span class="label">About</span>
+          <h2>Matthew Monroe Simpson</h2>
+
+          <p class="mt-2">
+            I'm a licensed therapist and executive function coach. My work sits at the intersection
+            of Internal Family Systems (IFS), ADHD and autism research, and the realities of
+            startup leadership. Before building this practice, I worked clinically with neurodivergent
+            adults — which means I understand the internal landscape from the inside out, not just
+            from the productivity-advice layer.
+          </p>
+
+          <p>
+            High Signal Coaching exists because most coaching advice for founders is neurotypical
+            advice in a startup costume. It ignores the hardware — the actual neurology — and tries
+            to fix a wiring difference with willpower. That approach doesn't work. I know because I
+            watched it fail in clinical settings for years before building something designed for
+            how neurodivergent founders actually function.
+          </p>
+
+          <p>
+            The methodology is direct, evidence-based, and uninterested in surface-level tactics.
+            We go to the root. That's where durable change happens.
+          </p>
+
+          <div class="cred-tags">
+            <span class="cred-tag">Licensed Therapist · WA State</span>
+            <span class="cred-tag">IFS-Trained (Level 1)</span>
+            <span class="cred-tag">ADHD &amp; ASD-Specialist</span>
+            <span class="cred-tag">Executive Function Coaching</span>
+            <span class="cred-tag">Startup &amp; Founder Context</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="divider" />
+
+  <!-- ═══════════════════════════════════════════════════ FAQ -->
+  <section id="faq">
+    <div class="container">
+      <span class="label">FAQ</span>
+      <h2>Questions worth asking</h2>
+
+      <div class="faq-list">
+
+        <details>
+          <summary>Is this therapy?</summary>
+          <div class="faq-answer">
+            No. High Signal Coaching is coaching — not psychotherapy. While I am a licensed therapist,
+            this engagement is a coaching relationship governed by a coaching agreement, not a clinical
+            or therapeutic relationship. We focus on executive function, follow-through, and business
+            performance — not on processing trauma or treating mental health conditions. If you're in
+            acute distress or need clinical support, I'll refer you to the right resource.
+          </div>
+        </details>
+
+        <details>
+          <summary>Do I need an ADHD or autism diagnosis?</summary>
+          <div class="faq-answer">
+            No formal diagnosis is required. Many clients are self-identified, late-diagnosed, or
+            "AuDHD" (both). What matters is whether your experience matches the profile: high cognitive
+            capacity, inconsistent follow-through, executive dysfunction patterns, and a brain that
+            doesn't respond to standard productivity advice. The fit call is where we assess that together.
+          </div>
+        </details>
+
+        <details>
+          <summary>What does "IFS-informed" mean in a coaching context?</summary>
+          <div class="faq-answer">
+            IFS (Internal Family Systems) is a well-researched therapeutic model developed by Richard
+            Schwartz. In coaching, I use the parts framework — not as therapy — but as a lens for
+            understanding why intelligent, motivated founders repeatedly hit the same internal walls.
+            We identify the protective parts (the procrastinator, the perfectionist, the taskmaster)
+            and work to change their relationship to your actual goals. It's precise, not woo.
+          </div>
+        </details>
+
+        <details>
+          <summary>Do you use AI tools? How is my data handled?</summary>
+          <div class="faq-answer">
+            Yes — I use AI tools for things like research synthesis, worksheet generation, and building
+            your external-brain systems. These tools are used to serve your work, not to analyze or
+            store your personal disclosures. Session content is kept confidential. No client-identifying
+            information is processed through AI tools without your explicit knowledge. If you have
+            specific data-handling requirements (e.g., you're in a regulated industry), we'll discuss
+            that in our first session.
+          </div>
+        </details>
+
+        <details>
+          <summary>How long does the program run?</summary>
+          <div class="faq-answer">
+            The core engagement is 8 modules, typically completed over 90 days. Pacing is adjusted
+            to your workload — I'm not interested in adding another thing to manage. After the core
+            program, some clients continue with ongoing support; others have what they need. We decide
+            that together at the end of Module 8.
+          </div>
+        </details>
+
+        <details>
+          <summary>What's the time commitment per week?</summary>
+          <div class="faq-answer">
+            One structured session per week (60 minutes). Between sessions: short daily check-ins
+            (15 minutes or less), using systems we build together in the early modules. The program
+            is designed to reduce your cognitive load, not increase it. We account for ADHD-adjusted
+            time reality — neurotypical estimates multiplied by 2.5.
+          </div>
+        </details>
+
+        <details>
+          <summary>What's the investment?</summary>
+          <div class="faq-answer">
+            Pricing is discussed on the fit call, where we assess scope, timing, and what level of
+            support makes sense. I don't publish rates publicly because context matters — a solo
+            founder in pre-seed is in a different position than a Series A team lead. The fit call
+            is free, no-pitch, and takes 30 minutes.
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+  <hr class="divider" />
+
+  <!-- ═══════════════════════════════════════════════════ CTA -->
+  <section id="cta">
+    <div class="container text-center">
+      <span class="label">Ready to start?</span>
+      <h2>Book a 30-minute fit call</h2>
+      <p>
+        No pitch. No pressure. We figure out whether this is the right fit —
+        and if it's not, I'll tell you that directly.
+      </p>
+
+      <!--
+        Replace the href below with your actual Calendly URL:
+        e.g., https://calendly.com/matthewmonroesimpson/fit-call
+      -->
+      <a href="mailto:hello@highsignalcoaching.com?subject=Fit%20Call%20Request" class="btn btn--cta">
+        Book a Fit Call →
+      </a>
+
+      <p class="cta__sub">
+        Or email directly: <a href="mailto:hello@highsignalcoaching.com" style="color:rgba(255,255,255,0.6); text-decoration:underline;">hello@highsignalcoaching.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ FOOTER -->
+  <footer>
+    <div class="footer__inner">
+      <span class="footer__logo">High <span>Signal</span> Coaching</span>
+      <p>© 2026 High Signal LLC. Washington State.</p>
+      <nav class="footer__links" aria-label="Footer navigation">
+        <a href="#for-you">Who It's For</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#cta">Book a Call</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
