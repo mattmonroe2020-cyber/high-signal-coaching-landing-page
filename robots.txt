@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you.html
+
+Sitemap: https://mattmonroe2020-cyber.github.io/high-signal-coaching-landing-page/sitemap.xml
