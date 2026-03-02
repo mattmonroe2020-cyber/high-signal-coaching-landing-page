@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Syne:wght@800&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#F7F7F5"/>
+
+  <!-- Left accent bar -->
+  <rect x="0" y="0" width="8" height="630" fill="#4A7C59"/>
+
+  <!-- Gold bottom rule -->
+  <rect x="0" y="610" width="1200" height="20" fill="#A4905E" opacity="0.25"/>
+
+  <!-- Signal bar icon (top-right) -->
+  <g transform="translate(1090, 60)">
+    <rect x="0"  y="54" width="22" height="30" rx="4" fill="#4A7C59"/>
+    <rect x="30" y="36" width="22" height="48" rx="4" fill="#4A7C59"/>
+    <rect x="60" y="16" width="22" height="68" rx="4" fill="#A4905E"/>
+  </g>
+
+  <!-- Label -->
+  <text x="80" y="108"
+    font-family="Inter, system-ui, sans-serif"
+    font-size="18"
+    font-weight="600"
+    letter-spacing="3"
+    fill="#4A7C59"
+    text-transform="uppercase">EXECUTIVE FUNCTION COACHING</text>
+
+  <!-- Divider line under label -->
+  <rect x="80" y="120" width="200" height="1.5" fill="#4A7C59" opacity="0.4"/>
+
+  <!-- Main headline -->
+  <text x="80" y="230"
+    font-family="Syne, system-ui, sans-serif"
+    font-size="72"
+    font-weight="800"
+    fill="#2C3E50">Stop performing</text>
+  <text x="80" y="318"
+    font-family="Syne, system-ui, sans-serif"
+    font-size="72"
+    font-weight="800"
+    fill="#2C3E50">productivity.</text>
+  <text x="80" y="406"
+    font-family="Syne, system-ui, sans-serif"
+    font-size="72"
+    font-weight="800"
+    fill="#A4905E">Start shipping</text>
+  <text x="80" y="494"
+    font-family="Syne, system-ui, sans-serif"
+    font-size="72"
+    font-weight="800"
+    fill="#A4905E">what matters.</text>
+
+  <!-- Subheadline -->
+  <text x="80" y="558"
+    font-family="Inter, system-ui, sans-serif"
+    font-size="22"
+    font-weight="400"
+    fill="#6b7280">IFS-informed coaching for neurodivergent startup founders.</text>
+
+  <!-- Bottom-right: name / domain -->
+  <text x="1120" y="590"
+    font-family="Inter, system-ui, sans-serif"
+    font-size="16"
+    font-weight="600"
+    fill="#6b7280"
+    text-anchor="end">highsignalcoaching.com</text>
+</svg>
