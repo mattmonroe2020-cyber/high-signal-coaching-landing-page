@@ -528,8 +528,7 @@
         <li class="nav__hide-sm"><a href="#about">About</a></li>
         <li class="nav__hide-sm"><a href="#faq">FAQ</a></li>
         <li>
-          <!-- Replace href with your Calendly or booking link -->
-          <a href="#cta" class="btn btn--primary nav__cta" style="padding:0.55rem 1.25rem; font-size:0.88rem;">
+          <a href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener" class="btn btn--primary nav__cta" style="padding:0.55rem 1.25rem; font-size:0.88rem;">
             Book a Fit Call
           </a>
         </li>
@@ -553,8 +552,7 @@
       </p>
 
       <div class="hero__ctas">
-        <!-- Replace href with your Calendly booking URL -->
-        <a href="#cta" class="btn btn--primary">Book a Fit Call →</a>
+        <a href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener" class="btn btn--primary">Book a Fit Call →</a>
         <a href="#how-it-works" class="btn btn--outline">See how it works</a>
       </div>
 
@@ -716,13 +714,14 @@
 
         <!-- Photo -->
         <div>
-          <!--
-            Replace the placeholder below with an actual <img> once you have your headshot:
-            <img src="matthew-monroe-simpson.jpg" alt="Matthew Monroe Simpson, High Signal Coaching" class="about__photo" />
-          -->
-          <div class="about__photo-placeholder" aria-label="Photo of Matthew Monroe Simpson">
-            [Headshot coming soon]
-          </div>
+              <picture>
+            <source srcset="matthew-headshot.webp" type="image/webp" />
+            <img
+              src="matthew-headshot.png"
+              alt="Matthew Monroe Simpson, High Signal Coaching"
+              class="about__photo"
+            />
+          </picture>
         </div>
 
         <!-- Text -->
@@ -861,16 +860,12 @@
         and if it's not, I'll tell you that directly.
       </p>
 
-      <!--
-        Replace the href below with your actual Calendly URL:
-        e.g., https://calendly.com/matthewmonroesimpson/fit-call
-      -->
-      <a href="mailto:hello@highsignalcoaching.com?subject=Fit%20Call%20Request" class="btn btn--cta">
+      <a href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener" class="btn btn--cta">
         Book a Fit Call →
       </a>
 
       <p class="cta__sub">
-        Or email directly: <a href="mailto:hello@highsignalcoaching.com" style="color:rgba(255,255,255,0.6); text-decoration:underline;">hello@highsignalcoaching.com</a>
+        Prefer email? <a href="mailto:hello@highsignalcoaching.com" style="color:rgba(255,255,255,0.6); text-decoration:underline;">hello@highsignalcoaching.com</a>
       </p>
     </div>
   </section>
