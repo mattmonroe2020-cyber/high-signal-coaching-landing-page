@@ -1,0 +1,15 @@
+[build]
+  publish = "."
+
+# Redirect apex domain → www
+[[redirects]]
+  from   = "https://highsignalcoaching.com/*"
+  to     = "https://www.highsignalcoaching.com/:splat"
+  status = 301
+  force  = true
+
+# Clean 404
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 404
