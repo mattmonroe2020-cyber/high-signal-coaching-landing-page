@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Understanding Your Parts | High Signal Coaching</title>
+  <meta name="description" content="An introduction to IFS parts for neurodivergent tech founders — Managers, Firefighters, Exiles, and Self. Learn to map your internal boardroom." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.highsignalcoaching.com/understanding-your-parts.html" />
+  <meta property="og:title" content="Understanding Your Parts | High Signal Coaching" />
+  <meta property="og:description" content="An introduction to IFS parts for neurodivergent tech founders — Managers, Firefighters, Exiles, and Self." />
+  <meta property="og:image" content="https://www.highsignalcoaching.com/og-image.png" />
+  <link rel="canonical" href="https://www.highsignalcoaching.com/understanding-your-parts.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-main:      #f0ebe4;
+      --bg-section:   #ffffff;
+      --bg-alt:       #f7f3ee;
+      --nav-bg:       #1a1a1a;
+      --nav-text:     #e8e0d5;
+      --gold:         #c9922a;
+      --gold-light:   #f5e6cc;
+      --gold-bg:      #fdf5e6;
+      --manager:      #1a4f7a;
+      --manager-light:#d4e6f1;
+      --manager-bg:   #eaf4fb;
+      --fire:         #b94017;
+      --fire-light:   #fde8df;
+      --fire-bg:      #fff3ef;
+      --exile:        #5b2d82;
+      --exile-light:  #e8d5f5;
+      --exile-bg:     #f5edfb;
+      --text-main:    #1c1c1c;
+      --text-mid:     #444;
+      --text-light:   #777;
+      --divider:      #d8cfc4;
+      --card-shadow:  0 4px 18px rgba(0,0,0,0.10);
+      --radius-card:  12px;
+      --radius-sm:    6px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────── */
+    nav {
+      background: var(--nav-bg);
+      padding: 0 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      border-bottom: 2px solid #c9922a;
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: #c9922a;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      color: var(--nav-text);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; color: #c9922a; }
+
+    /* ─── HERO ────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2218 60%, #1a1a1a 100%);
+      color: white;
+      padding: 100px 60px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(201,146,42,0.12) 0%, transparent 70%);
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #c9922a;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.15;
+      max-width: 800px;
+      margin: 0 auto 24px;
+      color: #fff;
+    }
+    .hero h1 em { font-style: italic; color: #e8c878; }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      font-weight: 300;
+    }
+    .hero-note {
+      display: inline-block;
+      background: rgba(201,146,42,0.15);
+      border: 1px solid rgba(201,146,42,0.35);
+      border-radius: 40px;
+      padding: 8px 22px;
+      font-size: 0.82rem;
+      color: #e8c878;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── SECTION SCAFFOLDING ─────────────────────────── */
+    .section { padding: 80px 60px; }
+    .section-white { background: var(--bg-section); }
+    .section-tinted { background: var(--bg-alt); }
+
+    .section-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .eyebrow-gold  { color: var(--gold); }
+    .eyebrow-mgr   { color: var(--manager); }
+    .eyebrow-fire  { color: var(--fire); }
+    .eyebrow-exile { color: var(--exile); }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-body {
+      font-size: 1.04rem;
+      color: var(--text-mid);
+      max-width: 700px;
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--divider);
+      margin: 60px 0;
+    }
+
+    /* ─── TWO-COL INTRO LAYOUT ────────────────────────── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .two-col-text {}
+    .two-col-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .two-col { grid-template-columns: 1fr; gap: 40px; }
+      .section { padding: 60px 28px; }
+    }
+
+    /* ─── BOARDROOM ILLUSTRATION ──────────────────────── */
+    .boardroom-svg-wrap {
+      background: linear-gradient(145deg, #1a1a1a, #2d2218);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: var(--card-shadow);
+    }
+
+    /* ─── SELF FEATURE ────────────────────────────────── */
+    .self-feature {
+      background: var(--gold-bg);
+      border: 1.5px solid #e8d5a0;
+      border-radius: 20px;
+      padding: 48px 52px;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 48px;
+      align-items: center;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .self-icon-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .self-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: #8a600e;
+      margin-bottom: 14px;
+    }
+    .self-body { font-size: 1rem; color: #5a4010; line-height: 1.8; margin-bottom: 16px; }
+    .quality-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .quality-pill {
+      background: rgba(201,146,42,0.15);
+      border: 1px solid rgba(201,146,42,0.3);
+      color: #8a600e;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    @media (max-width: 768px) {
+      .self-feature { grid-template-columns: 1fr; text-align: center; padding: 32px 24px; }
+    }
+
+    /* ─── CATEGORY HEADER BAND ────────────────────────── */
+    .category-band {
+      border-radius: 12px;
+      padding: 28px 36px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    .band-mgr   { background: var(--manager-bg); border-left: 5px solid var(--manager); }
+    .band-fire  { background: var(--fire-bg);    border-left: 5px solid var(--fire); }
+    .band-exile { background: var(--exile-bg);   border-left: 5px solid var(--exile); }
+
+    .band-icon { flex-shrink: 0; width: 48px; height: 48px; }
+    .band-text {}
+    .band-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .band-label-mgr   { color: var(--manager); }
+    .band-label-fire  { color: var(--fire); }
+    .band-label-exile { color: var(--exile); }
+    .band-title { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; margin-bottom: 8px; }
+    .band-desc  { font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; max-width: 680px; }
+
+    /* ─── CARDS GRID ──────────────────────────────────── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+      gap: 24px;
+    }
+
+    .part-card {
+      background: #fff;
+      border-radius: var(--radius-card);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .part-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.14);
+    }
+
+    .card-illustration {
+      height: 170px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-illustration svg { position: relative; z-index: 1; }
+
+    .card-body { padding: 20px 20px 22px; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .tag-mgr   { color: var(--manager); }
+    .tag-fire  { color: var(--fire); }
+    .tag-exile { color: var(--exile); }
+
+    .card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .card-desc {
+      font-size: 0.87rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .card-trigger {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid #f0ece6;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* ─── WHAT THIS ISN'T ─────────────────────────────── */
+    .boundary-box {
+      background: #fff;
+      border: 1.5px solid #e0d8cf;
+      border-radius: 14px;
+      padding: 36px 44px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .boundary-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+    .boundary-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 20px; }
+    .boundary-col-head {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid;
+    }
+    .is-col  .boundary-col-head { color: #1a7a3c; border-color: #1a7a3c; }
+    .not-col .boundary-col-head { color: #a8201a; border-color: #a8201a; }
+    .boundary-list { list-style: none; padding: 0; }
+    .boundary-list li {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      padding: 5px 0 5px 20px;
+      position: relative;
+      line-height: 1.55;
+    }
+    .is-col  .boundary-list li::before { content: '✓'; position: absolute; left: 0; color: #1a7a3c; font-weight: 700; }
+    .not-col .boundary-list li::before { content: '✕'; position: absolute; left: 0; color: #a8201a; font-weight: 700; }
+
+    /* ─── FOOTER ──────────────────────────────────────── */
+    footer {
+      background: #1a1a1a;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      padding: 32px 40px;
+      font-size: 0.8rem;
+      border-top: 2px solid #c9922a;
+    }
+    footer a { color: #c9922a; text-decoration: none; }
+    footer strong { color: rgba(255,255,255,0.7); }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════════════════════════════════ -->
+<nav>
+  <a class="nav-brand" href="/">High Signal LLC</a>
+  <ul class="nav-links">
+    <li><a href="#what-are-parts">Parts</a></li>
+    <li><a href="#self">Self</a></li>
+    <li><a href="#managers">Managers</a></li>
+    <li><a href="#firefighters">Firefighters</a></li>
+    <li><a href="#exiles">Exiles</a></li>
+    <li><a href="/blog.html">Blog</a></li>
+    <li><a href="https://calendly.com/matt-highsignal/30min" target="_blank" class="nav-cta">Schedule a Call</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════ HERO ═════════════════════════════════════ -->
+<section class="hero">
+  <p class="hero-eyebrow">High Signal LLC · Parts Work for Founders</p>
+  <h1>There Is No Bad Part.<br><em>Only a Misread Signal.</em></h1>
+  <p class="hero-sub">
+    Every protective pattern running in your founder brain has a name, a job, and a reason.
+    This page maps the parts most active in neurodivergent tech founders — and what they're protecting you from.
+  </p>
+  <span class="hero-note">Based on Internal Family Systems · Adapted for the ND Founder context</span>
+</section>
+
+<!-- ══════════ WHAT ARE PARTS ═══════════════════════════ -->
+<section class="section section-white" id="what-are-parts">
+  <div class="two-col">
+
+    <div class="two-col-text">
+      <p class="eyebrow eyebrow-gold">Internal Family Systems</p>
+      <h2 class="section-title">You Are Not One Thing. You Are a System.</h2>
+      <p class="section-body">
+        Internal Family Systems (IFS), developed by Dr. Richard Schwartz, offers a map of the mind as a system of
+        distinct sub-personalities — called <strong>Parts</strong> — each carrying beliefs, behaviors, and burdens
+        it adopted to keep you safe.
+      </p>
+      <p class="section-body">
+        Parts are not problems. They are protectors doing their best with old information.
+        The Perfectionist learned early that imperfection was dangerous. The Taskmaster learned that
+        staying busy kept the shame at bay. The people-pleasing part learned that disapproval was catastrophic.
+      </p>
+      <p class="section-body">
+        None of them are wrong. They're just running outdated code in a high-stakes environment
+        that requires something they were never designed for: flexibility.
+      </p>
+      <p class="section-body" style="font-style:italic; color: #888; font-size:0.9rem;">
+        In a coaching context, parts work is an operational tool — not therapy.
+        We use it to identify what's blocking action, not to process what created the pattern.
+      </p>
+    </div>
+
+    <div class="two-col-visual">
+      <!-- Boardroom illustration -->
+      <div class="boardroom-svg-wrap">
+        <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <!-- Table -->
+          <ellipse cx="150" cy="170" rx="100" ry="40" fill="none" stroke="#c9922a" stroke-width="2" opacity="0.5"/>
+          <line x1="50" y1="170" x2="50" y2="210" stroke="#c9922a" stroke-width="2" opacity="0.3"/>
+          <line x1="250" y1="170" x2="250" y2="210" stroke="#c9922a" stroke-width="2" opacity="0.3"/>
+          <ellipse cx="150" cy="210" rx="100" ry="40" fill="rgba(201,146,42,0.06)" stroke="#c9922a" stroke-width="2" opacity="0.3"/>
+
+          <!-- Self at head of table -->
+          <circle cx="150" cy="88" r="18" fill="none" stroke="#c9922a" stroke-width="2.5"/>
+          <circle cx="150" cy="88" r="9" fill="#c9922a" opacity="0.7"/>
+          <!-- rays around Self -->
+          <line x1="150" y1="64" x2="150" y2="55" stroke="#c9922a" stroke-width="1.5" opacity="0.5"/>
+          <line x1="168" y1="70" x2="175" y2="63" stroke="#c9922a" stroke-width="1.5" opacity="0.5"/>
+          <line x1="132" y1="70" x2="125" y2="63" stroke="#c9922a" stroke-width="1.5" opacity="0.5"/>
+          <line x1="174" y1="88" x2="183" y2="88" stroke="#c9922a" stroke-width="1.5" opacity="0.5"/>
+          <line x1="126" y1="88" x2="117" y2="88" stroke="#c9922a" stroke-width="1.5" opacity="0.5"/>
+          <text x="150" y="116" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#c9922a" opacity="0.8">SELF</text>
+
+          <!-- Manager figures (blue, left side) -->
+          <circle cx="72" cy="148" r="10" fill="none" stroke="#4a90d9" stroke-width="2"/>
+          <circle cx="72" cy="148" r="5" fill="#4a90d9" opacity="0.6"/>
+          <text x="72" y="170" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#4a90d9" opacity="0.7">MGR</text>
+          <line x1="90" y1="148" x2="130" y2="158" stroke="#4a90d9" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+
+          <circle cx="228" cy="148" r="10" fill="none" stroke="#4a90d9" stroke-width="2"/>
+          <circle cx="228" cy="148" r="5" fill="#4a90d9" opacity="0.6"/>
+          <text x="228" y="170" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#4a90d9" opacity="0.7">MGR</text>
+          <line x1="210" y1="148" x2="170" y2="158" stroke="#4a90d9" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+
+          <!-- Firefighter figures (orange, far sides) -->
+          <circle cx="42" cy="198" r="9" fill="none" stroke="#e07b3a" stroke-width="2"/>
+          <circle cx="42" cy="198" r="4.5" fill="#e07b3a" opacity="0.6"/>
+          <text x="42" y="218" text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="#e07b3a" opacity="0.7">F/F</text>
+
+          <circle cx="258" cy="198" r="9" fill="none" stroke="#e07b3a" stroke-width="2"/>
+          <circle cx="258" cy="198" r="4.5" fill="#e07b3a" opacity="0.6"/>
+          <text x="258" y="218" text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="#e07b3a" opacity="0.7">F/F</text>
+
+          <!-- Exile (small, basement) -->
+          <circle cx="150" cy="262" r="7" fill="none" stroke="#9b59b6" stroke-width="1.5" stroke-dasharray="3,2"/>
+          <circle cx="150" cy="262" r="3.5" fill="#9b59b6" opacity="0.5"/>
+          <text x="150" y="278" text-anchor="middle" font-family="sans-serif" font-size="7.5" fill="#9b59b6" opacity="0.6">EXILE</text>
+
+          <!-- "who's driving?" label -->
+          <text x="150" y="36" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="11" fill="rgba(255,255,255,0.35)">Who's driving?</text>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ THE BOARDROOM ════════════════════════════ -->
+<section class="section section-tinted">
+  <div class="section-inner">
+    <p class="eyebrow eyebrow-gold">The Anchor Metaphor</p>
+    <h2 class="section-title">Your Internal Boardroom</h2>
+    <p class="section-body">
+      Think of your inner world as a boardroom. Every meeting has an agenda — a product launch, a hard conversation,
+      an investor update — and every meeting has multiple attendees who want control of the outcome.
+    </p>
+    <p class="section-body">
+      The <strong>Taskmaster</strong> wants to fill the calendar so there's no time to feel behind.
+      The <strong>Perfectionist</strong> wants to push the launch date one more week.
+      The <strong>People-Pleaser</strong> wants to say yes to the client even though the project is already over capacity.
+      The <strong>RSD Reactor</strong> just read a neutral Slack message as an attack and is drafting a three-paragraph
+      defensive response.
+    </p>
+    <p class="section-body">
+      Nobody is chairing the meeting. That's the problem.
+    </p>
+    <p class="section-body">
+      The goal of parts work — in a coaching context — is not to fire anyone from the boardroom.
+      It's to get <strong>Self</strong> back in the chair. Calm, curious, connected — and making decisions
+      without anyone else hijacking the process.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════ SELF ══════════════════════════════════════ -->
+<section class="section section-white" id="self">
+  <div class="self-feature">
+
+    <div class="self-icon-wrap">
+      <svg width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="70" cy="70" r="65" fill="#fdf5e6" stroke="#e8d5a0" stroke-width="1.5"/>
+        <!-- Outer ring -->
+        <circle cx="70" cy="70" r="52" fill="none" stroke="#c9922a" stroke-width="1" opacity="0.3"/>
+        <!-- Rays -->
+        <g opacity="0.45" stroke="#c9922a" stroke-width="2" stroke-linecap="round">
+          <line x1="70" y1="10" x2="70" y2="20"/>
+          <line x1="100" y1="18" x2="94" y2="27"/>
+          <line x1="122" y1="40" x2="113" y2="46"/>
+          <line x1="130" y1="70" x2="120" y2="70"/>
+          <line x1="122" y1="100" x2="113" y2="94"/>
+          <line x1="100" y1="122" x2="94" y2="113"/>
+          <line x1="70" y1="130" x2="70" y2="120"/>
+          <line x1="40" y1="122" x2="46" y2="113"/>
+          <line x1="18" y1="100" x2="27" y2="94"/>
+          <line x1="10" y1="70" x2="20" y2="70"/>
+          <line x1="18" y1="40" x2="27" y2="46"/>
+          <line x1="40" y1="18" x2="46" y2="27"/>
+        </g>
+        <!-- Figure: head -->
+        <circle cx="70" cy="46" r="13" fill="#c9922a" opacity="0.85"/>
+        <!-- Figure: body -->
+        <line x1="70" y1="59" x2="70" y2="90" stroke="#c9922a" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+        <!-- Arms open/welcoming -->
+        <line x1="70" y1="68" x2="46" y2="80" stroke="#c9922a" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+        <line x1="70" y1="68" x2="94" y2="80" stroke="#c9922a" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+        <!-- Legs grounded -->
+        <line x1="70" y1="90" x2="57" y2="110" stroke="#c9922a" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+        <line x1="70" y1="90" x2="83" y2="110" stroke="#c9922a" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+        <!-- Glow -->
+        <circle cx="70" cy="46" r="18" fill="none" stroke="#c9922a" stroke-width="1" opacity="0.3"/>
+      </svg>
+    </div>
+
+    <div>
+      <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">The Core</p>
+      <h3 class="self-title">Self — The Founder in Full</h3>
+      <p class="self-body">
+        Self is not a part. It's the you that exists beneath all the protective noise — present, grounded,
+        and capable of leading with clarity. In IFS, Self is characterized by what Schwartz calls the 8 C's.
+        In a founder context, Self is the version of you that can receive a difficult investor email
+        without spiraling, make a hard personnel decision without people-pleasing, and ship
+        something imperfect without the Perfectionist taking the wheel first.
+      </p>
+      <p class="self-body">
+        The goal of every parts check-in is not insight. It's this: getting Self back in the chair.
+      </p>
+      <div class="quality-pills">
+        <span class="quality-pill">Calm</span>
+        <span class="quality-pill">Curious</span>
+        <span class="quality-pill">Confident</span>
+        <span class="quality-pill">Courageous</span>
+        <span class="quality-pill">Connected</span>
+        <span class="quality-pill">Clear</span>
+        <span class="quality-pill">Creative</span>
+        <span class="quality-pill">Compassionate</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ MANAGERS ══════════════════════════════════ -->
+<section class="section section-tinted" id="managers">
+  <div class="section-inner">
+
+    <div class="category-band band-mgr">
+      <svg class="band-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="12" width="32" height="26" rx="3" fill="none" stroke="#1a4f7a" stroke-width="2.5"/>
+        <line x1="8" y1="20" x2="40" y2="20" stroke="#1a4f7a" stroke-width="2"/>
+        <rect x="20" y="6" width="8" height="8" rx="1" fill="#1a4f7a" opacity="0.5"/>
+        <line x1="16" y1="28" x2="32" y2="28" stroke="#1a4f7a" stroke-width="1.5" opacity="0.6"/>
+        <line x1="16" y1="33" x2="26" y2="33" stroke="#1a4f7a" stroke-width="1.5" opacity="0.4"/>
+      </svg>
+      <div class="band-text">
+        <p class="band-label band-label-mgr">Category · Proactive Protectors</p>
+        <h3 class="band-title">Managers</h3>
+        <p class="band-desc">
+          Managers run the front office. They plan, organize, control, and strategize — all before a threat appears.
+          In the ND founder brain, they're the parts working overtime to prevent you from ever feeling the pain
+          of failure, rejection, or exposure. Their methods: perfectionism, overplanning, people-pleasing,
+          and staying so busy there's no room to feel anything at all.
+        </p>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- The Taskmaster -->
+      <div class="part-card">
+        <div class="card-illustration" style="background:linear-gradient(145deg,#1a3a5c,#1a4f7a);">
+          <svg width="110" height="130" viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Figure -->
+            <circle cx="55" cy="30" r="14" fill="none" stroke="white" stroke-width="2" opacity="0.9"/>
+            <circle cx="55" cy="30" r="6" fill="white" opacity="0.7"/>
+            <line x1="55" y1="44" x2="55" y2="78" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+            <line x1="55" y1="54" x2="34" y2="64" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <line x1="55" y1="54" x2="76" y2="64" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <line x1="55" y1="78" x2="43" y2="100" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <line x1="55" y1="78" x2="67" y2="100" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <!-- Clipboard in hand -->
+            <rect x="74" y="58" width="20" height="26" rx="2" fill="none" stroke="white" stroke-width="1.5" opacity="0.7"/>
+            <line x1="78" y1="66" x2="90" y2="66" stroke="white" stroke-width="1" opacity="0.5"/>
+            <line x1="78" y1="71" x2="90" y2="71" stroke="white" stroke-width="1" opacity="0.5"/>
+            <line x1="78" y1="76" x2="85" y2="76" stroke="white" stroke-width="1" opacity="0.5"/>
+            <!-- Clock floating -->
+            <circle cx="26" cy="48" r="10" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+            <line x1="26" y1="43" x2="26" y2="49" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="26" y1="48" x2="30" y2="51" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Checkmarks -->
+            <text x="14" y="95" font-size="10" fill="rgba(255,255,255,0.35)" font-family="sans-serif">✓ ✓ ✓</text>
+          </svg>
+        </div>
+        <div class="card-body">
+          <p class="card-tag tag-mgr">Manager</p>
+          <h4 class="card-name">The Taskmaster</h4>
+          <p class="card-desc">Fills the calendar to capacity so there's no space left to feel behind. Adds tasks faster than they get completed. Measures safety in busyness.</p>
+          <p class="card-trigger">"I just need to get more organized and then I'll be okay."</p>
+        </div>
+      </div>
+
+      <!-- The Perfectionist -->
+      <div class="part-card">
+        <div class="card-illustration" style="background:linear-gradient(145deg,#0d3358,#1a5276);">
+          <svg width="110" height="130" viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Figure -->
+            <circle cx="45" cy="30" r="13" fill="none" stroke="white" stroke-width="2" opacity="0.9"/>
+            <circle cx="45" cy="30" r="6" fill="white" opacity="0.7"/>
+            <line x1="45" y1="43" x2="45" y2="76" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+            <line x1="45" y1="54" x2="28" y2="62" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <line x1="45" y1="54" x2="64" y2="58" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <line x1="45" y1="76" x2="35" y2="100" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <line x1="45" y1="76" x2="55" y2="100" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <!-- Magnifying glass -->
+            <circle cx="80" cy="55" r="18" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.5"/>
+            <circle cx="80" cy="55" r="11" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+            <line x1="92" y1="67" x2="100" y2="76" stroke="rgba(255,255,255,0.7)" stroke-width="3" stroke-linecap="round"/>
+            <!-- tiny X marks inside lens (flaws) -->
+            <text x="73" y="58" font-size="11" fill="rgba(255,100,100,0.7)">✕</text>
+          </svg>
+        </div>
+        <div class="card-body">
+          <p class="card-tag tag-mgr">Manager</p>
+          <h4 class="card-name">The Perfectionist</h4>
+          <p class="card-desc">Delays every launch, every email, every decision until the conditions are right — conditions that never fully arrive. Mistakes 80% done for dangerous.</p>
+          <p class="card-trigger">"It's almost ready. I just need to fix one more thing."</p>
+        </div>
+      </div>
+
+      <!-- The People-Pleaser -->
+      <div class="part-card">
+        <div class="card-illustration" style="background:linear-gradient(145deg,#1a4060,#21618c);">
+          <svg width="110" height="130" viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Center figure -->
+            <circle cx="55" cy="42" r="13" fill="none" stroke="white" stroke-width="2" opacity="0.9"/>
+            <circle cx="55" cy="42" r="6" fill="white" opacity="0.7"/>
+            <line x1="55" y1="55" x2="55" y2="85" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+            <!-- arms stretched outward, both pulled -->
+            <line x1="55" y1="65" x2="14" y2="58" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+            <line x1="55" y1="65" x2="96" y2="58" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+            <!-- hands being pulled -->
+            <circle cx="12" cy="58" r="5" fill="rgba(255,255,255,0.35)" stroke="white" stroke-width="1"/>
+            <circle cx="98" cy="58" r="5" fill="rgba(255,255,255,0.35)" stroke="white" stroke-width="1"/>
+            <!-- small person figures pulling -->
+            <circle cx="12" cy="48" r="6" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+            <circle cx="98" cy="48" r="6" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+            <!-- legs -->
+            <line x1="55" y1="85" x2="44" y2="108" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <line x1="55" y1="85" x2="66" y2="108" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <!-- smile on face -->
+            <path d="M 49 44 Q 55 50 61 44" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <p class="card-tag tag-mgr">Manager</p>
+          <h4 class="card-name">The People-Pleaser</h4>
+          <p class="card-desc">Says yes to every feature request, every intro, every slack message asking for "just 20 minutes." Underprices services. Cannot disappoint. The roadmap becomes a graveyard of other people's priorities.</p>
+          <p class="card-trigger">"I don't want to seem difficult."</p>
+        </div>
+      </div>
+
+      <!-- The Over-Planner -->
+      <div class="part-card">
+        <div class="card-illustration" style="background:linear-gradient(145deg,#0e2f45,#1a4f7a);">
+          <svg width="110" height="130" viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Whiteboard -->
+            <rect x="25" y="15" width="70" height="55" rx="3" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+            <!-- grid/diagram on board -->
+            <line x1="45" y1="15" x2="45" y2="70" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <line x1="65" y1="15" x2="65" y2="70" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <line x1="25" y1="32" x2="95" y2="32" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <line x1="25" y1="49" x2="95" y2="49" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <!-- boxes on board -->
+            <rect x="30" y="19" width="11" height="10" rx="1" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+            <rect x="48" y="19" width="11" height="10" rx="1" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+            <rect x="68" y="36" width="11" height="10" rx="1" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+            <!-- arrows on board -->
+            <line x1="41" y1="24" x2="48" y2="24" stroke="rgba(255,255,255,0.5)" stroke-width="1" marker-end="url(#arr)"/>
+            <!-- Figure standing at board -->
+            <circle cx="55" cy="90" r="10" fill="none" stroke="white" stroke-width="2" opacity="0.85"/>
+            <circle cx="55" cy="90" r="5" fill="white" opacity="0.65"/>
+            <line x1="55" y1="100" x2="55" y2="118" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+            <line x1="55" y1="107" x2="66" y2="75" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+            <line x1="55" y1="107" x2="44" y2="115" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <p class="card-tag tag-mgr">Manager</p>
+          <h4 class="card-name">The Over-Planner</h4>
+          <p class="card-desc">Creates elaborate systems, roadmaps, and frameworks instead of executing. Reorganizing Notion feels productive. The plan becomes a substitute for the action.</p>
+          <p class="card-trigger">"Once the system is set up properly, I'll be able to focus."</p>
+        </div>
+      </div>
+
+    </div><!-- /cards-grid managers -->
+  </div>
+</section>
+
+<!-- ══════════ FIREFIGHTERS ═════════════════════════════ -->
+<section class="section section-white" id="firefighters">
+  <div class="section-inner">
+
+    <div class="category-band band-fire">
+      <svg class="band-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 6 C18 14 12 16 14 26 C14 34 20 40 28 38 C34 36 36 30 34 24 C30 28 28 26 28 22 C28 16 32 12 28 6 C26 10 22 12 22 18 C20 14 22 10 24 6Z" fill="none" stroke="#b94017" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M20 28 C20 32 22 36 26 36 C30 36 32 32 30 28 C28 30 24 30 20 28Z" fill="#b94017" opacity="0.4"/>
+      </svg>
+      <div class="band-text">
+        <p class="band-label band-label-fire">Category · Reactive Protectors</p>
+        <h3 class="band-title">Firefighters</h3>
+        <p class="band-desc">
+          Firefighters respond to the alarm — when an emotional threat breaks through, they rush in to douse it
+          with anything that works. In the ND founder context, the alarm is usually activation: the threat of
+          failure, rejection, or being seen as incompetent. Their tools are distraction, escape, and intensity
+          — not because they're destructive, but because they're fast.
+        </p>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- The Tab-Opener -->
+      <div class="part-card">
+        <div class="card-illustration" style="background:linear-gradient(145deg,#7d2208,#b94017);">
+          <svg width="110" height="130" viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- stacked browser tabs -->
+            <rect x="10" y="50" width="75" height="55" rx="4" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+            <rect x="16" y="40" width="75" height="55" rx="4" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+            <rect x="22" y="30" width="75" height="55" rx="4" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/>
+            <rect x="28" y="20" width="75" height="55" rx="4" fill="rgba(255,255,255,0.08)" stroke="white" stroke-width="2"/>
+            <!-- tab headers -->
+            <rect x="32" y="20" width="22" height="8" rx="2" fill="rgba(255,255,255,0.25)"/>
+            <rect x="57" y="20" width="22" height="8" rx="2" fill="rgba(255,255,255,0.15)"/>
+            <!-- lines inside top tab -->
+            <line x1="34" y1="34" x2="96" y2="34" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <line x1="34" y1="40" x2="82" y2="40" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <line x1="34" y1="46" x2="90" y2="46" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <!-- small figure at bottom, overwhelmed -->
+            <circle cx="18" cy="100" r="8" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+            <line x1="18" y1="108" x2="18" y2="122" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="18" y1="113" x2="10" y2="119" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="18" y1="113" x2="26" y2="119" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <p class="card-tag tag-fire">Firefighter</p>
+          <h4 class="card-name">The Tab-Opener</h4>
+          <p class="card-desc">Responds to the moment of activation — the hard task, the blank document, the unanswered email — by opening everything else instead. Fifteen tabs in sixty seconds.</p>
+          <p class="card-trigger">"I'll just check one thing first."</p>
+        </div>
+      </div>
+
+      <!-- Shiny Object -->
+      <div class="part-card">
+        <div class="card-illustration" style="background:linear-gradient(145deg,#8a2200,#c0381a);">
+          <svg width="110" height="130" viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Central figure -->
+            <circle cx="38" cy="72" r="12" fill="none" stroke="white" stroke-width="2" opacity="0.9"/>
+            <circle cx="38" cy="72" r="5" fill="white" opacity="0.7"/>
+            <line x1="38" y1="84" x2="38" y2="108" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+            <line x1="38" y1="92" x2="62" y2="60" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+            <line x1="38" y1="92" x2="22" y2="100" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+            <!-- Bright glowing star -->
+            <circle cx="82" cy="38" r="16" fill="rgba(255,220,100,0.2)" stroke="rgba(255,220,100,0.7)" stroke-width="2"/>
+            <circle cx="82" cy="38" r="8" fill="rgba(255,220,100,0.5)"/>
+            <circle cx="82" cy="38" r="3" fill="rgba(255,255,200,0.9)"/>
+            <!-- rays -->
+            <g stroke="rgba(255,220,100,0.5)" stroke-width="1.5">
+              <line x1="82" y1="16" x2="82" y2="22"/>
+              <line x1="97" y1="23" x2="93" y2="27"/>
+              <line x1="104" y1="38" x2="98" y2="38"/>
+              <line x1="97" y1="53" x2="93" y2="49"/>
+              <line x1="67" y1="23" x2="71" y2="27"/>
+              <line x1="60" y1="38" x2="66" y2="38"/>
+            </g>
+            <!-- dimmed old projects -->
+            <circle cx="22" cy="30" r="8" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="3,2"/>
+            <circle cx="18" cy="52" r="6" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2,2"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <p class="card-tag tag-fire">Firefighter</p>
+          <h4 class="card-name">The Shiny Object Seeker</h4>
+          <p class="card-desc">Launches a new project the moment the current one gets uncomfortable. The new idea carries dopamine the old one lost. GitHub graveyards are its fingerprint.</p>
+          <p class="card-trigger">"What if we pivoted to — actually, I just had an idea."</p>
+        </div>
+      </div>
+
+      <!-- Hyperfocuser -->
+      <div class="part-card">
+        <div class="card-illustration" style="background:linear-gradient(145deg,#7d2c06,#b94017);">
+          <svg width="110" height="130" viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Tunnel / spotlight effect -->
+            <ellipse cx="55" cy="105" rx="44" ry="18" fill="rgba(255,255,255,0.06)"/>
+            <line x1="11" y1="105" x2="30" y2="30" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <line x1="99" y1="105" x2="80" y2="30" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <!-- Spotlight circle at top -->
+            <circle cx="55" cy="28" r="20" fill="rgba(255,255,200,0.12)" stroke="rgba(255,255,200,0.4)" stroke-width="1.5"/>
+            <circle cx="55" cy="28" r="10" fill="rgba(255,255,200,0.2)"/>
+            <!-- Figure zoomed in, hunched -->
+            <circle cx="55" cy="78" r="13" fill="none" stroke="white" stroke-width="2" opacity="0.85"/>
+            <circle cx="55" cy="78" r="6" fill="white" opacity="0.7"/>
+            <line x1="55" y1="91" x2="55" y2="112" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.75"/>
+            <!-- arms pointing forward/focused -->
+            <line x1="55" y1="99" x2="38" y2="112" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+            <line x1="55" y1="99" x2="72" y2="112" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+            <!-- clock ignored in corner -->
+            <circle cx="16" cy="24" r="9" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="2,2"/>
+            <line x1="16" y1="18" x2="16" y2="25" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <line x1="16" y1="24" x2="21" y2="27" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <p class="card-tag tag-fire">Firefighter</p>
+          <h4 class="card-name">The Hyperfocuser</h4>
+          <p class="card-desc">Locks onto a problem with such intensity that the body disappears, time stops, and everything else — including urgent priorities — becomes invisible. The alarm clock means nothing.</p>
+          <p class="card-trigger">"I thought it had been an hour. It's been five."</p>
+        </div>
+      </div>
+
+      <!-- RSD Reactor -->
+      <div class="part-card">
+        <div class="card-illustration" style="background:linear-gradient(145deg,#6b0f00,#a8200e);">
+          <svg width="110" height="130" viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Storm cloud -->
+            <ellipse cx="55" cy="38" rx="35" ry="20" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+            <ellipse cx="40" cy="32" rx="20" ry="14" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+            <ellipse cx="68" cy="34" rx="18" ry="13" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+            <!-- Lightning bolts -->
+            <polyline points="52,58 47,72 54,72 49,87" fill="none" stroke="rgba(255,240,100,0.85)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+            <polyline points="63,56 58,68 65,68 60,82" fill="none" stroke="rgba(255,240,100,0.55)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            <!-- Figure bracing -->
+            <circle cx="55" cy="108" r="10" fill="none" stroke="white" stroke-width="2" opacity="0.8"/>
+            <circle cx="55" cy="108" r="5" fill="white" opacity="0.6"/>
+            <line x1="55" y1="118" x2="55" y2="130" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+            <line x1="55" y1="122" x2="44" y2="130" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+            <line x1="55" y1="122" x2="66" y2="130" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <p class="card-tag tag-fire">Firefighter</p>
+          <h4 class="card-name">The RSD Reactor</h4>
+          <p class="card-desc">Reads a neutral investor email as rejection. Spirals for three days on ambiguous feedback. Takes critical code review as a personal attack. Sends the three-paragraph defensive reply before thinking twice.
+          <br><em style="font-size:0.8rem;color:#aaa;">Note: RSD is a clinically observed pattern in ADHD, not yet RCT-validated.</em></p>
+          <p class="card-trigger">"They haven't responded. I knew this was going to fall apart."</p>
+        </div>
+      </div>
+
+    </div><!-- /cards-grid firefighters -->
+  </div>
+</section>
+
+<!-- ══════════ EXILES ════════════════════════════════════ -->
+<section class="section section-tinted" id="exiles">
+  <div class="section-inner">
+
+    <div class="category-band band-exile">
+      <svg class="band-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="16" r="10" fill="none" stroke="#5b2d82" stroke-width="2"/>
+        <line x1="24" y1="26" x2="24" y2="38" stroke="#5b2d82" stroke-width="2"/>
+        <line x1="24" y1="32" x2="16" y2="38" stroke="#5b2d82" stroke-width="2"/>
+        <line x1="24" y1="32" x2="32" y2="38" stroke="#5b2d82" stroke-width="2"/>
+        <!-- cage bars overlay -->
+        <line x1="15" y1="6" x2="15" y2="30" stroke="#5b2d82" stroke-width="1" opacity="0.4"/>
+        <line x1="24" y1="6" x2="24" y2="30" stroke="#5b2d82" stroke-width="1" opacity="0.4"/>
+        <line x1="33" y1="6" x2="33" y2="30" stroke="#5b2d82" stroke-width="1" opacity="0.4"/>
+      </svg>
+      <div class="band-text">
+        <p class="band-label band-label-exile">Category · Vulnerable Parts</p>
+        <h3 class="band-title">Exiles</h3>
+        <p class="band-desc">
+          Exiles carry the emotional weight that all those Managers and Firefighters are working so hard to keep
+          buried. In the ND founder brain, they typically hold the fear of being exposed, the memory of failure,
+          the grief of a system that was never built for how their brain works.
+          <strong>In a coaching context, we acknowledge Exiles — we do not process them.</strong>
+          Deep exile work is IFS therapy territory and requires a licensed clinician.
+        </p>
+      </div>
+    </div>
+
+    <div class="cards-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+
+      <!-- The Impostor -->
+      <div class="part-card">
+        <div class="card-illustration" style="background:linear-gradient(145deg,#2d1050,#5b2d82);">
+          <svg width="110" height="130" viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Shadow/large figure behind -->
+            <circle cx="62" cy="44" r="22" fill="rgba(0,0,0,0.4)"/>
+            <line x1="62" y1="66" x2="62" y2="100" stroke="rgba(0,0,0,0.4)" stroke-width="8" stroke-linecap="round"/>
+            <line x1="62" y1="78" x2="44" y2="92" stroke="rgba(0,0,0,0.4)" stroke-width="6" stroke-linecap="round"/>
+            <line x1="62" y1="78" x2="80" y2="92" stroke="rgba(0,0,0,0.4)" stroke-width="6" stroke-linecap="round"/>
+            <!-- Small real figure in front -->
+            <circle cx="45" cy="52" r="11" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="2"/>
+            <circle cx="45" cy="52" r="5" fill="rgba(255,255,255,0.6)"/>
+            <line x1="45" y1="63" x2="45" y2="88" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="45" y1="72" x2="32" y2="82" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="45" y1="72" x2="58" y2="82" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="45" y1="88" x2="37" y2="108" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="45" y1="88" x2="53" y2="108" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+            <!-- Question mark -->
+            <text x="80" y="115" font-size="20" fill="rgba(255,255,255,0.3)" font-family="Georgia,serif">?</text>
+          </svg>
+        </div>
+        <div class="card-body">
+          <p class="card-tag tag-exile">Exile</p>
+          <h4 class="card-name">The Impostor</h4>
+          <p class="card-desc">Carries the belief that success so far has been luck, that discovery is coming, that the other people in the room are the real founders. Drives the Perfectionist and Taskmaster to compensate.</p>
+          <p class="card-trigger">"Eventually they're going to figure out I don't know what I'm doing."</p>
+        </div>
+      </div>
+
+      <!-- The Burned-Out One -->
+      <div class="part-card">
+        <div class="card-illustration" style="background:linear-gradient(145deg,#1e0838,#4a1a7a);">
+          <svg width="110" height="130" viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Battery outline -->
+            <rect x="30" y="18" width="50" height="80" rx="5" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+            <rect x="43" y="11" width="24" height="10" rx="3" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+            <!-- Battery almost empty fill -->
+            <rect x="33" y="84" width="44" height="11" rx="3" fill="rgba(180,40,40,0.5)"/>
+            <!-- Segment lines (empty) -->
+            <line x1="30" y1="72" x2="80" y2="72" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <line x1="30" y1="51" x2="80" y2="51" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <line x1="30" y1="30" x2="80" y2="30" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <!-- Low charge indicator -->
+            <text x="48" y="68" font-size="18" fill="rgba(255,100,80,0.7)" font-family="sans-serif">!</text>
+            <!-- Slumped figure below -->
+            <circle cx="55" cy="112" r="9" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+            <line x1="55" y1="121" x2="55" y2="130" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <p class="card-tag tag-exile">Exile</p>
+          <h4 class="card-name">The Burned-Out One</h4>
+          <p class="card-desc">Carries the exhaustion from every sprint-crash cycle, every all-nighter, every "just push through it." Holds the belief that the body is a liability — something to override on the way to shipping.</p>
+          <p class="card-trigger">"I've been running on empty for so long I don't know what full feels like."</p>
+        </div>
+      </div>
+
+      <!-- The Rejected Founder -->
+      <div class="part-card">
+        <div class="card-illustration" style="background:linear-gradient(145deg,#230a45,#4a1a7a);">
+          <svg width="110" height="130" viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg">
+            <!-- Corner / wall lines -->
+            <line x1="18" y1="10" x2="18" y2="120" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+            <line x1="18" y1="120" x2="100" y2="120" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+            <!-- Small figure in corner, hunched -->
+            <circle cx="34" cy="95" r="10" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+            <circle cx="34" cy="95" r="4" fill="rgba(255,255,255,0.4)"/>
+            <!-- Hunched body -->
+            <path d="M34 105 Q28 115 28 120" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M34 105 Q38 115 40 120" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <line x1="34" y1="105" x2="24" y2="112" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="34" y1="105" x2="44" y2="110" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round"/>
+            <!-- Systems / structures towering over -->
+            <rect x="55" y="30" width="28" height="90" rx="3" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <rect x="65" y="18" width="28" height="90" rx="3" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <text x="58" y="70" font-size="8" fill="rgba(255,255,255,0.2)" font-family="sans-serif">NT</text>
+            <text x="68" y="55" font-size="8" fill="rgba(255,255,255,0.2)" font-family="sans-serif">NT</text>
+          </svg>
+        </div>
+        <div class="card-body">
+          <p class="card-tag tag-exile">Exile</p>
+          <h4 class="card-name">The Rejected Founder</h4>
+          <p class="card-desc">Holds the accumulated grief of a brain that was told — explicitly and implicitly — that it didn't work right. Too much. Too scattered. Can't focus. The part that internalised the world's neurotypical verdict before knowing ADHD was real.</p>
+          <p class="card-trigger">"Maybe I'm just not cut out for this."</p>
+        </div>
+      </div>
+
+    </div><!-- /cards-grid exiles -->
+  </div>
+</section>
+
+<!-- ══════════ COACHING BOUNDARY ════════════════════════ -->
+<section class="section section-white" id="boundary">
+  <div class="section-inner" style="text-align:center; margin-bottom: 40px;">
+    <p class="eyebrow eyebrow-gold">Important Distinction</p>
+    <h2 class="section-title" style="max-width: 600px; margin: 0 auto 16px;">What This Is —<br>and What It Isn't</h2>
+    <p class="section-body" style="margin: 0 auto 32px; text-align:center;">
+      Parts work in a High Signal coaching context is used as an operational tool — not as therapy.
+      The distinction matters clinically, ethically, and for your safety.
+    </p>
+  </div>
+
+  <div class="boundary-box">
+    <h3>Coaching Parts Work vs. IFS Therapy</h3>
+    <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.7;">
+      High Signal coaching draws on IFS as an <em>operational framework</em> for understanding what's blocking
+      execution. It does not replicate or replace IFS therapy. If you're working with exiles, processing
+      early trauma, or experiencing acute distress, please work with a licensed IFS-trained therapist.
+    </p>
+    <div class="boundary-cols">
+      <div class="is-col">
+        <p class="boundary-col-head">This is coaching</p>
+        <ul class="boundary-list">
+          <li>15-minute "who's driving?" check-ins</li>
+          <li>Naming a part blocking a business decision</li>
+          <li>Building micro-agreements to enable action</li>
+          <li>Unblending enough to access judgment</li>
+          <li>Connecting a protective pattern to a business behavior</li>
+          <li>Using parts language to reduce shame</li>
+        </ul>
+      </div>
+      <div class="not-col">
+        <p class="boundary-col-head">This is therapy</p>
+        <ul class="boundary-list">
+          <li>Processing exile memories across sessions</li>
+          <li>Deep trauma work or EMDR</li>
+          <li>Multi-session parts negotiation</li>
+          <li>Addressing active suicidal ideation</li>
+          <li>Treating severe depression or anxiety</li>
+          <li>Medication guidance or psychiatric care</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ════════════════════════════════════ -->
+<footer>
+  <p><strong>High Signal LLC</strong> · Executive Function Coaching for Neurodivergent Founders</p>
+  <p style="margin-top:8px;">
+    Parts Work framework based on Internal Family Systems by Dr. Richard Schwartz.
+    Adapted for a coaching context — not a substitute for therapy or psychiatric care.
+  </p>
+  <p style="margin-top:8px;">
+    Evidence references: Barkley (2015) · Martinussen et al. (2005) · Schwartz (1995) ·
+    Dodson (2022, RSD — Tier 3, clinical observation)
+  </p>
+  <p style="margin-top:16px; font-size:0.72rem; opacity:0.4;">
+    © High Signal LLC · <a href="#">highsignal.co</a>
+  </p>
+</footer>
+
+</body>
+</html>

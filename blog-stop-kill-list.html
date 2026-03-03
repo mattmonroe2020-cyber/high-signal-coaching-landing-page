@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Stop/Kill List | High Signal Coaching</title>
+  <meta name="description" content="Your to-do list is lying to you. Not about what needs to happen — but about what you're actually capable of holding." />
+  <meta property="og:title" content="The Stop/Kill List | High Signal Coaching" />
+  <meta property="og:description" content="Your to-do list is lying to you. Not about what needs to happen — but about what you're actually capable of holding." />
+  <meta property="og:image" content="https://www.highsignalcoaching.com/og-image.png" />
+  <meta property="og:url" content="https://www.highsignalcoaching.com/blog-stop-kill-list.html" />
+  <link rel="canonical" href="https://www.highsignalcoaching.com/blog-stop-kill-list.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg-main:#f0ebe4; --bg-section:#ffffff; --bg-alt:#f7f3ee;
+      --nav-bg:#1a1a1a; --nav-text:#e8e0d5;
+      --gold:#c9922a; --gold-light:#f5e6cc; --gold-bg:#fdf5e6;
+      --text-main:#1c1c1c; --text-mid:#444; --text-light:#777;
+      --divider:#d8cfc4; --card-shadow:0 4px 18px rgba(0,0,0,0.10);
+      --radius-card:12px;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',sans-serif; background:var(--bg-main); color:var(--text-main); line-height:1.7; }
+    nav { background:var(--nav-bg); padding:0 40px; position:sticky; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between; height:64px; border-bottom:2px solid var(--gold); }
+    .nav-brand { font-family:'Playfair Display',serif; font-size:1.15rem; color:var(--gold); letter-spacing:.04em; text-decoration:none; }
+    .nav-links { display:flex; gap:28px; list-style:none; align-items:center; }
+    .nav-links a { color:var(--nav-text); text-decoration:none; font-size:.8rem; font-weight:500; letter-spacing:.06em; text-transform:uppercase; opacity:.8; transition:opacity .2s; }
+    .nav-links a:hover, .nav-links a.active { opacity:1; color:var(--gold); }
+    .nav-cta { background:var(--gold)!important; color:#1a1a1a!important; padding:8px 20px; border-radius:4px; font-weight:600!important; opacity:1!important; }
+    .nav-cta:hover { background:#e0a52e!important; }
+    footer { background:var(--nav-bg); color:rgba(255,255,255,.55); padding:48px 60px; display:flex; justify-content:space-between; align-items:flex-start; gap:40px; flex-wrap:wrap; border-top:2px solid var(--gold); }
+    .footer-brand { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--gold); margin-bottom:10px; }
+    .footer-note { font-size:.8rem; max-width:380px; line-height:1.6; }
+    .footer-links { list-style:none; padding:0; }
+    .footer-links li { margin-bottom:8px; }
+    .footer-links a { color:rgba(255,255,255,.70); text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(255,255,255,.25); font-size:.82rem; }
+    .footer-links a:hover { color:var(--gold); }
+    .footer-copy { width:100%; border-top:1px solid #333; padding-top:24px; font-size:.75rem; color:rgba(255,255,255,.25); }
+    @media(max-width:900px){nav{padding:0 24px;}.nav-links{display:none;}footer{flex-direction:column;padding:40px 28px;}}
+
+    .post-hero { background:linear-gradient(135deg,#1a1a1a 0%,#2d2218 60%,#1a1a1a 100%); color:#fff; padding:80px 60px 70px; text-align:center; position:relative; overflow:hidden; }
+    .post-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(201,146,42,.12) 0%,transparent 70%); }
+    .post-eyebrow { font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:#c9922a; font-weight:600; margin-bottom:18px; position:relative; }
+    .post-hero h1 { font-family:'Playfair Display',serif; font-size:clamp(1.9rem,4.5vw,3rem); font-weight:700; line-height:1.18; max-width:780px; margin:0 auto 18px; position:relative; }
+    .post-hero .subtitle { font-size:1.05rem; color:rgba(255,255,255,.65); max-width:640px; margin:0 auto 14px; font-weight:300; position:relative; }
+    .post-meta { font-size:.78rem; color:rgba(255,255,255,.38); position:relative; letter-spacing:.06em; }
+    .post-body { max-width:720px; margin:0 auto; padding:60px 40px 80px; }
+    .post-body p { font-size:1.05rem; color:#333; margin-bottom:1.4em; line-height:1.85; }
+    .post-body .post-h2 { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; color:#1c1c1c; margin:2.4em 0 .8em; padding-bottom:.5em; border-bottom:2px solid #d8cfc4; }
+    .post-body ul.post-list, .post-body ol.post-list { margin:0 0 1.4em 1.4em; }
+    .post-body .post-list li { font-size:1rem; color:#333; margin-bottom:.6em; line-height:1.75; }
+    .post-body .disclaimer { font-size:.82rem; color:#999; font-style:italic; margin-top:2em; padding-top:1.2em; border-top:1px solid #d8cfc4; }
+    @media(max-width:700px){.post-body{padding:40px 24px 60px;}.post-hero{padding:60px 28px 50px;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-brand" href="/">High Signal LLC</a>
+  <ul class="nav-links">
+    <li><a href="/">The Protocol</a></li>
+    <li><a href="/understanding-your-parts.html">Parts Framework</a></li>
+    <li><a href="/blog.html" class="active">Blog</a></li>
+    <li><a href="https://calendly.com/matt-highsignal/30min" target="_blank" class="nav-cta">Schedule a Call</a></li>
+  </ul>
+</nav>
+<div class="post-hero">
+  <p class="post-eyebrow">High Signal Blog</p>
+  <h1>The Stop/Kill List</h1>
+  <p class="subtitle">Why Subtraction Is the Most Underrated Founder Skill</p>
+  <p class="post-meta">March 2026 &nbsp;·&nbsp; 7 min read</p>
+</div>
+<div class="post-body">
+  <p style="font-style:italic;color:#666;margin-bottom:2em;">Your to-do list is lying to you. Not about what needs to happen — but about what you're actually capable of holding.</p>
+<h2 class="post-h2">Most founders I work with have a to-do list.</h2>
+<p>Many have several. A master list, a weekly list, a someday-maybe list, a Notion database with seventeen views, a voice memo from last Tuesday that starts with "okay so this is important—"</p>
+<p>Here's the thing about to-do lists: adding to them is nearly frictionless. Removing from them requires a decision — and decisions have a cost that ADHD brains can't always afford.</p>
+<p>The Stop/Kill List inverts the whole system. Instead of managing what you're going to do, you make a deliberate, explicit list of what you are actively stopping doing.</p>
+<p>It sounds obvious. It is surprisingly difficult. And it may be the single highest-leverage productivity intervention available to a neurodivergent founder.</p>
+<h2 class="post-h2">The Cognitive Load Problem</h2>
+<p>Working memory deficits are one of the most robustly documented features of ADHD — meta-analytic effect sizes of d=0.7–1.0 versus neurotypical controls (Martinussen et al., 2005). In practical terms: your brain is holding fewer things reliably than you think it is.</p>
+<p>Every item on a to-do list is a low-grade background process. Even when you're not actively working on it, the brain knows it's there. It checks on it. It generates anxiety about it at 2am. It creates decision overhead every time you open the list and have to re-triage.</p>
+<p>A list of 47 items is not a productivity system. It's a cognitive load tax that runs continuously, whether you're working from it or not.</p>
+<p>The neurotypical productivity literature largely ignores this because working memory deficits aren't the norm for the audience it was written for. For ADHD founders, it's the central constraint.</p>
+<h2 class="post-h2">Why Adding Is Instinctive and Subtracting Is Hard</h2>
+<p>Two forces make subtraction difficult for the neurodivergent founder specifically.</p>
+<p>The first is the ADHD novelty drive. New ideas carry dopamine in a way that old commitments don't. Adding a new project to the list produces an immediate reward. Removing an old one requires confronting the loss — the project you won't finish, the idea you're releasing, the version of yourself that was going to do that thing.</p>
+<p>The second is people-pleasing as a protective pattern. Many of the items on a founder's list were never really their priorities — they were absorbed from clients, co-founders, advisors, podcast episodes. Removing them feels like disappointing someone, even when that someone isn't watching.</p>
+<p>If a part of you already feels resistance to this idea — the part that says "but what if that item is actually important?" — notice that. That's probably a Manager doing its job. The question isn't whether the items are important. It's whether carrying all of them is.</p>
+<h2 class="post-h2">What a Stop/Kill List Actually Is</h2>
+<p>It is not a someday/maybe list. That's just a to-do list with a more honest name.</p>
+<p>It is not a "parking lot." Items in parking lots never leave parking lots.</p>
+<p>A Stop/Kill List is an active decision, documented: I am no longer doing this thing. Full stop.</p>
+<p>Categories it captures:</p>
+<ul class="post-list">
+<li>Projects you have started and will not finish (GitHub repos, course drafts, product features that haven't moved in 90 days)</li>
+<li>Commitments you said yes to and should not have</li>
+<li>Systems you built that you don't use</li>
+<li>Meetings that recur without producing decisions</li>
+<li>Aspirational habits that have never actually become habits</li>
+<li>SaaS tools you're paying for that serve a version of your workflow that no longer exists</li>
+</ul>
+<p>Each item on this list is not a failure. It's a freed cognitive resource.</p>
+<h2 class="post-h2">The Reducer Principle</h2>
+<p>This approach draws on what I call the Reducer Principle — inspired by Rick Rubin's creative methodology, not clinical research, and worth being transparent about that distinction.</p>
+<p>Rubin's default in record production is subtraction: what can be removed and still have the essential thing remain? Every element that stays has to earn its place. The record that results is not the one with the most tracks — it's the one where nothing is wasted.</p>
+<p>Applied to founder operations, the principle is: the default action is removal, not addition. Before any new commitment enters the system, something else must leave. Not as a trade — as a rule.</p>
+<p>This isn't Rubin's idea dressed up as clinical advice. It's a practical heuristic with strong face validity for ADHD: fewer decisions, fewer context switches, lower background cognitive load. The mechanism aligns with what we know about executive function and inhibition deficits. It doesn't have its own RCT. It doesn't need one to be useful.</p>
+<h2 class="post-h2">How to Build One in 15 Minutes</h2>
+<p>Open a blank document. Set a timer for 15 minutes — not Pomodoro-style, just a boundary.</p>
+<ol class="post-list">
+<li>Write every project, commitment, and recurring task you're currently "holding" — including the ones you've been avoiding.</li>
+<li>Mark anything that hasn't moved in 60 days.</li>
+<li>Mark anything that was someone else's priority absorbed into yours.</li>
+<li>Mark anything that would require more capacity than you currently have to complete at acceptable quality.</li>
+<li>Move everything marked to the Stop/Kill List. Don't archive it. Kill it. Close the loop — cancel the tool, send the email, delete the repo.</li>
+</ol>
+<p>What remains is your actual list.</p>
+<p>It will be shorter than you expect. It will probably also feel lighter than you expect — and then slightly terrifying, because a short list removes the busyness buffer that was protecting you from the question: am I working on the right thing?</p>
+<p>That question is worth sitting with.</p>
+<h2 class="post-h2">The Rule Going Forward</h2>
+<p>Every new commitment requires removing an existing one.</p>
+<p>Not a suggestion. A rule. The new opportunity goes in only when something comes out.</p>
+<p>This feels constraining until you realize what it actually does: it forces a real prioritization decision at the moment of intake, rather than deferring it indefinitely to a future self who will also be overloaded.</p>
+<p>The ADHD founder brain is particularly susceptible to Shiny Object Syndrome — 12 side projects, 0 shipped in the last six months. The Stop/Kill List is the structural intervention that addresses it directly. Not by suppressing curiosity, but by making the cost of new commitments visible in real time.</p>
+<h2 class="post-h2">The Most Productive Thing You Did This Week</h2>
+<p>Might be what you stopped doing.</p>
+<p>Not metaphorically. Literally. The SaaS tool you cancelled. The project you officially closed. The meeting you removed from the recurring calendar. The feature you killed before spending two more sprints on it.</p>
+<p>Subtraction is not giving up. It's accurate triage.</p>
+<p>In a system running on limited working memory, high task-switching costs, and a novelty drive that makes everything feel urgent — the most skilled operational move is often the one that takes things off the board.</p>
+<p>What's on your list right now that you already know isn't going to happen?</p>
+<p>Start there. Not with a plan to eventually get to it. With a decision to stop carrying it.</p>
+<p class="disclaimer">High Signal LLC | Educational content — not a substitute for therapy, psychiatric care, or formal clinical evaluation.
+Evidence references: Martinussen et al. (2005, Tier 1) · Barkley (2015, Tier 1) · Reducer Principle: creative methodology heuristic, not clinical research</p>
+</div>
+<section style="background:linear-gradient(135deg,#1a1a1a 0%,#2d2218 60%,#1a1a1a 100%);padding:60px;text-align:center;">
+  <p style="font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:#c9922a;font-weight:600;margin-bottom:14px;">Work With Matt</p>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:#fff;margin-bottom:16px;">Ready to stop spinning?</h2>
+  <p style="color:rgba(255,255,255,.65);max-width:520px;margin:0 auto 32px;">30 minutes. No pitch. Just an honest conversation about what you're dealing with and whether the protocol is the right fit.</p>
+  <a href="https://calendly.com/matt-highsignal/30min" target="_blank" style="background:#c9922a;color:#1a1a1a;padding:14px 32px;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block;">Schedule a Discovery Call</a>
+  <p style="color:rgba(255,255,255,.3);font-size:.78rem;margin-top:16px;">or <a href="/blog.html" style="color:rgba(255,255,255,.4);text-decoration:underline;">read more posts</a></p>
+</section>
+<footer>
+  <div>
+    <div class="footer-brand">High Signal LLC</div>
+    <p class="footer-note">Executive function coaching for neurodivergent startup founders. Educational content only — not a substitute for therapy, psychiatric care, or formal clinical evaluation.</p>
+  </div>
+  <div>
+    <ul class="footer-links">
+      <li><a href="/">The Self-Led Founder Protocol</a></li>
+      <li><a href="/understanding-your-parts.html">Understanding Your Parts</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="mailto:matt@highsignalcoaching.com">Contact Matt</a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">
+    <p>© 2026 High Signal LLC · Washington State · All rights reserved.<br>
+    Evidence tiers: Tier 1 = RCT · Tier 2 = EF literature · Tier 3 = clinical observation · Tier 0 = heuristic · Coaching ≠ therapy.</p>
+  </div>
+</footer>
+</body>
+</html>
