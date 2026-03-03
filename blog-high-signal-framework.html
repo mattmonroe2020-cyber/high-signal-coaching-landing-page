@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The High Signal Framework | High Signal Coaching</title>
+  <meta name="description" content="Parts mapping and executive function scaffolding aren't two separate approaches. They're the same solution, operating on different layers — and most programs only address one." />
+  <meta property="og:title" content="The High Signal Framework | High Signal Coaching" />
+  <meta property="og:description" content="Parts mapping and executive function scaffolding aren't two separate approaches. They're the same solution, operating on different layers — and most programs only address one." />
+  <meta property="og:image" content="https://www.highsignalcoaching.com/og-image.png" />
+  <meta property="og:url" content="https://www.highsignalcoaching.com/blog-high-signal-framework.html" />
+  <link rel="canonical" href="https://www.highsignalcoaching.com/blog-high-signal-framework.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg-main:#f0ebe4; --bg-section:#ffffff; --bg-alt:#f7f3ee;
+      --nav-bg:#1a1a1a; --nav-text:#e8e0d5;
+      --gold:#c9922a; --gold-light:#f5e6cc; --gold-bg:#fdf5e6;
+      --text-main:#1c1c1c; --text-mid:#444; --text-light:#777;
+      --divider:#d8cfc4; --card-shadow:0 4px 18px rgba(0,0,0,0.10);
+      --radius-card:12px;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',sans-serif; background:var(--bg-main); color:var(--text-main); line-height:1.7; }
+    nav { background:var(--nav-bg); padding:0 40px; position:sticky; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between; height:64px; border-bottom:2px solid var(--gold); }
+    .nav-brand { font-family:'Playfair Display',serif; font-size:1.15rem; color:var(--gold); letter-spacing:.04em; text-decoration:none; }
+    .nav-links { display:flex; gap:28px; list-style:none; align-items:center; }
+    .nav-links a { color:var(--nav-text); text-decoration:none; font-size:.8rem; font-weight:500; letter-spacing:.06em; text-transform:uppercase; opacity:.8; transition:opacity .2s; }
+    .nav-links a:hover, .nav-links a.active { opacity:1; color:var(--gold); }
+    .nav-cta { background:var(--gold)!important; color:#1a1a1a!important; padding:8px 20px; border-radius:4px; font-weight:600!important; opacity:1!important; }
+    .nav-cta:hover { background:#e0a52e!important; }
+    footer { background:var(--nav-bg); color:rgba(255,255,255,.55); padding:48px 60px; display:flex; justify-content:space-between; align-items:flex-start; gap:40px; flex-wrap:wrap; border-top:2px solid var(--gold); }
+    .footer-brand { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--gold); margin-bottom:10px; }
+    .footer-note { font-size:.8rem; max-width:380px; line-height:1.6; }
+    .footer-links { list-style:none; padding:0; }
+    .footer-links li { margin-bottom:8px; }
+    .footer-links a { color:rgba(255,255,255,.70); text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(255,255,255,.25); font-size:.82rem; }
+    .footer-links a:hover { color:var(--gold); }
+    .footer-copy { width:100%; border-top:1px solid #333; padding-top:24px; font-size:.75rem; color:rgba(255,255,255,.25); }
+    @media(max-width:900px){nav{padding:0 24px;}.nav-links{display:none;}footer{flex-direction:column;padding:40px 28px;}}
+
+    .post-hero { background:linear-gradient(135deg,#1a1a1a 0%,#2d2218 60%,#1a1a1a 100%); color:#fff; padding:80px 60px 70px; text-align:center; position:relative; overflow:hidden; }
+    .post-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(201,146,42,.12) 0%,transparent 70%); }
+    .post-eyebrow { font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:#c9922a; font-weight:600; margin-bottom:18px; position:relative; }
+    .post-hero h1 { font-family:'Playfair Display',serif; font-size:clamp(1.9rem,4.5vw,3rem); font-weight:700; line-height:1.18; max-width:780px; margin:0 auto 18px; position:relative; }
+    .post-hero .subtitle { font-size:1.05rem; color:rgba(255,255,255,.65); max-width:640px; margin:0 auto 14px; font-weight:300; position:relative; }
+    .post-meta { font-size:.78rem; color:rgba(255,255,255,.38); position:relative; letter-spacing:.06em; }
+    .post-body { max-width:720px; margin:0 auto; padding:60px 40px 80px; }
+    .post-body p { font-size:1.05rem; color:#333; margin-bottom:1.4em; line-height:1.85; }
+    .post-body .post-h2 { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; color:#1c1c1c; margin:2.4em 0 .8em; padding-bottom:.5em; border-bottom:2px solid #d8cfc4; }
+    .post-body ul.post-list, .post-body ol.post-list { margin:0 0 1.4em 1.4em; }
+    .post-body .post-list li { font-size:1rem; color:#333; margin-bottom:.6em; line-height:1.75; }
+    .post-body .disclaimer { font-size:.82rem; color:#999; font-style:italic; margin-top:2em; padding-top:1.2em; border-top:1px solid #d8cfc4; }
+    @media(max-width:700px){.post-body{padding:40px 24px 60px;}.post-hero{padding:60px 28px 50px;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-brand" href="/">High Signal LLC</a>
+  <ul class="nav-links">
+    <li><a href="/">The Protocol</a></li>
+    <li><a href="/understanding-your-parts.html">Parts Framework</a></li>
+    <li><a href="/blog.html" class="active">Blog</a></li>
+    <li><a href="https://calendly.com/matt-highsignal/30min" target="_blank" class="nav-cta">Schedule a Call</a></li>
+  </ul>
+</nav>
+<div class="post-hero">
+  <p class="post-eyebrow">High Signal Blog</p>
+  <h1>The High Signal Framework</h1>
+  <p class="subtitle">How ADHD Founders Stop Firefighting Their Own Brain</p>
+  <p class="post-meta">March 2026 &nbsp;·&nbsp; 8 min read</p>
+</div>
+<div class="post-body">
+  <p style="font-style:italic;color:#666;margin-bottom:2em;">Parts mapping and executive function scaffolding aren't two separate approaches. They're the same solution, operating on different layers — and most programs only address one.</p>
+<h2 class="post-h2">You already know what's wrong.</h2>
+<p>Not in the abstract — you know the specific thing. The investor email you've been drafting for nine days. The SOP that lives in your head perfectly formed and refuses to land on the page. The hire you should have made three months ago, sitting in a half-finished Notion database next to eleven other half-finished decisions.</p>
+<p>You've tried the systems. The planners. The accountability apps. You've started and abandoned at least three "new approaches" this calendar year — and each abandoned attempt left a small residue of shame that made the next attempt harder to start.</p>
+<p>Here's what I want you to hear: this is not a motivation problem.</p>
+<p>It's an architecture problem. And fixing it requires working on two distinct layers — simultaneously, in the right sequence.</p>
+<p>That's what the High Signal Framework is built to do.</p>
+<h2 class="post-h2">Hardware vs. Software: The Distinction That Changes Everything</h2>
+<p>Your ADHD brain has two separate problems running at once, and most interventions only address one.</p>
+<p>Hardware is the neurological reality. Working memory deficits. Time blindness — the genuine inability to sense how much time has passed while you're deep in a task. Initiation paralysis that hits even when you know exactly what needs to happen next. These are well-documented traits (Barkley, 2015; Martinussen et al., 2005), they are not character flaws, and they are not going away. You don't fix hardware. You scaffold it.</p>
+<p>Software is the protective system running on top. The part of you that opens fifteen browser tabs when the hard task is right there on the screen. The perfectionist that waits for conditions that never fully arrive. The part that reorganizes Notion instead of sending the email — not because it's lazy, but because it's protecting you from something.</p>
+<p>Most productivity advice works exclusively on the hardware layer. Time-blocking, external accountability, dashboards, ADHD-adjusted scheduling. These interventions do have real evidence behind them — structured external environments show large effect sizes (d=0.8) for ADHD adults, consistently outperforming internal willpower (Barkley, 2015). Build better scaffolding and execution improves. That's real.</p>
+<p>But here's what those systems can't account for: if a protective part of you has decided that action is dangerous, no scaffold will hold.</p>
+<p>That's the gap. That's where parts mapping comes in.</p>
+<h2 class="post-h2">What Parts Mapping Actually Is</h2>
+<p>Parts mapping, in a High Signal context, is a practical audit of your internal stakeholders.</p>
+<p>Think of it as an internal boardroom. In most ADHD founder brains I work with, the meeting has no chair. The Taskmaster is presenting slides no one requested. The Perfectionist is blocking every motion on procedural grounds. The Firefighter has just flipped the table because an investor email sat unanswered for four hours.</p>
+<p>The goal isn't to heal the boardroom. That's therapy — and it's explicitly not what we're doing here.</p>
+<p>The goal is to know who's driving so you can make a deliberate decision about whether to hand over the wheel.</p>
+<p>In the Internal Family Systems model (Schwartz, 1995), parts organize into recognizable roles:</p>
+<ul class="post-list">
+<li>Managers run proactive protection. The Taskmaster who overschedules to avoid feeling behind. The Perfectionist who blocks shipping because 80% feels like failure.</li>
+<li>Firefighters respond to activation. The part that launches a new side project when the current one gets uncomfortable. The dissociation that kicks in when RSD spikes after a neutral-but-ambiguous Slack message.</li>
+<li>Exiles carry the emotional weight those protectors are guarding — often the part that holds the fear of being exposed as unreliable, incompetent, or simply too much.</li>
+</ul>
+<p>For founders, the most operationally useful question is: which part is currently blocking execution, and what is it protecting against?</p>
+<p>A Taskmaster blocking a product launch is usually protecting against public failure. A Procrastinator blocking a client follow-up is often protecting against rejection — the RSD response that reads silence as catastrophe before the other person has even seen the message.</p>
+<p>If a part of you is scanning this right now for reasons it won't work — that's not failure. That's probably a Manager doing exactly what it was built to do. You don't have to argue with it. You just have to know it's there.</p>
+<h2 class="post-h2">The Delicate Part: What This Is Not</h2>
+<p>This is where most coaching programs either overcorrect or miss entirely — and where the approach has to be precise.</p>
+<p>Parts mapping in a coaching context is not exile work. It is not deep trauma processing across multiple sessions. It is not IFS therapy. That territory — working with exiles, exploring formative experiences, running full parts negotiations — requires a licensed clinician. The risk of therapeutic overreach here is real, and it matters ethically.</p>
+<p>What it is, in a High Signal session:</p>
+<ul class="post-list">
+<li>A 15-minute "who's driving?" check-in before a high-stakes decision</li>
+<li>A targeted inventory of one specific bottleneck — not a life audit</li>
+<li>Language that helps you recognize when a Firefighter has the wheel, and a protocol for getting Self back in the driver's seat</li>
+</ul>
+<p>Here's why it has to be slow: naming a part often increases activation before it reduces it. When you finally have language for the perfectionist who has been quietly sabotaging your launches for three years, the first response is usually relief. Then grief. Then a protective Firefighter showing up to make sure you don't go any further.</p>
+<p>Slow is fast. A 15-minute check-in that produces one concrete micro-agreement — "I'll send the email at 2pm, imperfect as it is" — is worth more than a 90-minute excavation that leaves you dysregulated for the rest of the workday.</p>
+<p>The technical term for what we're after is unblending: creating enough distance from a reactive part to access your own judgment. Not resolution. Not healing. Just enough Self to make the next decision from a grounded place.</p>
+<h2 class="post-h2">Building the Scaffold</h2>
+<p>Once you know what's blocking execution, you build the environment that makes follow-through the path of least resistance.</p>
+<p>The research here is unambiguous. ADHD brains need structure to be external — not because internal motivation doesn't exist, but because working memory deficits (effect size d=0.7–1.0 vs. neurotypical controls) make internal tracking unreliable under load. Asking willpower to compensate for a working memory deficit is asking the wrong system to solve the problem.</p>
+<p>A High Signal scaffold has three components:</p>
+<ol class="post-list">
+<li>Calibrated time architecture. Take your instinctive time estimate and multiply by 2.5. Add 15-minute transition buffers between any two high-intensity blocks. Build in deliberate dopamine reset breaks — not as rewards, but as maintenance intervals the system actually requires. This isn't motivational math. It's calibrated math.</li>
+<li>An external prefrontal cortex. Your working memory is finite and degrades under stress. The scaffold replaces it — not supplements it. One dashboard. One prioritized list. One decision already made about what happens next, before activation spikes. Templates over blank pages. Visual structure over text-heavy instructions. The brain doesn't need to hold more; it needs fewer things to hold.</li>
+<li>A Stop/Kill List. More important than any to-do list. Before any new commitment gets added, something else gets removed. The default action is subtraction, not addition. Fewer decisions, fewer context switches, lower total cognitive load.</li>
+</ol>
+<p>The scaffold doesn't fix the hardware. It works with it. That distinction matters — because "fixing" implies you're broken. You're not. You're running a high-output system without the right environment built around it.</p>
+<h2 class="post-h2">The Sequence That Most Programs Miss</h2>
+<p>Parts mapping and EF scaffolding aren't parallel tracks. They run in sequence — and the order is specific.</p>
+<p>You cannot build a scaffold that holds if the part driving your avoidance hasn't been acknowledged first. The Taskmaster will fill the system with impossible demands. The Perfectionist will refuse any template that isn't quite right yet. The Firefighter will blow up the whole structure the first time activation spikes.</p>
+<p>But you also cannot stay in parts work indefinitely. At some point, the Self needs somewhere to land. Action is part of the process. Shipping something, even imperfect, is evidence the system works — and parts update based on evidence.</p>
+<p>The sequence:</p>
+<ol class="post-list">
+<li>Identify the blocking part</li>
+<li>Make minimal contact — acknowledge the part without negotiating indefinitely with it</li>
+<li>Build the smallest scaffold that enables the next action</li>
+<li>Use that action as evidence, and let the parts observe</li>
+</ol>
+<p>This is why High Signal sessions run 15-minute check-ins rather than 60-minute parts explorations. Long enough to know who's in the room. Short enough to actually ship the thing.</p>
+<h2 class="post-h2">What This Looks Like in Practice</h2>
+<p>A founder comes to a session stuck on a hiring decision. Six weeks of paralysis on a role he knows he needs to fill.</p>
+<p>We don't start with the job description.</p>
+<p>We ask: Which part is making this decision feel dangerous?</p>
+<p>In ten minutes, we locate two: a Taskmaster insisting on the perfect candidate, and underneath it, something carrying the memory of a catastrophic hire two years earlier that nearly ended the company.</p>
+<p>We don't go into what's underneath. That's not where we are today.</p>
+<p>We make one micro-agreement with the Taskmaster: We'll define "good enough" before we open applications. Three non-negotiables. Nothing more.</p>
+<p>Then we build the scaffold: a one-page hiring brief, templated, with a two-week timeline already blocked on the calendar. The blank page is gone before resistance has a chance to reactivate.</p>
+<p>He opens applications the next morning.</p>
+<p>That's the framework operating as designed. Not dramatic. Not a breakthrough session. Just — clear, and moving.</p>
+<h2 class="post-h2">The Signal Is Already There</h2>
+<p>The ADHD founder brain is not broken. It's running real signal — pattern recognition, creative risk tolerance, hyperfocus, the capacity to hold enormous complexity in parallel — through a system that was engineered for someone else.</p>
+<p>The noise isn't a character defect. It's the cost of operating a high-output system without the right scaffolding, with protective parts working overtime to manage the gap.</p>
+<p>Parts mapping reduces the internal interference. EF scaffolding gives the signal somewhere to go.</p>
+<p>That's the High Signal Framework. Not a fix. Not a promise. A way of working with the system you actually have — and building an environment where that system can actually perform.</p>
+<p>What's the one decision you've been circling for more than two weeks? That's probably where we'd start.</p>
+<p class="disclaimer">High Signal LLC works with neurodivergent founders and operators on executive function and self-leadership. The content in this post is educational in nature and is not a substitute for therapy, psychiatric care, or formal clinical evaluation.</p>
+</div>
+<section style="background:linear-gradient(135deg,#1a1a1a 0%,#2d2218 60%,#1a1a1a 100%);padding:60px;text-align:center;">
+  <p style="font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:#c9922a;font-weight:600;margin-bottom:14px;">Work With Matt</p>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:#fff;margin-bottom:16px;">Ready to stop spinning?</h2>
+  <p style="color:rgba(255,255,255,.65);max-width:520px;margin:0 auto 32px;">30 minutes. No pitch. Just an honest conversation about what you're dealing with and whether the protocol is the right fit.</p>
+  <a href="https://calendly.com/matt-highsignal/30min" target="_blank" style="background:#c9922a;color:#1a1a1a;padding:14px 32px;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block;">Schedule a Discovery Call</a>
+  <p style="color:rgba(255,255,255,.3);font-size:.78rem;margin-top:16px;">or <a href="/blog.html" style="color:rgba(255,255,255,.4);text-decoration:underline;">read more posts</a></p>
+</section>
+<footer>
+  <div>
+    <div class="footer-brand">High Signal LLC</div>
+    <p class="footer-note">Executive function coaching for neurodivergent startup founders. Educational content only — not a substitute for therapy, psychiatric care, or formal clinical evaluation.</p>
+  </div>
+  <div>
+    <ul class="footer-links">
+      <li><a href="/">The Self-Led Founder Protocol</a></li>
+      <li><a href="/understanding-your-parts.html">Understanding Your Parts</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="mailto:matt@highsignalcoaching.com">Contact Matt</a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">
+    <p>© 2026 High Signal LLC · Washington State · All rights reserved.<br>
+    Evidence tiers: Tier 1 = RCT · Tier 2 = EF literature · Tier 3 = clinical observation · Tier 0 = heuristic · Coaching ≠ therapy.</p>
+  </div>
+</footer>
+</body>
+</html>

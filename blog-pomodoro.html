@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why the Pomodoro Technique Doesn't Work for ADHD Founders | High Signal Coaching</title>
+  <meta name="description" content="The most popular time management system in the world was built for a brain you don't have. Here's a more honest replacement." />
+  <meta property="og:title" content="Why the Pomodoro Technique Doesn't Work for ADHD Founders | High Signal Coaching" />
+  <meta property="og:description" content="The most popular time management system in the world was built for a brain you don't have. Here's a more honest replacement." />
+  <meta property="og:image" content="https://www.highsignalcoaching.com/og-image.png" />
+  <meta property="og:url" content="https://www.highsignalcoaching.com/blog-pomodoro.html" />
+  <link rel="canonical" href="https://www.highsignalcoaching.com/blog-pomodoro.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg-main:#f0ebe4; --bg-section:#ffffff; --bg-alt:#f7f3ee;
+      --nav-bg:#1a1a1a; --nav-text:#e8e0d5;
+      --gold:#c9922a; --gold-light:#f5e6cc; --gold-bg:#fdf5e6;
+      --text-main:#1c1c1c; --text-mid:#444; --text-light:#777;
+      --divider:#d8cfc4; --card-shadow:0 4px 18px rgba(0,0,0,0.10);
+      --radius-card:12px;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',sans-serif; background:var(--bg-main); color:var(--text-main); line-height:1.7; }
+    nav { background:var(--nav-bg); padding:0 40px; position:sticky; top:0; z-index:100; display:flex; align-items:center; justify-content:space-between; height:64px; border-bottom:2px solid var(--gold); }
+    .nav-brand { font-family:'Playfair Display',serif; font-size:1.15rem; color:var(--gold); letter-spacing:.04em; text-decoration:none; }
+    .nav-links { display:flex; gap:28px; list-style:none; align-items:center; }
+    .nav-links a { color:var(--nav-text); text-decoration:none; font-size:.8rem; font-weight:500; letter-spacing:.06em; text-transform:uppercase; opacity:.8; transition:opacity .2s; }
+    .nav-links a:hover, .nav-links a.active { opacity:1; color:var(--gold); }
+    .nav-cta { background:var(--gold)!important; color:#1a1a1a!important; padding:8px 20px; border-radius:4px; font-weight:600!important; opacity:1!important; }
+    .nav-cta:hover { background:#e0a52e!important; }
+    footer { background:var(--nav-bg); color:rgba(255,255,255,.55); padding:48px 60px; display:flex; justify-content:space-between; align-items:flex-start; gap:40px; flex-wrap:wrap; border-top:2px solid var(--gold); }
+    .footer-brand { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--gold); margin-bottom:10px; }
+    .footer-note { font-size:.8rem; max-width:380px; line-height:1.6; }
+    .footer-links { list-style:none; padding:0; }
+    .footer-links li { margin-bottom:8px; }
+    .footer-links a { color:rgba(255,255,255,.70); text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(255,255,255,.25); font-size:.82rem; }
+    .footer-links a:hover { color:var(--gold); }
+    .footer-copy { width:100%; border-top:1px solid #333; padding-top:24px; font-size:.75rem; color:rgba(255,255,255,.25); }
+    @media(max-width:900px){nav{padding:0 24px;}.nav-links{display:none;}footer{flex-direction:column;padding:40px 28px;}}
+
+    .post-hero { background:linear-gradient(135deg,#1a1a1a 0%,#2d2218 60%,#1a1a1a 100%); color:#fff; padding:80px 60px 70px; text-align:center; position:relative; overflow:hidden; }
+    .post-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(201,146,42,.12) 0%,transparent 70%); }
+    .post-eyebrow { font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:#c9922a; font-weight:600; margin-bottom:18px; position:relative; }
+    .post-hero h1 { font-family:'Playfair Display',serif; font-size:clamp(1.9rem,4.5vw,3rem); font-weight:700; line-height:1.18; max-width:780px; margin:0 auto 18px; position:relative; }
+    .post-hero .subtitle { font-size:1.05rem; color:rgba(255,255,255,.65); max-width:640px; margin:0 auto 14px; font-weight:300; position:relative; }
+    .post-meta { font-size:.78rem; color:rgba(255,255,255,.38); position:relative; letter-spacing:.06em; }
+    .post-body { max-width:720px; margin:0 auto; padding:60px 40px 80px; }
+    .post-body p { font-size:1.05rem; color:#333; margin-bottom:1.4em; line-height:1.85; }
+    .post-body .post-h2 { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; color:#1c1c1c; margin:2.4em 0 .8em; padding-bottom:.5em; border-bottom:2px solid #d8cfc4; }
+    .post-body ul.post-list, .post-body ol.post-list { margin:0 0 1.4em 1.4em; }
+    .post-body .post-list li { font-size:1rem; color:#333; margin-bottom:.6em; line-height:1.75; }
+    .post-body .disclaimer { font-size:.82rem; color:#999; font-style:italic; margin-top:2em; padding-top:1.2em; border-top:1px solid #d8cfc4; }
+    @media(max-width:700px){.post-body{padding:40px 24px 60px;}.post-hero{padding:60px 28px 50px;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-brand" href="/">High Signal LLC</a>
+  <ul class="nav-links">
+    <li><a href="/">The Protocol</a></li>
+    <li><a href="/understanding-your-parts.html">Parts Framework</a></li>
+    <li><a href="/blog.html" class="active">Blog</a></li>
+    <li><a href="https://calendly.com/matt-highsignal/30min" target="_blank" class="nav-cta">Schedule a Call</a></li>
+  </ul>
+</nav>
+<div class="post-hero">
+  <p class="post-eyebrow">High Signal Blog</p>
+  <h1>Why the Pomodoro Technique Doesn't Work for ADHD Founders</h1>
+  <p class="subtitle">And What Actually Does</p>
+  <p class="post-meta">March 2026 &nbsp;·&nbsp; 6 min read</p>
+</div>
+<div class="post-body">
+  <p style="font-style:italic;color:#666;margin-bottom:2em;">The most popular time management system in the world was built for a brain you don't have. Here's a more honest replacement.</p>
+<h2 class="post-h2">You've set the timer.</h2>
+<p>You've ignored the timer.</p>
+<p>You've felt guilty about ignoring the timer.</p>
+<p>You may have, at some point, added "be better at Pomodoro" to your to-do list.</p>
+<p>This isn't a discipline problem. The Pomodoro Technique is simply the wrong tool for the ADHD brain — and using the wrong tool consistently while blaming yourself for the outcome is one of the most expensive mistakes a neurodivergent founder can make.</p>
+<p>Let's look at why it fails, and what the research and clinical experience actually support.</p>
+<h2 class="post-h2">What Pomodoro Was Built For</h2>
+<p>Francesco Cirillo developed the Pomodoro Technique in the late 1980s for a neurotypical attentional system: 25 minutes of focused work, a 5-minute break, repeat. The underlying assumption is that attention is roughly uniform — that you can turn it on and off at regular intervals with minimal loss.</p>
+<p>For that brain, the method works reasonably well. The timer creates artificial urgency. The break prevents fatigue accumulation. The structure reduces decision overhead about when to stop.</p>
+<p>The ADHD brain doesn't work that way. Not even close.</p>
+<h2 class="post-h2">Three Specific Ways It Fails the ADHD Brain</h2>
+<p>1.  It interrupts hyperfocus at the worst possible moment.</p>
+<p>Hyperfocus — the intense, self-sustaining absorption state common in ADHD — is not uniform attention. It's a qualitatively different cognitive state: higher output, lower transition cost, reduced executive overhead. When the Pomodoro timer fires during hyperfocus, you're not preventing fatigue. You're breaking the one state where your brain is working at full capacity.</p>
+<p>The cost of that interruption isn't just the 5 minutes of break. It's the 15–20 minutes of reorientation required to get back into the work — assuming you get back at all.</p>
+<p>2.  Transition costs in ADHD are higher than the method accounts for.</p>
+<p>Working memory deficits (Martinussen et al., 2005, d=0.7–1.0) mean that context-switching has a steeper cost in ADHD brains than in neurotypical ones. Every transition requires reconstructing the mental model of the task from scratch. The Pomodoro structure, with its enforced regular breaks, creates transition overhead every 25 minutes — a model that assumes transitions are cheap.</p>
+<p>For ADHD founders, transitions are expensive. The better intervention is fewer of them, not scheduled ones.</p>
+<p>3.  The timer itself becomes an external demand that triggers avoidance.</p>
+<p>This is the one nobody talks about. For founders with demand avoidance patterns — common in ADHD, particularly PDA profiles — a ticking timer is not neutral. It's a threat. The ticking communicates: you will be evaluated at the end of this interval.</p>
+<p>The protective response isn't laziness. It's a Firefighter part responding to perceived pressure by making the timer irrelevant — by finding something else to do entirely.</p>
+<p>The research reflects this ambiguity. Pomodoro shows mixed evidence in ADHD populations — it works for some subtypes and actively backfires for others (Tier 2, general EF literature). It is not a Tier 1 intervention for ADHD.</p>
+<h2 class="post-h2">What the Research Actually Supports</h2>
+<p>Three interventions with stronger evidence and better fit for the ADHD attentional system:</p>
+<ol class="post-list">
+<li>Calibrated time blocking, not timed intervals. Take your instinctive time estimate and multiply by 2.5. If you think a task will take 30 minutes, block 75. Add a 15-minute transition buffer after any high-intensity block before scheduling the next one. This isn't pessimism — it's a correction for a documented neurological bias. Barkley et al. (2001) established time blindness as a core ADHD mechanism, not a personality trait.</li>
+<li>Variable block lengths that match attentional states. Protect hyperfocus rather than interrupt it. When you're in it, remove the constraint. Let it run. Build a post-session recovery slot — 20 minutes of low-demand activity — rather than fragmenting the state with scheduled breaks. The goal is to honor your brain's high-output state rather than fighting it.</li>
+<li>Social accountability over mechanical timers. External scaffolding consistently outperforms internal motivation in ADHD — effect size d=0.8 (Barkley, 2015). Body doubling (another person present during work, even silently on video) shows strong face validity for task initiation — in clinical observation, completion rates with body doubling run 3–4x higher than solo sessions. This is Tier 2–3 evidence, but the mechanism is well-supported.</li>
+</ol>
+<h2 class="post-h2">A Practical Replacement: The ADHD Time Architecture</h2>
+<p>Instead of 25-minute intervals, try this structure for a work block:</p>
+<ul class="post-list">
+<li>Identify one task (not a list — one).</li>
+<li>Estimate time honestly using the ×2.5 rule.</li>
+<li>Block that time on the calendar with a hard start and a soft end.</li>
+<li>Build a 15-minute transition buffer after the block — protected, not filled.</li>
+<li>Include one dopamine reset break in any block over 90 minutes: 10 minutes of movement, music, or low-demand activity.</li>
+<li>If hyperfocus kicks in, don't interrupt it. Move the next commitment if you can.</li>
+</ul>
+<p>This is not a perfect system. No system is. But it's one that works with how ADHD attention actually functions rather than against it.</p>
+<p>The Pomodoro Technique is a fine tool. It's just not your tool.</p>
+<h2 class="post-h2">The Problem Was Never Discipline</h2>
+<p>I want to name something directly: every founder I've worked with who has abandoned Pomodoro carries some residue of shame about it. As if not being able to follow a 25-minute timer is evidence of something wrong with their work ethic.</p>
+<p>It isn't. The timer interrupted your hyperfocus. The transition cost wiped your working memory. The demand-avoidance response found something else to do. These are neurological mechanisms — not character flaws.</p>
+<p>If a part of you just noticed a small amount of relief reading that — I'd pay attention to it.</p>
+<p>The work ethic was never the problem. The scaffolding was.</p>
+<p>What time management method have you abandoned and quietly blamed yourself for? That's probably worth examining — not because the method was right, but because the shame around it is costing you more than the method ever helped.</p>
+<p class="disclaimer">High Signal LLC | Educational content — not a substitute for therapy, psychiatric care, or formal clinical evaluation.
+Evidence references: Barkley (2015, Tier 1) · Martinussen et al. (2005, Tier 1) · Barkley et al. (2001, Tier 1) · Pomodoro in ADHD: Tier 2, mixed evidence</p>
+</div>
+<section style="background:linear-gradient(135deg,#1a1a1a 0%,#2d2218 60%,#1a1a1a 100%);padding:60px;text-align:center;">
+  <p style="font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:#c9922a;font-weight:600;margin-bottom:14px;">Work With Matt</p>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:#fff;margin-bottom:16px;">Ready to stop spinning?</h2>
+  <p style="color:rgba(255,255,255,.65);max-width:520px;margin:0 auto 32px;">30 minutes. No pitch. Just an honest conversation about what you're dealing with and whether the protocol is the right fit.</p>
+  <a href="https://calendly.com/matt-highsignal/30min" target="_blank" style="background:#c9922a;color:#1a1a1a;padding:14px 32px;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-block;">Schedule a Discovery Call</a>
+  <p style="color:rgba(255,255,255,.3);font-size:.78rem;margin-top:16px;">or <a href="/blog.html" style="color:rgba(255,255,255,.4);text-decoration:underline;">read more posts</a></p>
+</section>
+<footer>
+  <div>
+    <div class="footer-brand">High Signal LLC</div>
+    <p class="footer-note">Executive function coaching for neurodivergent startup founders. Educational content only — not a substitute for therapy, psychiatric care, or formal clinical evaluation.</p>
+  </div>
+  <div>
+    <ul class="footer-links">
+      <li><a href="/">The Self-Led Founder Protocol</a></li>
+      <li><a href="/understanding-your-parts.html">Understanding Your Parts</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="mailto:matt@highsignalcoaching.com">Contact Matt</a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">
+    <p>© 2026 High Signal LLC · Washington State · All rights reserved.<br>
+    Evidence tiers: Tier 1 = RCT · Tier 2 = EF literature · Tier 3 = clinical observation · Tier 0 = heuristic · Coaching ≠ therapy.</p>
+  </div>
+</footer>
+</body>
+</html>
