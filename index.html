@@ -759,6 +759,101 @@
     }
     .boundary-box p { font-size: 0.92rem; margin: 0; color: var(--text-mid); }
 
+    /* ─── KIT FORM OVERRIDES ──────────────────────────── */
+    .formkit-form { background: transparent !important; border: none !important; padding: 0 !important; }
+    .formkit-form .formkit-field { margin-bottom: 10px !important; }
+    .formkit-form input[type="email"] {
+      width: 100% !important;
+      border: 1.5px solid var(--divider) !important;
+      border-radius: 6px !important;
+      padding: 12px 16px !important;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.95rem !important;
+      background: #fff !important;
+      color: var(--text-main) !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    .formkit-form input[type="email"]:focus { border-color: var(--gold) !important; }
+    .formkit-form .formkit-submit, .formkit-form button[type="submit"] {
+      width: 100% !important;
+      background: var(--gold) !important;
+      color: #1a1a1a !important;
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 700 !important;
+      font-size: 0.95rem !important;
+      padding: 13px 20px !important;
+      border: none !important;
+      border-radius: 6px !important;
+      cursor: pointer !important;
+      transition: background 0.2s !important;
+      margin-top: 4px !important;
+    }
+    .formkit-form .formkit-submit:hover { background: #e0a52e !important; }
+    .formkit-form .formkit-guarantee { display: none !important; }
+    .formkit-form[data-uid] p { display: none !important; }
+
+    /* ─── LEAD MAGNETS ────────────────────────────────── */
+    .magnets-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 44px;
+    }
+    .magnet-card {
+      background: var(--bg-section);
+      border-radius: var(--radius-card);
+      padding: 32px 28px;
+      box-shadow: var(--card-shadow);
+    }
+    .magnet-card.adhd { border-top: 4px solid var(--manager); }
+    .magnet-card.ifs  { border-top: 4px solid var(--gold); }
+    .magnet-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+    .magnet-card.adhd .magnet-tag { background: var(--manager); color: #fff; }
+    .magnet-card.ifs  .magnet-tag { background: var(--gold); color: #1a1a1a; }
+    .magnet-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+    .magnet-card .magnet-desc {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      line-height: 1.65;
+    }
+    .magnet-bullets {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 24px;
+    }
+    .magnet-bullets li {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      padding: 5px 0;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .magnet-bullets li::before {
+      content: '→';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    @media (max-width: 900px) { .magnets-grid { grid-template-columns: 1fr; } }
+
     /* ─── FOOTER ──────────────────────────────────────── */
     footer {
       background: var(--nav-bg);
@@ -839,7 +934,7 @@
     <li><a href="/blog.html">Blog</a></li>
     <li><a href="#milestones">Milestones</a></li>
     <li><a href="#for-who">Who It's For</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#resources">Free Resources</a></li>
     <li><a href="https://calendly.com/matt-highsignal/30min" target="_blank" class="nav-cta">Schedule a Call</a></li>
   </ul>
 </nav>
@@ -1410,6 +1505,49 @@
       <div class="faq-item">
         <p class="faq-q">What's the investment?</p>
         <p class="faq-a">Investment details are discussed during the discovery call after application review. The engagement is priced as a professional consulting retainer, not a course. If you're wondering whether it's worth it: calculate your current ADHD tax (missed revenue, rework hours, administrative chaos, burnout recovery time) across 12 weeks. That's the comparison point.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FREE RESOURCES / LEAD MAGNETS
+══════════════════════════════════════════════════════════ -->
+<section class="section-alt" id="resources">
+  <div class="section-inner">
+    <p class="section-eyebrow">Free Resources</p>
+    <h2>Not ready to book?<br><em>Start here instead.</em></h2>
+    <p class="lead">Two tools built for neurodivergent founders — no pitch, no follow-up sequence, just the worksheets. Enter your email and they're yours instantly.</p>
+
+    <div class="magnets-grid">
+
+      <!-- ADHD Time Architecture -->
+      <div class="magnet-card adhd">
+        <span class="magnet-tag">ADHD · Executive Function</span>
+        <h3>The ADHD Time Architecture Worksheet</h3>
+        <p class="magnet-desc">Stop running on neurotypical time math. Recalibrate your week around the ×2.5 rule, hyperfocus windows, and 15-min transition buffers.</p>
+        <ul class="magnet-bullets">
+          <li>Commitment inventory with ×2.5 time reality check</li>
+          <li>Hyperfocus conditions map — protect what actually works</li>
+          <li>Non-negotiable buffer rules built into your calendar</li>
+          <li>This week's 3 non-negotiables with time blocks</li>
+        </ul>
+        <script async data-uid="ad47ba8d38" src="https://high-signal-coaching.kit.com/ad47ba8d38/index.js"></script>
+      </div>
+
+      <!-- Who's Driving -->
+      <div class="magnet-card ifs">
+        <span class="magnet-tag">IFS · Parts Mapping</span>
+        <h3>Who's Driving? A Founder's Parts Mapping Starter</h3>
+        <p class="magnet-desc">A 15-minute self-inventory to identify which internal parts are running your decisions right now — and negotiate one concrete agreement with each.</p>
+        <ul class="magnet-bullets">
+          <li>Body check-in to locate the part before naming it</li>
+          <li>Manager, Firefighter, and Exile mapping with micro-agreements</li>
+          <li>Self-energy check — what you have access to right now</li>
+          <li>One commitment: specific action, exact time</li>
+        </ul>
+        <script async data-uid="c6c6665cb3" src="https://high-signal-coaching.kit.com/c6c6665cb3/index.js"></script>
       </div>
 
     </div>
