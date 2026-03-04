@@ -1,9 +1,2 @@
 [build]
   publish = "."
-
-# Redirect apex domain → www
-[[redirects]]
-  from   = "https://highsignalcoaching.com/*"
-  to     = "https://www.highsignalcoaching.com/:splat"
-  status = 301
-  force  = true
