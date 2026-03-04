@@ -737,7 +737,7 @@
     .beta-box p:last-child { margin: 0; }
     @media (max-width: 900px) {
       .about-cols { grid-template-columns: 1fr; gap: 32px; }
-      .about-photo { max-width: 260px; }
+      .about-photo { max-width: 260px; display: block; margin: 0 auto; }
     }
 
     /* ─── BOUNDARY BOX ────────────────────────────────── */
@@ -1130,7 +1130,7 @@
 
     <!-- SVG visual -->
     <div class="framework-svg-wrap">
-      <svg width="640" height="240" viewBox="0 0 640 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="100%" viewBox="0 0 640 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width:640px">
         <defs>
           <marker id="arrowPyramid" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
             <path d="M0,0 L0,6 L8,3 z" fill="#1a7a4f" opacity="0.65"/>
