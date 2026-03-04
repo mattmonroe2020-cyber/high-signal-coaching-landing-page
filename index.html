@@ -854,6 +854,60 @@
     }
     @media (max-width: 900px) { .magnets-grid { grid-template-columns: 1fr; } }
 
+    /* ─── KIT EMAIL FORMS ─────────────────────────────── */
+    .kit-form {
+      margin-top: 20px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .kit-form input[type="email"] {
+      flex: 1;
+      min-width: 180px;
+      padding: 10px 14px;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: var(--text-main);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .kit-form input[type="email"]:focus { border-color: var(--gold); }
+    .kit-form button {
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .magnet-card.adhd .kit-form button { background: var(--manager); color: #fff; }
+    .magnet-card.ifs  .kit-form button { background: var(--gold); color: #1a1a1a; }
+    .kit-form button:hover { opacity: 0.85; }
+    .kit-form button:disabled { opacity: 0.6; cursor: default; }
+    .kit-success {
+      display: none;
+      margin-top: 14px;
+      padding: 11px 15px;
+      background: rgba(26, 122, 79, 0.1);
+      border: 1.5px solid var(--self);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: var(--self);
+      font-weight: 600;
+    }
+    .kit-error {
+      display: none;
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: var(--fire);
+    }
+
     /* ─── FOOTER ──────────────────────────────────────── */
     footer {
       background: var(--nav-bg);
@@ -1533,7 +1587,12 @@
           <li>Non-negotiable buffer rules built into your calendar</li>
           <li>This week's 3 non-negotiables with time blocks</li>
         </ul>
-        <script async data-uid="ad47ba8d38" src="https://high-signal-coaching.kit.com/ad47ba8d38/index.js"></script>
+        <form class="kit-form" onsubmit="submitKitForm(event,'ad47ba8d38',this)">
+          <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" />
+          <button type="submit">Get the Worksheet →</button>
+        </form>
+        <div class="kit-success" id="kit-ok-ad47ba8d38">✓ Check your inbox — the worksheet is on its way.</div>
+        <div class="kit-error"   id="kit-err-ad47ba8d38">Something went wrong. Please try again.</div>
       </div>
 
       <!-- Who's Driving -->
@@ -1547,7 +1606,12 @@
           <li>Self-energy check — what you have access to right now</li>
           <li>One commitment: specific action, exact time</li>
         </ul>
-        <script async data-uid="c6c6665cb3" src="https://high-signal-coaching.kit.com/c6c6665cb3/index.js"></script>
+        <form class="kit-form" onsubmit="submitKitForm(event,'c6c6665cb3',this)">
+          <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" />
+          <button type="submit">Get the Worksheet →</button>
+        </form>
+        <div class="kit-success" id="kit-ok-c6c6665cb3">✓ Check your inbox — the worksheet is on its way.</div>
+        <div class="kit-error"   id="kit-err-c6c6665cb3">Something went wrong. Please try again.</div>
       </div>
 
     </div>
@@ -1582,6 +1646,37 @@
     Evidence tiers: Tier 1 = RCT. Tier 2 = EF literature. Tier 3 = clinical observation. Tier 0 = heuristic. RSD = Tier 3 (not RCT-validated). Coaching ≠ therapy.</p>
   </div>
 </footer>
+
+<script>
+function submitKitForm(e, uid, form) {
+  e.preventDefault();
+  var email = form.querySelector('input[type="email"]').value;
+  var btn   = form.querySelector('button');
+  btn.disabled    = true;
+  btn.textContent = 'Sending…';
+
+  var data = new URLSearchParams();
+  data.append('email_address', email);
+
+  fetch('https://app.convertkit.com/forms/' + uid + '/subscriptions', {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body:    data.toString()
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(json){
+    if (json.status === 'success' || json.subscription) {
+      form.style.display = 'none';
+      document.getElementById('kit-ok-' + uid).style.display = 'block';
+    } else { throw new Error('unexpected'); }
+  })
+  .catch(function(){
+    btn.disabled    = false;
+    btn.textContent = 'Get the Worksheet →';
+    document.getElementById('kit-err-' + uid).style.display = 'block';
+  });
+}
+</script>
 
 </body>
 </html>
