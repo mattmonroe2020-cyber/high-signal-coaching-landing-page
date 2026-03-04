@@ -683,6 +683,63 @@
       vertical-align: middle;
     }
 
+    /* ─── ABOUT ───────────────────────────────────────── */
+    .about-cols {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 56px;
+      align-items: start;
+      margin-top: 48px;
+    }
+    .about-photo {
+      width: 100%;
+      border-radius: var(--radius-card);
+      box-shadow: var(--card-shadow);
+      display: block;
+    }
+    .about-credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0 24px;
+    }
+    .about-cred {
+      background: var(--gold-bg);
+      border: 1.5px solid var(--gold-light);
+      color: var(--gold);
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .about-text p {
+      font-size: 1rem;
+      color: var(--text-mid);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    .beta-box {
+      background: var(--gold-bg);
+      border: 1.5px solid var(--gold-light);
+      border-left: 5px solid var(--gold);
+      border-radius: var(--radius-card);
+      padding: 28px 30px;
+      margin-top: 40px;
+    }
+    .beta-box h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .beta-box p { font-size: 0.92rem; margin: 0 0 10px; color: var(--text-mid); }
+    .beta-box p:last-child { margin: 0; }
+    @media (max-width: 900px) {
+      .about-cols { grid-template-columns: 1fr; gap: 32px; }
+      .about-photo { max-width: 260px; }
+    }
+
     /* ─── BOUNDARY BOX ────────────────────────────────── */
     .boundary-box {
       background: var(--exile-bg);
@@ -778,6 +835,7 @@
   <ul class="nav-links">
     <li><a href="#problem">The Problem</a></li>
     <li><a href="#framework">Framework</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="/blog.html">Blog</a></li>
     <li><a href="#milestones">Milestones</a></li>
     <li><a href="#for-who">Who It's For</a></li>
@@ -992,6 +1050,45 @@
     <div class="boundary-box">
       <h4>⚖️ Coaching vs. Therapy — An Important Distinction</h4>
       <p>IFS parts language is used here as an <strong>operational framework for self-leadership</strong>, not as psychotherapy. Sessions do not involve exile processing, trauma reprocessing, or deep emotional work. If therapeutic support is needed, Matt can provide referrals through his separate therapy practice. Coaching clients who are also in therapy are encouraged to share this distinction with their therapist.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     ABOUT MATT
+══════════════════════════════════════════════════════════ -->
+<section class="section-alt" id="about">
+  <div class="section-inner">
+    <p class="section-eyebrow">Who Does This Work</p>
+    <h2>Built by someone who <em>needed</em> it first.</h2>
+
+    <div class="about-cols">
+      <div>
+        <img src="matthew-headshot.webp" alt="Matt — High Signal LLC" class="about-photo" />
+      </div>
+      <div class="about-text">
+        <div class="about-credentials">
+          <span class="about-cred">Licensed Therapist · WA 2020</span>
+          <span class="about-cred">ND Clients since 2018</span>
+          <span class="about-cred">IFS Level 1 Training</span>
+          <span class="about-cred">ADHD + Autistic Traits</span>
+          <span class="about-cred">ND Tech Founders since 2021</span>
+        </div>
+
+        <p>I didn't build the High Signal Framework because I read about executive dysfunction. I built it because I live it. I have ADHD and autistic traits — and I spent years trying to run my life and practice on systems designed for a brain I don't have. The frustration of knowing exactly what to do and still not being able to make yourself do it is something I know personally, not theoretically.</p>
+
+        <p>I've been a licensed therapist in Washington State since 2020, working with neurodivergent clients since my internship in 2018. Since 2021, I've specialized specifically in ADHD and AuDHD tech founders and senior individual contributors — people running high-output careers on hardware that the standard productivity literature was never built for. I'm currently enrolled in Level 1 IFS Training, and I use parts work in coaching as an operational framework, not as therapy.</p>
+
+        <p>Before clinical work, I spent years as a music producer. That background shapes how I think about systems: everything is signal and noise, and the job is always reduction — finding the essential thing and cutting everything else away. It's where the Reducer Principle comes from. Rick Rubin calls it subtraction. In founder operations, it means your Stop/Kill List is more important than your to-do list. I've watched that principle reclaim more hours for founders than any new tool or app ever has.</p>
+
+        <p>I work with a small number of clients at a time. That's a deliberate constraint, not a waitlist tactic — this work requires real attention, and I'm not interested in scaling it past the point where I can do it well.</p>
+
+        <div class="beta-box">
+          <h4>🧪 Currently in Beta — Founding Client Pricing</h4>
+          <p>The Self-Led Founder Protocol is in active development. I'm working with a small cohort of founding clients at significantly reduced rates in exchange for structured feedback that shapes the program.</p>
+          <p>If you're early — willing to engage honestly, give feedback, and help build something that actually works — this is the right moment to reach out. Founding client pricing will not be available once the program exits beta.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
