@@ -1,2 +1,27 @@
 [build]
   publish = "."
+
+[[redirects]]
+  from = "/about"
+  to = "/#about"
+  status = 301
+
+[[redirects]]
+  from = "/about.html"
+  to = "/#about"
+  status = 301
+
+[[redirects]]
+  from = "/who-its-for"
+  to = "/#for-who"
+  status = 301
+
+[[redirects]]
+  from = "/who-its-for.html"
+  to = "/#for-who"
+  status = 301
+
+[[redirects]]
+  from = "/for-who"
+  to = "/#for-who"
+  status = 301

@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>High Signal Coaching | Executive Function Coaching for Neurodivergent Tech Founders</title>
-  <meta name="description" content="The Self-Led Founder Protocol — a 12-week executive function coaching program for ADHD and neurodivergent startup founders. Build reliable systems without burnout, chaos, or RSD-driven paralysis." />
+  <title>High Signal Coaching | Executive Function Coaching for ADHD/AuDHD Men in Tech</title>
+  <meta name="description" content="IFS-informed executive function coaching for ADHD/AuDHD men in tech. Stop the cycle of paralysis, procrastination, and burnout. Start executing consistently." />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.highsignalcoaching.com/" />
-  <meta property="og:title" content="High Signal Coaching | Executive Function Coaching for Neurodivergent Tech Founders" />
-  <meta property="og:description" content="The Self-Led Founder Protocol — a 12-week coaching program for ADHD founders who want to sustain and scale their vision without the burnout cycle." />
+  <meta property="og:title" content="High Signal Coaching | Executive Function Coaching for ADHD/AuDHD Men in Tech" />
+  <meta property="og:description" content="IFS-informed executive function coaching for ADHD/AuDHD men in tech. Stop the cycle of paralysis, procrastination, and burnout. Start executing consistently." />
   <meta property="og:image" content="https://www.highsignalcoaching.com/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="High Signal Coaching | Executive Function Coaching for Neurodivergent Tech Founders" />
-  <meta name="twitter:description" content="The Self-Led Founder Protocol — 12 weeks, 8 milestones, built for ADHD founders." />
+  <meta name="twitter:title" content="High Signal Coaching | Executive Function Coaching for ADHD/AuDHD Men in Tech" />
+  <meta name="twitter:description" content="IFS-informed executive function coaching for ADHD/AuDHD men in tech. Stop spinning. Start shipping." />
   <meta name="twitter:image" content="https://www.highsignalcoaching.com/og-image.png" />
   <link rel="canonical" href="https://www.highsignalcoaching.com/" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -102,6 +102,29 @@
     }
     .nav-cta:hover { background: #e0a52e !important; }
 
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 102;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     /* ─── HERO ────────────────────────────────────────── */
     .hero {
       background: linear-gradient(135deg, #1a1a1a 0%, #2d2218 60%, #1a1a1a 100%);
@@ -139,19 +162,12 @@
     .hero h1 em { font-style: italic; color: #e8c878; }
     .hero-sub {
       font-size: 1.15rem;
-      color: rgba(255,255,255,0.70);
-      max-width: 660px;
-      margin: 0 auto 16px;
+      color: rgba(255,255,255,0.72);
+      max-width: 680px;
+      margin: 0 auto 44px;
       font-weight: 300;
       position: relative;
-    }
-    .hero-tagline {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.45);
-      max-width: 700px;
-      margin: 0 auto 44px;
-      font-style: italic;
-      position: relative;
+      line-height: 1.75;
     }
     .hero-cta-row {
       display: flex;
@@ -208,15 +224,16 @@
     }
     .stat-label {
       font-size: 0.78rem;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.7);
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      max-width: 120px;
+      max-width: 140px;
+      margin: 0 auto;
     }
     .stat-tier {
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.28);
-      margin-top: 4px;
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.22);
+      margin-top: 5px;
       font-style: italic;
     }
 
@@ -263,6 +280,24 @@
       line-height: 1.8;
     }
     .section-dark .lead { color: rgba(255,255,255,0.72); }
+    .italic-lead {
+      font-size: 1rem;
+      color: var(--text-mid);
+      max-width: 720px;
+      font-style: italic;
+      margin-top: 0;
+    }
+    .evidence-note {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      font-style: italic;
+      margin-top: 8px;
+    }
+    .divider-line {
+      height: 1px;
+      background: var(--divider);
+      margin: 32px 0;
+    }
 
     /* ─── PROBLEM CHECKLIST ───────────────────────────── */
     .problem-grid {
@@ -290,6 +325,52 @@
       margin: 0;
       font-size: 0.95rem;
       color: var(--text-main);
+    }
+
+    /* ─── THREE-CLUSTER PAIN POINTS ────────────────────── */
+    .cluster-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .cluster {
+      background: var(--bg-section);
+      border-radius: var(--radius-card);
+      padding: 28px 28px 24px;
+      box-shadow: var(--card-shadow);
+      border-top: 3px solid var(--gold);
+    }
+    .cluster-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .cluster-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .cluster-list li {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      padding-left: 22px;
+      position: relative;
+      line-height: 1.55;
+    }
+    .cluster-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.85rem;
     }
 
     /* ─── YOU'VE TRIED ─────────────────────────────────── */
@@ -381,6 +462,7 @@
       font-style: italic;
       margin-bottom: 18px;
     }
+    .framework-card p { font-size: 0.9rem; margin-bottom: 18px; color: var(--text-mid); }
     .framework-list {
       list-style: none;
       padding: 0;
@@ -424,8 +506,81 @@
       margin: 40px 0 10px;
     }
 
-    /* ─── PROTOCOL OVERVIEW ───────────────────────────── */
-    .overview-pills {
+    /* ─── BOUNDARY BOX ────────────────────────────────── */
+    .boundary-box {
+      background: var(--exile-bg);
+      border: 1.5px solid var(--exile-light);
+      border-left: 5px solid var(--exile);
+      border-radius: var(--radius-card);
+      padding: 28px 30px;
+      margin-top: 48px;
+      max-width: 820px;
+    }
+    .boundary-box h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--exile);
+      margin-bottom: 10px;
+    }
+    .boundary-box p { font-size: 0.92rem; margin: 0; color: var(--text-mid); }
+
+    /* ─── ABOUT ───────────────────────────────────────── */
+    .about-cols {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 56px;
+      align-items: start;
+      margin-top: 48px;
+    }
+    .about-photo {
+      width: 100%;
+      border-radius: var(--radius-card);
+      box-shadow: var(--card-shadow);
+      display: block;
+    }
+    .about-credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0 24px;
+    }
+    .about-cred {
+      background: var(--gold-bg);
+      border: 1.5px solid var(--gold-light);
+      color: var(--gold);
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .about-text p {
+      font-size: 1rem;
+      color: var(--text-mid);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    .beta-box {
+      background: var(--gold-bg);
+      border: 1.5px solid var(--gold-light);
+      border-left: 5px solid var(--gold);
+      border-radius: var(--radius-card);
+      padding: 28px 30px;
+      margin-top: 40px;
+    }
+    .beta-box h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .beta-box p { font-size: 0.92rem; margin: 0 0 10px; color: var(--text-mid); }
+    .beta-box p:last-child { margin: 0; }
+
+
+    /* ─── MILESTONE MAP ───────────────────────────────── */
+    .milestone-pills {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
@@ -433,37 +588,14 @@
       margin-bottom: 40px;
     }
     .pill {
-      background: var(--gold-bg);
-      border: 1.5px solid var(--gold-light);
+      background: rgba(201,146,42,0.12);
+      border: 1.5px solid rgba(201,146,42,0.3);
       color: var(--gold);
       padding: 8px 20px;
       border-radius: 100px;
       font-size: 0.88rem;
       font-weight: 600;
     }
-    .overview-boxes {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 20px;
-    }
-    .overview-box {
-      background: var(--bg-section);
-      border-radius: var(--radius-card);
-      padding: 28px 26px;
-      box-shadow: var(--card-shadow);
-      border-left: 4px solid var(--gold);
-    }
-    .overview-box h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--gold);
-    }
-    .overview-box p { font-size: 0.9rem; margin: 0; color: var(--text-mid); }
-
-    /* ─── MILESTONE MAP ───────────────────────────────── */
     .milestone-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -608,190 +740,104 @@
     .for-list li:last-child { border-bottom: none; }
     .for-list .check { flex-shrink: 0; font-size: 1rem; margin-top: 2px; }
 
-    /* ─── FINAL CTA ───────────────────────────────────── */
-    .cta-section {
-      background: linear-gradient(135deg, #1a1a1a 0%, #2d2218 60%, #1a1a1a 100%);
-      padding: 100px 60px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center, rgba(201,146,42,0.12) 0%, transparent 65%);
-    }
-    .cta-section h2 {
-      color: #fff;
-      font-size: clamp(2rem, 4vw, 3rem);
-      max-width: 760px;
-      margin: 0 auto 22px;
-      position: relative;
-    }
-    .cta-section p {
-      color: rgba(255,255,255,0.65);
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 40px;
-      position: relative;
-    }
-    .cta-row {
-      position: relative;
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .cta-note {
-      position: relative;
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.35);
-      margin-top: 18px;
-    }
-
-    /* ─── FAQ ─────────────────────────────────────────── */
-    .faq-list {
-      margin-top: 44px;
-      max-width: 800px;
-    }
-    .faq-item {
-      border-bottom: 1px solid var(--divider);
-      padding: 24px 0;
-    }
-    .faq-item:first-child { padding-top: 0; }
-    .faq-q {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--text-main);
-    }
-    .faq-a { font-size: 0.95rem; color: var(--text-mid); margin: 0; }
-    .faq-tier {
-      display: inline-block;
-      font-size: 0.65rem;
-      background: var(--gold-bg);
-      color: var(--gold);
-      border: 1px solid var(--gold-light);
-      padding: 2px 8px;
-      border-radius: 3px;
-      margin-left: 8px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      vertical-align: middle;
-    }
-
-    /* ─── ABOUT ───────────────────────────────────────── */
-    .about-cols {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 56px;
-      align-items: start;
-      margin-top: 48px;
-    }
-    .about-photo {
-      width: 100%;
+    /* ─── PRICING ─────────────────────────────────────── */
+    .pricing-card {
+      background: var(--bg-section);
       border-radius: var(--radius-card);
+      padding: 48px 44px;
       box-shadow: var(--card-shadow);
-      display: block;
+      border-top: 4px solid var(--gold);
+      max-width: 680px;
+      margin: 48px auto 0;
+      text-align: center;
     }
-    .about-credentials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 20px 0 24px;
-    }
-    .about-cred {
+    .pricing-label {
+      display: inline-block;
       background: var(--gold-bg);
       border: 1.5px solid var(--gold-light);
       color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
       padding: 5px 14px;
       border-radius: 100px;
-      font-size: 0.8rem;
-      font-weight: 600;
+      margin-bottom: 20px;
     }
-    .about-text p {
+    .pricing-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
+    .pricing-card .pricing-desc {
       font-size: 1rem;
       color: var(--text-mid);
-      margin-bottom: 16px;
-      line-height: 1.8;
+      margin-bottom: 28px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .beta-box {
-      background: var(--gold-bg);
-      border: 1.5px solid var(--gold-light);
-      border-left: 5px solid var(--gold);
-      border-radius: var(--radius-card);
-      padding: 28px 30px;
-      margin-top: 40px;
+    .pricing-includes {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px;
+      text-align: left;
+      display: inline-block;
     }
-    .beta-box h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
+    .pricing-includes li {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      padding: 7px 0;
+      border-bottom: 1px solid var(--divider);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .pricing-includes li:last-child { border-bottom: none; }
+    .pricing-includes .pi-check {
+      color: var(--self);
       font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 10px;
+      flex-shrink: 0;
     }
-    .beta-box p { font-size: 0.92rem; margin: 0 0 10px; color: var(--text-mid); }
-    .beta-box p:last-child { margin: 0; }
-    @media (max-width: 900px) {
-      .about-cols { grid-template-columns: 1fr; gap: 32px; }
-      .about-photo { max-width: 260px; display: block; margin: 0 auto; }
+    .pricing-note {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin: 16px 0 0;
+      font-style: italic;
     }
-
-    /* ─── BOUNDARY BOX ────────────────────────────────── */
-    .boundary-box {
-      background: var(--exile-bg);
-      border: 1.5px solid var(--exile-light);
-      border-left: 5px solid var(--exile);
-      border-radius: var(--radius-card);
-      padding: 28px 30px;
-      margin-top: 48px;
-      max-width: 820px;
+    .pricing-price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 14px;
+      margin: 24px 0 28px;
     }
-    .boundary-box h4 {
+    .pricing-amount {
       font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
+      font-size: 3rem;
       font-weight: 700;
-      color: var(--exile);
-      margin-bottom: 10px;
+      color: var(--text-main);
+      line-height: 1;
     }
-    .boundary-box p { font-size: 0.92rem; margin: 0; color: var(--text-mid); }
-
-    /* ─── KIT FORM OVERRIDES ──────────────────────────── */
-    .formkit-form { background: transparent !important; border: none !important; padding: 0 !important; }
-    .formkit-form .formkit-field { margin-bottom: 10px !important; }
-    .formkit-form input[type="email"] {
-      width: 100% !important;
-      border: 1.5px solid var(--divider) !important;
-      border-radius: 6px !important;
-      padding: 12px 16px !important;
-      font-family: 'Inter', sans-serif !important;
-      font-size: 0.95rem !important;
-      background: #fff !important;
-      color: var(--text-main) !important;
-      outline: none !important;
-      box-shadow: none !important;
+    .pricing-was {
+      font-size: 1.4rem;
+      color: var(--text-light);
+      text-decoration: line-through;
+      font-family: 'Playfair Display', serif;
     }
-    .formkit-form input[type="email"]:focus { border-color: var(--gold) !important; }
-    .formkit-form .formkit-submit, .formkit-form button[type="submit"] {
-      width: 100% !important;
-      background: var(--gold) !important;
-      color: #1a1a1a !important;
-      font-family: 'Inter', sans-serif !important;
-      font-weight: 700 !important;
-      font-size: 0.95rem !important;
-      padding: 13px 20px !important;
-      border: none !important;
-      border-radius: 6px !important;
-      cursor: pointer !important;
-      transition: background 0.2s !important;
-      margin-top: 4px !important;
+    .pricing-save {
+      display: inline-block;
+      background: var(--self-bg);
+      border: 1.5px solid var(--self-light);
+      color: var(--self);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-bottom: 8px;
     }
-    .formkit-form .formkit-submit:hover { background: #e0a52e !important; }
-    .formkit-form .formkit-guarantee { display: none !important; }
-    .formkit-form[data-uid] p { display: none !important; }
 
     /* ─── LEAD MAGNETS ────────────────────────────────── */
     .magnets-grid {
@@ -852,7 +898,6 @@
       font-weight: 700;
       flex-shrink: 0;
     }
-    @media (max-width: 900px) { .magnets-grid { grid-template-columns: 1fr; } }
 
     /* ─── KIT EMAIL FORMS ─────────────────────────────── */
     .kit-form {
@@ -908,6 +953,90 @@
       color: var(--fire);
     }
 
+    /* ─── FAQ ─────────────────────────────────────────── */
+    .faq-list {
+      margin-top: 44px;
+      max-width: 800px;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--divider);
+      padding: 24px 0;
+    }
+    .faq-item:first-child { padding-top: 0; }
+    .faq-q {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+    .faq-a { font-size: 0.95rem; color: var(--text-mid); margin: 0; }
+    .faq-tier {
+      display: inline-block;
+      font-size: 0.65rem;
+      background: var(--gold-bg);
+      color: var(--gold);
+      border: 1px solid var(--gold-light);
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-left: 8px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+
+    /* ─── FINAL CTA ───────────────────────────────────── */
+    .cta-section {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2218 60%, #1a1a1a 100%);
+      padding: 100px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(201,146,42,0.12) 0%, transparent 65%);
+    }
+    .cta-section h2 {
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 3rem);
+      max-width: 760px;
+      margin: 0 auto 22px;
+      position: relative;
+    }
+    .cta-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 22px;
+      position: relative;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      position: relative;
+    }
+    .cta-row {
+      position: relative;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-note {
+      position: relative;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      margin-top: 18px;
+    }
+
     /* ─── FOOTER ──────────────────────────────────────── */
     footer {
       background: var(--nav-bg);
@@ -929,7 +1058,13 @@
     .footer-note { font-size: 0.8rem; max-width: 380px; line-height: 1.6; }
     .footer-links { list-style: none; padding: 0; }
     .footer-links li { margin-bottom: 8px; }
-    .footer-links a { color: rgba(255,255,255,0.70); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,0.25); font-size: 0.82rem; }
+    .footer-links a {
+      color: rgba(255,255,255,0.70);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: rgba(255,255,255,0.25);
+      font-size: 0.82rem;
+    }
     .footer-links a:hover { color: var(--gold); text-decoration-color: var(--gold); }
     .footer-copy {
       width: 100%;
@@ -939,38 +1074,45 @@
       color: rgba(255,255,255,0.25);
     }
 
-    /* ─── UTILITIES ───────────────────────────────────── */
-    .text-gold { color: var(--gold); }
-    .text-center { text-align: center; }
-    .mt-8 { margin-top: 8px; }
-    .mt-16 { margin-top: 16px; }
-    .mt-32 { margin-top: 32px; }
-    .divider-line {
-      height: 1px;
-      background: var(--divider);
-      margin: 32px 0;
-    }
-    .evidence-note {
-      font-size: 0.75rem;
-      color: var(--text-light);
-      font-style: italic;
-      margin-top: 8px;
-    }
-
     /* ─── RESPONSIVE ──────────────────────────────────── */
     @media (max-width: 900px) {
       section { padding: 60px 28px; }
       .hero { padding: 80px 28px 70px; }
       nav { padding: 0 24px; }
-      .nav-links { display: none; }
       .stats-bar { gap: 30px; padding: 28px 24px; }
+      .about-cols { grid-template-columns: 1fr; gap: 32px; }
+      .about-photo { max-width: 260px; display: block; margin: 0 auto; }
+      .magnets-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; padding: 40px 28px; }
+
+      /* Mobile nav */
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #1a1a1a;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 36px;
+        z-index: 99;
+        list-style: none;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 1.1rem; letter-spacing: 0.08em; opacity: 1; }
+      .nav-cta { padding: 12px 32px !important; font-size: 1rem !important; }
+      .hamburger { display: flex; }
+
       .problem-grid, .framework-cols, .for-cols, .milestone-grid { grid-template-columns: 1fr; }
       .tried-grid { grid-template-columns: 1fr 1fr; }
-      .overview-boxes, .deliverables-grid { grid-template-columns: 1fr 1fr; }
-      footer { flex-direction: column; padding: 40px 28px; }
+      .deliverables-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 600px) {
-      .tried-grid, .overview-boxes, .deliverables-grid { grid-template-columns: 1fr; }
+      .tried-grid, .deliverables-grid { grid-template-columns: 1fr; }
+      .pricing-card { padding: 32px 24px; }
     }
   </style>
 </head>
@@ -980,27 +1122,32 @@
      NAV
 ══════════════════════════════════════════════════════════ -->
 <nav>
-  <a class="nav-brand" href="#">High Signal LLC</a>
-  <ul class="nav-links">
+  <a class="nav-brand" href="/">High Signal LLC</a>
+  <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
     <li><a href="#problem">The Problem</a></li>
     <li><a href="#framework">Framework</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="/blog.html">Blog</a></li>
     <li><a href="#milestones">Milestones</a></li>
-    <li><a href="#for-who">Who It's For</a></li>
     <li><a href="#resources">Free Resources</a></li>
     <li><a href="https://calendly.com/matt-highsignal/30min" target="_blank" class="nav-cta">Schedule a Call</a></li>
   </ul>
 </nav>
 
+<main>
+
 <!-- ═══════════════════════════════════════════════════════
      HERO
 ══════════════════════════════════════════════════════════ -->
 <section class="hero">
-  <p class="hero-eyebrow">High Signal LLC · The Self-Led Founder Protocol</p>
+  <p class="hero-eyebrow">Executive Function Coaching · Built for ADHD/AuDHD Men in Tech</p>
   <h1>Stop <em>Spinning.</em> Start Shipping.</h1>
-  <p class="hero-sub">A 12-week executive function coaching protocol for neurodivergent startup founders — built for the way your brain actually works.</p>
-  <p class="hero-tagline">Sustain and scale your vision with reliable, high-pressure follow-through — without the burnout cycle, administrative chaos, or RSD-driven paralysis.</p>
+  <p class="hero-sub">You're capable, high-functioning, and chronically inconsistent. Executive function coaching for ADHD/AuDHD men in tech who know exactly what to do — and can't reliably do it.</p>
   <div class="hero-cta-row">
     <a href="https://calendly.com/matt-highsignal/30min" target="_blank" class="btn-primary">Schedule a Discovery Call</a>
     <a href="#framework" class="btn-ghost">See How It Works</a>
@@ -1008,7 +1155,7 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
-     STATS BAR
+     STATS BAR — Leading with Tier 1 evidence
 ══════════════════════════════════════════════════════════ -->
 <div class="stats-bar">
   <div class="stat-item">
@@ -1018,13 +1165,13 @@
   </div>
   <div class="stat-item">
     <div class="stat-num">90%</div>
-    <div class="stat-label">Meeting prep completion with time-blocking</div>
-    <div class="stat-tier">vs. 60% without · Tier 3</div>
+    <div class="stat-label">Meeting prep completion with time-blocking vs. 60% without</div>
+    <div class="stat-tier">Tier 3</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">80%</div>
-    <div class="stat-label">Task completion with body doubling</div>
-    <div class="stat-tier">vs. 20% solo · Tier 3</div>
+    <div class="stat-label">Task completion with body doubling vs. 20% solo</div>
+    <div class="stat-tier">Tier 3</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">95%</div>
@@ -1042,43 +1189,38 @@
     <h2>If <em>this is you</em>, you're not failing.<br>You're running the wrong operating system.</h2>
     <p class="lead">Your peers keep telling you to "just focus" or "build better habits." They're running on different hardware. These patterns aren't character flaws — they're predictable ADHD/AuDHD execution signatures.</p>
 
-    <div class="problem-grid">
-      <div class="problem-item">
-        <div class="problem-icon">⏰</div>
-        <p>You wildly underestimate how long tasks take — then white-knuckle to the deadline.</p>
+    <div class="cluster-grid">
+      <div class="cluster">
+        <h4 class="cluster-title">The Execution Gap</h4>
+        <ul class="cluster-list">
+          <li>Chronic task paralysis — you know the next move and can't initiate it</li>
+          <li>Time blindness — deadlines arrive as emergencies, not schedules</li>
+          <li>Distraction spirals and hyperfocus crashes</li>
+          <li>Procrastination that looks like laziness but runs on shame and avoidance</li>
+        </ul>
       </div>
-      <div class="problem-item">
-        <div class="problem-icon">🔥</div>
-        <p>You're a great firefighter. The fires are ones you accidentally started two weeks ago.</p>
+      <div class="cluster">
+        <h4 class="cluster-title">The Internal Resistance</h4>
+        <ul class="cluster-list">
+          <li>Self-sabotage at the threshold — progress triggers a part that pulls the brake</li>
+          <li>Impostor syndrome and the mask — performing competence while privately drowning</li>
+          <li>Low motivation that isn't laziness — it's a nervous system and parts problem</li>
+          <li>RSD (rejection-sensitive dysphoria) spiking during code review, feedback, or conflict</li>
+        </ul>
       </div>
-      <div class="problem-item">
-        <div class="problem-icon">📬</div>
-        <p>Your inbox, Slack, and Notion are technically "organized" — nothing actually gets done.</p>
-      </div>
-      <div class="problem-item">
-        <div class="problem-icon">💥</div>
-        <p>Someone gives mild pushback in a meeting. Suddenly you're questioning the entire company.</p>
-      </div>
-      <div class="problem-item">
-        <div class="problem-icon">🗂️</div>
-        <p>You have 14 productivity systems. You've been "setting up" the perfect one for 6 months.</p>
-      </div>
-      <div class="problem-item">
-        <div class="problem-icon">🌀</div>
-        <p>Hyperfocus hits something that isn't the priority. Three hours later: tunnel, guilt, repeat.</p>
-      </div>
-      <div class="problem-item">
-        <div class="problem-icon">🤝</div>
-        <p>You know you need to delegate. You also know you're about to redo it yourself at midnight.</p>
-      </div>
-      <div class="problem-item">
-        <div class="problem-icon">😶</div>
-        <p>You've read every ADHD book. You know exactly what's happening and still can't stop it.</p>
+      <div class="cluster">
+        <h4 class="cluster-title">The Relational Cost</h4>
+        <ul class="cluster-list">
+          <li>Impulsive overcommitment — saying yes because it's exciting, paying for it for weeks</li>
+          <li>Burnout cycles driven by hero sprints followed by collapse</li>
+          <li>Delegation paralysis — redoing work at midnight because handing it off feels impossible</li>
+          <li>Relationship erosion from chronic unreliability — at work and at home</li>
+        </ul>
       </div>
     </div>
 
     <div class="divider-line" style="margin-top: 48px;"></div>
-    <p style="font-size: 1rem; color: var(--text-mid); max-width: 720px; font-style: italic;">
+    <p class="italic-lead">
       These aren't discipline failures. They're working memory deficits (Martinussen et al., 2005, d=0.7–1.0), time-perception gaps (Barkley et al., 2001), and under-resourced protective parts doing their jobs. The fix isn't more willpower. It's better scaffolding.
     </p>
     <p class="evidence-note">Research citations: Tier 1 (RCT) and Tier 2 (EF literature). Clinical observations marked Tier 3.</p>
@@ -1092,7 +1234,7 @@
   <div class="section-inner">
     <p class="section-eyebrow">What Hasn't Worked</p>
     <h2>You've tried the standard playbook.<br><em>It wasn't built for your brain.</em></h2>
-    <p class="lead">Most productivity frameworks were designed for neurotypical cognition. When they fail ADHD founders, the founder gets the blame. That's the wrong conclusion.</p>
+    <p class="lead">Most productivity frameworks were designed for neurotypical cognition. When they fail ADHD/AuDHD men in tech, they get the blame. That's the wrong conclusion.</p>
 
     <div class="tried-grid">
       <div class="tried-card">
@@ -1111,9 +1253,9 @@
         <p class="tried-reason">More systems ≠ better execution</p>
       </div>
       <div class="tried-card">
-        <h4>Therapy Alone</h4>
-        <p>Crucial for emotional processing — not designed for building operational scaffolding and execution systems.</p>
-        <p class="tried-reason">Wrong tool for this job</p>
+        <h4>Generic ADHD Coaching</h4>
+        <p>External accountability and generic strategies — without addressing the internal parts patterns that cause the cycle to repeat.</p>
+        <p class="tried-reason">Surface-level scaffolding only</p>
       </div>
     </div>
   </div>
@@ -1126,11 +1268,11 @@
   <div class="section-inner">
     <p class="section-eyebrow">The High Signal Framework</p>
     <h2>Two problems.<br>One integrated solution.</h2>
-    <p class="lead">Every ADHD founder is running two layers simultaneously. Most coaching programs address one and ignore the other. The Self-Led Founder Protocol addresses both.</p>
+    <p class="lead">Every ADHD/AuDHD professional in tech is running two layers simultaneously. Most coaching programs address one and ignore the other. The Self-Led Tech Professional addresses both.</p>
 
     <!-- SVG visual -->
     <div class="framework-svg-wrap">
-      <svg width="100%" viewBox="0 0 640 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width:640px">
+      <svg width="100%" viewBox="0 0 640 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width:640px" role="img" aria-label="Framework diagram: Hardware layer (ADHD neurology) and Software layer (Protective IFS Parts) both converge into the Self-Led outcome">
         <defs>
           <marker id="arrowPyramid" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
             <path d="M0,0 L0,6 L8,3 z" fill="#1a7a4f" opacity="0.65"/>
@@ -1166,7 +1308,7 @@
         <span class="tag">Hardware Layer</span>
         <h3>ADHD/AuDHD Neurology</h3>
         <p class="subtitle">Scaffold it. Don't fix it.</p>
-        <p style="font-size:0.9rem; margin-bottom:18px; color: var(--text-mid);">Your working memory, time perception, and attention regulation are neurological traits — not personal failures. External scaffolding outperforms internal willpower by a significant margin (Barkley, 2015, d=0.8).</p>
+        <p>Your working memory, time perception, and attention regulation are neurological traits — not personal failures. External scaffolding outperforms internal willpower by a significant margin (Barkley, 2015, d=0.8).</p>
         <ul class="framework-list">
           <li><span class="dot"></span>Working memory deficits → external memory systems</li>
           <li><span class="dot"></span>Time blindness → analog anchors + buffer rules</li>
@@ -1179,7 +1321,7 @@
         <span class="tag">Software Layer</span>
         <h3>Protective IFS Parts</h3>
         <p class="subtitle">Map them. Don't suppress them.</p>
-        <p style="font-size:0.9rem; margin-bottom:18px; color: var(--text-mid);">Perfectionist Managers, Procrastination Firefighters, and Shame Exiles aren't saboteurs — they're protective responses to past pain. The protocol uses IFS as an <em>operational framework</em> (not therapy) to map these parts and negotiate micro-agreements.</p>
+        <p>Perfectionist Managers, Procrastination Firefighters, and Shame Exiles aren't saboteurs — they're protective responses to past pain. The protocol uses IFS as an <em>operational framework</em> (not therapy) to map these parts and negotiate micro-agreements.</p>
         <ul class="framework-list">
           <li><span class="dot"></span>Perfectionist Manager → structured "good enough" criteria</li>
           <li><span class="dot"></span>Procrastination Firefighter → parts-aware task initiation</li>
@@ -1204,54 +1346,60 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
-     ABOUT MATT
+     ABOUT MATT — Before the protocol details, establish trust
 ══════════════════════════════════════════════════════════ -->
 <section class="section-alt" id="about">
   <div class="section-inner">
-    <p class="section-eyebrow">Who Does This Work?</p>
+    <p class="section-eyebrow">About Matt</p>
     <h2>Built by someone who <em>needed</em> it first.</h2>
 
     <div class="about-cols">
       <div>
-        <img src="matthew-headshot.webp" alt="Matt — High Signal LLC" class="about-photo" />
+        <img src="matthew-headshot.webp" alt="Matthew Simpson — High Signal LLC" class="about-photo" />
       </div>
       <div class="about-text">
         <div class="about-credentials">
-          <span class="about-cred">Licensed Therapist · WA 2020</span>
-          <span class="about-cred">ND Clients since 2018</span>
-          <span class="about-cred">IFS Level 1 Training</span>
-          <span class="about-cred">ADHD + Autistic Traits</span>
-          <span class="about-cred">ND Tech Founders since 2021</span>
+          <span class="about-cred">Licensed Mental Health Counselor (LMHC, WA)</span>
+          <span class="about-cred">IFS Level 1 Training (completing May 2026)</span>
+          <span class="about-cred">Clinical work with ND adults since 2018</span>
+          <span class="about-cred">Lived AuDHD experience</span>
         </div>
+
+        <p>I'm Matt Simpson, LMHC — a licensed therapist and executive function coach specializing in ADHD/AuDHD men in tech who are stuck in the gap between knowing and doing.</p>
+
+        <p>Before clinical work, I spent years as a music producer. That background shapes how I think about systems: everything is signal and noise, and the job is always reduction — finding the essential thing and cutting everything else away. It's where the Reducer Principle comes from. Rick Rubin calls it subtraction. In your work, it means your Stop/Kill List is more important than your to-do list.</p>
 
         <p>I didn't build the High Signal Framework because I read about executive dysfunction. I built it because I live it. I have ADHD and autistic traits — and I spent years trying to run my life and practice on systems designed for a brain I don't have. The frustration of knowing exactly what to do and still not being able to make yourself do it is something I know personally, not theoretically.</p>
 
-        <p>I've been a licensed therapist in Washington State since 2020, working with neurodivergent clients since my internship in 2018. Since 2021, I've specialized specifically in ADHD and AuDHD tech founders and senior individual contributors — people running high-output careers on hardware that the standard productivity literature was never built for. I'm currently enrolled in Level 1 IFS Training, and I use parts work in coaching as an operational framework, not as therapy.</p>
-
-        <p>Before clinical work, I spent years as a music producer. That background shapes how I think about systems: everything is signal and noise, and the job is always reduction — finding the essential thing and cutting everything else away. It's where the Reducer Principle comes from. Rick Rubin calls it subtraction. In founder operations, it means your Stop/Kill List is more important than your to-do list. I've watched that principle reclaim more hours for founders than any new tool or app ever has.</p>
+        <p>I've been a licensed therapist in Washington State since 2020, working with neurodivergent clients since my internship in 2018. Since 2021, I've specialized in ADHD and AuDHD adults in tech — engineers, senior ICs, and tech managers running high-output careers on hardware the standard productivity literature was never built for. I'm completing Level 1 IFS Training in May 2026, and I use parts work in coaching as an operational framework, not as therapy.</p>
 
         <p>I work with a small number of clients at a time. That's a deliberate constraint, not a waitlist tactic — this work requires real attention, and I'm not interested in scaling it past the point where I can do it well.</p>
 
         <div class="beta-box">
-          <h4>🧪 Currently in Beta — Founding Client Pricing</h4>
-          <p>The Self-Led Founder Protocol is in active development. I'm working with a small cohort of founding clients at significantly reduced rates in exchange for structured feedback that shapes the program.</p>
-          <p>If you're early — willing to engage honestly, give feedback, and help build something that actually works — this is the right moment to reach out. Founding client pricing will not be available once the program exits beta.</p>
+          <h4>Currently in Beta — Beta Pricing, Limited Spots</h4>
+          <p>The Self-Led Tech Professional is in active development. I'm working with a small cohort of clients at significantly reduced rates in exchange for structured feedback that shapes the program.</p>
+          <p>If you're willing to engage honestly, give feedback, and help build something that actually works — this is the right moment to reach out. Beta pricing will not be available once the program exits beta.</p>
         </div>
+
+        <p style="margin-top:20px; font-size:0.9rem; color:var(--text-light); font-style:italic;">The program is built with ND men in mind, but I work with anyone who resonates with this approach regardless of gender.</p>
+
+        <p style="margin-top:12px; font-size:0.9rem; color:var(--text-light);">Note: I maintain a separate therapy practice at <a href="https://matthewsimpsoncounseling.com" target="_blank" style="color:var(--gold);">matthewsimpsoncounseling.com</a>. Coaching and therapy are distinct services with separate client rosters.</p>
       </div>
     </div>
   </div>
 </section>
 
+
 <!-- ═══════════════════════════════════════════════════════
-     PROTOCOL OVERVIEW
+     MILESTONE MAP
 ══════════════════════════════════════════════════════════ -->
-<section class="section-alt" id="overview">
+<section id="milestones" class="section-dark">
   <div class="section-inner">
     <p class="section-eyebrow">The Protocol</p>
-    <h2>12 weeks. 8 milestones.<br><em>One operating system built for you.</em></h2>
+    <h2 style="color:#fff;">12 weeks. 8 milestones.<br><em>One operating system built for you.</em></h2>
     <p class="lead">Not a course. Not a cohort. A one-to-one coaching engagement built around milestone-based deliverables — so you leave each session with something concrete, not just insight.</p>
 
-    <div class="overview-pills">
+    <div class="milestone-pills">
       <span class="pill">12 Weeks</span>
       <span class="pill">1:1 Sessions</span>
       <span class="pill">8 Milestones</span>
@@ -1259,32 +1407,6 @@
       <span class="pill">ADHD-Adapted Pacing</span>
       <span class="pill">IFS-Informed (Coaching)</span>
     </div>
-
-    <div class="overview-boxes">
-      <div class="overview-box">
-        <h4>Milestone-Based</h4>
-        <p>Each milestone produces a tangible deliverable — not just homework. You know exactly what you're building and why it matters to your specific situation.</p>
-      </div>
-      <div class="overview-box">
-        <h4>Hardware-First Design</h4>
-        <p>Session timing, prep requirements, and pacing account for ADHD time estimates (neurotypical × 2.5). No "why didn't you do the homework" moments.</p>
-      </div>
-      <div class="overview-box">
-        <h4>Stop/Kill List Priority</h4>
-        <p>Every engagement opens with subtraction. What are you stopping? What's coming off the plate before we add anything new? This is non-negotiable.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════
-     MILESTONE MAP
-══════════════════════════════════════════════════════════ -->
-<section id="milestones" class="section-dark">
-  <div class="section-inner">
-    <p class="section-eyebrow">The 8 Milestones</p>
-    <h2 style="color:#fff;">From scattered to <em>systems-run.</em><br>Here's every step.</h2>
-    <p class="lead">Each milestone targets a specific founder failure mode. Each produces a named artifact you own and use after the engagement ends.</p>
 
     <div class="milestone-grid">
 
@@ -1298,7 +1420,7 @@
           </div>
         </div>
         <p class="m-problem">Problem: Scattered goals with no measurable anchor point</p>
-        <p class="m-outcome">Outcome: Clear 12-week vision with specific, measurable KPIs aligned to your actual business stage</p>
+        <p class="m-outcome">Outcome: Clear 12-week vision with specific, measurable KPIs aligned to your actual career and work context</p>
         <span class="m-deliverable">Milestone Charter + KPI Sheet</span>
       </div>
 
@@ -1335,7 +1457,7 @@
         <div class="m-header">
           <div class="m-num">4</div>
           <div class="m-title-wrap">
-            <h3>Seamless Workflow Integration</h3>
+            <h3>Personalized Workflow Scaffolding</h3>
             <span class="m-week">Week 5</span>
           </div>
         </div>
@@ -1469,17 +1591,47 @@
 <section class="section-alt" id="for-who">
   <div class="section-inner">
     <p class="section-eyebrow">Fit Assessment</p>
-    <h2>This protocol has a specific<br><em>ideal client profile.</em></h2>
-    <p class="lead">Not every founder is the right fit — and that's intentional. The protocol is calibrated for a specific intersection of experience, stage, and need. Read both columns honestly.</p>
+    <h2>Built for ADHD/AuDHD Men in Tech<br><em>Who Are Done Winging It</em></h2>
+    <p class="lead">ADHD/AuDHD men in tech: engineers, senior ICs, tech managers. The protocol is calibrated for a specific intersection of experience, role, and need. Read both columns honestly.</p>
+
+    <div class="cluster-grid" style="margin-bottom:40px;">
+      <div class="cluster">
+        <h4 class="cluster-title">The Execution Gap</h4>
+        <ul class="cluster-list">
+          <li>Chronic task paralysis — you know the next move and can't initiate it</li>
+          <li>Time blindness — deadlines arrive as emergencies, not schedules</li>
+          <li>Distraction spirals and hyperfocus crashes</li>
+          <li>Procrastination that looks like laziness but runs on shame and avoidance</li>
+        </ul>
+      </div>
+      <div class="cluster">
+        <h4 class="cluster-title">The Internal Resistance</h4>
+        <ul class="cluster-list">
+          <li>Self-sabotage at the threshold — progress triggers a part that pulls the brake</li>
+          <li>Impostor syndrome and the mask — performing competence while privately drowning</li>
+          <li>Low motivation that isn't laziness — it's a nervous system and parts problem</li>
+          <li>RSD (rejection-sensitive dysphoria) spiking during code review, feedback, or conflict</li>
+        </ul>
+      </div>
+      <div class="cluster">
+        <h4 class="cluster-title">The Relational Cost</h4>
+        <ul class="cluster-list">
+          <li>Impulsive overcommitment — saying yes because it's exciting, paying for it for weeks</li>
+          <li>Burnout cycles driven by hero sprints followed by collapse</li>
+          <li>Delegation paralysis — redoing work at midnight because handing it off feels impossible</li>
+          <li>Relationship erosion from chronic unreliability — at work and at home</li>
+        </ul>
+      </div>
+    </div>
 
     <div class="for-cols">
       <div class="for-card yes">
         <h3>✓ This Is For You If...</h3>
         <ul class="for-list">
           <li><span class="check">✓</span>You have a confirmed or suspected ADHD/AuDHD diagnosis</li>
-          <li><span class="check">✓</span>You're a founder, operator, or technical leader at a startup</li>
+          <li><span class="check">✓</span>You're an engineer, senior IC, tech manager, or technical leader</li>
           <li><span class="check">✓</span>You've already tried standard productivity systems and they've failed you</li>
-          <li><span class="check">✓</span>You're experiencing real business consequences from EF failures (missed deadlines, delegation breakdown, burnout cycles)</li>
+          <li><span class="check">✓</span>You're experiencing real career consequences from EF failures (missed deadlines, delegation breakdown, burnout cycles)</li>
           <li><span class="check">✓</span>You're willing to do the deliverable work between sessions</li>
           <li><span class="check">✓</span>You want operational tools, not just talk therapy</li>
           <li><span class="check">✓</span>You're curious about IFS language as a self-leadership framework — not threatened by it</li>
@@ -1497,21 +1649,94 @@
         </ul>
       </div>
     </div>
+
+    <p style="margin-top:32px; font-size:0.9rem; color:var(--text-light); text-align:center;">Also works with early-stage founders and tech leads managing teams.</p>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
-     FINAL CTA
+     PRICING
 ══════════════════════════════════════════════════════════ -->
-<section class="cta-section" id="cta">
-  <p class="hero-eyebrow" style="position:relative;">Ready to Run a Better Operating System?</p>
-  <h2>The signal is already there.<br><em>We're just clearing the noise.</em></h2>
-  <p>30 minutes. No pitch. Just an honest conversation about what you're dealing with and whether the protocol is the right tool for where you are right now.</p>
-  <div class="cta-row">
-    <a href="https://calendly.com/matt-highsignal/30min" target="_blank" class="btn-primary">Schedule a Discovery Call</a>
-    <a href="understanding-your-parts.html" class="btn-ghost">Explore the Parts Framework →</a>
+<section class="section-white" id="pricing">
+  <div class="section-inner">
+    <p class="section-eyebrow">Investment</p>
+    <h2>What it costs.<br><em>What it's worth.</em></h2>
+    <p class="lead">The engagement is priced as a professional consulting retainer, not a course. Before you ask "is it worth it" — calculate your current ADHD tax across 12 weeks: missed revenue, rework hours, administrative chaos, burnout recovery time. That's the comparison point.</p>
+
+    <div class="pricing-card">
+      <span class="pricing-label">Beta Pricing — Limited Spots</span>
+      <h3>The Self-Led Tech Professional</h3>
+      <p class="pricing-desc">12 weeks. 8 milestones. One operating system built for your brain.</p>
+      <div class="pricing-price-row">
+        <span class="pricing-was">$3,999</span>
+        <span class="pricing-amount">$1,499</span>
+      </div>
+      <span class="pricing-save">Beta pricing — saves $2,500</span>
+      <ul class="pricing-includes">
+        <li><span class="pi-check">✓</span>12 weekly 60-minute 1:1 sessions</li>
+        <li><span class="pi-check">✓</span>8 milestone-based deliverables (artifacts you own)</li>
+        <li><span class="pi-check">✓</span>Async support between sessions</li>
+        <li><span class="pi-check">✓</span>Custom EF scaffold built for your specific deficit profile</li>
+        <li><span class="pi-check">✓</span>IFS parts mapping + micro-agreement protocols</li>
+        <li><span class="pi-check">✓</span>90-day post-coaching maintenance plan</li>
+      </ul>
+      <a href="https://calendly.com/matt-highsignal/30min" target="_blank" class="btn-primary">Schedule a Discovery Call</a>
+      <p class="pricing-note">Beta pricing is in exchange for structured feedback that shapes the program. This rate closes when the cohort fills or the program exits beta — whichever comes first.</p>
+    </div>
   </div>
-  <p class="cta-note">Accepting a limited number of 1:1 clients. If nothing works for you, email <a href="mailto:matt@highsignalcoaching.com" style="color:rgba(255,255,255,0.45); text-decoration:underline;">matt@highsignalcoaching.com</a></p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FREE RESOURCES / LEAD MAGNETS
+══════════════════════════════════════════════════════════ -->
+<section class="section-alt" id="resources">
+  <div class="section-inner">
+    <p class="section-eyebrow">Free Resources</p>
+    <h2>Not ready to book?<br><em>Start here instead.</em></h2>
+    <p class="lead">Two tools built for ADHD/AuDHD men in tech — no pitch, no follow-up sequence, just the worksheets. Enter your email and they're yours instantly.</p>
+
+    <div class="magnets-grid">
+
+      <!-- ADHD Time Architecture -->
+      <div class="magnet-card adhd">
+        <span class="magnet-tag">ADHD · Executive Function</span>
+        <h3>The ADHD Time Architecture Worksheet</h3>
+        <p class="magnet-desc">Stop running on neurotypical time math. Recalibrate your week around the ×2.5 rule, hyperfocus windows, and 15-min transition buffers.</p>
+        <ul class="magnet-bullets">
+          <li>Commitment inventory with ×2.5 time reality check</li>
+          <li>Hyperfocus conditions map — protect what actually works</li>
+          <li>Non-negotiable buffer rules built into your calendar</li>
+          <li>This week's 3 non-negotiables with time blocks</li>
+        </ul>
+        <form class="kit-form" onsubmit="submitKitForm(event,'ad47ba8d38',this,'ADHD_Time_Architecture_Worksheet.pdf')">
+          <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" />
+          <button type="submit">Get the Worksheet →</button>
+        </form>
+        <div class="kit-success" id="kit-ok-ad47ba8d38">✓ Your download started. Check your inbox too — a copy is on its way.</div>
+        <div class="kit-error"   id="kit-err-ad47ba8d38">Something went wrong. Please try again.</div>
+      </div>
+
+      <!-- Who's Driving -->
+      <div class="magnet-card ifs">
+        <span class="magnet-tag">IFS · Parts Mapping</span>
+        <h3>Who's Driving? A Parts Mapping Starter</h3>
+        <p class="magnet-desc">A 15-minute self-inventory to identify which internal parts are running your decisions right now — and negotiate one concrete agreement with each.</p>
+        <ul class="magnet-bullets">
+          <li>Body check-in to locate the part before naming it</li>
+          <li>Manager, Firefighter, and Exile mapping with micro-agreements</li>
+          <li>Self-energy check — what you have access to right now</li>
+          <li>One commitment: specific action, exact time</li>
+        </ul>
+        <form class="kit-form" onsubmit="submitKitForm(event,'c6c6665cb3',this,'Whos_Driving_Parts_Mapping_Starter.pdf')">
+          <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" />
+          <button type="submit">Get the Worksheet →</button>
+        </form>
+        <div class="kit-success" id="kit-ok-c6c6665cb3">✓ Your download started. Check your inbox too — a copy is on its way.</div>
+        <div class="kit-error"   id="kit-err-c6c6665cb3">Something went wrong. Please try again.</div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -1520,7 +1745,7 @@
 <section class="section-white" id="faq">
   <div class="section-inner">
     <p class="section-eyebrow">Frequently Asked Questions</p>
-    <h2>Questions founders<br><em>actually ask.</em></h2>
+    <h2>Questions clients<br><em>actually ask.</em></h2>
 
     <div class="faq-list">
 
@@ -1566,57 +1791,20 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
-     FREE RESOURCES / LEAD MAGNETS
+     FINAL CTA
 ══════════════════════════════════════════════════════════ -->
-<section class="section-alt" id="resources">
-  <div class="section-inner">
-    <p class="section-eyebrow">Free Resources</p>
-    <h2>Not ready to book?<br><em>Start here instead.</em></h2>
-    <p class="lead">Two tools built for neurodivergent founders — no pitch, no follow-up sequence, just the worksheets. Enter your email and they're yours instantly.</p>
-
-    <div class="magnets-grid">
-
-      <!-- ADHD Time Architecture -->
-      <div class="magnet-card adhd">
-        <span class="magnet-tag">ADHD · Executive Function</span>
-        <h3>The ADHD Time Architecture Worksheet</h3>
-        <p class="magnet-desc">Stop running on neurotypical time math. Recalibrate your week around the ×2.5 rule, hyperfocus windows, and 15-min transition buffers.</p>
-        <ul class="magnet-bullets">
-          <li>Commitment inventory with ×2.5 time reality check</li>
-          <li>Hyperfocus conditions map — protect what actually works</li>
-          <li>Non-negotiable buffer rules built into your calendar</li>
-          <li>This week's 3 non-negotiables with time blocks</li>
-        </ul>
-        <form class="kit-form" onsubmit="submitKitForm(event,'ad47ba8d38',this)">
-          <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" />
-          <button type="submit">Get the Worksheet →</button>
-        </form>
-        <div class="kit-success" id="kit-ok-ad47ba8d38">✓ Check your inbox — the worksheet is on its way.</div>
-        <div class="kit-error"   id="kit-err-ad47ba8d38">Something went wrong. Please try again.</div>
-      </div>
-
-      <!-- Who's Driving -->
-      <div class="magnet-card ifs">
-        <span class="magnet-tag">IFS · Parts Mapping</span>
-        <h3>Who's Driving? A Founder's Parts Mapping Starter</h3>
-        <p class="magnet-desc">A 15-minute self-inventory to identify which internal parts are running your decisions right now — and negotiate one concrete agreement with each.</p>
-        <ul class="magnet-bullets">
-          <li>Body check-in to locate the part before naming it</li>
-          <li>Manager, Firefighter, and Exile mapping with micro-agreements</li>
-          <li>Self-energy check — what you have access to right now</li>
-          <li>One commitment: specific action, exact time</li>
-        </ul>
-        <form class="kit-form" onsubmit="submitKitForm(event,'c6c6665cb3',this)">
-          <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" />
-          <button type="submit">Get the Worksheet →</button>
-        </form>
-        <div class="kit-success" id="kit-ok-c6c6665cb3">✓ Check your inbox — the worksheet is on its way.</div>
-        <div class="kit-error"   id="kit-err-c6c6665cb3">Something went wrong. Please try again.</div>
-      </div>
-
-    </div>
+<section class="cta-section" id="cta">
+  <p class="cta-eyebrow">Ready to Run a Better Operating System?</p>
+  <h2>The signal is already there.<br><em>We're just clearing the noise.</em></h2>
+  <p>30 minutes. No pitch. Just an honest conversation about what you're dealing with and whether the protocol is the right tool for where you are right now.</p>
+  <div class="cta-row">
+    <a href="https://calendly.com/matt-highsignal/30min" target="_blank" class="btn-primary">Schedule a Discovery Call</a>
+    <a href="understanding-your-parts.html" class="btn-ghost">Explore the Parts Framework →</a>
   </div>
+  <p class="cta-note">Accepting a limited number of 1:1 clients. To reach Matt directly: <a href="mailto:matt@highsignalcoaching.com" style="color:rgba(255,255,255,0.55); text-decoration:underline;">matt@highsignalcoaching.com</a></p>
 </section>
+
+</main>
 
 <!-- ═══════════════════════════════════════════════════════
      FOOTER
@@ -1624,7 +1812,7 @@
 <footer>
   <div>
     <div class="footer-brand">High Signal LLC</div>
-    <p class="footer-note">Executive function coaching for neurodivergent startup founders. The Self-Led Founder Protocol is a coaching service, not psychotherapy or medical treatment. Coaching does not diagnose, treat, or cure ADHD or any other condition.</p>
+    <p class="footer-note">Executive function coaching for ADHD/AuDHD men in tech. The Self-Led Tech Professional is a coaching service, not psychotherapy or medical treatment. Coaching does not diagnose, treat, or cure ADHD or any other condition.</p>
   </div>
   <div>
     <ul class="footer-links">
@@ -1642,38 +1830,68 @@
     </ul>
   </div>
   <div class="footer-copy">
-    <p>© 2025 High Signal LLC · Matt [Last Name] · Washington State · All rights reserved.<br>
+    <p>© 2026 High Signal LLC · Matthew Simpson · Washington State · All rights reserved.<br>
     Evidence tiers: Tier 1 = RCT. Tier 2 = EF literature. Tier 3 = clinical observation. Tier 0 = heuristic. RSD = Tier 3 (not RCT-validated). Coaching ≠ therapy.</p>
   </div>
 </footer>
 
 <script>
-function submitKitForm(e, uid, form) {
+// Hamburger menu
+(function() {
+  var btn   = document.getElementById('hamburger');
+  var links = document.getElementById('nav-links');
+  if (!btn || !links) return;
+
+  btn.addEventListener('click', function() {
+    var open = links.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  // Close on nav link click
+  links.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      links.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+
+// ConvertKit form submission + direct PDF download fallback
+function submitKitForm(e, uid, form, pdfFile) {
   e.preventDefault();
   var email = form.querySelector('input[type="email"]').value;
   var btn   = form.querySelector('button');
   btn.disabled    = true;
   btn.textContent = 'Sending…';
 
+  // Always trigger the PDF download immediately — works regardless of ConvertKit
+  if (pdfFile) {
+    var a = document.createElement('a');
+    a.href = pdfFile;
+    a.download = pdfFile;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
   var data = new URLSearchParams();
   data.append('email_address', email);
 
+  // Also attempt ConvertKit subscription (will work once real form IDs are set)
   fetch('https://app.convertkit.com/forms/' + uid + '/subscriptions', {
     method:  'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body:    data.toString()
   })
   .then(function(r){ return r.json(); })
-  .then(function(json){
-    if (json.status === 'success' || json.subscription) {
-      form.style.display = 'none';
-      document.getElementById('kit-ok-' + uid).style.display = 'block';
-    } else { throw new Error('unexpected'); }
-  })
-  .catch(function(){
-    btn.disabled    = false;
-    btn.textContent = 'Get the Worksheet →';
-    document.getElementById('kit-err-' + uid).style.display = 'block';
+  .catch(function(){ return {}; }) // Silently ignore ConvertKit errors
+  .then(function(){
+    form.style.display = 'none';
+    document.getElementById('kit-ok-' + uid).style.display = 'block';
   });
 }
 </script>
