@@ -25,3 +25,34 @@
   from = "/for-who"
   to = "/#for-who"
   status = 301
+
+# Blog temporarily offline — redirects to homepage while posts are being reworked
+[[redirects]]
+  from = "/blog.html"
+  to = "/"
+  status = 302
+
+[[redirects]]
+  from = "/blog"
+  to = "/"
+  status = 302
+
+[[redirects]]
+  from = "/blog-adhd-tax.html"
+  to = "/"
+  status = 302
+
+[[redirects]]
+  from = "/blog-high-signal-framework.html"
+  to = "/"
+  status = 302
+
+[[redirects]]
+  from = "/blog-pomodoro.html"
+  to = "/"
+  status = 302
+
+[[redirects]]
+  from = "/blog-stop-kill-list.html"
+  to = "/"
+  status = 302
