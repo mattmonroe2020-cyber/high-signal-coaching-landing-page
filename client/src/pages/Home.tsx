@@ -107,7 +107,7 @@ export default function Home() {
             </button>
           </nav>
           <Button size="sm" className="btn-copper flex-shrink-0" onClick={() => window.open("https://calendly.com/matt-highsignal", "_blank")}>
-            Book a Call
+            Book a Discovery Call
           </Button>
         </div>
       </header>
@@ -117,10 +117,10 @@ export default function Home() {
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="hero-headline text-foreground tracking-tight">
-              Ship Milestones Predictably<br className="hidden md:block" /> Without Founder Burnout
+              You know what to do.<br className="hidden md:block" /> You've known for a while.<br className="hidden md:block" /> The problem isn't information.
             </h1>
             <p className="hero-subheadline text-muted-foreground text-center">
-              IFS-informed executive function coaching for neurodivergent startup founders who know what to do but struggle with consistent execution
+              High Signal Coaching is a self-leadership program for ADHD and AuDHD men in tech who have tried every productivity system and watched each one quietly collapse. The work starts where those systems failed: inside.
             </p>
             <div className="hero-buttons">
               <Button size="lg" className="btn-copper" onClick={() => window.open("https://calendly.com/matt-highsignal", "_blank")}>
@@ -129,7 +129,7 @@ export default function Home() {
               </Button>
               <Button size="lg" variant="outline" className="btn-copper-outline" onClick={openModal}>
                 <Download className="mr-2 h-5 w-5" />
-                Download "The 3 Parts That Block Every Founder" Guide
+                Download "The 3 Parts That Block Every System" Guide
               </Button>
             </div>
           </div>
@@ -143,11 +143,11 @@ export default function Home() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-              The Founder's Execution Gap
+              The Execution Gap
             </h2>
             <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-              You're technically brilliant. Your vision is clear. Your strategy is sound.<br />
-              <span className="text-foreground font-medium">But execution keeps slipping:</span>
+              Not a character flaw. Not a willpower problem.<br />
+              <span className="text-foreground font-medium">A system designed for the wrong brain.</span>
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-card p-6 rounded-lg border border-border shadow-sm">
@@ -156,8 +156,8 @@ export default function Home() {
                     <Target className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Milestone drift</h3>
-                    <p className="text-muted-foreground">Product launches get pushed again and again as internal resistance blocks progress</p>
+                    <h3 className="font-semibold text-lg mb-2">The system collapses</h3>
+                    <p className="text-muted-foreground">You built it. It worked for three weeks. Then it stopped working and you became the problem again.</p>
                   </div>
                 </div>
               </div>
@@ -167,8 +167,8 @@ export default function Home() {
                     <Clock className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Founder bottleneck</h3>
-                    <p className="text-muted-foreground">Your team waits on you while you struggle with decisions that should take minutes</p>
+                    <h3 className="font-semibold text-lg mb-2">The tools aren't wrong, the layer is</h3>
+                    <p className="text-muted-foreground">Standard productivity tools assume knowing what to do is enough. For a neurodivergent brain, that's architecturally incorrect.</p>
                   </div>
                 </div>
               </div>
@@ -178,8 +178,8 @@ export default function Home() {
                     <Zap className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Burnout cycles</h3>
-                    <p className="text-muted-foreground">Push hard for 3 weeks, crash for 1, repeat—velocity becomes unpredictable</p>
+                    <h3 className="font-semibold text-lg mb-2">The shame runs underneath everything</h3>
+                    <p className="text-muted-foreground">The real blocker isn't distraction. It's the story — lazy, broken, not capable enough — that fires every time a system fails.</p>
                   </div>
                 </div>
               </div>
@@ -189,14 +189,14 @@ export default function Home() {
                     <Lightbulb className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">Shiny object trap</h3>
-                    <p className="text-muted-foreground">New ideas hijack focus before current projects ship, leaving a trail of 80%-done work</p>
+                    <h3 className="font-semibold text-lg mb-2">The part that's supposed to run the system won't</h3>
+                    <p className="text-muted-foreground">There's a part of your internal system that shut down trust in tools a long time ago. Until it's addressed, no system holds.</p>
                   </div>
                 </div>
               </div>
             </div>
             <p className="text-center mt-10 text-lg text-foreground font-medium max-w-2xl mx-auto">
-              This isn't about working harder. It's about dismantling the internal barriers that neurodivergent founders face when scaling.
+              The problem has never been the system. It's been building systems on top of a foundation that hasn't been addressed.
             </p>
           </div>
         </div>
@@ -207,29 +207,29 @@ export default function Home() {
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-              The Self-Led Founder Protocol
+              Why other approaches haven't worked — and what does
             </h2>
             <p className="text-lg text-muted-foreground text-center mb-14 max-w-3xl mx-auto">
-              High Signal Coaching combines Internal Family Systems (IFS) parts work with executive function scaffolding specifically designed for neurodivergent founders.
+              This is not therapy. It is not another task manager. It is a framework for understanding why the tools keep failing — and fixing the actual problem, not the symptom.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
                   <Brain className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-xl mb-4">Parts Mapping</h3>
+                <h3 className="font-semibold text-xl mb-4">Hardware (ND Neurology)</h3>
                 <ul className="text-muted-foreground space-y-3 text-left">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Identify which internal parts block execution (perfectionist, protector, rescue parts)</span>
+                    <span>Your brain runs on Interest, Challenge, Novelty, and Urgency — not importance or obligation</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Convert resistance into negotiated agreements</span>
+                    <span>Standard systems are designed for a different brain. This layer addresses the neurology directly.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Build self-trust that ships products predictably</span>
+                    <span>Design for how your brain actually works — not fight it</span>
                   </li>
                 </ul>
               </div>
@@ -237,19 +237,19 @@ export default function Home() {
                 <div className="w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
                   <Shield className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-xl mb-4">Execution Scaffolding</h3>
+                <h3 className="font-semibold text-xl mb-4">Software (Internal System)</h3>
                 <ul className="text-muted-foreground space-y-3 text-left">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Custom accountability systems that match your neurology, not neurotypical templates</span>
+                    <span>Parts of your internal system built the elaborate plans and sabotaged their own implementation</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Sprint-level structure with merge gates and micro-milestones</span>
+                    <span>Understanding what those parts are protecting — and working with them — is the layer most coaching skips</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Real-time blocker removal—not theory, practical intervention</span>
+                    <span>IFS-informed: find the part, hear what it needs, then return to the tool</span>
                   </li>
                 </ul>
               </div>
@@ -257,19 +257,19 @@ export default function Home() {
                 <div className="w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
                   <TrendingUp className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold text-xl mb-4">Sustainable Velocity</h3>
+                <h3 className="font-semibold text-xl mb-4">Environment (Scaffolding)</h3>
                 <ul className="text-muted-foreground space-y-3 text-left">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Track milestone predictability with investor-grade KPIs</span>
+                    <span>External systems and structures that compensate for the hardware instead of requiring willpower to override it</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Prevent founder burnout before it derails your company</span>
+                    <span>These only hold when the first two layers are doing their job</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Delegate effectively without micromanaging or abandoning projects</span>
+                    <span>Built with your actual brain — not the brain productivity culture assumes you have</span>
                   </li>
                 </ul>
               </div>
@@ -283,55 +283,35 @@ export default function Home() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
-              How It Works
+              The Program
             </h2>
-            <div className="space-y-8">
-              <div className="bg-card p-8 rounded-xl border border-border shadow-sm">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg">
-                    1
+            <div className="space-y-4">
+              {[
+                { num: "0", title: "Foundation", desc: "Orientation: the three-layer model, your parts baseline, and the protocol for when systems break" },
+                { num: "1", title: "North Star", desc: "Identify what you actually want — not what you think you should want" },
+                { num: "2", title: "Inner Landscape", desc: "Map your internal system: the parts that protect, the parts that drive, and the Self that can lead" },
+                { num: "3", title: "Hardware", desc: "Understand your neurology without shame — and start designing for it" },
+                { num: "4", title: "Shame Layer", desc: "Name the story underneath the avoidance. Address it before building anything else." },
+                { num: "5", title: "Infrastructure", desc: "Build external systems with your actual brain — not the brain you think you should have" },
+                { num: "6", title: "Less Is More", desc: "Subtract what doesn't belong. Protect what does." },
+                { num: "7", title: "Communication", desc: "Clean agreements, clear limits, direct asks — without the covert contracts" },
+                { num: "8", title: "Opening Up", desc: "Identity integration, genuine connection, and what holds when the program ends" },
+              ].map((module) => (
+                <div key={module.num} className="bg-card p-5 rounded-xl border border-border shadow-sm flex items-start gap-5">
+                  <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm shrink-0">
+                    {module.num}
                   </div>
-                  <h3 className="font-semibold text-xl">Week 1: Foundation</h3>
-                </div>
-                <ul className="text-muted-foreground space-y-2 ml-16">
-                  <li>• Executive function assessment + IFS parts map</li>
-                  <li>• Identify your top 3 execution blockers</li>
-                  <li>• Create personalized 8-week roadmap</li>
-                </ul>
-              </div>
-              <div className="bg-card p-8 rounded-xl border border-border shadow-sm">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg">
-                    2
+                  <div>
+                    <h3 className="font-semibold text-base mb-1">{module.title}</h3>
+                    <p className="text-muted-foreground text-sm">{module.desc}</p>
                   </div>
-                  <h3 className="font-semibold text-xl">Weeks 2-7: Execution Loops</h3>
                 </div>
-                <ul className="text-muted-foreground space-y-2 ml-16">
-                  <li>• Biweekly 1:1 coaching sessions (60 min)</li>
-                  <li>• Weekly drop-in group accountability calls</li>
-                  <li>• Between-session support via async channel</li>
-                  <li>• Access to Black Book curriculum + template vault</li>
-                </ul>
-              </div>
-              <div className="bg-card p-8 rounded-xl border border-border shadow-sm">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg">
-                    3
-                  </div>
-                  <h3 className="font-semibold text-xl">Week 8: Integration</h3>
-                </div>
-                <ul className="text-muted-foreground space-y-2 ml-16">
-                  <li>• Measure milestone predictability improvements</li>
-                  <li>• Build sustainable practices for post-program execution</li>
-                  <li>• Capture testimonial and results for case study</li>
-                </ul>
-              </div>
+              ))}
             </div>
             <div className="mt-12 text-center">
               <div className="inline-block bg-card p-6 rounded-xl border-2 border-primary shadow-lg">
-                <p className="text-lg font-semibold text-foreground mb-1">Investment</p>
-                <p className="text-3xl font-bold text-primary">$1,500 <span className="text-lg font-normal text-muted-foreground line-through">$3,000</span></p>
-                <p className="text-sm text-muted-foreground mt-1">Beta Rate | Limited to 10 Founders</p>
+                <p className="text-lg font-semibold text-foreground mb-2">Investment</p>
+                <p className="text-base text-muted-foreground">Pricing is discussed on the discovery call. This is a one-to-one engagement structured around your specific system — not a group course.</p>
               </div>
             </div>
           </div>
@@ -343,22 +323,22 @@ export default function Home() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
-              Is This You?
+              Who this is for
             </h2>
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <h3 className="font-semibold text-lg mb-6 text-primary flex items-center gap-2">
                   <CheckCircle2 className="h-5 w-5" />
-                  Ideal Client Criteria
+                  This is for you if
                 </h3>
                 <ul className="space-y-4">
                   {[
-                    "You're a technical founder or CEO (pre-seed through Series A)",
-                    "Neurodivergent (ADHD, autism, AuDHD) or strongly identify with executive function challenges",
-                    "You have product-market fit (or close) but execution velocity is inconsistent",
-                    "Your team depends on you to unblock decisions and milestones",
-                    "Standard productivity advice doesn't work—you need neurologically-informed systems",
-                    "You're willing to do internal work (IFS) to remove self-sabotage patterns",
+                    "You have ADHD, AuDHD, or strong suspicion of either",
+                    "You've built productivity systems that worked briefly and then failed — more than once",
+                    "You know what to do and can't make yourself do it consistently — and you're tired of blaming yourself for that",
+                    "You're high-functioning by most external measures and running out of capacity underneath",
+                    "You've read the books. Done the therapy. You want something that works with your actual brain.",
+                    "You're interested in understanding your internal system — not just getting new tactics",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
@@ -370,13 +350,13 @@ export default function Home() {
               <div>
                 <h3 className="font-semibold text-lg mb-6 text-destructive flex items-center gap-2">
                   <XCircle className="h-5 w-5" />
-                  Not a fit if
+                  This is not for you if
                 </h3>
                 <ul className="space-y-4">
                   {[
-                    "You're looking for quick hacks without doing deeper parts work",
-                    "You're pre-product and need pure strategy consulting",
-                    "You're unwilling to examine internal resistance patterns",
+                    "You're looking for accountability software or a habit tracker",
+                    "You're in active psychiatric crisis and need clinical stabilization first",
+                    "You want someone to tell you what to do — this program is Self-led by design",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <XCircle className="h-5 w-5 text-destructive shrink-0 mt-0.5" />
@@ -395,34 +375,34 @@ export default function Home() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
-              Founder Results
+              What changes
             </h2>
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-card p-8 rounded-xl border border-border shadow-sm">
                 <blockquote className="text-lg text-muted-foreground italic mb-6">
-                  "Before working with Matt, I'd push product deadlines 3-4 times per quarter. We mapped my perfectionist part and built a merge-gate system. Now we hit 90% of milestones on time. Investors noticed."
+                  "I finally understood why the systems kept failing. It wasn't that I was the problem — it was that I was building on top of something that had never been addressed. Once that changed, the tools actually held."
                 </blockquote>
-                <p className="font-semibold text-foreground">— Founder, Series A</p>
+                <p className="font-semibold text-foreground">— Senior Engineer, 15 years of ADHD</p>
               </div>
               <div className="bg-card p-8 rounded-xl border border-border shadow-sm">
                 <blockquote className="text-lg text-muted-foreground italic mb-6">
-                  "The combination of IFS parts work with practical execution scaffolding was exactly what I needed. I finally understand why I was blocking myself and have systems that actually work with my brain."
+                  "The IFS work combined with the scaffolding was exactly what I needed. I stopped building systems for an imaginary version of myself and started building for the brain I actually have."
                 </blockquote>
-                <p className="font-semibold text-foreground">— Technical Founder, Seed Stage</p>
+                <p className="font-semibold text-foreground">— Tech Lead, AuDHD diagnosis at 38</p>
               </div>
             </div>
             <div className="grid grid-cols-3 gap-6">
               <div className="bg-card p-6 rounded-xl border border-border text-center">
-                <p className="text-3xl font-bold text-primary mb-2">40%</p>
-                <p className="text-sm text-muted-foreground">Reduction in milestone slips</p>
+                <p className="text-lg font-semibold text-primary mb-2">Systems that hold</p>
+                <p className="text-sm text-muted-foreground">Past the first three weeks</p>
               </div>
               <div className="bg-card p-6 rounded-xl border border-border text-center">
-                <p className="text-3xl font-bold text-primary mb-2">60%</p>
-                <p className="text-sm text-muted-foreground">Improvement in decision velocity</p>
+                <p className="text-lg font-semibold text-primary mb-2">Less inner conflict</p>
+                <p className="text-sm text-muted-foreground">Parts working with you, not against you</p>
               </div>
               <div className="bg-card p-6 rounded-xl border border-border text-center">
-                <p className="text-3xl font-bold text-primary mb-2">3mo</p>
-                <p className="text-sm text-muted-foreground">Average engagement retention</p>
+                <p className="text-lg font-semibold text-primary mb-2">Operating from Self</p>
+                <p className="text-sm text-muted-foreground">Not from obligation, fear, or approval</p>
               </div>
             </div>
           </div>
@@ -441,38 +421,34 @@ export default function Home() {
                     <span className="text-sm font-medium text-primary uppercase tracking-wide">Free Resource</span>
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                    The 3 Parts That Block Every Founder
+                    The 3 Parts That Block Every System
                   </h2>
                   <p className="text-muted-foreground mb-6">
-                    A 3-page guide to identifying and negotiating with the internal parts sabotaging your execution.
+                    A short guide to the internal parts that sabotage execution — and what they actually need before anything holds.
                   </p>
                   <ul className="space-y-2 text-muted-foreground mb-8">
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
-                      The Perfectionist: Why "not good enough" keeps you from shipping
+                      The part that builds elaborate systems and refuses to run them
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
-                      The Protector: How fear of judgment creates decision paralysis
+                      The part that fires when things are going well and whispers that you can ease up
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle2 className="h-4 w-4 text-primary" />
-                      The Visionary: When big-picture thinking blocks tactical execution
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-primary" />
-                      Concrete negotiation scripts you can use today
+                      The part underneath both of them — and what it actually needs before anything else holds
                     </li>
                   </ul>
                   <Button size="lg" className="btn-copper" onClick={openModal}>
                     <Download className="mr-2 h-5 w-5" />
-                    Download "The 3 Parts That Block Every Founder" Guide
+                    Download "The 3 Parts That Block Every System" Guide
                   </Button>
                 </div>
                 <div className="hidden md:block w-48 h-64 bg-card rounded-lg border border-border shadow-lg flex items-center justify-center">
                   <div className="text-center p-4">
                     <FileText className="h-16 w-16 text-primary mx-auto mb-4" />
-                    <p className="text-sm font-medium">The 3 Parts That Block Every Founder</p>
+                    <p className="text-sm font-medium">The 3 Parts That Block Every System</p>
                   </div>
                 </div>
               </div>
@@ -491,50 +467,50 @@ export default function Home() {
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="item-1" className="bg-card border border-border rounded-lg px-6">
                 <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                  How is this different from therapy?
+                  Is this therapy?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  This is coaching, not therapy. We focus on business execution outcomes—shipping products, hitting milestones, removing founder bottlenecks. While we use IFS methodology, the goal is startup velocity, not clinical treatment. If deeper clinical needs emerge, I provide referrals to licensed therapists.
+                  No. This is coaching. The distinction matters architecturally: we work with parts at a protector level — building awareness, developing relationship with them, understanding what they're protecting. We do not facilitate deep trauma processing or exile unburdening. If what surfaces requires that depth, I'll say so and refer appropriately.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2" className="bg-card border border-border rounded-lg px-6">
                 <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                  What if I'm not diagnosed neurodivergent but relate to these challenges?
+                  Do I need an ADHD diagnosis?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  You don't need a formal diagnosis. If you identify with executive function challenges and these patterns resonate, the program will work for you.
+                  No. Most clients come with a diagnosis; some come with strong suspicion and a lifetime of evidence. The program is designed for neurodivergent brains. If that's not you, it's probably not the right fit.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3" className="bg-card border border-border rounded-lg px-6">
                 <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                  Do I need to understand IFS before starting?
+                  Do I need to know IFS before starting?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  No. I teach you the relevant IFS concepts as we go. You'll learn by doing, not through theory-heavy coursework.
+                  No. We build the framework from the ground up. By the time we're working with it directly, it's already familiar because we've been using the language from the start.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4" className="bg-card border border-border rounded-lg px-6">
                 <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                  What's the time commitment?
+                  How much time does this take?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  2-4 hours per week: Two 60-minute 1:1 sessions per month, weekly group calls (optional), and 30-60 minutes for between-session exercises.
+                  Sessions are 60–90 minutes. The between-session work varies by module — some weeks require more, some less. Plan for 2–3 hours per week outside of sessions.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-5" className="bg-card border border-border rounded-lg px-6">
                 <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                  What if I don't get results?
+                  What's the investment?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  If you complete the 8-week program, apply the scaffolds, and don't see measurable improvement in execution consistency, I'll refund 50% of your investment.
+                  Pricing is discussed on the discovery call. This isn't a tiered product with a public rate card — it's structured around your engagement, timeline, and what the work actually requires.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-6" className="bg-card border border-border rounded-lg px-6">
                 <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                  Can I expense this as a business cost?
+                  Is this right for me if I'm currently in therapy?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Many founders do. Consult your tax advisor, but executive coaching is typically a deductible business expense.
+                  Often yes. This program operates at a different layer than most therapy — it's coaching-scope IFS plus external scaffolding. Many clients run both simultaneously. The more relevant question is whether you have enough stability to be in forward-motion work right now. We'll figure that out on the call.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -547,23 +523,23 @@ export default function Home() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Make Milestones Predictable?
+              If any of this sounds like the problem you've been trying to solve — let's talk.
             </h2>
             <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Book a free 30-minute Founder Discovery Call. We'll identify your top execution blocker and create a concrete plan for the next milestone.
+              The discovery call is 30 minutes. No pitch. Just an honest conversation about whether this is the right fit.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="btn-copper text-base px-8 py-6" onClick={() => window.open("https://calendly.com/matt-highsignal", "_blank")}>
                 <Calendar className="mr-2 h-5 w-5" />
-                Book Your Discovery Call
+                Book a Discovery Call
               </Button>
               <Button size="lg" variant="outline" className="btn-copper-outline text-base px-8 py-6" onClick={openModal}>
                 <Download className="mr-2 h-5 w-5" />
-                Download "The 3 Parts That Block Every Founder" Guide
+                Download "The 3 Parts That Block Every System" Guide
               </Button>
             </div>
             <p className="text-sm text-muted-foreground mt-6">
-              Not ready to book? Download "The 3 Parts That Block Every Founder" and start identifying your execution blockers today.
+              Not ready to book? Download the free guide and start identifying the parts that are running the show.
             </p>
           </div>
         </div>
@@ -597,7 +573,7 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4">Disclaimer</h4>
               <p className="text-sm text-muted-foreground">
-                High Signal Coaching provides professional coaching services, not therapy or clinical treatment. Services are not intended to diagnose, treat, or cure mental health conditions. Licensed mental health services available separately through Matthew Monroe Simpson Counseling.
+                High Signal Coaching is a professional coaching service, not therapy or clinical treatment. If you are experiencing a mental health emergency, please contact a licensed mental health professional or crisis line. Licensed mental health services available separately through Matthew Monroe Simpson Counseling.
               </p>
             </div>
           </div>
@@ -615,7 +591,7 @@ export default function Home() {
               <DialogHeader>
                 <DialogTitle className="text-2xl">Download the Free Guide</DialogTitle>
                 <DialogDescription>
-                  Get "The 3 Parts That Block Every Founder" delivered straight to your inbox.
+                  Get "The 3 Parts That Block Every System" delivered straight to your inbox.
                 </DialogDescription>
               </DialogHeader>
               <form onSubmit={handleSubmit} className="space-y-4 mt-4">
@@ -685,11 +661,11 @@ export default function Home() {
               </div>
               <DialogTitle className="text-2xl mb-4">Check Your Email!</DialogTitle>
               <p className="text-muted-foreground mb-6">
-                The Milestone Predictability Playbook is on its way. Want to accelerate results?
+                The guide is on its way. If you want to talk through what you find in it, the discovery call is 30 minutes.
               </p>
               <Button className="btn-copper" onClick={() => window.open("https://calendly.com/matt-highsignal", "_blank")}>
                 <Calendar className="mr-2 h-5 w-5" />
-                Book Your Founder Discovery Call
+                Book a Discovery Call
               </Button>
             </div>
           )}
