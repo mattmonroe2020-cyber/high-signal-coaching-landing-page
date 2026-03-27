@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
@@ -29,6 +30,7 @@ import {
 } from "lucide-react";
 
 export default function Home() {
+  const [, navigate] = useLocation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
   const [formData, setFormData] = useState({
@@ -87,23 +89,26 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header/Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <header className="fixed top-0 left-0 right-0 z-50 border-b nav-header-dark">
         <div className="container flex items-center justify-between h-20 md:h-24 gap-4">
           <div className="p-[10px] flex-shrink-0">
-            <img src="/logo.svg" alt="High Signal Coaching" className="nav-logo" style={{ width: '200px', minWidth: '200px' }} />
+            <img src="/logo.svg" alt="High Signal Coaching" className="nav-logo logo-on-dark" style={{ width: '200px', minWidth: '200px' }} />
           </div>
           <nav className="hidden md:flex items-center gap-8 flex-1">
-            <button onClick={() => scrollToSection("problem")} className="nav-link text-muted-foreground hover:text-foreground transition-colors">
+            <button onClick={() => scrollToSection("problem")} className="nav-link nav-link-dark">
               THE PROBLEM
             </button>
-            <button onClick={() => scrollToSection("solution")} className="nav-link text-muted-foreground hover:text-foreground transition-colors">
+            <button onClick={() => scrollToSection("solution")} className="nav-link nav-link-dark">
               SOLUTION
             </button>
-            <button onClick={() => scrollToSection("program")} className="nav-link text-muted-foreground hover:text-foreground transition-colors">
+            <button onClick={() => scrollToSection("program")} className="nav-link nav-link-dark">
               PROGRAM
             </button>
-            <button onClick={() => scrollToSection("faq")} className="nav-link text-muted-foreground hover:text-foreground transition-colors">
+            <button onClick={() => scrollToSection("faq")} className="nav-link nav-link-dark">
               FAQ
+            </button>
+            <button onClick={() => navigate("/artifacts")} className="nav-link nav-link-dark">
+              CURRICULUM
             </button>
           </nav>
           <Button size="sm" className="btn-copper flex-shrink-0" onClick={() => window.open("https://calendly.com/matt-highsignal", "_blank")}>
@@ -377,20 +382,6 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
               What changes
             </h2>
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-card p-8 rounded-xl border border-border shadow-sm">
-                <blockquote className="text-lg text-muted-foreground italic mb-6">
-                  "I finally understood why the systems kept failing. It wasn't that I was the problem — it was that I was building on top of something that had never been addressed. Once that changed, the tools actually held."
-                </blockquote>
-                <p className="font-semibold text-foreground">— Senior Engineer, 15 years of ADHD</p>
-              </div>
-              <div className="bg-card p-8 rounded-xl border border-border shadow-sm">
-                <blockquote className="text-lg text-muted-foreground italic mb-6">
-                  "The IFS work combined with the scaffolding was exactly what I needed. I stopped building systems for an imaginary version of myself and started building for the brain I actually have."
-                </blockquote>
-                <p className="font-semibold text-foreground">— Tech Lead, AuDHD diagnosis at 38</p>
-              </div>
-            </div>
             <div className="grid grid-cols-3 gap-6">
               <div className="bg-card p-6 rounded-xl border border-border text-center">
                 <p className="text-lg font-semibold text-primary mb-2">Systems that hold</p>

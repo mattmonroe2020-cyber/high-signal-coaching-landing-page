@@ -2,11 +2,11 @@
 
 ## Landing Page Sections
 - [x] Hero section with logo, headline, CTAs
-- [x] Problem section (The Founder's Execution Gap)
-- [x] Solution section (The Self-Led Founder Protocol)
+- [x] Problem section (The Tech Professional's Execution Gap)
+- [x] Solution section (The Self-Led Tech Professional)
 - [x] Program structure section (How It Works)
 - [x] Who this is for section (Is This You?)
-- [x] Social proof section (Founder Results)
+- [x] Social proof section (Client Results)
 - [x] Lead magnet CTA section
 - [x] FAQ section with accordions
 - [x] Final CTA section
