@@ -298,6 +298,48 @@
     max-width: 700px;
   }
 
+  /* Dark gradient hero — matches legacy site */
+  .hero-dark {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2218 60%, #1a1a1a 100%);
+    position: relative;
+  }
+
+  .hero-dark::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201, 146, 42, 0.14) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Hero eyebrow label */
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c9922a;
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+  }
+
+  /* Ghost button for dark backgrounds */
+  .btn-ghost-copper {
+    background-color: transparent;
+    border: 2px solid rgba(168, 96, 48, 0.55);
+    color: #e8d5c4;
+    padding: 14px 30px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .btn-ghost-copper:hover {
+    border-color: #A86030;
+    color: #f5e6d4;
+    background-color: rgba(168, 96, 48, 0.12);
+  }
+
   /* Dark navigation bar — matches legacy site #1a1a1a */
   .nav-header-dark {
     background-color: #1a1a1a !important;

@@ -118,13 +118,14 @@ export default function Home() {
       </header>
 
       {/* SECTION 1: HERO */}
-      <section className="hero-section pt-24 md:pt-28">
-        <div className="container">
+      <section className="hero-section hero-dark pt-24 md:pt-28">
+        <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="hero-headline text-foreground tracking-tight">
-              You know what to do.<br className="hidden md:block" /> You've known for a while.<br className="hidden md:block" /> The problem isn't information.
+            <p className="hero-eyebrow">Executive Function Coaching · Built for ADHD/AuDHD Men in Tech</p>
+            <h1 className="hero-headline tracking-tight text-white">
+              Stop <em style={{ fontStyle: 'italic', color: '#e8c878' }}>Spinning.</em> Start Shipping.
             </h1>
-            <p className="hero-subheadline text-muted-foreground text-center">
+            <p className="hero-subheadline text-center" style={{ color: 'rgba(232, 224, 213, 0.85)' }}>
               High Signal Coaching is a self-leadership program for ADHD and AuDHD men in tech who have tried every productivity system and watched each one quietly collapse. The work starts where those systems failed: inside.
             </p>
             <div className="hero-buttons">
@@ -132,7 +133,7 @@ export default function Home() {
                 <Calendar className="mr-2 h-5 w-5" />
                 Book a 30-Minute Discovery Call
               </Button>
-              <Button size="lg" variant="outline" className="btn-copper-outline" onClick={openModal}>
+              <Button size="lg" variant="outline" className="btn-ghost-copper" onClick={openModal}>
                 <Download className="mr-2 h-5 w-5" />
                 Download "The 3 Parts That Block Every System" Guide
               </Button>
