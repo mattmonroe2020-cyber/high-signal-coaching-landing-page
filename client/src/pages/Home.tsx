@@ -123,7 +123,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <p className="hero-eyebrow">Executive Function Coaching · Built for ADHD/AuDHD Men in Tech</p>
             <h1 className="hero-headline tracking-tight text-white">
-              Stop <em style={{ fontStyle: 'italic', color: '#e8c878' }}>Spinning.</em> Start Shipping.
+              Stop <em style={{ fontStyle: 'italic', color: '#e8c878' }}>Spinning.</em> Start Connecting.
             </h1>
             <p className="hero-subheadline text-center" style={{ color: 'rgba(232, 224, 213, 0.85)' }}>
               High Signal Coaching is for ADHD and AuDHD men in tech who have tried every productivity system and watched each one quietly collapse. The work starts where those systems failed: inside.
