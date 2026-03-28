@@ -128,14 +128,10 @@ export default function Home() {
             <p className="hero-subheadline text-center" style={{ color: 'rgba(232, 224, 213, 0.85)' }}>
               High Signal Coaching is a self-leadership program for ADHD and AuDHD men in tech who have tried every productivity system and watched each one quietly collapse. The work starts where those systems failed: inside.
             </p>
-            <div className="hero-buttons">
+            <div className="flex justify-center">
               <Button size="lg" className="btn-copper" onClick={() => window.open("https://calendly.com/matt-highsignal", "_blank")}>
                 <Calendar className="mr-2 h-5 w-5" />
                 Book a 30-Minute Discovery Call
-              </Button>
-              <Button size="lg" variant="outline" className="btn-ghost-copper" onClick={openModal}>
-                <Download className="mr-2 h-5 w-5" />
-                Download "The 3 Parts That Block Every System" Guide
               </Button>
             </div>
           </div>
