@@ -126,7 +126,7 @@ export default function Home() {
               Stop <em style={{ fontStyle: 'italic', color: '#e8c878' }}>Spinning.</em> Start Shipping.
             </h1>
             <p className="hero-subheadline text-center" style={{ color: 'rgba(232, 224, 213, 0.85)' }}>
-              High Signal Coaching is a self-leadership program for ADHD and AuDHD men in tech who have tried every productivity system and watched each one quietly collapse. The work starts where those systems failed: inside.
+              High Signal Coaching is for ADHD and AuDHD men in tech who have tried every productivity system and watched each one quietly collapse. The work starts where those systems failed: inside.
             </p>
             <div className="flex justify-center">
               <Button size="lg" className="btn-copper" onClick={() => window.open("https://calendly.com/matt-highsignal", "_blank")}>
@@ -169,7 +169,7 @@ export default function Home() {
                     <Clock className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-2">The tools aren't wrong, the layer is</h3>
+                    <h3 className="font-semibold text-lg mb-2">The tools aren't wrong, the level is</h3>
                     <p className="text-muted-foreground">Standard productivity tools assume knowing what to do is enough. For a neurodivergent brain, that's architecturally incorrect.</p>
                   </div>
                 </div>
@@ -181,7 +181,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-2">The shame runs underneath everything</h3>
-                    <p className="text-muted-foreground">The real blocker isn't distraction. It's the story — lazy, broken, not capable enough — that fires every time a system fails.</p>
+                    <p className="text-muted-foreground">The real problem isn't distraction. It's the story — lazy, broken, not capable enough — that fires every time a system fails.</p>
                   </div>
                 </div>
               </div>
@@ -198,7 +198,7 @@ export default function Home() {
               </div>
             </div>
             <p className="text-center mt-10 text-lg text-foreground font-medium max-w-2xl mx-auto">
-              The problem has never been the system. It's been building systems on top of a foundation that hasn't been addressed.
+              The problem has never been the system. It's been building systems on top of something that's never been looked at.
             </p>
           </div>
         </div>
@@ -209,10 +209,10 @@ export default function Home() {
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-              Three layers. Most approaches address one.
+              Three levels. Most approaches address one.
             </h2>
             <p className="text-lg text-muted-foreground text-center mb-14 max-w-3xl mx-auto">
-              This is not therapy. It is not another task manager. The tools you've tried aren't wrong — they're working at the wrong layer. There are three. They have to be addressed in order.
+              This is not therapy. It is not another task manager. The tools you've tried aren't wrong — they're working at the wrong level. There are three. They have to be addressed in order.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
@@ -227,7 +227,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Standard systems are designed for a different brain. This layer addresses the neurology directly.</span>
+                    <span>Standard systems are designed for a different brain. This level addresses the neurology directly.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -243,15 +243,11 @@ export default function Home() {
                 <ul className="text-muted-foreground space-y-3 text-left">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Parts of your internal system built the elaborate plans and sabotaged their own implementation</span>
+                    <span>Parts of your internal system built the elaborate plans and then refused to run them</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Understanding what those parts are protecting — and working with them — is the layer most coaching skips</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>This is the layer most coaching skips. It is also the one that determines whether anything else holds.</span>
+                    <span>Most approaches don't get here. This is why the tools don't hold.</span>
                   </li>
                 </ul>
               </div>
@@ -267,7 +263,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>These only hold when the first two layers are doing their job</span>
+                    <span>These only hold when the first two levels are doing their job</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -289,11 +285,11 @@ export default function Home() {
             </h2>
             <div className="space-y-4">
               {[
-                { num: "0", title: "Foundation", desc: "Orientation: the three-layer model, your parts baseline, and the protocol for when systems break" },
+                { num: "0", title: "Foundation", desc: "Orientation: the three-level model, your parts baseline, and the protocol for when systems break" },
                 { num: "1", title: "North Star", desc: "Identify what you actually want — not what you think you should want" },
                 { num: "2", title: "Inner Landscape", desc: "Map your internal system: the parts that protect, the parts that drive, and the Self that can lead" },
                 { num: "3", title: "Hardware", desc: "Understand your neurology without shame — and start designing for it" },
-                { num: "4", title: "Shame Layer", desc: "Name the story underneath the avoidance. Address it before building anything else." },
+                { num: "4", title: "Shame Level", desc: "Name the story underneath the avoidance. Address it before building anything else." },
                 { num: "5", title: "Infrastructure", desc: "Build external systems with your actual brain — not the brain you think you should have" },
                 { num: "6", title: "Less Is More", desc: "Subtract what doesn't belong. Protect what does." },
                 { num: "7", title: "Communication", desc: "Clean agreements, clear limits, direct asks — without the covert contracts" },
@@ -313,7 +309,7 @@ export default function Home() {
             <div className="mt-12 text-center">
               <div className="inline-block bg-card p-6 rounded-xl border-2 border-primary shadow-lg">
                 <p className="text-lg font-semibold text-foreground mb-2">Investment</p>
-                <p className="text-base text-muted-foreground">Pricing is discussed on the discovery call. The engagement is one-to-one, paced around your actual situation — not designed for a hypothetical average client.</p>
+                <p className="text-base text-muted-foreground">Pricing is discussed on the discovery call. It's one-to-one, paced around your actual situation — not designed for a hypothetical average client.</p>
               </div>
             </div>
           </div>
@@ -412,7 +408,7 @@ export default function Home() {
                     The 3 Parts That Block Every System
                   </h2>
                   <p className="text-muted-foreground mb-6">
-                    A short guide to the three internal parts most likely to be running the show — what they are, what they're protecting, and what needs to shift before anything else can hold.
+                    A short guide to the three internal parts most likely to be driving things — what they are, what they're protecting, and what needs to shift before anything else can hold.
                   </p>
                   <ul className="space-y-2 text-muted-foreground mb-8">
                     <li className="flex items-center gap-2">
@@ -458,7 +454,7 @@ export default function Home() {
                   Is this therapy?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  No. This is coaching. The distinction matters architecturally: we work with parts at a protector level — building awareness, developing relationship with them, understanding what they're protecting. We do not facilitate deep trauma processing or exile unburdening. If what surfaces requires that depth, I'll say so and refer appropriately.
+                  No. This is coaching. The distinction matters: we work with parts at a protector level — building awareness, developing relationship with them, understanding what they're protecting. We do not facilitate deep trauma processing or exile unburdening. If what surfaces requires that depth, I'll say so and refer appropriately.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2" className="bg-card border border-border rounded-lg px-6">
@@ -474,7 +470,7 @@ export default function Home() {
                   Do I need to know IFS before starting?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  No. We build the framework from the ground up. By the time we're working with it directly, it's already familiar because we've been using the language from the start.
+                  No. The language builds as we go. By the time we're working with the model directly, it's already familiar because we've been using it from the start.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4" className="bg-card border border-border rounded-lg px-6">
@@ -490,7 +486,7 @@ export default function Home() {
                   What's the investment?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Pricing is discussed on the discovery call. This isn't a tiered product with a public rate card — it's structured around your engagement, timeline, and what the work actually requires.
+                  Pricing is discussed on the discovery call. There's no public rate — it depends on scope, timeline, and what the work actually requires.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-6" className="bg-card border border-border rounded-lg px-6">
@@ -498,7 +494,7 @@ export default function Home() {
                   Is this right for me if I'm currently in therapy?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Often yes. This program operates at a different layer than most therapy — it's coaching-scope IFS plus external scaffolding. Many clients run both simultaneously. The more relevant question is whether you have enough stability to be in forward-motion work right now. We'll figure that out on the call.
+                  Often yes. This program operates at a different level than most therapy — it's coaching-scope IFS plus external scaffolding. Many clients run both simultaneously. The more relevant question is whether you're stable enough to be doing this kind of work right now. We'll figure that out on the call.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -527,7 +523,7 @@ export default function Home() {
               </Button>
             </div>
             <p className="text-sm text-muted-foreground mt-6">
-              Not ready to book? Download the free guide and start identifying the parts that are running the show.
+              Not ready to book? Download the free guide and start seeing which parts are actually driving things.
             </p>
           </div>
         </div>
