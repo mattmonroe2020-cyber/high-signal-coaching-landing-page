@@ -213,10 +213,10 @@ export default function Home() {
         <div className="container">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
-              Why other approaches haven't worked — and what does
+              Three layers. Most approaches address one.
             </h2>
             <p className="text-lg text-muted-foreground text-center mb-14 max-w-3xl mx-auto">
-              This is not therapy. It is not another task manager. It is a framework for understanding why the tools keep failing — and fixing the actual problem, not the symptom.
+              This is not therapy. It is not another task manager. The tools you've tried aren't wrong — they're working at the wrong layer. There are three. They have to be addressed in order.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
@@ -235,7 +235,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>Design for how your brain actually works — not fight it</span>
+                    <span>Work with the architecture instead of against it</span>
                   </li>
                 </ul>
               </div>
@@ -255,7 +255,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span>IFS-informed: find the part, hear what it needs, then return to the tool</span>
+                    <span>This is the layer most coaching skips. It is also the one that determines whether anything else holds.</span>
                   </li>
                 </ul>
               </div>
@@ -317,7 +317,7 @@ export default function Home() {
             <div className="mt-12 text-center">
               <div className="inline-block bg-card p-6 rounded-xl border-2 border-primary shadow-lg">
                 <p className="text-lg font-semibold text-foreground mb-2">Investment</p>
-                <p className="text-base text-muted-foreground">Pricing is discussed on the discovery call. This is a one-to-one engagement structured around your specific system — not a group course.</p>
+                <p className="text-base text-muted-foreground">Pricing is discussed on the discovery call. The engagement is one-to-one, paced around your actual situation — not designed for a hypothetical average client.</p>
               </div>
             </div>
           </div>
@@ -416,7 +416,7 @@ export default function Home() {
                     The 3 Parts That Block Every System
                   </h2>
                   <p className="text-muted-foreground mb-6">
-                    A short guide to the internal parts that sabotage execution — and what they actually need before anything holds.
+                    A short guide to the three internal parts most likely to be running the show — what they are, what they're protecting, and what needs to shift before anything else can hold.
                   </p>
                   <ul className="space-y-2 text-muted-foreground mb-8">
                     <li className="flex items-center gap-2">
@@ -583,7 +583,7 @@ export default function Home() {
               <DialogHeader>
                 <DialogTitle className="text-2xl">Download the Free Guide</DialogTitle>
                 <DialogDescription>
-                  Get "The 3 Parts That Block Every System" delivered straight to your inbox.
+                  The guide comes to your inbox. Nothing else unless you ask for it.
                 </DialogDescription>
               </DialogHeader>
               <form onSubmit={handleSubmit} className="space-y-4 mt-4">
@@ -608,29 +608,6 @@ export default function Home() {
                     required
                   />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="company">Company</Label>
-                  <Input
-                    id="company"
-                    placeholder="Your company name"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="stage">Stage</Label>
-                  <Select value={formData.stage} onValueChange={(value) => setFormData({ ...formData, stage: value })}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select your stage" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="pre-seed">Pre-seed</SelectItem>
-                      <SelectItem value="seed">Seed</SelectItem>
-                      <SelectItem value="series-a">Series A</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
                 <div className="flex items-center space-x-2">
                   <Checkbox
                     id="neurodivergent"
@@ -642,7 +619,7 @@ export default function Home() {
                   </Label>
                 </div>
                 <Button type="submit" className="w-full btn-copper" disabled={submitLead.isPending}>
-                  {submitLead.isPending ? "Sending..." : "Send Me the Playbook"}
+                  {submitLead.isPending ? "Sending..." : "Send Me the Guide"}
                 </Button>
               </form>
             </>
