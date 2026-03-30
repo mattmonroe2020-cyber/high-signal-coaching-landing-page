@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ND Glossary — High Signal Coaching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #F7F7F5;
+      --ink: #2C3E50;
+      --green: #4A7C59;
+      --gold: #A4905E;
+      --blue: #3A6A8C;
+      --purple: #6B4E9B;
+      --green-faint: rgba(74,124,89,0.07);
+      --blue-faint: rgba(58,106,140,0.07);
+      --gold-faint: rgba(164,144,94,0.08);
+      --purple-faint: rgba(107,78,155,0.07);
+      --border: rgba(44,62,80,0.12);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1em;
+      line-height: 1.7;
+    }
+
+    /* ─── LAYOUT ─── */
+    .page-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    /* ─── COVER ─── */
+    .cover {
+      padding: 3.5rem 0 3rem;
+      border-bottom: 2px solid var(--green);
+      margin-bottom: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: rgba(74,124,89,0.045);
+      pointer-events: none;
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      top: 40px; right: 60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(164,144,94,0.05);
+      pointer-events: none;
+    }
+
+    .cover-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-logo img {
+      height: 28px;
+      display: block;
+    }
+
+    .cover-logo-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .cover h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover .subtitle {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--gold);
+      line-height: 1.5;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover .intro {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--ink);
+      max-width: 640px;
+      margin-top: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── NAV ─── */
+    .toc {
+      background: var(--green-faint);
+      border-left: 3px solid var(--green);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 3rem;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .toc h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+
+    .toc ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 2rem;
+    }
+
+    .toc a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .toc a:hover { color: var(--green); border-color: var(--green); }
+
+    /* ─── SECTION ─── */
+    .glossary-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--green);
+    }
+
+    .section-header h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .section-count {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+    }
+
+    /* ─── AUTISM-SPECIFIC SECTION ─── */
+    #autism {
+      background: var(--blue-faint);
+      border-radius: 6px;
+      padding: 1.75rem 1.75rem 0.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    #autism .section-header {
+      border-bottom-color: var(--blue);
+    }
+
+    #autism .section-header h2 {
+      color: var(--blue);
+    }
+
+    #autism .section-count {
+      color: var(--blue);
+      opacity: 0.65;
+    }
+
+    #autism .term {
+      background: rgba(255,255,255,0.85);
+    }
+
+    /* ─── TERM CARD ─── */
+    .term {
+      margin-bottom: 1.5rem;
+      padding: 1.2rem 1.5rem;
+      background: #fff;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      border-left: 3px solid transparent;
+      transition: border-left-color 0.15s;
+    }
+
+    .term:hover {
+      border-left-color: var(--gold);
+    }
+
+    .term-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.97rem;
+      color: var(--ink);
+      margin-bottom: 0.45rem;
+      letter-spacing: 0.01em;
+    }
+
+    .term-def {
+      font-size: 0.96rem;
+      line-height: 1.75;
+      color: var(--ink);
+    }
+
+    .term-source {
+      display: block;
+      margin-top: 0.55rem;
+      font-size: 0.79rem;
+      font-style: italic;
+      color: var(--gold);
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    /* ─── SOCIAL/EMOTIONAL PROCESSING SECTION ─── */
+    #social-emotional {
+      background: var(--purple-faint);
+      border-radius: 6px;
+      padding: 1.75rem 1.75rem 0.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    #social-emotional .section-header {
+      border-bottom-color: var(--purple);
+    }
+
+    #social-emotional .section-header h2 {
+      color: var(--purple);
+    }
+
+    #social-emotional .section-count {
+      color: var(--purple);
+      opacity: 0.65;
+    }
+
+    #social-emotional .term {
+      background: rgba(255,255,255,0.85);
+    }
+
+    /* ─── ND STRENGTHS SECTION ─── */
+    #nd-strengths {
+      background: var(--gold-faint);
+      border-radius: 6px;
+      padding: 1.75rem 1.75rem 0.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    #nd-strengths .section-header {
+      border-bottom-color: var(--gold);
+    }
+
+    #nd-strengths .section-header h2 {
+      color: var(--gold);
+    }
+
+    #nd-strengths .term {
+      background: rgba(255,255,255,0.8);
+    }
+
+    /* ─── FOOTER ─── */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.75rem;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .site-footer p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.76rem;
+      color: var(--gold);
+      letter-spacing: 0.03em;
+    }
+
+    .site-footer a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .site-footer a:hover { text-decoration: underline; }
+
+    /* ─── PRINT ─── */
+    @media print {
+      body { background: #fff; font-size: 10pt; color: #000; }
+
+      .page-wrap { max-width: 100%; padding: 0; }
+
+      .toc { display: none; }
+
+      .cover {
+        padding: 0.75rem 0 1rem;
+        border-bottom: 1.5pt solid #4A7C59;
+        margin-bottom: 1.25rem;
+        page-break-after: avoid;
+      }
+
+      .cover::before, .cover::after { display: none; }
+
+      .cover h1 { font-size: 20pt; }
+
+      .cover .intro { display: none; }
+
+      .glossary-section {
+        page-break-before: always;
+        margin-bottom: 0;
+      }
+
+      .glossary-section:first-of-type {
+        page-break-before: avoid;
+      }
+
+      .term {
+        page-break-inside: avoid;
+        border: none;
+        border-left: 2pt solid #A4905E;
+        border-radius: 0;
+        background: transparent;
+        margin-bottom: 0.8rem;
+        padding: 0.4rem 0.75rem;
+      }
+
+      .term:hover { border-left-color: #A4905E; }
+
+      #autism {
+        background: transparent;
+        padding: 0;
+        border-radius: 0;
+      }
+
+      #autism .section-header { border-bottom-color: #3A6A8C; }
+      #autism .section-header h2 { color: #3A6A8C; }
+
+      #social-emotional {
+        background: transparent;
+        padding: 0;
+        border-radius: 0;
+      }
+
+      #social-emotional .section-header { border-bottom-color: #6B4E9B; }
+      #social-emotional .section-header h2 { color: #6B4E9B; }
+
+      #nd-strengths {
+        background: transparent;
+        padding: 0;
+        border-radius: 0;
+      }
+
+      #nd-strengths .section-header { border-bottom-color: #A4905E; }
+      #nd-strengths .section-header h2 { color: #A4905E; }
+
+      .site-footer {
+        border-top: 0.5pt solid #A4905E;
+        padding-top: 6pt;
+        margin-top: 1rem;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .cover h1 { font-size: 1.85rem; }
+      .page-wrap { padding: 0 1.25rem 3rem; }
+      .term { padding: 1rem 1.1rem; }
+      .toc ul { gap: 0.5rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- COVER -->
+  <header class="cover">
+    <div class="cover-logo">
+      <img src="HS_Logo.svg" alt="High Signal Coaching">
+      <span class="cover-logo-label">High Signal Coaching</span>
+    </div>
+    <h1>ND Glossary</h1>
+    <p class="subtitle">A plain-language reference for neurodivergent adults</p>
+    <p class="intro">
+      These terms show up constantly in conversations about ADHD, autism, and neurodivergence —
+      often without explanation, often used in conflicting ways. This glossary isn't a diagnostic manual.
+      It's a set of working definitions: grounded in research, written for adults, and built to make the
+      concepts actually useful rather than just technically accurate.
+    </p>
+  </header>
+
+  <!-- TABLE OF CONTENTS -->
+  <nav class="toc" aria-label="Glossary sections">
+    <h2>Contents</h2>
+    <ul>
+      <li><a href="#core">Core ND Concepts</a></li>
+      <li><a href="#autism">Autism-Specific</a></li>
+      <li><a href="#adhd">ADHD-Specific</a></li>
+      <li><a href="#learning-diffs">Learning Differences</a></li>
+      <li><a href="#sensory-processing">Sensory Processing</a></li>
+      <li><a href="#shame">Shame and Internalized Ableism</a></li>
+      <li><a href="#brain-body">Interpersonal Neurobiology</a></li>
+      <li><a href="#social-emotional">Social/Emotional Processing</a></li>
+      <li><a href="#nd-strengths">ND Strengths</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 1: CORE ND CONCEPTS             -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="glossary-section" id="core">
+    <div class="section-header">
+      <h2>Core ND Concepts</h2>
+      <span class="section-count">12 terms</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Neurodivergence</div>
+      <p class="term-def">Neurodivergence is a term for brains that developed or function differently from what mainstream systems were designed to accommodate. It includes ADHD, autism, dyslexia, dyspraxia, and related cognitive profiles — not as disorders to be eliminated, but as real variations in how people process the world. The term matters because it shifts the frame from "what's wrong with this person" to "what kind of environment is this person actually in."</p>
+      <span class="term-source">Walker, N. (2021). <em>Neuroqueer heresies: Notes on the neurodiversity paradigm, autistic empowerment, and postnormal possibilities</em>. Autonomous Press.<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Neurotypical</div>
+      <p class="term-def">Neurotypical describes people whose brains develop and function within the range that mainstream institutions were built for. It's not a compliment or an insult — it's a neutral descriptor. It becomes useful the moment you stop treating it as the universal default that everyone else should aspire to.</p>
+      <span class="term-source">Walker, N. (2021). <em>Neuroqueer heresies: Notes on the neurodiversity paradigm, autistic empowerment, and postnormal possibilities</em>. Autonomous Press.<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">ADHD (Attention-Deficit/Hyperactivity Disorder)</div>
+      <p class="term-def">ADHD is a neurological difference in how the brain regulates attention, activation, and impulse control. Despite the name, it isn't a deficit of attention — it's a deficit of <em>consistent</em> attention. You can hyperfocus for six hours on something that grabs you and struggle to read a single paragraph of something you genuinely need to finish. That's not laziness. That's the architecture. Three presentations exist: inattentive (the daydreamer type), hyperactive-impulsive, and combined. Adults are frequently diagnosed late, after years of being told they're bright but unfocused, capable but undisciplined. ADHD isn't a productivity problem. It's a nervous system problem that shows up as a productivity problem in environments designed for neurotypical systems.</p>
+      <span class="term-source">Barkley, R. A. (2012). <em>Executive functions: What they are, how they work, and why they evolved</em>. Guilford Press.<br>Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides]., W. (2021). Rejection sensitive dysphoria and ADHD. <em>ADDitude</em>. https://www.additudemag.com/rejection-sensitive-dysphoria-adhd-emotional-dysregulation/</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Spiky Profile</div>
+      <p class="term-def">A spiky profile means your abilities don't cluster around a consistent average — they spike sharply in some areas and drop sharply in others. You might be genuinely exceptional at abstract reasoning and genuinely impaired at something most people do on autopilot. Standard assessments are a poor fit for this shape of a person, and "but you seem so capable" doesn't tell the full story of how you actually function day to day.</p>
+      <span class="term-source">Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.<br>Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides]., W. (2021). Rejection sensitive dysphoria and ADHD. <em>ADDitude</em>. https://www.additudemag.com/rejection-sensitive-dysphoria-adhd-emotional-dysregulation/</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Twice Exceptional (2e)</div>
+      <p class="term-def">Twice exceptional refers to people who are both gifted and have a learning difference, disability, or ND diagnosis. The two tend to mask each other: the giftedness hides the struggle, the struggle hides the giftedness, and the person ends up without support — or diagnosed only after decades of compensating in ways that left them quietly exhausted. High performance and real impairment can coexist. They often do.</p>
+      <span class="term-source">Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.<br>Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides]., W. (2021). Rejection sensitive dysphoria and ADHD. <em>ADDitude</em>. https://www.additudemag.com/rejection-sensitive-dysphoria-adhd-emotional-dysregulation/</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Late Diagnosis</div>
+      <p class="term-def">Late diagnosis is what happens when ADHD, autism, or another condition goes unidentified until adulthood — often because the person was intelligent enough to compensate, female-presenting enough to be overlooked, or masked well enough that nothing "looked like" a problem until adult-life demands exceeded the capacity to fake it. Getting a diagnosis as an adult doesn't mean the condition wasn't real before. It means the system missed it.</p>
+      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides]., W. (2021). Rejection sensitive dysphoria and ADHD. <em>ADDitude</em>. https://www.additudemag.com/rejection-sensitive-dysphoria-adhd-emotional-dysregulation/<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">The Rumpelstiltskin Effect</div>
+      <p class="term-def">The Rumpelstiltskin Effect is what happens when you get a name for something you've been experiencing your whole life but couldn't identify. It doesn't change anything practically — and yet it changes everything. Having language for your experience can interrupt the shame spiral, open the door to the right support, and let you stop explaining a decades-long pattern as a personal character flaw when it was always a recognizable phenomenon with a known mechanism.</p>
+      <span class="term-source">Levinovitz, A., &amp; Aftab, A. (2025). The Rumpelstiltskin effect: Therapeutic repercussions of clinical diagnosis. <em>BJPsych Bulletin</em>. https://doi.org/10.1192/bjb.2025.10137</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Masking</div>
+      <p class="term-def">Masking is the ongoing effort of appearing neurotypical in environments that weren't built for you. It includes making eye contact when it's uncomfortable, suppressing stimming, forcing calm when you're not calm, and running social scripts that don't come naturally. It's invisible work — which is exactly why people who do it full-time are exhausted in ways that are hard to explain to people who've never had to do it. Masking is most extensively documented in autistic people, but it appears across ADHD and other ND profiles as well.</p>
+      <span class="term-source">Price, D. (2022). <em>Laziness does not exist</em>. Atria Books.<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Sensory Processing Sensitivity (SPS)</div>
+      <p class="term-def">Sensory processing sensitivity describes a nervous system that takes in and processes environmental information more deeply than most. This isn't fragility — it's heightened attunement that makes you notice things others filter out, but also means stimulation lands harder and cumulative overload is real. It's distinct from sensory processing disorder, though there's significant overlap across ND presentations. See also: Highly Sensitive Person, in the Sensory Processing section.</p>
+      <span class="term-source">Aron, E. N. (1997). <em>The highly sensitive person</em>. Broadway Books.<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Divergent Thinking</div>
+      <p class="term-def">Divergent thinking is the capacity to generate multiple possible responses to a question or problem — to resist collapsing too early onto one answer and keep generating instead. It shows up as creative output, non-obvious connections, and the ability to notice what more linear thinkers have filtered out. In ND brains it often runs fast and without deliberate effort.</p>
+      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides]., W. (2021). Rejection sensitive dysphoria and ADHD. <em>ADDitude</em>. https://www.additudemag.com/rejection-sensitive-dysphoria-adhd-emotional-dysregulation/<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Allistic</div>
+      <p class="term-def">A term meaning not autistic. Distinct from neurotypical — a person can be allistic and still neurodivergent. Someone with ADHD but not autism is allistic and neurodivergent simultaneously. The distinction matters because "neurotypical" is often used loosely to mean "not me," when what's actually meant is specifically "not autistic." Allistic is the more precise term for that. You'll encounter it in autistic community spaces and writing, where it's used to discuss autism specifically without folding it into broader ND categories. It carries no derogatory connotation in either direction.</p>
+      <span class="term-source">Walker, N. (2021). <em>Neuroqueer heresies: Notes on the neurodiversity paradigm, autistic empowerment, and postnormal possibilities</em>. Autonomous Press.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Neurodiversity Lite</div>
+      <p class="term-def">A term for a diluted or co-opted version of the neurodiversity paradigm that emphasizes "superpowers" and marketable ND strengths while minimizing or ignoring real impairment, genuine support needs, and systemic barriers. In neurodiversity lite framing, ADHD becomes "thinking outside the box," autism becomes "attention to detail," and the clinical and social challenges get softened or dropped. The critique is that this version makes neurodiversity palatable to employers and institutions by centering the traits that capitalist productivity already values — leaving behind the people whose challenges can't be rebranded as competitive advantages. Knowing this term helps clients distinguish between genuinely affirming frameworks and repackaged productivity narratives that use the language of acceptance while changing nothing structural. See also: Pathology Model vs. Difference Model; Social Model of Disability.</p>
+      <span class="term-source">Walker, N. (2014). Neurodiversity: Some basic terms and definitions [Blog post]. <em>Neurocosmopolitanism</em>. https://neurocosmopolitanism.com/neurodiversity-some-basic-terms-definitions/</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 2: AUTISM-SPECIFIC              -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="autism">
+    <div class="section-header">
+      <h2>Autism-Specific</h2>
+      <span class="section-count">16 terms</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Monotropism</div>
+      <p class="term-def">An autism-specific theory describing how autistic attention tends to flow deeply into a small number of channels rather than distributing evenly across many. The autistic nervous system works in a single tunnel of focus — highly engaged in one channel, less available to others simultaneously. This explains: difficulty task-switching, the pull of special interests, why unexpected transitions feel so disruptive, and why autistic people may seem "elsewhere" even when physically present. When the whole attentional system is pointed at one thing, the depth of engagement is real. Monotropism isn't the same as ADHD hyperfocus — ADHD hyperfocus is pulled by novelty and urgency; monotropism is the default attentional architecture, present whether or not a hyperfocus trigger is active.</p>
+      <span class="term-source">Murray, D., Lesser, M., &amp; Lawson, W. (2005). Attention, monotropism and the diagnostic criteria for autism. <em>Autism</em>, <em>9</em>(2), 139–156. https://doi.org/10.1177/1362361305051398<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Autistic Burnout</div>
+      <p class="term-def">A state of physical and mental exhaustion that builds from the long-term effort of navigating a world designed for a different kind of brain. Not the same as regular burnout or depression — though it can look similar. It's specifically about the cost of sustained masking, sensory overload, and demand accumulation with insufficient recovery. Signs include: sharp loss of skills you normally have (communication, executive function, emotional regulation), complete social withdrawal, extreme fatigue, and a deep inability to tolerate demands that were previously manageable. Recovery requires reducing demands — not just resting. Rest without demand reduction doesn't resolve autistic burnout.</p>
+      <span class="term-source">Price, D. (2022). <em>Laziness does not exist</em>. Atria Books.<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.<br>Raymaker, D. M., Teo, A. R., Steckler, N. A., Lentz, B., Scharer, M., Delos Santos, A., Kapp, S. K., Hunter, M., Joyce, A., &amp; Nicolaidis, C. (2020). "Having all of your internal resources exhausted beyond measure and being left with no clean-up crew": Defining autistic burnout. <em>Autism in Adulthood</em>, <em>2</em>(2), 132–143. https://doi.org/10.1089/aut.2019.0079</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Shutdown vs. Meltdown</div>
+      <p class="term-def">A shutdown is when the nervous system responds to overload by going inward — going quiet, withdrawing, becoming hard to reach. A meltdown is the external version — the system exceeds its threshold and the response comes out visibly. Both are involuntary responses to a nervous system that's past its capacity. Neither is a choice, a performance, or a manipulation. Both require recovery time, not correction or explanation.</p>
+      <span class="term-source">Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.<br>Price, D. (2022). <em>Laziness does not exist</em>. Atria Books.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">PDA (Pathological Demand Avoidance / Pervasive Drive for Autonomy)</div>
+      <p class="term-def">A profile — most often found in autistic people — characterized by an extreme, automatic, anxiety-driven need to control one's own environment and resist demands. The resistance isn't strategic or willful. It's an autonomic response: demands, even minor or self-generated ones, trigger the threat system in a way that feels urgent and unignorable. PDA profiles are often misidentified as oppositional or manipulative. Traditional behavioral approaches consistently backfire — more pressure means more avoidance. What works: low-demand environments, genuine autonomy, collaborative framing. The shift toward "Pervasive Drive for Autonomy" reflects the move toward understanding this as a nervous system strategy rather than a disorder.</p>
+      <span class="term-source">Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.<br>Christie, P., Duncan, M., Fidler, R., &amp; Healy, Z. (2011). <em>Understanding pathological demand avoidance syndrome in children</em>. Jessica Kingsley.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Systemizing</div>
+      <p class="term-def">Systemizing is the drive to analyze, build, and understand rule-based systems — mechanisms, patterns, categories, and how things actually work underneath. It shows up prominently in autistic cognition. Baron-Cohen's empathizing-systemizing theory positions high systemizing as a defining feature of autistic cognitive style — and as a genuine strength when the domain rewards it. At its most challenging, it can collide with the parts of social life that don't follow rules and actively resist being systematized.</p>
+      <span class="term-source">Baron-Cohen, S. (2003). <em>The essential difference: The truth about the male and female brain</em>. Basic Books.<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Restricted and Repetitive Behaviors (RRBs)</div>
+      <p class="term-def">One of the two core diagnostic domains for autism in the DSM-5 (APA, 2013). Criterion B requires at least two of the following four manifestations: stereotyped or repetitive motor movements, insistence on sameness and routines, highly restricted and fixated interests, and atypical sensory responses. The clinical framing names these as deficits, but many autistic people experience them as natural features of how their nervous system organizes and regulates itself. Repetition reduces load. Restricted interests provide reliable access to regulation and pleasure. Routines make a variable world navigable. The clinical question is rarely whether these features exist — it's whether they cause distress or impairment, and if so, what function they serve.</p>
+      <span class="term-source">American Psychiatric Association. (2013). <em>Diagnostic and statistical manual of mental disorders</em> (5th ed.). https://doi.org/10.1176/appi.books.9780890425596<br>Bölte, S., Girdler, S., &amp; Marschik, P. B. (2019). The contribution of environmental exposure to the etiology of autism spectrum disorder. <em>Dialogues in Clinical Neuroscience</em>, <em>21</em>(3), 281–296. https://doi.org/10.31887/DCNS.2019.21.3/sbolte</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Insistence on Sameness</div>
+      <p class="term-def">A term from the DSM-5 (APA, 2013) describing one of the central manifestations of autism's Restricted and Repetitive Behaviors domain: a strong, often anxiety-driven need for predictability — in routines, environments, sequences, and plans. Deviations from expected patterns, even small or seemingly trivial ones, can produce genuine distress. This isn't stubbornness. It's a nervous system that depends on predictability for regulation. When the expected pattern fails to arrive, the system experiences something closer to threat than inconvenience. Routines are not preferences — they're scaffolding. The distress when they break is proportionate to the load the scaffolding was carrying.</p>
+      <span class="term-source">American Psychiatric Association. (2013). <em>Diagnostic and statistical manual of mental disorders</em> (5th ed.). https://doi.org/10.1176/appi.books.9780890425596<br>Zandt, F., Prior, M., &amp; Kyrios, M. (2007). Repetitive behaviour in children with high functioning autism and obsessive compulsive disorder. <em>Journal of Autism and Developmental Disorders</em>, <em>37</em>(2), 251–259. https://doi.org/10.1007/s10803-006-0158-2</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Cognitive Rigidity</div>
+      <p class="term-def">Difficulty shifting from one cognitive frame, expectation, or plan to another — especially when the shift is sudden or externally imposed. Cognitive rigidity reflects a real pattern in autistic neural processing: the executive function of cognitive flexibility (the ability to release one organizing framework and adopt a new one) is genuinely compromised in many autistic presentations. This is not unwillingness. When plans change suddenly, the autistic nervous system isn't simply inconvenienced — it may be neurologically unable to reorganize quickly. The distress produced is proportionate to the difficulty of the shift, not the objective importance of the original plan. DSM-5 Criterion B2 recognizes "inflexible adherence to routines" as a core diagnostic feature. See also: Insistence on Sameness; Autistic Inertia.</p>
+      <span class="term-source">American Psychiatric Association. (2013). <em>Diagnostic and statistical manual of mental disorders</em> (5th ed.). https://doi.org/10.1176/appi.books.9780890425596<br>Pennington, B. F., &amp; Ozonoff, S. (1996). Executive functions and developmental psychopathology. <em>Journal of Child Psychology and Psychiatry</em>, <em>37</em>(1), 51–87. https://doi.org/10.1111/j.1469-7610.1996.tb01380.x</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Autistic Inertia / Behavioral Momentum</div>
+      <p class="term-def">Autistic inertia describes the difficulty many autistic people experience both in initiating actions and in stopping or shifting them. It's not resistance or procrastination in the ordinary sense — it's a feature of a system that, once moving in one direction, has difficulty redirecting, and once at rest, requires significant activation energy to begin. The parallel concept in behavior analysis is behavioral momentum (Mace et al., 1988): the tendency of behavior to maintain its current state in the face of disrupting pressure. In practice this means: starting a task can require far more effort than the task itself warrants; stopping mid-task can feel dysregulating; and abrupt plan changes hit at both ends simultaneously — the current state has to stop, a new one has to start, under the additional pressure of surprise. These compound. Arnold et al. (2023) have described autistic inertia as a distinct, neurologically grounded feature of autistic experience, separate from — though related to — executive function difficulties more broadly. See also: Transition Difficulty; Cognitive Rigidity.</p>
+      <span class="term-source">Arnold, S. R. C., Leatherland, P., &amp; Beardon, L. (2023). Autistic inertia: Responses and strategies. <em>Autism</em>, <em>27</em>(2), 534–546. https://doi.org/10.1177/13623613221092184<br>Mace, F. C., Hock, M. L., Lalli, J. S., West, B. J., Belfiore, P., Pinter, E., &amp; Brown, D. K. (1988). Behavioral momentum in the treatment of noncompliance. <em>Journal of Applied Behavior Analysis</em>, <em>21</em>(2), 123–141. https://doi.org/10.1901/jaba.1988.21-123</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Special Interest</div>
+      <p class="term-def">The deep, sustained, and often encyclopedic engagement with a specific topic, domain, or activity that characterizes many autistic people's experience. Not simply liking something — a special interest has a different quality: absorption, depth, and a degree of access to regulation and pleasure that other activities reliably don't provide. The DSM-5 names "highly restricted, fixated interests that are abnormal in intensity or focus" under Criterion B3 (APA, 2013) — a framing that captures the intensity while missing what the intensity does. Special interests provide reliable dopaminergic access, a sense of mastery, a meaningful identity anchor, and often a primary route to social connection with others who share the domain. In clinical and coaching contexts, special interests are not symptoms to be managed — they're resources to be understood and used. See also: Monotropism.</p>
+      <span class="term-source">American Psychiatric Association. (2013). <em>Diagnostic and statistical manual of mental disorders</em> (5th ed.). https://doi.org/10.1176/appi.books.9780890425596<br>Attwood, T. (2007). <em>The complete guide to Asperger's syndrome</em>. Jessica Kingsley.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">BIMS — Burnout, Inertia, Meltdown, Shutdown</div>
+      <p class="term-def">A descriptive framework used in autistic community and clinical contexts to map four related states of overwhelm and dysregulation that autistic people commonly experience. <strong>Burnout</strong>: the cumulative collapse of adaptive capacity after sustained overload — a state of profound exhaustion, skill loss, and demand intolerance that develops over months and resolves over months (see: Autistic Burnout). <strong>Inertia</strong>: difficulty initiating or stopping actions, related to transition and task-switching difficulty (see: Autistic Inertia). <strong>Meltdown</strong>: an involuntary response to overwhelm that expresses outwardly — emotional flooding, distress, loss of behavioral regulation. <strong>Shutdown</strong>: the inverse — the nervous system withdrawing inward, going quiet, becoming temporarily unreachable. These states often cycle and compound: inertia can precede burnout; prolonged burnout increases vulnerability to meltdown and shutdown; a shutdown can extend into burnout if demands don't reduce. Recognizing which state is present matters because the appropriate responses differ. Pushing through a meltdown escalates it. Pushing through a shutdown deepens it. Pushing through inertia rarely produces movement and usually produces shame. See also: Shutdown vs. Meltdown; Autistic Burnout; Autistic Inertia.</p>
+      <span class="term-source">Raymaker, D. M., Teo, A. R., Steckler, N. A., Lentz, B., Scharer, M., Delos Santos, A., Kapp, S. K., Hunter, M., Joyce, A., &amp; Nicolaidis, C. (2020). "Having all of your internal resources exhausted beyond measure and being left with no clean-up crew": Defining autistic burnout. <em>Autism in Adulthood</em>, <em>2</em>(2), 132–143. https://doi.org/10.1089/aut.2019.0079<br>Arnold, S. R. C., Leatherland, P., &amp; Beardon, L. (2023). Autistic inertia: Responses and strategies. <em>Autism</em>, <em>27</em>(2), 534–546. https://doi.org/10.1177/13623613221092184<br>Price, D. (2022). <em>Unmasking autism</em>. Harmony Books.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Broader Autism Phenotype (BAP)</div>
+      <p class="term-def">A cluster of personality and cognitive traits that resemble autism in character but are milder in expression — present and recognizable, but below the threshold required for a formal diagnosis. BAP traits include reduced social drive, preference for routine, attention to detail, tendency toward literal interpretation, and reduced interest in reciprocal social interaction. People in the BAP range may experience the world in ways that closely resemble autistic experience — may recognize themselves deeply in autistic frameworks, find the same environments overwhelming, and benefit from the same accommodations — without ever meeting or being given a diagnosis. Clinically, this matters: diagnostic thresholds are imprecise instruments, and the absence of a formal diagnosis says nothing about whether autistic-informed approaches are appropriate or useful. The BAP also appears at higher rates in first-degree relatives of autistic people, suggesting shared neurological architecture.</p>
+      <span class="term-source">Piven, J., Palmer, P., Jacobi, D., Childress, D., &amp; Arndt, S. (1997). Broader autism phenotype: Evidence from a family history study of multiple-incidence autism families. <em>American Journal of Psychiatry</em>, <em>154</em>(2), 185–190. https://doi.org/10.1176/ajp.154.2.185<br>Bolton, P., Macdonald, H., Pickles, A., Rios, P., Goode, S., Crowson, M., Bailey, A., &amp; Rutter, M. (1994). A case-control family history study of autism. <em>Psychological Medicine</em>, <em>24</em>(2), 307–321. https://doi.org/10.1017/S0033291700027264</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Prosopagnosia (Face Blindness)</div>
+      <p class="term-def">Difficulty recognizing faces — including faces of people you know well — from facial features alone. Occurs in the general population at approximately 2–2.5%, but research consistently finds substantially elevated rates in autistic people, with some estimates ranging from 30–50% of autistic individuals showing prosopagnosic characteristics. The social consequences are significant and largely invisible: appearing to ignore people you've met before, failing to recognize someone outside the context where you usually see them, needing name badges or voice cues to identify colleagues. These interactions read — to the other person — as rudeness, coldness, or social indifference. They are none of those things. They are a perceptual difference in how the brain processes facial identity, which is both distinct from social motivation and utterly unrelated to how much you care about the person. Many autistic people have navigated prosopagnosia for decades without knowing it existed.</p>
+      <span class="term-source">Duchaine, B., &amp; Nakayama, K. (2006). The Cambridge Face Memory Test: Results for neurologically intact individuals and an investigation of its validity using inverted face stimuli and prosopagnosic participants. <em>Neuropsychologia</em>, <em>44</em>(4), 576–585. https://doi.org/10.1016/j.neuropsychologia.2005.07.001<br>Shah, P., Gaule, A., Sowden, S., Bird, G., &amp; Cook, R. (2015). The 20-item prosopagnosia index (PI20): A self-report instrument for identifying developmental prosopagnosia. <em>Royal Society Open Science</em>, <em>2</em>(6), Article 140343. https://doi.org/10.1098/rsos.140343<br>Kennerknecht, I., Ho, N. Y., &amp; Wong, V. C. N. (2008). Prevalence of hereditary prosopagnosia (HPA) in Hong Kong Chinese population. <em>American Journal of Medical Genetics Part A</em>, <em>146A</em>(22), 2863–2870. https://doi.org/10.1002/ajmg.a.32552</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Weak Central Coherence</div>
+      <p class="term-def">A cognitive theory of autism proposed by Uta Frith (1989) describing a processing style that tends toward detail over gestalt — parts before wholes. Where most brains automatically integrate sensory and cognitive information into contextualized wholes (strong central coherence), this processing style maintains a more local, detail-focused approach: noticing exactly which element is out of place in a complex scene, remembering specifics that others filtered, building knowledge in granular and precise form. The "weak" framing is misleading — what's described is better understood as a different processing priority than a deficit. Frith and Happé later updated the theory toward a "central coherence continuum" rather than a binary. The Enhanced Perceptual Functioning model (Mottron &amp; Dawson, 2006) offers a more affirming reframe of the same underlying observations: the detail-focused processing isn't a failure to integrate — it's a different configuration of perceptual strength. See also: Systemizing; Enhanced Perceptual Functioning.</p>
+      <span class="term-source">Frith, U. (1989). <em>Autism: Explaining the enigma</em>. Blackwell.<br>Happé, F., &amp; Frith, U. (2006). The weak coherence account: Detail-focused cognitive style in autism spectrum disorders. <em>Journal of Autism and Developmental Disorders</em>, <em>36</em>(1), 5–25. https://doi.org/10.1007/s10803-005-0039-0<br>Mottron, L., Dawson, M., Soulières, I., Hubert, B., &amp; Burack, J. (2006). Enhanced perceptual functioning in autism: An update, and eight principles of autistic perception. <em>Journal of Autism and Developmental Disorders</em>, <em>36</em>(1), 27–43. https://doi.org/10.1007/s10803-005-0040-7</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">ABA (Applied Behavior Analysis)</div>
+      <p class="term-def">A behavioral intervention derived from B.F. Skinner's operant conditioning principles, historically the most widely prescribed autism treatment — particularly intensive early childhood versions (Lovaas therapy / discrete trial training). ABA uses reinforcement systems to increase target behaviors and reduce others. Its stated goals have historically included increasing eye contact, reducing stimming, improving compliance, and producing behaviors that appear neurotypical. Supporters cite skill acquisition research; critics — including the majority of the autistic self-advocacy community — argue that ABA suppresses natural regulatory behaviors (stimming, authentic communication), increases masking, and in its historical forms constituted behavioral suppression of autistic identity under the framing of therapy. A significant body of autistic adult testimony describes lasting psychological harm from intensive ABA exposure, including trauma responses. The debate is active and the research is genuinely contested. Clinically: many autistic clients carry ABA history, and that history deserves the same weight as any other formative experience that shaped a person's relationship with their own behavior, self-expression, and compliance.</p>
+      <span class="term-source">Lovaas, O. I. (1987). Behavioral treatment and normal educational and intellectual functioning in young autistic children. <em>Journal of Consulting and Clinical Psychology</em>, <em>55</em>(1), 3–9. https://doi.org/10.1037/0022-006X.55.1.3<br>Kupferstein, H. (2018). Evidence of increased PTSD symptoms in autistics exposed to applied behavior analysis. <em>Advances in Autism</em>, <em>4</em>(1), 19–29. https://doi.org/10.1108/AIA-08-2017-0016<br>Autistic Self Advocacy Network. (2019). <em>ASAN position statement on applied behavior analysis</em>. https://autisticadvocacy.org</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Savant Syndrome</div>
+      <p class="term-def">A phenomenon in which exceptional skill — sometimes far beyond what any non-savant achieves — emerges in a specific, often narrow domain alongside significant developmental or cognitive difference. Savant domains commonly include: calendar calculation, musical performance, visual art and drawing, memory for specific categories, and mathematical computation. Approximately 10% of autistic people show some savant abilities; the rate in the non-autistic population is substantially lower. Treffert (2009) distinguishes prodigious savants (whose abilities would be remarkable in any person) from talented savants (whose abilities are notable relative to their overall profile). The mechanism appears related to the same enhanced local processing and perceptual strengths described in the Enhanced Perceptual Functioning model — the brain's depth of engagement in a specific channel producing output that general-purpose processing can't replicate. The popular conflation of savant syndrome with autism broadly is a significant stereotype: most autistic people are not savants. But for clients who do have savant-range abilities, having precise language for it separates the actual phenomenon from the myth — and from the shame of being told your extraordinary ability in one area should somehow compensate for genuine difficulty in others. See also: Special Interest; Weak Central Coherence.</p>
+      <span class="term-source">Treffert, D. A. (2009). The savant syndrome: An extraordinary condition. A synopsis: Past, present, future. <em>Philosophical Transactions of the Royal Society B: Biological Sciences</em>, <em>364</em>(1522), 1351–1357. https://doi.org/10.1098/rstb.2008.0326<br>Mottron, L., Dawson, M., Soulières, I., Hubert, B., &amp; Burack, J. (2006). Enhanced perceptual functioning in autism: An update, and eight principles of autistic perception. <em>Journal of Autism and Developmental Disorders</em>, <em>36</em>(1), 27–43. https://doi.org/10.1007/s10803-005-0040-7</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 3: ADHD-SPECIFIC                -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="glossary-section" id="adhd">
+    <div class="section-header">
+      <h2>ADHD-Specific</h2>
+      <span class="section-count">14 terms</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Interest-Based Nervous System (IBNS)</div>
+      <p class="term-def">The interest-based nervous system is Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides].'s term for the ADHD motivational architecture. Where neurotypical brains can engage with tasks because they're important or rewarded, ADHD brains require ICNU — interest, challenge, novelty, or urgency — to access full capacity. The ALWAYS/NEVER principle applies: people with ADHD have always been able to do virtually anything when genuinely engaged via ICNU, and have never been able to reliably use importance or consequences as the organizing engine.</p>
+      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides].</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">ICNU — Interest, Challenge, Novelty, Urgency</div>
+      <p class="term-def">ICNU is Dr. William Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides].'s term for the four conditions that reliably activate the ADHD nervous system: something personally interesting, something difficult enough to register as a challenge, something new, or something with real deadline pressure behind it. If none of those four are present, engagement is genuinely hard to access — not because of effort or attitude, but because of how the nervous system is built.</p>
+      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides].</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Now / Not-Now</div>
+      <p class="term-def">The ADHD relationship with time collapses to two categories: Now and Not-Now. There's no richly felt sense of the future pulling you forward, no concrete perception of how "three weeks away" will arrive. Deadlines that exist in the Not-Now register as essentially theoretical until they become Now — at which point they're urgent. This isn't a habit. It's a perceptual architecture that external scaffolding can compensate for where good intentions cannot.</p>
+      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides]., W. (2021). Rejection sensitive dysphoria and ADHD. <em>ADDitude</em>. https://www.additudemag.com/rejection-sensitive-dysphoria-adhd-emotional-dysregulation/<br>Barkley, R. A. (2010). <em>Taking charge of adult ADHD</em>. Guilford Press.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Time Blindness</div>
+      <p class="term-def">Time blindness is the difficulty perceiving the passage of time that's common in ADHD. The future doesn't feel concrete. You can't sense the hour between now and the deadline the way other people can. This makes forward planning genuinely harder — not as a metaphor, but as a literal perceptual gap. External tools (visible timers, written schedules, point-of-performance reminders) address this where willpower cannot.</p>
+      <span class="term-source">Barkley, R. A. (2012). <em>Executive functions: What they are, how they work, and why they evolved</em>. Guilford Press.<br>Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides]., W. (2021). Rejection sensitive dysphoria and ADHD. <em>ADDitude</em>. https://www.additudemag.com/rejection-sensitive-dysphoria-adhd-emotional-dysregulation/</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Hyperfocus</div>
+      <p class="term-def">Hyperfocus is the experience of locked-in, absorbed concentration that occurs when something activates your interest or urgency system. You don't choose it — it chooses you. It can produce genuinely extraordinary output, and it can also swallow three hours while a deadline sits untouched. Neither version is a character flaw. It's the same engagement system running at full capacity with limited directional control.</p>
+      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides].</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Executive Function (EF)</div>
+      <p class="term-def">Executive functions are the self-directed mental actions that allow you to choose goals and organize behavior toward them across time. They include working memory, emotional regulation, task initiation, planning, and cognitive flexibility. In ADHD, executive functions don't fail because you lack knowledge or willpower in the abstract — they fail at the point of performance, in real environments, without the right external supports in place. This is a performance problem, not a knowledge problem.</p>
+      <span class="term-source">Barkley, R. A. (2012). <em>Executive functions: What they are, how they work, and why they evolved</em>. Guilford Press.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Working Memory</div>
+      <p class="term-def">The cognitive system that holds information in mind while you're using it — RAM, not storage. Working memory lets you follow multi-step instructions, remember what you were doing when interrupted, keep track of a conversation thread, and complete tasks that require holding one piece of information while attending to another. ADHD is strongly associated with working memory deficits. The information is heard — it just doesn't stay in the buffer long enough to act on. "You never listen" is both inaccurate and deeply frustrating for exactly this reason. External supports — written notes, checklists, recorded voice memos, structured check-ins — function as external working memory. That's accommodation, not a workaround.</p>
+      <span class="term-source">Barkley, R. A. (2012). <em>Executive functions: What they are, how they work, and why they evolved</em>. Guilford Press.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Task Initiation</div>
+      <p class="term-def">Task initiation is the executive function responsible for starting — the transition from "I need to do this" to actually doing it. In ADHD brains, this switch doesn't fire just because a task is important or because you want to complete it. It needs activation from the ICNU system to come online. The gap between knowing what needs to happen and beginning to do it is real, and it is not stubbornness.</p>
+      <span class="term-source">Barkley, R. A. (2012). <em>Executive functions: What they are, how they work, and why they evolved</em>. Guilford Press.<br>Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides]., W. (2021). Rejection sensitive dysphoria and ADHD. <em>ADDitude</em>. https://www.additudemag.com/rejection-sensitive-dysphoria-adhd-emotional-dysregulation/</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Performance Deficit</div>
+      <p class="term-def">A performance deficit means knowing what to do and not being able to do it at the right time and place. ADHD is a performance problem, not a knowledge problem. The issue isn't that you don't understand how to manage time, initiate tasks, or follow through — it's that information doesn't reliably translate into behavior without the right conditions at the actual moment performance is required. More education about the problem is rarely the missing piece.</p>
+      <span class="term-source">Barkley, R. A. (2012). <em>Executive functions: What they are, how they work, and why they evolved</em>. Guilford Press.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Rejection Sensitive Dysphoria (RSD)</div>
+      <p class="term-def">RSD is an intense, sudden emotional response to perceived rejection, criticism, teasing, or the sense that you've fallen short — by someone else's standards or your own. It arrives fast, feels almost physical, and doesn't respond to logic in the moment. Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides].'s clinical data suggests 98% of ADHD adults identify with it, and 33% report it as the most impairing aspect of their ADHD. It's one of the most significant features of adult ADHD and one of the least named — largely because the shame about having it prevents disclosure.</p>
+      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides].</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Emotional Dysregulation</div>
+      <p class="term-def">Emotional dysregulation in ADHD means emotions arrive faster and hit harder than most people experience them. The trigger is always real — it's not arbitrary; the response is proportionate to how the situation <em>feels</em>, which can look wildly disproportionate to an outside observer. These states are short-lived compared to mood disorders, but while they're happening they're not subtle, and they tend to leave a significant amount of residual shame in their wake.</p>
+      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides]., W. (2021). Rejection sensitive dysphoria and ADHD. <em>ADDitude</em>. https://www.additudemag.com/rejection-sensitive-dysphoria-adhd-emotional-dysregulation/<br>Kooij, J. J. S., Bijlenga, D., Salerno, L., Jaeschke, R., Bitter, I., Balázs, J., Thome, J., Nagy, P., Fernández-Aranda, F., Aragón, J., Baeyens, D., Benjamín, G., Buitelaar, J., Campset, J. C., Contardo, G., Cortese, S., Daskalakis, J., de Girolamo, G., Gundersen, K., ... Asherson, P. (2019). Updated European Consensus Statement on diagnosis and treatment of adult ADHD. <em>European Psychiatry</em>, <em>56</em>, 14–34. https://doi.org/10.1016/j.eurpsy.2018.11.001</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Dopamine &amp; Motivation</div>
+      <p class="term-def">In ADHD, dopamine doesn't function the same way it does in neurotypical brains. The issue isn't that you don't care about things — it's that the brain has a harder time releasing dopamine in response to tasks that are merely important. Most of civilized life is organized around importance. The ADHD nervous system needs interest, urgency, challenge, or novelty to move — not because of weak character, but because of how the reward system is wired.</p>
+      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides]., W. (2021). Rejection sensitive dysphoria and ADHD. <em>ADDitude</em>. https://www.additudemag.com/rejection-sensitive-dysphoria-adhd-emotional-dysregulation/<br>Barkley, R. A. (2012). <em>Executive functions: What they are, how they work, and why they evolved</em>. Guilford Press.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Body Doubling</div>
+      <p class="term-def">Body doubling is the practice of working alongside another person — physically present or on a video call — to activate focus that would otherwise stall. You're not necessarily collaborating; the other person's presence creates an ambient signal the nervous system uses to engage. It's one of the most reliable ADHD management tools that no one mentioned in any school you ever attended.</p>
+      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides].</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Transition Difficulty</div>
+      <p class="term-def">Transition difficulty is the struggle to shift from one task, environment, state, or plan to another. From the outside it can look like avoidance or inflexibility. It isn't. For ADHD, it's primarily an activation problem: stopping a current state requires executive resources that aren't always available on demand, and starting a new one requires its own activation cost. For autistic nervous systems, the dimension of distress is more prominent — and distinctly tied to plan changes. The anticipated plan had already organized the nervous system. When it changes abruptly, what's lost isn't just the plan — it's the internal state the plan had built. The disruption is experienced as a genuine threat: the current state has to stop, a new one has to start, and both are happening at once under the pressure of surprise. The emotional response is proportionate to the nervous system load of that reorganization, not the objective importance of the original plan. This is not drama. It's neurology. See also: Autistic Inertia; Insistence on Sameness; Cognitive Rigidity.</p>
+      <span class="term-source">Barkley, R. A. (2012). <em>Executive functions: What they are, how they work, and why they evolved</em>. Guilford Press.<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.<br>Arnold, S. R. C., Leatherland, P., &amp; Beardon, L. (2023). Autistic inertia: Responses and strategies. <em>Autism</em>, <em>27</em>(2), 534–546. https://doi.org/10.1177/13623613221092184</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 4: LEARNING DIFFERENCES         -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="glossary-section" id="learning-diffs">
+    <div class="section-header">
+      <h2>Learning Differences</h2>
+      <span class="section-count">5 terms</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Dyslexia</div>
+      <p class="term-def">A neurodevelopmental difference in reading, spelling, and language processing — the brain decodes written language differently. Letters may move, words blur, decoding is slow or effortful. Not a vision problem. Not correlated with intelligence. Many dyslexic people are highly capable verbal thinkers who went unidentified for years because they compensated through listening, memory, and context — getting by until demands exceeded the workaround.</p>
+      <span class="term-source">Barkley, R. A. (2012). <em>Executive functions: What they are, how they work, and why they evolved</em>. Guilford Press.<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Dyscalculia</div>
+      <p class="term-def">A neurodevelopmental difference affecting number sense, mathematical reasoning, and the ability to understand quantities and relationships between numbers. Not about intelligence — dyscalculic people often have strong verbal or spatial reasoning and still find basic arithmetic unreliable. Co-occurs frequently with ADHD and dyslexia.</p>
+      <span class="term-source">Barkley, R. A. (2012). <em>Executive functions: What they are, how they work, and why they evolved</em>. Guilford Press.<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Dyspraxia (Developmental Coordination Disorder)</div>
+      <p class="term-def">Difficulty with motor planning and coordination. This shows up in physical coordination — walking, sports, handwriting — but also in sequencing tasks, organizing a workspace, and planning multi-step processes. Common in both autism and ADHD. The brain knows what it wants to do; the body doesn't reliably receive the instruction. Often missed because it's categorized as clumsiness or inattentiveness rather than a recognized neurological difference.</p>
+      <span class="term-source">Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.<br>Barkley, R. A. (2012). <em>Executive functions: What they are, how they work, and why they evolved</em>. Guilford Press.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Hyperlexia</div>
+      <p class="term-def">A condition in which reading decoding ability develops early and significantly exceeds what would be expected given a child's age, overall cognitive level, or reading comprehension. The mechanical act of reading words is well ahead of schedule; understanding what those words mean may not follow. In autism — where it's described as Type II hyperlexia — the advanced word recognition can take on compulsive or repetitive qualities, and the gap between decoding and comprehension is the defining feature. Type I occurs in neurotypical gifted children; Type III appears in non-autistic children and typically resolves. The profile is a sharp instance of the ND spiky shape: exceptional ability in one narrow domain coexisting with significant difficulty in the function that ability is supposed to serve.</p>
+      <span class="term-source">Ostrolenk, A., d'Arc, B. F., Jelenic, P., Samson, F., &amp; Mottron, L. (2017). Hyperlexia: Systematic review, neurocognitive modelling, and outcome. <em>Neuroscience &amp; Biobehavioral Reviews</em>, <em>79</em>, 134–149. https://doi.org/10.1016/j.neubiorev.2017.04.029<br>Grigorenko, E. L., Klin, A., Pauls, D. L., Senft, R., Hooper, C., &amp; Volkmar, F. (2002). A descriptive study of hyperlexia in a clinically referred sample of children with developmental delays. <em>Journal of Autism and Developmental Disorders</em>, <em>32</em>(1), 3–12. https://doi.org/10.1023/A:1017951129044</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Dysgraphia</div>
+      <p class="term-def">A neurodevelopmental learning difference affecting written expression — the physical act of writing and/or the cognitive process of translating thought into written language. Distinct from dyslexia (which affects reading). Dysgraphia shows up as: inconsistent or illegible handwriting, difficulty with letter sizing and spacing, extreme slowness in writing, physical fatigue during writing tasks, and a significant gap between verbal fluency and written output. Many dysgraphic people are highly articulate thinkers whose written work dramatically underrepresents their actual cognitive capacity — which, in educational systems built around written output, produces a long record of being misread, underestimated, or graded on a skill that was never the actual subject being assessed. Common co-occurrence with ADHD and dyspraxia. DSM-5 classifies it under Specific Learning Disorder with impairment in written expression.</p>
+      <span class="term-source">Berninger, V. W., &amp; Wolf, B. (2009). <em>Teaching students with dyslexia, dysgraphia, OWL LD, and dyscalculia: Lessons from teaching and science</em>. Paul H. Brookes.<br>American Psychiatric Association. (2013). <em>Diagnostic and statistical manual of mental disorders</em> (5th ed.). https://doi.org/10.1176/appi.books.9780890425596</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 5: SENSORY PROCESSING           -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="glossary-section" id="sensory-processing">
+    <div class="section-header">
+      <h2>Sensory Processing</h2>
+      <span class="section-count">4 terms</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Synesthesia</div>
+      <p class="term-def">A neurological phenomenon in which stimulation of one sense automatically and involuntarily triggers an experience in another. The most common form is grapheme-color synesthesia — letters and numbers having inherent, consistent colors — but dozens of variants exist: sound-to-color, spatial number sequences, texture-to-emotion, sound-to-taste. The experience is real and consistent; synesthetes aren't describing a metaphor, they're reporting a perception. In autism: Baron-Cohen et al. (2013) found synesthesia approximately three times more prevalent in autistic people than in the general population — roughly 18–19% compared to 3–4%. Proposed mechanisms include atypical cross-modal neural connectivity and reduced inhibitory processing, both of which overlap with the broader autistic sensory profile. Autistic clients describing unusual sensory overlaps are almost certainly reporting accurately.</p>
+      <span class="term-source">Baron-Cohen, S., Johnson, D., Asher, J., Wheelwright, S., Fisher, S. E., Gregersen, P. K., &amp; Allison, C. (2013). Is synaesthesia more common in autism? <em>Molecular Autism</em>, <em>4</em>(1), Article 40. https://doi.org/10.1186/2040-2392-4-40</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Aphantasia</div>
+      <p class="term-def">The absence or near-absence of voluntary mental imagery — the inability to visualize in the mind's eye when deliberately trying to. Most people who have aphantasia were unaware it wasn't universal until they encountered someone describing mental imagery as a concrete visual experience, at which point the discovery tends to be significant. Coined by Adam Zeman and colleagues in 2015. In autism: Keogh &amp; Pearson (2018) found significantly elevated rates of aphantasia-associated characteristics in autistic people, and subsequent research has continued to bear this out. Autistic clients who report being unable to visualize during a guided exercise aren't resisting or avoiding — they may literally not have access to the imagery. Any approach that assumes visualization as a default capacity needs to account for this.</p>
+      <span class="term-source">Zeman, A., Dewar, M., &amp; Della Sala, S. (2015). Lives without imagery — Congenital aphantasia. <em>Cortex</em>, <em>73</em>, 378–380. https://doi.org/10.1016/j.cortex.2015.05.019<br>Keogh, R., &amp; Pearson, J. (2018). The blind mind: No sensory visual imagery in aphantasia. <em>Cortex</em>, <em>105</em>, 53–60. https://doi.org/10.1016/j.cortex.2017.10.012</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Hyperphantasia</div>
+      <p class="term-def">The upper end of the mental imagery spectrum — extremely vivid, involuntary, high-resolution mental imagery that arrives with something close to perceptual force. Where aphantasia is the absence of the mind's eye, hyperphantasia is an overwhelming presence: imagery that can feel indistinguishable from actual perception, that intrudes without invitation, and that may be difficult to control or dismiss. In autism: Zeman et al. (2020) found evidence that autistic people appear overrepresented at <em>both</em> extremes of the imagery spectrum — elevated rates of both aphantasia and hyperphantasia relative to the general population. Atypical sensory integration and differences in inhibitory filtering are plausible mechanisms. The clinical picture is the opposite of aphantasia: some autistic people experience imagery as overwhelming rather than absent.</p>
+      <span class="term-source">Zeman, A., Milton, F., Della Sala, S., Dewar, M., Huntley, J., McGonigle, D., Mohr, H., Nahm, N., Sala, D., Scott, S., Talmi, D., Troscianko, E. T., &amp; Turnbull, O. (2020). Phantasia — The psychological significance of lifelong visual imagery vividness extremes. <em>Cortex</em>, <em>130</em>, 426–440. https://doi.org/10.1016/j.cortex.2020.04.003</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Highly Sensitive Person (HSP)</div>
+      <p class="term-def">Elaine Aron's term for a stable, heritable trait — present in approximately 20% of the population, found across many species — characterized by deeper cognitive processing of sensory and emotional information, heightened sensitivity to subtleties and environmental cues, susceptibility to overwhelm in high-stimulation environments, and strong emotional responsiveness. HSP is not a disorder; it's a trait distribution. In autism: the overlap between the HSP profile and autistic sensory experience is substantial. Liss et al. (2008) found significant correlations between sensory processing sensitivity and autism symptomatology. Many autistic people fit the HSP description closely; the two concepts aren't synonymous — HSP is a dimensional trait, autism is a neurodevelopmental condition — but they share enough of the sensory processing architecture to be clinically relevant to each other. HSP is often the first framework autistic people encounter for their sensory experience, sometimes years before an autism diagnosis arrives. See also: Sensory Processing Sensitivity (SPS), in Core ND Concepts.</p>
+      <span class="term-source">Aron, E. N. (1997). <em>The highly sensitive person</em>. Broadway Books.<br>Liss, M., Timmel, L., Baxley, K., &amp; Killingsworth, P. (2005). Sensory processing sensitivity and its relation to parental bonding, anxiety, and depression. <em>Personality and Individual Differences</em>, <em>39</em>(8), 1429–1439. https://doi.org/10.1016/j.paid.2005.05.007</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 6: SHAME AND INTERNALIZED       -->
+  <!--            ABLEISM                      -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="glossary-section" id="shame">
+    <div class="section-header">
+      <h2>Shame and Internalized Ableism</h2>
+      <span class="section-count">5 terms</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Internalized Ableism</div>
+      <p class="term-def">Internalized ableism is what happens when you spend years absorbing the message that the way your brain works is a personal failing. It shows up as self-blame that sounds more reasonable than it is, relentless comparison to neurotypical performance standards, and the deep belief that trying harder would produce a different person. It's not just low self-esteem — it's a distorted lens that gets reinforced every time you're in a system that wasn't designed for how you work.</p>
+      <span class="term-source">Price, D. (2022). <em>Laziness does not exist</em>. Atria Books.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Pathology Model vs. Difference Model</div>
+      <p class="term-def">The pathology model treats neurodivergence as a disorder — something broken to be fixed, normalized, or eliminated. The difference model holds that ND brains are different, not deficient — that the suffering comes primarily from a mismatch between how those brains work and how most institutions were designed. These aren't just philosophical positions; they lead to different interventions, different goals, and a fundamentally different relationship with your own mind.</p>
+      <span class="term-source">Maté, G. (2022). <em>The myth of normal: Trauma, illness, and healing in a toxic culture</em>. Avery.<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Demand Avoidance</div>
+      <p class="term-def">Demand avoidance is a pattern in which external demands — even from people you trust, even for things you actually want to do — trigger a strong resistance response. The reasonableness of the demand doesn't change the nervous system's reaction to it. It appears prominently in PDA profiles and is connected to the way that autonomy feels necessary for the nervous system to access genuine willingness at all. See also: PDA, in Autism-Specific.</p>
+      <span class="term-source">Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.<br>Christie, P., Duncan, M., Fidler, R., &amp; Healy, Z. (2011). <em>Understanding pathological demand avoidance syndrome in children</em>. Jessica Kingsley.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Performance Exhaustion</div>
+      <p class="term-def">Performance exhaustion is what accumulates when you've spent extended time performing normalcy — masking, compensating, managing how you appear in environments that require significant overhead just to function. It looks like burnout, but it has a specific texture: the fatigue of always running a background process that other people don't have to run. The rest you actually need isn't from doing less — it's from not performing.</p>
+      <span class="term-source">Price, D. (2022). <em>Laziness does not exist</em>. Atria Books.<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.<br>Barkley, R. A. (2012). <em>Executive functions: What they are, how they work, and why they evolved</em>. Guilford Press.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Self-Criticism Spiral</div>
+      <p class="term-def">The self-criticism spiral is the loop where a small failure triggers shame, shame triggers harsher self-judgment, harsher self-judgment drains the motivation to try again, and reduced effort produces more failures that confirm the original story. For people carrying internalized ableism, this loop can run fast enough and often enough that it starts to feel like the permanent weather of being yourself. The loop is real. The conclusions it draws are not.</p>
+      <span class="term-source">Price, D. (2022). <em>Laziness does not exist</em>. Atria Books.<br>Maté, G. (2022). <em>The myth of normal: Trauma, illness, and healing in a toxic culture</em>. Avery.<br>Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides]., W. (2021). Rejection sensitive dysphoria and ADHD. <em>ADDitude</em>. https://www.additudemag.com/rejection-sensitive-dysphoria-adhd-emotional-dysregulation/</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 7: BRAIN & BODY                 -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="glossary-section" id="brain-body">
+    <div class="section-header">
+      <h2>Interpersonal Neurobiology</h2>
+      <span class="section-count">10 terms</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Alexithymia</div>
+      <p class="term-def">Difficulty identifying and naming your own emotions. You know something is happening internally — there's a physical tension, a fog, a pull — but the word for what you're feeling doesn't come easily. Common in autistic people and in ADHD, and in people who grew up in environments where emotions weren't named or welcomed. This isn't emotional unavailability. It's more like trying to read a label in a language you're partially fluent in. The feeling is real; the word is delayed.</p>
+      <span class="term-source">Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Dysregulation and Window of Tolerance</div>
+      <p class="term-def">The window of tolerance — a term developed by Daniel Siegel — is the zone of arousal within which you can think, feel, and respond effectively. Inside it, you can learn, make choices, connect with others, and manage complexity. Outside it in either direction, regulated function breaks down. Dysregulation is the state of having moved outside that window: hyperactivated (flooded, reactive, overwhelmed, emotionally out of proportion) or hypoactivated (collapsed, numb, shut down, hard to reach). For ND nervous systems, the window is often narrower by default — more sensitive to sensory load, social demand, and accumulated fatigue — and returns to baseline more slowly. Dysregulation is not a character flaw. It's information. It tells you that something exceeded your system's current capacity. The goal isn't to never get dysregulated — it's to know what it looks like in your specific system, recognize it earlier in the escalation, and build real pathways back. See also: High / Low Vagal Tone; Nervous System Regulation.</p>
+      <span class="term-source">Siegel, D. J. (1999). <em>The developing mind: How relationships and the brain interact to shape who we are</em>. Guilford Press.<br>van der Kolk, B. (2014). <em>The body keeps the score: Brain, mind, and body in the healing of trauma</em>. Viking.<br>Barkley, R. A. (2012). <em>Executive functions: What they are, how they work, and why they evolved</em>. Guilford Press.<br>Maté, G. (2022). <em>The myth of normal: Trauma, illness, and healing in a toxic culture</em>. Avery.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Interoceptive Differences</div>
+      <p class="term-def">Interoception is the sense of what's happening inside your own body — hunger, thirst, fatigue, temperature, pain, and the physical texture of emotional states. ND people don't simply have "less" interoception — they have a different pattern of it. Some experience reduced or delayed access to internal signals: you don't know you're hungry until you're ravenous, or anxious until you're already flooded, or dysregulated until you're past the point where it was easy to do something about it. Others experience amplified or inconsistent interoceptive signals: the body's internal noise is louder and harder to interpret. In IFS and somatic work, invitations to "notice what you're feeling in your body" may land as a genuine failure of access rather than avoidance — because the signal isn't reliably there. Named awareness and alternative entry points (imagery, temperature, pressure, tension) tend to help more than repeated prompting. Building interoceptive capacity is foundational regulation work — you can't manage a state you can't sense.</p>
+      <span class="term-source">Mahler, K. (2016). <em>Interoception: The eighth sensory system</em>. AAPC Publishing.<br>Garfinkel, S. N., Tiley, C., O'Keeffe, S., Harrison, N. A., Seth, A. K., &amp; Critchley, H. D. (2016). Discrepancies between dimensions of interoception in autism: Implications for emotion and anxiety. <em>Biological Psychology</em>, <em>114</em>, 117–126. https://doi.org/10.1016/j.biopsycho.2015.11.013<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.<br>Price, D. (2022). <em>Laziness does not exist</em>. Atria Books.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Proprioception</div>
+      <p class="term-def">Your body's sense of where it is in space — awareness of your own position, movement, and how your body parts relate to each other without looking. Poor proprioception is common in autism and dyspraxia: bumping into things, misjudging distances, applying too much or too little force. Many people with proprioceptive differences seek out input — deep pressure, tight spaces, heavy work — because that input helps the nervous system feel grounded. It's regulation, not habit.</p>
+      <span class="term-source">Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.<br>Neff, M. A. (2023). <em>Self-care for autistic people: 100+ ways to recharge, de-stress, and unmask</em>. Zeitgeist.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Stimming (Self-Stimulatory Behavior)</div>
+      <p class="term-def">Repetitive movements or sensory behaviors used to regulate the nervous system: rocking, hand-flapping, finger-snapping, humming, tapping, hair-twisting, pacing. Common in autism and ADHD. Often suppressed in public because it "looks strange." Stimming is regulatory — it helps manage arousal, process sensory input, express emotion, and maintain focus. Suppressing it costs metabolic energy and is a core component of masking. Many adults who've masked for years don't know they stim anymore because they've been suppressing it long enough that the behavior disappeared from view — not from the system.</p>
+      <span class="term-source">Price, D. (2022). <em>Unmasking autism: Discovering the new faces of neurodiversity</em>. Harmony Books.<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Sensory Overload</div>
+      <p class="term-def">Sensory overload happens when cumulative input from the environment exceeds what your nervous system can process without shutting down or escalating. It's not sensitivity as weakness — it's a nervous system that processes more, or processes it more deeply, running out of bandwidth. The triggers are real. The response is involuntary. And the recovery takes longer than people who've never experienced it tend to expect or accommodate.</p>
+      <span class="term-source">Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Nervous System Regulation</div>
+      <p class="term-def">Nervous system regulation is the capacity to move through different states of activation and return to a functional baseline. For ND people, the baseline may sit at higher activation, the swings may be wider, and recovery may take longer than neurotypical systems require. Regulation isn't about being calm all the time — it's about having enough range to function, enough awareness to know where you are, and enough tools to come back from the edges.</p>
+      <span class="term-source">Barkley, R. A. (2012). <em>Executive functions: What they are, how they work, and why they evolved</em>. Guilford Press.<br>Maté, G. (2022). <em>The myth of normal: Trauma, illness, and healing in a toxic culture</em>. Avery.<br>Porges, S. W. (2011). <em>The polyvagal theory: Neurophysiological foundations of emotions, attachment, communication, and self-regulation</em>. W. W. Norton.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">SR Resource Pool (Self-Regulation Depletion)</div>
+      <p class="term-def">The self-regulation resource pool is the finite reservoir of cognitive and emotional effort you draw on for every executive function task. It depletes across a day of masking, managing sensory load, and performing neurotypically under social scrutiny. When it's depleted, subsequent self-regulation gets harder — not as a metaphor, but as the actual neurological mechanism behind the post-work crash, the evening shutdown, and ND burnout. Rest replenishes it. Willpower does not.</p>
+      <span class="term-source">Barkley, R. A. (2012). <em>Executive functions: What they are, how they work, and why they evolved</em>. Guilford Press.<br>Baumeister, R. F., Bratslavsky, E., Muraven, M., &amp; Tice, D. M. (1998). Ego depletion: Is the active self a limited resource? <em>Journal of Personality and Social Psychology</em>, <em>74</em>(5), 1252–1265. https://doi.org/10.1037/0022-3514.74.5.1252</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Sensory Gating</div>
+      <p class="term-def">The neurological process by which the brain filters sensory information before it reaches conscious awareness — screening out input deemed redundant so that attention can focus on what's novel or relevant. In neurotypical processing, sensory gating operates automatically and efficiently: background noise, repeated sounds, and peripheral movement get pre-filtered, never entering conscious experience. In many autistic brains, sensory gating is less effective — more information gets through the filter. The result is that autistic perception is genuinely richer in information: more arrives, less is screened, and what would be background for others is foreground. This is the neurological mechanism underlying much of what gets labeled autistic sensory sensitivity. The richness of the experience and the overwhelm come from the same source. Autistic perception is not broken. It is a different configuration of the filter — one that admits more of the world, at a corresponding processing cost. Research using prepulse inhibition paradigms and auditory evoked potential studies has consistently documented reduced sensory gating in autistic populations. See also: Interoceptive Differences; Sensory Overload.</p>
+      <span class="term-source">Orekhova, E. V., Stroganova, T. A., Prokofyev, A. O., Nygren, G., Gillberg, C., &amp; Elam, M. (2008). Sensory gating in young children with autism: Relation to age, IQ, and EEG gamma oscillations. <em>Biological Psychology</em>, <em>77</em>(2), 179–187. https://doi.org/10.1016/j.biopsycho.2007.10.002<br>Marco, E. J., Hinkley, L. B. N., Hill, S. S., &amp; Nagarajan, S. S. (2011). Sensory processing in autism: A review of neurophysiologic findings. <em>Nature Reviews Neuroscience</em>, <em>12</em>(7), 418–424. https://doi.org/10.1038/nrn3003<br>Mottron, L., Dawson, M., Soulières, I., Hubert, B., &amp; Burack, J. (2006). Enhanced perceptual functioning in autism: An update, and eight principles of autistic perception. <em>Journal of Autism and Developmental Disorders</em>, <em>36</em>(1), 27–43. https://doi.org/10.1007/s10803-005-0040-7</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">High / Low Vagal Tone</div>
+      <p class="term-def">Vagal tone refers to the activity and responsiveness of the vagus nerve — the primary pathway of the parasympathetic nervous system, and a central mechanism in Stephen Porges's Polyvagal Theory. High vagal tone means the system can shift efficiently between states of activation and rest — moving from calm to engaged to alert and back — with speed, flexibility, and good recovery. Low vagal tone means the system has difficulty returning to baseline after stress, tends toward chronic sympathetic activation (fight-or-flight) or chronic dorsal vagal shutdown (freeze/collapse), and has less range in the middle. In ND populations, low resting vagal tone appears more frequently than in neurotypical samples and is associated with difficulties in emotional regulation, social engagement, and physiological recovery from stress. Vagal tone is not fixed: it responds to predictable, safe relationships; slow diaphragmatic breathing; rhythmic movement; and trauma-informed care over time. It is a measure of nervous system flexibility, not character.</p>
+      <span class="term-source">Porges, S. W. (2011). <em>The polyvagal theory: Neurophysiological foundations of emotions, attachment, communication, and self-regulation</em>. W. W. Norton.<br>Porges, S. W., &amp; Dana, D. (Eds.). (2018). <em>Clinical applications of the polyvagal theory: The emergence of polyvagal-informed therapies</em>. W. W. Norton.</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 8: SOCIAL/EMOTIONAL PROCESSING  -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="social-emotional">
+    <div class="section-header">
+      <h2>Social/Emotional Processing</h2>
+      <span class="section-count">4 terms</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">The Double Empathy Problem</div>
+      <p class="term-def">A theory proposed by autistic researcher Damian Milton (2012) that fundamentally reframes how we understand autistic social difficulty. The standard model of autism locates the problem inside the autistic brain: insufficient theory of mind, reduced empathy, impaired social cognition. The Double Empathy Problem argues this framing is structurally wrong. When autistic and non-autistic people interact, both parties experience difficulty understanding and predicting each other. The non-autistic person struggles to read the autistic person just as genuinely as the reverse — but because the majority group has been designated as the standard, only one party's difficulty gets named as a deficit. Research throughout the 2010s and 2020s has increasingly supported this: autistic people communicate effectively with each other; the breakdown happens specifically across neurotypes. This reframes autism-specific social differences as a mismatch phenomenon rather than a one-sided autistic deficit. The clinical and coaching implication is significant — it shifts the question from "what's wrong with this person's social brain" to "what kind of environment and what kind of interlocutors is this person in." Many clients have spent years believing they are fundamentally broken at human connection. The Double Empathy Problem doesn't resolve the difficulty, but it relocates its source. See also: Brain Differences in Social Processing (Autism).</p>
+      <span class="term-source">Milton, D. E. M. (2012). On the ontological status of autism: The "double empathy problem." <em>Disability &amp; Society</em>, <em>27</em>(6), 883–887. https://doi.org/10.1080/09687599.2012.710008</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Injustice Sensitivity</div>
+      <p class="term-def">A heightened emotional and cognitive response to perceived unfairness — one's own, or on behalf of others. As a trait, injustice sensitivity has been studied formally as a stable individual difference (Schmitt et al., 2005), with four dimensions: victim sensitivity (unfairness toward oneself), observer sensitivity (unfairness toward others), beneficiary sensitivity (guilt when one benefits unfairly), and perpetrator sensitivity (distress at causing harm). In ADHD, elevated injustice sensitivity is well-documented: participants with ADHD show significantly higher victim and observer sensitivity than neurotypical controls (Gudjonsson et al., 2014; Boor et al., 2012). For autistic individuals, the mechanism is somewhat different but the effect is real — autistic moral cognition tends to be grounded in explicit, consistent rule-following, meaning violations of fairness register as genuine rule-breaches rather than negotiable social friction. The response can appear disproportionate to observers, but it is proportionate to how the violation actually landed. Injustice sensitivity is not a flaw in calibration. In ND systems where so many things have been unfair for so long, it is often an accurate detector with a very sensitive trigger. See also: Rules-Based Thinking.</p>
+      <span class="term-source">Schmitt, M., Gollwitzer, M., Maes, J., &amp; Arbach, D. (2005). Justice sensitivity: Assessment and location in the personality space. <em>European Journal of Psychological Assessment</em>, <em>21</em>(4), 202–211. https://doi.org/10.1027/1015-5759.21.4.202<br>Gudjonsson, G. H., Sigurdsson, J. F., Sigfusdottir, I. D., &amp; Young, S. (2014). An epidemiological study of ADHD symptoms among young persons and the relationship with antisocial behavior and personality. <em>Psychiatry Research</em>, <em>220</em>(3), 1035–1041. https://doi.org/10.1016/j.psychres.2014.08.011<br>Boor, R., Matthys, W., Cuperus, J. M., &amp; van Engeland, H. (2012). Sensitivity to unfairness and ADHD-related problem behavior. <em>European Child &amp; Adolescent Psychiatry</em>, <em>21</em>(Suppl. 1), S69. https://doi.org/10.1007/s00787-012-0275-7</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Rules-Based Thinking</div>
+      <p class="term-def">A cognitive style in which moral, social, and practical reasoning is organized around explicit, consistent rules rather than implicit, context-dependent social norms. Prominent in autistic cognition and common in ADHD. Rules-based thinkers often find arbitrary or inconsistently applied social conventions genuinely confusing or distressing — not because they lack empathy or social awareness, but because the rules don't hold consistently and the inconsistency is itself the problem. They tend to apply standards with greater evenness than neurotypical peers, holding themselves and others to the same criteria regardless of social hierarchy or relational proximity. Baron-Cohen's systemizing theory (2002) is partly about this: the drive to understand the underlying rule-based logic of things, including social systems. This is a genuine strength in domains where consistent principle application matters — law, ethics, science, design. It creates friction in social environments where the unspoken rules are unstated, flexible, and understood to be unevenly applied. Many rules-based thinkers have spent years being told they're "too literal," "too rigid," or "taking things too seriously" — when in fact they were applying the actual stated rules, and confused that others weren't. See also: Injustice Sensitivity; Systemizing.</p>
+      <span class="term-source">Baron-Cohen, S. (2002). The extreme male brain theory of autism. <em>Trends in Cognitive Sciences</em>, <em>6</em>(6), 248–254. https://doi.org/10.1016/S1364-6613(02)01904-6<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Brain Differences in Social Processing (Autism)</div>
+      <p class="term-def">Neuroimaging research has identified consistent differences in how autistic brains process social information. Reduced activation in the fusiform face area — typically engaged during face recognition — has been replicated across multiple studies (Schultz et al., 2000). The amygdala shows both hyperactivation in response to social stimuli and structural differences in many autistic samples (Baron-Cohen et al., 2000). Connectivity within the "social brain network" — including the temporal-parietal junction, medial prefrontal cortex, and superior temporal sulcus, regions involved in reading intentions and mental states — is characteristically different. These findings have been widely interpreted as evidence of social processing deficits. Damian Milton's Double Empathy Problem (2012) complicates that framing significantly: autistic people process social information differently, but communicate effectively with each other. The difficulties are most pronounced in cross-neurotype interactions — which means the problem is bidirectional, not localized to the autistic brain. This reframes autism-specific social differences as a mismatch phenomenon rather than a one-sided autistic deficit. The brain is not broken. It is different. The environment — built for a different kind of social processor — is where the friction lives.</p>
+      <span class="term-source">Schultz, R. T., Gauthier, I., Klin, A., Fulbright, R. K., Anderson, A. W., Volkmar, F., Skudlarski, P., Lacadie, C., Cohen, D. J., &amp; Gore, J. C. (2000). Abnormal ventral temporal cortical activity during face discrimination among individuals with autism and Asperger syndrome. <em>Nature Neuroscience</em>, <em>3</em>(2), 187–193. https://doi.org/10.1038/72140<br>Baron-Cohen, S., Ring, H. A., Bullmore, E. T., Wheelwright, S., Ashwin, C., &amp; Williams, S. C. R. (2000). The amygdala theory of autism. <em>NeuroReport</em>, <em>11</em>(9), 1591–1598. https://doi.org/10.1097/00001756-200006050-00002<br>Dapretto, M., Davies, M. S., Pfeifer, J. H., Scott, A. A., Sigman, M., Bookheimer, S. Y., &amp; Iacoboni, M. (2006). Understanding emotions in others: Mirror neuron dysfunction in children with autism spectrum disorders. <em>Nature Neuroscience</em>, <em>9</em>(1), 28–30. https://doi.org/10.1038/nn1611<br>Milton, D. E. M. (2012). On the ontological status of autism: The "double empathy problem." <em>Disability &amp; Society</em>, <em>27</em>(6), 883–887. https://doi.org/10.1080/09687599.2012.710008</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 9: ND STRENGTHS                 -->
+  <!-- ═══════════════════════════════════════ -->
+  <section id="nd-strengths">
+    <div class="section-header">
+      <h2>ND Strengths</h2>
+      <span class="section-count">4 terms</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Cognitive Dynamism</div>
+      <p class="term-def">Cognitive dynamism is the ADHD tendency toward rapid, non-linear, intuitive problem-solving — the ability to see an angle on a problem that methodical thinkers might reach eventually, if at all. It's what makes some people with ADHD extraordinarily effective in fast-moving, ambiguous, high-stakes environments. The same brain that resists a tedious spreadsheet can produce genuinely original thinking when the conditions are right and the stakes are real.</p>
+      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides].</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Divergent Thinking (as Asset)</div>
+      <p class="term-def">When the ND tendency to generate multiple responses, question default assumptions, and notice unexpected connections gets pointed at a problem worth solving, it's a genuine advantage. The challenge isn't generating the ideas — it's building enough structure around the process that the ideas have somewhere to land. The capacity itself is a real asset, not a consolation prize for attention difficulties.</p>
+      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides]., W. (2021). Rejection sensitive dysphoria and ADHD. <em>ADDitude</em>. https://www.additudemag.com/rejection-sensitive-dysphoria-adhd-emotional-dysregulation/<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Hyperfocus (as Asset)</div>
+      <p class="term-def">When hyperfocus lands on something that matters — a creative project, a problem worth solving, a domain that activates genuine interest — it produces a depth of engagement and quality of output that's genuinely hard to replicate through sustained effort alone. The challenge isn't generating this state; it's directing it. Building a life with enough ICNU-rich work that hyperfocus shows up where it's useful — that's the actual design question.</p>
+      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides].</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Pattern Recognition</div>
+      <p class="term-def">Pattern recognition is the capacity to find structure in noise, identify recurring dynamics, and see connections across domains that aren't obviously related. ND brains often do this intuitively and rapidly. It underlies strong diagnostic reasoning, creative synthesis, and the ability to notice what everyone else has been too close to see. It's also why many ND people pick up on social and emotional dynamics that the people directly involved have completely missed.</p>
+      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD shapes your perceptions, emotions &amp; motivation</em> [CME lecture slides]., W. (2021). Rejection sensitive dysphoria and ADHD. <em>ADDitude</em>. https://www.additudemag.com/rejection-sensitive-dysphoria-adhd-emotional-dysregulation/<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>High Signal Coaching &nbsp;&middot;&nbsp; <a href="https://highsignalcoaching.com">highsignalcoaching.com</a></p>
+    <p>This glossary is for informational and coaching purposes only. It is not a clinical diagnostic tool and does not constitute a diagnosis or treatment recommendation.</p>
+  </footer>
+
+</div><!-- /page-wrap -->
+</body>
+</html>

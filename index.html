@@ -326,6 +326,25 @@
       font-size: 0.95rem;
       color: var(--text-main);
     }
+    .problem-card {
+      background: var(--bg-section);
+      border-radius: var(--radius-card);
+      padding: 28px 24px;
+      box-shadow: var(--card-shadow);
+      border-top: 3px solid var(--manager);
+    }
+    .problem-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+    .problem-card p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
 
     /* ─── THREE-CLUSTER PAIN POINTS ────────────────────── */
     .cluster-grid {
@@ -854,6 +873,7 @@
     }
     .magnet-card.adhd { border-top: 4px solid var(--manager); }
     .magnet-card.ifs  { border-top: 4px solid var(--gold); }
+    .magnet-card.nd   { border-top: 4px solid var(--self); }
     .magnet-tag {
       display: inline-block;
       font-size: 0.68rem;
@@ -866,6 +886,7 @@
     }
     .magnet-card.adhd .magnet-tag { background: var(--manager); color: #fff; }
     .magnet-card.ifs  .magnet-tag { background: var(--gold); color: #1a1a1a; }
+    .magnet-card.nd   .magnet-tag { background: var(--self); color: #fff; }
     .magnet-card h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.15rem;
@@ -933,6 +954,21 @@
     }
     .magnet-card.adhd .kit-form button { background: var(--manager); color: #fff; }
     .magnet-card.ifs  .kit-form button { background: var(--gold); color: #1a1a1a; }
+    .magnet-card.nd   .kit-form button { background: var(--self); color: #fff; }
+    .magnet-link-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 22px;
+      background: var(--self);
+      color: #fff;
+      border-radius: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .magnet-link-btn:hover { opacity: 0.85; }
     .kit-form button:hover { opacity: 0.85; }
     .kit-form button:disabled { opacity: 0.6; cursor: default; }
     .kit-success {
@@ -1133,7 +1169,6 @@
     <li><a href="#framework">Framework</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#milestones">Milestones</a></li>
-    <li><a href="#resources">Free Resources</a></li>
     <li><a href="https://calendly.com/matt-highsignal/30min" target="_blank" class="nav-cta">Schedule a Call</a></li>
   </ul>
 </nav>
@@ -1144,40 +1179,15 @@
      HERO
 ══════════════════════════════════════════════════════════ -->
 <section class="hero">
-  <p class="hero-eyebrow">Executive Function Coaching · Built for ADHD/AuDHD Men in Tech</p>
-  <h1>Stop <em>Spinning.</em> Start Shipping.</h1>
-  <p class="hero-sub">When you're engaged, you're unstoppable. You know it. So does everyone who's watched you work. The problem isn't capability — it's building reliable access to the state where your capability lives. Executive function coaching for ADHD/AuDHD men in tech who know exactly what to do — and can't reliably do it.</p>
+  <p class="hero-eyebrow">IFS-Informed · ND-Affirming · Executive Function Coaching for ADHD/AuDHD Men in Tech</p>
+  <h1>Stop <em>Spinning.</em> Start Connecting.</h1>
+  <p class="hero-sub">The process starts with inner work before moving to outer scaffolding.</p>
   <div class="hero-cta-row">
     <a href="https://calendly.com/matt-highsignal/30min" target="_blank" class="btn-primary">Schedule a Discovery Call</a>
     <a href="#framework" class="btn-ghost">See How It Works</a>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     STATS BAR — Leading with Tier 1 evidence
-══════════════════════════════════════════════════════════ -->
-<div class="stats-bar">
-  <div class="stat-item">
-    <div class="stat-num">5–10</div>
-    <div class="stat-label">Hours reclaimed weekly</div>
-    <div class="stat-tier">Clinical observation · Tier 3</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">90%</div>
-    <div class="stat-label">Meeting prep completion with time-blocking vs. 60% without</div>
-    <div class="stat-tier">Tier 3</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">80%</div>
-    <div class="stat-label">Task completion with body doubling vs. 20% solo</div>
-    <div class="stat-tier">Tier 3</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">d=0.8</div>
-    <div class="stat-label">Effect size: external scaffolding outperforms willpower-based approaches</div>
-    <div class="stat-tier">Barkley · Tier 1 (RCT)</div>
-  </div>
-</div>
 
 <!-- ═══════════════════════════════════════════════════════
      PROBLEM
@@ -1185,49 +1195,28 @@
 <section id="problem">
   <div class="section-inner">
     <p class="section-eyebrow">The Real Problem</p>
-    <!-- KB source: Silberman_NeuroTribes — "different OS, not wrong OS" -->
-    <h2>If <em>this is you</em>, you're not failing.<br>You're running a different operating system.</h2>
-    <!-- KB source: McCabe_HowToADHD — "Not attention deficit — attention dysregulation" -->
-    <p class="lead">Your peers keep telling you to "just focus" or "build better habits." They're running on different hardware. These patterns aren't character flaws — they're predictable ADHD/AuDHD execution signatures. ADHD isn't a shortage of attention — it's attention that can't be reliably directed on demand. The same nervous system that gets lost in a Slack thread can spend six uninterrupted hours on a problem it finds genuinely interesting. That's not a deficit. That's dysregulation.</p>
+    <h2>The Execution Gap</h2>
+    <p class="lead">Not a character flaw. Not a willpower problem.<br><strong>A system designed for the wrong brain.</strong></p>
 
-    <div class="cluster-grid">
-      <div class="cluster">
-        <h4 class="cluster-title">The Execution Gap</h4>
-        <ul class="cluster-list">
-          <li>Chronic task paralysis — you know the next move and can't initiate it</li>
-          <li>Time blindness — deadlines arrive as emergencies, not schedules</li>
-          <li>Distraction spirals and hyperfocus crashes</li>
-          <li>Procrastination that looks like laziness but runs on shame and avoidance</li>
-        </ul>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>The system collapses</h3>
+        <p>You built it. It worked for three weeks. Then it stopped working and you became the problem again.</p>
       </div>
-      <div class="cluster">
-        <h4 class="cluster-title">The Internal Resistance</h4>
-        <ul class="cluster-list">
-          <li>Self-sabotage at the threshold — progress triggers a part that pulls the brake</li>
-          <!-- KB source: Price_UnmaskingAutism — masking cost / translation layer; "high-functioning doesn't mean low-cost" -->
-          <li>Impostor syndrome and masking — performing competence and neurotypical behaviors while privately drowning, and paying a real cognitive cost for every hour you run the translation layer</li>
-          <li>Low motivation that isn't laziness — it's a nervous system and parts problem</li>
-          <li>RSD (rejection-sensitive dysphoria) spiking during code review, feedback, or conflict</li>
-        </ul>
+      <div class="problem-card">
+        <h3>The tools aren't wrong, the level is</h3>
+        <p>Standard productivity tools assume knowing what to do is enough. For a neurodivergent brain, that's architecturally incorrect.</p>
       </div>
-      <div class="cluster">
-        <h4 class="cluster-title">The Relational Cost</h4>
-        <ul class="cluster-list">
-          <li>Impulsive overcommitment — saying yes because it's exciting, paying for it for weeks</li>
-          <!-- KB source: Price_UnmaskingAutism — autistic burnout as translation cost, not just sprint-crash -->
-          <li>Burnout cycles driven by hero sprints followed by collapse — and, for many, the accumulated cost of running a translation layer between how you think and how the environment expects you to show up</li>
-          <li>Delegation paralysis — redoing work at midnight because handing it off feels impossible</li>
-          <li>Relationship erosion from chronic unreliability — at work and at home</li>
-        </ul>
+      <div class="problem-card">
+        <h3>The shame runs underneath everything</h3>
+        <p>The real problem isn't distraction. It's the story — lazy, broken, not capable enough — that fires every time a system fails.</p>
+      </div>
+      <div class="problem-card">
+        <h3>The part that's supposed to run the system won't</h3>
+        <p>There's a part of your internal system that shut down trust in tools a long time ago. Until it's addressed, no system holds.</p>
       </div>
     </div>
-
-    <div class="divider-line" style="margin-top: 48px;"></div>
-    <!-- KB sources: McCabe_HowToADHD (now/not-now binary; signals not verdicts), Barkley_TakingCharge (4 activation conditions; time blindness), Price_LazinessDoesNotExist (signals not verdicts) -->
-    <p class="italic-lead">
-      These aren't discipline failures. They're working memory deficits (Martinussen et al., 2005, d=0.7–1.0), time-perception gaps (Barkley et al., 2001), and under-resourced protective parts doing their jobs. The ADHD brain doesn't experience time as a spectrum — it's binary: now, or not-now. A deadline three weeks out registers nearly the same as one three months out, until it suddenly doesn't. That's not poor planning. That's a different temporal architecture. The ADHD nervous system doesn't run on importance — it runs on interest, urgency, novelty, and challenge. The fix isn't more willpower. It's building external systems that generate the conditions your nervous system actually responds to. When you can't start, that's not a verdict — it's information. Something in your activation architecture is missing. The question isn't "what's wrong with me?" — it's "which condition does my system need right now?"
-    </p>
-    <p class="evidence-note">Research citations: Tier 1 (RCT) and Tier 2 (EF literature). Clinical observations marked Tier 3.</p>
+    <p class="lead" style="margin-top: 32px; text-align: center; font-weight: 500;">The problem has never been the system. It's been building systems on top of something that's never been looked at.</p>
   </div>
 </section>
 
@@ -1263,6 +1252,23 @@
         <p>External accountability and generic strategies — without addressing the internal parts patterns that cause the cycle to repeat.</p>
         <p class="tried-reason">Surface-level scaffolding only</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     IFS HOOK — The Parts Problem
+══════════════════════════════════════════════════════════ -->
+<section class="section-white">
+  <div class="section-inner">
+    <p class="section-eyebrow">The Second Problem</p>
+    <h2>Something in you<br><em>keeps pulling the brake.</em></h2>
+    <p class="lead">Fix the hardware problem — build a system designed for how your brain actually works — and an IFS problem shows up. A Manager part that builds the elaborate plan and then quietly stops running it. A Firefighter that fires when momentum builds and whispers that you can ease up. An underlying Exile whose unresolved burden makes every new system feel unsafe before it starts.</p>
+    <p class="lead" style="margin-top: -16px;">Standard ADHD coaching has no language for this. It assumes the right system will be used. But these parts aren't obstacles — they're protectors doing exactly what protectors do. They learned, at some point, that effort leads to failure or exposure. Until they've been heard by Self, the next system meets the same fate. Not because you're broken. Because IFS protection is intelligent, and it doesn't expire automatically just because circumstances change.</p>
+
+    <div class="framework-bridge" style="margin-top: 32px;">
+      <p>Internal Family Systems doesn't try to override those parts. It approaches them with curiosity — understanding what they're protecting, what they need from Self, and what it would take for them to trust a different way forward. The result isn't a more disciplined you. It's a you whose internal system has actually agreed to what you're building.</p>
+      <p style="margin-top: 16px; font-style: italic; color: var(--text-mid);">The goal isn't to silence your parts. It's to lead them — from Self.</p>
     </div>
   </div>
 </section>
@@ -1557,54 +1563,57 @@
 <section class="section-white" id="deliverables">
   <div class="section-inner">
     <p class="section-eyebrow">What You Leave With</p>
-    <h2>Not just insight.<br><em>Artifacts you actually use.</em></h2>
-    <p class="lead">Most coaching ends and the insights live in your notes app, untouched. This protocol ends with a complete operating system — named documents you own and maintain after the engagement closes.</p>
+    <h2>Not just insight.<br><em>A map of yourself — and the scaffolding to match.</em></h2>
+    <p class="lead">Most coaching hands you frameworks. This one hands you documents. Named artifacts you built, own, and maintain after the engagement closes — a complete picture of your internal system, your brain's actual specs, and the scaffolding designed around both.</p>
 
     <div class="deliverables-grid">
-      <div class="deliverable-card">
-        <div class="icon">🧭</div>
-        <h4>Milestone Charter</h4>
-        <p>Your 12-week North Star with specific KPIs. The reference document when you're off course.</p>
-      </div>
+      <!-- IFS Layer -->
       <div class="deliverable-card">
         <div class="icon">🗺️</div>
-        <h4>IFS Parts Map</h4>
-        <p>Your named internal parts with their patterns, triggers, and negotiated micro-agreements.</p>
+        <h4>Parts Map</h4>
+        <p>Your named internal parts — what they protect, how they show up, what they need to hear from you before they'll cooperate. Not a diagnosis. A roster.</p>
       </div>
+      <div class="deliverable-card">
+        <div class="icon">🧭</div>
+        <h4>North Star Charter</h4>
+        <p>Your direction, built from genuine want — not obligation or "I should." Includes your parts' buy-in. Built to hold when motivation evaporates.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="icon">🔄</div>
+        <h4>When It Breaks Card</h4>
+        <p>A 7-step reset for when a system stalls. Finds the part before touching the tool. The thing that makes every other artifact survivable.</p>
+      </div>
+      <!-- ND Layer -->
+      <div class="deliverable-card">
+        <div class="icon">🧠</div>
+        <h4>ND Brain Profile</h4>
+        <p>Your personal ICNU map — Interest, Challenge, Novelty, Urgency. How your nervous system actually activates, what kills momentum, and what it needs to function without performing.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="icon">🔍</div>
+        <h4>Shame Cycle Map</h4>
+        <p>Your personal shame pattern: trigger → protection → cost → repeat. Named, mapped, defused. The loop that was running before you knew it had a name.</p>
+      </div>
+      <div class="deliverable-card">
+        <div class="icon">⚡</div>
+        <h4>Masking Audit</h4>
+        <p>Where you're running the translation layer, what it costs, and what becomes available when you stop. The performance most ND men have been giving for decades — assessed honestly, for the first time.</p>
+      </div>
+      <!-- EF Layer -->
       <div class="deliverable-card">
         <div class="icon">⚙️</div>
-        <h4>Custom EF Scaffold</h4>
-        <p>3–4 purpose-built scaffolds targeting your highest-friction EF deficits — each with a minimum viable version and a 2-week measurement metric.</p>
+        <h4>EF Scaffold Blueprint</h4>
+        <p>Environment-first scaffolding built around your actual deficit profile — not generic productivity advice repurposed for ADHD. Derived from your ND Brain Profile and your parts' genuine consent.</p>
       </div>
       <div class="deliverable-card">
-        <div class="icon">🔧</div>
-        <h4>Tool Integration Map</h4>
-        <p>One simplified stack that doesn't require working memory to maintain.</p>
-      </div>
-      <div class="deliverable-card">
-        <div class="icon">🤝</div>
-        <h4>Delegation Brief</h4>
-        <p>One-page handoff contract with done-when criteria, decision authority, and 3 merge gates. The system that lets you actually let go.</p>
-      </div>
-      <div class="deliverable-card">
-        <div class="icon">🧘</div>
-        <h4>Regulation Protocol Card</h4>
-        <p>3-minute protocols for physiological regulation, parts check-in, and dysregulation detection — accessible in under 10 seconds when activation is rising.</p>
-      </div>
-      <div class="deliverable-card">
-        <div class="icon">📊</div>
-        <h4>KPI Dashboard</h4>
-        <p>Weekly review cadence with a feedback loop that tells you if the system is working.</p>
+        <div class="icon">🎛️</div>
+        <h4>Signal Filter</h4>
+        <p>Your personal keep/cut/reduce map. What to protect, what to stop, and why less is a design principle — not a productivity hack or a sign of giving up.</p>
       </div>
       <div class="deliverable-card">
         <div class="icon">📋</div>
-        <h4>System Handbook</h4>
-        <p>Living document covering every scaffold: what it is, why it exists, what breaks without it. Built to survive org changes, new managers, and bad quarters.</p>
-      </div>
-      <div class="deliverable-card">
-        <div class="icon">💬</div>
-        <h4>Feedback Loop Card</h4>
-        <p>Your verbatim script for difficult conversations — observation, impact, request, repair. Pre-written so the Explosive Part doesn't author it instead.</p>
+        <h4>Self-Led Operating Manual</h4>
+        <p>The living document: your brain, your parts, your scaffolds, your values. Built to survive org changes, new managers, and bad quarters. The thing that replaces your coach when the engagement ends.</p>
       </div>
     </div>
   </div>
@@ -1618,6 +1627,7 @@
     <p class="section-eyebrow">Fit Assessment</p>
     <h2>Built for ADHD/AuDHD Men in Tech<br><em>Who Are Done Winging It</em></h2>
     <p class="lead">ADHD/AuDHD men in tech: engineers, senior ICs, tech managers. The protocol is calibrated for a specific intersection of experience, role, and need. Read both columns honestly.</p>
+    <p class="lead" style="margin-top: -16px; font-style: italic; color: var(--text-mid);">If part of you is saying "I should be able to figure this out myself" — that's the part we start with.</p>
 
     <div class="cluster-grid" style="margin-bottom:40px;">
       <div class="cluster">
@@ -1715,58 +1725,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     FREE RESOURCES / LEAD MAGNETS
-══════════════════════════════════════════════════════════ -->
-<section class="section-alt" id="resources">
-  <div class="section-inner">
-    <p class="section-eyebrow">Free Resources</p>
-    <h2>Not ready to book?<br><em>Start here instead.</em></h2>
-    <p class="lead">Two tools built for ADHD/AuDHD men in tech — no pitch, no follow-up sequence, just the worksheets. Enter your email and they're yours instantly.</p>
-
-    <div class="magnets-grid">
-
-      <!-- ADHD Time Architecture -->
-      <div class="magnet-card adhd">
-        <span class="magnet-tag">ADHD · Executive Function</span>
-        <h3>The ADHD Time Architecture Worksheet</h3>
-        <p class="magnet-desc">Stop running on neurotypical time math. Recalibrate your week around the ×2.5 rule, hyperfocus windows, and 15-min transition buffers.</p>
-        <ul class="magnet-bullets">
-          <li>Commitment inventory with ×2.5 time reality check</li>
-          <li>Hyperfocus conditions map — protect what actually works</li>
-          <li>Non-negotiable buffer rules built into your calendar</li>
-          <li>This week's 3 non-negotiables with time blocks</li>
-        </ul>
-        <form class="kit-form" onsubmit="submitKitForm(event,'ad47ba8d38',this,'ADHD_Time_Architecture_Worksheet.pdf')">
-          <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" />
-          <button type="submit">Get the Worksheet →</button>
-        </form>
-        <div class="kit-success" id="kit-ok-ad47ba8d38">✓ Your download started. Check your inbox too — a copy is on its way.</div>
-        <div class="kit-error"   id="kit-err-ad47ba8d38">Something went wrong. Please try again.</div>
-      </div>
-
-      <!-- Who's Driving -->
-      <div class="magnet-card ifs">
-        <span class="magnet-tag">IFS · Parts Mapping</span>
-        <h3>Who's Driving? A Parts Mapping Starter</h3>
-        <p class="magnet-desc">A 15-minute self-inventory to identify which internal parts are running your decisions right now — and negotiate one concrete agreement with each.</p>
-        <ul class="magnet-bullets">
-          <li>Body check-in to locate the part before naming it</li>
-          <li>Manager, Firefighter, and Exile mapping with micro-agreements</li>
-          <li>Self-energy check — what you have access to right now</li>
-          <li>One commitment: specific action, exact time</li>
-        </ul>
-        <form class="kit-form" onsubmit="submitKitForm(event,'c6c6665cb3',this,'Whos_Driving_Parts_Mapping_Starter.pdf')">
-          <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" />
-          <button type="submit">Get the Worksheet →</button>
-        </form>
-        <div class="kit-success" id="kit-ok-c6c6665cb3">✓ Your download started. Check your inbox too — a copy is on its way.</div>
-        <div class="kit-error"   id="kit-err-c6c6665cb3">Something went wrong. Please try again.</div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- ═══════════════════════════════════════════════════════
      FAQ
@@ -1779,41 +1737,33 @@
     <div class="faq-list">
 
       <div class="faq-item">
-        <p class="faq-q">Is this therapy? How is it different from working with my current therapist?</p>
-        <p class="faq-a">This is executive function coaching — not therapy. IFS parts language is used as an operational self-leadership framework, not for trauma processing or clinical treatment. In practice, that means a brief check-in at the start of each session — noticing what part is running the show, naming it, and negotiating one concrete agreement before we get to work. If you're in therapy, this protocol complements that work by focusing specifically on operational execution. Matt maintains a separate therapy practice under his WA state license and can coordinate with your therapist with your consent.</p>
+        <p class="faq-q">Is this therapy?</p>
+        <p class="faq-a">No. This is coaching. The distinction matters: we work with parts at a protector level — building awareness, developing relationship with them, understanding what they're protecting. We do not facilitate deep trauma processing or exile unburdening. If what surfaces requires that depth, I'll say so and refer appropriately.</p>
       </div>
 
       <div class="faq-item">
-        <p class="faq-q">Do I need an official ADHD diagnosis to apply?</p>
-        <!-- KB source: Silberman_NeuroTribes — Kanner's narrow diagnostic window; late-diagnosis as clinical system failure, not personal failure -->
-        <p class="faq-a">A formal diagnosis is not required to start — but you should have a strong clinical suspicion or a diagnosis in progress. The protocol is calibrated for ADHD/AuDHD executive function profiles specifically. If you're undiagnosed, a neuropsychological evaluation is recommended before or during the engagement. If you're wondering why no one caught this earlier — the short answer is that the diagnostic criteria in use during most of our childhoods were calibrated for severe, nonverbal presentations. Verbal, high-achieving, technically capable people were specifically excluded from those criteria, not because they masked well enough, but because the diagnostic window was built too narrow. That's a clinical system failure, not a personal one.</p>
+        <p class="faq-q">Do I need an ADHD diagnosis?</p>
+        <p class="faq-a">No. Most clients come with a diagnosis; some come with strong suspicion and a lifetime of evidence. The program is designed for neurodivergent brains. If that's not you, it's probably not the right fit.</p>
       </div>
 
       <div class="faq-item">
-        <p class="faq-q">How is this different from ADHD coaching I've tried before?</p>
-        <p class="faq-a">Most ADHD coaching gives you external accountability and generic strategies. This protocol integrates two layers most programs skip: the <em>software layer</em> (protective IFS parts driving your patterns — and a method for befriending them, not just managing them) and the <em>hardware-specific scaffold</em> (systems built around your actual deficit profile, not a generic ADHD checklist). You leave with named artifacts, not just habits.</p>
+        <p class="faq-q">Do I need to know IFS before starting?</p>
+        <p class="faq-a">No. The language builds as we go. By the time we're working with the model directly, it's already familiar because we've been using it from the start.</p>
       </div>
 
       <div class="faq-item">
-        <p class="faq-q">What does the evidence actually say about this approach?
-          <span class="faq-tier">Evidence Tiers</span>
-        </p>
-        <p class="faq-a"><strong>Tier 1 (RCT-validated):</strong> External scaffolding outperforms willpower-based approaches for ADHD (Barkley, 2015, d=0.8). Working memory deficits are well-established (Martinussen et al., 2005, d=0.7–1.0). Structured skills-based intervention combined with medication produces significantly better outcomes on executive function, organizational performance, and functional impairment than medication alone — moderate to large effects (Safren et al., n=80 RCT). <strong>Tier 2 (EF literature):</strong> Time-perception deficits in ADHD (Barkley et al., 2001). <strong>Tier 3 (clinical observation):</strong> Stats on body doubling and time-blocking come from Matt's client pattern data — not RCTs. RSD is Tier 3 (not RCT-validated). The Reducer Principle is a heuristic (Tier 0), not research-based.</p>
-      </div>
-
-      <div class="faq-item">
-        <p class="faq-q">How much time does this require per week?</p>
-        <p class="faq-a">One 60-minute 1:1 session per week, plus 30–60 minutes of between-session deliverable work. Total estimate: 90–120 minutes per week. This is built with ADHD pacing in mind — milestone requirements are designed to the "minimum viable artifact" standard, not perfectionist completion.</p>
-      </div>
-
-      <div class="faq-item">
-        <p class="faq-q">What if I fall behind or miss a milestone?</p>
-        <p class="faq-a">Missing milestones is a data point, not a failure. The protocol includes a built-in review process when deliverables aren't completed — this is often where the most important parts mapping happens. There's no punitive structure. Pacing adjustments are part of the engagement, not exceptions to it.</p>
+        <p class="faq-q">How much time does this take?</p>
+        <p class="faq-a">Sessions are 60–90 minutes. The between-session work varies by module — some weeks require more, some less. Plan for 2–3 hours per week outside of sessions.</p>
       </div>
 
       <div class="faq-item">
         <p class="faq-q">What's the investment?</p>
-        <p class="faq-a">Investment details are discussed during the discovery call after application review. The engagement is priced as a professional consulting retainer, not a course. If you're wondering whether it's worth it: calculate your current ADHD tax (missed revenue, rework hours, administrative chaos, burnout recovery time) across 12 weeks. That's the comparison point.</p>
+        <p class="faq-a">Pricing is discussed on the discovery call. There's no public rate — it depends on scope, timeline, and what the work actually requires.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Is this right for me if I'm currently in therapy?</p>
+        <p class="faq-a">Often yes. This program operates at a different level than most therapy — it's coaching-scope IFS plus external scaffolding. Many clients run both simultaneously. The more relevant question is whether you're stable enough to be doing this kind of work right now. We'll figure that out on the call.</p>
       </div>
 
     </div>
@@ -1825,8 +1775,8 @@
 ══════════════════════════════════════════════════════════ -->
 <section class="cta-section" id="cta">
   <p class="cta-eyebrow">Ready to Run a Better Operating System?</p>
-  <h2>The signal is already there.<br><em>We're just clearing the noise.</em></h2>
-  <p>30 minutes. No pitch. Just an honest conversation about what you're dealing with and whether the protocol is the right tool for where you are right now.</p>
+  <h2>If any of this sounds like the problem you've been trying to solve — let's talk.</h2>
+  <p class="lead">The discovery call is 30 minutes. No pitch. Just an honest conversation about whether this is the right fit.</p>
   <div class="cta-row">
     <a href="https://calendly.com/matt-highsignal/30min" target="_blank" class="btn-primary">Schedule a Discovery Call</a>
     <a href="understanding-your-parts.html" class="btn-ghost">Explore the Parts Framework →</a>
