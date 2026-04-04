@@ -1,426 +1,528 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ND Glossary — High Signal Coaching</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ND Glossary | High Signal Coaching</title>
+  <meta name="description" content="A plain-language reference glossary for neurodivergent adults — ADHD, autism, executive function, and related terms. Grounded in research, written for real use." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.highsignalcoaching.com/nd-glossary.html" />
+  <meta property="og:title" content="ND Glossary | High Signal Coaching" />
+  <meta property="og:description" content="Plain-language definitions for the terms that come up constantly in ADHD and neurodivergent conversations — grounded in research, written for real use." />
+  <meta property="og:image" content="https://www.highsignalcoaching.com/og-image.png" />
+  <link rel="canonical" href="https://www.highsignalcoaching.com/nd-glossary.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg: #F7F7F5;
-      --ink: #2C3E50;
-      --green: #4A7C59;
-      --gold: #A4905E;
-      --blue: #3A6A8C;
-      --purple: #6B4E9B;
-      --green-faint: rgba(74,124,89,0.07);
-      --blue-faint: rgba(58,106,140,0.07);
-      --gold-faint: rgba(164,144,94,0.08);
-      --purple-faint: rgba(107,78,155,0.07);
-      --border: rgba(44,62,80,0.12);
-    }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg-main:      #f0ebe4;
+      --bg-section:   #ffffff;
+      --bg-alt:       #f7f3ee;
+      --nav-bg:       #1a1a1a;
+      --nav-text:     #e8e0d5;
+      --gold:         #c9922a;
+      --gold-light:   #f5e6cc;
+      --gold-bg:      #fdf5e6;
+      --manager:      #1a4f7a;
+      --manager-light:#d4e6f1;
+      --manager-bg:   #eaf4fb;
+      --fire:         #b94017;
+      --fire-light:   #fde8df;
+      --fire-bg:      #fff3ef;
+      --exile:        #5b2d82;
+      --exile-light:  #e8d5f5;
+      --exile-bg:     #f5edfb;
+      --self:         #1a7a4f;
+      --self-light:   #d4f1e6;
+      --self-bg:      #eafbf3;
+      --text-main:    #1c1c1c;
+      --text-mid:     #444;
+      --text-light:   #777;
+      --divider:      #d8cfc4;
+      --card-shadow:  0 2px 12px rgba(0,0,0,0.07);
+      --radius-card:  8px;
+      --radius-sm:    4px;
+    }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: 'Lora', Georgia, serif;
-      font-size: 1em;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
       line-height: 1.7;
     }
 
+    /* ─── NAV ─── */
+    nav {
+      background: var(--nav-bg);
+      padding: 0 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+    .nav-links > li > a {
+      color: var(--nav-text);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .nav-links > li > a:hover { opacity: 1; color: var(--gold); }
+    .nav-cta {
+      background: var(--gold) !important;
+      color: #1a1a1a !important;
+      padding: 8px 20px !important;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      opacity: 1 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: #e0a52e !important; }
+
+    /* ─── DROPDOWN ─── */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-btn {
+      background: none;
+      border: none;
+      color: var(--nav-text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: opacity 0.2s, color 0.2s;
+      padding: 0;
+    }
+    .nav-dropdown-btn:hover,
+    .nav-dropdown.open .nav-dropdown-btn { opacity: 1; color: var(--gold); }
+    .dropdown-arrow { font-size: 0.65rem; transition: transform 0.2s; }
+    .nav-dropdown.open .dropdown-arrow { transform: rotate(180deg); }
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 2px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #222;
+      border-top: 2px solid var(--gold);
+      min-width: 220px;
+      z-index: 200;
+      padding: 6px 0;
+      border-radius: 0 0 6px 6px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+    .nav-dropdown.open .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      color: var(--nav-text);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0.85;
+      transition: opacity 0.15s, color 0.15s, background 0.15s;
+    }
+    .nav-dropdown-menu a:hover { color: var(--gold); opacity: 1; background: rgba(201,146,42,0.08); }
+    .nav-dropdown-menu a.active { color: var(--gold); opacity: 1; }
+
+    /* ─── HAMBURGER ─── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 102;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     /* ─── LAYOUT ─── */
     .page-wrap {
-      max-width: 780px;
+      max-width: 860px;
       margin: 0 auto;
-      padding: 0 2rem 4rem;
+      padding: 0 2rem 5rem;
     }
 
-    /* ─── COVER ─── */
+    /* ─── COVER / PAGE HERO ─── */
     .cover {
-      padding: 3.5rem 0 3rem;
-      border-bottom: 2px solid var(--green);
+      padding: 4rem 0 3rem;
+      border-bottom: 2px solid var(--gold);
       margin-bottom: 3rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
       position: relative;
-      overflow: hidden;
-    }
-
-    .cover::before {
-      content: '';
-      position: absolute;
-      top: -80px; right: -80px;
-      width: 320px; height: 320px;
-      border-radius: 50%;
-      background: rgba(74,124,89,0.045);
-      pointer-events: none;
     }
     .cover::after {
-      content: '';
+      content: 'FREE RESOURCE';
       position: absolute;
-      top: 40px; right: 60px;
-      width: 200px; height: 200px;
-      border-radius: 50%;
-      background: rgba(164,144,94,0.05);
-      pointer-events: none;
-    }
-
-    .cover-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .cover-logo img {
-      height: 28px;
-      display: block;
-    }
-
-    .cover-logo-label {
-      font-family: 'Montserrat', sans-serif;
+      top: 4rem;
+      right: 0;
+      font-size: 0.68rem;
       font-weight: 600;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--green);
+      letter-spacing: 0.14em;
+      color: var(--self);
+      background: var(--self-bg);
+      border: 1px solid var(--self-light);
+      padding: 4px 10px;
+      border-radius: 3px;
     }
-
     .cover h1 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 2.5rem;
-      color: var(--ink);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--text-main);
       letter-spacing: -0.01em;
       line-height: 1.15;
-      position: relative;
-      z-index: 1;
     }
-
     .cover .subtitle {
-      font-family: 'Lora', Georgia, serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
       font-size: 1.05rem;
       color: var(--gold);
       line-height: 1.5;
-      position: relative;
-      z-index: 1;
     }
-
     .cover .intro {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: var(--ink);
-      max-width: 640px;
-      margin-top: 0.5rem;
-      position: relative;
-      z-index: 1;
+      font-size: 0.96rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+      max-width: 660px;
     }
 
-    /* ─── NAV ─── */
+    /* ─── TOC ─── */
     .toc {
-      background: var(--green-faint);
-      border-left: 3px solid var(--green);
+      background: var(--self-bg);
+      border-left: 3px solid var(--self);
       padding: 1.25rem 1.5rem;
       margin-bottom: 3rem;
-      border-radius: 0 4px 4px 0;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     }
-
     .toc h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
       font-size: 0.7rem;
+      font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--green);
+      color: var(--self);
       margin-bottom: 0.75rem;
     }
-
     .toc ul {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem 2rem;
     }
-
     .toc a {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       font-weight: 400;
-      color: var(--ink);
+      color: var(--text-main);
       text-decoration: none;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--divider);
       padding-bottom: 1px;
       transition: color 0.15s, border-color 0.15s;
     }
+    .toc a:hover { color: var(--self); border-color: var(--self); }
 
-    .toc a:hover { color: var(--green); border-color: var(--green); }
-
-    /* ─── SECTION ─── */
-    .glossary-section {
-      margin-bottom: 3.5rem;
-    }
-
+    /* ─── SECTIONS ─── */
+    .glossary-section { margin-bottom: 3.5rem; }
     .section-header {
       display: flex;
       align-items: baseline;
       gap: 1rem;
       margin-bottom: 1.75rem;
       padding-bottom: 0.6rem;
-      border-bottom: 2px solid var(--green);
+      border-bottom: 2px solid var(--self);
     }
-
     .section-header h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
+      font-weight: 600;
       letter-spacing: 0.07em;
       text-transform: uppercase;
-      color: var(--green);
+      color: var(--self);
     }
-
     .section-count {
-      font-family: 'Montserrat', sans-serif;
       font-size: 0.72rem;
       font-weight: 400;
       color: var(--gold);
       letter-spacing: 0.06em;
     }
 
-    /* ─── AUTISM-SPECIFIC SECTION ─── */
+    /* ─── SECTION COLOR VARIANTS ─── */
     #autism {
-      background: var(--blue-faint);
-      border-radius: 6px;
+      background: var(--manager-bg);
+      border-radius: var(--radius-card);
       padding: 1.75rem 1.75rem 0.5rem;
       margin-bottom: 3.5rem;
     }
+    #autism .section-header { border-bottom-color: var(--manager); }
+    #autism .section-header h2 { color: var(--manager); }
+    #autism .section-count { color: var(--manager); opacity: 0.65; }
+    #autism .term { background: rgba(255,255,255,0.85); }
 
-    #autism .section-header {
-      border-bottom-color: var(--blue);
+    #adhd {
+      background: var(--gold-bg);
+      border-radius: var(--radius-card);
+      padding: 1.75rem 1.75rem 0.5rem;
+      margin-bottom: 3.5rem;
     }
+    #adhd .section-header { border-bottom-color: var(--gold); }
+    #adhd .section-header h2 { color: #8a6218; }
+    #adhd .section-count { color: var(--gold); opacity: 0.75; }
+    #adhd .term { background: rgba(255,255,255,0.85); }
 
-    #autism .section-header h2 {
-      color: var(--blue);
+    #learning-diffs {
+      background: var(--fire-bg);
+      border-radius: var(--radius-card);
+      padding: 1.75rem 1.75rem 0.5rem;
+      margin-bottom: 3.5rem;
     }
+    #learning-diffs .section-header { border-bottom-color: var(--fire); }
+    #learning-diffs .section-header h2 { color: var(--fire); }
+    #learning-diffs .section-count { color: var(--fire); opacity: 0.65; }
+    #learning-diffs .term { background: rgba(255,255,255,0.85); }
 
-    #autism .section-count {
-      color: var(--blue);
-      opacity: 0.65;
+    #sensory-processing {
+      background: var(--self-bg);
+      border-radius: var(--radius-card);
+      padding: 1.75rem 1.75rem 0.5rem;
+      margin-bottom: 3.5rem;
     }
+    #sensory-processing .section-header { border-bottom-color: var(--self); }
+    #sensory-processing .section-header h2 { color: var(--self); }
+    #sensory-processing .section-count { color: var(--self); opacity: 0.65; }
+    #sensory-processing .term { background: rgba(255,255,255,0.85); }
 
-    #autism .term {
-      background: rgba(255,255,255,0.85);
+    #shame {
+      background: var(--exile-bg);
+      border-radius: var(--radius-card);
+      padding: 1.75rem 1.75rem 0.5rem;
+      margin-bottom: 3.5rem;
     }
+    #shame .section-header { border-bottom-color: var(--exile); }
+    #shame .section-header h2 { color: var(--exile); }
+    #shame .section-count { color: var(--exile); opacity: 0.65; }
+    #shame .term { background: rgba(255,255,255,0.85); }
+
+    #brain-body {
+      background: var(--manager-bg);
+      border-radius: var(--radius-card);
+      padding: 1.75rem 1.75rem 0.5rem;
+      margin-bottom: 3.5rem;
+    }
+    #brain-body .section-header { border-bottom-color: var(--manager); }
+    #brain-body .section-header h2 { color: var(--manager); }
+    #brain-body .section-count { color: var(--manager); opacity: 0.65; }
+    #brain-body .term { background: rgba(255,255,255,0.85); }
+
+    #social-emotional {
+      background: var(--exile-bg);
+      border-radius: var(--radius-card);
+      padding: 1.75rem 1.75rem 0.5rem;
+      margin-bottom: 3.5rem;
+    }
+    #social-emotional .section-header { border-bottom-color: var(--exile); }
+    #social-emotional .section-header h2 { color: var(--exile); }
+    #social-emotional .section-count { color: var(--exile); opacity: 0.65; }
+    #social-emotional .term { background: rgba(255,255,255,0.85); }
+
+    #nd-strengths {
+      background: var(--gold-bg);
+      border-radius: var(--radius-card);
+      padding: 1.75rem 1.75rem 0.5rem;
+      margin-bottom: 3.5rem;
+    }
+    #nd-strengths .section-header { border-bottom-color: var(--gold); }
+    #nd-strengths .section-header h2 { color: #8a6218; }
+    #nd-strengths .section-count { color: var(--gold); opacity: 0.75; }
+    #nd-strengths .term { background: rgba(255,255,255,0.80); }
 
     /* ─── TERM CARD ─── */
     .term {
-      margin-bottom: 1.5rem;
-      padding: 1.2rem 1.5rem;
-      background: #fff;
-      border-radius: 4px;
-      border: 1px solid var(--border);
+      margin-bottom: 1.25rem;
+      padding: 1.1rem 1.4rem;
+      background: var(--bg-section);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--divider);
       border-left: 3px solid transparent;
-      transition: border-left-color 0.15s;
+      transition: border-left-color 0.15s, box-shadow 0.15s;
     }
-
     .term:hover {
       border-left-color: var(--gold);
+      box-shadow: var(--card-shadow);
     }
-
     .term-title {
-      font-family: 'Montserrat', sans-serif;
       font-weight: 600;
-      font-size: 0.97rem;
-      color: var(--ink);
-      margin-bottom: 0.45rem;
+      font-size: 0.96rem;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
       letter-spacing: 0.01em;
     }
-
     .term-def {
-      font-size: 0.96rem;
-      line-height: 1.75;
-      color: var(--ink);
+      font-size: 0.94rem;
+      line-height: 1.8;
+      color: var(--text-mid);
     }
-
+    .term-note {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.84rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
     .term-source {
       display: block;
-      margin-top: 0.55rem;
-      font-size: 0.79rem;
+      margin-top: 0.5rem;
+      font-size: 0.78rem;
       font-style: italic;
       color: var(--gold);
-      font-family: 'Lora', Georgia, serif;
     }
-
-    /* ─── SOCIAL/EMOTIONAL PROCESSING SECTION ─── */
-    #social-emotional {
-      background: var(--purple-faint);
-      border-radius: 6px;
-      padding: 1.75rem 1.75rem 0.5rem;
-      margin-bottom: 3.5rem;
+    .term-tag {
+      display: inline-block;
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-bottom: 0.45rem;
     }
-
-    #social-emotional .section-header {
-      border-bottom-color: var(--purple);
-    }
-
-    #social-emotional .section-header h2 {
-      color: var(--purple);
-    }
-
-    #social-emotional .section-count {
-      color: var(--purple);
-      opacity: 0.65;
-    }
-
-    #social-emotional .term {
-      background: rgba(255,255,255,0.85);
-    }
-
-    /* ─── ND STRENGTHS SECTION ─── */
-    #nd-strengths {
-      background: var(--gold-faint);
-      border-radius: 6px;
-      padding: 1.75rem 1.75rem 0.5rem;
-      margin-bottom: 3.5rem;
-    }
-
-    #nd-strengths .section-header {
-      border-bottom-color: var(--gold);
-    }
-
-    #nd-strengths .section-header h2 {
-      color: var(--gold);
-    }
-
-    #nd-strengths .term {
-      background: rgba(255,255,255,0.8);
-    }
+    .tag-adhd { background: var(--gold-light); color: #7a5512; }
+    .tag-autism { background: var(--manager-light); color: var(--manager); }
+    .tag-overlap { background: var(--self-light); color: var(--self); }
 
     /* ─── FOOTER ─── */
     .site-footer {
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--divider);
       padding-top: 1.75rem;
       margin-top: 1rem;
       display: flex;
       flex-direction: column;
       gap: 0.45rem;
     }
-
     .site-footer p {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.76rem;
-      color: var(--gold);
-      letter-spacing: 0.03em;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      letter-spacing: 0.02em;
     }
-
-    .site-footer a {
-      color: var(--green);
-      text-decoration: none;
-    }
-
+    .site-footer a { color: var(--self); text-decoration: none; }
     .site-footer a:hover { text-decoration: underline; }
 
-    /* ─── PRINT ─── */
-    @media print {
-      body { background: #fff; font-size: 10pt; color: #000; }
-
-      .page-wrap { max-width: 100%; padding: 0; }
-
-      .toc { display: none; }
-
-      .cover {
-        padding: 0.75rem 0 1rem;
-        border-bottom: 1.5pt solid #4A7C59;
-        margin-bottom: 1.25rem;
-        page-break-after: avoid;
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 64px;
+        left: 0; right: 0;
+        background: var(--nav-bg);
+        flex-direction: column;
+        padding: 24px 32px 32px;
+        gap: 20px;
+        border-top: 1px solid rgba(201,146,42,0.3);
+        z-index: 99;
       }
-
-      .cover::before, .cover::after { display: none; }
-
-      .cover h1 { font-size: 20pt; }
-
-      .cover .intro { display: none; }
-
-      .glossary-section {
-        page-break-before: always;
-        margin-bottom: 0;
+      .nav-links.open { display: flex; }
+      .nav-links > li > a { font-size: 1rem; opacity: 1; }
+      .nav-cta { padding: 12px 32px !important; font-size: 1rem !important; }
+      .hamburger { display: flex; }
+      .nav-dropdown-menu {
+        position: static;
+        transform: none;
+        display: none;
+        background: rgba(255,255,255,0.05);
+        border-top: 1px solid rgba(201,146,42,0.2);
+        border-radius: 4px;
+        margin-top: 4px;
+        box-shadow: none;
       }
-
-      .glossary-section:first-of-type {
-        page-break-before: avoid;
-      }
-
-      .term {
-        page-break-inside: avoid;
-        border: none;
-        border-left: 2pt solid #A4905E;
-        border-radius: 0;
-        background: transparent;
-        margin-bottom: 0.8rem;
-        padding: 0.4rem 0.75rem;
-      }
-
-      .term:hover { border-left-color: #A4905E; }
-
-      #autism {
-        background: transparent;
-        padding: 0;
-        border-radius: 0;
-      }
-
-      #autism .section-header { border-bottom-color: #3A6A8C; }
-      #autism .section-header h2 { color: #3A6A8C; }
-
-      #social-emotional {
-        background: transparent;
-        padding: 0;
-        border-radius: 0;
-      }
-
-      #social-emotional .section-header { border-bottom-color: #6B4E9B; }
-      #social-emotional .section-header h2 { color: #6B4E9B; }
-
-      #nd-strengths {
-        background: transparent;
-        padding: 0;
-        border-radius: 0;
-      }
-
-      #nd-strengths .section-header { border-bottom-color: #A4905E; }
-      #nd-strengths .section-header h2 { color: #A4905E; }
-
-      .site-footer {
-        border-top: 0.5pt solid #A4905E;
-        padding-top: 6pt;
-        margin-top: 1rem;
-      }
+      .nav-dropdown.open .nav-dropdown-menu { display: block; }
+      .nav-dropdown-btn { font-size: 1rem; opacity: 1; }
+      .cover::after { display: none; }
+      .page-wrap { padding: 0 1.25rem 4rem; }
+      .cover { padding: 2.5rem 0 2rem; }
     }
 
-    @media screen and (max-width: 600px) {
-      .cover h1 { font-size: 1.85rem; }
-      .page-wrap { padding: 0 1.25rem 3rem; }
-      .term { padding: 1rem 1.1rem; }
-      .toc ul { gap: 0.5rem 1.25rem; }
+    @media print {
+      nav { display: none; }
+      body { background: #fff; color: #000; }
+      .page-wrap { max-width: 100%; padding: 0; }
+      .toc { display: none; }
+      .cover { padding: 0.75rem 0 1rem; border-bottom: 1.5pt solid #1a7a4f; }
+      .cover::after { display: none; }
+      .term { break-inside: avoid; border: 0.5pt solid #ccc; }
+      .glossary-section { break-inside: avoid; }
     }
   </style>
 </head>
 <body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="/">High Signal LLC</a>
+  <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/">The Protocol</a></li>
+    <li><a href="/understanding-your-parts.html">Parts Framework</a></li>
+    <li><a href="/blog.html">Blog</a></li>
+    <li class="nav-dropdown" id="resources-dropdown">
+      <button class="nav-dropdown-btn" id="resources-btn" aria-expanded="false" aria-haspopup="true">
+        Resources <span class="dropdown-arrow">▾</span>
+      </button>
+      <ul class="nav-dropdown-menu" role="menu">
+        <li><a href="/nd-glossary.html" class="active" role="menuitem">ND Glossary</a></li>
+        <li><a href="/ef-support-interventions.html" role="menuitem">EF Interventions</a></li>
+      </ul>
+    </li>
+    <li><a href="https://calendly.com/matt-highsignal/30min" target="_blank" class="nav-cta">Schedule a Call</a></li>
+  </ul>
+</nav>
+
 <div class="page-wrap">
 
   <!-- COVER -->
   <header class="cover">
-    <div class="cover-logo">
-      <img src="HS_Logo.svg" alt="High Signal Coaching">
-      <span class="cover-logo-label">High Signal Coaching</span>
-    </div>
-    <h1>ND Glossary</h1>
+  <h1>ND Glossary</h1>
     <p class="subtitle">A plain-language reference for neurodivergent adults</p>
     <p class="intro">
       These terms show up constantly in conversations about ADHD, autism, and neurodivergence —
@@ -534,7 +636,7 @@
   <section id="autism">
     <div class="section-header">
       <h2>Autism-Specific</h2>
-      <span class="section-count">16 terms</span>
+      <span class="section-count">17 terms</span>
     </div>
 
     <div class="term">
@@ -565,6 +667,12 @@
       <div class="term-title">Systemizing</div>
       <p class="term-def">Systemizing is the drive to analyze, build, and understand rule-based systems — mechanisms, patterns, categories, and how things actually work underneath. It shows up prominently in autistic cognition. Baron-Cohen's empathizing-systemizing theory positions high systemizing as a defining feature of autistic cognitive style — and as a genuine strength when the domain rewards it. At its most challenging, it can collide with the parts of social life that don't follow rules and actively resist being systematized.</p>
       <span class="term-source">Baron-Cohen, S. (2003). <em>The essential difference: The truth about the male and female brain</em>. Basic Books.<br>Nerenberg, J. (2020). <em>Divergent mind</em>. HarperOne.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Empathizing-Systemizing (E-S) Theory</div>
+      <p class="term-def">A framework developed by psychologist Simon Baron-Cohen describing two distinct cognitive orientations. <strong>Empathizing</strong> is the drive to model other people's mental states — to understand what someone is thinking or feeling and respond accordingly. <strong>Systemizing</strong> is the drive to analyze, build, and predict rule-governed systems — anything that operates on if-and-then logic: engines, legal codes, musical composition, taxonomies, software, grammar. Both fall on a bell curve, and most people sit somewhere in the middle. Some people are high in empathizing and lower in systemizing (Type E). Others are high in systemizing and lower in empathizing (Type S). Autistic people tend toward the extreme Type S end of the distribution — not as a pathology, but as a cognitive style.<br><br>One distinction that matters: the empathy difference in autism is specifically <em>cognitive empathy</em> — the real-time ability to infer what another person is thinking or believing. It is not <em>affective empathy</em> — the capacity to care about someone's distress. Many autistic people feel others' pain acutely. What's harder is the automatic, in-the-moment modeling of another person's mental state in social situations. These are separate things. Conflating them produces a distorted picture — and one autistic people are regularly required to defend against.<br><br>The framework also includes an earlier version known as the <strong>Extreme Male Brain (EMB) hypothesis</strong>, based on population-level data showing men score higher on systemizing on average. Baron-Cohen has substantially stepped back from this framing, and it has been widely critiqued as gender-essentialist. The E-S architecture is the more durable and clinically useful concept; the EMB label is historical context rather than a framework to apply.</p>
+      <span class="term-source">Baron-Cohen, S. (2020). <em>The pattern seekers: How autism drives human invention</em>. Basic Books.<br>Baron-Cohen, S. (2003). <em>The essential difference: The truth about the male and female brain</em>. Basic Books.</span>
     </div>
 
     <div class="term">
@@ -988,5 +1096,40 @@
   </footer>
 
 </div><!-- /page-wrap -->
+
+<script>
+  // Hamburger toggle
+  var btn = document.getElementById('hamburger');
+  var links = document.getElementById('nav-links');
+  if (btn && links) {
+    btn.addEventListener('click', function() {
+      var open = links.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+    });
+    links.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A' && !e.target.classList.contains('nav-dropdown-btn')) {
+        links.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+  // Resources dropdown toggle
+  var resBtn = document.getElementById('resources-btn');
+  var resDrop = document.getElementById('resources-dropdown');
+  if (resBtn && resDrop) {
+    resBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var open = resDrop.classList.toggle('open');
+      resBtn.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', function() {
+      resDrop.classList.remove('open');
+      resBtn.setAttribute('aria-expanded', 'false');
+    });
+    resDrop.addEventListener('click', function(e) { e.stopPropagation(); });
+  }
+</script>
 </body>
 </html>

@@ -1140,6 +1140,13 @@
       .nav-links.open { display: flex; }
       .nav-links a { font-size: 1.1rem; letter-spacing: 0.08em; opacity: 1; }
       .nav-cta { padding: 12px 32px !important; font-size: 1rem !important; }
+      .nav-dropdown-menu {
+        position: static; transform: none; display: none;
+        background: rgba(255,255,255,0.05); border-top: 1px solid rgba(201,146,42,0.2);
+        border-radius: 4px; margin-top: 4px; box-shadow: none;
+      }
+      .nav-dropdown.open .nav-dropdown-menu { display: block; }
+      .nav-dropdown-btn { font-size: 1.1rem; opacity: 1; letter-spacing: 0.08em; }
       .hamburger { display: flex; }
 
       .problem-grid, .framework-cols, .for-cols, .milestone-grid { grid-template-columns: 1fr; }
@@ -1150,6 +1157,59 @@
       .tried-grid, .deliverables-grid { grid-template-columns: 1fr; }
       .pricing-card { padding: 32px 24px; }
     }
+  
+    /* ─── RESOURCES DROPDOWN ─── */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-btn {
+      background: none;
+      border: none;
+      color: var(--nav-text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: opacity 0.2s, color 0.2s;
+      padding: 0;
+    }
+    .nav-dropdown-btn:hover,
+    .nav-dropdown.open .nav-dropdown-btn { opacity: 1; color: var(--gold); }
+    .dropdown-arrow { font-size: 0.65rem; transition: transform 0.2s; }
+    .nav-dropdown.open .dropdown-arrow { transform: rotate(180deg); }
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 2px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #222;
+      border-top: 2px solid var(--gold);
+      min-width: 220px;
+      z-index: 200;
+      padding: 6px 0;
+      border-radius: 0 0 6px 6px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+    .nav-dropdown.open .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      color: var(--nav-text);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0.85;
+      transition: opacity 0.15s, color 0.15s, background 0.15s;
+    }
+    .nav-dropdown-menu a:hover { color: var(--gold); opacity: 1; background: rgba(201,146,42,0.08); }
   </style>
 </head>
 <body>
@@ -1169,6 +1229,15 @@
     <li><a href="#framework">Framework</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#milestones">Milestones</a></li>
+    <li class="nav-dropdown" id="resources-dropdown">
+      <button class="nav-dropdown-btn" id="resources-btn" aria-expanded="false" aria-haspopup="true">
+        Resources <span class="dropdown-arrow">&#9662;</span>
+      </button>
+      <ul class="nav-dropdown-menu" role="menu">
+        <li><a href="/nd-glossary.html" role="menuitem">ND Glossary</a></li>
+        <li><a href="/ef-support-interventions.html" role="menuitem">EF Interventions</a></li>
+      </ul>
+    </li>
     <li><a href="https://calendly.com/matt-highsignal/30min" target="_blank" class="nav-cta">Schedule a Call</a></li>
   </ul>
 </nav>
@@ -1725,6 +1794,73 @@
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════
+     FREE RESOURCES / LEAD MAGNETS
+══════════════════════════════════════════════════════════ -->
+<section class="section-alt" id="resources">
+  <div class="section-inner">
+    <p class="section-eyebrow">Free Resources</p>
+    <h2>Not ready to book?<br><em>Start here instead.</em></h2>
+    <p class="lead">Tools and reference material built for ADHD/AuDHD men in tech — no pitch, no follow-up sequence. Enter your email for the worksheets, or browse the glossary directly.</p>
+
+    <div class="magnets-grid">
+
+      <!-- ADHD Time Architecture -->
+      <div class="magnet-card adhd">
+        <span class="magnet-tag">ADHD · Executive Function</span>
+        <h3>The ADHD Time Architecture Worksheet</h3>
+        <p class="magnet-desc">Stop running on neurotypical time math. Recalibrate your week around the ×2.5 rule, hyperfocus windows, and 15-min transition buffers.</p>
+        <ul class="magnet-bullets">
+          <li>Commitment inventory with ×2.5 time reality check</li>
+          <li>Hyperfocus conditions map — protect what actually works</li>
+          <li>Non-negotiable buffer rules built into your calendar</li>
+          <li>This week's 3 non-negotiables with time blocks</li>
+        </ul>
+        <form class="kit-form" onsubmit="submitKitForm(event,'ad47ba8d38',this,'ADHD_Time_Architecture_Worksheet.pdf')">
+          <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" />
+          <button type="submit">Get the Worksheet →</button>
+        </form>
+        <div class="kit-success" id="kit-ok-ad47ba8d38">✓ Your download started. Check your inbox too — a copy is on its way.</div>
+        <div class="kit-error"   id="kit-err-ad47ba8d38">Something went wrong. Please try again.</div>
+      </div>
+
+      <!-- Who's Driving -->
+      <div class="magnet-card ifs">
+        <span class="magnet-tag">IFS · Parts Mapping</span>
+        <h3>Who's Driving? A Parts Mapping Starter</h3>
+        <p class="magnet-desc">A 15-minute self-inventory to identify which internal parts are running your decisions right now — and negotiate one concrete agreement with each.</p>
+        <ul class="magnet-bullets">
+          <li>Body check-in to locate the part before naming it</li>
+          <li>Manager, Firefighter, and Exile mapping with micro-agreements</li>
+          <li>Self-energy check — what you have access to right now</li>
+          <li>One commitment: specific action, exact time</li>
+        </ul>
+        <form class="kit-form" onsubmit="submitKitForm(event,'c6c6665cb3',this,'Whos_Driving_Parts_Mapping_Starter.pdf')">
+          <input type="email" name="email_address" placeholder="your@email.com" required autocomplete="email" />
+          <button type="submit">Get the Worksheet →</button>
+        </form>
+        <div class="kit-success" id="kit-ok-c6c6665cb3">✓ Your download started. Check your inbox too — a copy is on its way.</div>
+        <div class="kit-error"   id="kit-err-c6c6665cb3">Something went wrong. Please try again.</div>
+      </div>
+
+
+      <!-- ND Glossary -->
+      <div class="magnet-card nd">
+        <span class="magnet-tag">ND · Reference</span>
+        <h3>The ND Glossary</h3>
+        <p class="magnet-desc">A plain-language reference for the clinical terms that show up in coaching — without the jargon layer that makes most glossaries useless.</p>
+        <ul class="magnet-bullets">
+          <li>Core ND concepts: executive function, masking, interoception</li>
+          <li>ADHD-specific: RSD, time blindness, hyperfocus, demand avoidance</li>
+          <li>Autism-specific: alexithymia, autistic burnout, delayed processing</li>
+          <li>Shame, internalized ableism, and ND strengths</li>
+        </ul>
+        <a class="magnet-link-btn" href="nd-glossary.html" target="_blank">Browse the Glossary →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ═══════════════════════════════════════════════════════
      FAQ
@@ -1874,6 +2010,23 @@ function submitKitForm(e, uid, form, pdfFile) {
     document.getElementById('kit-ok-' + uid).style.display = 'block';
   });
 }
+
+  // Resources dropdown
+  var resBtn = document.getElementById('resources-btn');
+  var resDrop = document.getElementById('resources-dropdown');
+  if (resBtn && resDrop) {
+    resBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var open = resDrop.classList.toggle('open');
+      resBtn.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', function() {
+      resDrop.classList.remove('open');
+      if (resBtn) resBtn.setAttribute('aria-expanded', 'false');
+    });
+    resDrop.addEventListener('click', function(e) { e.stopPropagation(); });
+  }
+
 </script>
 
 </body>
