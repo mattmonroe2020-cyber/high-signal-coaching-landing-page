@@ -1,6 +1,6 @@
 [build]
-  command = "pnpm install && pnpm build && cp nd-glossary.html ef-support-interventions.html understanding-your-parts.html thank-you.html sitemap.xml robots.txt dist/public/ && cp *.pdf dist/public/ 2>/dev/null || true"
-  publish = "dist/public"
+  command = ""
+  publish = "."
 
 [[redirects]]
   from = "/about"
