@@ -1,434 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EF Support Interventions — High Signal Coaching</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EF Support Interventions | High Signal Coaching</title>
+  <meta name="description" content="An inventory of executive function support strategies — from psychoeducation to technique. For ADHD and neurodivergent adults." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.highsignalcoaching.com/ef-support-interventions.html" />
+  <meta property="og:title" content="EF Support Interventions | High Signal Coaching" />
+  <meta property="og:description" content="An inventory of executive function support strategies — organized by type, grounded in research, built for neurodivergent adults." />
+  <meta property="og:image" content="https://www.highsignalcoaching.com/og-image.png" />
+  <link rel="canonical" href="https://www.highsignalcoaching.com/ef-support-interventions.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg: #F7F7F5;
-      --ink: #2C3E50;
-      --green: #4A7C59;
-      --gold: #A4905E;
-      --blue: #3A6A8C;
-      --purple: #6B4E9B;
-      --green-faint: rgba(74,124,89,0.07);
-      --blue-faint: rgba(58,106,140,0.07);
-      --gold-faint: rgba(164,144,94,0.08);
-      --purple-faint: rgba(107,78,155,0.07);
-      --border: rgba(44,62,80,0.12);
-    }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg-main:      #f0ebe4;
+      --bg-section:   #ffffff;
+      --bg-alt:       #f7f3ee;
+      --nav-bg:       #1a1a1a;
+      --nav-text:     #e8e0d5;
+      --gold:         #c9922a;
+      --gold-light:   #f5e6cc;
+      --gold-bg:      #fdf5e6;
+      --manager:      #1a4f7a;
+      --manager-light:#d4e6f1;
+      --manager-bg:   #eaf4fb;
+      --fire:         #b94017;
+      --fire-light:   #fde8df;
+      --fire-bg:      #fff3ef;
+      --exile:        #5b2d82;
+      --exile-light:  #e8d5f5;
+      --exile-bg:     #f5edfb;
+      --self:         #1a7a4f;
+      --self-light:   #d4f1e6;
+      --self-bg:      #eafbf3;
+      --text-main:    #1c1c1c;
+      --text-mid:     #444;
+      --text-light:   #777;
+      --divider:      #d8cfc4;
+      --card-shadow:  0 2px 12px rgba(0,0,0,0.07);
+      --radius-card:  8px;
+      --radius-sm:    4px;
+    }
+
+    html { scroll-behavior: smooth; }
     body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: 'Lora', Georgia, serif;
-      font-size: 1em;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
       line-height: 1.7;
     }
 
+    /* ─── NAV ─── */
+    nav {
+      background: var(--nav-bg);
+      padding: 0 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      border-bottom: 2px solid var(--gold);
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-brand img { height: 28px; display: block; }
+    .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+    .nav-links > li > a {
+      color: var(--nav-text);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .nav-links > li > a:hover { opacity: 1; color: var(--gold); }
+    .nav-cta {
+      background: var(--gold) !important;
+      color: #1a1a1a !important;
+      padding: 8px 20px !important;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      opacity: 1 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: #e0a52e !important; }
+
+    /* ─── DROPDOWN ─── */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-btn {
+      background: none;
+      border: none;
+      color: var(--nav-text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: opacity 0.2s, color 0.2s;
+      padding: 0;
+    }
+    .nav-dropdown-btn:hover,
+    .nav-dropdown.open .nav-dropdown-btn { opacity: 1; color: var(--gold); }
+    .dropdown-arrow { font-size: 0.65rem; transition: transform 0.2s; }
+    .nav-dropdown.open .dropdown-arrow { transform: rotate(180deg); }
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 2px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #222;
+      border-top: 2px solid var(--gold);
+      min-width: 220px;
+      z-index: 200;
+      padding: 6px 0;
+      border-radius: 0 0 6px 6px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+    .nav-dropdown.open .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      color: var(--nav-text);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0.85;
+      transition: opacity 0.15s, color 0.15s, background 0.15s;
+    }
+    .nav-dropdown-menu a:hover { color: var(--gold); opacity: 1; background: rgba(201,146,42,0.08); }
+    .nav-dropdown-menu a.active { color: var(--gold); opacity: 1; }
+
+    /* ─── HAMBURGER ─── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 102;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     /* ─── LAYOUT ─── */
     .page-wrap {
-      max-width: 780px;
+      max-width: 860px;
       margin: 0 auto;
-      padding: 0 2rem 4rem;
+      padding: 0 2rem 5rem;
     }
 
-    /* ─── COVER ─── */
+    /* ─── COVER / PAGE HERO ─── */
     .cover {
-      padding: 3.5rem 0 3rem;
-      border-bottom: 2px solid var(--green);
+      padding: 4rem 0 3rem;
+      border-bottom: 2px solid var(--gold);
       margin-bottom: 3rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
       position: relative;
-      overflow: hidden;
-    }
-
-    .cover::before {
-      content: '';
-      position: absolute;
-      top: -80px; right: -80px;
-      width: 320px; height: 320px;
-      border-radius: 50%;
-      background: rgba(74,124,89,0.045);
-      pointer-events: none;
     }
     .cover::after {
-      content: '';
+      content: 'FREE RESOURCE';
       position: absolute;
-      top: 40px; right: 60px;
-      width: 200px; height: 200px;
-      border-radius: 50%;
-      background: rgba(164,144,94,0.05);
-      pointer-events: none;
-    }
-
-    .cover-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .cover-logo img {
-      height: 28px;
-      display: block;
-    }
-
-    .cover-logo-label {
-      font-family: 'Montserrat', sans-serif;
+      top: 4rem;
+      right: 0;
+      font-size: 0.68rem;
       font-weight: 600;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--green);
+      letter-spacing: 0.14em;
+      color: var(--manager);
+      background: var(--manager-bg);
+      border: 1px solid var(--manager-light);
+      padding: 4px 10px;
+      border-radius: 3px;
     }
-
     .cover h1 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 2.5rem;
-      color: var(--ink);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--text-main);
       letter-spacing: -0.01em;
       line-height: 1.15;
-      position: relative;
-      z-index: 1;
     }
-
     .cover .subtitle {
-      font-family: 'Lora', Georgia, serif;
+      font-family: 'Playfair Display', serif;
       font-style: italic;
       font-size: 1.05rem;
       color: var(--gold);
       line-height: 1.5;
-      position: relative;
-      z-index: 1;
     }
-
     .cover .intro {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: var(--ink);
-      max-width: 640px;
-      margin-top: 0.5rem;
-      position: relative;
-      z-index: 1;
+      font-size: 0.96rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+      max-width: 660px;
     }
 
-    /* ─── NAV ─── */
+    /* ─── TOC ─── */
     .toc {
-      background: var(--green-faint);
-      border-left: 3px solid var(--green);
+      background: var(--manager-bg);
+      border-left: 3px solid var(--manager);
       padding: 1.25rem 1.5rem;
       margin-bottom: 3rem;
-      border-radius: 0 4px 4px 0;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     }
-
     .toc h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
       font-size: 0.7rem;
+      font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--green);
+      color: var(--manager);
       margin-bottom: 0.75rem;
     }
-
     .toc ul {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem 2rem;
     }
-
     .toc a {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       font-weight: 400;
-      color: var(--ink);
+      color: var(--text-main);
       text-decoration: none;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--divider);
       padding-bottom: 1px;
       transition: color 0.15s, border-color 0.15s;
     }
+    .toc a:hover { color: var(--manager); border-color: var(--manager); }
 
-    .toc a:hover { color: var(--green); border-color: var(--green); }
-
-    /* ─── SECTION ─── */
-    .glossary-section {
-      margin-bottom: 3.5rem;
-    }
-
+    /* ─── DEFAULT SECTION ─── */
+    .glossary-section { margin-bottom: 3.5rem; }
     .section-header {
       display: flex;
       align-items: baseline;
       gap: 1rem;
       margin-bottom: 1.75rem;
       padding-bottom: 0.6rem;
-      border-bottom: 2px solid var(--green);
+      border-bottom: 2px solid var(--manager);
     }
-
     .section-header h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
+      font-weight: 600;
       letter-spacing: 0.07em;
       text-transform: uppercase;
-      color: var(--green);
+      color: var(--manager);
     }
-
     .section-count {
-      font-family: 'Montserrat', sans-serif;
       font-size: 0.72rem;
       font-weight: 400;
       color: var(--gold);
       letter-spacing: 0.06em;
     }
 
-    /* ─── EXTERNALIZING EF SECTION (blue) ─── */
+    /* ─── SECTION COLOR VARIANTS ─── */
+    #understand {
+      background: var(--self-bg);
+      border-radius: var(--radius-card);
+      padding: 1.75rem 1.75rem 0.5rem;
+      margin-bottom: 3.5rem;
+    }
+    #understand .section-header { border-bottom-color: var(--self); }
+    #understand .section-header h2 { color: var(--self); }
+    #understand .section-count { color: var(--self); opacity: 0.7; }
+    #understand .term { background: rgba(255,255,255,0.85); }
+
     #externalize {
-      background: var(--blue-faint);
-      border-radius: 6px;
+      background: var(--manager-bg);
+      border-radius: var(--radius-card);
       padding: 1.75rem 1.75rem 0.5rem;
       margin-bottom: 3.5rem;
     }
+    #externalize .section-header { border-bottom-color: var(--manager); }
+    #externalize .section-header h2 { color: var(--manager); }
+    #externalize .section-count { color: var(--manager); opacity: 0.65; }
+    #externalize .term { background: rgba(255,255,255,0.85); }
 
-    #externalize .section-header {
-      border-bottom-color: var(--blue);
+    #time-task {
+      background: var(--gold-bg);
+      border-radius: var(--radius-card);
+      padding: 1.75rem 1.75rem 0.5rem;
+      margin-bottom: 3.5rem;
     }
+    #time-task .section-header { border-bottom-color: var(--gold); }
+    #time-task .section-header h2 { color: #8a6218; }
+    #time-task .section-count { color: var(--gold); opacity: 0.75; }
+    #time-task .term { background: rgba(255,255,255,0.85); }
 
-    #externalize .section-header h2 {
-      color: var(--blue);
-    }
-
-    #externalize .section-count {
-      color: var(--blue);
-      opacity: 0.65;
-    }
-
-    #externalize .term {
-      background: rgba(255,255,255,0.85);
-    }
-
-    /* ─── PRIORITY & SCOPE SECTION (purple) ─── */
     #priority {
-      background: var(--purple-faint);
-      border-radius: 6px;
+      background: var(--fire-bg);
+      border-radius: var(--radius-card);
       padding: 1.75rem 1.75rem 0.5rem;
       margin-bottom: 3.5rem;
     }
+    #priority .section-header { border-bottom-color: var(--fire); }
+    #priority .section-header h2 { color: var(--fire); }
+    #priority .section-count { color: var(--fire); opacity: 0.65; }
+    #priority .term { background: rgba(255,255,255,0.85); }
 
-    #priority .section-header {
-      border-bottom-color: var(--purple);
-    }
-
-    #priority .section-header h2 {
-      color: var(--purple);
-    }
-
-    #priority .section-count {
-      color: var(--purple);
-      opacity: 0.65;
-    }
-
-    #priority .term {
-      background: rgba(255,255,255,0.85);
-    }
-
-    /* ─── ACTIVATION & MOTIVATION SECTION (gold) ─── */
     #activation {
-      background: var(--gold-faint);
-      border-radius: 6px;
+      background: var(--exile-bg);
+      border-radius: var(--radius-card);
       padding: 1.75rem 1.75rem 0.5rem;
       margin-bottom: 3.5rem;
     }
+    #activation .section-header { border-bottom-color: var(--exile); }
+    #activation .section-header h2 { color: var(--exile); }
+    #activation .section-count { color: var(--exile); opacity: 0.65; }
+    #activation .term { background: rgba(255,255,255,0.85); }
 
-    #activation .section-header {
-      border-bottom-color: var(--gold);
+    #working-memory {
+      background: var(--self-bg);
+      border-radius: var(--radius-card);
+      padding: 1.75rem 1.75rem 0.5rem;
+      margin-bottom: 3.5rem;
     }
-
-    #activation .section-header h2 {
-      color: var(--gold);
-    }
-
-    #activation .section-count {
-      color: var(--gold);
-      opacity: 0.65;
-    }
-
-    #activation .term {
-      background: rgba(255,255,255,0.80);
-    }
+    #working-memory .section-header { border-bottom-color: var(--self); }
+    #working-memory .section-header h2 { color: var(--self); }
+    #working-memory .section-count { color: var(--self); opacity: 0.7; }
+    #working-memory .term { background: rgba(255,255,255,0.85); }
 
     /* ─── TERM CARD ─── */
     .term {
-      margin-bottom: 1.5rem;
-      padding: 1.2rem 1.5rem;
-      background: #fff;
-      border-radius: 4px;
-      border: 1px solid var(--border);
+      margin-bottom: 1.25rem;
+      padding: 1.1rem 1.4rem;
+      background: var(--bg-section);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--divider);
       border-left: 3px solid transparent;
-      transition: border-left-color 0.15s;
+      transition: border-left-color 0.15s, box-shadow 0.15s;
     }
-
     .term:hover {
       border-left-color: var(--gold);
+      box-shadow: var(--card-shadow);
     }
-
     .term-title {
-      font-family: 'Montserrat', sans-serif;
       font-weight: 600;
-      font-size: 0.97rem;
-      color: var(--ink);
-      margin-bottom: 0.45rem;
+      font-size: 0.96rem;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
       letter-spacing: 0.01em;
     }
-
     .term-def {
-      font-size: 0.96rem;
-      line-height: 1.75;
-      color: var(--ink);
+      font-size: 0.94rem;
+      line-height: 1.8;
+      color: var(--text-mid);
     }
-
+    .term-note {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.84rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
     .term-source {
       display: block;
-      margin-top: 0.55rem;
-      font-size: 0.79rem;
+      margin-top: 0.5rem;
+      font-size: 0.78rem;
       font-style: italic;
       color: var(--gold);
-      font-family: 'Lora', Georgia, serif;
     }
+    .term-seealso {
+      margin-top: 0.6rem;
+      font-size: 0.82rem;
+      color: var(--text-light);
+    }
+    .term-seealso a { color: var(--manager); text-decoration: none; }
+    .term-seealso a:hover { text-decoration: underline; }
+    .section-intro {
+      font-size: 0.97rem;
+      color: var(--text-mid);
+      font-style: italic;
+      margin-bottom: 1.75rem;
+      padding-left: 1rem;
+      border-left: 3px solid var(--gold);
+      line-height: 1.65;
+    }
+    .term-callout {
+      margin: 0.75rem 0;
+      padding: 0.9rem 1.1rem;
+      background: var(--bg-alt);
+      border-left: 3px solid var(--manager);
+      border-radius: var(--radius-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .term-callout p { margin: 0; font-size: 0.93rem; color: var(--text-main); }
+    .term-sub {
+      margin: 0.75rem 0 0.25rem;
+      padding: 0.7rem 1rem;
+      background: var(--bg-alt);
+      border-radius: var(--radius-sm);
+    }
+    .term-sub-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.01em;
+    }
+    .term-sub .term-def { margin-top: 0; font-size: 0.93rem; }
 
     /* ─── FOOTER ─── */
     .site-footer {
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--divider);
       padding-top: 1.75rem;
       margin-top: 1rem;
       display: flex;
       flex-direction: column;
       gap: 0.45rem;
     }
-
     .site-footer p {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.76rem;
-      color: var(--gold);
-      letter-spacing: 0.03em;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      letter-spacing: 0.02em;
     }
-
-    .site-footer a {
-      color: var(--green);
-      text-decoration: none;
-    }
-
+    .site-footer a { color: var(--manager); text-decoration: none; }
     .site-footer a:hover { text-decoration: underline; }
 
-    /* ─── PRINT ─── */
-    @media print {
-      body { background: #fff; font-size: 10pt; color: #000; }
-
-      .page-wrap { max-width: 100%; padding: 0; }
-
-      .toc { display: none; }
-
-      .cover {
-        padding: 0.75rem 0 1rem;
-        border-bottom: 1.5pt solid #4A7C59;
-        margin-bottom: 1.25rem;
-        page-break-after: avoid;
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 64px;
+        left: 0; right: 0;
+        background: var(--nav-bg);
+        flex-direction: column;
+        padding: 24px 32px 32px;
+        gap: 20px;
+        border-top: 1px solid rgba(201,146,42,0.3);
+        z-index: 99;
       }
-
-      .cover::before, .cover::after { display: none; }
-
-      .cover h1 { font-size: 20pt; }
-
-      .cover .intro { display: none; }
-
-      .glossary-section {
-        page-break-before: always;
-        margin-bottom: 0;
+      .nav-links.open { display: flex; }
+      .nav-links > li > a { font-size: 1rem; opacity: 1; }
+      .nav-cta { padding: 12px 32px !important; font-size: 1rem !important; }
+      .hamburger { display: flex; }
+      .nav-dropdown-menu {
+        position: static;
+        transform: none;
+        display: none;
+        background: rgba(255,255,255,0.05);
+        border-top: 1px solid rgba(201,146,42,0.2);
+        border-radius: 4px;
+        margin-top: 4px;
+        box-shadow: none;
       }
-
-      .glossary-section:first-of-type {
-        page-break-before: avoid;
-      }
-
-      .term {
-        page-break-inside: avoid;
-        border: none;
-        border-left: 2pt solid #A4905E;
-        border-radius: 0;
-        background: transparent;
-        margin-bottom: 0.8rem;
-        padding: 0.4rem 0.75rem;
-      }
-
-      .term:hover { border-left-color: #A4905E; }
-
-      #externalize {
-        background: transparent;
-        padding: 0;
-        border-radius: 0;
-      }
-
-      #externalize .section-header { border-bottom-color: #3A6A8C; }
-      #externalize .section-header h2 { color: #3A6A8C; }
-
-      #priority {
-        background: transparent;
-        padding: 0;
-        border-radius: 0;
-      }
-
-      #priority .section-header { border-bottom-color: #6B4E9B; }
-      #priority .section-header h2 { color: #6B4E9B; }
-
-      #activation {
-        background: transparent;
-        padding: 0;
-        border-radius: 0;
-      }
-
-      #activation .section-header { border-bottom-color: #A4905E; }
-      #activation .section-header h2 { color: #A4905E; }
-
-      .site-footer {
-        border-top: 0.5pt solid #A4905E;
-        padding-top: 6pt;
-        margin-top: 1rem;
-      }
+      .nav-dropdown.open .nav-dropdown-menu { display: block; }
+      .nav-dropdown-btn { font-size: 1rem; opacity: 1; }
+      .cover::after { display: none; }
+      .page-wrap { padding: 0 1.25rem 4rem; }
+      .cover { padding: 2.5rem 0 2rem; }
     }
 
-    @media screen and (max-width: 600px) {
-      .cover h1 { font-size: 1.85rem; }
-      .page-wrap { padding: 0 1.25rem 3rem; }
-      .term { padding: 1rem 1.1rem; }
-      .toc ul { gap: 0.5rem 1.25rem; }
+    @media print {
+      nav { display: none; }
+      body { background: #fff; color: #000; }
+      .page-wrap { max-width: 100%; padding: 0; }
+      .toc { display: none; }
+      .cover { padding: 0.75rem 0 1rem; border-bottom: 1.5pt solid #1a4f7a; }
+      .cover::after { display: none; }
+      .term { break-inside: avoid; border: 0.5pt solid #ccc; }
+      .glossary-section { break-inside: avoid; }
     }
   </style>
 </head>
 <body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="/"><img src="/HS_Logo.svg" alt="High Signal Coaching" /><span>HIGH SIGNAL COACHING</span></a>
+  <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="/">The Protocol</a></li>
+    <li><a href="/understanding-your-parts.html">Parts Framework</a></li>
+    <li><a href="/blog.html">Blog</a></li>
+    <li class="nav-dropdown" id="resources-dropdown">
+      <button class="nav-dropdown-btn" id="resources-btn" aria-expanded="false" aria-haspopup="true">
+        Resources <span class="dropdown-arrow">▾</span>
+      </button>
+      <ul class="nav-dropdown-menu" role="menu">
+        <li><a href="/nd-glossary.html" role="menuitem">ND Glossary</a></li>
+        <li><a href="/ef-support-interventions.html" class="active" role="menuitem">EF Interventions</a></li>
+      </ul>
+    </li>
+    <li><a href="https://calendly.com/matt-highsignal/30min" target="_blank" class="nav-cta">Schedule a Call</a></li>
+  </ul>
+</nav>
+
 <div class="page-wrap">
 
   <!-- COVER -->
   <header class="cover">
-    <div class="cover-logo">
-      <img src="HS_Logo.svg" alt="High Signal Coaching">
-      <span class="cover-logo-label">High Signal Coaching</span>
-    </div>
-    <h1>EF Support Interventions</h1>
-    <p class="subtitle">A practitioner's inventory of executive function support strategies, from psychoeducation to technique</p>
+  <h1>EF Support Interventions</h1>
+    <p class="subtitle">A practical guide to executive function support — what's actually happening, and what actually helps.</p>
     <p class="intro">
-      Executive function support doesn't start with techniques. It starts with understanding what's actually happening — why standard productivity systems fail, why willpower isn't the missing variable, why the same person who can't start a task can hyperfocus for six hours. These entries are organized by type: the conceptual frameworks that explain the architecture, the structural interventions that compensate for it, and the specific techniques that work because they work <em>with</em> how the brain actually functions. Citations throughout reference the canonical sources from which each framework is drawn.
+      Executive function support doesn't start with techniques. It starts with understanding what's actually happening — why standard productivity systems fail, why willpower isn't the missing variable, why the same person who can't start a task can hyperfocus for six hours. This guide is organized by type: frameworks that explain the architecture, structural interventions that compensate for it, and specific techniques that work with how the brain actually functions. Citations throughout point to the sources where each framework is drawn from.
     </p>
   </header>
 
@@ -438,10 +544,18 @@
     <ul>
       <li><a href="#understand">Understanding the Architecture</a></li>
       <li><a href="#externalize">Externalizing EF</a></li>
+      <li><a href="#the-calendar">The Art of the Calendar</a></li>
       <li><a href="#time-task">Time &amp; Task Architecture</a></li>
+      <li><a href="#time-preference">Time Preference &amp; Extending the Time Horizon</a></li>
       <li><a href="#priority">Priority &amp; Scope Management</a></li>
+      <li><a href="#less-is-more">Less Is More</a></li>
+      <li><a href="#body-doubling">Body Doubling + Tribe</a></li>
       <li><a href="#activation">Activation &amp; Motivation</a></li>
+      <li><a href="#muchness">Harnessing the Muchness: Managing Impulsive Enthusiasm &amp; Rumination</a></li>
+      <li><a href="#calm">Dealing with Social Anxiety or Dysregulation in the Moment: Calm Is Contagious</a></li>
+      <li><a href="#environment">Environment as Intervention</a></li>
       <li><a href="#working-memory">Working Memory &amp; Cognitive Load</a></li>
+      <li><a href="#daily">Daily Practices</a></li>
     </ul>
   </nav>
 
@@ -462,7 +576,7 @@
 
     <div class="term">
       <div class="term-title">Performance Deficit, Not Knowledge Deficit</div>
-      <p class="term-def">ADHD produces a performance deficit, not a knowledge deficit. The client knows what to do. The failure happens at the level of doing it — at the right time, in the right context, under the conditions where it matters. This is the central reason that purely insight-based interventions don't hold: understanding time blindness doesn't fix time blindness. Understanding procrastination doesn't fix procrastination. The intervention must be present at the point of performance, not learned in a classroom and then applied by a brain that can't reliably retrieve and deploy information under load. This distinction is the theoretical basis for every structural scaffold in ADHD support.</p>
+      <p class="term-def">ADHD produces a performance deficit, not a knowledge deficit. You know what to do. The failure happens at the level of doing it — at the right time, in the right context, under the conditions where it matters. This is the central reason that purely insight-based interventions don't hold: understanding time blindness doesn't fix time blindness. Understanding procrastination doesn't fix procrastination. The intervention must be present at the point of performance, not learned in a classroom and then applied by a brain that can't reliably retrieve and deploy information under load. This distinction is the theoretical basis for every structural scaffold in ADHD support.</p>
       <span class="term-source">Barkley, R. A. (2012). <em>Executive Functions: What They Are, How They Work, and Why They Evolved</em>. Guilford Press.</span>
     </div>
 
@@ -474,7 +588,7 @@
 
     <div class="term">
       <div class="term-title">The Interest-Based Nervous System</div>
-      <p class="term-def">Neurotypical brains activate around importance and consequences. ADHD brains activate around four specific conditions: interest, novelty, urgency, and challenge. When none of those conditions are present, the executive system doesn't reliably fire — not because the person lacks values or effort, but because the dopaminergic activation signal isn't generating sufficient fuel. This is why the same person who can't read a paragraph of a required document can research an obscure topic for five hours. The system isn't broken. It runs on different fuel. The clinical implication: "try harder" addresses the wrong problem. Engineering the activation conditions addresses the right one.</p>
+      <p class="term-def">Neurotypical brains activate around importance and consequences. ADHD brains activate around four specific conditions: interest, novelty, urgency, and challenge. When none of those conditions are present, the executive system doesn't reliably fire — not because the person lacks values or effort, but because the dopaminergic activation signal isn't generating sufficient fuel. This is why the same person who can't read a paragraph of a required document can research an obscure topic for five hours. The system isn't broken. It runs on different fuel. The implication: "try harder" addresses the wrong problem. Engineering the activation conditions addresses the right one.</p>
       <span class="term-source">Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>. Guilford Press.<br>Dodson, W. W. (2022). <em>How ADHD Shapes Your Perceptions, Emotions &amp; Motivation</em> [CME lecture slides].<br>McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.</span>
     </div>
 
@@ -486,13 +600,13 @@
 
     <div class="term">
       <div class="term-title">The Point-of-Performance Principle</div>
-      <p class="term-def">Knowing the right behavior doesn't ensure performing it. For EF support to work, the intervention must be present where and when the behavioral gap occurs — at the point of performance, not in a session or a workshop. A client who intellectually understands their procrastination pattern may still not initiate when the moment arrives, because the EF system that was supposed to translate understanding into action is the system that's impaired. Environmental prompts, visible reminders, pre-set timers, and external accountability all work because they deliver the cue directly at the moment of need, requiring no EF deployment to access them.</p>
+      <p class="term-def">Knowing the right behavior doesn't ensure performing it. For EF support to work, the intervention must be present where and when the behavioral gap occurs — at the point of performance, not in a session or a workshop. You may intellectually understand your procrastination pattern and still not initiate when the moment arrives, because the EF system that was supposed to translate understanding into action is the system that's impaired. Environmental prompts, visible reminders, pre-set timers, and external accountability all work because they deliver the cue directly at the moment of need, requiring no EF deployment to access them.</p>
       <span class="term-source">Barkley, R. A. (2012). <em>Executive Functions: What They Are, How They Work, and Why They Evolved</em>. Guilford Press.</span>
     </div>
 
     <div class="term">
       <div class="term-title">The Self-Defeating Systems Loop</div>
-      <p class="term-def">Standard productivity systems fail for ADHD clients not because the person lacks commitment, but because the systems themselves depend on the same EF functions they're trying to compensate for. A to-do list requires working memory to remember to check it. A planning system requires planning to maintain. A phone reminder requires response inhibition to not dismiss it reflexively. This is the self-defeating loop: the system fails precisely under the conditions that made the system necessary in the first place. The solution isn't a better system with more features. It's a system that requires no EF to activate — visible, immediate, frictionless, and already in position at the point of performance.</p>
+      <p class="term-def">Standard productivity systems fail for ADHD brains not because you lack commitment, but because the systems themselves depend on the same EF functions they're trying to compensate for. A to-do list requires working memory to remember to check it. A planning system requires planning to maintain. A phone reminder requires response inhibition to not dismiss it reflexively. This is the self-defeating loop: the system fails precisely under the conditions that made the system necessary in the first place. The solution isn't a better system with more features. It's a system that requires no EF to activate — visible, immediate, frictionless, and already in position at the point of performance.</p>
       <span class="term-source">McCabe, J. (2024). <em>How to ADHD: An Insider's Guide to Working with Your Brain (Not Against It)</em>. Ballantine Books.</span>
     </div>
 
@@ -504,7 +618,7 @@
 
     <div class="term">
       <div class="term-title">The Two-Track Intervention Model</div>
-      <p class="term-def">Every EF weakness can be addressed via two complementary tracks, not one. Track 1: <em>Modify the environment</em> — work around the weakness by changing the context so the weak skill is less often required or its failures are less costly. This is fast, accessible, and effective immediately. Track 2: <em>Improve the skill through practice</em> — work on the weakness through graduated, structured practice with clear goals, deadlines, environmental cues, and rewards. This is slower but builds actual capacity over time. Most clients default to willpower-based approaches that belong to neither track. Separating these two tracks matters because they require different timelines, different resources, and different expectations. Track 1 buys time and stability; Track 2 builds the foundation. They work best together.</p>
+      <p class="term-def">Every EF weakness can be addressed via two complementary tracks, not one. Track 1: <em>Modify the environment</em> — work around the weakness by changing the context so the weak skill is less often required or its failures are less costly. This is fast, accessible, and effective immediately. Track 2: <em>Improve the skill through practice</em> — work on the weakness through graduated, structured practice with clear goals, deadlines, environmental cues, and rewards. This is slower but builds actual capacity over time. Most people default to willpower-based approaches that belong to neither track. Separating these two tracks matters because they require different timelines, different resources, and different expectations. Track 1 buys time and stability; Track 2 builds the foundation. They work best together.</p>
       <span class="term-source">Dawson, P., &amp; Guare, R. (2016). <em>The Smart but Scattered Guide to Success</em>, Chapters 3–4. Guilford Press.</span>
     </div>
 
@@ -516,19 +630,13 @@
   <section id="externalize">
     <div class="section-header">
       <h2>Externalizing EF</h2>
-      <span class="section-count">7 entries</span>
+      <span class="section-count">4 entries</span>
     </div>
 
     <div class="term">
       <div class="term-title">Externalizing Information</div>
       <p class="term-def">Because nonverbal working memory is unreliable in ADHD, information that needs to be acted on must exist in the environment — not in memory. Visible task lists, whiteboards, external calendars reviewed on a fixed daily schedule, notes taken immediately rather than filed for later: each of these moves cognitive content from internal storage (unreliable, capacity-limited) to the external environment (available at the point of performance). The goal isn't to improve memory. It's to stop relying on it for things the environment can hold instead. The scaffold is the external working memory — and treating it as a prosthesis rather than a convenience changes how you design it.</p>
       <span class="term-source">Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 1: Externalize Information. Guilford Press.</span>
-    </div>
-
-    <div class="term">
-      <div class="term-title">Making Time Physical and Tangible</div>
-      <p class="term-def">Because the internal clock is impaired, time must be made visible. This is not a metaphor. Analog clocks, visible countdown timers during work blocks, and time-blocking systems that convert the day into spatial objects on a calendar all substitute for the internal temporal sensing that isn't running. A time timer on the desk is not a productivity trick — it is neurological compensation. Strategies in this category also include color-coding calendar blocks, treating a scheduled hour as a spatial object with boundaries rather than an abstract unit, and setting transition alarms that fire <em>before</em> the transition, not at it.</p>
-      <span class="term-source">Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 2: Make Time Physical and Tangible. Guilford Press.<br>McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.</span>
     </div>
 
     <div class="term">
@@ -539,20 +647,7 @@
 
     <div class="term">
       <div class="term-title">Body Doubling</div>
-      <p class="term-def">Working in the presence of another person — physically or virtually, silently or with minimal interaction — activates the ADHD nervous system in ways that solitary work often doesn't. The other person doesn't need to advise, monitor, or participate. Their presence alone provides ambient social awareness that functions as an activation signal. Body doubling works because ADHD brains are wired to engage when a social context is present, even a quiet one. A Focusmate session, a co-working space, a café, or a scheduled Zoom with cameras on all deploy the same mechanism. For high-RSD clients, the social stakes of the body double relationship should be kept deliberately low.</p>
-      <span class="term-source">McCabe, J. (2024). <em>How to ADHD: An Insider's Guide to Working with Your Brain (Not Against It)</em>. Ballantine Books.<br>Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 3. Guilford Press.</span>
-    </div>
-
-    <div class="term">
-      <div class="term-title">Friction Architecture</div>
-      <p class="term-def">Every decision point between intention and action is a place where executive function can fail. Friction reduction means eliminating those decision points upstream: gym bag packed the night before, medication by the coffee maker, document already open when the session starts, clothes already laid out. Friction addition runs in the opposite direction for behaviors you're trying to reduce: apps buried three screens deep, phone in a different room, notifications off, the distracting site blocked. The environment is a variable, not a fixed constraint. Design it with the same care you'd design any other system — because for an ADHD brain, the environment is doing EF work that the internal system can't do reliably on its own.</p>
-      <span class="term-source">McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.<br>Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 2. Guilford Press.</span>
-    </div>
-
-    <div class="term">
-      <div class="term-title">Launchpads</div>
-      <p class="term-def">A launchpad is a designated, visible location where items that need to leave with you are placed — physically impossible to miss at the moment of departure. Keys. The library book. The signed form. The charger. The launchpad substitutes for the prospective memory function that was supposed to fire "remember the thing" at the right moment — and didn't. The object in the right location <em>is</em> the reminder. This is Barkley's externalization principle at its most concrete. The launchpad doesn't require you to remember anything; it requires only that you made the deposit at the time you thought of it, so retrieval happens automatically when you need it.</p>
-      <span class="term-source">McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.<br>Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 1. Guilford Press.</span>
+      <p class="term-def">See <a href="#body-doubling">Body Doubling + Tribe</a>.</p>
     </div>
 
     <div class="term">
@@ -564,18 +659,73 @@
   </section>
 
   <!-- ═══════════════════════════════════════ -->
-  <!-- SECTION 3: TIME & TASK ARCHITECTURE     -->
+  <!-- SECTION 3: THE ART OF THE CALENDAR      -->
   <!-- ═══════════════════════════════════════ -->
-  <section class="glossary-section" id="time-task">
+  <section class="glossary-section" id="the-calendar">
     <div class="section-header">
-      <h2>Time &amp; Task Architecture</h2>
+      <h2>The Art of the Calendar</h2>
       <span class="section-count">7 entries</span>
+    </div>
+    <p class="section-intro">If it isn't in the calendar, it's not real. The calendar isn't an organizational tool for ADHD brains — it's an external time organ. It holds what the internal clock can't.</p>
+
+    <div class="term">
+      <div class="term-title">The Calendar as External Time Organ</div>
+      <p class="term-def">Most brains have a built-in sense of time passing, of what's coming, of how long things take. Your brain doesn't — or doesn't have a reliable one. The calendar compensates for this directly. It isn't a nice-to-have organizational system. It's a prosthetic temporal sense.</p>
+      <p class="term-def">This means the calendar isn't just for appointments. It's for everything that needs to happen — including thinking time, buffer time, transition time, and recovery time. A week that looks full on paper but has nothing in the calendar is a week where everything runs on hope.</p>
+      <p class="term-def">The goal is a calendar that shows you what your actual week looks like — not what you wish it looked like.</p>
+      <span class="term-source">Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rules 1–2. Guilford Press. · McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.</span>
+      <p class="term-seealso">See also: <a href="#understand">Time Blindness</a> · <a href="#externalize">Making Time Physical and Tangible</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Two-Calendar System</div>
+      <p class="term-def">Keeping one calendar for everything is how priorities get lost. A two-calendar system separates life from work — or at minimum uses clearly distinct color-coded blocks so each domain is visually identifiable at a glance.</p>
+      <p class="term-def"><strong>Life calendar:</strong> personal appointments, family, health, social commitments, admin, errands.<br><strong>Work calendar:</strong> client sessions, meetings, deep work blocks, deadlines, projects.</p>
+      <p class="term-def">Separation makes it immediately visible when work is colonizing life (or vice versa), and makes planning easier because you can look at each domain independently before combining them.</p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Minimum Viable Day (MVD)</div>
+      <p class="term-def">On any given day, most of what needs to happen doesn't need to happen today. The Minimum Viable Day strips it back: 3 anchors + 1 win.</p>
+      <p class="term-def"><strong>3 anchors:</strong> The fixed points of the day — things that happen regardless of how the day goes. Morning routine, a meal, a specific end time. These create structure even when motivation is low.<br><strong>1 win:</strong> The single most important thing that would make today count. Not the full project — one real move forward.</p>
+      <p class="term-def">The MVD is a floor, not a ceiling. On hard days, it keeps you functional. On good days, you exceed it. Either way, the day has shape.</p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Weekly Planning Ritual</div>
+      <p class="term-def">A brief, consistent weekly ritual — ideally 20–30 minutes, same time, same day — where you do three things: review the coming week on the calendar (what's actually there?), identify the 3–5 things that most need to move forward this week, and assign those things to specific time blocks rather than a to-do list.</p>
+      <p class="term-def">Without a deliberate weekly pause, the week runs on urgency — whatever is loudest gets attention, not whatever is most important. The weekly review is the mechanism for Q2 protection in practice.</p>
+      <p class="term-seealso">See also: <a href="#priority">Q2 Protection</a> · <a href="#time-preference">Time Preference &amp; the Time Horizon</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Making Time Physical and Tangible</div>
+      <p class="term-def">Because the internal clock is impaired, time must be made visible. This is not a metaphor. Analog clocks, visible countdown timers during work blocks, and time-blocking systems that convert the day into spatial objects on a calendar all substitute for the internal temporal sensing that isn't running. A time timer on the desk is not a productivity trick — it is neurological compensation. Strategies in this category also include color-coding calendar blocks, treating a scheduled hour as a spatial object with boundaries rather than an abstract unit, and setting transition alarms that fire <em>before</em> the transition, not at it.</p>
+      <span class="term-source">Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 2: Make Time Physical and Tangible. Guilford Press.<br>McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.</span>
     </div>
 
     <div class="term">
       <div class="term-title">Time Blocking</div>
       <p class="term-def">Time blocking assigns specific chunks of time to specific tasks or categories of work, treating those blocks as protected commitments rather than aspirational intentions. For time-blind brains, the value of time blocking isn't organizational — it's perceptual. A colored block on a calendar is more concrete than a task on a list. It makes the abstract future visible and spatial, which gives the ADHD attention system something it can actually navigate. A block with no task content is a boundary that creates structure; a block with defined work content is a timeboxed sprint. The distinction matters: the former is container, the latter is intervention.</p>
       <span class="term-source">McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.<br>Eisenhower Matrix — Canonical KB (tools_assets Knowledge Base, March 2026). Original source: Covey, S. R. (1989). <em>The 7 Habits of Highly Effective People</em>. Free Press.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Open Loop Capture / Brain Dump</div>
+      <p class="term-def">Any incomplete task, unresolved commitment, half-formed intention, or nagging "I should" occupying mental bandwidth is an open loop. Open loops consume working memory and generate low-grade psychological drag — the unresolved item sits in the background using cognitive resources without moving toward resolution (Zeigarnik, 1927).</p>
+      <p class="term-def">A brain dump is the practice of capturing all open loops externally and completely — everything, unfiltered, onto paper or a trusted external system. Capture doesn't complete the loops; it moves them from inside the head (unreliable, capacity-limited) to outside it (persistent, visible, retrievable). The brain dump is most powerful at the start of the weekly planning ritual: clear the mental backlog first, then plan from what's actually there.</p>
+      <span class="term-source">Zeigarnik, B. (1927). On finished and unfinished tasks. <em>Psychologische Forschung</em>, <em>9</em>, 1–85. · Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 1. Guilford Press.</span>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 4: TIME & TASK ARCHITECTURE     -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="glossary-section" id="time-task">
+    <div class="section-header">
+      <h2>Time &amp; Task Architecture</h2>
+      <span class="section-count">4 entries</span>
     </div>
 
     <div class="term">
@@ -586,7 +736,7 @@
 
     <div class="term">
       <div class="term-title">Parkinson's Law</div>
-      <p class="term-def">Work expands to fill the time available for its completion. When a task is assigned generous, open-ended time, the brain registers it as non-urgent, attention drifts, perfectionism fills the space, and the task grows heavier than it actually is. Compress the time deliberately and a different mechanism activates: the brain must prioritize, scope narrows, "good enough" becomes acceptable, and the task gets done — often in a fraction of the original estimate. The output is frequently the same. The psychological cost is not. Intentional use of Parkinson's Law means manufacturing urgency as a design choice, rather than waiting for it to arrive as a crisis. For ADHD clients specifically, this manufactures the dopamine activation signal the brain needs without requiring an actual emergency.</p>
+      <p class="term-def">Work expands to fill the time available for its completion. When a task is assigned generous, open-ended time, the brain registers it as non-urgent, attention drifts, perfectionism fills the space, and the task grows heavier than it actually is. Compress the time deliberately and a different mechanism activates: the brain must prioritize, scope narrows, "good enough" becomes acceptable, and the task gets done — often in a fraction of the original estimate. The output is frequently the same. The psychological cost is not. Intentional use of Parkinson's Law means manufacturing urgency as a design choice, rather than waiting for it to arrive as a crisis. For ADHD brains specifically, this manufactures the dopamine activation signal your brain needs without requiring an actual emergency.</p>
       <span class="term-source">Parkinson, C. N. (1955). Parkinson's Law. <em>The Economist</em>. Expanded: (1958). <em>Parkinson's Law and Other Studies in Administration</em>. Houghton Mifflin.<br>Clinical application: Parkinson's Law — Canonical KB (tools_assets Knowledge Base, March 2026).</span>
     </div>
 
@@ -602,6 +752,26 @@
       <span class="term-source">Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 6: Problem-Solve Daily Obstacles in Advance. Guilford Press.<br>McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.</span>
     </div>
 
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SECTION 5: TIME PREFERENCE & EXTENDING THE TIME HORIZON -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section class="glossary-section" id="time-preference">
+    <div class="section-header">
+      <h2>Time Preference &amp; Extending the Time Horizon</h2>
+      <span class="section-count">5 entries</span>
+    </div>
+    <p class="section-intro">The future has to be made emotionally and visually real before behavior can organize around it. This is the core problem of present bias — and the reason that "thinking about" future consequences rarely produces forward motion.</p>
+
+    <div class="term">
+      <div class="term-title">Present Bias and the Now/Not-Now Split</div>
+      <p class="term-def">The ADHD nervous system discounts the future steeply. What's here now is real; what's coming later is abstract. This isn't a values problem — it's a neurological feature of how the dopamine system weights immediate versus delayed consequences.</p>
+      <p class="term-def">Practically: you know the tax deadline is real, but it doesn't feel real until it's two days away. You know you should exercise for future health, but that future self doesn't generate urgency the way a deadline does. The intervention isn't insight about this pattern — it's making the future feel real in the present moment, through visibility, imagination, or structured review.</p>
+      <span class="term-source">Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>. Guilford Press. · Dodson, W. W. (2022). <em>How ADHD Shapes Your Perceptions, Emotions &amp; Motivation</em> [CME lecture slides].</span>
+      <p class="term-seealso">See also: <a href="#understand">Time Blindness</a> · <a href="#activation">Reward Architecture</a></p>
+    </div>
+
     <div class="term">
       <div class="term-title">Time Estimation Calibration</div>
       <p class="term-def">ADHD brains chronically underestimate how long tasks take — not from carelessness, but because the internal clock that would generate that estimate is impaired. Time estimation calibration is the deliberate practice of tracking actual time versus estimated time across a range of tasks over two to four weeks. The result is a personal multiplier: if you estimate 20 minutes and it consistently takes 45, your multiplier is approximately 2x. Using your actual multiplier to plan is not pessimism — it is data replacing guesswork. Over time, the calibration reduces the chronic underestimation cycle that drives last-minute scrambles, missed deadlines, and the accompanying shame.</p>
@@ -610,24 +780,39 @@
 
     <div class="term">
       <div class="term-title">Backwards Planning</div>
-      <p class="term-def">Start at the deadline and work backwards in time, identifying each required step and assigning it to a specific date. Most ADHD planning fails because it starts from now and projects forward — which depends on the same time estimation and temporal foresight functions that are impaired. Backwards planning inverts the process: the endpoint is fixed and concrete; every prior step is defined by what must be complete before the next step can begin; start dates are calculated rather than guessed. The result is a visible chain of dependencies anchored to a real deadline, rather than a vague intention to "work on it." For ADHD clients, this also surfaces how much earlier work needs to begin than intuition suggests — which is often the intervention itself.</p>
-      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD Shapes Your Perceptions, Emotions &amp; Motivation</em> [CME lecture slides]. ADDitude Magazine.<br>Dawson, P., &amp; Guare, R. (2016). <em>The Smart but Scattered Guide to Success</em>, Chapter 13. Guilford Press.</span>
+      <p class="term-def">Start at the deadline and work backwards in time, identifying each required step and assigning it to a specific date. Most ADHD planning fails because it starts from now and projects forward — which depends on the same time estimation and temporal foresight functions that are impaired.</p>
+      <p class="term-def">Backwards planning inverts the process: the endpoint is fixed and concrete; every prior step is defined by what must be complete before the next step can begin; start dates are calculated rather than guessed. This also surfaces how much earlier work needs to begin than intuition suggests — which is often the intervention itself.</p>
+      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD Shapes Your Perceptions, Emotions &amp; Motivation</em> [CME lecture slides]. · Dawson, P., &amp; Guare, R. (2016). <em>The Smart but Scattered Guide to Success</em>, Chapter 13. Guilford Press.</span>
+      <p class="term-seealso">See also: <a href="#time-task">Time Blocking</a> · <a href="#the-calendar">Weekly Planning Ritual</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Future-Self Preview</div>
+      <p class="term-def">The future self is neurologically less real than the present self to the ADHD brain. Future-self preview is the deliberate practice of making the future self vivid and emotionally present — through visualization, writing, or structured reflection — so that behavior can begin to organize around a felt connection to future consequences rather than just an intellectual one.</p>
+      <p class="term-def">In practice: "Write two sentences about what your life looks like in three months if this project gets finished versus if it doesn't." Or: "Picture yourself at 9pm Friday. What did this week need to produce for you to feel okay about it?" Small exercises that create a felt future rather than an abstract one.</p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Converting Someday Into This Week</div>
+      <p class="term-def">"Someday" is where good intentions go to die in ADHD. Someday has no urgency, no dopamine, no hook. The conversion practice: anything labeled "someday" gets sorted into one of three buckets during the weekly review — this week, next week, or later (with a date attached).</p>
+      <p class="term-def">If it goes into later, it must have a calendar entry or it doesn't exist. If it goes into this week, it gets a time block, not just a list position. The goal is to eliminate the vague future as a holding category — everything that matters gets a real slot or an honest "not now" decision.</p>
+      <p class="term-seealso">See also: <a href="#the-calendar">Weekly Planning Ritual</a> · <a href="#priority">Q2 Protection</a></p>
     </div>
 
   </section>
 
   <!-- ═══════════════════════════════════════ -->
-  <!-- SECTION 4: PRIORITY & SCOPE MANAGEMENT  -->
+  <!-- SECTION 6: PRIORITY & SCOPE MANAGEMENT  -->
   <!-- ═══════════════════════════════════════ -->
   <section id="priority">
     <div class="section-header">
       <h2>Priority &amp; Scope Management</h2>
-      <span class="section-count">6 entries</span>
+      <span class="section-count">2 entries</span>
     </div>
 
     <div class="term">
       <div class="term-title">Eisenhower Matrix (Urgent-Important Grid)</div>
-      <p class="term-def">A two-axis priority framework that sorts any task, commitment, or demand by urgency (time pressure) and importance (alignment with values or long-term outcomes), producing four quadrants: do it now (Q1: urgent + important), schedule and protect it (Q2: not urgent + important), delegate it (Q3: urgent + not important), or eliminate it (Q4: neither). The matrix is not a scheduling tool — it is a diagnostic instrument. What a client places in each quadrant reveals their internal operating system: their relationship with urgency, their capacity for self-directed living, and which parts are driving behavioral allocation. Most clients dramatically overpopulate Q1 with items that are actually Q3 anxiety amplified to feel urgent.</p>
+      <p class="term-def">A two-axis priority framework that sorts any task, commitment, or demand by urgency (time pressure) and importance (alignment with values or long-term outcomes), producing four quadrants: do it now (Q1: urgent + important), schedule and protect it (Q2: not urgent + important), delegate it (Q3: urgent + not important), or eliminate it (Q4: neither). The matrix is not a scheduling tool — it is a diagnostic instrument. What you place in each quadrant reveals your internal operating system: your relationship with urgency, your capacity for self-directed living, and which parts are driving behavioral allocation. Most people dramatically overpopulate Q1 with items that are actually Q3 anxiety amplified to feel urgent.</p>
       <span class="term-source">Eisenhower Matrix — Canonical KB (tools_assets Knowledge Base, March 2026). Original attribution: Covey, S. R. (1989). <em>The 7 Habits of Highly Effective People</em>. Free Press.</span>
     </div>
 
@@ -637,45 +822,129 @@
       <span class="term-source">Eisenhower Matrix — Canonical KB (tools_assets Knowledge Base, March 2026). Covey, S. R. (1989). <em>The 7 Habits of Highly Effective People</em>. Free Press.<br>Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 3. Guilford Press.</span>
     </div>
 
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 7: LESS IS MORE                 -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="glossary-section" id="less-is-more">
+    <div class="section-header">
+      <h2>Less Is More</h2>
+      <span class="section-count">8 entries</span>
+    </div>
+    <p class="section-intro">Slow is smooth, smooth is fast. The neurodivergent nervous system often compensates for uncertainty with volume — more tasks, more effort, more speed. The intervention is direction, not acceleration.</p>
+
     <div class="term">
       <div class="term-title">Optimal Minimal</div>
       <p class="term-def">Do as little as needed — not as much as possible. The maximum output attainable with minimum effort. Not mediocrity: mediocrity is misallocated effort. Optimal Minimal is about direction, not quantity. The central paradox Glover names directly: it takes more work to attain mediocrity than to achieve success, because mediocrity is the product of enormous energy applied in the wrong direction — over-researching, over-preparing, over-delivering to people who didn't ask for it, wearing all the hats, helping with others' projects while your own sit. Optimal Minimal asks: is this task getting effort because it actually produces something, or because effort itself is serving another function — anxiety management, approval-seeking, identity maintenance?</p>
+      <p class="term-def">In IFS terms, the "more/faster" pattern is almost always a manager part trying to prevent shame, failure, or loss of control. It looks like productivity. It often isn't.</p>
       <span class="term-source">Glover, R. A. (2022). <em>Nice Guys Don't Finish Last — They Rot in Middle Management</em>, Lesson 3: Optimal Minimalism. rotinmiddlemanagement.com.<br>Optimal Minimal — Canonical KB (tools_assets Knowledge Base, March 2026).</span>
     </div>
 
     <div class="term">
       <div class="term-title">Deceptive Productivity</div>
-      <p class="term-def">A pattern in which the appearance of effort substitutes for actual output. The client stays occupied — researching, organizing, revising, helping others, attending to adjacent tasks — in ways that manage anxiety rather than advance the goal. Deceptive productivity is not consciously strategic; it is driven by the same perfectionism and approval-seeking that make genuine attempt feel too risky. The signature: a task that has been on the list for weeks, during a week the client describes as very busy. The diagnostic question is not "were you working?" but "what were you working on, and why that?" The answer typically reveals where the real resistance lives.</p>
+      <p class="term-def">A pattern in which the appearance of effort substitutes for actual output. You stay occupied — researching, organizing, revising, helping others, attending to adjacent tasks — in ways that manage anxiety rather than advance the goal. Deceptive productivity is not consciously strategic; it is driven by the same perfectionism and approval-seeking that make genuine attempt feel too risky. The signature: a task that has been on the list for weeks, during a week you'd describe as very busy. The diagnostic question is not "were you working?" but "what were you working on, and why that?" The answer typically reveals where the real resistance lives.</p>
       <span class="term-source">Glover, R. A. (2022). <em>Nice Guys Don't Finish Last — They Rot in Middle Management</em>, Lesson 3. rotinmiddlemanagement.com.<br>Optimal Minimal — Canonical KB (tools_assets Knowledge Base, March 2026).</span>
     </div>
 
     <div class="term">
-      <div class="term-title">The Pre-Emptive No (Wilson Letter)</div>
-      <p class="term-def">A pre-announced policy that removes entire categories of requests from the decision queue before they arrive — converting recurring refusal decisions into a single upstream choice made once. Edmund Wilson's form letter declining virtually all external requests is the model: not a case-by-case refusal, which carries full emotional overhead each time, but a structural policy that operates before the social moment. For ADHD clients, the clinical value is specific: it does the executive function work before the live moment, when inhibitory control is lowest and RSD is most likely to fire an impulsive yes. The pre-emptive no is the decision already made. The policy is the prosthesis.</p>
-      <span class="term-source">Ferriss, T. "Step 1 — The Wilson Letter and Beyond." In <em>The No Book</em> (with N. Strauss). timferriss.com.<br>Wilson/Pre-Emptive No — Canonical KB (tools_assets Knowledge Base, March 2026).</span>
+      <div class="term-title">Vitamin No</div>
+      <p class="term-def">Saying no is a skill, not a personality trait. For ADHD brains and people-pleasing nervous systems, the automatic response to requests is often yes — because yes feels safer, because the discomfort of refusing is immediate while the consequences of agreeing seem abstract.</p>
+      <p class="term-def">Vitamin No is the practice of treating no as a nutrient. The default no framework, in order:</p>
+      <p class="term-def"><strong>No</strong> — the default<br><strong>Not now</strong> — when timing is genuinely the issue<br><strong>Yes if / when</strong> — conditional yes with explicit constraints</p>
+      <p class="term-def">Work through the ladder in order. Most requests don't make it past the first rung — and that's the point.</p>
+      <p class="term-seealso">See also: <a href="#priority">The Pre-Emptive No</a></p>
     </div>
 
     <div class="term">
-      <div class="term-title">Open Loop Capture / Brain Dump</div>
-      <p class="term-def">Any incomplete task, unresolved commitment, half-formed intention, or nagging "I should" occupying mental bandwidth is an open loop. Open loops consume working memory and generate low-grade psychological drag — the unresolved item sits in the background, using cognitive resources without moving toward resolution (Zeigarnik, 1927). A brain dump is the practice of capturing all open loops externally and completely — everything, unfiltered, onto paper or a trusted external system. Capture doesn't complete the loops; it moves them from inside the head (unreliable, capacity-limited) to outside it (persistent, visible, retrievable). The freed cognitive resources can then go toward the work itself.</p>
-      <span class="term-source">Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 1. Guilford Press.<br>Parkinson's Law — Canonical KB (tools_assets, March 2026). Zeigarnik, B. (1927). On finished and unfinished tasks. <em>Psychologische Forschung</em>, <em>9</em>, 1–85.</span>
+      <div class="term-title">Stop Doing List</div>
+      <p class="term-def">The to-do list has a useful counterpart. Once a week, identify one thing to consciously drop, delegate, or deprioritize — not because it wasn't worth starting, but because the current cost of continuing exceeds its value.</p>
+      <p class="term-def">The stop-doing list works against the sunk cost fallacy, against perfectionism's insistence on finishing everything, and against the ADHD tendency to accumulate open loops faster than they get closed. Intentional quitting is not failure. It's resource management.</p>
+      <p class="term-def">Suggested prompt at the end of each weekly review: "What am I carrying that I don't actually need to carry this week?"</p>
+      <p class="term-seealso">See also: <a href="#the-calendar">Weekly Planning Ritual</a> · <a href="#priority">Q2 Protection</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Two Yeses Per Day</div>
+      <p class="term-def">A simple constraint for brains that overcommit: limit yourself to two real "yes" commitments per day — commitments that require your actual attention, judgment, or presence, as distinct from routine scheduled work.</p>
+      <p class="term-def">The rule creates a forcing function: you can say yes to two things. Which two actually matter?</p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Delegating and Outsourcing</div>
+      <p class="term-def">The ADHD nervous system often struggles to delegate — either because of perfectionism ("no one will do it right"), approval-seeking ("I don't want to seem lazy"), or difficulty initiating the hand-off. But carrying tasks that someone else could do is a direct drain on the cognitive resources needed for the work that actually requires you.</p>
+      <p class="term-def">The question to ask for any recurring task: "Does this specifically require me, or does it just require someone?" If it's the latter, it's a delegation candidate. Outsourcing administrative friction, routine tasks, or low-skill errands isn't an indulgence — it's strategic cognitive load management.</p>
+      <p class="term-seealso">See also: <a href="#working-memory">External Working Memory</a> · <a href="#priority">Eisenhower Matrix</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Goodhart's Law</div>
+      <p class="term-def">When a measure becomes a target, it ceases to be a good measure. Goodhart's Law describes what happens when a proxy for success gets treated as success itself — the number of tasks checked off becomes the goal rather than what the tasks were for; hours logged become the standard rather than what was produced in them; the appearance of busyness becomes the signal rather than actual output.</p>
+      <p class="term-def">This matters in ADHD and ND contexts because the same nervous system that drives deceptive productivity is highly susceptible to metric gaming — finding ways to hit the visible number while the real target goes unmet. The antidote: regularly return to the original purpose. Why did this metric exist? What was it supposed to be a proxy for? Is it still pointing in that direction?</p>
+      <p class="term-seealso">See also: <a href="#less-is-more">Deceptive Productivity</a> · <a href="#less-is-more">Optimal Minimal</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">The Pre-Emptive No (Wilson Letter)</div>
+      <p class="term-def">A pre-announced policy that removes entire categories of requests from the decision queue before they arrive — converting recurring refusal decisions into a single upstream choice made once. Edmund Wilson's form letter declining virtually all external requests is the model: not a case-by-case refusal, which carries full emotional overhead each time, but a structural policy that operates before the social moment. For ADHD brains specifically, the value is direct: it does the executive function work before the live moment, when inhibitory control is lowest and RSD is most likely to fire an impulsive yes. The pre-emptive no is the decision already made. The policy is the prosthesis.</p>
+      <span class="term-source">Ferriss, T. "Step 1 — The Wilson Letter and Beyond." In <em>The No Book</em> (with N. Strauss). timferriss.com.<br>Wilson/Pre-Emptive No — Canonical KB (tools_assets Knowledge Base, March 2026).</span>
     </div>
 
   </section>
 
   <!-- ═══════════════════════════════════════ -->
-  <!-- SECTION 5: ACTIVATION & MOTIVATION      -->
+  <!-- SECTION 8: BODY DOUBLING + TRIBE        -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="glossary-section" id="body-doubling">
+    <div class="section-header">
+      <h2>Body Doubling + Tribe</h2>
+      <span class="section-count">4 entries</span>
+    </div>
+    <p class="section-intro">Most neurodivergent men don't need more tips. They need mirrors, momentum, and accountability. The tools in this section work through presence and connection, not information.</p>
+
+    <div class="term">
+      <div class="term-title">Body Doubling</div>
+      <p class="term-def">Working in the presence of another person — physically or virtually, silently or with minimal interaction — activates the ADHD nervous system in ways that solitary work often doesn't. The other person doesn't need to advise, monitor, or participate. Their presence alone provides ambient social awareness that functions as an activation signal.</p>
+      <p class="term-def">For autistic or AuDHD people, body doubling has an additional value: it can reduce the dysregulation that comes with complete isolation while avoiding the demand load of active social interaction. Regulated by presence, without being exhausted by engagement.</p>
+      <p class="term-def"><strong>Practical formats:</strong> Virtual coworking (Focusmate, co-working rooms) · Working at a café or library · Same room as a partner — no conversation required · Scheduled "silent library" arrangements with a friend · "Study with Me" videos as low-commitment ambient presence</p>
+      <span class="term-source">McCabe, J. (2024). <em>How to ADHD: An Insider's Guide to Working with Your Brain (Not Against It)</em>. Ballantine Books.<br>Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 3. Guilford Press.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Accountability Structures</div>
+      <p class="term-def">External accountability compensates for the ADHD brain's limited capacity to sustain motivational momentum from internal resolve alone — not a character deficiency, but an architectural reality. When another person knows about an intention, a social consequence is created that the nervous system can register as real and imminent, where private commitment couldn't.</p>
+      <p class="term-def"><strong>Formats that work:</strong> Weekly check-in text with a friend or cohort member · Coaching relationship with structured goal review · Partner contracts ("I'll send you my draft by Thursday") · Public commitment · Men's group or peer cohort with explicit accountability norms.</p>
+      <p class="term-def">What they all share: the transformation of a private intention into a witnessed commitment — which is neurologically a different kind of thing.</p>
+      <span class="term-source">Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 3. Guilford Press.<br>McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Assembling a Team</div>
+      <p class="term-def">Recovery, change, and sustained growth rarely happen in isolation — not because people are weak, but because the nervous system is a social organ. It regulates through contact, co-regulation, mirroring, and witnessed experience in ways that solitary effort simply cannot replicate.</p>
+      <p class="term-def">"Assembling a team" is the shift from "I need to figure this out on my own" to "who needs to be in the room for this to work?" The team might include a therapist, a coach, an accountability partner, a body double, a mentor, a men's group, or a cohort of peers in similar situations. The question isn't whether you're capable of doing it alone. The question is: why would you, when support makes it more likely to actually happen?</p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">The Three-Legged Stool</div>
+      <p class="term-def">Change — whether in recovery, business, relationships, or personal development — tends to require three things working together. Missing any one makes the whole structure unstable.</p>
+      <div class="term-callout">
+        <p><strong>Purpose</strong> — Why this matters to you. The felt sense of meaning and direction that makes effort sustainable.</p>
+        <p><strong>Structure</strong> — The calendar, the systems, the rituals. External scaffolding that holds the work in place when motivation fluctuates.</p>
+        <p><strong>Support</strong> — The people. Accountability partners, body doubles, coaches, cohorts. The social nervous system regulation that makes sustained effort possible.</p>
+      </div>
+      <p class="term-def">Without any one leg, the stool gets flimsy.</p>
+      <p class="term-def">Most approaches to change focus heavily on purpose or structure while underinvesting in support. For neurodivergent brains especially, support is often the missing leg — not because it's the hardest to build, but because asking for it runs against the cultural narrative of the capable, independent man.</p>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 9: ACTIVATION & MOTIVATION      -->
   <!-- ═══════════════════════════════════════ -->
   <section id="activation">
     <div class="section-header">
       <h2>Activation &amp; Motivation</h2>
-      <span class="section-count">9 entries</span>
-    </div>
-
-    <div class="term">
-      <div class="term-title">Body Doubling</div>
-      <p class="term-def">The practice of working in the physical or virtual presence of another person — without that person necessarily doing the same task, interacting, or supervising. The effect is well-documented: simply being in the presence of another person generates sufficient ambient social stimulation to activate and sustain the ADHD executive system during tasks that would not activate it in isolation. The mechanism is not accountability (though accountability structures are a related intervention — see below) and does not require conversation, monitoring, or shared work. Presence alone changes the neurological conditions. Research on co-regulation and attentional regulation under social contexts explains part of this: the social environment acts as an external activator, providing low-level arousal that the internal dopaminergic system isn't generating independently. For autistic people and AuDHD clients, body doubling has an additional dimension: it can reduce the dysregulation that occurs in complete isolation while avoiding the demand load of active social interaction. The person is regulated by presence without being exhausted by engagement. Practically: working at a coffee shop, virtual coworking sessions (services like Focusmate), working in the same room as a partner without speaking, or "silent library" arrangements all operationalize this. The co-worker does not need to know they are body doubling. The client does not need to explain it. It is a legitimate scaffold — not a dependency — and the clinical framing should reflect that.</p>
-      <span class="term-source">McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.<br>Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 3. Guilford Press.<br>Raymaker, D. M., Teo, A. R., Steckler, N. A., Lentz, B., Scharer, M., Delos Santos, A., Kapp, S. K., Hunter, M., Joyce, A., &amp; Nicolaidis, C. (2020). "Having all of your internal resources exhausted beyond measure and being left with no clean-up crew": Defining autistic burnout. <em>Autism in Adulthood</em>, <em>2</em>(2), 132–143. (Co-regulation noted as a burnout recovery mechanism.)</span>
+      <span class="section-count">6 entries</span>
     </div>
 
     <div class="term">
@@ -697,12 +966,6 @@
     </div>
 
     <div class="term">
-      <div class="term-title">Accountability Structures</div>
-      <p class="term-def">External accountability compensates for the ADHD brain's limited capacity to sustain motivational momentum from internal resolve alone. Not a character deficiency — an architectural reality: the internal dopaminergic signal that generates anticipatory motivation for deferred goals is underactive. When another person knows about an intention, a social consequence is created that the nervous system can register as real and imminent — the same consequence that private commitment couldn't generate. Accountability structures range in formality from a coaching relationship to a peer check-in to a public announcement. What they share is the transformation of a private intention into a witnessed commitment, which is neurologically a different kind of thing.</p>
-      <span class="term-source">Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 3. Guilford Press.<br>McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.</span>
-    </div>
-
-    <div class="term">
       <div class="term-title">Interest Alignment</div>
       <p class="term-def">ADHD brains generate reliable engagement around genuine curiosity and fascination — not manufactured enthusiasm, not importance alone. Interest alignment is the practice of identifying where authentic interest exists in a task or project and structuring work to maximize time in that territory: finding the genuinely interesting angle, coupling an aversive task with an interesting one, locating the real personal stake in a low-interest obligation. It is also the honest recognition that some tasks are simply low-interest for this nervous system, and that those tasks may require different activation strategies (urgency, accountability, novelty) rather than interest manufacture that isn't going to hold.</p>
       <span class="term-source">McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.<br>Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Section 5. Guilford Press.</span>
@@ -715,26 +978,271 @@
     </div>
 
     <div class="term">
-      <div class="term-title">Aerobic Exercise as EF Intervention</div>
-      <p class="term-def">Of all non-medication interventions for ADHD executive function, vigorous aerobic exercise has the most robust, replicable evidence base. Dodson's synthesis of the research produces a striking ratio: one hour of vigorous aerobic exercise produces approximately four hours of improved concentration and executive function. The mechanism is neurochemical — exercise acutely raises dopamine, norepinephrine, and serotonin, directly improving the same neurotransmitter systems that ADHD medications target. Unlike medication, the effect requires consistent investment; it doesn't stack across days without ongoing exercise. Unlike most behavioral interventions, the effect is not mediated by belief, motivation, or insight — it works neurochemically whether or not the person feels like it. For clients resistant to medication, this is the clinically supported first alternative. For clients on medication, it is an additive intervention, not a replacement.</p>
-      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD Shapes Your Perceptions, Emotions &amp; Motivation</em> [CME lecture slides]. ADDitude Magazine.<br>Tuckman, A. (2012). <em>Understand Your Brain, Get More Done</em>, Chapter 2. Specialty Press.</span>
+      <div class="term-title">Mindfulness in Practical Form</div>
+      <p class="term-def">Mindfulness is most useful in ADHD and ND contexts when treated as attentional training and self-monitoring rather than relaxation or spiritual practice. Three practical formats:</p>
+
+      <div class="term-sub">
+        <div class="term-sub-title">One-Minute Mindfulness Anchor</div>
+        <p class="term-def">Before starting a work session: one minute of deliberate attention to breath, body, and the room. Not to achieve calm — to establish a baseline and signal the transition into focused mode. The minute itself is the ritual.</p>
+      </div>
+
+      <div class="term-sub">
+        <div class="term-sub-title">Mindful Check-In</div>
+        <p class="term-def">A scheduled pause — ideally attached to an existing anchor like a meal, a transition, or a calendar alarm — where you briefly note: what am I doing, what am I feeling, what do I actually need right now? The check-in is the self-monitoring function that ADHD impairs, externalized into a scheduled moment.</p>
+      </div>
+
+      <div class="term-sub">
+        <div class="term-sub-title">Attention Reset</div>
+        <p class="term-def">When you notice you've been captured by a loop — a worry, a distraction, a low-value rabbit hole — use a brief deliberate reset: three slow breaths, one orienting look around the room, and one deliberate return to what you were doing. You're training the redirect, not punishing the drift.</p>
+      </div>
+
+      <p class="term-seealso">See also: <a href="#muchness">Attention Training</a> · <a href="#calm">Systematic Self-Awareness Practice</a></p>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════ -->
+  <!-- SECTION 10: HARNESSING THE MUCHNESS: MANAGING IMPULSIVE ENTHUSIASM & RUMINATION -->
+  <!-- ══════════════════════════════════════════════════════════════════════════════ -->
+  <section class="glossary-section" id="muchness">
+    <div class="section-header">
+      <h2>Harnessing the Muchness: Managing Impulsive Enthusiasm &amp; Rumination</h2>
+      <span class="section-count">6 entries</span>
+    </div>
+    <p class="section-intro">The problem isn't just impulsivity. It's excess speed, excess activation, excess urgency, excess cognitive-emotional charge, and the stickiness of attention that won't let go. The goal is not to flatten the intensity — it's to harness it without letting it run the show.</p>
+
+    <div class="term">
+      <div class="term-title">The 7 T's</div>
+      <p class="term-def">A mnemonic for the core skill in managing impulsive responding: <strong>Take The Time To Think Things Through.</strong></p>
+      <p class="term-def">The ADHD and anxious brain often moves at the speed of the threat system — fast, decisive, action-oriented. The 7 T's is a deliberate interrupt. Before sending the message, making the commitment, reacting to the provocation, starting the new project: take the time. Not hours — sometimes seconds. The pause is the intervention.</p>
+      <p class="term-def">What you're doing in that pause: checking whether this is compulsion or choice. Whether the urgency is real or manufactured. Whether you're responding to what's actually happening or to an internal alarm that fired faster than the situation warranted.</p>
+      <p class="term-seealso">See also: <a href="#calm">The ADHD Pause</a> · <a href="#activation">Urgency Injection</a></p>
     </div>
 
     <div class="term">
-      <div class="term-title">Brain Performance Foundations</div>
-      <p class="term-def">EF interventions operate on whatever cognitive capacity is available. That available capacity is substantially determined by lifestyle factors that are upstream of technique: sleep quality and quantity, stress load, physical health, nutrition, exercise regularity, and mental health status. Anxiety and depression don't merely coexist with ADHD — they directly consume the working memory, cognitive flexibility, and emotional regulation resources that EF strategies depend on. Sleep deprivation alone can produce EF deficits in neurotypical adults that mimic ADHD; in someone with ADHD, its effect on EF is compounding. This is not a list of lifestyle aspirations. It is a diagnostic frame: when EF strategies that previously worked stop working, the first inquiry is not about the strategy — it is about what changed in the underlying brain conditions. Tracking client performance across these factors over time often reveals patterns that EF-focused work alone cannot explain.</p>
-      <span class="term-source">Tuckman, A. (2012). <em>Understand Your Brain, Get More Done</em>, Chapter 2: Peak Mental Performance. Specialty Press.<br>Kemp, J., &amp; Mitchelson, M. (2024). <em>The Neurodivergence Skills Workbook for Autism and ADHD</em>. New Harbinger.</span>
+      <div class="term-title">Urge Surfing</div>
+      <p class="term-def">Urge surfing is the practice of observing an urge without acting on it — watching it rise, peak, and pass, the way a wave builds and breaks. The key reframe: urges are not commands. They're sensations with a predictable arc. You don't have to fight them or obey them. You can ride them.</p>
+      <p class="term-def">In practice: when an impulse to check your phone, switch tasks, fire off a message, or abandon the current work arrives — notice it. Name it. Track it in your body. Watch it change. Most urges lose intensity within 90 seconds to a few minutes if they aren't fed. The act of watching is itself the skill you're building.</p>
+      <p class="term-def">Especially effective for impulsive task-switching, compulsive checking, and reactive communication — three patterns that commonly disrupt focused work in ADHD brains.</p>
+      <p class="term-seealso">See also: <a href="#calm">Emotion Labeling</a> · <a href="#muchness">The 7 T's</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Attention Training (from Metacognitive Therapy)</div>
+      <p class="term-def">Attention training, as developed in Metacognitive Therapy (MCT), is not about achieving perfect concentration. It's about training attentional flexibility — the ability to redirect attention, widen its focus, and disengage from sticky internal loops.</p>
+      <p class="term-def">The ADHD and anxious brain tends to get captured: by a worry, a self-critical loop, a fascinating tangent, or a rumination spiral. MCT attention training works by deliberately practicing the movements of attention — narrowing, widening, redirecting, switching — using external stimuli as training anchors. The goal is to restore voluntary control over where attention goes, rather than being pulled wherever the loudest internal alarm points.</p>
+      <p class="term-def">This is distinct from mindfulness in that it specifically targets attentional flexibility and control as a skill to be practiced, rather than emphasizing acceptance of the present moment.</p>
+      <span class="term-source">Wells, A. (2009). <em>Metacognitive Therapy for Anxiety and Depression</em>. Guilford Press.</span>
+      <p class="term-seealso">See also: <a href="#muchness">Rumination</a> · <a href="#activation">Self-Compassion as EF Prerequisite</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Rumination</div>
+      <p class="term-def">Rumination is repetitive, unproductive mental looping — the mind returning to the same concern, replaying the same event, rehearsing the same fear, without moving toward resolution. It is not the same as reflection, problem-solving, or processing. Reflection has movement. Rumination circles.</p>
+      <p class="term-def">Rumination often masquerades as something useful: preparation ("I'm thinking through what might go wrong"), insight-seeking ("I'm trying to understand what happened"), or planning ("I'm figuring out what to do"). The tell: you've been here before. The loop isn't generating new information. It's managing anxiety through the illusion of control.</p>
+      <p class="term-def">The intervention is not suppression — trying not to think about something usually increases its pull. The intervention is attentional redirection: deliberately shifting attention to something external, sensory, and present. MCT attention training is one structured way to build this skill.</p>
+      <span class="term-source">Wells, A. (2009). <em>Metacognitive Therapy for Anxiety and Depression</em>. Guilford Press.</span>
+      <p class="term-seealso">See also: <a href="#muchness">Attention Training</a> · <a href="#calm">Emotion Labeling</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Micro-Skills: Lengthening the Gap</div>
+      <p class="term-def">Between impulse and action, there is a gap. In ADHD, that gap is often vanishingly small. These micro-skills widen it deliberately — not to eliminate the impulse, but to restore choice:</p>
+      <div class="term-callout">
+        <p><strong>Delay the first move</strong> — Before acting on an impulse, wait 60 seconds. Set a timer if needed.</p>
+        <p><strong>Name it before you do it</strong> — "I'm about to check my phone." "I'm about to say yes." Naming activates the prefrontal cortex slightly ahead of action.</p>
+        <p><strong>Name the feeling, not just the action</strong> — "I want to switch tasks because I'm anxious about this one." Labeling the underlying emotion changes its relationship to behavior.</p>
+        <p><strong>Move from compulsion to choice</strong> — Ask: "Am I doing this because I want to, or because I feel like I have to?" That question alone is sometimes enough to break the automatic chain.</p>
+      </div>
+      <p class="term-seealso">See also: <a href="#calm">Emotion Labeling</a> · <a href="#muchness">Urge Surfing</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">The ADHD Pause — Introduction</div>
+      <p class="term-def">When activation is high — social anxiety, interpersonal friction, the urgency to respond right now — the most important thing is usually to not do the thing the nervous system is pushing toward. The ADHD Pause is the deliberate interruption of that momentum.</p>
+      <p class="term-def">Think of it as buying yourself 10–30 seconds before the next move. Enough time to downregulate slightly, check what's actually happening, and choose rather than react. The pause is developed fully in the next section.</p>
+      <p class="term-seealso">See also: <a href="#calm">Dealing with Social Anxiety or Dysregulation in the Moment</a></p>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════════════════ -->
+  <!-- SECTION 11: DEALING WITH SOCIAL ANXIETY OR DYSREGULATION IN THE MOMENT: CALM IS CONTAGIOUS -->
+  <!-- ══════════════════════════════════════════════════════════════════════════════════════ -->
+  <section class="glossary-section" id="calm">
+    <div class="section-header">
+      <h2>Dealing with Social Anxiety or Dysregulation in the Moment: Calm Is Contagious</h2>
+      <span class="section-count">9 entries</span>
+    </div>
+    <p class="section-intro">When the nervous system is escalating in real time, the goal is not perfect insight. The goal is to create enough calm, orientation, and choice so you can stay present and respond more skillfully. Calm is contagious — it regulates you, and it communicates safety to the people around you.</p>
+
+    <div class="term">
+      <div class="term-title">The ADHD Pause</div>
+      <p class="term-def">The ADHD Pause is a deliberate, brief suspension of the impulse to respond — used in moments of social escalation, interpersonal friction, or any situation where the nervous system is pushing toward immediate action.</p>
+      <p class="term-def"><strong>What it looks like in practice:</strong></p>
+      <div class="term-callout">
+        <p>Notice that activation is high (body tightening, speech speeding up, urge to react)</p>
+        <p>Take one slow breath — not obviously, just one deliberate breath</p>
+        <p>Look at something in the room — briefly orient outward</p>
+        <p>Let 10–30 seconds pass before responding</p>
+        <p>If you need more time: "Let me think about that for a moment" is a complete sentence</p>
+      </div>
+      <p class="term-def">The pause is not hesitation or weakness. It's the interval in which you switch from the reactive brain to the responsive one. A person who pauses before responding is experienced as more trustworthy, more present, and more calm — regardless of what they say next.</p>
+      <p class="term-seealso">See also: <a href="#muchness">The ADHD Pause — Introduction</a> · <a href="#calm">Emotion Labeling</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">The Big 3 Plus 1 (from RO-DBT)</div>
+      <p class="term-def">From Radically Open Dialectical Behavior Therapy, the Big 3 Plus 1 are four in-the-moment body signals that simultaneously regulate you and communicate safety to others:</p>
+      <div class="term-callout">
+        <p><strong>1. Open body posture</strong> — Uncrossed arms, relaxed shoulders, slight forward lean. Signals openness rather than defense.</p>
+        <p><strong>2. Relaxed facial expression</strong> — Softened jaw, unclenched brow. A face that communicates "I'm not a threat" is doing social work for you automatically.</p>
+        <p><strong>3. Slow speech rate</strong> — Deliberately slowing down the speed at which you speak changes the nervous system state of both speaker and listener. Fast speech signals urgency; slow speech signals safety.</p>
+        <p><strong>Plus 1: Soft eye contact</strong> — Not staring, not avoiding — genuine, relaxed eye contact. Present and engaged without being aggressive or anxious.</p>
+      </div>
+      <p class="term-def">These four signals work while you're doing them, not after. They're not a performance of calm — they're the mechanism of it. Regulating the body this way shifts the internal state, not just the external appearance.</p>
+      <span class="term-source">Lynch, T. R. (2018). <em>Radically Open Dialectical Behavior Therapy</em>. New Harbinger.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">4-Square Breathing (Box Breathing)</div>
+      <p class="term-def">A portable breathing pattern that activates the parasympathetic nervous system and reduces physiological arousal. Four equal counts in each direction:</p>
+      <div class="term-callout">
+        <p><strong>Inhale</strong> — 4 counts &nbsp;·&nbsp; <strong>Hold</strong> — 4 counts &nbsp;·&nbsp; <strong>Exhale</strong> — 4 counts &nbsp;·&nbsp; <strong>Hold</strong> — 4 counts</p>
+      </div>
+      <p class="term-def">Repeat 2–4 cycles. The hold after exhale is the most regulating part — it extends the parasympathetic window. It works because it does — not because you believe in it.</p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Physiological Sigh</div>
+      <p class="term-def">A double inhale through the nose followed by a long, slow exhale through the mouth. The double inhale re-inflates alveoli in the lungs that have partially collapsed under stress; the extended exhale activates the vagal brake and produces rapid parasympathetic downregulation.</p>
+      <p class="term-def">Research found the physiological sigh to be the fastest real-time stress-reduction technique tested, outperforming mindfulness meditation and other breathing protocols on acute physiological measures. One or two sighs are usually sufficient.</p>
+      <p class="term-def">Use it: in the moment before a difficult conversation, when activation spikes unexpectedly, when the ADHD Pause needs a physiological anchor.</p>
+      <span class="term-source">Balban, M. Y., et al. (2023). Brief structured respiration practices enhance mood and reduce physiological arousal. <em>Cell Reports Medicine</em>, <em>4</em>(1), 100895.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">5-4-3-2-1 Grounding</div>
+      <p class="term-def">A sensory grounding technique that shifts attention from internal activation to present-moment external experience:</p>
+      <div class="term-callout">
+        <p>5 things you can <strong>see</strong> &nbsp;·&nbsp; 4 things you can <strong>physically feel</strong> &nbsp;·&nbsp; 3 things you can <strong>hear</strong> &nbsp;·&nbsp; 2 things you can <strong>smell</strong> &nbsp;·&nbsp; 1 thing you can <strong>taste</strong></p>
+      </div>
+      <p class="term-def">The exercise works by redirecting attentional resources to the sensory present, which interrupts the rumination loop and reduces the subjective intensity of emotional activation. Most useful for dissociation, overwhelm, or when the internal state has become louder than external reality. Combine with box breathing for stronger effect.</p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Orienting to the Room</div>
+      <p class="term-def">A simpler, faster grounding move: deliberately look around the room, slowly, noting what's there. Move your eyes and head. Then plant your feet flat on the floor. Then take one breath.</p>
+      <p class="term-def">This is orientation in the nervous-system sense: the body checks "am I safe?" by surveying the environment. Deliberately performing this scan provides the safety signal. Effective in exactly the moments when you don't have time for a full grounding exercise.</p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Mindfulness Self-Inquiry: "What Do I Need to Learn Here?"</div>
+      <p class="term-def">In the middle of a difficult interaction — before you exit, react, or collapse — one question can create enough distance from the activation to change the next move: "What do I need to learn here?"</p>
+      <p class="term-def">This is not spiritual bypass. It's a deliberate shift from defensive posture to curious posture. Defensiveness narrows the cognitive field and accelerates escalation. Curiosity widens it. The question doesn't require an answer in the moment — asking it is the intervention.</p>
+      <p class="term-seealso">See also: <a href="#activation">Self-Compassion as EF Prerequisite</a> · <a href="#calm">Emotion Labeling</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Emotion Labeling</div>
+      <p class="term-def">Labeling an emotional state — naming it explicitly, even silently — reduces its intensity at a neurological level. Verbal labeling activates the prefrontal cortex and partially down-regulates amygdala activation (Lieberman et al., 2007). For EF support, this has a direct functional implication: high emotional arousal displaces cognitive resources. The anxiety, frustration, or shame running in the background is consuming working memory slots that would otherwise be available for the task. Labeling the emotion is not about feeling it more deeply or resolving it. It is a regulatory tool that reduces the neurological tax on the executive system before work begins — or when dysregulation occurs mid-task.</p>
+      <span class="term-source">McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.<br>Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 5: Manage Emotions in the Moment. Guilford Press.<br>Lieberman, M. D., et al. (2007). Putting feelings into words. <em>Psychological Science</em>, <em>18</em>(5), 421–428.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Systematic Self-Awareness Practice</div>
+      <p class="term-def">ADHD impairs the meta-cognitive function of noticing one's own behavioral state in real time — you can be significantly dysregulated, stuck, or off-task without any internal signal alerting you to it. Deliberate self-awareness practices externalize the self-monitoring function: scheduled check-ins (not "whenever you remember"), structured brief reflection prompts at transition points, body scans attached to predictable environmental cues. These work not because they build metacognitive capacity over time — though they may — but because they place the cue in the environment at the moment the check-in is needed, rather than relying on the internal self-monitoring system that isn't generating reliable alerts.</p>
+      <span class="term-source">Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 7: Practice Self-Awareness Systematically. Guilford Press.<br>McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.</span>
     </div>
 
   </section>
 
   <!-- ═══════════════════════════════════════ -->
-  <!-- SECTION 6: WORKING MEMORY & COGNITIVE LOAD -->
+  <!-- SECTION 12: ENVIRONMENT AS INTERVENTION -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="glossary-section" id="environment">
+    <div class="section-header">
+      <h2>Environment as Intervention</h2>
+      <span class="section-count">7 entries</span>
+    </div>
+    <p class="section-intro">The environment is not neutral. It is either doing executive-function work for you or demanding more executive function than you actually have available.</p>
+
+    <div class="term">
+      <div class="term-title">Designing for Activation</div>
+      <p class="term-def">Not all environments are equal for ADHD brains. Some activate — they provide a level of ambient stimulation that supports focus without overwhelming it. Others drain.</p>
+      <p class="term-def">This is not a preference issue. It's a performance issue. Choosing the right environment for a task is as legitimate an EF intervention as any tool or technique:</p>
+      <div class="term-callout">
+        <p>Some people focus better with background noise (coffee shop, white noise, lofi music) · Some focus better in complete silence</p>
+        <p>Some need visual stimulation; others need visual blank space</p>
+        <p>Some perform better with others present; others collapse under observation</p>
+      </div>
+      <p class="term-def">Know your activation profile. Then choose accordingly rather than defaulting to whatever environment is most convenient.</p>
+      <p class="term-seealso">See also: <a href="#body-doubling">Body Doubling</a> · <a href="#externalize">Friction Architecture</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Monotasking Environment</div>
+      <p class="term-def">Monotasking is the deliberate restriction of attention to a single task during a defined window, with competing demands actively removed. In ADHD, mid-task interruptions can erase the active cognitive state entirely.</p>
+      <p class="term-def"><strong>One task. One window. One place.</strong></p>
+      <div class="term-callout">
+        <p>Phone in another room (not silenced — in another room)</p>
+        <p>Notifications off at the OS level during work blocks</p>
+        <p>Browser closed to everything except what the task requires</p>
+        <p>"One place for one type of work" — the same physical space for the same category of work each time</p>
+      </div>
+      <p class="term-def">You're not relying on willpower to stay focused — you're removing the thing that would require willpower to resist.</p>
+      <span class="term-source">McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.<br>Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 2. Guilford Press.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Environmental Reset Ritual</div>
+      <p class="term-def">A brief end-of-work-session ritual that resets the workspace to a ready state: desk cleared to baseline, task notes written for the next session, one open loop captured. Two to three minutes.</p>
+      <p class="term-def">The reset creates a clean starting point for the next session and gives the current session a clear endpoint — something the ADHD brain often struggles to produce naturally. The ritual is the transition signal: work is done, the space is closed, the next thing can begin.</p>
+      <p class="term-seealso">See also: <a href="#externalize">Pre-Sprint Ritual</a> · <a href="#the-calendar">Open Loop Capture</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Sensory Setup</div>
+      <p class="term-def">The sensory environment affects cognitive performance for everyone — and disproportionately for people with ADHD, autism, or sensory processing sensitivity. Worth designing deliberately rather than accepting by default.</p>
+      <p class="term-def"><strong>Variables worth controlling intentionally:</strong></p>
+      <div class="term-callout">
+        <p><strong>Light</strong> — natural vs. artificial, brightness, color temperature</p>
+        <p><strong>Sound</strong> — silence, white noise, music (lyrics vs. instrumental matters)</p>
+        <p><strong>Temperature</strong> — slightly cool environments tend to support alertness</p>
+        <p><strong>Visual field</strong> — clutter competes for attention; clear sight lines reduce cognitive load</p>
+        <p><strong>Scent</strong> — some people find specific scents reliably activating or calming</p>
+      </div>
+      <p class="term-def">Default workspace templates — a specific sensory configuration you can reproduce reliably — reduce the EF cost of setting up to work each time.</p>
+      <p class="term-seealso">See also: <a href="#working-memory">Consistent Environment</a> · <a href="#externalize">Friction Architecture</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Friction Architecture</div>
+      <p class="term-def">Every decision point between intention and action is a place where executive function can fail. Friction reduction means eliminating those decision points upstream: gym bag packed the night before, medication by the coffee maker, document already open when the session starts, clothes already laid out. Friction addition runs in the opposite direction for behaviors you're trying to reduce: apps buried three screens deep, phone in a different room, notifications off, the distracting site blocked. The environment is a variable, not a fixed constraint. Design it with the same care you'd design any other system — because for an ADHD brain, the environment is doing EF work that the internal system can't do reliably on its own.</p>
+      <span class="term-source">McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.<br>Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 2. Guilford Press.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Launchpads</div>
+      <p class="term-def">A launchpad is a designated, visible location where items that need to leave with you are placed — physically impossible to miss at the moment of departure. Keys. The library book. The signed form. The charger. The launchpad substitutes for the prospective memory function that was supposed to fire "remember the thing" at the right moment — and didn't. The object in the right location <em>is</em> the reminder. This is Barkley's externalization principle at its most concrete. The launchpad doesn't require you to remember anything; it requires only that you made the deposit at the time you thought of it, so retrieval happens automatically when you need it.</p>
+      <span class="term-source">McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.<br>Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 1. Guilford Press.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Consistent Environment</div>
+      <p class="term-def">ADHD brains don't generalize behavioral patterns automatically across contexts. A system that works reliably in one physical space may not transfer to another without explicit scaffolding — not because the system is fragile, but because context-dependent generalization requires the same executive function the system was compensating for. Consistent environment means: same physical space for the same type of work, same setup, same sequence. Over time, the environment itself becomes a cue — the brain learns to associate the specific context with that mode of functioning. Stability in the environment reduces the activation energy required to begin. Changing the environment is a legitimate intervention; not knowing it might disrupt an existing system is a preventable cost.</p>
+      <span class="term-source">Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 8: Be Consistent. Guilford Press.</span>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 13: WORKING MEMORY & COGNITIVE LOAD -->
   <!-- ═══════════════════════════════════════ -->
   <section class="glossary-section" id="working-memory">
     <div class="section-header">
       <h2>Working Memory &amp; Cognitive Load</h2>
-      <span class="section-count">6 entries</span>
+      <span class="section-count">3 entries</span>
     </div>
 
     <div class="term">
@@ -755,33 +1263,103 @@
       <span class="term-source">McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.<br>Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 2. Guilford Press.</span>
     </div>
 
-    <div class="term">
-      <div class="term-title">Emotion Labeling</div>
-      <p class="term-def">Labeling an emotional state — naming it explicitly, even silently — reduces its intensity at a neurological level. Verbal labeling activates the prefrontal cortex and partially down-regulates amygdala activation (Lieberman et al., 2007). For EF support, this has a direct functional implication: high emotional arousal displaces cognitive resources. The anxiety, frustration, or shame running in the background is consuming working memory slots that would otherwise be available for the task. Labeling the emotion is not about feeling it more deeply or resolving it. It is a regulatory tool that reduces the neurological tax on the executive system before work begins — or when dysregulation occurs mid-task.</p>
-      <span class="term-source">McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.<br>Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 5: Manage Emotions in the Moment. Guilford Press.<br>Lieberman, M. D., et al. (2007). Putting feelings into words. <em>Psychological Science</em>, <em>18</em>(5), 421–428.</span>
+  </section>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- SECTION 14: DAILY PRACTICES             -->
+  <!-- ═══════════════════════════════════════ -->
+  <section class="glossary-section" id="daily">
+    <div class="section-header">
+      <h2>Daily Practices</h2>
+      <span class="section-count">6 entries</span>
     </div>
 
     <div class="term">
-      <div class="term-title">Consistent Environment</div>
-      <p class="term-def">ADHD brains don't generalize behavioral patterns automatically across contexts. A system that works reliably in one physical space may not transfer to another without explicit scaffolding — not because the system is fragile, but because context-dependent generalization requires the same executive function the system was compensating for. Consistent environment means: same physical space for the same type of work, same setup, same sequence. Over time, the environment itself becomes a cue — the brain learns to associate the specific context with that mode of functioning. Stability in the environment reduces the activation energy required to begin. Changing the environment is a legitimate intervention; not knowing it might disrupt an existing system is a preventable cost.</p>
-      <span class="term-source">Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 8: Be Consistent. Guilford Press.</span>
+      <div class="term-title">Morning Anchor Sequence</div>
+      <p class="term-def">The first 30–60 minutes of the day set the nervous system baseline for everything that follows. A morning anchor sequence is a brief, consistent set of behaviors that create physiological regulation, mental clarity, and intentional orientation before external demands begin.</p>
+      <p class="term-def">The minimum viable version: movement of some kind, water, and one deliberate look at the day's calendar. The point is that the day begins with intention rather than reaction — you saw what was coming before the world told you what was urgent.</p>
+      <p class="term-def">For ADHD brains, the anchor sequence is also a habit chain — the same cues in the same sequence reduce the EF cost of getting started each morning, because the brain learns the sequence and begins to run it with less initiation energy over time.</p>
+      <p class="term-seealso">See also: <a href="#externalize">Pre-Sprint Ritual</a> · <a href="#the-calendar">Minimum Viable Day</a></p>
     </div>
 
     <div class="term">
-      <div class="term-title">Systematic Self-Awareness Practice</div>
-      <p class="term-def">ADHD impairs the meta-cognitive function of noticing one's own behavioral state in real time — a client can be significantly dysregulated, stuck, or off-task without any internal signal alerting them to it. Deliberate self-awareness practices externalize the self-monitoring function: scheduled check-ins (not "whenever you remember"), structured brief reflection prompts at transition points, body scans attached to predictable environmental cues. These work not because they build metacognitive capacity over time — though they may — but because they place the cue in the environment at the moment the check-in is needed, rather than relying on the internal self-monitoring system that isn't generating reliable alerts.</p>
-      <span class="term-source">Barkley, R. A. (2010). <em>Taking Charge of Adult ADHD</em>, Rule 7: Practice Self-Awareness Systematically. Guilford Press.<br>McCabe, J. (2024). <em>How to ADHD</em>. Ballantine Books.</span>
+      <div class="term-title">End-of-Day Shutdown Ritual</div>
+      <p class="term-def">Without a deliberate endpoint, the ADHD brain often doesn't cleanly disengage from work mode — tasks stay open, loops stay open, the boundary between work and rest stays permeable. The shutdown ritual is the mechanism for creating that endpoint.</p>
+      <p class="term-def">A simple version: capture any remaining open loops (30 seconds), note the one most important thing for tomorrow, close all work-related tabs and apps, and say — aloud if that helps — "work is done." The verbal or physical marker matters: it provides the ritual close that the internal system can't always generate on its own.</p>
+      <p class="term-def">The shutdown ritual also protects evening quality — it's harder to be present with the people you're with, or with rest, when the background process of unfinished work is still running.</p>
+      <p class="term-seealso">See also: <a href="#environment">Environmental Reset Ritual</a> · <a href="#the-calendar">Open Loop Capture</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Gratitude Journaling</div>
+      <p class="term-def">Not generic positivity. Not a good-vibes ritual. Gratitude journaling, done deliberately, is attentional training — it exercises the brain's capacity to locate and hold positive content in a nervous system that is often wired to prioritize threat.</p>
+      <p class="term-def">The ADHD and anxious brain has a negativity bias frequently amplified by years of failure feedback, rejection sensitivity, and shame accumulation. Gratitude journaling works against this bias by repeatedly directing attention toward what is working, what is present, what is genuinely valued. Over time, this isn't just mood management — it's restructuring the default focus of attention.</p>
+      <p class="term-def"><strong>What works:</strong> Three specific things each day, with at least one sentence of genuine reflection on each. Not "the weather." Not "my health." Something specific enough that it required actual attention to notice.</p>
+      <span class="term-source">Emmons, R. A., &amp; McCullough, M. E. (2003). Counting blessings versus burdens. <em>Journal of Personality and Social Psychology</em>, <em>84</em>(2), 377–389.</span>
+      <p class="term-seealso">See also: <a href="#activation">Self-Compassion as EF Prerequisite</a> · <a href="#calm">Systematic Self-Awareness Practice</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">"Things I Like About Myself" Journaling</div>
+      <p class="term-def">This is anti-shame conditioning, not affirmation practice. The distinction matters. Forced affirmations often produce cognitive dissonance in people with high shame loads — the brain generates a counter-argument faster than the affirmation lands.</p>
+      <p class="term-def">This practice asks for real, specific things you actually believe, not aspirational self-talk. It might be "I'm a loyal friend" or "I stayed calm in that conversation" or "I noticed I was ruminating and stopped." Small, specific, earned.</p>
+      <p class="term-def">The repetitive practice gradually shifts the default internal narrative from deficit-focused to complexity-focused. For neurodivergent adults with long histories of being told what's wrong with them, this is not soft. It's corrective.</p>
+      <p class="term-seealso">See also: <a href="#activation">Self-Compassion as EF Prerequisite</a> · <a href="#daily">Gratitude Journaling</a></p>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Aerobic Exercise as EF Intervention</div>
+      <p class="term-def">Of all non-medication interventions for ADHD executive function, vigorous aerobic exercise has the most robust, replicable evidence base. Dodson's synthesis of the research produces a striking ratio: one hour of vigorous aerobic exercise produces approximately four hours of improved concentration and executive function. The mechanism is neurochemical — exercise acutely raises dopamine, norepinephrine, and serotonin, directly improving the same neurotransmitter systems that ADHD medications target. Unlike medication, the effect requires consistent investment; it doesn't stack across days without ongoing exercise. Unlike most behavioral interventions, the effect is not mediated by belief, motivation, or insight — it works neurochemically whether or not the person feels like it. If you're not using medication, this is the evidence-supported first alternative. If you are on medication, it is an additive intervention, not a replacement.</p>
+      <span class="term-source">Dodson, W. W. (2022). <em>How ADHD Shapes Your Perceptions, Emotions &amp; Motivation</em> [CME lecture slides]. ADDitude Magazine.<br>Tuckman, A. (2012). <em>Understand Your Brain, Get More Done</em>, Chapter 2. Specialty Press.</span>
+    </div>
+
+    <div class="term">
+      <div class="term-title">Brain Performance Foundations</div>
+      <p class="term-def">EF interventions operate on whatever cognitive capacity is available. That available capacity is substantially determined by lifestyle factors that are upstream of technique: sleep quality and quantity, stress load, physical health, nutrition, exercise regularity, and mental health status. Anxiety and depression don't merely coexist with ADHD — they directly consume the working memory, cognitive flexibility, and emotional regulation resources that EF strategies depend on. Sleep deprivation alone can produce EF deficits in neurotypical adults that mimic ADHD; in someone with ADHD, its effect on EF is compounding. This is not a list of lifestyle aspirations. It is a diagnostic frame: when EF strategies that previously worked stop working, the first inquiry is not about the strategy — it is about what changed in the underlying brain conditions. Tracking your own performance across these factors over time often reveals patterns that EF-focused work alone cannot explain.</p>
+      <span class="term-source">Tuckman, A. (2012). <em>Understand Your Brain, Get More Done</em>, Chapter 2: Peak Mental Performance. Specialty Press.<br>Kemp, J., &amp; Mitchelson, M. (2024). <em>The Neurodivergence Skills Workbook for Autism and ADHD</em>. New Harbinger.</span>
     </div>
 
   </section>
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <p>High Signal Coaching — <a href="index.html">highsignalcoaching.com</a></p>
-    <p>For practitioners and coaches working with ADHD/ND adults. Not intended as standalone client-facing material without clinical adaptation.</p>
+    <p>A free resource from High Signal Coaching — for neurodivergent adults who want to understand themselves and function better.</p>
     <p>Sources: Barkley (2010, 2012) · McCabe (2024) · Tuckman (2012) · Dawson &amp; Guare (2016) · Dodson (2022) · Kemp &amp; Mitchelson (2024) · Glover (2022) · Parkinson (1958) · Covey (1989) · Cirillo (2006) · Ferriss (n.d.) · tools_assets Canonical KB (March 2026)</p>
   </footer>
 
 </div>
+
+<script>
+  var btn = document.getElementById('hamburger');
+  var links = document.getElementById('nav-links');
+  if (btn && links) {
+    btn.addEventListener('click', function() {
+      var open = links.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+    });
+    links.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A' && !e.target.classList.contains('nav-dropdown-btn')) {
+        links.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+  var resBtn = document.getElementById('resources-btn');
+  var resDrop = document.getElementById('resources-dropdown');
+  if (resBtn && resDrop) {
+    resBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var open = resDrop.classList.toggle('open');
+      resBtn.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', function() {
+      resDrop.classList.remove('open');
+      resBtn.setAttribute('aria-expanded', 'false');
+    });
+    resDrop.addEventListener('click', function(e) { e.stopPropagation(); });
+  }
+</script>
 </body>
 </html>
