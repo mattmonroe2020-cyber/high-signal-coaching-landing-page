@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IFS, ADHD & Autism | High Signal Coaching</title>
+  <meta name="description" content="How Internal Family Systems maps onto neurodivergent experience — ADHD, autism, AuDHD, masking, RSD, and what self-led living actually looks like in a neurodivergent system.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:         #1C1914;
+      --dark2:        #252019;
+      --dark3:        #2e2820;
+      --amber:        #C8873A;
+      --amber-light:  #E4A85C;
+      --cream:        #F0E6D8;
+      --cream-muted:  #B8A898;
+      --cream-faint:  #7A6E64;
+      --serif:        'Cormorant Garamond', Georgia, serif;
+      --mono:         'DM Mono', monospace;
+      --rule:         #3a3228;
+      --manager:      #2d5a8e;
+      --manager-bg:   #1e2f40;
+      --fire:         #b85c2a;
+      --fire-bg:      #3a2218;
+      --exile:        #7a4499;
+      --exile-bg:     #281630;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--serif);
+      line-height: 1.7;
+    }
+
+    /* ─── NAV ──────────────────────────────────────────── */
+    .hs-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      border-bottom: .5px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: var(--dark);
+      z-index: 100;
+    }
+    .hs-logo {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .hs-nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .hs-nav-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .hs-nav-links a:hover { color: var(--cream); }
+
+    /* ─── HERO ─────────────────────────────────────────── */
+    .primer-hero {
+      padding: 4.5rem 3rem 3.5rem;
+      border-bottom: .5px solid var(--rule);
+      max-width: 820px;
+    }
+    .primer-eyebrow {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .primer-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 50px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+    }
+    .primer-hero h1 em { font-style: italic; color: var(--amber-light); }
+    .primer-hero-sub {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+    .primer-meta {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: .5px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .primer-meta-item {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .primer-meta-item span { color: var(--cream-muted); }
+
+    /* ─── CROSS-LINK BANNER ─────────────────────────────── */
+    .cross-link-banner {
+      border-bottom: .5px solid var(--rule);
+      padding: 1rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .cross-link-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      flex-shrink: 0;
+    }
+    .cross-link-banner a {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .cross-link-banner a:hover { color: var(--amber-light); }
+
+    /* ─── MAIN LAYOUT ──────────────────────────────────── */
+    .primer-body {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ─── TOC ──────────────────────────────────────────── */
+    .primer-toc {
+      border-right: .5px solid var(--rule);
+      padding: 3rem 0;
+      position: sticky;
+      top: 64px;
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+    }
+    .toc-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      padding: 0 2rem 1.2rem;
+    }
+    .toc-link {
+      display: block;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .65rem 2rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      line-height: 1.5;
+    }
+    .toc-link:hover { color: var(--cream-muted); border-left-color: var(--rule); }
+    .toc-link.active { color: var(--amber); border-left-color: var(--amber); }
+    .toc-sub {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .4rem 2rem .4rem 2.8rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      opacity: .7;
+    }
+    .toc-sub:hover { color: var(--cream-faint); opacity: 1; }
+    .toc-sub.active { color: var(--amber); opacity: 1; }
+    .toc-divider {
+      border: none;
+      border-top: .5px solid var(--rule);
+      margin: 1rem 2rem;
+    }
+    .toc-related {
+      padding: 1rem 2rem 0;
+    }
+    .toc-related-label {
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .6rem;
+      opacity: .6;
+    }
+    .toc-related a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .3rem 0;
+      opacity: .8;
+    }
+    .toc-related a:hover { opacity: 1; }
+
+    /* ─── CONTENT AREA ─────────────────────────────────── */
+    .primer-content {
+      padding: 3rem 3rem 5rem 3.5rem;
+      max-width: 760px;
+    }
+
+    /* ─── SECTIONS ─────────────────────────────────────── */
+    .primer-section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .primer-section:last-child { border-bottom: none; }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .primer-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+    .primer-section h2 em { font-style: italic; color: var(--amber-light); }
+    .primer-section h3 {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-top: 2.2rem;
+      margin-bottom: .8rem;
+      line-height: 1.35;
+    }
+    .primer-section h3 em { font-style: italic; color: var(--amber-light); }
+    .primer-section p {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .primer-section p:last-child { margin-bottom: 0; }
+    .primer-section p strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── PULLQUOTE ─────────────────────────────────────── */
+    .pullquote {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      border-left: 2px solid var(--amber);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      line-height: 1.55;
+    }
+
+    /* ─── PART CARDS ─────────────────────────────────────── */
+    .parts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      margin: 1.8rem 0;
+    }
+    .part-card {
+      background: var(--dark);
+      padding: 1.4rem 1.6rem;
+    }
+    .part-card:hover { background: var(--dark2); }
+    .part-card-tag {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .tag-manager { color: #5a9fd4; }
+    .tag-fire    { color: #d4814a; }
+    .tag-exile   { color: #b07ed4; }
+    .part-card-name {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: .4rem;
+      line-height: 1.3;
+    }
+    .part-card-name em { font-style: italic; color: var(--amber-light); }
+    .part-card-desc {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.65;
+    }
+    .part-card-cost {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .04em;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-top: .6rem;
+      line-height: 1.5;
+    }
+
+    /* ─── NERVOUS SYSTEM GRAPHIC ─────────────────────────── */
+    .ns-diagram {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      margin: 1.8rem 0;
+    }
+    .ns-node {
+      background: var(--dark2);
+      padding: 1.2rem 1.4rem;
+      text-align: center;
+    }
+    .ns-node-label {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .ns-node-title {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: .4rem;
+      line-height: 1.3;
+    }
+    .ns-node-sub {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .03em;
+      color: var(--cream-faint);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* ─── RSD BOX ─────────────────────────────────────────── */
+    .rsd-box {
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      border-left: 3px solid var(--amber);
+      padding: 1.6rem 1.8rem;
+      margin: 1.8rem 0;
+    }
+    .rsd-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .rsd-body {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .rsd-body strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── COACHING SEQUENCE ──────────────────────────────── */
+    .coaching-list {
+      margin: 1.8rem 0;
+    }
+    .coaching-item {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      border-top: .5px solid var(--rule);
+    }
+    .coaching-item:last-child { border-bottom: .5px solid var(--rule); }
+    .coaching-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+      flex-shrink: 0;
+      margin-top: 8px;
+      opacity: .6;
+    }
+    .coaching-text {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .coaching-text strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── RELATED PAGE LINK ──────────────────────────────── */
+    .related-page {
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      padding: 1.6rem 1.8rem;
+      margin: 2.5rem 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      text-decoration: none;
+    }
+    .related-page:hover { background: var(--dark3); }
+    .related-page-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .4rem;
+    }
+    .related-page-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream);
+    }
+    .related-page-arrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    .hs-footer { border-top: .5px solid var(--rule); }
+    .hs-footer-top {
+      padding: 3rem 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-footer-name {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: .4rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hs-footer-tagline {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .hs-footer-contact a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-contact a:hover { color: var(--amber); }
+    .hs-footer-col-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .hs-footer-links a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-links a:hover { color: var(--cream); }
+    .hs-footer-disclaimer {
+      padding: 2rem 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-disclaimer-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .hs-disclaimer-text {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .03em;
+      color: var(--cream-faint);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 820px;
+    }
+    .hs-disclaimer-text em { font-style: normal; color: var(--cream-muted); }
+    .hs-footer-bottom {
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hs-footer-copy {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .hs-footer-sign {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-faint);
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 760px) {
+      .hs-nav { padding: 1.2rem 1.5rem; }
+      .hs-nav-links { gap: 1.2rem; }
+      .hs-nav-links a { font-size: 9px; }
+      .primer-hero { padding: 3rem 1.5rem 2.5rem; }
+      .cross-link-banner { padding: 1rem 1.5rem; flex-wrap: wrap; gap: .6rem; }
+      .primer-body { grid-template-columns: 1fr; }
+      .primer-toc {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: .5px solid var(--rule);
+        padding: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        align-items: center;
+      }
+      .toc-label { padding: 0; margin-right: .5rem; }
+      .toc-link { padding: .3rem .7rem; border: .5px solid var(--rule); border-left: none; font-size: 8.5px; }
+      .toc-link.active { border-color: var(--amber); }
+      .toc-sub, .toc-divider, .toc-related { display: none; }
+      .primer-content { padding: 2.5rem 1.5rem 3rem; }
+      .parts-grid { grid-template-columns: 1fr; }
+      .ns-diagram { grid-template-columns: 1fr; }
+      .hs-footer-top { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.5rem; }
+      .hs-footer-disclaimer, .hs-footer-bottom { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════════════════════════════════ -->
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ND_Glossary.html">ND Glossary</a>
+    <a href="EF_Support_Interventions.html">EF Supports</a>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════════════════════════════════ -->
+<div class="primer-hero">
+  <div class="primer-eyebrow">IFS × Neurodivergence · ADHD · Autism · AuDHD</div>
+  <h1>The framework was built<br>for systems like <em>yours.</em></h1>
+  <p class="primer-hero-sub">How Internal Family Systems maps onto ADHD and autistic experience — the parts that form, why they form, and what self-led living actually looks like in a neurodivergent system.</p>
+  <div class="primer-meta">
+    <div class="primer-meta-item">Assumes — <span>Basic IFS familiarity</span></div>
+    <div class="primer-meta-item">Sources — <span>Schwartz · Dodson · Nerenberg · Maté</span></div>
+    <div class="primer-meta-item">Scope — <span>Coaching context</span></div>
+  </div>
+</div>
+
+<!-- ══════════ CROSS-LINK BANNER ═══════════════════════ -->
+<div class="cross-link-banner">
+  <span class="cross-link-label">New to IFS?</span>
+  <a href="ifs-primer.html">Start with the IFS Primer — parts, Self, and how the model works →</a>
+</div>
+
+<!-- ══════════ BODY ═══════════════════════════════════════ -->
+<div class="primer-body">
+
+  <!-- TOC -->
+  <nav class="primer-toc" aria-label="Page contents">
+    <div class="toc-label">Contents</div>
+    <a class="toc-link" href="#natural-fit">Why IFS Maps onto ND</a>
+    <a class="toc-link" href="#nervous-systems">ND Nervous Systems & Parts</a>
+    <a class="toc-sub" href="#interest-based">Interest-Based Nervous System</a>
+    <a class="toc-sub" href="#rsd">Rejection Sensitive Dysphoria</a>
+    <a class="toc-sub" href="#masking">Masking as a Manager</a>
+    <a class="toc-link" href="#parts-configurations">Common Parts Configurations</a>
+    <a class="toc-link" href="#self-led">Self-Led Living as an ND Framework</a>
+    <a class="toc-link" href="#in-coaching">What This Looks Like in Coaching</a>
+    <hr class="toc-divider">
+    <div class="toc-related">
+      <div class="toc-related-label">Related</div>
+      <a href="ifs-primer.html">← IFS Primer</a>
+      <a href="ND_Glossary.html">ND Glossary</a>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="primer-content">
+
+    <!-- 1 — NATURAL FIT -->
+    <section class="primer-section" id="natural-fit">
+      <div class="section-num">01</div>
+      <h2>Why IFS Maps Naturally<br>onto <em>ADHD & Autism</em></h2>
+      <p>Most psychological frameworks were built on a neurotypical template and then retrofitted to neurodivergent experience. IFS doesn't have that problem. The model was designed from the ground up around the idea that the mind is naturally multiple — that having distinct inner voices with competing agendas isn't pathology, it's how minds work. For a brain that experiences the world the way ADHD and autistic brains do, this isn't reassurance. It's recognition.</p>
+      <p>The fit goes deeper than that. Neurodivergent experience produces a specific kind of internal pressure — the pressure of having a nervous system that was never calibrated for the demands being placed on it. Not because the brain is defective, but because the environment was built for a different kind of brain. When you live for years in an environment that consistently signals that your natural way of functioning is wrong, your system responds the way any system does: it builds an elaborate protective architecture. IFS was built to work with protective architectures.</p>
+      <div class="pullquote">When authenticity threatens attachment, attachment wins. Every time. And the parts that form to manage that transaction are still running — long after the original situation is gone.</div>
+      <p>The three-group model maps with unusual precision onto neurodivergent systems. Managers get activated earlier and work harder — because the cost of being visibly different is real, and they've had years to learn how to compensate for it. Firefighters activate faster and more intensely — because the ND nervous system floods more easily and recovers more slowly. Exiles carry specific burdens that are strikingly consistent across ND people: <em>"I am too much. I am broken. Something is fundamentally wrong with me."</em></p>
+      <p>The match isn't coincidental. The patterns are produced by the same basic dynamic: a system that was overwhelmed before it had resources to handle the overwhelm, and built protectors accordingly. Understanding that dynamic doesn't require fixing what's wrong. It requires understanding what was right about it at the time.</p>
+    </section>
+
+    <!-- 2 — NERVOUS SYSTEMS -->
+    <section class="primer-section" id="nervous-systems">
+      <div class="section-num">02</div>
+      <h2>How Neurodivergent Nervous Systems<br><em>Affect Parts Activation</em></h2>
+      <p>ADHD and autism aren't about attention or social skills in any simple way. They're about how the nervous system regulates — and what happens to parts when that regulation is compromised. The neurological differences are real. They shape how quickly parts activate, how intensely they flood the system, and how long recovery takes.</p>
+
+      <h3 id="interest-based">The Interest-Based Nervous System</h3>
+      <p>The ADHD nervous system doesn't organize around importance, rewards, or consequences. It organizes around Interest, Challenge, Novelty, and Urgency (Dodson). These aren't character preferences — they're neurological requirements for engagement. When none of the four are present, the system goes offline. When one is strongly present, it can hyperfocus to the point of losing hours, missing meals, forgetting everything outside the task.</p>
+      <div class="ns-diagram">
+        <div class="ns-node">
+          <div class="ns-node-label">Engaged</div>
+          <div class="ns-node-title">Full capacity</div>
+          <div class="ns-node-sub">Hyperfocus · high energy<br>absorbed, alive, producing</div>
+        </div>
+        <div class="ns-node">
+          <div class="ns-node-label">Disengaged</div>
+          <div class="ns-node-title">Near-zero output</div>
+          <div class="ns-node-sub">Flat, irritable, fatigued<br>can't make it happen</div>
+        </div>
+        <div class="ns-node">
+          <div class="ns-node-label">The gap</div>
+          <div class="ns-node-title">Not a choice</div>
+          <div class="ns-node-sub">Not willpower · not character<br>neurological architecture</div>
+        </div>
+      </div>
+      <p>The parts implications are significant. A manager built to enforce productivity will use shame and self-criticism as fuel — <em>you should be doing this whether you're interested or not.</em> But the ADHD nervous system can't respond to "should." The manager is running a strategy that can't work on this hardware. This produces a specific failure loop: part tries, part can't activate, part attacks the failure, shame increases, next attempt starts from a lower floor.</p>
+      <p>Understanding this changes the coaching question. "Why can't you just do it?" is the wrong question — and the inner critic is asking it constantly. "What would make this genuinely engaging?" or "which part is blocking engagement and what does it need?" are questions the system can actually respond to.</p>
+
+      <h3 id="rsd">Rejection Sensitive Dysphoria</h3>
+      <p>Roughly 98% of adults with ADHD experience what Dodson calls Rejection Sensitive Dysphoria — an extreme, often physical sensitivity to perceived rejection, criticism, or self-perceived failure. When triggered, it arrives instantly: <em>"like a punch in the chest," "white hot," "cast out of the realm of other people."</em> It has to run its course. There's no talking yourself out of it.</p>
+      <div class="rsd-box">
+        <div class="rsd-label">Rejection Sensitive Dysphoria — What It Feels Like</div>
+        <div class="rsd-body">
+          Triggered by the perception — or even the possibility — that someone has withdrawn love, approval, or respect. Or by self-perceived failure. Onset is instantaneous. Duration is hours to days. Subjectively: <strong>physically painful.</strong> Afterward: profound shame for "being a head case."
+        </div>
+      </div>
+      <p>From an IFS perspective, RSD is both neurological and a parts phenomenon. The triggering is neurological — the ADHD brain registers social threat faster and more intensely than neurotypical brains do. But the exile underneath it — the part that absorbed "I am unacceptable, I will be left, I am not enough" — that's a parts question. And the protector strategies that form around it (perfectionism to be above reproach, people-pleasing to anticipate every need, avoidance to stop risking further evidence) are workable through parts work in a way the raw emotional flooding is not.</p>
+
+      <h3 id="masking">Masking as a Manager</h3>
+      <p>Autistic experience involves a nervous system that processes sensory, social, and emotional information differently — often more intensely, in less filtered ways. The mainstream response to this, developed over years of social feedback, is masking: suppressing, imitating, performing neurotypical presentation to reduce the social cost of being visibly different.</p>
+      <p>Masking is a manager. An extraordinarily sophisticated, resource-intensive, exhausting manager. It takes in social data, runs rapid calculations about what's expected, produces the appropriate output, and does all of this while consuming significant cognitive and emotional bandwidth that isn't available for anything else. The person running it often doesn't notice they're doing it — masking can become so automatic it's indistinguishable from personality.</p>
+      <div class="pullquote">Nerenberg calls sustained masking "virtual suicide." Maté calls it the attachment-authenticity transaction. IFS calls the result what it always calls it: an exile, and the parts that formed to protect it.</div>
+      <p>The exile underneath masking is typically the authentic self — the part that learned its natural expression cost too much. That's the part that got sent away. The masking manager didn't choose this. It made the only trade it could see. Understanding that changes how you work with it — and changes what "dropping the mask" actually means, which is less about willpower and more about what the masking manager needs to trust before it'll step back.</p>
+    </section>
+
+    <!-- 3 — PARTS CONFIGURATIONS -->
+    <section class="primer-section" id="parts-configurations">
+      <div class="section-num">03</div>
+      <h2>Common Parts Configurations<br>in <em>ND Experience</em></h2>
+      <p>These parts show up consistently across ADHD and autistic presentations. They're not a diagnostic checklist — they're patterns that make sense given the specific pressures ND nervous systems face. Recognizing them in yourself doesn't require identifying with every detail. It requires noticing which ones feel like old acquaintances.</p>
+
+      <div class="parts-grid">
+        <div class="part-card">
+          <div class="part-card-tag tag-manager">Manager · AuDHD</div>
+          <div class="part-card-name">The Masking Manager</div>
+          <div class="part-card-desc">Automatically suppresses neurodivergent presentation — stimming, intensity, direct communication, special interest tangents — to maintain social legibility. The performance is so practiced it no longer feels like a performance.</div>
+          <div class="part-card-cost">Cost: Exhaustion after interactions. Difficulty knowing what you actually want. Chronic depletion from running a show no one asked for.</div>
+        </div>
+
+        <div class="part-card">
+          <div class="part-card-tag tag-manager">Manager · ADHD/RSD</div>
+          <div class="part-card-name">The Perfectionist</div>
+          <div class="part-card-desc">One of the three primary RSD adaptations. If you're flawless, rejection is harder to land. This part raises the standard high enough that criticism loses its footing. Frequently rewarded as competence from the outside.</div>
+          <div class="part-card-cost">Cost: Can't rest. Can't try things where failure is possible. No relationship with genuine enjoyment of work.</div>
+        </div>
+
+        <div class="part-card">
+          <div class="part-card-tag tag-manager">Manager · ADHD/RSD</div>
+          <div class="part-card-name">The People Pleaser</div>
+          <div class="part-card-desc">Anticipates and produces exactly what each person wants before they can be disappointed. Runs a continuous background process scanning others' emotional states. Has great difficulty accessing its own.</div>
+          <div class="part-card-cost">Cost: Own needs become inaccessible. Resentment builds silently. Eventually the system stops registering what it actually feels.</div>
+        </div>
+
+        <div class="part-card">
+          <div class="part-card-tag tag-manager">Manager · ADHD</div>
+          <div class="part-card-name">The Inner Critic</div>
+          <div class="part-card-desc">In ND experience, runs a specific script: <em>"You're broken. Everyone else can do this."</em> Built from years of misattribution — when genuine neurological differences were consistently attributed to character failings, the conclusion was logical.</div>
+          <div class="part-card-cost">Cost: Pre-emptive shame. The critic says it first so the external attack can't land as hard — a protection strategy with a very high toll.</div>
+        </div>
+
+        <div class="part-card">
+          <div class="part-card-tag tag-fire">Firefighter · ADHD</div>
+          <div class="part-card-name">The Shiny Object Part</div>
+          <div class="part-card-desc">Follows genuine interest wherever it goes, abandons what it loses interest in, generates ideas faster than they can be finished. Managers attack it relentlessly. But it's protecting something: the ADHD brain's actual access to its own intelligence.</div>
+          <div class="part-card-cost">Cost: Nothing finished. But when it has no room at all, the system produces output with no aliveness behind it.</div>
+        </div>
+
+        <div class="part-card">
+          <div class="part-card-tag tag-fire">Firefighter · AuDHD</div>
+          <div class="part-card-name">The Escape Hatch</div>
+          <div class="part-card-desc">Doomscrolling, gaming, YouTube loops, fantasy, dissociation — the specific form varies, the function is the same. When the system floods and managers can't hold it, firefighters leap in to stop the pain immediately. Consequences are secondary.</div>
+          <div class="part-card-cost">Cost: Everything the behavior costs externally — but the deeper cost is it confirms the exile's fear that this is unmanageable.</div>
+        </div>
+
+        <div class="part-card">
+          <div class="part-card-tag tag-exile">Exile · AuDHD</div>
+          <div class="part-card-name">The "Too Much" Part</div>
+          <div class="part-card-desc">Holds the belief that the intensity, the needs, the reactions, the enthusiasm — all of it — is more than people can handle. Forms early, often before the person has language for what's happening. Everything else in the protective system is, in part, protecting this.</div>
+          <div class="part-card-cost">The protectors exist because this exile's evidence felt airtight. Getting close to it requires that the protectors trust Self can handle what surfaces.</div>
+        </div>
+
+        <div class="part-card">
+          <div class="part-card-tag tag-exile">Exile · ND Universal</div>
+          <div class="part-card-name">The Broken One</div>
+          <div class="part-card-desc">Carries the accumulated weight of being told — explicitly and implicitly — that the way your brain works is a problem. Not sad about specific events so much as carrying a global verdict: <em>there is something fundamentally wrong with me.</em></div>
+          <div class="part-card-cost">This exile doesn't need to be processed in coaching. It needs to be named, acknowledged, and met with a different story than the one it absorbed.</div>
+        </div>
+      </div>
+
+      <p>These parts don't need to be eliminated. The masking manager kept you safe. The perfectionist got you through rooms where the cost of failure was real. The inner critic said the hardest things first so you could hear them on your own terms rather than someone else's. Every part has a history that makes it make sense. The IFS move is not to get rid of them — it's to build a relationship with them that doesn't require you to be run entirely by them.</p>
+    </section>
+
+    <!-- 4 — SELF-LED LIVING -->
+    <section class="primer-section" id="self-led">
+      <div class="section-num">04</div>
+      <h2>Self-Led Living as<br>an <em>ND Framework</em></h2>
+      <p>Self-led living for a neurodivergent person isn't the same as self-led living for a neurotypical one. The hardware is different. That's not a caveat — it's architecturally significant, and ignoring it produces coaching that sounds good and doesn't land.</p>
+      <p>The ADHD interest-based nervous system runs on genuine engagement, not willpower. What that means in practice: tasks that require sustained engagement without intrinsic interest need external structure — not because the person is weak or disorganized, but because the internalized drive mechanism that neurotypical brains use isn't how this brain works. Building systems around external scaffolding is Self-led behavior, not compensation for a deficiency. The deficiency framing is itself a protector — usually the inner critic protecting against what it feels like to need accommodations.</p>
+      <div class="pullquote">The goal is not to produce a neurotypical presentation of Self-leadership. It's to find the version that's actually available in this system, with this nervous system, and build from there.</div>
+      <p>For autistic nervous systems, self-led living requires an honest accounting of sensory and social energy. Each person starts the day with a finite amount. For autistic and AuDHD people, sensory load, social interaction, and masking all draw from the same account — at a higher rate than they do for most people. Running that account to zero is what produces meltdowns and shutdowns. Managing it before it depletes is what sustainability looks like. The managers who push past depletion aren't lazy or weak; they're running a strategy that made sense in an environment where stopping wasn't safe.</p>
+      <p>Self-energy in ND clients can look different than the standard IFS description. Calmness may carry old wounds — for people who learned that stopping the performance meant something bad would happen, stillness isn't available as a resource yet. Self-energy may be most accessible during flow states, deep engagement with a special interest, or genuine play. These contexts don't look like "Self-led" in the classical sense. But the parts have stepped back and something honest is running the show. That's the thing worth building from.</p>
+      <p>Maté's four A's apply directly here: Authenticity (being the actual author of your own responses), Agency (the capacity to choose from that place), Anger (healthy boundary defense, not suppressed or weaponized), and Acceptance (being with the system as it actually is, not as it should be). For ND people, acceptance is often the hardest because the system has been told for years that what it is isn't acceptable. The work of coaching is creating enough safety that acceptance becomes available without requiring abandonment of the self that needed protecting.</p>
+    </section>
+
+    <!-- 5 — IN COACHING -->
+    <section class="primer-section" id="in-coaching">
+      <div class="section-num">05</div>
+      <h2>What This Looks Like<br><em>in Coaching</em></h2>
+      <p>In a coaching session with an ND client, the question shifts. It's not just "what strategy should we use?" It's "which part is running right now, and what does it need to trust this process?"</p>
+      <p>A client who "can't start" isn't unmotivated. They have a perfectionist manager who has correctly observed that starting exposes them to failure, and a shame exile underneath that has more evidence than is comfortable to admit. The starting problem isn't behavioral. It's a trust problem inside the system. The intervention that works isn't productivity advice — it's building a relationship between the client and the part that's blocking.</p>
+      <p>A client who "can't stop" — who hyperfocuses past meals and commitments and reasonable stopping points — isn't irresponsible. They have a nervous system that finally found engagement and no natural off-ramp. The shiny object part found something real. The coaching question is how to work with the system, not against it.</p>
+
+      <div class="coaching-list">
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Track parts activation, not just content.</strong> What a client says matters. Who is saying it matters more. Notice when the inner critic takes over mid-session. Name it before asking the client to make decisions from that place.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Name the part before the behavior.</strong> "That sounds like the inner critic running. What does it sound like to you?" This one move shifts the client from being the criticism to having a part that criticizes. The difference is significant.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Build agreements with protective parts, not around them.</strong> A masking manager that feels heard will step back. A masking manager that feels threatened will dig in. Coaxing, bypassing, or arguing with a protector is a losing strategy every time.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Distinguish motivation problems from trust problems.</strong> "I know what to do and I can't make myself do it" is usually not a motivation problem. It's a part that doesn't trust the outcome, the environment, or the person asking it to act.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Pace for the nervous system.</strong> Unblending may need to happen more slowly with ND clients. Parts may need more evidence before they trust Self to lead. The timeline isn't a failure of the client — it's information about how much the protectors have had to work.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Work with the interest-based nervous system, not against it.</strong> EF scaffolding that ignores the ICNU architecture produces systems that work for three weeks and collapse. Scaffolding designed around genuine engagement lasts.</div>
+        </div>
+      </div>
+
+      <p>The work isn't asking ND clients to function like neurotypical people. It's helping them build an honest relationship with their own system — what that system is, what it needs, and what it's already doing remarkably well. The parts that look like problems from the outside are usually the most creative responses the system could generate under the conditions it was working with. Meeting them as such is where the work begins.</p>
+
+      <a class="related-page" href="ifs-primer.html">
+        <div>
+          <div class="related-page-label">Related page</div>
+          <div class="related-page-title">IFS Primer — parts, Self, and how the model works</div>
+        </div>
+        <div class="related-page-arrow">←</div>
+      </a>
+    </section>
+
+  </main>
+</div>
+
+<!-- ══════════ FOOTER ════════════════════════════════════ -->
+<footer class="hs-footer">
+  <div class="hs-footer-top">
+    <div>
+      <div class="hs-footer-name">High Signal Coaching</div>
+      <div class="hs-footer-tagline">IFS-informed executive function coaching<br>ADHD/AuDHD men in tech</div>
+      <div class="hs-footer-contact">
+        <a href="mailto:matt@highsignalcoaching.com">matt@highsignalcoaching.com</a>
+        <a href="https://www.linkedin.com/in/matthew-monroe-simpson-73a0381b4" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Explore</div>
+      <div class="hs-footer-links">
+        <a href="ifs-primer.html">IFS Primer</a>
+        <a href="ifs-adhd-autism.html">IFS, ADHD &amp; Autism</a>
+        <a href="ND_Glossary.html">ND Glossary</a>
+        <a href="EF_Support_Interventions.html">EF Supports</a>
+        <a href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener">Book a discovery call</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Legal</div>
+      <div class="hs-footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Coaching vs. Therapy Disclaimer</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+  <div class="hs-footer-disclaimer">
+    <div class="hs-disclaimer-label">Disclaimer</div>
+    <div class="hs-disclaimer-text">
+      High Signal Coaching is a professional coaching service, not therapy or clinical treatment.
+      IFS content is based on the published work of Richard C. Schwartz and adapted for a coaching context.
+      ND content draws on the clinical and research work of William Dodson, Jenara Nerenberg, and Gabor Maté.
+      If you are experiencing a mental health emergency, please contact a licensed mental health professional or crisis line.
+      <em>Licensed mental health services available separately through Matthew Monroe Simpson Counseling.</em>
+    </div>
+  </div>
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+<script>
+  const allAnchors = document.querySelectorAll('[id]');
+  const tocLinks = document.querySelectorAll('.toc-link, .toc-sub');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  allAnchors.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
