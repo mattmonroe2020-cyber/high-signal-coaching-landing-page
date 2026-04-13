@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IFS Primer | High Signal Coaching</title>
+  <meta name="description" content="What Internal Family Systems actually is — parts, Self, managers, firefighters, exiles, and how the model works in practice.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:         #1C1914;
+      --dark2:        #252019;
+      --dark3:        #2e2820;
+      --amber:        #C8873A;
+      --amber-light:  #E4A85C;
+      --cream:        #F0E6D8;
+      --cream-muted:  #B8A898;
+      --cream-faint:  #7A6E64;
+      --serif:        'Cormorant Garamond', Georgia, serif;
+      --mono:         'DM Mono', monospace;
+      --rule:         #3a3228;
+      --manager:      #2d5a8e;
+      --manager-bg:   #1e2f40;
+      --fire:         #b85c2a;
+      --fire-bg:      #3a2218;
+      --exile:        #7a4499;
+      --exile-bg:     #281630;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--serif);
+      line-height: 1.7;
+    }
+
+    /* ─── NAV ──────────────────────────────────────────── */
+    .hs-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      border-bottom: .5px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: var(--dark);
+      z-index: 100;
+    }
+    .hs-logo {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .hs-nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .hs-nav-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .hs-nav-links a:hover { color: var(--cream); }
+    .hs-nav-links a.active { color: var(--amber); }
+
+    /* ─── HERO ─────────────────────────────────────────── */
+    .primer-hero {
+      padding: 4.5rem 3rem 3.5rem;
+      border-bottom: .5px solid var(--rule);
+      max-width: 820px;
+    }
+    .primer-eyebrow {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .primer-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(34px, 5vw, 52px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+    }
+    .primer-hero h1 em { font-style: italic; color: var(--amber-light); }
+    .primer-hero-sub {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+    .primer-meta {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: .5px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .primer-meta-item {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .primer-meta-item span { color: var(--cream-muted); }
+
+    /* ─── MAIN LAYOUT ──────────────────────────────────── */
+    .primer-body {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ─── TOC ──────────────────────────────────────────── */
+    .primer-toc {
+      border-right: .5px solid var(--rule);
+      padding: 3rem 0;
+      position: sticky;
+      top: 64px;
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+    }
+    .toc-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      padding: 0 2rem 1.2rem;
+    }
+    .toc-link {
+      display: block;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .65rem 2rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      line-height: 1.5;
+    }
+    .toc-link:hover { color: var(--cream-muted); border-left-color: var(--rule); }
+    .toc-link.active { color: var(--amber); border-left-color: var(--amber); }
+    .toc-sub {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .4rem 2rem .4rem 2.8rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      opacity: .7;
+    }
+    .toc-sub:hover { color: var(--cream-faint); opacity: 1; }
+    .toc-sub.active { color: var(--amber); opacity: 1; }
+
+    /* ─── CONTENT AREA ─────────────────────────────────── */
+    .primer-content {
+      padding: 3rem 3rem 5rem 3.5rem;
+      max-width: 760px;
+    }
+
+    /* ─── SECTIONS ─────────────────────────────────────── */
+    .primer-section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .primer-section:last-child { border-bottom: none; }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .primer-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(26px, 3.5vw, 36px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+    .primer-section h2 em { font-style: italic; color: var(--amber-light); }
+    .primer-section h3 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-top: 2rem;
+      margin-bottom: .8rem;
+      line-height: 1.35;
+    }
+    .primer-section h3 em { font-style: italic; color: var(--amber-light); }
+    .primer-section p {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .primer-section p:last-child { margin-bottom: 0; }
+    .primer-section p strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── PULLQUOTE ─────────────────────────────────────── */
+    .pullquote {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      border-left: 2px solid var(--amber);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      line-height: 1.55;
+    }
+
+    /* ─── PART BANDS ────────────────────────────────────── */
+    .part-band {
+      border-radius: 4px;
+      padding: 1.5rem 1.8rem;
+      margin: 1.8rem 0;
+    }
+    .part-band-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .part-band h3 {
+      margin-top: .4rem;
+      margin-bottom: .6rem;
+      font-size: 19px;
+    }
+    .part-band p {
+      font-size: 15.5px;
+      margin-bottom: 0;
+    }
+    .band-manager {
+      background: var(--manager-bg);
+      border-left: 3px solid var(--manager);
+    }
+    .band-manager .part-band-label { color: #5a9fd4; }
+    .band-fire {
+      background: var(--fire-bg);
+      border-left: 3px solid var(--fire);
+    }
+    .band-fire .part-band-label { color: #d4814a; }
+    .band-exile {
+      background: var(--exile-bg);
+      border-left: 3px solid var(--exile);
+    }
+    .band-exile .part-band-label { color: #b07ed4; }
+
+    /* ─── 8 CS GRID ─────────────────────────────────────── */
+    .eightcs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      margin: 1.8rem 0;
+      border: .5px solid var(--rule);
+    }
+    .c-cell {
+      background: var(--dark2);
+      padding: .9rem 1rem;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      font-weight: 300;
+      text-align: center;
+    }
+
+    /* ─── SCOPE BOX ─────────────────────────────────────── */
+    .scope-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      margin: 1.8rem 0;
+    }
+    .scope-col { background: var(--dark2); padding: 1.4rem 1.6rem; }
+    .scope-col-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .scope-list { list-style: none; }
+    .scope-list li {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.65;
+      padding: .35rem 0;
+      border-top: .5px solid var(--rule);
+    }
+    .scope-list li:first-child { border-top: none; }
+
+    /* ─── SEQUENCE ──────────────────────────────────────── */
+    .sequence {
+      margin: 1.8rem 0;
+    }
+    .seq-step {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      border-top: .5px solid var(--rule);
+    }
+    .seq-step:last-child { border-bottom: .5px solid var(--rule); }
+    .seq-num {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      color: var(--amber);
+      font-weight: 300;
+      flex-shrink: 0;
+      padding-top: 2px;
+      min-width: 24px;
+    }
+    .seq-text { font-family: var(--serif); font-size: 15.5px; font-weight: 300; color: var(--cream-muted); line-height: 1.65; }
+    .seq-text strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    .hs-footer { border-top: .5px solid var(--rule); }
+    .hs-footer-top {
+      padding: 3rem 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-footer-name {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: .4rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hs-footer-tagline {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .hs-footer-contact a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-contact a:hover { color: var(--amber); }
+    .hs-footer-col-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .hs-footer-links a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-links a:hover { color: var(--cream); }
+    .hs-footer-disclaimer {
+      padding: 2rem 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-disclaimer-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .hs-disclaimer-text {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .03em;
+      color: var(--cream-faint);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 820px;
+    }
+    .hs-disclaimer-text em { font-style: normal; color: var(--cream-muted); }
+    .hs-footer-bottom {
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hs-footer-copy {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .hs-footer-sign {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-faint);
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 760px) {
+      .hs-nav { padding: 1.2rem 1.5rem; }
+      .hs-nav-links { gap: 1.2rem; }
+      .hs-nav-links a { font-size: 9px; }
+      .primer-hero { padding: 3rem 1.5rem 2.5rem; }
+      .primer-body { grid-template-columns: 1fr; }
+      .primer-toc {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: .5px solid var(--rule);
+        padding: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        align-items: center;
+      }
+      .toc-label { padding: 0; margin-right: .5rem; }
+      .toc-link { padding: .3rem .7rem; border: .5px solid var(--rule); border-left: none; font-size: 8.5px; }
+      .toc-link:hover { border-color: var(--rule); }
+      .toc-link.active { border-color: var(--amber); }
+      .toc-sub { display: none; }
+      .primer-content { padding: 2.5rem 1.5rem 3rem; }
+      .eightcs { grid-template-columns: repeat(4, 1fr); }
+      .scope-box { grid-template-columns: 1fr; }
+      .hs-footer-top { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.5rem; }
+      .hs-footer-disclaimer, .hs-footer-bottom { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════════════════════════════════ -->
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="index.html#resources">Understanding IFS</a>
+    <a href="ND_Glossary.html">ND Glossary</a>
+    <a href="EF_Support_Interventions.html">EF Supports</a>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════════════════════════════════ -->
+<div class="primer-hero">
+  <div class="primer-eyebrow">IFS Primer · Internal Family Systems</div>
+  <h1>You are not one thing.<br><em>You are a system.</em></h1>
+  <p class="primer-hero-sub">What Internal Family Systems actually is — the parts model, the Self, and how the framework works in practice. Written for a curious tech professional exploring this for the first time.</p>
+  <div class="primer-meta">
+    <div class="primer-meta-item">Framework — <span>Richard C. Schwartz, PhD</span></div>
+    <div class="primer-meta-item">Context — <span>Coaching scope</span></div>
+    <div class="primer-meta-item">Based on — <span>IFS canonical source files</span></div>
+  </div>
+</div>
+
+<!-- ══════════ BODY ═══════════════════════════════════════ -->
+<div class="primer-body">
+
+  <!-- TOC -->
+  <nav class="primer-toc" aria-label="Page contents">
+    <div class="toc-label">Contents</div>
+    <a class="toc-link" href="#what-is-ifs">What is IFS</a>
+    <a class="toc-link" href="#parts-model">The Parts Model</a>
+    <a class="toc-sub" href="#managers">Managers</a>
+    <a class="toc-sub" href="#firefighters">Firefighters</a>
+    <a class="toc-sub" href="#exiles">Exiles</a>
+    <a class="toc-link" href="#the-self">The Self</a>
+    <a class="toc-link" href="#how-sessions-work">How a Session Works</a>
+    <a class="toc-link" href="#working-with-practitioner">Working with a Practitioner</a>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="primer-content">
+
+    <!-- 1 — WHAT IS IFS -->
+    <section class="primer-section" id="what-is-ifs">
+      <div class="section-num">01</div>
+      <h2>What is IFS</h2>
+      <p>Internal Family Systems emerged from a practical problem. In the 1980s, Richard Schwartz was working as a family therapist when his clients started describing something his training hadn't prepared him for: vivid, distinct inner voices — not symptoms to suppress but personalities with their own perspectives, fears, and logic. He started listening to them rather than treating them as noise. What he found changed how he worked.</p>
+      <p>The central claim of IFS is simple and, at first, slightly disorienting: you are not one thing. You are a system — a collection of distinct inner personalities, called <strong>parts</strong>, organized around a stable core called the <strong>Self</strong>. The Self is never damaged. Never absent. Fully capable of leading. What varies is whether it can be accessed.</p>
+      <p>This is not a metaphor for cognitive patterns or a reframe of automatic thoughts. Parts behave like people. They have histories. They carry beliefs about how the world works, formed at a specific moment in time that may have been decades ago. They argue with each other, form alliances, sacrifice themselves to protect someone else, and respond remarkably well to being genuinely seen — not analyzed or managed, but seen.</p>
+      <div class="pullquote">Every part that looks destructive from the outside is usually running the only strategy it knows to manage something much harder than the behavior itself.</div>
+      <p>IFS is currently used in individual therapy, couples therapy, trauma treatment, and — adapted carefully — as a framework for understanding the internal patterns that run professional and creative life. It's one of the few psychological models that treats the multiplicity of mind as a feature of being human rather than a problem to correct.</p>
+    </section>
+
+    <!-- 2 — PARTS MODEL -->
+    <section class="primer-section" id="parts-model">
+      <div class="section-num">02</div>
+      <h2>The Parts Model</h2>
+      <p>Three groups. That's the entire architecture. Every part in your system falls into one of three categories, organized by role: Managers, Firefighters, and Exiles. The categories aren't personality types or diagnostic labels. They're job descriptions — what each part does in the system's ongoing effort to keep you functioning and the most vulnerable parts protected.</p>
+      <p>What makes the IFS framing genuinely different from other models is the stance it takes toward these parts. They are not problems to eliminate. They are not distortions to correct. They are inner people doing jobs they took on for reasons that made complete sense at the time — even when those jobs now look like the source of the problem.</p>
+
+      <!-- MANAGERS -->
+      <h3 id="managers">Managers</h3>
+      <div class="part-band band-manager">
+        <div class="part-band-label">Proactive Protectors</div>
+        <h3>The front office runs before any threat appears</h3>
+        <p>Managers organize, plan, control, achieve, and worry — all in advance. Their core strategy is prevention: keep the system from being overwhelmed, keep the vulnerable parts from getting triggered, keep moving. If things are managed tightly enough, nothing bad will happen.</p>
+      </div>
+      <p>Common managers in a tech professional's system: the Perfectionist that catches errors before anyone else can catch you making one; the Striver that achieves because not achieving is unthinkable; the Caretaker that keeps everyone comfortable because conflict feels dangerous; the Worrier that scans constantly for what might go wrong. These are not character flaws. They are organized, purposeful responses to a world that, at some point, required them.</p>
+      <p>Managers are often the parts that look most functional from the outside. They produce results. They are competent, driven, reliable. What they cost is harder to see: the chronic exhaustion of a system running on prevention rather than genuine engagement, the narrowing that happens when every decision passes through a filter of what the manager finds safe.</p>
+
+      <!-- FIREFIGHTERS -->
+      <h3 id="firefighters">Firefighters</h3>
+      <div class="part-band band-fire">
+        <div class="part-band-label">Reactive Protectors</div>
+        <h3>Emergency response — consequences are secondary</h3>
+        <p>When the system floods anyway — when managers fail and the vulnerable parts break through — firefighters leap in to extinguish. They don't negotiate consequences. They act immediately to stop the pain.</p>
+      </div>
+      <p>Binge eating, compulsive scrolling, substance use, dissociation, rage, self-harm — these are firefighter strategies. Not chosen, not rational, not caring at all what the manager thinks about the aftermath. The firefighter's only concern is stopping the emotional flooding right now.</p>
+      <p>This is why people struggle to change behaviors they fully understand are harmful. The manager's analysis — this is bad for you, this will create more problems, you'll feel worse after — registers nowhere in the firefighter's decision-making. The firefighter isn't listening. It's already acting.</p>
+      <p>Managers and firefighters are in perpetual conflict. The firefighter acts; the manager attacks the acting. The shame from that attack creates more activation; the firefighter responds. The cycle is self-reinforcing. Understanding it as a parts dynamic rather than a character failure changes both the shame load and the possibility of working with it.</p>
+
+      <!-- EXILES -->
+      <h3 id="exiles">Exiles</h3>
+      <div class="part-band band-exile">
+        <div class="part-band-label">The Vulnerable Core</div>
+        <h3>Frozen in the moment they were wounded</h3>
+        <p>Exiles are the parts carrying what actually happened — worthlessness, terror, grief, shame absorbed from early experience. They're called exiles because the system has isolated them to prevent their pain from flooding everything else.</p>
+      </div>
+      <p>Every protective system — the managers running the front office, the firefighters on standby — is organized around the exiles. That's the whole architecture. Protectors don't run their strategies because they enjoy them. They run them to keep the exiles from surfacing.</p>
+      <p>Exiles are frozen in time. They don't know it's decades later. They carry their burdens — the beliefs absorbed from wounding experience — as if the wounding is still happening or about to happen. <em>"I am fundamentally inadequate." "If people really knew me, they'd leave." "I have to earn my place in every room."</em> These aren't cognitive distortions to reframe. They're exiles speaking from old evidence that felt completely valid at the time.</p>
+      <p>In a coaching context, exiles are named and acknowledged — not unburdened. The healing work that releases what they're carrying belongs to therapy. What coaching can do is recognize that the exile exists, understand what the protective system is organized around, and help create conditions where that system doesn't have to work quite so hard.</p>
+    </section>
+
+    <!-- 3 — THE SELF -->
+    <section class="primer-section" id="the-self">
+      <div class="section-num">03</div>
+      <h2>The Self</h2>
+      <p>The Self is not a part. Every part has an agenda — protect, prevent, contain, extinguish. The Self doesn't. It's curious. It can be with anything. It doesn't flinch at the firefighter's rage or the exile's grief. It doesn't need the internal situation to resolve in any particular direction. It's simply present — calm, clear, and capable of leading.</p>
+      <p>Schwartz found eight qualities consistently present when the Self was genuinely leading a session or a moment — not as aspirational targets, but as what naturally emerges when nothing is blending with or eclipsing the Self:</p>
+      <div class="eightcs">
+        <div class="c-cell">Calm</div>
+        <div class="c-cell">Curious</div>
+        <div class="c-cell">Clear</div>
+        <div class="c-cell">Compassionate</div>
+        <div class="c-cell">Confident</div>
+        <div class="c-cell">Courageous</div>
+        <div class="c-cell">Creative</div>
+        <div class="c-cell">Connected</div>
+      </div>
+      <p>The Self is never absent. This is a strong claim and a load-bearing one. In IFS, you don't build a Self. You don't help someone develop one. You uncover it — remove whatever's obscuring it. The image Schwartz uses is a solar eclipse: the sun hasn't disappeared; it's temporarily obscured. When parts step back, the Self becomes accessible. It was always there.</p>
+      <div class="pullquote">The goal isn't to create Self-leadership. It's to remove what's in the way of the capacity that was already present.</div>
+      <p>There's a distinction that trips people up: the <strong>Self-like part</strong>. Many high-functioning people run their system through what looks like Self — organized, calm, reflective, capable of talking about other parts. But that calm has conditions. When outcomes are threatened, it blends. It has a preferred direction for inner work to go. It generates insight about parts but doesn't connect with them. It's strategic, not genuinely curious.</p>
+      <p>Real Self is different in specific ways. The curiosity has no agenda — it doesn't need the part to change or cooperate in any particular way. The patience doesn't erode under pressure. When a part doesn't respond as expected, Self gets more interested, not frustrated. These aren't subtle distinctions. They show up clearly in the room.</p>
+    </section>
+
+    <!-- 4 — HOW SESSIONS WORK -->
+    <section class="primer-section" id="how-sessions-work">
+      <div class="section-num">04</div>
+      <h2>How a Session Works</h2>
+      <p>IFS sessions don't follow a fixed script. What they have is a recognizable sequence — not rigid, but directional. The work moves from access inward, and the depth of the work depends on what scope is operating: coaching or therapy.</p>
+      <p>The sequence, beginning to end:</p>
+      <div class="sequence">
+        <div class="seq-step">
+          <div class="seq-num">01</div>
+          <div class="seq-text"><strong>Access Self.</strong> Before anything else, the goal is enough space from protective parts that Self can be present to lead. Parts can be asked to step back — not suppressed or bypassed, but genuinely asked to give the work room. In Schwartz's experience, this has never been refused once a part actually agrees. The ask has to be real.</div>
+        </div>
+        <div class="seq-step">
+          <div class="seq-num">02</div>
+          <div class="seq-text"><strong>Notice who's present.</strong> Once some Self-access is available, the work moves toward whichever part is most alive in the room. Not the one that seems most important — the one that's actually there.</div>
+        </div>
+        <div class="seq-step">
+          <div class="seq-num">03</div>
+          <div class="seq-text"><strong>Build relationship.</strong> Self approaches the part with curiosity. What does it do? What is it afraid would happen if it didn't do that? What does it want you to know? Most parts have been running their strategy in isolation, without anyone checking in. Being seen — genuinely, without judgment — changes something.</div>
+        </div>
+        <div class="seq-step">
+          <div class="seq-num">04</div>
+          <div class="seq-text"><strong>Reach the exile (therapy scope).</strong> When protectors trust that Self can handle what's underneath, they allow access to the exile they've been protecting. Self witnesses the exile in its frozen moment — validating what happened, confirming it wasn't the exile's fault. Then retrieves it: a symbolic move from then to now.</div>
+        </div>
+        <div class="seq-step">
+          <div class="seq-num">05</div>
+          <div class="seq-text"><strong>Unburden (therapy scope).</strong> The exile releases what it's been carrying — the beliefs and feelings absorbed from experience that no longer belong to it. Elemental imagery (wind, water, fire, light) tends to facilitate this. The exile isn't cured or corrected. It's updated and freed.</div>
+        </div>
+        <div class="seq-step">
+          <div class="seq-num">06</div>
+          <div class="seq-text"><strong>Protectors update spontaneously.</strong> When exile work completes, managers and firefighters organized around that exile typically shift on their own. The thing they were protecting is no longer there. Their extreme roles become unnecessary. They can take new, less costly forms.</div>
+        </div>
+      </div>
+      <p>The coaching and therapy scopes occupy different parts of this sequence:</p>
+      <div class="scope-box">
+        <div class="scope-col">
+          <div class="scope-col-label">Coaching scope</div>
+          <ul class="scope-list">
+            <li>Noticing which part is driving a decision</li>
+            <li>Naming a protective pattern and its function</li>
+            <li>Creating space from a blended state</li>
+            <li>Building awareness of the anxiety beneath a cycle</li>
+            <li>Acknowledging exiles without facilitating their healing</li>
+            <li>Micro-agreements between Self and a specific part</li>
+          </ul>
+        </div>
+        <div class="scope-col">
+          <div class="scope-col-label">Therapy scope</div>
+          <ul class="scope-list">
+            <li>Direct exile contact and retrieval</li>
+            <li>Processing the memories exiles carry</li>
+            <li>Unburdening — releasing what the exile absorbed</li>
+            <li>Multi-session trauma processing</li>
+            <li>Deep grief, suicidal ideation, severe dissociation</li>
+            <li>Medication guidance or psychiatric care</li>
+          </ul>
+        </div>
+      </div>
+      <p>The scope boundary isn't a limitation imposed from outside — it's a design constraint that protects clients. Exile work opened without the support to complete it is worse than not starting. The coaching scope is genuinely useful and distinct, not a diminished version of therapy.</p>
+    </section>
+
+    <!-- 5 — WORKING WITH A PRACTITIONER -->
+    <section class="primer-section" id="working-with-practitioner">
+      <div class="section-num">05</div>
+      <h2>Working with a Practitioner</h2>
+      <p>The IFS Institute certifies practitioners through a level-based training sequence. Level 1 introduces the model; Levels 2 and 3 deepen the clinical work. Certified practitioners can be found through the IFS-I directory, though certification and clinical skill are not the same thing — good IFS practitioners exist outside formal certification, and formal certification doesn't guarantee quality.</p>
+      <p>If you're looking for a therapist: the full IFS model requires a licensed clinician — exile work, unburdening, trauma processing. The practitioner's own Self is the primary clinical instrument, which means competent IFS therapists have done significant work in their own system. This isn't abstract credential-signaling. When a therapist is blended — running their session from a part of their own — subtle coercion enters the work. The client can feel it, even if they can't name it.</p>
+      <p>If you're working with a coach: the scope is the protective layer — understanding which parts run your professional patterns, building a relationship with them, creating conditions where the system doesn't have to work quite as hard. This is real work. It addresses the anxiety and shame structures underneath behavior that purely behavioral or strategic coaching never reaches.</p>
+      <div class="pullquote">The question worth asking any IFS practitioner: what do you do when a session gets stuck? The answer will tell you most of what you need to know.</div>
+      <p>A competent IFS practitioner doesn't push through resistance. They get curious about it. The resistance is a part. It has something to say. The practitioner's job is to find out what — not override it, not talk around it, not wait for it to pass. Getting stuck is not a problem to solve. It's information about what part just arrived and what it needs to hear before it'll move.</p>
+      <p>One more thing worth knowing: IFS doesn't require you to believe in it for it to work. The parts respond to being treated as real regardless of whether the client finds the framework intellectually convincing. Skepticism about the model is fine. Skepticism is a part too — and usually one that's been keeping the system safe for a long time. It deserves the same curiosity as anything else.</p>
+    </section>
+
+  </main>
+</div>
+
+<!-- ══════════ FOOTER ════════════════════════════════════ -->
+<footer class="hs-footer">
+  <div class="hs-footer-top">
+    <div>
+      <div class="hs-footer-name">High Signal Coaching</div>
+      <div class="hs-footer-tagline">IFS-informed executive function coaching<br>ADHD/AuDHD men in tech</div>
+      <div class="hs-footer-contact">
+        <a href="mailto:matt@highsignalcoaching.com">matt@highsignalcoaching.com</a>
+        <a href="https://www.linkedin.com/in/matthew-monroe-simpson-73a0381b4" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Explore</div>
+      <div class="hs-footer-links">
+        <a href="ifs-primer.html">IFS Primer</a>
+        <a href="index.html#resources">Parts mapping</a>
+        <a href="ND_Glossary.html">ND Glossary</a>
+        <a href="EF_Support_Interventions.html">EF Supports</a>
+        <a href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener">Book a discovery call</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Legal</div>
+      <div class="hs-footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Coaching vs. Therapy Disclaimer</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+  <div class="hs-footer-disclaimer">
+    <div class="hs-disclaimer-label">Disclaimer</div>
+    <div class="hs-disclaimer-text">
+      High Signal Coaching is a professional coaching service, not therapy or clinical treatment.
+      IFS content on this page is based on the published work of Richard C. Schwartz and adapted for a coaching context.
+      If you are experiencing a mental health emergency, please contact a licensed mental health professional or crisis line.
+      <em>Licensed mental health services available separately through Matthew Monroe Simpson Counseling.</em>
+    </div>
+  </div>
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+<script>
+  // Active TOC tracking
+  const sections = document.querySelectorAll('.primer-section, h3[id]');
+  const tocLinks = document.querySelectorAll('.toc-link, .toc-sub');
+
+  // Also observe the h3 anchors inside sections
+  const allAnchors = document.querySelectorAll('[id]');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  allAnchors.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
