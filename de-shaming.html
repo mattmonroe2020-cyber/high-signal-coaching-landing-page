@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Importance of De-Shaming | High Signal Coaching</title>
+  <meta name="description" content="Why shame is the engine underneath most anxiety-driven cycles — and how IFS reframes it as information rather than identity.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:        #1C1914;
+      --dark2:       #252019;
+      --amber:       #C8873A;
+      --amber-light: #E4A85C;
+      --cream:       #F0E6D8;
+      --cream-muted: #B8A898;
+      --cream-faint: #7A6E64;
+      --serif:       'Cormorant Garamond', Georgia, serif;
+      --mono:        'DM Mono', monospace;
+      --rule:        #3a3228;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--serif);
+      line-height: 1.7;
+    }
+
+    /* ─── NAV ──────────────────────────────────────── */
+    .hs-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      border-bottom: .5px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: var(--dark);
+      z-index: 100;
+    }
+    .hs-logo {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .hs-nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .hs-nav-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .hs-nav-links a:hover { color: var(--cream); }
+
+    /* ─── ARTICLE HERO ─────────────────────────────── */
+    .article-hero {
+      padding: 4.5rem 3rem 3.5rem;
+      border-bottom: .5px solid var(--rule);
+      max-width: 760px;
+    }
+    .article-eyebrow {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .article-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4.5vw, 46px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+    }
+    .article-hero h1 em { font-style: italic; color: var(--amber-light); }
+    .article-hero-sub {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+      max-width: 580px;
+      margin-bottom: 2rem;
+    }
+    .article-meta {
+      display: flex;
+      gap: 2rem;
+      padding-top: 1.5rem;
+      border-top: .5px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .article-meta-item {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .article-meta-item span { color: var(--cream-muted); }
+
+    /* ─── ARTICLE LAYOUT ───────────────────────────── */
+    .article-wrap {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 4rem 3rem 6rem;
+    }
+
+    /* ─── BODY TEXT ────────────────────────────────── */
+    .article-wrap p {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
+    }
+    .article-wrap p:last-child { margin-bottom: 0; }
+    .article-wrap p strong { font-weight: 500; color: var(--cream); }
+    .article-wrap p em { font-style: italic; }
+
+    /* ─── SECTION BREAKS ───────────────────────────── */
+    .article-section {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .article-section:first-child { padding-top: 0; }
+    .article-section:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .article-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.3;
+      margin-bottom: 1.6rem;
+    }
+    .article-section h2 em { font-style: italic; color: var(--amber-light); }
+
+    /* ─── PULLQUOTE ────────────────────────────────── */
+    .pullquote {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      border-left: 2px solid var(--amber);
+      padding-left: 1.5rem;
+      margin: 2.2rem 0;
+      line-height: 1.55;
+    }
+
+    /* ─── INTRO (before first section) ────────────── */
+    .article-intro {
+      padding-bottom: 3.5rem;
+      border-bottom: .5px solid var(--rule);
+    }
+
+    /* ─── CTA BLOCK ────────────────────────────────── */
+    .article-cta {
+      margin-top: 3.5rem;
+      padding: 2rem 2.2rem;
+      border: .5px solid var(--rule);
+      background: var(--dark2);
+    }
+    .article-cta-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .article-cta p {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+    .article-cta a.cta-btn {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--dark);
+      background: var(--amber);
+      padding: .65rem 1.6rem;
+      text-decoration: none;
+      font-weight: 400;
+      display: inline-block;
+    }
+    .article-cta a.cta-btn:hover { background: var(--amber-light); }
+
+    /* ─── RELATED ──────────────────────────────────── */
+    .article-related {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: .5px solid var(--rule);
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .article-related-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .article-related a {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .article-related a:hover { color: var(--amber-light); }
+
+    /* ─── FOOTER ───────────────────────────────────── */
+    .hs-footer { border-top: .5px solid var(--rule); }
+    .hs-footer-top {
+      padding: 3rem 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-footer-name {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: .4rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hs-footer-tagline {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .hs-footer-contact a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-contact a:hover { color: var(--amber); }
+    .hs-footer-col-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .hs-footer-links a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-links a:hover { color: var(--cream); }
+    .hs-footer-disclaimer {
+      padding: 2rem 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-disclaimer-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .hs-disclaimer-text {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .03em;
+      color: var(--cream-faint);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 820px;
+    }
+    .hs-disclaimer-text em { font-style: normal; color: var(--cream-muted); }
+    .hs-footer-bottom {
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hs-footer-copy {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .hs-footer-sign {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-faint);
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────────── */
+    @media (max-width: 680px) {
+      .hs-nav { padding: 1.2rem 1.5rem; }
+      .hs-nav-links { gap: 1.2rem; }
+      .hs-nav-links a { font-size: 9px; }
+      .article-hero { padding: 3rem 1.5rem 2.5rem; }
+      .article-wrap { padding: 3rem 1.5rem 4rem; }
+      .hs-footer-top { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.5rem; }
+      .hs-footer-disclaimer, .hs-footer-bottom { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+    <a href="nd-glossary.html">Neurodiversity Glossary</a>
+    <a href="ef-support-interventions.html">Executive Function Support</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ════════════════════════════════════════════════ -->
+<div class="article-hero">
+  <div class="article-eyebrow">Article · IFS · Neurodivergence</div>
+  <h1>The Importance of<br><em>De-Shaming</em></h1>
+  <p class="article-hero-sub">Why shame is the engine underneath most anxiety-driven cycles — and how IFS reframes it as information rather than identity.</p>
+  <div class="article-meta">
+    <div class="article-meta-item">Category — <span>IFS-informed coaching</span></div>
+    <div class="article-meta-item">For — <span>ADHD · Autism · AuDHD</span></div>
+    <div class="article-meta-item">Read — <span>~8 min</span></div>
+  </div>
+</div>
+
+<!-- ══ ARTICLE BODY ════════════════════════════════════════ -->
+<div class="article-wrap">
+
+  <!-- INTRO -->
+  <div class="article-intro">
+    <p>Most people who show up to coaching convinced they have a motivation problem don't have a motivation problem.</p>
+    <p>They have a discipline problem, they say. A follow-through problem. A self-sabotage problem. They've read the books. They've built the systems. They've tried the accountability apps. Something works for three weeks and then stops. They know what to do. That's the thing. They know <em>exactly</em> what to do.</p>
+    <p>That's not a motivation problem. That's shame doing what shame does: presenting itself as a practical problem so you'll keep trying to solve it practically, which means you'll keep failing, which means the shame deepens.</p>
+    <p>I want to name what's actually happening — and why fixing it looks different than you'd expect.</p>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="article-section" id="shame-not-guilt">
+    <h2>Shame is not guilt</h2>
+
+    <p>These two feel similar from the inside. They're not the same thing.</p>
+
+    <p>Guilt says: <em>I did something wrong.</em> It's specific. It points to a behavior, a choice, a moment. Guilt is uncomfortable — it should be — but it's workable. You can make amends. You can change the behavior. Guilt has a natural arc.</p>
+
+    <p>Shame says: <em>I am wrong.</em> It doesn't point to a behavior. It points to you. It's not about what you did — it's a verdict about who you are. And it can't be resolved by doing better, because it predates the evidence. The failures didn't create the shame. The shame was already there. The failures just confirmed it.</p>
+
+    <p>Most of the men I work with are carrying shame dressed up as self-knowledge. <em>"I'm just not disciplined."</em> <em>"I know what to do, I just can't make myself do it."</em> <em>"I work better under pressure — I've always been that way."</em> These sound like honest assessments. They're not. They're the conclusions of a system that has been quietly indicting itself for twenty years and has started to mistake the indictment for fact.</p>
+
+    <div class="pullquote">The failures didn't create the shame. The shame was already there. The failures just confirmed it.</div>
+
+    <p>IFS — the model I work from — makes a precise observation about shame: you can <em>feel</em> shame, or you can <em>be</em> shame. Feeling shame means there's still some separation. You notice it. You can describe it. Some part of you can observe it. Being shame is what happens when that separation collapses — when a part of you carrying shame has fused so completely with your sense of self that there's no observer left. You don't <em>have</em> a feeling of shame. You <em>are</em> defective. You <em>are</em> the failure.</p>
+
+    <p>For ADHD and autistic adults who got here late — who made it to 35 or 42 before anyone put the right words on what their nervous system was doing — this is usually where they are. Decades of unaccommodated neurology produce a weight of self-blame that hardens into identity. <em>I am the kind of person who can't.</em> That isn't a character assessment. It's the accumulated output of a system absorbing the wrong story for a very long time.</p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="article-section" id="hardware-layer">
+    <h2>The first layer: <em>the hardware</em></h2>
+
+    <p>Before any inner exploration, there's a move that's simple enough to underestimate: naming what your brain actually does.</p>
+
+    <p>When someone learns that the ADHD nervous system doesn't activate around importance — it activates around Interest, Challenge, Novelty, and Urgency — something shifts. Not just intellectually. Structurally. The gap between knowing what to do and doing it stops being a character gap and becomes an architectural one. The question stops being <em>"what's wrong with me"</em> and starts being <em>"what does this system actually need to come online?"</em></p>
+
+    <p>That's not a small shift. It's the difference between a character flaw and a hardware specification.</p>
+
+    <p>William Dodson's work on the interest-based nervous system explains the sprint-crash pattern more clearly than most therapy ever has. The ADHD brain can hyperfocus for six hours when something genuinely engages it and go completely offline for two days when nothing does. That gap isn't motivation. It's the architecture. The inner critic calling it laziness is running a script that doesn't apply to this hardware.</p>
+
+    <p>Barkley puts it bluntly: ADHD is a performance deficit, not a knowledge deficit. You know what to do. The failure happens at the point of doing it — in the right context, at the right moment, under the right conditions. More information about what you should be doing doesn't help. The system already has that information. What it needs are the conditions that allow information to translate into behavior.</p>
+
+    <p>Understanding this reframes the inner critic's entire operating premise. The verdict <em>"you're not trying hard enough"</em> was never accurate. The effort it demanded was the wrong variable.</p>
+
+    <p>For autistic people, the same move happens around masking. Devon Price describes it clearly: the difficulty autistic people experience isn't caused by autism. It's caused by the mismatch between autistic neurology and environments designed for different wiring. Deep focus, pattern recognition, directness, intensity — these aren't deficits. They're a profile. The suffering came from the mismatch, not the architecture.</p>
+
+    <p>When a late-diagnosed autistic adult understands this, the question <em>"why didn't anyone catch this earlier?"</em> — which is soaked in shame — gets a structural answer instead of a personal one. The diagnostic system was pointed at the wrong profile for fifty years. You weren't hiding. The system wasn't looking in the right place.</p>
+
+    <div class="pullquote">That's institutional de-shaming. It shifts the shame from the person to the structure that failed to see them.</div>
+
+    <p>And that shift is real, even if it comes late.</p>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="article-section" id="software-layer">
+    <h2>The second layer: <em>the software</em></h2>
+
+    <p>Understanding the hardware creates room. What fills that room matters.</p>
+
+    <p>Parts of you have been carrying stories about the hardware. And those stories don't automatically update when the facts do.</p>
+
+    <p>IFS describes the inner critic as a protector — specifically, what Sweezy calls a "copycat shamer." When a child is shamed for something authentic — the way they communicate, the way they need to move, the way they process, the way they feel — parts protect them by internalizing the shaming voice. <em>If I say the hard thing first, the external attack can't land as hard.</em> The inner critic isn't telling the truth. It's performing a function. It took on this role because some version of it helped at the time.</p>
+
+    <p>In ADHD and autistic systems, this mechanism is running at scale. The shaming material is enormous. ND children don't get corrected for choices they made — they get corrected for the way their nervous system works. Stimming. Needing more time. Processing differently. Going quiet when the room gets too loud. These weren't corrections about behavior. They were corrections about existence. The copycat shamer absorbed all of it. And then kept enforcing it long after the original environment was gone.</p>
+
+    <p>This is why arguing with your inner critic rarely works. Cognitive restructuring — the CBT move of challenging the thought — often doesn't touch it, because the critic isn't making a factual claim. It's performing a protective function. You don't fix a smoke detector by arguing with it. You address what it's responding to.</p>
+
+    <div class="pullquote">You don't fix the critic by working on the critic. You address what it's protecting.</div>
+
+    <p>What it's responding to is an exile — a part that absorbed the verdict <em>"I am fundamentally wrong"</em> and has been carrying it since childhood. The perfectionism. The people-pleasing. The avoidance. The hyperfocused overwork that ends in crashes. These aren't character flaws. They're protectors doing what they've always done: keeping the vulnerable part from being seen, because last time it was seen, the cost was high.</p>
+
+    <p>At the coaching level, the work isn't to push into exile territory — that's therapy, and it belongs in a therapeutic relationship. What's possible in coaching is different and still significant: creating enough clarity about what's happening that the system starts to reorganize on its own. When you can see the inner critic as a part rather than as the truth, you've created a sliver of space between you and it. When that part realizes its verdict was built on a hardware misread — that the neurology is different, not defective — the premise of its entire operation starts to wobble. That wobble is where change actually starts.</p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="article-section" id="foundation">
+    <h2>Why this comes first</h2>
+
+    <p>De-shaming isn't the warm-up before the real coaching. It is the coaching.</p>
+
+    <p>Here's the mechanism. Chronic shame activates the threat system — the amygdala-driven state of fear and self-protection. When the threat system is running, prefrontal cortex activity drops. Executive function drops. The capacity for planning, for regulation, for sustained focus — it all becomes less available. The inner critic isn't just painful. It's functionally disabling. It is consuming cognitive resources you've been told you lack.</p>
+
+    <p>This means the systems that don't hold aren't failing because of the systems. They're failing because the nervous system running them is still organized around shame. You can build a better productivity system. You can try the accountability app. But if the inner critic's operating premise — <em>"you are fundamentally insufficient"</em> — hasn't been addressed at the root, every new system becomes one more thing to fail at. And every failure adds another data point to the exile's burden.</p>
+
+    <p>De-shaming changes the operating conditions. It doesn't do this all at once. But when a person understands their hardware, names the stories their parts have been carrying, and starts to see those parts as protectors rather than enemies — the system begins to reorganize around something other than fear. The sprint-crash cycle loses some of its inevitability. The managers who have been white-knuckling it start to notice they don't have to grip as hard.</p>
+
+    <div class="pullquote">The threat system cannot be managed from inside the threat system. Something has to change the conditions.</div>
+
+    <p>That's where the work starts. Not because it feels good to be kind to yourself — though it does — but because something has to change the conditions. Understanding what's actually happening is how that starts.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="article-cta-label">Work together</div>
+    <p>This is what coaching from an IFS-informed frame looks like in practice — not more productivity advice, but working with the system that productivity advice keeps failing. If you want to explore whether this is a fit, book a 30-minute discovery call.</p>
+    <a class="cta-btn" href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener">Book a discovery call</a>
+  </div>
+
+  <!-- RELATED -->
+  <div class="article-related">
+    <span class="article-related-label">Related</span>
+    <a href="ifs-primer.html">IFS Primer →</a>
+    <a href="ifs-adhd-autism.html">IFS, ADHD &amp; Autism →</a>
+    <a href="nd-glossary.html">ND Glossary →</a>
+  </div>
+
+</div>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════ -->
+<footer class="hs-footer">
+  <div class="hs-footer-top">
+    <div>
+      <div class="hs-footer-name">High Signal Coaching</div>
+      <div class="hs-footer-tagline">IFS-informed executive function coaching<br>ADHD/AuDHD men in tech</div>
+      <div class="hs-footer-contact">
+        <a href="mailto:matt@highsignalcoaching.com">matt@highsignalcoaching.com</a>
+        <a href="https://www.linkedin.com/in/matthew-monroe-simpson-73a0381b4" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Explore</div>
+      <div class="hs-footer-links">
+        <a href="ifs-primer.html">IFS Primer</a>
+        <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+        <a href="nd-glossary.html">Neurodiversity Glossary</a>
+        <a href="ef-support-interventions.html">Executive Function Support</a>
+        <a href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener">Book a discovery call</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Legal</div>
+      <div class="hs-footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Coaching vs. Therapy Disclaimer</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+  <div class="hs-footer-disclaimer">
+    <div class="hs-disclaimer-label">Disclaimer</div>
+    <div class="hs-disclaimer-text">
+      High Signal Coaching is a professional coaching service, not therapy or clinical treatment.
+      IFS content is based on the published work of Richard C. Schwartz and adapted for a coaching context.
+      If you are experiencing a mental health emergency, please contact a licensed mental health professional or crisis line.
+      <em>Licensed mental health services available separately through Matthew Monroe Simpson Counseling.</em>
+    </div>
+  </div>
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+</body>
+</html>
