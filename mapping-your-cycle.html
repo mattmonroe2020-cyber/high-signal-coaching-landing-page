@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapping Your Cycle | High Signal Coaching</title>
+  <meta name="description" content="A structured self-inquiry practice to identify your specific sprint-crash pattern — the parts behind each node and what they're protecting.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:        #1C1914;
+      --dark2:       #252019;
+      --amber:       #C8873A;
+      --amber-light: #E4A85C;
+      --cream:       #F0E6D8;
+      --cream-muted: #B8A898;
+      --cream-faint: #7A6E64;
+      --serif:       'Cormorant Garamond', Georgia, serif;
+      --mono:        'DM Mono', monospace;
+      --rule:        #3a3228;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--serif);
+      line-height: 1.7;
+    }
+
+    /* ─── NAV ──────────────────────────────────────── */
+    .hs-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      border-bottom: .5px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: var(--dark);
+      z-index: 100;
+    }
+    .hs-logo {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .hs-nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .hs-nav-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .hs-nav-links a:hover { color: var(--cream); }
+
+    /* ─── ARTICLE HERO ─────────────────────────────── */
+    .article-hero {
+      padding: 4.5rem 3rem 3.5rem;
+      border-bottom: .5px solid var(--rule);
+      max-width: 760px;
+    }
+    .article-eyebrow {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .article-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4.5vw, 46px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+    }
+    .article-hero h1 em { font-style: italic; color: var(--amber-light); }
+    .article-hero-sub {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+      max-width: 580px;
+      margin-bottom: 2rem;
+    }
+    .article-meta {
+      display: flex;
+      gap: 2rem;
+      padding-top: 1.5rem;
+      border-top: .5px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .article-meta-item {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .article-meta-item span { color: var(--cream-muted); }
+
+    /* ─── ARTICLE LAYOUT ───────────────────────────── */
+    .article-wrap {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 4rem 3rem 6rem;
+    }
+
+    /* ─── BODY TEXT ────────────────────────────────── */
+    .article-wrap p {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
+    }
+    .article-wrap p:last-child { margin-bottom: 0; }
+    .article-wrap p strong { font-weight: 500; color: var(--cream); }
+    .article-wrap p em { font-style: italic; }
+
+    /* ─── SECTION BREAKS ───────────────────────────── */
+    .article-section {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .article-section:first-child { padding-top: 0; }
+    .article-section:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .article-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.3;
+      margin-bottom: 1.6rem;
+    }
+    .article-section h2 em { font-style: italic; color: var(--amber-light); }
+
+    /* ─── SECTION NUM LABEL ────────────────────────── */
+    .section-marker {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+
+    /* ─── PULLQUOTE ────────────────────────────────── */
+    .pullquote {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      border-left: 2px solid var(--amber);
+      padding-left: 1.5rem;
+      margin: 2.2rem 0;
+      line-height: 1.55;
+    }
+
+    /* ─── INTRO (before first section) ────────────── */
+    .article-intro {
+      padding-bottom: 3.5rem;
+      border-bottom: .5px solid var(--rule);
+    }
+
+    /* ─── INQUIRY BLOCK ─────────────────────────────── */
+    .inquiry-block {
+      background: var(--dark2);
+      border-left: 2px solid var(--amber);
+      padding: 1.6rem 1.8rem;
+      margin: 2.2rem 0;
+    }
+    .inquiry-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1.1rem;
+    }
+    .inquiry-block ul {
+      list-style: none;
+      padding: 0;
+    }
+    .inquiry-block ul li {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+      padding: .55rem 0;
+      border-bottom: .5px solid var(--rule);
+    }
+    .inquiry-block ul li:last-child { border-bottom: none; }
+    .inquiry-block ul li::before {
+      content: "→ ";
+      color: var(--amber);
+      font-family: var(--mono);
+      font-size: 10px;
+    }
+
+    /* ─── NODE FLOW (visual) ────────────────────────── */
+    .cycle-flow {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    .cycle-node-chip {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      padding: .4rem .8rem;
+      border: .5px solid var(--rule);
+    }
+    .cycle-node-chip.active {
+      color: var(--amber);
+      border-color: var(--amber);
+    }
+    .cycle-arr {
+      color: var(--rule);
+      font-size: 14px;
+    }
+
+    /* ─── CTA BLOCK ────────────────────────────────── */
+    .article-cta {
+      margin-top: 3.5rem;
+      padding: 2rem 2.2rem;
+      border: .5px solid var(--rule);
+      background: var(--dark2);
+    }
+    .article-cta-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .article-cta p {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+    .article-cta a.cta-btn {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--dark);
+      background: var(--amber);
+      padding: .65rem 1.6rem;
+      text-decoration: none;
+      font-weight: 400;
+      display: inline-block;
+    }
+    .article-cta a.cta-btn:hover { background: var(--amber-light); }
+
+    /* ─── RELATED ──────────────────────────────────── */
+    .article-related {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: .5px solid var(--rule);
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .article-related-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .article-related a {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .article-related a:hover { color: var(--amber-light); }
+
+    /* ─── FOOTER ───────────────────────────────────── */
+    .hs-footer { border-top: .5px solid var(--rule); }
+    .hs-footer-bottom {
+      padding: 1.4rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hs-footer-copy {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .hs-footer-sign {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-faint);
+    }
+
+    @media (max-width: 680px) {
+      .hs-nav { padding: 1.2rem 1.5rem; }
+      .hs-nav-links { gap: 1.2rem; }
+      .hs-nav-links a { font-size: 9px; }
+      .article-hero, .article-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .cycle-flow { gap: .5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+    <a href="nd-glossary.html">Neurodiversity Glossary</a>
+    <a href="ef-support-interventions.html">Executive Function Support</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="article-eyebrow">Practice · IFS × Neurodivergence · Self-Inquiry</div>
+  <h1>You already know the cycle.<br>This is how you map <em>your version</em> of it.</h1>
+  <p class="article-hero-sub">The sprint-crash pattern isn't random. It runs in sequence, with specific parts at each node. This practice helps you see which parts are running yours — and what they're protecting.</p>
+  <div class="article-meta">
+    <div class="article-meta-item">Category <span>Structured Practice</span></div>
+    <div class="article-meta-item">Format <span>Self-inquiry · printable</span></div>
+    <div class="article-meta-item">Time <span>20–30 minutes</span></div>
+    <div class="article-meta-item">Source <span>IFS · SLNF · Schwartz · Barkley · Dodson</span></div>
+  </div>
+</div>
+
+<div class="article-wrap">
+
+  <div class="article-intro">
+    <p>The cycle on the homepage — shame activates, anxiety drives, exhaustion, collapse, shame deepens — is a map of the architecture. But it's a generic map. Every client who comes to coaching brings their own version: different triggers, different parts, different collapse signatures.</p>
+    <p>The cycle doesn't run because something is broken. It runs because parts learned to run it. Some learned young. Some learned recently. Most learned when the environment couldn't accommodate the way their nervous system actually works.</p>
+    <p>The questions below are designed for one purpose: to help you see your specific cycle, at the parts level, clearly enough to work with it.</p>
+    <p><strong>How to use this:</strong> Take each node slowly. You don't need to answer every question — surface what comes. Write it down. The map doesn't have to be complete to be useful.</p>
+  </div>
+
+  <div class="article-section">
+    <div class="section-marker">Node 01</div>
+    <h2>Where the shame activates</h2>
+
+    <div class="cycle-flow">
+      <div class="cycle-node-chip active">Shame activates</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip">Anxiety drives</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip">Exhaustion</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip">Collapse</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip">Shame deepens</div>
+    </div>
+
+    <p>Shame doesn't arrive from nowhere. It has a trigger — usually a specific kind of event: a missed deadline, an unmade call, a comparison. Something that activates a part carrying the verdict. For ND adults, the verdict often sounds like: <em>I can't keep up. I ruin things. I'm the kind of person who fails at this.</em></p>
+    <p>This isn't the same as guilt. Guilt says <em>I did something wrong.</em> Shame says <em>I am wrong.</em> The part carrying the shame has been carrying it for a long time — often since adolescence, sometimes earlier, accumulated across every time the environment's expectations didn't fit how the nervous system actually works.</p>
+
+    <div class="inquiry-block">
+      <div class="inquiry-label">Inquiry — Node 01</div>
+      <ul>
+        <li>What kind of event most reliably starts your cycle? (A specific kind of failure, a comparison, a social interaction, a reminder you're behind?)</li>
+        <li>What does the part that activates first sound like? What does it tell you about yourself?</li>
+        <li>How long have you been hearing that voice? When do you think it learned to say that?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="article-section">
+    <div class="section-marker">Node 02</div>
+    <h2>What anxiety drives</h2>
+
+    <div class="cycle-flow">
+      <div class="cycle-node-chip">Shame activates</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip active">Anxiety drives</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip">Exhaustion</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip">Collapse</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip">Shame deepens</div>
+    </div>
+
+    <p>When shame activates, the system mobilizes. Manager parts come online — parts whose job is to counter the verdict. The most common strategy: achievement. If I produce enough, consistently enough, the case against me collapses. So managers drive: the hyperfocus sprint, the overcommitment, the all-nighter, the "I'll just push through."</p>
+    <p>Other manager patterns show up here too. Perfectionism is anxiety that turned forward: <em>if I make no errors, the shame has no evidence.</em> Hypervigilance is anxiety turned outward: <em>if I can read the room perfectly, I won't trigger rejection.</em> Over-explaining, over-preparing, over-apologizing — all manager operations trying to neutralize a threat the exile is already carrying.</p>
+    <p>The anxiety doesn't feel like a choice. It feels like urgency. Because the part running it is doing exactly what it learned to do.</p>
+
+    <div class="inquiry-block">
+      <div class="inquiry-label">Inquiry — Node 02</div>
+      <ul>
+        <li>What does your anxious drive look like? (Hyperfocus sprints, overcommitment, perfectionism, hypervigilance, something else?)</li>
+        <li>What is the logic underneath it — what is the anxiety trying to prove or prevent?</li>
+        <li>Does the drive feel like energy or like pressure? Can you tell the difference in your body?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="article-section">
+    <div class="section-marker">Node 03</div>
+    <h2>How exhaustion arrives</h2>
+
+    <div class="cycle-flow">
+      <div class="cycle-node-chip">Shame activates</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip">Anxiety drives</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip active">Exhaustion</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip">Collapse</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip">Shame deepens</div>
+    </div>
+
+    <p>The anxiety-driven sprint has a ceiling. The nervous system can only sustain high-activation output for so long — and ND nervous systems, particularly autistic and AuDHD ones, often spend extra energy masking the strain while it's happening. The exhaustion isn't just from the work. It's from running the management system on top of the work.</p>
+    <p>Exhaustion in ND systems often doesn't announce itself clearly. It shows up as irritability, difficulty with things that were easy this morning, somatic heaviness, the sense that everything requires more effort than it did before. For autistic clients especially, the tank can read full right up until it hits empty — because the monitoring systems were consuming the reserves without showing the cost.</p>
+
+    <div class="inquiry-block">
+      <div class="inquiry-label">Inquiry — Node 03</div>
+      <ul>
+        <li>What are your early signs that you're approaching exhaustion — before you've hit the wall?</li>
+        <li>Do you notice the cost while it's accumulating, or only after? What makes it hard to see in real time?</li>
+        <li>Is there a part that actively keeps you from noticing? What does it fear would happen if you slowed down?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="article-section">
+    <div class="section-marker">Node 04</div>
+    <h2>What collapse looks like</h2>
+
+    <div class="cycle-flow">
+      <div class="cycle-node-chip">Shame activates</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip">Anxiety drives</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip">Exhaustion</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip active">Collapse</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip">Shame deepens</div>
+    </div>
+
+    <p>When the managers can't hold the load any longer, firefighter parts take over. Their job isn't to produce — it's to stop the pain. Dissociation, numbing, binge-watching, checking out, doom-scrolling, sleeping for twelve hours — these aren't failures of discipline. They're an emergency brake being applied by a system that ran past its capacity.</p>
+    <p>The collapse looks different for different people. Some check out cleanly: screen, food, sleep, no contact. Some become irritable and reactive — a firefighter creating distance so the depleted system doesn't have to perform. Some freeze and can't account for where the time went. The specific form doesn't matter as much as the recognition: this is the system doing exactly what it learned to do when the managers couldn't hold any longer.</p>
+
+    <div class="pullquote">Collapse isn't the failure. Collapse is the bill arriving after the managers ran up the tab.</div>
+
+    <div class="inquiry-block">
+      <div class="inquiry-label">Inquiry — Node 04</div>
+      <ul>
+        <li>What does your collapse look like specifically? (Disappearing, numbing, sleeping, becoming reactive, something else?)</li>
+        <li>How long does it typically last before the system tries to restart?</li>
+        <li>Is there a moment during collapse when shame starts to show up — a voice commenting on the fact that you've stopped?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="article-section">
+    <div class="section-marker">Node 05</div>
+    <h2>How shame deepens</h2>
+
+    <div class="cycle-flow">
+      <div class="cycle-node-chip">Shame activates</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip">Anxiety drives</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip">Exhaustion</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip">Collapse</div>
+      <div class="cycle-arr">→</div>
+      <div class="cycle-node-chip active">Shame deepens</div>
+    </div>
+
+    <p>The cycle closes here. The collapse that was the system protecting itself gets read as evidence. <em>See — I really am the kind of person who gives up. Who can't sustain. Who ruins good things.</em> The shame archive is updated. The exile's burden gets heavier. The manager parts recommit more intensely. The next sprint starts with more shame underneath it than the last one had.</p>
+    <p>This is the self-sealing quality of the cycle. Each pass through it makes the next one more likely. Not because the person is more broken with each cycle, but because the managers have more to counter-prove, and the exile has more accumulated evidence of the verdict they're carrying.</p>
+    <p>The cycle doesn't end by trying harder at any particular node. It ends when the exile's burden is addressed — when the part carrying the verdict gets to have the verdict examined rather than managed around.</p>
+
+    <div class="inquiry-block">
+      <div class="inquiry-label">Inquiry — Node 05</div>
+      <ul>
+        <li>What does the post-collapse shame sound like? What specific verdict does it reinforce?</li>
+        <li>How does the shame from this cycle compare to the shame that started it — bigger, the same, or is there a quality of confirmation that wasn't there before?</li>
+        <li>How long before the managers start organizing the next sprint? What triggers the restart?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="article-section">
+    <div class="section-marker">Reading the map</div>
+    <h2>What you're seeing in the architecture</h2>
+
+    <p>The map you've made is not a character description. It's a system description. The parts running each node aren't evidence of what kind of person you are — they're evidence of what a nervous system learned to do under the conditions it grew up in.</p>
+    <p>A few things usually become visible when someone maps their cycle carefully:</p>
+    <p><strong>The cycle is coherent.</strong> Every node connects to the next one with an internal logic. The managers produce exhaustion because they need to produce enough counter-evidence. The firefighters collapse the system because the managers ran it past capacity. The shame deepens because the collapse looks, from inside the shame exile's frame, like confirmation. None of this is random. None of it is irrational.</p>
+    <p><strong>The shame exile is the load-bearing part.</strong> The cycle doesn't run to produce anxiety or exhaustion — those are the managers' and firefighters' responses to what the exile is already carrying. The verdict came first. Everything else organized around it.</p>
+    <p><strong>The NICE architecture often shows up at specific nodes.</strong> For ADHD and AuDHD adults, the anxiety-drive node often gets its energy from urgency — the crisis that finally activates what the importance and intention couldn't. The exhaustion node often catches people off guard because the NICE-activated state genuinely feels sustainable until it suddenly isn't. Recognizing where the nervous system's architecture intersects with the cycle's parts-level dynamics is part of what makes the map useful.</p>
+    <p>What you do with the map depends on where you are in the work. For some people, seeing the architecture clearly is itself the first shift — the cycle loses some of its automatic quality when you can name who's driving. For others, the map is a starting point for work that goes deeper. In either case: the cycle you've been living isn't you. It's what parts learned to do. That distinction matters.</p>
+
+    <div class="article-cta">
+      <div class="article-cta-label">Work together</div>
+      <p>If you've mapped your cycle and want to understand what's actually driving it — and what it looks like when the parts running it have other options — that's what the coaching work is for.</p>
+      <a class="cta-btn" href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener">Book a discovery call</a>
+    </div>
+
+    <div class="article-related">
+      <span class="article-related-label">Related</span>
+      <a href="shame-self-judgment.html">Shame and Self-Judgment →</a>
+      <a href="managers-firefighters-exiles.html">Managers, Firefighters &amp; Exiles →</a>
+      <a href="burnout-collapse-rest.html">Burnout, Collapse &amp; Rest →</a>
+      <a href="parts-carry-neurodivergence.html">Parts Carry Neurodivergence →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="hs-footer">
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+</body>
+</html>
