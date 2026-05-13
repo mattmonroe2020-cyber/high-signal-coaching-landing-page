@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burnout, Collapse, and Rest | High Signal Coaching</title>
+  <meta name="description" content="Autistic burnout is a syndrome with a five-stage development process and a clinical trajectory distinct from depression. What it is, how it develops, and what recovery actually requires.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:         #1C1914;
+      --dark2:        #252019;
+      --dark3:        #2e2820;
+      --amber:        #C8873A;
+      --amber-light:  #E4A85C;
+      --cream:        #F0E6D8;
+      --cream-muted:  #B8A898;
+      --cream-faint:  #7A6E64;
+      --serif:        'Cormorant Garamond', Georgia, serif;
+      --mono:         'DM Mono', monospace;
+      --rule:         #3a3228;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--serif);
+      line-height: 1.7;
+    }
+
+    /* ─── NAV ──────────────────────────────────────────── */
+    .hs-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      border-bottom: .5px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: var(--dark);
+      z-index: 100;
+    }
+    .hs-logo {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .hs-nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .hs-nav-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .hs-nav-links a:hover { color: var(--cream); }
+    .hs-nav-links a.active { color: var(--amber); }
+
+    /* ─── HERO ─────────────────────────────────────────── */
+    .primer-hero {
+      padding: 4.5rem 3rem 3.5rem;
+      border-bottom: .5px solid var(--rule);
+      max-width: 820px;
+    }
+    .primer-eyebrow {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .primer-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 50px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+    }
+    .primer-hero h1 em { font-style: italic; color: var(--amber-light); }
+    .primer-hero-sub {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+    .primer-meta {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: .5px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .primer-meta-item {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .primer-meta-item span { color: var(--cream-muted); }
+
+    /* ─── CROSS-LINK BANNER ─────────────────────────────── */
+    .cross-link-banner {
+      border-bottom: .5px solid var(--rule);
+      padding: 1rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .cross-link-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      flex-shrink: 0;
+    }
+    .cross-link-banner a {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .cross-link-banner a:hover { color: var(--amber-light); }
+
+    /* ─── MAIN LAYOUT ──────────────────────────────────── */
+    .primer-body {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ─── TOC ──────────────────────────────────────────── */
+    .primer-toc {
+      border-right: .5px solid var(--rule);
+      padding: 3rem 0;
+      position: sticky;
+      top: 64px;
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+    }
+    .toc-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      padding: 0 2rem 1.2rem;
+    }
+    .toc-link {
+      display: block;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .65rem 2rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      line-height: 1.5;
+    }
+    .toc-link:hover { color: var(--cream-muted); border-left-color: var(--rule); }
+    .toc-link.active { color: var(--amber); border-left-color: var(--amber); }
+    .toc-sub {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .4rem 2rem .4rem 2.8rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      opacity: .7;
+    }
+    .toc-sub:hover { color: var(--cream-faint); opacity: 1; }
+    .toc-sub.active { color: var(--amber); opacity: 1; }
+    .toc-divider {
+      border: none;
+      border-top: .5px solid var(--rule);
+      margin: 1rem 2rem;
+    }
+    .toc-related { padding: 1rem 2rem 0; }
+    .toc-related-label {
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .6rem;
+      opacity: .6;
+    }
+    .toc-related a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .3rem 0;
+      opacity: .8;
+    }
+    .toc-related a:hover { opacity: 1; }
+
+    /* ─── CONTENT AREA ─────────────────────────────────── */
+    .primer-content {
+      padding: 3rem 3rem 5rem 3.5rem;
+      max-width: 760px;
+    }
+
+    /* ─── SECTIONS ─────────────────────────────────────── */
+    .primer-section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .primer-section:last-child { border-bottom: none; }
+    .section-num {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .primer-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+    .primer-section h2 em { font-style: italic; color: var(--amber-light); }
+    .primer-section h3 {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-top: 2.2rem;
+      margin-bottom: .8rem;
+      line-height: 1.35;
+    }
+    .primer-section h3 em { font-style: italic; color: var(--amber-light); }
+    .primer-section p {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .primer-section p:last-child { margin-bottom: 0; }
+    .primer-section p strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── PULLQUOTE ─────────────────────────────────────── */
+    .pullquote {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      border-left: 2px solid var(--amber);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      line-height: 1.55;
+    }
+
+    /* ─── INFO BOX ──────────────────────────────────────── */
+    .info-box {
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      border-left: 3px solid var(--amber);
+      padding: 1.6rem 1.8rem;
+      margin: 1.8rem 0;
+    }
+    .info-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .info-body {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .info-body strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── STAGES LIST ─────────────────────────────────── */
+    .stages-list {
+      margin: 1.8rem 0;
+      border-top: .5px solid var(--rule);
+    }
+    .stage-item {
+      padding: 1.2rem 0;
+      border-bottom: .5px solid var(--rule);
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1.2rem;
+      align-items: baseline;
+    }
+    .stage-num {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      padding-top: .2rem;
+    }
+    .stage-body {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .stage-body strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── COACHING SEQUENCE ──────────────────────────────── */
+    .coaching-list { margin: 1.8rem 0; }
+    .coaching-item {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      border-top: .5px solid var(--rule);
+    }
+    .coaching-item:last-child { border-bottom: .5px solid var(--rule); }
+    .coaching-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+      flex-shrink: 0;
+      margin-top: 8px;
+      opacity: .6;
+    }
+    .coaching-text {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .coaching-text strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── ALERT BOX ─────────────────────────────────────── */
+    .alert-box {
+      background: var(--dark2);
+      border: .5px solid #5a3a3a;
+      border-left: 3px solid #b85c5c;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+    }
+    .alert-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #b85c5c;
+      font-weight: 300;
+      margin-bottom: .7rem;
+    }
+    .alert-body {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .alert-body strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── RELATED PAGE LINK ──────────────────────────────── */
+    .related-page {
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      padding: 1.6rem 1.8rem;
+      margin: 2.5rem 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      text-decoration: none;
+    }
+    .related-page:hover { background: var(--dark3); }
+    .related-page-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .4rem;
+    }
+    .related-page-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream);
+    }
+    .related-page-arrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    .hs-footer { border-top: .5px solid var(--rule); }
+    .hs-footer-top {
+      padding: 3rem 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-footer-name {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: .4rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hs-footer-tagline {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .hs-footer-contact a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-contact a:hover { color: var(--amber); }
+    .hs-footer-col-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .hs-footer-links a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-links a:hover { color: var(--cream); }
+    .hs-footer-disclaimer {
+      padding: 2rem 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-disclaimer-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .hs-disclaimer-text {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .03em;
+      color: var(--cream-faint);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 820px;
+    }
+    .hs-disclaimer-text em { font-style: normal; color: var(--cream-muted); }
+    .hs-footer-bottom {
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hs-footer-copy {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .hs-footer-sign {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-faint);
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 760px) {
+      .hs-nav { padding: 1.2rem 1.5rem; }
+      .hs-nav-links { gap: 1.2rem; }
+      .hs-nav-links a { font-size: 9px; }
+      .primer-hero { padding: 3rem 1.5rem 2.5rem; }
+      .cross-link-banner { padding: 1rem 1.5rem; flex-wrap: wrap; gap: .6rem; }
+      .primer-body { grid-template-columns: 1fr; }
+      .primer-toc {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: .5px solid var(--rule);
+        padding: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        align-items: center;
+      }
+      .toc-label { padding: 0; margin-right: .5rem; }
+      .toc-link { padding: .3rem .7rem; border: .5px solid var(--rule); border-left: none; font-size: 8.5px; }
+      .toc-link.active { border-color: var(--amber); }
+      .toc-sub, .toc-divider, .toc-related { display: none; }
+      .primer-content { padding: 2.5rem 1.5rem 3rem; }
+      .stage-item { grid-template-columns: 1fr; gap: .3rem; }
+      .hs-footer-top { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.5rem; }
+      .hs-footer-disclaimer, .hs-footer-bottom { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════════════════════════════════ -->
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ifs-adhd-autism.html" class="active">IFS for ADHD &amp; Autism</a>
+    <a href="nd-glossary.html">Neurodiversity Glossary</a>
+    <a href="ef-support-interventions.html">Executive Function Support</a>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════════════════════════════════ -->
+<div class="primer-hero">
+  <div class="primer-eyebrow">Inner Terrain · ADHD · Autism · AuDHD · Parts Work</div>
+  <h1>Burnout isn't getting tired.<br>It's a <em>systems-level event.</em></h1>
+  <p class="primer-hero-sub">Autistic burnout is a syndrome — with a five-stage development process, a characteristic parts presentation, and a clinical trajectory distinct from depression. What it is, how it builds, and what recovery actually requires.</p>
+  <div class="primer-meta">
+    <div class="primer-meta-item">Assumes — <span>Basic IFS familiarity</span></div>
+    <div class="primer-meta-item">Sources — <span>Raymaker et al. · Price · Neff · Kemp &amp; Mitchelson</span></div>
+    <div class="primer-meta-item">Scope — <span>Coaching context</span></div>
+  </div>
+</div>
+
+<!-- ══════════ CROSS-LINK BANNER ═══════════════════════ -->
+<div class="cross-link-banner">
+  <span class="cross-link-label">Part of</span>
+  <a href="ifs-adhd-autism.html">IFS × Neurodivergence — the full framework →</a>
+</div>
+
+<!-- ══════════ BODY ═══════════════════════════════════════ -->
+<div class="primer-body">
+
+  <!-- TOC -->
+  <nav class="primer-toc" aria-label="Page contents">
+    <div class="toc-label">Contents</div>
+    <a class="toc-link" href="#what-burnout-is">What Burnout Actually Is</a>
+    <a class="toc-link" href="#how-it-develops">How It Develops</a>
+    <a class="toc-link" href="#inside-the-system">What's Happening Inside</a>
+    <a class="toc-sub" href="#parts-presentation">The Parts Presentation</a>
+    <a class="toc-sub" href="#burden-layers">What Parts Carry About It</a>
+    <a class="toc-link" href="#what-keeps-it-going">What Keeps It Going</a>
+    <a class="toc-sub" href="#detection-problem">The Detection Problem</a>
+    <a class="toc-sub" href="#cheap-rest">The Cheap-Rest Trap</a>
+    <a class="toc-sub" href="#burnout-vs-depression">Burnout vs. Depression</a>
+    <a class="toc-link" href="#recovery">What Recovery Looks Like</a>
+    <hr class="toc-divider">
+    <div class="toc-related">
+      <div class="toc-related-label">Related</div>
+      <a href="masking-unmasking.html">Masking &amp; Unmasking</a>
+      <a href="ifs-adhd-autism.html">IFS × Neurodivergence</a>
+      <a href="ifs-primer.html">IFS Primer</a>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="primer-content">
+
+    <!-- 1 — WHAT BURNOUT IS -->
+    <section class="primer-section" id="what-burnout-is">
+      <div class="section-num">01</div>
+      <h2>What Burnout<br><em>Actually Is</em></h2>
+      <p>The word burnout gets used for a lot of things. A hard week. A difficult project. The ambient exhaustion of too many commitments. What Raymaker et al. (2020) are describing is something categorically different — a syndrome, with a definition, a mechanism, and a clinical trajectory distinct from ordinary depletion.</p>
+
+      <div class="info-box">
+        <div class="info-label">Formal Definition — Raymaker et al. (2020)</div>
+        <div class="info-body">Autistic burnout is a syndrome resulting from chronic life stress and a mismatch of expectations and abilities without adequate supports — characterized by <strong>pervasive long-term exhaustion, loss of function, and reduced tolerance to stimulus</strong> — typically persisting for three months or longer.</div>
+      </div>
+
+      <p>Each term in that definition is doing precise work. <em>Pervasive</em> means the exhaustion extends across domains — cognitive, emotional, and physical — not confined to where the stress originated. A client burned out from workplace demands may find they cannot read, cannot track a conversation with a close friend, cannot tolerate their usual sensory environment. The exhaustion doesn't stay in the domain that caused it. <em>Loss of function</em> means capacities that were previously accessible are no longer reliably available — executive function that was present, social scripts that worked, coping resources that held. This is not a return to a baseline the client never had; it is a deterioration from what was there before. <em>Reduced tolerance to stimulus</em> means sensory, social, and cognitive input that was previously manageable becomes overwhelming at lower thresholds. The three-month duration criterion distinguishes burnout from the shorter crashes and recovery cycles that are part of ordinary ND regulation.</p>
+      <p>One framework position is worth stating at the outset, because it determines whether the treatment helps or harms: autistic burnout and depression are distinct states with nearly opposite treatment implications. Depression responds to behavioral activation and increased engagement. Burnout responds to demand reduction, rest, and accommodation. A practitioner who treats burnout as depression — prescribing activation — can deepen the burnout significantly. Accurate identification is not academic; it determines the treatment direction. More on this distinction in Section 04.</p>
+    </section>
+
+    <!-- 2 — HOW IT DEVELOPS -->
+    <section class="primer-section" id="how-it-develops">
+      <div class="section-num">02</div>
+      <h2>How Burnout<br><em>Develops</em></h2>
+      <p>Burnout is the endpoint of a process, not a sudden event. Understanding the process matters more than recognizing the endpoint — because the process is where intervention is possible. By the time a client presents in full burnout, most tractable intervention points are behind them.</p>
+      <p>Raymaker et al. produced the first community-derived conceptual model of how autistic burnout develops. Five stages, in sequence:</p>
+
+      <div class="stages-list">
+        <div class="stage-item">
+          <div class="stage-num">Stage 1</div>
+          <div class="stage-body"><strong>Life stressors.</strong> Ongoing demands creating cumulative load: employment demands, social navigation in neurotypical environments, discrimination and harassment, health management, sustained masking across contexts. No single stressor is typically catastrophic. The stressors are often things the client has managed before. What has changed is the absence of adequate recovery between cycles.</div>
+        </div>
+        <div class="stage-item">
+          <div class="stage-num">Stage 2</div>
+          <div class="stage-body"><strong>Cumulative load.</strong> Stressors accumulate. The SR resource pool depletes faster than it replenishes. A key phenomenological feature here is the psychic plaque effect: masking cost accumulates not only during masking episodes but <em>between</em> them. The residue from each episode does not fully clear. The client who reports that nothing bad happened in the weeks before burnout onset is often correct — nothing catastrophic occurred. The plaque accumulated across manageable weeks until the threshold was reached.</div>
+        </div>
+        <div class="stage-item">
+          <div class="stage-num">Stage 3</div>
+          <div class="stage-body"><strong>Barriers to support.</strong> As load accumulates, the person seeks relief. This is where the systemic dimension enters the model. Relief is blocked not only by unavailability of support but by active barriers — including what Raymaker et al. name explicitly as gaslighting and dismissal. Autistic adults who sought help during early or middle burnout stages reported being told their experience was anxiety, not burnout; a bad attitude, not a capacity problem; that they should push through. The Pathology Paradigm's refusal to recognize autistic burnout as a real and distinct state produces direct harm at Stage 3.</div>
+        </div>
+        <div class="stage-item">
+          <div class="stage-num">Stage 4</div>
+          <div class="stage-body"><strong>Expectations outweigh abilities.</strong> As capacity degrades, the gap between what is expected — by employers, by families, by the client's own internal standards — and what is actually available widens. Taskmaster managers often respond by increasing pressure: pushing harder, applying more self-criticism, reducing rest to increase output. This is neurologically counterproductive. The self-criticism → EF suppression chain means that shame activation at Stage 4 further reduces the executive function capacity available for the very performance being demanded. The system tries to arrest its decline by deploying the mechanism that accelerates it.</div>
+        </div>
+        <div class="stage-item">
+          <div class="stage-num">Stage 5</div>
+          <div class="stage-body"><strong>Burnout.</strong> The system can no longer function at expected levels. Managers who were sustaining performance begin to fail. Crash-and-collapse firefighters activate — producing the visible collapse that finally registers as something other than attitude or effort failure. This is where the system comes to clinical attention, which means Stage 5 is usually where assessment begins — well after the most tractable intervention points have passed.</div>
+        </div>
+      </div>
+
+      <p><strong>Where intervention is possible.</strong> Stage 1 (stressor identification and reduction) and Stage 3 (barrier removal — addressing dismissal and lack of accommodation) are the most tractable points before the threshold is crossed. Stage 2 interventions — load management through EF scaffolding, demand mapping, masking reduction — are useful in non-burnout states but may be inaccessible once burnout is active, because the EF capacity required for scaffolding is among the first casualties of burnout itself. Stage 4 interventions can slow progression but often cannot arrest it. The implication: burnout prevention is early-stage work. Burnout treatment begins at Stage 5, but the system that arrives at Stage 5 has already been through four prior stages where something different was possible.</p>
+    </section>
+
+    <!-- 3 — INSIDE THE SYSTEM -->
+    <section class="primer-section" id="inside-the-system">
+      <div class="section-num">03</div>
+      <h2>What's Happening<br><em>Inside the System</em></h2>
+      <p>Burnout is a systems-level state, not a parts configuration. But it has a characteristic parts presentation, and understanding that presentation changes what is useful in session — and what is actively counterproductive.</p>
+
+      <h3 id="parts-presentation">The Parts Presentation</h3>
+      <p>The masking managers, achievement-driving managers, and verbal managers that normally sustain performance begin to fail. Clients may describe this as <em>I just can't anymore</em> — not as a decision but as a sudden absence of the capacity they previously relied on. Scripts that worked no longer load reliably. Social navigation that was effortful but possible becomes impossible. The experience of manager failure is often frightening: clients who have successfully managed ND presentation in demanding environments find themselves without the tools they built their functioning around.</p>
+      <p>When managers fail and exiles activate, crash-and-collapse firefighters produce a system-wide drop in functioning. Cognitive output contracts. Physical energy is unavailable. Relational connection becomes inaccessible — not because the client doesn't want it but because the cost of connection now exceeds what the depleted system can resource.</p>
+      <p>In advanced burnout, the system's emergency regulation arsenal contracts to its least-energy-demanding tools. <strong>Meltdowns require activation energy; shutdowns do not.</strong> The clinical risk asymmetry is significant: meltdowns are visible and typically generate external response. Shutdowns are invisible. A client in recurring shutdown during burnout may appear to others as quiet, withdrawn, or low-energy — even as they are in sustained neurological crisis that receives no response because it produces no visible signal. Practitioners monitoring burned-out autistic clients should assess explicitly for shutdown rather than waiting for meltdown to indicate crisis.</p>
+      <p>As burnout deepens, the sensory tolerance that was previously available — the ability to manage an open-plan office, a fluorescent-lit room, background noise during conversation — contracts. Input that was in the manageable range moves above the threshold. Clients may describe this as <em>everything is too loud</em> or <em>I can't be in public anymore</em> without knowing that this is a burnout symptom rather than a new permanent state.</p>
+
+      <h3 id="burden-layers">What Parts Carry About It</h3>
+      <p>One of the most painful features of burnout onset is its often-undramatic precipitant. Clients who crash without a single identifiable cause carry shame about the mismatch: <em>nothing even happened. I should have been able to handle this.</em> The psychic plaque accumulation model is the correct frame — the crash is the endpoint of accumulation, not the response to a specific trigger. But the parts carrying shame don't have access to that frame. They have access to the surface story: other people manage what I was managing, and I fell apart.</p>
+      <p>The managers who were sustaining performance were often load-bearing elements of the client's identity: <em>I'm someone who pushes through. I don't let the ND stuff stop me.</em> When those managers fail in burnout, the identity claim fails with them. Parts carrying <em>I am unreliable</em>, <em>I am too much</em>, <em>I am fundamentally inadequate</em> surface through the gap. Burnout is not only a capacity collapse; it is often an identity crisis, because the identity was partly built on the managers' sustained performance.</p>
+      <p>Parts that learned that rest is weakness, indulgence, or avoidance actively resist the only thing that would resolve burnout. Taskmaster managers continue applying pressure when pressure has no productive target. Internal critics escalate — interpreting the collapse as evidence of fundamental character failure rather than as a medical event requiring recovery. The result: the burned-out client is often their own worst obstacle to recovery, because the parts that want to fix the problem are applying the tools that created it.</p>
+    </section>
+
+    <!-- 4 — WHAT KEEPS IT GOING -->
+    <section class="primer-section" id="what-keeps-it-going">
+      <div class="section-num">04</div>
+      <h2>What Keeps<br><em>It Going</em></h2>
+
+      <h3 id="detection-problem">The Detection Problem</h3>
+      <p>The standard burnout prevention model assumes the person can sense increasing load and modulate before the threshold. In autistic clients with alexithymia — reduced access to internal state signals — early burnout doesn't register as early burnout. There is no felt-sense alarm. The client discovers they are in full burnout by arriving there, not by sensing its approach.</p>
+      <p>This is not a planning failure. It is an architectural gap: the interoceptive signal that would function as a pre-threshold warning is not reliably available. The practical implication shifts the entire approach. Burnout prevention for autistic clients requires an <strong>external scaffold rather than a "notice your signals" intervention.</strong> Traffic light demand systems, behavioral pattern tracking, environmental load mapping — tools that use observable data rather than felt-sense self-assessment — are the appropriate early warning mechanisms. Asking an alexithymic client to notice they're approaching burnout is asking them to use a tool their nervous system does not reliably have.</p>
+      <p>For clients who cannot detect early burnout signals, the task becomes identifying behavioral indicators that are observable — changes in sleep, reduced appetite, increased cancellation of social plans, changes in communication frequency — and building a regular check-in structure around those anchors rather than around internal felt-sense assessment.</p>
+
+      <h3 id="cheap-rest">The Cheap-Rest Trap</h3>
+      <p>The standard rest prescription — take time off, reduce obligations, relax — often fails autistic clients in burnout because what is prescribed is cheap rest rather than restorative rest. Cheap rest is low-demand but not restorative: passive media consumption, scrolling, lying in bed without sleeping. It reduces active output without replenishing the nervous system's depleted resources.</p>
+      <p>Restorative rest targets nervous system recovery — it is sensory-compatible, involves input reduction rather than input substitution, and may include activities that appear active but are genuinely restorative for the individual's specific regulatory needs: special interest engagement, preferred movement, time in sensory-comfortable environments. A client who <em>rested</em> for two weeks and returns still depleted is often reporting accurate experience: they had cheap rest, not restorative rest. The prescription needs more specificity — what is actually restorative for this person's nervous system, not what counts as rest by neurotypical standards.</p>
+
+      <h3 id="burnout-vs-depression">Burnout vs. Depression</h3>
+      <p>Three features distinguish autistic burnout from depression in ways that determine treatment direction:</p>
+
+      <div class="info-box">
+        <div class="info-label">Burnout vs. Depression — Three Clinical Distinctions</div>
+        <div class="info-body">
+          <strong>Precipitants.</strong> Burnout follows clearly from a pattern of life events — the accumulation is traceable, even if no single event was catastrophic. Depression frequently arises without clear precipitants or with disproportionate response to events.<br><br>
+          <strong>Treatment direction.</strong> Depression responds to behavioral activation and engagement. Autistic burnout responds to demand reduction, rest, and accommodation. These are not merely different — they are nearly opposite. Treating burnout as depression by prescribing activation can deepen the burnout significantly.<br><br>
+          <strong>Loss of function.</strong> In burnout, functional loss is specific to overload contexts and recovers with adequate rest and load reduction — the recovery trajectory exists, even if it is slow. Depression's anhedonia and functional loss are more global and do not respond to load reduction in the same way.
+        </div>
+      </div>
+
+      <p>The burnout perpetuation cycle explains why misidentification is so costly: SR resource pool depletion prevents the recovery that would rebuild SR resources; taskmaster pressure further depletes the pool; shame exile activation contracts executive function through the self-criticism → EF suppression chain; sensory threshold lowering increases the load of environments that were previously manageable. The cycle can be self-sustaining for months or years without external intervention or dramatic change in external conditions. Applying activation to this cycle adds fuel.</p>
+    </section>
+
+    <!-- 5 — RECOVERY -->
+    <section class="primer-section" id="recovery">
+      <div class="section-num">05</div>
+      <h2>What Recovery<br><em>Looks Like</em></h2>
+      <p>Recovery from burnout is not returning to the pre-burnout configuration. That configuration produced the burnout. Self-led recovery includes the question: what about the pre-burnout setup contributed to this, and what would have to change?</p>
+
+      <div class="coaching-list">
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Name it accurately first.</strong> Before recovery can be organized, burnout must be named — including being distinguished from depression, laziness, resistance, or attitude. Naming does specific work: it routes the person toward the appropriate response rather than the counterproductive one. Parts that carry shame about needing to stop can sometimes receive "you are in burnout" as information in a way that "I want to rest" cannot get through. The clinical move is not only psychoeducation; it is a renegotiation with the protectors about what this state is and what it therefore requires.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Demand reduction is treatment, not avoidance.</strong> The most effective response to active burnout is removing demands rather than managing through them. This is the opposite of what most ND adults have been told to do when functioning decreases. Identifying which demands are load-bearing and which can be reduced or dropped — not as a chronic lifestyle choice but as a medical event requiring recovery — is itself a Self-led act. The self-advocacy required to communicate this to employers, families, and medical providers is a burnout recovery tool, not a sign of fragility.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Rest has to be calibrated to the specific nervous system.</strong> What restores this person. That may be unusual by neurotypical standards: uninterrupted time in a special interest, time alone in a sensory-comfortable environment, reduced social contact including with people the client loves. Self-led burnout recovery involves recognizing what is genuinely restorative for this system and accessing it without the taskmaster interpreting rest as failure or the self-critic cataloguing what isn't getting done. A client who rested and still cannot function is not failing to recover — they may not have reached the restorative tier yet.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Autistic community as recovery resource.</strong> Raymaker et al. identified autistic peer connection as one of the primary recovery pathways — environments where masking is unnecessary, where ND experience doesn't require explanation, where the relational cost is low. For many autistic people, these connections allow resource replenishment that individual therapy doesn't provide in the same way, because they reduce the relational demand rather than adding to it. Online autistic communities and late-diagnosis peer spaces function as recovery environments. Facilitating access to autistic community is a clinical task, not an optional supplement.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Identity embrace as part of the recovery.</strong> Participants in Raymaker et al. described recovery as involving not only demand reduction but movement toward autistic identity — reducing masking, connecting with autistic culture, embracing autistic ways of being. The system that returns to the same demands with the same protections will return to the same burnout. Recovery that only addresses capacity without addressing configuration is incomplete. The identity question — what about how I was operating contributed to this? — is a recovery question, not a separate one.</div>
+        </div>
+      </div>
+
+      <div class="alert-box">
+        <div class="alert-label">Suicidality and Burnout</div>
+        <div class="alert-body">Autistic burnout is a documented pathway to suicidal ideation and behavior (Raymaker et al., 2020). When suicidality is present, assessing whether burnout is the proximate state changes the intervention direction — demand reduction and environmental relief are part of safety planning for burnout-mediated suicidality, alongside and not instead of standard safety protocols. <strong>Professional safety assessment should always be sought when suicidality is present.</strong> If you are in crisis, please contact a licensed mental health professional or a crisis line immediately.</div>
+      </div>
+
+      <p>Parts work during active burnout requires calibration to current capacity. Approaches that require significant emotional access — unblending, exile contact — are generally not appropriate during acute burnout, because the SR resource availability for recovery from parts-level activation isn't there. What is appropriate during acute burnout: external mapping (what needs to change in the environment), practical demand reduction, and safe relational contact. The parts work waits until the system has partial recovery. That sequencing is not avoidance — it is what the system can actually use.</p>
+
+      <a class="related-page" href="masking-unmasking.html">
+        <div>
+          <div class="related-page-label">Related page</div>
+          <div class="related-page-title">Masking and Unmasking — masking cost as the primary burnout driver</div>
+        </div>
+        <div class="related-page-arrow">→</div>
+      </a>
+    </section>
+
+  </main>
+</div>
+
+<!-- ══════════ FOOTER ════════════════════════════════════ -->
+<footer class="hs-footer">
+  <div class="hs-footer-top">
+    <div>
+      <div class="hs-footer-name">High Signal Coaching</div>
+      <div class="hs-footer-tagline">IFS-informed executive function coaching<br>ADHD/AuDHD men in tech</div>
+      <div class="hs-footer-contact">
+        <a href="mailto:matt@highsignalcoaching.com">matt@highsignalcoaching.com</a>
+        <a href="https://www.linkedin.com/in/matthew-monroe-simpson-73a0381b4" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Explore</div>
+      <div class="hs-footer-links">
+        <a href="ifs-primer.html">IFS Primer</a>
+        <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+        <a href="nd-glossary.html">Neurodiversity Glossary</a>
+        <a href="ef-support-interventions.html">Executive Function Support</a>
+        <a href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener">Book a discovery call</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Legal</div>
+      <div class="hs-footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Coaching vs. Therapy Disclaimer</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+  <div class="hs-footer-disclaimer">
+    <div class="hs-disclaimer-label">Disclaimer</div>
+    <div class="hs-disclaimer-text">
+      High Signal Coaching is a professional coaching service, not therapy or clinical treatment.
+      Burnout content draws on the research of Raymaker et al. (2020), Devon Price (<em>Unmasking Autism</em>), Megan Anna Neff (<em>Self-Care for Autistic People</em>), and Kemp &amp; Mitchelson (<em>The Neurodivergence Skills Workbook</em>).
+      If you are experiencing a mental health emergency or suicidal thoughts, please contact a licensed mental health professional or crisis line immediately.
+      <em>Licensed mental health services available separately through Matthew Monroe Simpson Counseling.</em>
+    </div>
+  </div>
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+<script>
+  const allAnchors = document.querySelectorAll('[id]');
+  const tocLinks = document.querySelectorAll('.toc-link, .toc-sub');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  allAnchors.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
