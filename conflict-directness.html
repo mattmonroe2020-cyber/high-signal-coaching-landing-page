@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conflict and Directness | High Signal Coaching</title>
+  <meta name="description" content="Conflict avoidance doesn't produce peace — it produces pressure-cooker accumulation. The parts architecture behind DEER, victim puke, and what Self-led directness actually looks like.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark:#1C1914; --dark2:#252019; --amber:#C8873A; --amber-light:#E4A85C;
+      --cream:#F0E6D8; --cream-muted:#B8A898; --cream-faint:#7A6E64;
+      --serif:'Cormorant Garamond',Georgia,serif; --mono:'DM Mono',monospace; --rule:#3a3228;
+    }
+    html { scroll-behavior: smooth; }
+    body { background:var(--dark); color:var(--cream); font-family:var(--serif); line-height:1.7; }
+
+    .hs-nav { display:flex; justify-content:space-between; align-items:center; padding:1.4rem 3rem; border-bottom:.5px solid var(--rule); position:sticky; top:0; background:var(--dark); z-index:100; }
+    .hs-logo { font-family:var(--serif); font-size:13px; font-weight:400; letter-spacing:.15em; text-transform:uppercase; color:var(--cream); text-decoration:none; }
+    .hs-nav-links { display:flex; gap:2.5rem; align-items:center; }
+    .hs-nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--cream-muted); text-decoration:none; font-weight:300; }
+    .hs-nav-links a:hover { color:var(--cream); }
+
+    .primer-hero { padding:4.5rem 3rem 3.5rem; border-bottom:.5px solid var(--rule); max-width:860px; }
+    .primer-eyebrow { font-family:var(--mono); font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--amber); font-weight:300; margin-bottom:1.5rem; }
+    .primer-hero h1 { font-family:var(--serif); font-size:clamp(32px,4.5vw,50px); font-weight:300; line-height:1.15; color:var(--cream); margin-bottom:1.2rem; }
+    .primer-hero h1 em { font-style:italic; color:var(--amber-light); }
+    .primer-hero-sub { font-family:var(--serif); font-size:18px; font-weight:300; color:var(--cream-muted); max-width:600px; line-height:1.75; }
+
+    .primer-body { display:grid; grid-template-columns:210px 1fr; gap:0; border-bottom:.5px solid var(--rule); }
+
+    .primer-toc { border-right:.5px solid var(--rule); padding:3rem 0; position:sticky; top:64px; align-self:start; height:calc(100vh - 64px); overflow-y:auto; }
+    .toc-section { padding:.7rem 2rem; border-bottom:.5px solid var(--rule); }
+    .toc-label { font-family:var(--mono); font-size:8px; letter-spacing:.14em; text-transform:uppercase; color:var(--cream-faint); font-weight:300; margin-bottom:.4rem; }
+    .toc-link { display:block; font-family:var(--serif); font-size:13px; font-weight:400; color:var(--cream-muted); text-decoration:none; line-height:1.4; margin-bottom:.15rem; }
+    .toc-link:hover { color:var(--cream); }
+    .toc-sub { display:block; font-family:var(--mono); font-size:8px; letter-spacing:.06em; color:var(--cream-faint); text-decoration:none; margin-top:.2rem; margin-left:.6rem; font-weight:300; line-height:1.5; }
+    .toc-sub:hover { color:var(--amber); }
+
+    .primer-content { padding:3rem; }
+    .primer-section { padding-bottom:3.5rem; border-bottom:.5px solid var(--rule); margin-bottom:3.5rem; }
+    .primer-section:last-child { border-bottom:none; margin-bottom:0; }
+
+    .section-num { font-family:var(--mono); font-size:9px; letter-spacing:.16em; text-transform:uppercase; color:var(--amber); font-weight:300; margin-bottom:.7rem; }
+    .primer-section h2 { font-family:var(--serif); font-size:clamp(24px,3vw,32px); font-weight:300; color:var(--cream); line-height:1.25; margin-bottom:1.4rem; }
+    .primer-section h2 em { font-style:italic; color:var(--amber-light); }
+    .primer-section h3 { font-family:var(--serif); font-size:18px; font-weight:400; color:var(--cream); margin-top:2rem; margin-bottom:.8rem; }
+    .primer-section h3 em { font-style:italic; color:var(--amber-light); }
+
+    .primer-section p { font-family:var(--serif); font-size:17px; font-weight:300; color:var(--cream-muted); line-height:1.85; margin-bottom:1.3rem; }
+    .primer-section p:last-child { margin-bottom:0; }
+    .primer-section p strong { font-weight:500; color:var(--cream); }
+    .primer-section p em { font-style:italic; }
+
+    .pullquote { font-family:var(--serif); font-size:19px; font-weight:300; font-style:italic; color:var(--cream); border-left:2px solid var(--amber); padding-left:1.4rem; margin:2rem 0; line-height:1.55; }
+
+    .info-box { background:var(--dark2); border-left:2px solid var(--rule); padding:1.4rem 1.8rem; margin:2rem 0; }
+    .info-box-label { font-family:var(--mono); font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:var(--cream-faint); font-weight:300; margin-bottom:.8rem; }
+    .info-box p { font-family:var(--serif); font-size:15px; font-weight:300; color:var(--cream-muted); line-height:1.75; margin-bottom:.6rem; }
+    .info-box p:last-child { margin-bottom:0; }
+
+    .coaching-list { margin:1.5rem 0; padding:0; list-style:none; }
+    .coaching-list li { font-family:var(--serif); font-size:16px; font-weight:300; color:var(--cream-muted); line-height:1.75; padding:.5rem 0; border-top:.5px solid var(--rule); }
+    .coaching-list li:last-child { border-bottom:.5px solid var(--rule); }
+    .coaching-list li::before { content:"— "; color:var(--amber); }
+
+    .cross-link-bar { display:flex; gap:1px; background:var(--rule); margin-bottom:3rem; }
+    .cross-link-item { flex:1; background:var(--dark2); padding:1.2rem 1.4rem; }
+    .cross-link-label { font-family:var(--mono); font-size:8px; letter-spacing:.12em; text-transform:uppercase; color:var(--cream-faint); font-weight:300; margin-bottom:.4rem; }
+    .cross-link-item a { font-family:var(--serif); font-size:14px; font-weight:400; color:var(--cream-muted); text-decoration:none; }
+    .cross-link-item a:hover { color:var(--amber); }
+
+    .related-page { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule); margin-top:3rem; }
+    .related-card { background:var(--dark); padding:1.5rem; }
+    .related-card:hover { background:var(--dark2); }
+    .related-tag { font-family:var(--mono); font-size:8px; letter-spacing:.1em; text-transform:uppercase; color:var(--amber); margin-bottom:.5rem; font-weight:300; }
+    .related-name { font-family:var(--serif); font-size:16px; font-weight:400; color:var(--cream); margin-bottom:.4rem; }
+    .related-desc { font-family:var(--serif); font-size:13px; font-weight:300; color:var(--cream-muted); line-height:1.6; }
+    .related-link { font-family:var(--mono); font-size:8px; letter-spacing:.08em; text-transform:uppercase; color:var(--cream-faint); text-decoration:none; margin-top:.8rem; display:inline-block; font-weight:300; }
+    .related-link:hover { color:var(--amber); }
+
+    .hs-footer { border-top:.5px solid var(--rule); }
+    .hs-footer-bottom { padding:1.4rem 3rem; display:flex; justify-content:space-between; align-items:center; }
+    .hs-footer-copy { font-family:var(--mono); font-size:9px; letter-spacing:.08em; color:var(--cream-faint); font-weight:300; }
+    .hs-footer-sign { font-family:var(--serif); font-size:14px; font-weight:300; font-style:italic; color:var(--cream-faint); }
+
+    @media(max-width:720px) {
+      .hs-nav { padding:1.2rem 1.5rem; }
+      .primer-hero, .primer-content { padding:2.5rem 1.5rem; }
+      .primer-body { grid-template-columns:1fr; }
+      .primer-toc { position:static; height:auto; border-right:none; border-bottom:.5px solid var(--rule); padding:1.5rem; }
+      .cross-link-bar { flex-direction:column; }
+      .related-page { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+    <a href="nd-glossary.html">Neurodiversity Glossary</a>
+    <a href="ef-support-interventions.html">Executive Function Support</a>
+  </div>
+</nav>
+
+<div class="primer-hero">
+  <div class="primer-eyebrow">Relational Life · IFS × NMMNG × Neurodivergence · ADHD · Autism</div>
+  <h1>Conflict avoidance doesn't produce peace.<br>It produces <em>a pressure cooker.</em></h1>
+  <p class="primer-hero-sub">The parts running conflict avoidance have accurate historical information — expressed disagreement did produce consequences in the environment that formed them. They are miscalibrated for the present. Here's the architecture, and what exits the cycle.</p>
+</div>
+
+<div class="primer-body">
+
+  <nav class="primer-toc">
+    <div class="toc-section">
+      <div class="toc-label">On this page</div>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#concept">01 · The architecture</a>
+      <a class="toc-sub" href="#avoidance">Conflict avoidance</a>
+      <a class="toc-sub" href="#deer-response">The DEER response</a>
+      <a class="toc-sub" href="#nd-layers">ND layers</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#parts">02 · Parts carrying the pattern</a>
+      <a class="toc-sub" href="#avoidance-managers">Avoidance managers</a>
+      <a class="toc-sub" href="#deer-operators">DEER operators</a>
+      <a class="toc-sub" href="#directness-parts">Directness parts</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#burdens">03 · Burdens</a>
+      <a class="toc-sub" href="#conflict-abandonment">Conflict = abandonment</a>
+      <a class="toc-sub" href="#directness-problem">My directness is a problem</a>
+      <a class="toc-sub" href="#anger-exile">The anger exile</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#dynamics">04 · System dynamics</a>
+      <a class="toc-sub" href="#deer-polarity">DEER polarization</a>
+      <a class="toc-sub" href="#directness-suppression">Directness suppression (ND)</a>
+      <a class="toc-sub" href="#accumulation-cycle">Accumulation cycle</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#self-led">05 · Self-led directness</a>
+      <a class="toc-sub" href="#and-position">The "and" position</a>
+      <a class="toc-sub" href="#nd-directness">ND directness as authenticity</a>
+    </div>
+  </nav>
+
+  <div class="primer-content">
+
+    <div class="cross-link-bar">
+      <div class="cross-link-item">
+        <div class="cross-link-label">Related</div>
+        <a href="fawn-approval-seeking.html">Fawn &amp; Approval-Seeking →</a>
+      </div>
+      <div class="cross-link-item">
+        <div class="cross-link-label">Related</div>
+        <a href="shame-self-judgment.html">Shame and Self-Judgment →</a>
+      </div>
+      <div class="cross-link-item">
+        <div class="cross-link-label">Related</div>
+        <a href="rejection-sensitive-dysphoria.html">Rejection-Sensitive Dysphoria →</a>
+      </div>
+    </div>
+
+    <div class="primer-section" id="concept">
+      <div class="section-num">01</div>
+      <h2>The architecture</h2>
+
+      <h3 id="avoidance">Conflict avoidance</h3>
+      <p>Glover's clinical observation is simple and precise: conflict avoidance does not produce peace. It produces pressure-cooker accumulation followed by disproportionate explosion. The person who says yes when they mean no, who backs down from expressed positions when pushed, who tolerates intolerable behavior rather than set a limit — this person is not avoiding conflict. They are deferring it while accumulating the material that will make the conflict much worse than it would have been.</p>
+      <p>The IFS framing adds the architectural level the behavioral model doesn't reach: conflict avoidance is not a collection of individual relational choices. It is what the system's manager configuration produces when an exile carrying "conflict = abandonment" is running the show. The parts running avoidance have accurate historical information — in the developmental environment where the exile was formed, expressed disagreement was associated with punishment, withdrawal, or loss of connection. They are not wrong about the history. They are miscalibrated for the present. Every relational context gets evaluated through the exile's predicted outcome: <em>if I express disagreement, this relationship ends.</em> The avoidance is the rational response to that prediction, regardless of what the current evidence actually supports.</p>
+      <p>The behavioral signature follows directly from this architecture: saying yes when meaning no; agreeing with no intention of following through; using indirect communication as a norm (the hint, the sigh, "nothing's wrong"); backing down when pushed — not because of new information, but because pressure activates the abandonment response; apologizing reflexively, including for things not requiring apology.</p>
+
+      <h3 id="deer-response">The DEER response</h3>
+      <p>When conflict arrives despite the avoidance strategy, the system deploys the <strong>DEER response</strong>: Defend, Explain, Excuse, Rationalize. The goal is not to resolve the conflict. The goal is to survive the confrontation without the exile being confirmed as irredeemably bad. The mechanism: flood the confronter with justifications fast enough that the focus shifts from the specific accountability moment to the legitimacy of the defense. DEER appears reasonable on the surface — explanations are not inherently evasive — and produces nothing. Not repair, not intimacy, not the capacity to navigate the next confrontation better. The exile is still running the same belief. The managers are still protecting it. The relational pattern continues.</p>
+
+      <div class="pullquote">The goal of the parts running DEER is not resolution — it is survival: get through the confrontation without the exile being confirmed as irredeemably bad.</div>
+
+      <h3 id="nd-layers">ND layers: RSD and the directness asymmetry</h3>
+      <p><strong>Rejection Sensitive Dysphoria</strong> layers on top of this architecture with specific force. When RSD is active, normal relational friction — a mildly expressed frustration, a direct disagreement, a corrective comment — activates a nervous system response calibrated for genuine threat. The conflict doesn't feel like the beginning of a normal disagreement. It feels like the relational floor dropping out. RSD doesn't install the conflict-avoidance pattern, but it amplifies the exile's predicted outcome and makes engaging conflict feel neurologically prohibitive rather than merely uncomfortable.</p>
+      <p>The <strong>directness asymmetry</strong> is a separate ND layer. Autistic communication tends toward honesty: stating positions plainly, expressing needs without strategic softening, disagreeing visibly rather than through coded withdrawal. This is not a failure of relational sophistication. It is a different communication architecture — and it gets pathologized by NT norms as aggression or bluntness. ND clients with approval-seeking histories often carry both a trained-out authentic directness (suppressed by years of masking and fawn) and a natural ND directness that occasionally breaks through — and then gets punished, which deepens the conflict-avoidance managers' conviction that direct expression is dangerous.</p>
+    </div>
+
+    <div class="primer-section" id="parts">
+      <div class="section-num">02</div>
+      <h2>Parts carrying the pattern</h2>
+
+      <h3 id="avoidance-managers">Conflict-avoidance managers</h3>
+      <p>The front-line protective configuration: parts that have learned to suppress, redirect, preemptively dissolve, or simply not initiate the confrontations that would activate the exile. Their intelligence about specific relational contexts is often accurate — not every relationship is safe for direct conflict, and these parts track that calibration. The clinical complexity is their overgeneralization: applying the conflict-dangerous calibration to relationships and contexts that are not historically continuous with the one that originally installed it.</p>
+
+      <h3 id="deer-operators">DEER operators</h3>
+      <p>The defensive-protocol cluster that activates when conflict arrives despite avoidance. These parts have sophisticated deflection skills: rapid contextualization, pre-emptive explanation, lateral moves to adjacent topics that reduce the pressure of the specific accountability moment. They believe the explanations they are generating — the exile they are protecting is real; the threat they are responding to is neurologically genuine. Their strategy produces no repair and teaches the exile nothing about its current safety.</p>
+
+      <h3 id="directness-parts">Authentic-directness parts</h3>
+      <p>The parts that know what needs to be said. They carry the genuine position — the actual disagreement, the real limit, the authentic experience. In ND systems, these parts are often either nearly silent (suppressed by long-term masking and fawn) or loudly present but unmodulated (the natural ND directness register that breaks through when the manager system is overloaded or drops its guard). The conflict-avoidance managers and the authentic-directness parts exist in the same system, often without much relationship to each other.</p>
+      <p>The <strong>apology-reflex</strong> is the real-time repair arm of the same configuration: parts that have learned to apologize as a relational-repair mechanism — sometimes before the conflict is complete, sometimes in the same sentence as the direct statement that initiated it. Its function is to reduce the relational threat of any direct expression as quickly as possible. Its cost: directness rarely lands. It is retracted or qualified before it can be received and responded to.</p>
+    </div>
+
+    <div class="primer-section" id="burdens">
+      <div class="section-num">03</div>
+      <h2>Burdens</h2>
+
+      <h3 id="conflict-abandonment">"Conflict means abandonment"</h3>
+      <p>The exile-level burden that makes relational friction a threat to relational security rather than a normal event. Not arrived at from evidence about the current relationship — installed through the developmental accumulation in which expressed disagreement was associated with punishment, withdrawal, or loss of connection. Parts carrying this burden respond to the first sign of conflict with a nervous system state calibrated on the historical pattern, regardless of whether the current relationship would actually confirm it.</p>
+
+      <h3 id="directness-problem">"My directness is a problem"</h3>
+      <p>The burden installed by repeated explicit feedback that honest, unmediated expression is too much, too blunt, or socially unacceptable. In ND systems, this burden is often directly traceable to specific contexts — school environments, family feedback, workplace responses to autistic directness — where the natural ND communication style was corrected, mocked, or treated as evidence of social failure. Parts carrying this burden have learned to suppress the authentic-directness register as a condition of relational survival. The suppression protects the relationship; it also removes access to the communication style that most clearly conveys genuine need.</p>
+
+      <h3 id="anger-exile">The anger exile</h3>
+      <p>The accumulated unprocessed anger from conflicts that were avoided rather than resolved — the grievances that have no official status in the system because they were never named, the limits that were crossed without acknowledgment, the authentic positions that were suppressed before reaching expression. The anger exile's material is what becomes the victim puke when containment fails: the disproportionate intensity, the long list of grievances delivered at once, the sense of injustice that is overwhelming to the recipient because the recipient has no context for its history.</p>
+
+      <div class="info-box">
+        <div class="info-box-label">The anger exile's material is accurate</div>
+        <p>The anger exile is not wrong about its records. It carries accurate accounts of events that never got processed. When the victim puke arrives, the clinical move is not to treat it as an overreaction to be corrected, but to trace it back to the accumulation that produced it — what was the conflict that never got resolved? What is the contract failure underneath the current explosion?</p>
+      </div>
+    </div>
+
+    <div class="primer-section" id="dynamics">
+      <div class="section-num">04</div>
+      <h2>System dynamics</h2>
+
+      <h3 id="deer-polarity">DEER–accountability polarization</h3>
+      <p>The DEER operators in direct conflict with the parts that recognize the relational damage of continued deflection. The accountability-seeking parts — which may be functioning from genuine Self-awareness or from the system's own experience of how DEER-saturated conflicts never resolve — are running in the opposite direction from the parts trying to survive the confrontation through explanation. Neither can complete its function: DEER shuts down the accountability moment; the absence of accountability perpetuates the relational pattern; the pattern produces more confrontations; the DEER operators run more deflection. The cycle does not exit from inside either pole.</p>
+
+      <h3 id="directness-suppression">Directness-suppression polarization (ND-specific)</h3>
+      <p>The authentic-directness parts that carry genuine unmediated positions in direct conflict with the protective managers calibrated on the NT pathologizing of ND directness. The authentic parts carry accurate information about the actual disagreement or need. The managers carry accurate information about how previous expressions of unmodulated directness were received. Both are right about different things. The polarization produces the characteristic ND conflict-communication freeze: knowing exactly what to say, being unable to say it without distorting it into NT-legibility — at which point the genuine content gets lost — or delivering it in the natural ND register and then watching it get received as aggressiveness. The freeze is not ambivalence. It is a standoff between two parts with legitimate and conflicting intelligence.</p>
+
+      <h3 id="accumulation-cycle">Accumulation and the learned-wrong-lesson cycle</h3>
+      <p>Avoided conflicts produce accumulated resentment. Accumulated resentment reaches firefighter threshold. A disproportionate expression lands in the relationship. The shame about the explosion deepens the conviction that direct conflict is genuinely dangerous: <em>See — I tried to express it and the result was even worse.</em> The avoidance intensifies. More accumulates. The next threshold-crossing is more catastrophic. The system learns the wrong lesson at every step: not "the explosion was the cost of the avoidance" — but "the explosion proves directness is the problem."</p>
+      <p>This cycle does not exit through better avoidance. It exits through conflict actually engaged at manageable scale — before the accumulation reaches the firefighter threshold. The first manageable-scale conflict, especially one that doesn't produce the abandonment the exile predicted, is the beginning of the exile's evidence update.</p>
+    </div>
+
+    <div class="primer-section" id="self-led">
+      <div class="section-num">05</div>
+      <h2>Self-led directness</h2>
+
+      <p>From Self, conflict is not a threat to the relationship — it is a relational event the relationship can survive, and often must survive to deepen. The exile carrying "conflict = abandonment" is not wrong about the historical environments that formed it; it is miscalibrated for the present. Self-led engagement with conflict begins with that recognition: this relational context may not be continuous with the one where the exile learned its lesson.</p>
+
+      <h3 id="and-position">The "and" position</h3>
+      <p>The parts-architecture of conflict forces either/or: suppress the disagreement to protect the relationship, or express it at cost to the relationship. From Self, both are true simultaneously: the conflict is real, the need is legitimate, <em>and</em> the relationship matters. Self-led directness holds both. It is not aggressiveness or confrontation-as-default. It is clear need-expression without DEER, without preemptive apology, without backing down when pushed for reasons unconnected to new information.</p>
+
+      <div class="pullquote">Directness without DEER is possible when Self is present — not because confrontation isn't uncomfortable, but because Self isn't running the exile-protection strategy DEER exists to serve.</div>
+
+      <h3 id="nd-directness">ND directness as authenticity, not deficit</h3>
+      <p>When the protective managers relax and the authentic-directness parts have Self-energy available, ND directness is not a communication deficit to be fixed. It is honest, non-deceptive, clear about genuine positions. In relational contexts that can receive directness without pathologizing it as aggression, it is one of the primary foundations for the depth-over-breadth intimate connection ND systems characteristically seek.</p>
+      <p>The clinical question is not how to make the ND client less direct — it is how to distinguish the natural ND directness from the DEER-adjacent maneuvers and trained-out authenticity, and how to find relational contexts where authentic directness is a connection mechanism rather than a liability.</p>
+      <p>The deepest shift is the simplest to name and the hardest to reach: needs are legitimate, and it is safe to say them out loud. Not administered as a strategic move. Not the covert contract's performed giving while waiting for the implied return. <em>I want X. Can we talk about how to make that happen?</em> From Self, this is not a risk to be managed. It is a normal relational act — the kind relationships are built from when both parties are doing it.</p>
+
+      <div class="related-page">
+        <div class="related-card">
+          <div class="related-tag">Relational Life</div>
+          <div class="related-name">Fawn, Approval-Seeking &amp; Covert Contracts</div>
+          <div class="related-desc">The upstream architecture — the exile-driven manager configuration that makes conflict avoidance the system's default relational strategy.</div>
+          <a class="related-link" href="fawn-approval-seeking.html">Read →</a>
+        </div>
+        <div class="related-card">
+          <div class="related-tag">Inner Terrain</div>
+          <div class="related-name">Rejection-Sensitive Dysphoria</div>
+          <div class="related-desc">The neurological amplifier underneath conflict avoidance — why normal relational friction activates a threat response rather than manageable discomfort.</div>
+          <a class="related-link" href="rejection-sensitive-dysphoria.html">Read →</a>
+        </div>
+        <div class="related-card">
+          <div class="related-tag">Inner Terrain</div>
+          <div class="related-name">Shame and Self-Judgment</div>
+          <div class="related-desc">The exile-level material the DEER response is protecting against — and why shaming accelerates rather than corrects the defensive pattern.</div>
+          <a class="related-link" href="shame-self-judgment.html">Read →</a>
+        </div>
+        <div class="related-card">
+          <div class="related-tag">Foundations</div>
+          <div class="related-name">Masking and Unmasking</div>
+          <div class="related-desc">Conflict avoidance and masking are parallel suppression architectures — the same relational compliance logic running in different contexts.</div>
+          <a class="related-link" href="masking-unmasking.html">Read →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="hs-footer">
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+</body>
+</html>

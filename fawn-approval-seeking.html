@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fawn, Approval-Seeking &amp; Covert Contracts | High Signal Coaching</title>
+  <meta name="description" content="Fawn and approval-seeking are a parts configuration, not a character flaw. The covert contract is the mechanism. Here's the architecture — and what changes it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark:#1C1914; --dark2:#252019; --amber:#C8873A; --amber-light:#E4A85C;
+      --cream:#F0E6D8; --cream-muted:#B8A898; --cream-faint:#7A6E64;
+      --serif:'Cormorant Garamond',Georgia,serif; --mono:'DM Mono',monospace; --rule:#3a3228;
+    }
+    html { scroll-behavior: smooth; }
+    body { background:var(--dark); color:var(--cream); font-family:var(--serif); line-height:1.7; }
+
+    .hs-nav { display:flex; justify-content:space-between; align-items:center; padding:1.4rem 3rem; border-bottom:.5px solid var(--rule); position:sticky; top:0; background:var(--dark); z-index:100; }
+    .hs-logo { font-family:var(--serif); font-size:13px; font-weight:400; letter-spacing:.15em; text-transform:uppercase; color:var(--cream); text-decoration:none; }
+    .hs-nav-links { display:flex; gap:2.5rem; align-items:center; }
+    .hs-nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--cream-muted); text-decoration:none; font-weight:300; }
+    .hs-nav-links a:hover { color:var(--cream); }
+
+    .primer-hero { padding:4.5rem 3rem 3.5rem; border-bottom:.5px solid var(--rule); max-width:860px; }
+    .primer-eyebrow { font-family:var(--mono); font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--amber); font-weight:300; margin-bottom:1.5rem; }
+    .primer-hero h1 { font-family:var(--serif); font-size:clamp(32px,4.5vw,50px); font-weight:300; line-height:1.15; color:var(--cream); margin-bottom:1.2rem; }
+    .primer-hero h1 em { font-style:italic; color:var(--amber-light); }
+    .primer-hero-sub { font-family:var(--serif); font-size:18px; font-weight:300; color:var(--cream-muted); max-width:600px; line-height:1.75; }
+
+    .primer-body { display:grid; grid-template-columns:210px 1fr; gap:0; border-bottom:.5px solid var(--rule); }
+
+    .primer-toc { border-right:.5px solid var(--rule); padding:3rem 0; position:sticky; top:64px; align-self:start; height:calc(100vh - 64px); overflow-y:auto; }
+    .toc-section { padding:.7rem 2rem; border-bottom:.5px solid var(--rule); }
+    .toc-label { font-family:var(--mono); font-size:8px; letter-spacing:.14em; text-transform:uppercase; color:var(--cream-faint); font-weight:300; margin-bottom:.4rem; }
+    .toc-link { display:block; font-family:var(--serif); font-size:13px; font-weight:400; color:var(--cream-muted); text-decoration:none; line-height:1.4; margin-bottom:.15rem; }
+    .toc-link:hover { color:var(--cream); }
+    .toc-sub { display:block; font-family:var(--mono); font-size:8px; letter-spacing:.06em; color:var(--cream-faint); text-decoration:none; margin-top:.2rem; margin-left:.6rem; font-weight:300; line-height:1.5; }
+    .toc-sub:hover { color:var(--amber); }
+
+    .primer-content { padding:3rem; }
+    .primer-section { padding-bottom:3.5rem; border-bottom:.5px solid var(--rule); margin-bottom:3.5rem; }
+    .primer-section:last-child { border-bottom:none; margin-bottom:0; }
+
+    .section-num { font-family:var(--mono); font-size:9px; letter-spacing:.16em; text-transform:uppercase; color:var(--amber); font-weight:300; margin-bottom:.7rem; }
+    .primer-section h2 { font-family:var(--serif); font-size:clamp(24px,3vw,32px); font-weight:300; color:var(--cream); line-height:1.25; margin-bottom:1.4rem; }
+    .primer-section h2 em { font-style:italic; color:var(--amber-light); }
+    .primer-section h3 { font-family:var(--serif); font-size:18px; font-weight:400; color:var(--cream); margin-top:2rem; margin-bottom:.8rem; }
+    .primer-section h3 em { font-style:italic; color:var(--amber-light); }
+
+    .primer-section p { font-family:var(--serif); font-size:17px; font-weight:300; color:var(--cream-muted); line-height:1.85; margin-bottom:1.3rem; }
+    .primer-section p:last-child { margin-bottom:0; }
+    .primer-section p strong { font-weight:500; color:var(--cream); }
+    .primer-section p em { font-style:italic; }
+
+    .pullquote { font-family:var(--serif); font-size:19px; font-weight:300; font-style:italic; color:var(--cream); border-left:2px solid var(--amber); padding-left:1.4rem; margin:2rem 0; line-height:1.55; }
+
+    .info-box { background:var(--dark2); border-left:2px solid var(--rule); padding:1.4rem 1.8rem; margin:2rem 0; }
+    .info-box-label { font-family:var(--mono); font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:var(--cream-faint); font-weight:300; margin-bottom:.8rem; }
+    .info-box p { font-family:var(--serif); font-size:15px; font-weight:300; color:var(--cream-muted); line-height:1.75; margin-bottom:.6rem; }
+    .info-box p:last-child { margin-bottom:0; }
+
+    .coaching-list { margin:1.5rem 0; padding:0; list-style:none; }
+    .coaching-list li { font-family:var(--serif); font-size:16px; font-weight:300; color:var(--cream-muted); line-height:1.75; padding:.5rem 0; border-top:.5px solid var(--rule); }
+    .coaching-list li:last-child { border-bottom:.5px solid var(--rule); }
+    .coaching-list li::before { content:"— "; color:var(--amber); }
+
+    .cross-link-bar { display:flex; gap:1px; background:var(--rule); margin-bottom:3rem; }
+    .cross-link-item { flex:1; background:var(--dark2); padding:1.2rem 1.4rem; }
+    .cross-link-label { font-family:var(--mono); font-size:8px; letter-spacing:.12em; text-transform:uppercase; color:var(--cream-faint); font-weight:300; margin-bottom:.4rem; }
+    .cross-link-item a { font-family:var(--serif); font-size:14px; font-weight:400; color:var(--cream-muted); text-decoration:none; }
+    .cross-link-item a:hover { color:var(--amber); }
+
+    .related-page { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule); margin-top:3rem; }
+    .related-card { background:var(--dark); padding:1.5rem; }
+    .related-card:hover { background:var(--dark2); }
+    .related-tag { font-family:var(--mono); font-size:8px; letter-spacing:.1em; text-transform:uppercase; color:var(--amber); margin-bottom:.5rem; font-weight:300; }
+    .related-name { font-family:var(--serif); font-size:16px; font-weight:400; color:var(--cream); margin-bottom:.4rem; }
+    .related-desc { font-family:var(--serif); font-size:13px; font-weight:300; color:var(--cream-muted); line-height:1.6; }
+    .related-link { font-family:var(--mono); font-size:8px; letter-spacing:.08em; text-transform:uppercase; color:var(--cream-faint); text-decoration:none; margin-top:.8rem; display:inline-block; font-weight:300; }
+    .related-link:hover { color:var(--amber); }
+
+    .hs-footer { border-top:.5px solid var(--rule); }
+    .hs-footer-bottom { padding:1.4rem 3rem; display:flex; justify-content:space-between; align-items:center; }
+    .hs-footer-copy { font-family:var(--mono); font-size:9px; letter-spacing:.08em; color:var(--cream-faint); font-weight:300; }
+    .hs-footer-sign { font-family:var(--serif); font-size:14px; font-weight:300; font-style:italic; color:var(--cream-faint); }
+
+    @media(max-width:720px) {
+      .hs-nav { padding:1.2rem 1.5rem; }
+      .primer-hero, .primer-content { padding:2.5rem 1.5rem; }
+      .primer-body { grid-template-columns:1fr; }
+      .primer-toc { position:static; height:auto; border-right:none; border-bottom:.5px solid var(--rule); padding:1.5rem; }
+      .cross-link-bar { flex-direction:column; }
+      .related-page { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+    <a href="nd-glossary.html">Neurodiversity Glossary</a>
+    <a href="ef-support-interventions.html">Executive Function Support</a>
+  </div>
+</nav>
+
+<div class="primer-hero">
+  <div class="primer-eyebrow">Relational Life · IFS × NMMNG × Neurodivergence · ADHD · Autism</div>
+  <h1>Giving to get isn't generosity.<br>It's a system that learned <em>it couldn't just ask.</em></h1>
+  <p class="primer-hero-sub">Fawn, approval-seeking, and covert contracting are a single architecture. Here's the parts structure behind the pattern — and what actually changes it.</p>
+</div>
+
+<div class="primer-body">
+
+  <nav class="primer-toc">
+    <div class="toc-section">
+      <div class="toc-label">On this page</div>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#what-it-is">01 · What it is</a>
+      <a class="toc-sub" href="#three-phenomena">Three phenomena, one architecture</a>
+      <a class="toc-sub" href="#nd-layer">The ND dual-substrate</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#manager-config">02 · The manager configuration</a>
+      <a class="toc-sub" href="#cluster">The full cluster</a>
+      <a class="toc-sub" href="#covert-contract">Covert contract mechanics</a>
+      <a class="toc-sub" href="#two-poles">Enmeshment and avoider</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#exile-arch">03 · The exile architecture</a>
+      <a class="toc-sub" href="#developmental">Developmental origins</a>
+      <a class="toc-sub" href="#guilt-types">Guilt subtypes</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#dynamics">04 · System dynamics</a>
+      <a class="toc-sub" href="#contract-failure">Contract-failure cycle</a>
+      <a class="toc-sub" href="#deer">The DEER response</a>
+      <a class="toc-sub" href="#nd-substrate">ND neurological layer</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#self-led">05 · What shifts</a>
+      <a class="toc-sub" href="#paradigm-shift">The paradigm shift</a>
+      <a class="toc-sub" href="#genuine-yes">Genuine yes</a>
+    </div>
+  </nav>
+
+  <div class="primer-content">
+
+    <div class="cross-link-bar">
+      <div class="cross-link-item">
+        <div class="cross-link-label">Related</div>
+        <a href="conflict-directness.html">Conflict and Directness →</a>
+      </div>
+      <div class="cross-link-item">
+        <div class="cross-link-label">Related</div>
+        <a href="shame-self-judgment.html">Shame and Self-Judgment →</a>
+      </div>
+      <div class="cross-link-item">
+        <div class="cross-link-label">Related</div>
+        <a href="masking-unmasking.html">Masking and Unmasking →</a>
+      </div>
+    </div>
+
+    <div class="primer-section" id="what-it-is">
+      <div class="section-num">01</div>
+      <h2>What it is</h2>
+
+      <h3 id="three-phenomena">Three phenomena, one architecture</h3>
+      <p>Three terms that often get used interchangeably actually name different levels of the same structure. <strong>Fawn</strong> is the survival-response substrate — the historical and neurological basis of compliance. <strong>Approval-seeking</strong> is the daily behavioral register — what the pattern looks like across social and relational contexts. <strong>Covert contracting</strong> is the relational mechanism that converts approval-seeking into resentment. They are not synonymous. They are co-constitutive: fawn is the developmental root, approval-seeking is the behavioral expression, and the covert contract is why that expression generates so much suffering despite being organized around making others feel good.</p>
+      <p>In IFS terms, fawn and approval-seeking are a manager configuration — a cluster of parts who learned that hiding authentic expression and becoming what others want is the reliable path to getting needs met. The covert contract (a term Robert Glover introduced in <em>No More Mr. Nice Guy</em>) is the mechanics of that strategy: give without asking, hope the recipient feels the implied debt, wait for reciprocation that was never negotiated.</p>
+
+      <div class="pullquote">The covert contract is not a deception. It is a need-getting strategy formed by a system that couldn't express needs directly without triggering abandonment fear.</div>
+
+      <h3 id="nd-layer">The ND dual-substrate</h3>
+      <p>For ND clients, the approval-seeking architecture has two reinforcing substrates that require separate engagement. The <strong>parts-based substrate</strong> is the attachment-wound compliance Glover describes — the exile carrying "having needs = abandonment." The <strong>neurological substrate</strong> is distinct: in autistic and AuDHD systems, chronic social mismatch (encountering environments calibrated for neurotypical processing) generates a sustained pressure toward compliance that operates independently of attachment history. An ND client can do substantial exile work on the abandonment burden and still find themselves defaulting to social compliance — because the prediction-error-reduction drive under social mismatch is still active. Unburdening the parts substrate does not resolve the neurological substrate. Both require attention, and they require different interventions.</p>
+    </div>
+
+    <div class="primer-section" id="manager-config">
+      <div class="section-num">02</div>
+      <h2>The manager configuration</h2>
+
+      <h3 id="cluster">The full cluster</h3>
+      <p>The approval-seeking configuration is not a single part. It is a cluster of managers running simultaneous, complementary strategies: hiding flaws and mistakes; presenting as unselfish and easygoing; caretaking and rescuing without being asked; agreeing to avoid conflict; withholding authentic opinions when they risk disapproval; monitoring a partner's mood as a continuous background task; deferring to others' preferences while privately tracking the accumulated deference. Any client will have a subset of these. What matters is not the specific behaviors but their common function: each one is running a strategy to prevent the activation of the exile underneath.</p>
+      <p>The most clinically important distinction in this cluster is <strong>caretaking versus caring</strong>. Caretaking gives what the giver needs to give — not what the receiver needs. It gives from emptiness, not abundance. And it gives with an implicit expectation: the recipient should feel obligated to reciprocate. The caretaker is not aware of this. The giving genuinely feels selfless. The clinical entry is curiosity about the function, not shame about the dishonesty: what does this part believe will happen if it just asks directly?</p>
+
+      <h3 id="covert-contract">Covert contract mechanics</h3>
+      <p>A covert contract is an unconscious, unspoken agreement: <em>I will do X for you, so that you will do Y for me — and we will both behave as if this agreement doesn't exist.</em> The person giving believes the contract is understood and will be honored. The person receiving doesn't know there is a contract. They cannot fulfill an obligation they were never informed of. The structure generates its own failure: the only kind of contract covert contracting produces is one that cannot be kept.</p>
+
+      <div class="info-box">
+        <div class="info-box-label">The contract-failure sequence</div>
+        <p><strong>1.</strong> Manager delivers the contract — gives, caretakes, complies, smooths.</p>
+        <p><strong>2.</strong> Manager waits for implicit reciprocation.</p>
+        <p><strong>3.</strong> Reciprocation doesn't arrive or arrives differently than expected.</p>
+        <p><strong>4.</strong> Manager experiences this as betrayal — the contract was broken.</p>
+        <p><strong>5.</strong> Accumulated betrayals produce a firefighter event: rage, passive-aggressive withdrawal, sudden cold. Disproportionate from the outside — because the outside has no knowledge of the contracted debt load that's been accumulating.</p>
+      </div>
+
+      <h3 id="two-poles">Enmeshment and avoider</h3>
+      <p>The approval-seeking configuration shows up in two relational presentations that look opposite but serve the same function. The <strong>enmesher</strong> orbits their partner's emotional state — monitors mood continuously, cannot tolerate their partner's distress, reads any partner withdrawal as evidence of impending abandonment. The <strong>avoider</strong> puts everything before the primary relationship, appearing low-maintenance and stable, but also never quite present enough to risk being seen. The covert contract is the same: <em>I am providing X — therefore I am owed Y.</em> The strategy differs; the exile driving it doesn't. Switching between poles over time is the tell: neither is about genuine intimacy. Both are about managing the approval-seeking system.</p>
+    </div>
+
+    <div class="primer-section" id="exile-arch">
+      <div class="section-num">03</div>
+      <h2>The exile architecture</h2>
+
+      <h3 id="developmental">Developmental origins</h3>
+      <p>The approval-seeking managers are organized around a specific exile burden: <em>having needs means being abandoned.</em> This is not a philosophical position. It is an operational conclusion a child drew from experiences in which need-expression was followed by emotional withdrawal, criticism, or unavailability. The conclusion was not wrong as a reading of those experiences. It was accurate. It became catastrophically overgeneralized — applied to adult relationships that bear no resemblance to the original conditions — but the child wasn't misreading what happened.</p>
+      <p>Glover traces the developmental sequence with clinical precision. An early abandonment experience — not necessarily dramatic; a parent's emotional unavailability is sufficient. Ego-centered child logic converts the experience into a conclusion about the self: <em>I caused this. There is something wrong with me.</em> The child then develops a survival mechanism: <em>if I can hide my flaws and become what others want, I will get what I need.</em> Adaptive in the developmental environment. Problematic when it persists into adult contexts where direct expression is possible and safe — but the system has no template for that.</p>
+
+      <h3 id="guilt-types">Guilt subtypes and the DEER response</h3>
+      <p>Not all guilt in approval-seeking systems is the same. Sweezy identifies three forms that require different clinical engagement. <strong>Separation guilt</strong> — asserting one's own needs feels like betrayal or abandonment of others. <strong>Survivor guilt</strong> — having moved forward while others in the original system did not. <strong>Fused guilt-shame</strong> — the most common form in this pattern: guilt and shame are undifferentiated, so the impulse toward repair collapses into self-attack. A person with fused guilt-shame who makes a mistake doesn't feel <em>I did something wrong; I want to repair it.</em> They feel <em>I am the mistake.</em></p>
+      <p>The consequence is the <strong>DEER response</strong> (Defend, Explain, Excuse, Rationalize): when confronted, the system floods the confronter with justifications until the focus shifts away from the specific failure. The goal is not repair — it is distraction from the perceived confirmation of the exile's worthlessness. DEER looks like defensiveness; it functions as a shame-protection strategy. The confronter experiences refusal to take responsibility. The person experiencing DEER has no other available option when the alternative feels like self-annihilation.</p>
+
+      <div class="info-box">
+        <div class="info-box-label">Clinical note — shaming accelerates, it doesn't correct</div>
+        <p>When a confronter escalates shame in response to DEER — becomes more accusatory, more personal — the system does not produce contrition. It produces more DEER, more victim puke, or shutdown. Shame de-escalation (staying curious, naming the dynamic without personalizing it) is the condition under which the exile can become visible enough for something different to happen.</p>
+      </div>
+    </div>
+
+    <div class="primer-section" id="dynamics">
+      <div class="section-num">04</div>
+      <h2>System dynamics</h2>
+
+      <h3 id="contract-failure">The contract-failure cycle</h3>
+      <p>The approval-seeking configuration generates a self-sealing cycle. The manager delivers the covert contract. The implicit reciprocation doesn't arrive. The manager experiences betrayal — genuine betrayal, even though the other person never knew there was a contract. Accumulated betrayals produce a firefighter event. The rage or acting-out is confusing and disproportionate from the outside. The shame about the explosion deepens the conviction that expressing needs is dangerous. The avoidance intensifies. More accumulates. The system learns the wrong lesson at every step: not "the explosion was the cost of the avoidance" but "this proves authentic expression is the problem."</p>
+
+      <h3 id="deer">The DEER response and its relational cost</h3>
+      <p>When conflict arrives despite avoidance, the DEER response activates immediately. The exile activation is real: the confrontation is experienced as confirmation of the exile's belief — <em>you see what I am; this is the abandonment.</em> DEER floods the confronter with justifications fast enough that the focus might shift from the specific accountability moment to the legitimacy of the defense. The confronter experiences stonewalling dressed as engagement. The exile remains unwitnessed, still carrying the same belief. Nothing was repaired. The next confrontation begins with the same configuration intact.</p>
+
+      <h3 id="nd-substrate">The ND neurological compliance substrate</h3>
+      <p>In ND systems, when approval-seeking returns after what seemed like good IFS work, the default interpretation shouldn't be "the exile wasn't fully unburdened" or "the managers didn't trust the shift." It may be that the neurological substrate was never the target of the IFS work — and couldn't be. An autistic nervous system under chronic social mismatch generates a prediction-error-reduction pressure that looks like fawn from the outside. The accommodation layer requires something different: environmental redesign, explicit naming of the neurological pressure with the client, relational contexts that don't demand compliance as the cost of belonging. The IFS work and the accommodation work are concurrent, not sequential.</p>
+      <p>Alexithymia adds another layer: the difficulty reading internal states clearly means the first legible signal is often the resentment burst — the moment the accumulated debt load of unfulfilled contracts becomes undeniable. <em>I don't know what I want most of the time. I just know when I'm angry.</em> Building interoceptive vocabulary (noticing smaller want-states before they accumulate) is part of the work — not only the IFS work on managers and exiles, but the basic skill of noticing <em>something feels off here</em> before it becomes victim puke.</p>
+    </div>
+
+    <div class="primer-section" id="self-led">
+      <div class="section-num">05</div>
+      <h2>What shifts</h2>
+
+      <h3 id="paradigm-shift">The paradigm shift is an exile outcome</h3>
+      <p>The primary recovery move is not behavioral — stop people-pleasing, stop caretaking, ask directly. Those are the outcomes of the recovery. The mechanism is a shift in the core operating belief: from <em>I must earn love by becoming what others want</em> to <em>I am acceptable as I am; my needs are legitimate; others can handle my authentic expression.</em></p>
+      <p>In IFS terms: the exile's burden has been metabolized enough that the manager no longer needs to run the approval-seeking paradigm as its operating logic. The managers don't change their behavior because they were instructed to. They change it because what they were protecting no longer requires that level of protection. Working directly on approval-seeking behaviors — moratoriums on caretaking, challenges to conflict avoidance — is useful as behavioral data and as a window into the exile activation, but it is not sufficient as a primary mechanism. The exile has to receive enough Self-energy that the paradigm loses its necessity.</p>
+
+      <h3 id="genuine-yes">Genuine yes — the behavioral picture</h3>
+      <p>The antidote to compulsive yes is not learning to say no. It is developing a genuine yes — a yes that comes from self-knowledge rather than conflict avoidance. The person knows what they actually want, agrees to things that align with it, declines things that don't — without the yes-as-default social heuristic. For ND clients, this is concurrently an IFS recovery move (managers relaxed enough that the authentic want-signal can be heard) and a neurological skills task (building the interoceptive vocabulary to detect what the genuine want actually is before social compliance pressure overrides it).</p>
+      <p>Self-led relational expression in a formerly approval-seeking system does not look like the absence of care or generosity. It looks like care and generosity without the hidden agenda. The difference is not visible from the outside. It is felt by both parties from the inside.</p>
+
+      <div class="related-page">
+        <div class="related-card">
+          <div class="related-tag">Relational Life</div>
+          <div class="related-name">Conflict and Directness</div>
+          <div class="related-desc">The DEER response and conflict avoidance are the relational face of the same approval-seeking configuration — and what Self-led directness actually looks like.</div>
+          <a class="related-link" href="conflict-directness.html">Read →</a>
+        </div>
+        <div class="related-card">
+          <div class="related-tag">Inner Terrain</div>
+          <div class="related-name">Shame and Self-Judgment</div>
+          <div class="related-desc">The worthlessness exile and the fused guilt-shame that drives the DEER response live here — the upstream condition for the paradigm shift.</div>
+          <a class="related-link" href="shame-self-judgment.html">Read →</a>
+        </div>
+        <div class="related-card">
+          <div class="related-tag">Foundations</div>
+          <div class="related-name">Masking and Unmasking</div>
+          <div class="related-desc">Fawn and masking are parallel suppression architectures. Approval-seeking managers are a relational variant of masking managers.</div>
+          <a class="related-link" href="masking-unmasking.html">Read →</a>
+        </div>
+        <div class="related-card">
+          <div class="related-tag">IFS</div>
+          <div class="related-name">Managers, Firefighters &amp; Exiles</div>
+          <div class="related-desc">The cluster of manager parts running the approval-seeking configuration — and the exile architecture they're protecting.</div>
+          <a class="related-link" href="managers-firefighters-exiles.html">Read →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="hs-footer">
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+</body>
+</html>
