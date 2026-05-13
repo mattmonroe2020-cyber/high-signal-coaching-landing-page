@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masking and Unmasking | High Signal Coaching</title>
+  <meta name="description" content="Masking is not a character trait — it's a parts system. What the masking subsystem does, what it costs, and what unmasking actually is in IFS terms.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:         #1C1914;
+      --dark2:        #252019;
+      --dark3:        #2e2820;
+      --amber:        #C8873A;
+      --amber-light:  #E4A85C;
+      --cream:        #F0E6D8;
+      --cream-muted:  #B8A898;
+      --cream-faint:  #7A6E64;
+      --serif:        'Cormorant Garamond', Georgia, serif;
+      --mono:         'DM Mono', monospace;
+      --rule:         #3a3228;
+      --manager:      #2d5a8e;
+      --manager-bg:   #1e2f40;
+      --fire:         #b85c2a;
+      --fire-bg:      #3a2218;
+      --exile:        #7a4499;
+      --exile-bg:     #281630;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--serif);
+      line-height: 1.7;
+    }
+
+    /* ─── NAV ──────────────────────────────────────────── */
+    .hs-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      border-bottom: .5px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: var(--dark);
+      z-index: 100;
+    }
+    .hs-logo {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .hs-nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .hs-nav-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .hs-nav-links a:hover { color: var(--cream); }
+    .hs-nav-links a.active { color: var(--amber); }
+
+    /* ─── HERO ─────────────────────────────────────────── */
+    .primer-hero {
+      padding: 4.5rem 3rem 3.5rem;
+      border-bottom: .5px solid var(--rule);
+      max-width: 820px;
+    }
+    .primer-eyebrow {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .primer-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 50px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+    }
+    .primer-hero h1 em { font-style: italic; color: var(--amber-light); }
+    .primer-hero-sub {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+    .primer-meta {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: .5px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .primer-meta-item {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .primer-meta-item span { color: var(--cream-muted); }
+
+    /* ─── CROSS-LINK BANNER ─────────────────────────────── */
+    .cross-link-banner {
+      border-bottom: .5px solid var(--rule);
+      padding: 1rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .cross-link-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      flex-shrink: 0;
+    }
+    .cross-link-banner a {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .cross-link-banner a:hover { color: var(--amber-light); }
+
+    /* ─── MAIN LAYOUT ──────────────────────────────────── */
+    .primer-body {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ─── TOC ──────────────────────────────────────────── */
+    .primer-toc {
+      border-right: .5px solid var(--rule);
+      padding: 3rem 0;
+      position: sticky;
+      top: 64px;
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+    }
+    .toc-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      padding: 0 2rem 1.2rem;
+    }
+    .toc-link {
+      display: block;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .65rem 2rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      line-height: 1.5;
+    }
+    .toc-link:hover { color: var(--cream-muted); border-left-color: var(--rule); }
+    .toc-link.active { color: var(--amber); border-left-color: var(--amber); }
+    .toc-sub {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .4rem 2rem .4rem 2.8rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      opacity: .7;
+    }
+    .toc-sub:hover { color: var(--cream-faint); opacity: 1; }
+    .toc-sub.active { color: var(--amber); opacity: 1; }
+    .toc-divider {
+      border: none;
+      border-top: .5px solid var(--rule);
+      margin: 1rem 2rem;
+    }
+    .toc-related {
+      padding: 1rem 2rem 0;
+    }
+    .toc-related-label {
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .6rem;
+      opacity: .6;
+    }
+    .toc-related a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .3rem 0;
+      opacity: .8;
+    }
+    .toc-related a:hover { opacity: 1; }
+
+    /* ─── CONTENT AREA ─────────────────────────────────── */
+    .primer-content {
+      padding: 3rem 3rem 5rem 3.5rem;
+      max-width: 760px;
+    }
+
+    /* ─── SECTIONS ─────────────────────────────────────── */
+    .primer-section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .primer-section:last-child { border-bottom: none; }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .primer-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+    .primer-section h2 em { font-style: italic; color: var(--amber-light); }
+    .primer-section h3 {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-top: 2.2rem;
+      margin-bottom: .8rem;
+      line-height: 1.35;
+    }
+    .primer-section h3 em { font-style: italic; color: var(--amber-light); }
+    .primer-section p {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .primer-section p:last-child { margin-bottom: 0; }
+    .primer-section p strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── PULLQUOTE ─────────────────────────────────────── */
+    .pullquote {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      border-left: 2px solid var(--amber);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      line-height: 1.55;
+    }
+
+    /* ─── INFO BOX ──────────────────────────────────────── */
+    .info-box {
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      border-left: 3px solid var(--amber);
+      padding: 1.6rem 1.8rem;
+      margin: 1.8rem 0;
+    }
+    .info-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .info-body {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .info-body strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── COACHING SEQUENCE ──────────────────────────────── */
+    .coaching-list {
+      margin: 1.8rem 0;
+    }
+    .coaching-item {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      border-top: .5px solid var(--rule);
+    }
+    .coaching-item:last-child { border-bottom: .5px solid var(--rule); }
+    .coaching-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+      flex-shrink: 0;
+      margin-top: 8px;
+      opacity: .6;
+    }
+    .coaching-text {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .coaching-text strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── RELATED PAGE LINK ──────────────────────────────── */
+    .related-page {
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      padding: 1.6rem 1.8rem;
+      margin: 2.5rem 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      text-decoration: none;
+    }
+    .related-page:hover { background: var(--dark3); }
+    .related-page-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .4rem;
+    }
+    .related-page-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream);
+    }
+    .related-page-arrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    .hs-footer { border-top: .5px solid var(--rule); }
+    .hs-footer-top {
+      padding: 3rem 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-footer-name {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: .4rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hs-footer-tagline {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .hs-footer-contact a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-contact a:hover { color: var(--amber); }
+    .hs-footer-col-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .hs-footer-links a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-links a:hover { color: var(--cream); }
+    .hs-footer-disclaimer {
+      padding: 2rem 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-disclaimer-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .hs-disclaimer-text {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .03em;
+      color: var(--cream-faint);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 820px;
+    }
+    .hs-disclaimer-text em { font-style: normal; color: var(--cream-muted); }
+    .hs-footer-bottom {
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hs-footer-copy {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .hs-footer-sign {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-faint);
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 760px) {
+      .hs-nav { padding: 1.2rem 1.5rem; }
+      .hs-nav-links { gap: 1.2rem; }
+      .hs-nav-links a { font-size: 9px; }
+      .primer-hero { padding: 3rem 1.5rem 2.5rem; }
+      .cross-link-banner { padding: 1rem 1.5rem; flex-wrap: wrap; gap: .6rem; }
+      .primer-body { grid-template-columns: 1fr; }
+      .primer-toc {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: .5px solid var(--rule);
+        padding: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        align-items: center;
+      }
+      .toc-label { padding: 0; margin-right: .5rem; }
+      .toc-link { padding: .3rem .7rem; border: .5px solid var(--rule); border-left: none; font-size: 8.5px; }
+      .toc-link.active { border-color: var(--amber); }
+      .toc-sub, .toc-divider, .toc-related { display: none; }
+      .primer-content { padding: 2.5rem 1.5rem 3rem; }
+      .hs-footer-top { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.5rem; }
+      .hs-footer-disclaimer, .hs-footer-bottom { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════════════════════════════════ -->
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ifs-adhd-autism.html" class="active">IFS for ADHD &amp; Autism</a>
+    <a href="nd-glossary.html">Neurodiversity Glossary</a>
+    <a href="ef-support-interventions.html">Executive Function Support</a>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════════════════════════════════ -->
+<div class="primer-hero">
+  <div class="primer-eyebrow">IFS × Neurodivergence · Masking · AuDHD · Autistic Experience</div>
+  <h1>The mask is not who you are.<br>It's what your system <em>built.</em></h1>
+  <p class="primer-hero-sub">Masking is not a character trait — it is held by protectors. What the masking subsystem does, what it costs over time, and what unmasking actually looks like in IFS terms.</p>
+  <div class="primer-meta">
+    <div class="primer-meta-item">Assumes — <span>Basic IFS familiarity</span></div>
+    <div class="primer-meta-item">Sources — <span>Price · Nerenberg · Schwartz · Barkley · Raymaker et al.</span></div>
+    <div class="primer-meta-item">Scope — <span>Coaching context</span></div>
+  </div>
+</div>
+
+<!-- ══════════ CROSS-LINK BANNER ═══════════════════════ -->
+<div class="cross-link-banner">
+  <span class="cross-link-label">Part of</span>
+  <a href="ifs-adhd-autism.html">IFS × Neurodivergence — the full framework →</a>
+</div>
+
+<!-- ══════════ BODY ═══════════════════════════════════════ -->
+<div class="primer-body">
+
+  <!-- TOC -->
+  <nav class="primer-toc" aria-label="Page contents">
+    <div class="toc-label">Contents</div>
+    <a class="toc-link" href="#what-the-mask-is">What the Mask Is</a>
+    <a class="toc-link" href="#how-it-works">How the Masking Subsystem Works</a>
+    <a class="toc-sub" href="#three-operations">Three Operations</a>
+    <a class="toc-sub" href="#parts-in-the-configuration">Parts in the Configuration</a>
+    <a class="toc-link" href="#what-it-costs">What Sustained Masking Costs</a>
+    <a class="toc-sub" href="#physiological-burden">The Physiological Burden</a>
+    <a class="toc-sub" href="#identity-dissolution">Identity Dissolution</a>
+    <a class="toc-link" href="#what-unmasking-is">What Unmasking Is</a>
+    <a class="toc-link" href="#in-coaching">What This Looks Like in Coaching</a>
+    <hr class="toc-divider">
+    <div class="toc-related">
+      <div class="toc-related-label">Related</div>
+      <a href="ifs-adhd-autism.html">IFS × Neurodivergence</a>
+      <a href="ifs-primer.html">IFS Primer</a>
+      <a href="nd-glossary.html">ND Glossary</a>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="primer-content">
+
+    <!-- 1 — WHAT THE MASK IS -->
+    <section class="primer-section" id="what-the-mask-is">
+      <div class="section-num">01</div>
+      <h2>What the Mask Is<br><em>and Why It Exists</em></h2>
+      <p>Most adults who arrive at an ADHD or autism recognition moment have been masking for twenty or thirty years. They usually don't call it that. They call it <em>trying to be normal</em>, or <em>keeping it together</em>, or — more revealingly — <em>being professional</em>. What they describe is a sustained performance: suppressing the stim, scripting the conversation, rehearsing the meeting, monitoring the face, translating the reaction, producing the output. For most of their lives it worked. Then at some point it stopped working, or kept working at a cost they could no longer pay, and now they are in the room trying to figure out why.</p>
+      <p>The mask is not a character trait. It is a parts system response to an environment that consistently signaled that authentic ND expression carries a social cost. Parts that carry the masking configuration studied the threats — rejection, correction, punishment for being visibly different — and developed cover strategies that kept the authentic ND self out of sight, where it was safer. The system worked. It also ran a permanent cognitive tax, an identity-level compression, and a slow erosion of access to Self-energy that only becomes visible when the protective configuration can no longer sustain the load.</p>
+      <p>This matters because understanding the mask correctly changes what's possible. If masking is a bad habit, the intervention is behavior change: stop performing, start being authentic. If masking is held by protectors with a legitimate purpose, the intervention is parts work: understanding what the configuration was protecting against, honoring that it earned its place, and building enough internal safety that the mask can shift from compulsory to optional. The second frame is what this framework operates from. The first frame produces resistance — because the protectors will correctly read it as a threat.</p>
+      <div class="pullquote">Honor the protectors. Then work with them.</div>
+      <p>Price (2022) is the strongest single source on the costs of masking, and the costs are what typically land first for the client — the burnout, the identity fragmentation, the accumulated damage. IFS holds a second claim alongside the first: the masking configuration earned its place. The developmental sequence that produced it was rational under the conditions the child encountered. Unmasking work that skips the honoring step and goes straight to dismantling the mask will meet resistance, and the resistance will be correct.</p>
+    </section>
+
+    <!-- 2 — HOW IT WORKS -->
+    <section class="primer-section" id="how-it-works">
+      <div class="section-num">02</div>
+      <h2>How the Masking<br><em>Subsystem Works</em></h2>
+      <p>The mask is not a single thing. It is a subsystem — several parts coordinating to sustain a performance most clients have stopped consciously noticing they're running.</p>
+
+      <h3 id="three-operations">Three Operations</h3>
+      <p>Three mechanistically distinct operations underlie the masking subsystem. They draw from different EF substrates and carry different cost profiles:</p>
+
+      <div class="info-box">
+        <div class="info-label">Three Operations the Masking Subsystem Runs</div>
+        <div class="info-body">
+          <strong>Suppressing</strong> — active inhibition: directly stopping the stim, stopping the direct communication, stopping the sensory request before it is made. Draws from the SR resource pool with each activation.<br><br>
+          <strong>Camouflaging</strong> — passive non-expression: not suppressing an active impulse, but simply not producing authentic expression — maintaining a surface of NT-congruent neutrality. Lower cost per instance, but cumulative across time.<br><br>
+          <strong>Compensating</strong> — active substitution: producing NT-appearing behaviors in place of absent natural ones — scripting, rehearsing, performing eye contact, manufacturing social interest, simulating expected emotional registers. The highest-cost category.
+        </div>
+      </div>
+
+      <p>In practice, clients run all three in parallel. One thing is useful to anchor before moving to the parts: neurotypical observers rate autistic individuals as less approachable, less trustworthy, and less competent within approximately 20 seconds of first contact — with no behavioral extremes present. The threat that formed the masking configuration was both real and fast.</p>
+
+      <h3 id="parts-in-the-configuration">Parts in the Configuration</h3>
+      <p>The central configuration does the mask's core work — suppressing ND traits and substituting NT-appearing alternatives. These managers are often so automated by adulthood that the person can no longer detect when they're running. The performance is indistinguishable from personality. Price calls this configuration one of the most metabolically and cognitively expensive managers in the IFS literature.</p>
+      <p>Alongside the masking configuration, <strong>achievement-driving managers</strong> often coordinate. The driving logic is <em>achievement disproves the shame</em> — these managers produce the output that prevents the mask from being tested. The mask looks competent partly because they keep the performance above threshold. When they begin to fail — missed deadlines, dropped commitments, output that no longer carries the person through — the masking work becomes impossible, because the gap the mask was designed to hide starts showing through.</p>
+      <p><strong>Hypervigilant monitoring parts</strong> run real-time surveillance: reading faces, tracking silences, listening for tonal shifts, calibrating the ongoing performance against feedback. In autistic systems that don't have automatic social processing, monitoring parts are doing consciously what the neurotypical nervous system handles below awareness. The resource cost is invisible in the interaction — the monitoring runs underneath an apparently-normal social surface.</p>
+      <p>When the masking infrastructure fails — when the load exceeds what the managers can sustain — <strong>shutdown firefighters</strong> activate. This is not the masking managers going offline; it is a different protective response taking over when the managers fail. The collapse that follows is frequently misread as depression, emotional instability, or moral failure. It is the system reaching its capacity limit after running past it for too long.</p>
+      <p>Some presentations add a <strong>highly verbal manager</strong> — a part with high fluency that can narrate the internal experience clearly and at length without providing access to it. It sounds like insight. It can sound like Self. It is not. The tell is that the narrative is vivid and detailed while the felt sense of the parts being described remains unavailable. This matters because the part the practitioner meets in early work may be this verbal manager, presenting the performance of self-understanding rather than actual parts contact.</p>
+    </section>
+
+    <!-- 3 — WHAT IT COSTS -->
+    <section class="primer-section" id="what-it-costs">
+      <div class="section-num">03</div>
+      <h2>What Sustained Masking<br><em>Costs</em></h2>
+      <p>The exhaustion after a dinner party, the inability to function the day after a work event, the post-interaction shutdown that takes hours to come back from — these are not character limitations. They are accurate reports of physiological events. Understanding the cost structure changes how you work with clients who shame themselves for having limits the masking work produces.</p>
+
+      <h3 id="physiological-burden">The Physiological Burden</h3>
+      <p>The body mechanics are specific. Eye contact in autistic systems drives amygdala activation — a threat-response substrate, not a social-connection substrate — at a level neurotypical interaction doesn't produce. The person making eye contact is running elevated cortisol and autonomic arousal while appearing to connect normally. Stimming suppression interrupts neurochemical regulation that stimming was actively providing: the stim is a regulation tool, not a habit, and suppressing it doesn't leave the system neutral — it leaves it less regulated, which increases distress, which requires more suppression. Real-time translation from ND communication register to NT communication register is a sustained prefrontal load that compounds across hours the way fatigue compounds, not the way a single effort is paid and recovered.</p>
+      <p>Barkley's SR resource pool model provides the neurobiological account for post-masking collapse. The self-regulation resource pool — supporting impulse inhibition, behavioral monitoring, working memory, and executive control — is a finite resource that depletes with demand and recovers with rest. In ADHD systems, this pool is both smaller in total capacity and slower to replenish. Each masking operation draws from this pool: each stim suppression, each script execution, each real-time monitoring event. By the end of a day of sustained masking, the pool is depleted. The collapse that follows is not emotional fragility or willpower failure. It is a resource-depletion event with a predictable neurobiological substrate.</p>
+      <p>There is also an accumulation dynamic distinct from the daily depletion cycle. Raymaker et al. (2020) documented that autistic participants spontaneously described the cumulative effect of sustained masking as <em>psychic plaque</em> — residue from the masking configuration that does not fully clear between episodes. No single interaction causes it; the accumulation happens during apparent functioning, and the threshold is crossed by volume rather than by any identifiable triggering event. A client who cannot point to what went wrong — <em>nothing even happened</em> — is usually describing psychic plaque, not a triggering incident.</p>
+      <p>Raymaker et al. also empirically name masking as the primary life stressor in the autistic burnout pathway. This is the mechanistic ground for the clinical move of teaching masking as dangerous: not a values argument about authenticity, but a mechanism argument about accumulation. Some protective parts can receive a mechanistic argument — <em>the mask that works in the short run accumulates cost that presents as burnout in the long run</em> — more readily than they can receive a values argument, because the mechanistic argument doesn't threaten the protection's legitimacy. It provides new information about its long-run cost.</p>
+
+      <h3 id="identity-dissolution">Identity Dissolution</h3>
+      <p>There is a fourth cost that is phenomenologically distinct from the physiological load and resource depletion above. Nerenberg documents it across multiple late-diagnosed presentations: the progressive loss of contact with authentic preferences, interests, relational style, and self-knowledge from sustained suppression.</p>
+      <p>The masking configuration occupies the output channel so consistently that the authentic ND signal becomes inaccessible — not destroyed, but unreachable. Clients present this as <em>I don't know what I like anymore</em>, <em>I don't know who I am outside the performance</em>, <em>I can keep the mask running but there's nothing left underneath it</em>. The configuration is functional; the authentic signal has been suppressed long enough that the system has lost the reference point for it.</p>
+      <p>This is not burnout, and it is not an identity disorder. Burnout is resource depletion — the system runs out of what the masking requires. Identity dissolution is a navigation failure — the authentic self has been suppressed long enough that the system can no longer locate it. A client can recover from burnout and still encounter identity dissolution when they try to unmask: the mask came down and there was nothing they recognized underneath.</p>
+      <p>The implication that matters for the work: ND identity work after late recognition is <strong>reconstruction, not retrieval</strong>. There is not a waiting authentic self ready to emerge once the mask is removed. The authentic self was real — and was also suppressed long enough that the system lost access to its reference points. What needs to happen after unmasking is active identity formation, not a revelation. Coaching that frames this as <em>finding your true self</em> creates a goal the process can't deliver. Coaching that frames it as building something that was interrupted is accurate to what the client will experience.</p>
+    </section>
+
+    <!-- 4 — WHAT UNMASKING IS -->
+    <section class="primer-section" id="what-unmasking-is">
+      <div class="section-num">04</div>
+      <h2>What Unmasking<br><em>Actually Is</em></h2>
+      <p>Unmasking is not dropping the mask. It is unburdening the system the mask served — at which point the mask becomes unnecessary in most contexts, optional in some, and consciously deployable in the few where it still genuinely helps.</p>
+      <div class="pullquote">The goal is not unmasking. It is the development of sufficient internal safety that the client can choose when to mask and when not to — rather than the mask being compulsory and unconscious. The masking manager wants to be a consultant, not a warden.</div>
+      <p>This reframes what the work is. Unmasking is not a behavioral shift accomplished by will. The system did not adopt masking by deciding to, and it cannot drop it by deciding not to. What changes through parts work is the internal conditions that made compulsory masking necessary: the masking managers have a chance to update their threat assessment, the exiles underneath them have a chance to be met, and the mask shifts from running at full capacity regardless of context to being available on a dial, controlled by Self.</p>
+      <p>The sequence matters. The masking manager's protective logic is acknowledged first — these managers protected the system from threats that were real, in conditions that were unfavorable, using the resources available to a child. They earned their place. The work doesn't begin with dismantling. It begins with the masking manager being approached with curiosity and appreciation for what it was protecting against — at which point it often becomes a collaborator faster than expected.</p>
+      <p>The direction unmasking produces is worth naming directly. Self-led unmasking doesn't make someone less ND — it makes them <strong>more visibly ND</strong>. The suppression and compensation infrastructure is no longer running at full capacity. What remains is the ND neurology, unburdened. More visible stimming, not less. More direct communication, not more filtered. More intensity, not more modulation. The masking manager's absence is conspicuous. That is what unmasking done correctly looks like. Clients who expect to feel more neurotypical after unmasking work will be disoriented. Clients who understand what they're actually moving toward can recognize the change as the right direction.</p>
+      <p>Unmasking cannot be done from inside burnout. Capacity must be restored first. Attempting the work on a depleted system produces firefighter responses, mask intensification, or dissociation. The sequence is: stabilize the nervous system, reduce load, build in sensory sanctuary, restore baseline — then parts work. The pull to help the client get back to functioning before that sequence completes is the pull to restore the mask. The mask is what broke the system.</p>
+      <p>When the capacity is present, the gradient matters. Start with low-stakes contexts — private space, a genuinely affirming relationship, an ND community — where practicing unmaskable behaviors carries minimal social cost. Begin with the least costly unmaskings: not suppressing a stim when alone, allowing natural communication cadence in a one-on-one with a trusted person. Build a safe-unmasking repertoire in those contexts before moving to high-stakes ones. High-stakes unmasking — at work, in family systems where the original threat conditions persist, in settings with non-affirming practitioners — is not the starting point. Masking should remain deployable in environments where the threat is still present. That is not a failure of unmasking. It is unmasking that respects the actual world the client lives in.</p>
+    </section>
+
+    <!-- 5 — IN COACHING -->
+    <section class="primer-section" id="in-coaching">
+      <div class="section-num">05</div>
+      <h2>What This Looks Like<br><em>in Coaching</em></h2>
+      <p>The masking work that appears in coaching sessions isn't usually named as masking. It appears as exhaustion that the client can't explain, resistance to being seen, a gap between what the client can do alone and what they can produce in front of others, a persistent uncertainty about what they actually want. Recognizing these as presentations of the masking configuration changes what questions are useful.</p>
+
+      <div class="coaching-list">
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Start with honoring, not dismantling.</strong> Masking managers that have been running for decades without acknowledgment will resist being approached as a problem. Approached as protectors whose work is being understood — what was the threat? what were they protecting? — they often relax into collaborators relatively quickly. The move is curiosity toward the protector, not pressure against it.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Name what unmasking actually produces.</strong> Masking managers may have absorbed the framing that authentic expression means a more neurotypical-looking self. It doesn't. Unmasking means more access to stimming as regulation, more direct communication, more capacity to express what the system actually needs. The ND self is what unmasks. It remains ND — and often becomes more visibly ND. Clients who know this going in can recognize the direction.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Reframe post-interaction exhaustion as a metabolic report.</strong> When a client describes being unable to function after a social event or workday, the frame that helps is physiological rather than character-based: the SR pool depleted. The appropriate response is recovery, not recalibration toward sustaining longer masking. Orienting toward "how do we help you cope better in these situations" risks reinstalling the demand that the client run higher-load masking for longer. The question is how to reduce the draw rate, not how to extend the pool.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Track the load before the collapse, not only after.</strong> Clients who can notice mid-afternoon on a high-masking day that the pool is approaching empty recover faster and initiate the collapse cycle less frequently. The goal is not eliminating the mask but developing the capacity to notice the dial before it hits zero — and having tools to reduce load before that point.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>The "I don't know who I am" presentation is a reconstruction task.</strong> When a client presents ambient confusion about authentic preferences, relational style, or what they actually want — not crisis, just an underlying uncertainty — identity dissolution from sustained masking is the working hypothesis before depression or identity disorder. The access point: what did they like before they started trying to be normal? What did they do when no one was watching? The pre-masking period often retains more authentic signal than clients assume.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Masking can remain contextually deployable.</strong> Some environments are not yet safe for authentic ND expression. Non-affirming workplaces, family systems still organized around the original threat conditions, medical settings with non-affirming providers. Masking should remain available in those contexts — on a dial, under Self-direction, for specific durations, with conscious cost-accounting. This is not a failure of unmasking. It is unmasking done correctly: the system has choice where it previously had only compulsion.</div>
+        </div>
+      </div>
+
+      <p>The underlying move in all of this is the same: the masking configuration is met as a protector rather than a problem, its history is honored, and the work is about building internal conditions in which the compulsory becomes optional. That is a slower process than behavior change. It is also the one that actually works.</p>
+
+      <a class="related-page" href="ifs-adhd-autism.html">
+        <div>
+          <div class="related-page-label">Related page</div>
+          <div class="related-page-title">IFS × Neurodivergence — the full framework</div>
+        </div>
+        <div class="related-page-arrow">→</div>
+      </a>
+    </section>
+
+  </main>
+</div>
+
+<!-- ══════════ FOOTER ════════════════════════════════════ -->
+<footer class="hs-footer">
+  <div class="hs-footer-top">
+    <div>
+      <div class="hs-footer-name">High Signal Coaching</div>
+      <div class="hs-footer-tagline">IFS-informed executive function coaching<br>ADHD/AuDHD men in tech</div>
+      <div class="hs-footer-contact">
+        <a href="mailto:matt@highsignalcoaching.com">matt@highsignalcoaching.com</a>
+        <a href="https://www.linkedin.com/in/matthew-monroe-simpson-73a0381b4" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Explore</div>
+      <div class="hs-footer-links">
+        <a href="ifs-primer.html">IFS Primer</a>
+        <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+        <a href="nd-glossary.html">Neurodiversity Glossary</a>
+        <a href="ef-support-interventions.html">Executive Function Support</a>
+        <a href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener">Book a discovery call</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Legal</div>
+      <div class="hs-footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Coaching vs. Therapy Disclaimer</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+  <div class="hs-footer-disclaimer">
+    <div class="hs-disclaimer-label">Disclaimer</div>
+    <div class="hs-disclaimer-text">
+      High Signal Coaching is a professional coaching service, not therapy or clinical treatment.
+      IFS content is based on the published work of Richard C. Schwartz and adapted for a coaching context.
+      Masking content draws on the clinical and research work of Devon Price (<em>Unmasking Autism</em>), Jenara Nerenberg, Barkley (SR resource pool model), and Raymaker et al. (2020).
+      If you are experiencing a mental health emergency, please contact a licensed mental health professional or crisis line.
+      <em>Licensed mental health services available separately through Matthew Monroe Simpson Counseling.</em>
+    </div>
+  </div>
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+<script>
+  const allAnchors = document.querySelectorAll('[id]');
+  const tocLinks = document.querySelectorAll('.toc-link, .toc-sub');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  allAnchors.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
