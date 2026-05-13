@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rejection-Sensitive Dysphoria | High Signal Coaching</title>
+  <meta name="description" content="RSD is a three-layer phenomenon — neurological substrate, exile, and a protective coalition. Why insight doesn't dissolve it, what the anger at the surface actually is, and what parts work changes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:         #1C1914;
+      --dark2:        #252019;
+      --dark3:        #2e2820;
+      --amber:        #C8873A;
+      --amber-light:  #E4A85C;
+      --cream:        #F0E6D8;
+      --cream-muted:  #B8A898;
+      --cream-faint:  #7A6E64;
+      --serif:        'Cormorant Garamond', Georgia, serif;
+      --mono:         'DM Mono', monospace;
+      --rule:         #3a3228;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--serif);
+      line-height: 1.7;
+    }
+
+    /* ─── NAV ──────────────────────────────────────────── */
+    .hs-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      border-bottom: .5px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: var(--dark);
+      z-index: 100;
+    }
+    .hs-logo {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .hs-nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .hs-nav-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .hs-nav-links a:hover { color: var(--cream); }
+    .hs-nav-links a.active { color: var(--amber); }
+
+    /* ─── HERO ─────────────────────────────────────────── */
+    .primer-hero {
+      padding: 4.5rem 3rem 3.5rem;
+      border-bottom: .5px solid var(--rule);
+      max-width: 820px;
+    }
+    .primer-eyebrow {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .primer-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 50px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+    }
+    .primer-hero h1 em { font-style: italic; color: var(--amber-light); }
+    .primer-hero-sub {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+    .primer-meta {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: .5px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .primer-meta-item {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .primer-meta-item span { color: var(--cream-muted); }
+
+    /* ─── CROSS-LINK BANNER ─────────────────────────────── */
+    .cross-link-banner {
+      border-bottom: .5px solid var(--rule);
+      padding: 1rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .cross-link-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      flex-shrink: 0;
+    }
+    .cross-link-banner a {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .cross-link-banner a:hover { color: var(--amber-light); }
+
+    /* ─── MAIN LAYOUT ──────────────────────────────────── */
+    .primer-body {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ─── TOC ──────────────────────────────────────────── */
+    .primer-toc {
+      border-right: .5px solid var(--rule);
+      padding: 3rem 0;
+      position: sticky;
+      top: 64px;
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+    }
+    .toc-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      padding: 0 2rem 1.2rem;
+    }
+    .toc-link {
+      display: block;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .65rem 2rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      line-height: 1.5;
+    }
+    .toc-link:hover { color: var(--cream-muted); border-left-color: var(--rule); }
+    .toc-link.active { color: var(--amber); border-left-color: var(--amber); }
+    .toc-sub {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .4rem 2rem .4rem 2.8rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      opacity: .7;
+    }
+    .toc-sub:hover { color: var(--cream-faint); opacity: 1; }
+    .toc-sub.active { color: var(--amber); opacity: 1; }
+    .toc-divider {
+      border: none;
+      border-top: .5px solid var(--rule);
+      margin: 1rem 2rem;
+    }
+    .toc-related { padding: 1rem 2rem 0; }
+    .toc-related-label {
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .6rem;
+      opacity: .6;
+    }
+    .toc-related a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .3rem 0;
+      opacity: .8;
+    }
+    .toc-related a:hover { opacity: 1; }
+
+    /* ─── CONTENT AREA ─────────────────────────────────── */
+    .primer-content {
+      padding: 3rem 3rem 5rem 3.5rem;
+      max-width: 760px;
+    }
+
+    /* ─── SECTIONS ─────────────────────────────────────── */
+    .primer-section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .primer-section:last-child { border-bottom: none; }
+    .section-num {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .primer-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+    .primer-section h2 em { font-style: italic; color: var(--amber-light); }
+    .primer-section h3 {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-top: 2.2rem;
+      margin-bottom: .8rem;
+      line-height: 1.35;
+    }
+    .primer-section h3 em { font-style: italic; color: var(--amber-light); }
+    .primer-section p {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .primer-section p:last-child { margin-bottom: 0; }
+    .primer-section p strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── PULLQUOTE ─────────────────────────────────────── */
+    .pullquote {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      border-left: 2px solid var(--amber);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      line-height: 1.55;
+    }
+
+    /* ─── INFO BOX ──────────────────────────────────────── */
+    .info-box {
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      border-left: 3px solid var(--amber);
+      padding: 1.6rem 1.8rem;
+      margin: 1.8rem 0;
+    }
+    .info-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .info-body {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .info-body strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── TWO-COLUMN COMPARISON ─────────────────────────── */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      margin: 1.8rem 0;
+    }
+    .compare-col {
+      background: var(--dark2);
+      padding: 1.4rem 1.6rem;
+    }
+    .compare-label {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .compare-body {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .compare-body strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── COACHING SEQUENCE ──────────────────────────────── */
+    .coaching-list { margin: 1.8rem 0; }
+    .coaching-item {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      border-top: .5px solid var(--rule);
+    }
+    .coaching-item:last-child { border-bottom: .5px solid var(--rule); }
+    .coaching-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+      flex-shrink: 0;
+      margin-top: 8px;
+      opacity: .6;
+    }
+    .coaching-text {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .coaching-text strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── RELATED PAGE LINK ──────────────────────────────── */
+    .related-page {
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      padding: 1.6rem 1.8rem;
+      margin: 2.5rem 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      text-decoration: none;
+    }
+    .related-page:hover { background: var(--dark3); }
+    .related-page-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .4rem;
+    }
+    .related-page-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream);
+    }
+    .related-page-arrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    .hs-footer { border-top: .5px solid var(--rule); }
+    .hs-footer-top {
+      padding: 3rem 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-footer-name {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: .4rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hs-footer-tagline {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .hs-footer-contact a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-contact a:hover { color: var(--amber); }
+    .hs-footer-col-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .hs-footer-links a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-links a:hover { color: var(--cream); }
+    .hs-footer-disclaimer {
+      padding: 2rem 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-disclaimer-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .hs-disclaimer-text {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .03em;
+      color: var(--cream-faint);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 820px;
+    }
+    .hs-disclaimer-text em { font-style: normal; color: var(--cream-muted); }
+    .hs-footer-bottom {
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hs-footer-copy {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .hs-footer-sign {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-faint);
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 760px) {
+      .hs-nav { padding: 1.2rem 1.5rem; }
+      .hs-nav-links { gap: 1.2rem; }
+      .hs-nav-links a { font-size: 9px; }
+      .primer-hero { padding: 3rem 1.5rem 2.5rem; }
+      .cross-link-banner { padding: 1rem 1.5rem; flex-wrap: wrap; gap: .6rem; }
+      .primer-body { grid-template-columns: 1fr; }
+      .primer-toc {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: .5px solid var(--rule);
+        padding: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        align-items: center;
+      }
+      .toc-label { padding: 0; margin-right: .5rem; }
+      .toc-link { padding: .3rem .7rem; border: .5px solid var(--rule); border-left: none; font-size: 8.5px; }
+      .toc-link.active { border-color: var(--amber); }
+      .toc-sub, .toc-divider, .toc-related { display: none; }
+      .primer-content { padding: 2.5rem 1.5rem 3rem; }
+      .compare-grid { grid-template-columns: 1fr; }
+      .hs-footer-top { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.5rem; }
+      .hs-footer-disclaimer, .hs-footer-bottom { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════════════════════════════════ -->
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ifs-adhd-autism.html" class="active">IFS for ADHD &amp; Autism</a>
+    <a href="nd-glossary.html">Neurodiversity Glossary</a>
+    <a href="ef-support-interventions.html">Executive Function Support</a>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════════════════════════════════ -->
+<div class="primer-hero">
+  <div class="primer-eyebrow">Inner Terrain · ADHD · Autism · AuDHD · Parts Work</div>
+  <h1>The intensity isn't the problem.<br>It's the <em>evidence the exile carries.</em></h1>
+  <p class="primer-hero-sub">Rejection-sensitive dysphoria is a three-layer phenomenon — neurological substrate, exile, and a surrounding protective coalition. Why insight doesn't dissolve it, what the anger at the surface actually is, and what parts work changes.</p>
+  <div class="primer-meta">
+    <div class="primer-meta-item">Assumes — <span>Basic IFS familiarity</span></div>
+    <div class="primer-meta-item">Sources — <span>Dodson · Barkley · Bergenfield &amp; Sweezy · Sweezy · Maté</span></div>
+    <div class="primer-meta-item">Scope — <span>Coaching context</span></div>
+  </div>
+</div>
+
+<!-- ══════════ CROSS-LINK BANNER ═══════════════════════ -->
+<div class="cross-link-banner">
+  <span class="cross-link-label">Part of</span>
+  <a href="ifs-adhd-autism.html">IFS × Neurodivergence — the full framework →</a>
+</div>
+
+<!-- ══════════ BODY ═══════════════════════════════════════ -->
+<div class="primer-body">
+
+  <!-- TOC -->
+  <nav class="primer-toc" aria-label="Page contents">
+    <div class="toc-label">Contents</div>
+    <a class="toc-link" href="#what-rsd-is">What RSD Is</a>
+    <a class="toc-link" href="#two-presentations">Two Presentations</a>
+    <a class="toc-link" href="#parts-system">The Parts System</a>
+    <a class="toc-sub" href="#exile-configurations">Exile Configurations</a>
+    <a class="toc-sub" href="#manager-coalition">Manager Coalition</a>
+    <a class="toc-sub" href="#firefighters">When Managers Fail</a>
+    <a class="toc-link" href="#what-keeps-it-in-place">What Keeps It in Place</a>
+    <a class="toc-sub" href="#self-sealing">The Self-Sealing System</a>
+    <a class="toc-sub" href="#speed-problem">The Speed Problem</a>
+    <a class="toc-link" href="#what-changes">What Changes</a>
+    <hr class="toc-divider">
+    <div class="toc-related">
+      <div class="toc-related-label">Related</div>
+      <a href="ifs-adhd-autism.html">IFS × Neurodivergence</a>
+      <a href="masking-unmasking.html">Masking &amp; Unmasking</a>
+      <a href="burnout-collapse-rest.html">Burnout &amp; Rest</a>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="primer-content">
+
+    <!-- 1 — WHAT RSD IS -->
+    <section class="primer-section" id="what-rsd-is">
+      <div class="section-num">01</div>
+      <h2>What RSD<br><em>Actually Is</em></h2>
+      <p>Rejection-sensitive dysphoria is one of the most common, most impairing, and least named features of ADHD. Dodson's clinical data puts prevalence at approximately 98% of ADHD adults — and one in three identifies it as the most impairing aspect of their condition. Above executive dysfunction. Above inattention. Above time blindness. The intensity is what distinguishes it from ordinary social discomfort: a flooding response that arrives within seconds, feels physical, and doesn't respond to logic in the moment. The word <em>dysphoria</em> is Greek for unbearable. That is not an exaggeration.</p>
+      <p>Most clinical descriptions explain RSD at one level — the neurological. Amygdala-prefrontal dysregulation, emotional impulsivity, compromised emotional self-regulation. That account is accurate and necessary. It is not complete. Beneath the neurological firing, and organizing around it, is a parts system that carries the accumulated weight of social failure, rejection, and the developmental experience of being too much for the environments you most needed to belong in. The neurological sensitivity is the substrate. What gives each episode its unbearable quality is the exile underneath it. What shapes careers, relationships, and entire personalities in its direction is the protective coalition organized around that exile.</p>
+      <p>Understanding RSD at all three levels — <strong>neurological substrate, exile, protective coalition</strong> — changes what is possible, because only some of those layers respond to the same interventions. Treating it as purely neurological (medication only) addresses the hardware without the parts. Treating it as purely psychological (change the thoughts) misses that the neurological fires faster than any cognitive process can engage. The layered view is the one that makes clinical sense of why some approaches land and others don't.</p>
+    </section>
+
+    <!-- 2 — TWO PRESENTATIONS -->
+    <section class="primer-section" id="two-presentations">
+      <div class="section-num">02</div>
+      <h2>Two Presentations<br><em>Same Architecture</em></h2>
+      <p>RSD takes distinct forms in ADHD and autistic systems. The distinction matters for self-recognition and shapes where intervention is most useful.</p>
+
+      <div class="compare-grid">
+        <div class="compare-col">
+          <div class="compare-label">ADHD Profile — Acute &amp; Episodic</div>
+          <div class="compare-body">The system is functional — possibly performing well — and then a rejection signal arrives (a critical tone, a perceived slight, a failure, an ambiguous silence). The response floods in within seconds. <strong>The intensity doesn't match the event as an outside observer reads it. It matches the exile's history.</strong> The episode is typically short-lived; what persists is the residual shame about having responded that way.</div>
+        </div>
+        <div class="compare-col">
+          <div class="compare-label">Autistic Profile — Ambient &amp; Depleting</div>
+          <div class="compare-body">The system doesn't flood episodically — it <strong>maintains a low-grade background alert</strong>. A threat-trained exile holds the learned prediction that social environments are unpredictable at a threat level. Continuous social monitoring depletes self-regulatory resources gradually rather than catastrophically. Presents as what looks like generalized anxiety, or as unexplained social exhaustion after interactions that appeared smooth from outside.</div>
+        </div>
+      </div>
+
+      <p>Both presentations share the same underlying structure: an exile carrying a social wound, and a manager coalition organized around preventing that exile from being activated again. The mechanistic difference is in how the exile relates to the manager layer's threshold. In ADHD systems, the neurological amplification of emotional dysregulation means the exile floods through suddenly and completely. In autistic systems, the manager layer typically holds — but at enormous metabolic cost, running continuous vigilance until the resource pool runs out. What follows in the autistic presentation can look like sudden social withdrawal, burnout, or depression — not because anything changed externally, but because the internal resource pool maintaining the protective vigilance has been exhausted.</p>
+      <p>For AuDHD systems, both pathways operate simultaneously. The acute flooding profile and the ambient-depletion profile interact: ADHD emotional amplification can turn what started as ambient vigilance into episodic flooding; autistic sensory and social load reduces the buffer available to manage the ADHD dysregulation. The compound presentation is more variable and often harder to recognize as RSD at all.</p>
+    </section>
+
+    <!-- 3 — PARTS SYSTEM -->
+    <section class="primer-section" id="parts-system">
+      <div class="section-num">03</div>
+      <h2>The Parts<br><em>System</em></h2>
+      <p>Before mapping the parts, one boundary needs to be stated explicitly: the neurological substrate of RSD is not a part. Barkley's deficient emotional self-regulation model establishes that ADHD involves compromised inhibitory control at the prefrontal-amygdala circuit — emotions activate rapidly, at disproportionate intensity, and the regulatory system that should attenuate the response is structurally impaired. This firing happens in milliseconds. It is not triggered by a manager. It is not carried by an exile. It is the hardware the parts system runs on. Parts work addresses what is layered on top of that substrate, and around it, and formed in response to decades of living with it. The substrate itself is what a Self-led system learns to work with rather than against.</p>
+
+      <h3 id="exile-configurations">Exile Configurations</h3>
+      <p>What RSD exiles carry is specific — not a diffuse sense of being wrong but an archive of social failure, each entry precise, each retrieved whole when a new rejection signal arrives.</p>
+      <p>The <strong>rejection-archive exile</strong> holds an accumulation of social failures: the specific encoded memories of moments when the system got it wrong, when it was excluded or corrected or publicly humiliated for not navigating social rules that everyone else seemed to know automatically. These are not generalized shame memories. They are often precise, multi-sensory, narrative-rich — events frozen at the moment of failure. The exile holds them not as history but as ongoing evidence. Each new rejection activates the archive, not just the current event. The intensity of RSD is the exile's accumulated evidence, not just the present trigger.</p>
+      <p>The <strong>shame-carrying exile</strong> holds a more total burden: <em>I am constitutively too much for the connection I need.</em> Not "I have failed" but "I am the kind of thing that fails." This exile formed at the intersection of genuine neurological difference and an environment that consistently interpreted that difference as moral failure. Where the rejection-archive exile carries specific memories, the shame-carrying exile carries the ontological conclusion those memories produced. In practice, both configurations are often active simultaneously in systems with RSD — the archive provides the evidence; the shame exile carries the verdict.</p>
+      <p>In autistic systems specifically, a <strong>threat-trained-anxiety exile</strong> operates differently. Rather than holding specific rejection memories, this exile carries a learned prediction: the social environment cannot be navigated reliably, and errors will be costly. The experience that formed it was not necessarily explicit rejection but chronic unpredictability — social rules that changed without explanation, responses that arrived with no decipherable logic. This exile does not flood; it maintains alert. The background anxiety many autistic adults carry in social contexts — present even in familiar situations, even with trusted people — often originates here.</p>
+
+      <h3 id="manager-coalition">Manager Coalition</h3>
+      <p>The manager system that organizes around RSD exiles is proactive and exhausting. These configurations have detected the exile's pain, assessed the consequences of its activation, and constructed protective strategies designed to prevent rejection before it occurs. Dodson identifies three primary behavioral signatures that RSD drives — all of them, in IFS terms, manager configurations protecting the same exile through different strategic logic.</p>
+      <p><strong>Perfectionism configurations</strong> operate on the logic that flawless performance eliminates the possibility of rejection. If the work is irreproachable, there is nothing to criticize. The perfectionism is not aesthetic preference or professional standard; it is threat management. In ADHD systems, these configurations often pair with avoider firefighters in a self-perpetuating deadlock: the perfectionism sets conditions for starting that the system cannot meet; the avoider uses any gap as justification for not starting; neither the start nor the standard is ever satisfied.</p>
+      <p><strong>People-pleasing and approval-seeking configurations</strong> run on parallel logic: preemptive compliance makes rejection unnecessary. If needs are never expressed directly, they cannot be refused. If disappointment is always anticipated and prevented, the pain of the rejection response never arrives. These configurations are often indistinguishable from personality — particularly in ND women, who may have built their entire adult social identity around a manager system that was, from the outside, functioning well. The exile underneath: the authentic self that cannot be expressed without risk, held in place by managers who have correctly assessed that direct expression has been dangerous.</p>
+      <p><strong>Risk-avoidance configurations</strong> close the system off from exposure. Not trying forecloses the possibility of failing. Not submitting the work prevents the critique. The logic is sound — non-attempt keeps the exile from being activated — and the cost is the progressive narrowing of a life organized around threat avoidance.</p>
+      <p><strong>Hypervigilant monitoring configurations</strong> carry the most metabolic load. They maintain continuous social scanning — tracking micro-expressions, tonal shifts, response latency, ambient emotional states — to detect rejection signals early enough to mount a defensive response. In autistic systems, the monitoring is often effortful and cognitively taxing: compensating for reduced social automaticity by building an explicit tracking system that runs in parallel with every interaction. In ADHD systems, it is more affectively driven: an emotional scanning for approval that runs continuously and registers micro-signals of withdrawal before conscious awareness catches up. Both are exhausting to maintain, and both drive the self-regulatory resource pool toward depletion faster than the environment around them knows.</p>
+
+      <h3 id="firefighters">When Managers Fail</h3>
+      <p>When the manager coalition fails — when a rejection signal breaks through despite the vigilance, perfectionism, and preemptive compliance — exile activation produces the RSD episode. The firefighters that respond are reactive, fast, and organized around one goal: interrupt the unbearable quality of the flooding as quickly as possible.</p>
+      <p><strong>The anger that arrives at the surface of RSD episodes is a firefighter response, not a manager strategy.</strong> It is frequently misread — by others and by the person themselves — as the primary protection. It is not. It is emergency discharge. The anger arrives <em>after</em> the exile has flooded through, not in order to prevent it. The protective coalition failed; the system is now running the emergency response. This distinction matters for how you work with it: you cannot reach the underlying wound by addressing the anger directly. The anger steps back when the exile is no longer alone with its pain — not when the anger itself is addressed.</p>
+      <p>Withdrawal and isolation firefighters pull the system away from social exposure in the aftermath of a flooding episode. Not the same as the risk-avoidance manager, which operates preemptively — these firefighters are reactive, collapsing the social field in response to an episode that has already occurred. From outside, this often looks like sulking or emotional unavailability. It is the nervous system going offline to recover.</p>
+      <p>After a flooding episode, the manager coalition typically fires on the exile and the firefighter response: <em>what's wrong with you; an adult doesn't react this way; you ruined it again.</em> This secondary shame activation can exceed the original episode's distress. It is not useful information. It is the internal critic doing what it always does — running protection by applying shame — now directed inward at the very system it is organized around. The exile carries more burden. The manager tightens. The threshold for the next episode lowers.</p>
+    </section>
+
+    <!-- 4 — WHAT KEEPS IT IN PLACE -->
+    <section class="primer-section" id="what-keeps-it-in-place">
+      <div class="section-num">04</div>
+      <h2>What Keeps It<br><em>in Place</em></h2>
+
+      <h3 id="self-sealing">The Self-Sealing System</h3>
+      <p>The most clinically significant dynamic in RSD is a structural paradox: the manager coalition that organizes around the rejection exile prevents exactly the experiences that would update the exile's evidence.</p>
+      <p>The exile carries "connection is conditional on performance" and "I am too much to be received as I am." The protective system responds with perfectionism, people-pleasing, and risk avoidance — designed to minimize rejection exposure. The logic is internally coherent. The consequence is that the exile is never reached by evidence that contradicts its verdict. Rejection-disconfirming experiences — being received as acceptable despite imperfection, being accepted after authentic expression, having a rupture repaired without the exile's fears confirmed — require exactly the kind of social exposure the protective system is organized to prevent.</p>
+      <div class="pullquote">The more comprehensive the protection, the more perfectly the exile's isolation is maintained. The managers that keep the exile safe also keep it alone.</div>
+      <p>This self-sealing quality explains why insight about RSD does not dissolve it. A person can understand their RSD completely — can articulate the exile architecture, identify the manager strategies, name the neurological substrate — and still find the protective coalition running at full activation in the next social threat. Knowing the pattern is a manager-level operation. The exile is not reached by the manager's new understanding. What reaches it is contact, with Self-energy present, in the presence of the exile's pain. That is categorically different from insight, and it does not happen in the same timeframe.</p>
+
+      <h3 id="speed-problem">The Speed Problem</h3>
+      <p>The neurological substrate fires in milliseconds. The exile floods through in seconds. Parts-level intervention operates in a timeframe neither of those speeds can use. This is the specific failure mode of cognitive approaches to RSD in acute episodes — and it extends to parts work as well. The window for direct work with the exile closes when the system is in full RSD flooding. The productive clinical rule follows directly: <strong>RSD flooding → co-regulate first. No parts work during the flood.</strong></p>
+      <p>This is not a limitation of the model; it is the neurological reality that determines the sequence. Parts work with RSD is between-episode work. Session time spent with the exile and its manager coalition, when the system is regulated, gradually builds the relationship that makes the exile less isolated — and eventually produces the kind of experience that actually updates the exile's conviction. The episode frequency and intensity may reduce substantially as this work progresses. The neurological substrate's firing speed will not change. What changes is what the exile carries when it activates — and that changes what the activation means for the system as a whole.</p>
+      <p>The secondary shame activation — the internal attack after the episode for having responded "that way" — often presupposes that a different response was available in that moment. Often it was not. Naming the speed constraint reduces the secondary shame significantly: the response arrived faster than deliberate intervention could engage. What is available is the repair afterward, the work between episodes, and the structural design of environments that reduce false-positive rejection signals.</p>
+      <p>Underneath the anger that arrives at the surface of RSD episodes, the structure typically follows a three-layer sequence. The exile holds terror — at the neurological sensitivity level RSD involves, rejection registers as a threat to something foundational, not merely social discomfort. Beneath the anger, the system is in a terror state. Shame is attached to the terror: not only "I am in danger of rejection" but "something is constitutively wrong with me for being this reactive." The shame transforms the terror from an environmental response into a characterological verdict. Rage — the firefighter response — protects the exile from the dorsal collapse that pure shame would produce. The clinical sequence that follows: working with the anger without addressing the shame underlying it produces partial and unstable change. The triad resolves from the bottom up — and the bottom is the exile's terror of fundamental unacceptability, not the firefighter's anger.</p>
+    </section>
+
+    <!-- 5 — WHAT CHANGES -->
+    <section class="primer-section" id="what-changes">
+      <div class="section-num">05</div>
+      <h2>What<br><em>Changes</em></h2>
+      <p>Self-led expression with RSD does not mean the elimination of sensitivity. The neurological substrate remains. What changes is its relationship to the exile underneath and the protective coalition around it.</p>
+      <p>In systems where sustained parts work has been done with the rejection exile — where the exile has been witnessed, where Self has been present with the exile's pain in ways the exile did not expect — the exile's hair-trigger quality changes. Not eliminated. Changed. The threshold at which the exile floods through is no longer calibrated to the worst-case interpretation of every ambiguous social signal. The exile has encountered, through Self's presence, something its evidence did not include: that rejection is not the confirmation it was.</p>
+      <p>The manager coalition recalibrates accordingly. Perfectionism configurations do not disappear — high standards may be a genuine value, not only a protection — but they are no longer running on the premise that imperfection guarantees rejection. Monitoring configurations do not shut down entirely — some environmental reading is adaptive — but the emergency-level activation that depletes the resource pool gradually becomes available as genuine curiosity about others rather than threat assessment. People-pleasing configurations, when the exile is no longer on a hair trigger, can begin to distinguish between genuine generosity and preemptive compliance. That distinction is not available when the exile is fully activated. It requires Self to be present enough to assess what the situation actually calls for.</p>
+
+      <div class="coaching-list">
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Start with the manager coalition, not the exile.</strong> In RSD territory, parts work begins with the perfectionism, the monitoring, the people-pleasing — not by going straight for the exile underneath. The managers need to trust that Self can handle what the exile carries before they will allow access. Standard IFS inquiry: <em>What do you worry would happen if you didn't do this?</em> In RSD systems, the answer almost always points directly toward the exile's wound. The manager's fear is the exile's burden, stated in the manager's own terms.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Don't work the firefighter as if it's the primary protection.</strong> The anger in RSD episodes is emergency discharge, not the system's primary defense. Treating it as the thing to address misses the exile behind it. Name what the anger is protecting — that's the productive question — rather than working the anger directly.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>For ADHD-profile RSD: name the speed constraint explicitly.</strong> The response arrived faster than deliberate intervention could engage — not because willpower failed or parts work was insufficient. Naming this reduces the secondary shame activation significantly. The secondary shame presupposes an alternative was available in that moment. Often it was not. What is available is the repair and the between-episode work.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>For autistic-profile RSD: address the resource economy first.</strong> When RSD presents as ambient depletion rather than acute flooding, the first-line task is often not RSD-specific parts work but load reduction. The monitoring configurations running the continuous social scan need acknowledgment of their workload before the exile beneath them can be safely approached. Attempting exile contact in a system running at SR-depleted monitoring load typically produces increased manager activation. The sequence: reduce load → restore resource pool → approach the exile when the system has capacity for Self-energy to be present.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Neurokin environments matter clinically.</strong> Connections with others whose systems work similarly are often where the exile's prediction first encounters genuine disconfirmation. Monitoring configurations stand down in environments where the implicit social calculation — <em>will my ND expression be received as too much?</em> — has a predictable, safe answer. What becomes available in that space is the authentic social self the exile has been protecting against showing. This is not a therapy outcome. It is what life looks like when the exile is no longer organizing the entire social field in its direction.</div>
+        </div>
+      </div>
+
+      <p>An episode of RSD may still occur as the work progresses. The neurology fires; the intensity arrives; the firefighters activate. What is different in a system that has done sustained work with the exile is the aftermath. The secondary shame activation no longer runs with the same authority. The exile is not alone with its evidence. Self has been there. The system knows something the exile did not know before: that it can survive the pain without the conclusion.</p>
+
+      <a class="related-page" href="ifs-adhd-autism.html">
+        <div>
+          <div class="related-page-label">Related page</div>
+          <div class="related-page-title">IFS × Neurodivergence — RSD in context</div>
+        </div>
+        <div class="related-page-arrow">→</div>
+      </a>
+    </section>
+
+  </main>
+</div>
+
+<!-- ══════════ FOOTER ════════════════════════════════════ -->
+<footer class="hs-footer">
+  <div class="hs-footer-top">
+    <div>
+      <div class="hs-footer-name">High Signal Coaching</div>
+      <div class="hs-footer-tagline">IFS-informed executive function coaching<br>ADHD/AuDHD men in tech</div>
+      <div class="hs-footer-contact">
+        <a href="mailto:matt@highsignalcoaching.com">matt@highsignalcoaching.com</a>
+        <a href="https://www.linkedin.com/in/matthew-monroe-simpson-73a0381b4" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Explore</div>
+      <div class="hs-footer-links">
+        <a href="ifs-primer.html">IFS Primer</a>
+        <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+        <a href="nd-glossary.html">Neurodiversity Glossary</a>
+        <a href="ef-support-interventions.html">Executive Function Support</a>
+        <a href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener">Book a discovery call</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Legal</div>
+      <div class="hs-footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Coaching vs. Therapy Disclaimer</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+  <div class="hs-footer-disclaimer">
+    <div class="hs-disclaimer-label">Disclaimer</div>
+    <div class="hs-disclaimer-text">
+      High Signal Coaching is a professional coaching service, not therapy or clinical treatment.
+      RSD content draws on the clinical work of William Dodson, Russell Barkley, and the IFS-informed work of Bergenfield &amp; Sweezy (<em>Wired to Feel</em>), Martha Sweezy (<em>IFS Therapy for Shame and Guilt</em>), and Gabor Maté (<em>Scattered Minds</em>).
+      If you are experiencing a mental health emergency, please contact a licensed mental health professional or crisis line.
+      <em>Licensed mental health services available separately through Matthew Monroe Simpson Counseling.</em>
+    </div>
+  </div>
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+<script>
+  const allAnchors = document.querySelectorAll('[id]');
+  const tocLinks = document.querySelectorAll('.toc-link, .toc-sub');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  allAnchors.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
