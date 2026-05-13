@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connection and Attachment | High Signal Coaching</title>
+  <meta name="description" content="Connection difficulty in ND systems operates at two levels at once — an internal exile-organized architecture and a structural world designed for a different neurology. Parts work reaches the first.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark:#1C1914; --dark2:#252019; --amber:#C8873A; --amber-light:#E4A85C;
+      --cream:#F0E6D8; --cream-muted:#B8A898; --cream-faint:#7A6E64;
+      --serif:'Cormorant Garamond',Georgia,serif; --mono:'DM Mono',monospace; --rule:#3a3228;
+    }
+    html { scroll-behavior: smooth; }
+    body { background:var(--dark); color:var(--cream); font-family:var(--serif); line-height:1.7; }
+
+    .hs-nav { display:flex; justify-content:space-between; align-items:center; padding:1.4rem 3rem; border-bottom:.5px solid var(--rule); position:sticky; top:0; background:var(--dark); z-index:100; }
+    .hs-logo { font-family:var(--serif); font-size:13px; font-weight:400; letter-spacing:.15em; text-transform:uppercase; color:var(--cream); text-decoration:none; }
+    .hs-nav-links { display:flex; gap:2.5rem; align-items:center; }
+    .hs-nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--cream-muted); text-decoration:none; font-weight:300; }
+    .hs-nav-links a:hover { color:var(--cream); }
+
+    .primer-hero { padding:4.5rem 3rem 3.5rem; border-bottom:.5px solid var(--rule); max-width:860px; }
+    .primer-eyebrow { font-family:var(--mono); font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--amber); font-weight:300; margin-bottom:1.5rem; }
+    .primer-hero h1 { font-family:var(--serif); font-size:clamp(32px,4.5vw,50px); font-weight:300; line-height:1.15; color:var(--cream); margin-bottom:1.2rem; }
+    .primer-hero h1 em { font-style:italic; color:var(--amber-light); }
+    .primer-hero-sub { font-family:var(--serif); font-size:18px; font-weight:300; color:var(--cream-muted); max-width:600px; line-height:1.75; }
+
+    .primer-body { display:grid; grid-template-columns:210px 1fr; gap:0; border-bottom:.5px solid var(--rule); }
+
+    .primer-toc { border-right:.5px solid var(--rule); padding:3rem 0; position:sticky; top:64px; align-self:start; height:calc(100vh - 64px); overflow-y:auto; }
+    .toc-section { padding:.7rem 2rem; border-bottom:.5px solid var(--rule); }
+    .toc-label { font-family:var(--mono); font-size:8px; letter-spacing:.14em; text-transform:uppercase; color:var(--cream-faint); font-weight:300; margin-bottom:.4rem; }
+    .toc-link { display:block; font-family:var(--serif); font-size:13px; font-weight:400; color:var(--cream-muted); text-decoration:none; line-height:1.4; margin-bottom:.15rem; }
+    .toc-link:hover { color:var(--cream); }
+    .toc-sub { display:block; font-family:var(--mono); font-size:8px; letter-spacing:.06em; color:var(--cream-faint); text-decoration:none; margin-top:.2rem; margin-left:.6rem; font-weight:300; line-height:1.5; }
+    .toc-sub:hover { color:var(--amber); }
+
+    .primer-content { padding:3rem; }
+    .primer-section { padding-bottom:3.5rem; border-bottom:.5px solid var(--rule); margin-bottom:3.5rem; }
+    .primer-section:last-child { border-bottom:none; margin-bottom:0; }
+
+    .section-num { font-family:var(--mono); font-size:9px; letter-spacing:.16em; text-transform:uppercase; color:var(--amber); font-weight:300; margin-bottom:.7rem; }
+    .primer-section h2 { font-family:var(--serif); font-size:clamp(24px,3vw,32px); font-weight:300; color:var(--cream); line-height:1.25; margin-bottom:1.4rem; }
+    .primer-section h2 em { font-style:italic; color:var(--amber-light); }
+    .primer-section h3 { font-family:var(--serif); font-size:18px; font-weight:400; color:var(--cream); margin-top:2rem; margin-bottom:.8rem; }
+    .primer-section h3 em { font-style:italic; color:var(--amber-light); }
+
+    .primer-section p { font-family:var(--serif); font-size:17px; font-weight:300; color:var(--cream-muted); line-height:1.85; margin-bottom:1.3rem; }
+    .primer-section p:last-child { margin-bottom:0; }
+    .primer-section p strong { font-weight:500; color:var(--cream); }
+    .primer-section p em { font-style:italic; }
+
+    .pullquote { font-family:var(--serif); font-size:19px; font-weight:300; font-style:italic; color:var(--cream); border-left:2px solid var(--amber); padding-left:1.4rem; margin:2rem 0; line-height:1.55; }
+
+    .info-box { background:var(--dark2); border-left:2px solid var(--rule); padding:1.4rem 1.8rem; margin:2rem 0; }
+    .info-box-label { font-family:var(--mono); font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:var(--cream-faint); font-weight:300; margin-bottom:.8rem; }
+    .info-box p { font-family:var(--serif); font-size:15px; font-weight:300; color:var(--cream-muted); line-height:1.75; margin-bottom:.6rem; }
+    .info-box p:last-child { margin-bottom:0; }
+
+    .cross-link-bar { display:flex; gap:1px; background:var(--rule); margin-bottom:3rem; }
+    .cross-link-item { flex:1; background:var(--dark2); padding:1.2rem 1.4rem; }
+    .cross-link-label { font-family:var(--mono); font-size:8px; letter-spacing:.12em; text-transform:uppercase; color:var(--cream-faint); font-weight:300; margin-bottom:.4rem; }
+    .cross-link-item a { font-family:var(--serif); font-size:14px; font-weight:400; color:var(--cream-muted); text-decoration:none; }
+    .cross-link-item a:hover { color:var(--amber); }
+
+    .related-page { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule); margin-top:3rem; }
+    .related-card { background:var(--dark); padding:1.5rem; }
+    .related-card:hover { background:var(--dark2); }
+    .related-tag { font-family:var(--mono); font-size:8px; letter-spacing:.1em; text-transform:uppercase; color:var(--amber); margin-bottom:.5rem; font-weight:300; }
+    .related-name { font-family:var(--serif); font-size:16px; font-weight:400; color:var(--cream); margin-bottom:.4rem; }
+    .related-desc { font-family:var(--serif); font-size:13px; font-weight:300; color:var(--cream-muted); line-height:1.6; }
+    .related-link { font-family:var(--mono); font-size:8px; letter-spacing:.08em; text-transform:uppercase; color:var(--cream-faint); text-decoration:none; margin-top:.8rem; display:inline-block; font-weight:300; }
+    .related-link:hover { color:var(--amber); }
+
+    .hs-footer { border-top:.5px solid var(--rule); }
+    .hs-footer-bottom { padding:1.4rem 3rem; display:flex; justify-content:space-between; align-items:center; }
+    .hs-footer-copy { font-family:var(--mono); font-size:9px; letter-spacing:.08em; color:var(--cream-faint); font-weight:300; }
+    .hs-footer-sign { font-family:var(--serif); font-size:14px; font-weight:300; font-style:italic; color:var(--cream-faint); }
+
+    @media(max-width:720px) {
+      .hs-nav { padding:1.2rem 1.5rem; }
+      .primer-hero, .primer-content { padding:2.5rem 1.5rem; }
+      .primer-body { grid-template-columns:1fr; }
+      .primer-toc { position:static; height:auto; border-right:none; border-bottom:.5px solid var(--rule); padding:1.5rem; }
+      .cross-link-bar { flex-direction:column; }
+      .related-page { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+    <a href="nd-glossary.html">Neurodiversity Glossary</a>
+    <a href="ef-support-interventions.html">Executive Function Support</a>
+  </div>
+</nav>
+
+<div class="primer-hero">
+  <div class="primer-eyebrow">Relational Life · IFS × Neurodivergence · ADHD · Autism</div>
+  <h1>Connection difficulty in ND systems isn't a social deficiency.<br>It's the predictable result of <em>two structural conditions at once.</em></h1>
+  <p class="primer-hero-sub">One is an internal architecture organized around exile-level relational wounds. The other is a social world designed for a different neurology. Parts work reaches the first. It cannot, by itself, reach the second.</p>
+</div>
+
+<div class="primer-body">
+
+  <nav class="primer-toc">
+    <div class="toc-section">
+      <div class="toc-label">On this page</div>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#two-levels">01 · Two structural levels</a>
+      <a class="toc-sub" href="#internal-architecture">Internal architecture</a>
+      <a class="toc-sub" href="#dislocation">Dislocation</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#parts">02 · Parts carrying the pattern</a>
+      <a class="toc-sub" href="#hypervigilant-managers">Hypervigilant managers</a>
+      <a class="toc-sub" href="#exiled-relational-self">Exiled relational self</a>
+      <a class="toc-sub" href="#firefighter-withdrawal">Firefighter withdrawal</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#burdens">03 · Burdens</a>
+      <a class="toc-sub" href="#too-much">Too much</a>
+      <a class="toc-sub" href="#not-enough">Not enough</a>
+      <a class="toc-sub" href="#learned-impossibility">Learned impossibility</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#dynamics">04 · System dynamics</a>
+      <a class="toc-sub" href="#dislocation-substrate">Dislocation substrate</a>
+      <a class="toc-sub" href="#authentic-attunement">Authentic attunement</a>
+      <a class="toc-sub" href="#community-modality">Community as primary modality</a>
+      <a class="toc-sub" href="#hyper-empathy">Hyper-empathy paradox</a>
+      <a class="toc-sub" href="#fawn-layer">Fawn layer</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#self-led">05 · What Self-led connection looks like</a>
+      <a class="toc-sub" href="#nd-distinctives">ND relational distinctives</a>
+      <a class="toc-sub" href="#community-access">Community access</a>
+      <a class="toc-sub" href="#self-led-looks-nd">Self-led connection looks ND</a>
+    </div>
+  </nav>
+
+  <div class="primer-content">
+
+    <div class="cross-link-bar">
+      <div class="cross-link-item">
+        <div class="cross-link-label">Relational Life</div>
+        <a href="fawn-approval-seeking.html">Fawn &amp; Approval-Seeking →</a>
+      </div>
+      <div class="cross-link-item">
+        <div class="cross-link-label">Inner Terrain</div>
+        <a href="burnout-collapse-rest.html">Burnout, Collapse &amp; Rest →</a>
+      </div>
+      <div class="cross-link-item">
+        <div class="cross-link-label">Inner Terrain</div>
+        <a href="shame-self-judgment.html">Shame and Self-Judgment →</a>
+      </div>
+    </div>
+
+    <div class="primer-section" id="two-levels">
+      <div class="section-num">01</div>
+      <h2>Two structural levels</h2>
+
+      <p id="internal-architecture">Connection difficulty in ND systems operates at two distinct levels simultaneously: an internal architecture organized around exile-level relational wounds, managed by parts whose job is to prevent those wounds from being confirmed again; and a structural-environmental condition — social spaces, communication norms, relational rituals, sensory expectations — designed for a neurology the ND person does not have. Parts work reaches the first. It cannot, by itself, reach the second.</p>
+
+      <p id="dislocation">Alexander's dislocation theory (<em>The Globalization of Addiction</em>) provides the structural account. Psychosocial integration — stable embeddedness in community, shared norms, recognizable communication, compatible sensory environments — is a fundamental human need. An ND person in NT-dominant environments is chronically dislocated in this technical sense. The social structures through which neurotypical integration occurs — shared interactional rhythms, compatible communication styles, aligned sensory tolerances, recognizable social scripts — do not map onto ND architecture. The mismatch is not occasional; it is ambient and accumulating.</p>
+
+      <p>The clinical implication is uncomfortable but important: parts work changes what the person carries internally. It does not change the structural mismatch. An ND person can do deep and genuine parts work and still return to a world that dislocates them. Persistent connection difficulty after successful therapeutic work is not evidence of incomplete work. Sometimes the exile has genuinely updated and the world is still dislocating.</p>
+    </div>
+
+    <div class="primer-section" id="parts">
+      <div class="section-num">02</div>
+      <h2>Parts carrying the pattern</h2>
+
+      <h3 id="hypervigilant-managers">Hypervigilant managers</h3>
+      <p>Parts whose primary job is social-threat monitoring — reading the room continuously for signs of rejection, boredom, or impending social failure; anticipating misattunement before it arrives. In ND systems, these managers' threat models are often partly accurate, not distorted. The prediction-error load of a social environment calibrated for a different neurology is genuinely high. A manager whose threat model reflects the actual statistical probability of social misattunement in NT spaces cannot simply be reassured — its evidence base is real. What it cannot see, from its position, is that the threat it is monitoring for is structural rather than personal.</p>
+
+      <h3 id="exiled-relational-self">Exiled relational self</h3>
+      <p>Parts that carry the genuine desire for connection — the appetite for being known, for mutual recognition, for contact without the managed layer intervening — pushed into exile because their expression has historically produced rejection, correction, or overwhelm. The surface presentation of relational withdrawal or apparent indifference is frequently a manager presentation protecting an exile that is not indifferent at all. The exile's want is there; the system has learned not to show it.</p>
+
+      <h3 id="firefighter-withdrawal">Firefighter withdrawal</h3>
+      <p>When intimacy activates the shame exile — when a relational interaction gets close enough to genuine vulnerability that the exile's burden becomes palpable — firefighter withdrawal often fires: leaving the environment, going quiet, disappearing for days. This reads from outside as avoidance, emotional unavailability, the ND person "shutting down." From inside it is emergency management. The firefighter is preventing the wound from being confirmed again — and simultaneously preventing the corrective experience that would change the exile's conclusion.</p>
+    </div>
+
+    <div class="primer-section" id="burdens">
+      <div class="section-num">03</div>
+      <h2>Burdens</h2>
+
+      <h3 id="too-much">Too much</h3>
+      <p>The accumulated evidence of ND expression activating alarm, withdrawal, or correction in others — not occasionally, but as a reliable pattern. The special interest intensity that produced eye-rolls rather than engagement. The directness that read as inappropriate. The emotional amplitude that was called dramatic. The stimming that was suppressed by request. Accumulated across development, this produces an exile burden: <em>I am too much for other people.</em> The manager-level response is the fawn configuration — self-editing, compliance, continuous monitoring of what the other person needs and suppression of what oneself actually is.</p>
+
+      <h3 id="not-enough">Not enough</h3>
+      <p>The accumulated evidence of connection attempts that misfired, social scripts that didn't produce expected results, belonging that was always slightly incomplete — present but peripheral, included but never quite at home. For late-diagnosed ND adults, this burden has a retrospective dimension: decades of social error now reread as evidence of a deficit that was invisible to them at the time. Shame about events for which neither apology nor correction is available, because the informational substrate for doing anything differently wasn't present when the events occurred.</p>
+
+      <h3 id="learned-impossibility">Learned relational impossibility</h3>
+      <p>Not a specific event-based wound but a structural conclusion: <em>my architecture is incompatible with genuine connection.</em> This forms after sufficient accumulated misattunement — enough misfired connection attempts, enough belonging that required performance — that the exile moves from "I haven't found the right conditions" to "there are no right conditions for someone like me." This burden functions as a premise rather than a conclusion: invisible as a belief because it has become the operating assumption through which new relational experience gets filtered. New social failures confirm it; new social successes are explained as exceptions or performances.</p>
+    </div>
+
+    <div class="primer-section" id="dynamics">
+      <div class="section-num">04</div>
+      <h2>System dynamics</h2>
+
+      <h3 id="dislocation-substrate">Dislocation as the structural substrate</h3>
+      <p>Alexander's argument, applied directly: an AuDHD person navigating NT-dominant social environments is experiencing the structural condition he describes — a world whose integration-scaffolding was built for a different architecture. The interactional rhythms that signal safety and belonging in neurotypical social contexts — mutual gaze, turn-taking cadences, small talk as relational bonding, non-literal communication as warmth — are calibrated for someone else. The ND person who successfully navigates these mechanisms is not integrated; they are masking. The masking produces the appearance of integration while the dislocation continues beneath it.</p>
+
+      <h3 id="authentic-attunement">Authentic attunement — what it requires in ND systems</h3>
+      <p>Maté's recovery framework (<em>Scattered Minds</em>) positions authentic emotional contact as the primary healing modality for attunement deficit. In ND systems, this works differently than the generic therapeutic model. The corrective experience is contingent on a specific kind of attunement: being seen <em>as</em> ND, not <em>despite</em> it. A therapeutic presence that remains calm, engaged, and unalarmed in the face of unedited ND presentation — stimming, special interest tangents, direct communication, non-standard emotional expression, inconsistent functioning — is doing something categorically different from therapeutic presence that accommodates these things while subtly treating them as noise in the signal. The corrective the exile needs is specifically about unedited ND expression being received rather than managed.</p>
+
+      <h3 id="community-modality">Community as primary modality — the Raymaker finding</h3>
+
+      <div class="info-box">
+        <div class="info-box-label">Raymaker et al. (2020) — Defining Autistic Burnout</div>
+        <p>In autistic burnout recovery research, community and peer support ranked above formal therapy. The top two recovery domains: (1) acceptance and social support — specifically autistic community, peer understanding, not having to explain oneself; (2) "being autistic" — connecting with autistic community, reducing masking within autistic social contexts, embracing autistic identity. Formal therapeutic supports ranked third. The clinical implication: community access is a primary intervention, not supplemental.</p>
+      </div>
+
+      <p>What autistic community means here is specific — environments whose communication norms match the ND person's own, where masking is unnecessary, where peer relationships don't require constant self-translation. In Alexander's terms, this is integration, or the closest approximation to it the current social structure makes accessible. When community is geographically unavailable, online autistic community is not a consolation prize; it is the thing itself.</p>
+
+      <h3 id="hyper-empathy">Hyper-empathy and the porous interoceptive boundary</h3>
+      <p>ND systems — particularly autistic systems — often present a specific paradox: social difficulty and profound attunement operating simultaneously. The autistic person who struggles with conventional social performance may simultaneously be running high-resolution attunement to others' emotional states. The social difficulty is architectural: the communication norms are calibrated for a different neurology. The attunement is also architectural: a nervous system that filters and processes differently may register others' states with less attenuation.</p>
+      <p>The consequence is a porous interoceptive boundary: others' affective states arriving in the ND person's body without a stable internal filter. Protective withdrawal that follows intensive social contact — early exit, extended recovery time, preference for solo interaction — reads from outside as avoidance. From inside it is resource management. The specific challenge: hyper-empathic resource depletion and shame-driven exile protection look the same from the outside but require different interventions.</p>
+
+      <h3 id="fawn-layer">The fawn layer — connection without contact</h3>
+      <p>The connection that forms under the fawn configuration looks, from outside, like successful social functioning. The ND person who masks fluently, approves generously, caretakes effectively — may have a full social calendar and no genuine relational contact whatsoever. The exile is never reached. What two people are exchanging is managed presentations. This is the mechanism underlying the experience high-masking ND adults report with consistent frequency: profound loneliness despite active social lives; the sense of being known by no one despite being surrounded by people who profess to know them.</p>
+    </div>
+
+    <div class="primer-section" id="self-led">
+      <div class="section-num">05</div>
+      <h2>What Self-led connection looks like</h2>
+
+      <h3 id="nd-distinctives">ND relational distinctives as genuine connection forms</h3>
+      <p>Three forms deserve explicit naming because they are systematically misread as developmental failures or compensatory strategies.</p>
+      <p><em>Parallel play as genuine intimacy.</em> Two people absorbed in their own activities in the same physical or virtual space — present to each other without performative interpersonal engagement. Not talking, not explicitly attending to each other, but sharing an environment in a way that is genuinely connecting. This is not a developmental stage that failed to progress. It is a relational mode that many ND systems find nourishing.</p>
+      <p><em>Depth over breadth.</em> The preference for few, intensive connections over many, distributed ones. Full engagement with one person or relationship rather than distributed engagement across many. The ND person with two or three relationships characterized by genuine knowing is not relationally impoverished — they have a different relational architecture.</p>
+      <p><em>Interest-routed attachment.</em> Connection that develops through shared engagement with a domain, topic, or project rather than through standard relational rituals. Many ND people form their deepest attachments through collaborative work on shared interests. This is genuine attachment; the interest is not an excuse for the relationship but its actual medium.</p>
+
+      <h3 id="community-access">Community access as a clinical intervention</h3>
+      <p>When community is inaccessible, the therapeutic work includes actively facilitating that access — not as homework but as a primary intervention. When community is not yet accessible, the therapeutic relationship can partially model what community provides: being believed without having to establish credibility first, presence that is not alarmed by unedited ND expression, contact that does not require the managed layer to be active.</p>
+
+      <h3 id="self-led-looks-nd">Self-led connection looks ND</h3>
+      <p>A genuinely Self-led relational state in an ND system may involve extended silence, side-by-side rather than face-to-face orientation, written rather than verbal communication, scheduled rather than spontaneous contact, topic-anchored engagement, different turn-taking rhythms. None of these is evidence that the Self-led condition has not been achieved. They are evidence that it has been achieved in a nervous system with this architecture.</p>
+      <p>The criterion for Self-led connection is not format compliance with neurotypical relational conventions. It is genuine contact: the relational self present rather than managed, the exile not requiring active protection in this context, the other person receiving the ND person's actual presentation rather than its performance.</p>
+
+      <div class="related-page">
+        <div class="related-card">
+          <div class="related-tag">Relational Life</div>
+          <div class="related-name">Fawn, Approval-Seeking &amp; Covert Contracts</div>
+          <div class="related-desc">The performance layer of ND relating — connection built on managed presentation, and the exile underneath that wants genuine contact.</div>
+          <a class="related-link" href="fawn-approval-seeking.html">Read →</a>
+        </div>
+        <div class="related-card">
+          <div class="related-tag">Inner Terrain</div>
+          <div class="related-name">Burnout, Collapse &amp; Rest</div>
+          <div class="related-desc">Dislocation as a burnout accelerant, and the community-as-primary-recovery finding from Raymaker et al.</div>
+          <a class="related-link" href="burnout-collapse-rest.html">Read →</a>
+        </div>
+        <div class="related-card">
+          <div class="related-tag">Inner Terrain</div>
+          <div class="related-name">Shame and Self-Judgment</div>
+          <div class="related-desc">The shame exile's architecture — the too-much/not-enough burden and the ANS sequencing that is prerequisite for any relational exposure.</div>
+          <a class="related-link" href="shame-self-judgment.html">Read →</a>
+        </div>
+        <div class="related-card">
+          <div class="related-tag">Foundations</div>
+          <div class="related-name">Masking and Unmasking</div>
+          <div class="related-desc">The managed-presentation layer that prevents genuine relational contact — and what unmasking actually is in a relational context.</div>
+          <a class="related-link" href="masking-unmasking.html">Read →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="hs-footer">
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+</body>
+</html>

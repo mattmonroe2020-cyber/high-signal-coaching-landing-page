@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advocacy and Accommodation | High Signal Coaching</title>
+  <meta name="description" content="Requesting accommodation isn't asking for special treatment — it's correcting an environment-design error. The Social Model, the three-category barrier, and what Self-led advocacy actually looks like.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark:#1C1914; --dark2:#252019; --amber:#C8873A; --amber-light:#E4A85C;
+      --cream:#F0E6D8; --cream-muted:#B8A898; --cream-faint:#7A6E64;
+      --serif:'Cormorant Garamond',Georgia,serif; --mono:'DM Mono',monospace; --rule:#3a3228;
+    }
+    html { scroll-behavior: smooth; }
+    body { background:var(--dark); color:var(--cream); font-family:var(--serif); line-height:1.7; }
+
+    .hs-nav { display:flex; justify-content:space-between; align-items:center; padding:1.4rem 3rem; border-bottom:.5px solid var(--rule); position:sticky; top:0; background:var(--dark); z-index:100; }
+    .hs-logo { font-family:var(--serif); font-size:13px; font-weight:400; letter-spacing:.15em; text-transform:uppercase; color:var(--cream); text-decoration:none; }
+    .hs-nav-links { display:flex; gap:2.5rem; align-items:center; }
+    .hs-nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--cream-muted); text-decoration:none; font-weight:300; }
+    .hs-nav-links a:hover { color:var(--cream); }
+
+    .primer-hero { padding:4.5rem 3rem 3.5rem; border-bottom:.5px solid var(--rule); max-width:860px; }
+    .primer-eyebrow { font-family:var(--mono); font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--amber); font-weight:300; margin-bottom:1.5rem; }
+    .primer-hero h1 { font-family:var(--serif); font-size:clamp(32px,4.5vw,50px); font-weight:300; line-height:1.15; color:var(--cream); margin-bottom:1.2rem; }
+    .primer-hero h1 em { font-style:italic; color:var(--amber-light); }
+    .primer-hero-sub { font-family:var(--serif); font-size:18px; font-weight:300; color:var(--cream-muted); max-width:600px; line-height:1.75; }
+
+    .primer-body { display:grid; grid-template-columns:210px 1fr; gap:0; border-bottom:.5px solid var(--rule); }
+
+    .primer-toc { border-right:.5px solid var(--rule); padding:3rem 0; position:sticky; top:64px; align-self:start; height:calc(100vh - 64px); overflow-y:auto; }
+    .toc-section { padding:.7rem 2rem; border-bottom:.5px solid var(--rule); }
+    .toc-label { font-family:var(--mono); font-size:8px; letter-spacing:.14em; text-transform:uppercase; color:var(--cream-faint); font-weight:300; margin-bottom:.4rem; }
+    .toc-link { display:block; font-family:var(--serif); font-size:13px; font-weight:400; color:var(--cream-muted); text-decoration:none; line-height:1.4; margin-bottom:.15rem; }
+    .toc-link:hover { color:var(--cream); }
+    .toc-sub { display:block; font-family:var(--mono); font-size:8px; letter-spacing:.06em; color:var(--cream-faint); text-decoration:none; margin-top:.2rem; margin-left:.6rem; font-weight:300; line-height:1.5; }
+    .toc-sub:hover { color:var(--amber); }
+
+    .primer-content { padding:3rem; }
+    .primer-section { padding-bottom:3.5rem; border-bottom:.5px solid var(--rule); margin-bottom:3.5rem; }
+    .primer-section:last-child { border-bottom:none; margin-bottom:0; }
+
+    .section-num { font-family:var(--mono); font-size:9px; letter-spacing:.16em; text-transform:uppercase; color:var(--amber); font-weight:300; margin-bottom:.7rem; }
+    .primer-section h2 { font-family:var(--serif); font-size:clamp(24px,3vw,32px); font-weight:300; color:var(--cream); line-height:1.25; margin-bottom:1.4rem; }
+    .primer-section h2 em { font-style:italic; color:var(--amber-light); }
+    .primer-section h3 { font-family:var(--serif); font-size:18px; font-weight:400; color:var(--cream); margin-top:2rem; margin-bottom:.8rem; }
+    .primer-section h3 em { font-style:italic; color:var(--amber-light); }
+
+    .primer-section p { font-family:var(--serif); font-size:17px; font-weight:300; color:var(--cream-muted); line-height:1.85; margin-bottom:1.3rem; }
+    .primer-section p:last-child { margin-bottom:0; }
+    .primer-section p strong { font-weight:500; color:var(--cream); }
+    .primer-section p em { font-style:italic; }
+
+    .pullquote { font-family:var(--serif); font-size:19px; font-weight:300; font-style:italic; color:var(--cream); border-left:2px solid var(--amber); padding-left:1.4rem; margin:2rem 0; line-height:1.55; }
+
+    .info-box { background:var(--dark2); border-left:2px solid var(--rule); padding:1.4rem 1.8rem; margin:2rem 0; }
+    .info-box-label { font-family:var(--mono); font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:var(--cream-faint); font-weight:300; margin-bottom:.8rem; }
+    .info-box p { font-family:var(--serif); font-size:15px; font-weight:300; color:var(--cream-muted); line-height:1.75; margin-bottom:.6rem; }
+    .info-box p:last-child { margin-bottom:0; }
+
+    .cross-link-bar { display:flex; gap:1px; background:var(--rule); margin-bottom:3rem; }
+    .cross-link-item { flex:1; background:var(--dark2); padding:1.2rem 1.4rem; }
+    .cross-link-label { font-family:var(--mono); font-size:8px; letter-spacing:.12em; text-transform:uppercase; color:var(--cream-faint); font-weight:300; margin-bottom:.4rem; }
+    .cross-link-item a { font-family:var(--serif); font-size:14px; font-weight:400; color:var(--cream-muted); text-decoration:none; }
+    .cross-link-item a:hover { color:var(--amber); }
+
+    .related-page { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule); margin-top:3rem; }
+    .related-card { background:var(--dark); padding:1.5rem; }
+    .related-card:hover { background:var(--dark2); }
+    .related-tag { font-family:var(--mono); font-size:8px; letter-spacing:.1em; text-transform:uppercase; color:var(--amber); margin-bottom:.5rem; font-weight:300; }
+    .related-name { font-family:var(--serif); font-size:16px; font-weight:400; color:var(--cream); margin-bottom:.4rem; }
+    .related-desc { font-family:var(--serif); font-size:13px; font-weight:300; color:var(--cream-muted); line-height:1.6; }
+    .related-link { font-family:var(--mono); font-size:8px; letter-spacing:.08em; text-transform:uppercase; color:var(--cream-faint); text-decoration:none; margin-top:.8rem; display:inline-block; font-weight:300; }
+    .related-link:hover { color:var(--amber); }
+
+    .hs-footer { border-top:.5px solid var(--rule); }
+    .hs-footer-bottom { padding:1.4rem 3rem; display:flex; justify-content:space-between; align-items:center; }
+    .hs-footer-copy { font-family:var(--mono); font-size:9px; letter-spacing:.08em; color:var(--cream-faint); font-weight:300; }
+    .hs-footer-sign { font-family:var(--serif); font-size:14px; font-weight:300; font-style:italic; color:var(--cream-faint); }
+
+    @media(max-width:720px) {
+      .hs-nav { padding:1.2rem 1.5rem; }
+      .primer-hero, .primer-content { padding:2.5rem 1.5rem; }
+      .primer-body { grid-template-columns:1fr; }
+      .primer-toc { position:static; height:auto; border-right:none; border-bottom:.5px solid var(--rule); padding:1.5rem; }
+      .cross-link-bar { flex-direction:column; }
+      .related-page { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+    <a href="nd-glossary.html">Neurodiversity Glossary</a>
+    <a href="ef-support-interventions.html">Executive Function Support</a>
+  </div>
+</nav>
+
+<div class="primer-hero">
+  <div class="primer-eyebrow">Relational Life · ND Identity · ADHD · Autism · Workplace</div>
+  <h1>Requesting accommodation isn't asking for special treatment.<br>It's correcting <em>an environment-design error.</em></h1>
+  <p class="primer-hero-sub">Oliver's Social Model draws the structural line: impairment is a capacity difference. Disability is the mismatch between that impairment and an environment designed for someone else. Accommodation corrects the mismatch — it doesn't create special conditions.</p>
+</div>
+
+<div class="primer-body">
+
+  <nav class="primer-toc">
+    <div class="toc-section">
+      <div class="toc-label">On this page</div>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#framework">01 · The framework</a>
+      <a class="toc-sub" href="#social-model">Social Model</a>
+      <a class="toc-sub" href="#nt-privilege">Neurotypical privilege</a>
+      <a class="toc-sub" href="#disclosure-equation">Disclosure equation</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#parts">02 · Parts carrying the pattern</a>
+      <a class="toc-sub" href="#accurate-self-knowledge">Accurate self-knowledge</a>
+      <a class="toc-sub" href="#protective-disclosure">Protective-disclosure managers</a>
+      <a class="toc-sub" href="#counterfeit-advocacy">Counterfeit advocacy</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#burdens">03 · Burdens</a>
+      <a class="toc-sub" href="#no-right">No right to ask</a>
+      <a class="toc-sub" href="#asking-worse">Asking will make it worse</a>
+      <a class="toc-sub" href="#i-am-the-problem">I am the problem</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#dynamics">04 · System dynamics</a>
+      <a class="toc-sub" href="#disclosure-depletion">Disclosure vs. depletion polarization</a>
+      <a class="toc-sub" href="#assertion-appeasement">Assertion-appeasement cycling</a>
+      <a class="toc-sub" href="#exit-avoidance">Exit-avoidance loop</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#self-led">05 · Self-led advocacy</a>
+      <a class="toc-sub" href="#environment-correction">Environment-correction</a>
+      <a class="toc-sub" href="#code-switching">Strategic code-switching</a>
+      <a class="toc-sub" href="#exit-criterion">The exit criterion</a>
+    </div>
+  </nav>
+
+  <div class="primer-content">
+
+    <div class="cross-link-bar">
+      <div class="cross-link-item">
+        <div class="cross-link-label">Inner Terrain</div>
+        <a href="internalized-ableism.html">Internalized Ableism →</a>
+      </div>
+      <div class="cross-link-item">
+        <div class="cross-link-label">Relational Life</div>
+        <a href="conflict-directness.html">Conflict and Directness →</a>
+      </div>
+      <div class="cross-link-item">
+        <div class="cross-link-label">Foundations</div>
+        <a href="masking-unmasking.html">Masking and Unmasking →</a>
+      </div>
+    </div>
+
+    <div class="primer-section" id="framework">
+      <div class="section-num">01</div>
+      <h2>The framework</h2>
+
+      <h3 id="social-model">Social Model of Disability</h3>
+      <p>Oliver's Social Model draws a structural line: the distinction between impairment and disability. Impairment is a real capacity difference — the actual neurological, sensory, or cognitive architecture the person is living in. Disability is the mismatch between that impairment and an environment designed for a different nervous system. The environment disables; the impairment is simply what it is.</p>
+      <p>This reframes accommodation entirely. When an ND person requests that a meeting agenda be shared in advance, that they be allowed to communicate in writing, that a sensory accommodation be made, or that a flexible schedule be provided — they are not asking to be excused from standards. They are naming a mismatch and asking for it to be corrected. Accommodation is environment-correction.</p>
+
+      <h3 id="nt-privilege">Neurotypical privilege</h3>
+      <p>Walker's formulation, from Deutsch: <em>"power is the ability not to have to learn."</em> The NT-default environment was built by and for people whose nervous systems were treated as the universal standard. That group never had to learn the ND frame, translate themselves into it, or justify their needs within it. ND people must learn the dominant frame, operate within it, and then additionally advocate to have the environment adjust even partway. The advocacy burden is asymmetric by structural design, not by individual inadequacy. Naming this asymmetry prevents the system from misattributing a structural problem to personal failure.</p>
+
+      <h3 id="disclosure-equation">Disclosure equation</h3>
+      <p>Kemp and Mitchelson's formulation: Self-Disclosure + Request = structurally complete advocacy. Both components are required. Self-Disclosure without Request — "I want you to know I have ADHD" — is disclosure without consequence-claim; the environment has no specific structural correction to make. Request without Self-Disclosure — "can I have extended deadlines" — is demand without context. Together, the two components constitute the minimum viable advocacy structure: this is the relevant information about how my system works, and this is the specific structural adjustment that would allow it to work.</p>
+      <p>The clinical question is not whether ND clients know this structure. It is what prevents them from deploying it.</p>
+    </div>
+
+    <div class="primer-section" id="parts">
+      <div class="section-num">02</div>
+      <h2>Parts carrying the pattern</h2>
+
+      <h3 id="accurate-self-knowledge">Parts with accurate self-knowledge</h3>
+      <p>Parts that have been observing the system's actual functional requirements for years — sometimes for decades. They know what would help: in which contexts, for which task types, in which relational formats. This knowledge is often extremely precise. It is also frequently silenced by the manager system responsible for managing disclosure risk, which means the accommodation-relevant intelligence exists in the system but does not reach the advocacy layer.</p>
+
+      <h3 id="protective-disclosure">Protective-disclosure managers</h3>
+      <p>Parts that track which contexts are safe for disclosure, which relationships can hold ND information without weaponizing or pathologizing it, and what the risk-benefit calculation looks like in a given environment. Their risk-tracking intelligence is often accurate — not every environment is safe for disclosure. These parts are not obstructing advocacy; they are calibrating it. The clinical goal is not to displace them but to bring them into relationship with the parts that carry the accommodation need.</p>
+
+      <h3 id="counterfeit-advocacy">Counterfeit-advocacy parts</h3>
+      <p>A subset of the protective manager system that has learned to perform advocacy without actually deploying it: naming a need without requesting structural accommodation; framing limitations as explanations without specifying what change would help; disclosing diagnosis without connecting it to anything the environment is being asked to do. This performs the social function of having been open while preserving the protective advantage of not having actually asked. The performing feels like advocacy to the parts doing it. It does not produce structural change.</p>
+
+      <div class="info-box">
+        <div class="info-box-label">Three-category barrier model — Kemp &amp; Mitchelson</div>
+        <p><strong>Category 1 (skill gap):</strong> advocacy is unfamiliar, the steps are unknown.</p>
+        <p><strong>Category 2 (learned unhelpful beliefs):</strong> "asking is weak," "I should be able to manage."</p>
+        <p><strong>Category 3 (manager-protected shame exile):</strong> the exile's burden ("I have no right to need this") is carried by the system, and the managers who protect it actively prevent the advocacy attempt that might threaten the exile's protective story.</p>
+        <p>Most advocacy failures in ND adult systems are Category 3. Skills training applied to a Category 3 barrier teaches the exile that competence will make the shame tolerable. That is the wrong clinical move.</p>
+      </div>
+    </div>
+
+    <div class="primer-section" id="burdens">
+      <div class="section-num">03</div>
+      <h2>Burdens</h2>
+
+      <h3 id="no-right">"I don't have the right to ask"</h3>
+      <p>The paradigm's entitlement-deficit installed as exile content. Commonly surfaces as legitimacy-qualification: not disabled enough, needs aren't real needs, others need it more, the accommodation is too much to ask. These are not conclusions the system reached from evidence — they are the medical model's baseline-of-demand, applied to an ND system the paradigm told was within the normal range of personal-problem-management.</p>
+
+      <h3 id="asking-worse">"Asking will make things worse"</h3>
+      <p>This is frequently not a distortion. Many ND clients have requested accommodation and received responses that were dismissive, pathologizing, weaponizing, or converted into performance-management evidence. The parts carrying this burden are carrying historical data. Their calculation is not cognitively distorted; it is historically grounded and applied with insufficient updating for new contexts. The clinical work is not to dispute the historical data but to examine whether the current environment matches the historical pattern.</p>
+
+      <h3 id="i-am-the-problem">"I am the problem, not the environment"</h3>
+      <p>The medical model carried as exile content. Where the Social Model locates the disability in the mismatch, this exile locates it in the person. The conviction is that accommodation is charity — an extension of tolerance toward an inadequate system rather than a correction of an inadequate environment. This burden is paradigm-installed, not arrived at from evidence, and it is often layered under the other advocacy-avoidance burdens as their structural floor. (Cross-ref: internalized ableism.)</p>
+    </div>
+
+    <div class="primer-section" id="dynamics">
+      <div class="section-num">04</div>
+      <h2>System dynamics</h2>
+
+      <h3 id="disclosure-depletion">Disclosure hesitation vs. resource-depletion polarization</h3>
+      <p>The part of the system that requires accommodation to maintain functional capacity — watching the masking tax accumulate, watching the sensory load rise — is in direct conflict with protective-disclosure parts whose job is to prevent the disclosure that might trigger the feared consequences. Both poles have legitimate intelligence. The resource-depletion side knows what is actually happening in the system; the disclosure-protection side knows what the historical risk of disclosure has been. The polarization is not resolvable by arguing either side down — it requires the protective parts to have their concerns heard before the disclosure attempt can proceed.</p>
+
+      <h3 id="assertion-appeasement">Assertion-appeasement cycling</h3>
+      <p>After preparing and delivering an advocacy attempt — often at significant internal cost — the fawn system that drives chronic over-apologizing activates immediately to undo or soften the disclosure: "I just wanted you to know — it's really not a big deal, I can manage." The advocacy happens and is then depotentiated in the same breath. What looks like wavering confidence is a protective-system response: parts executing the advocacy attempt face immediate intervention from parts whose job is to repair relationship-threat. Structurally complete advocacy is rarely sustained even when it is initiated.</p>
+
+      <h3 id="exit-avoidance">The exit-avoidance loop</h3>
+      <p>In environments where advocacy is consistently unsuccessful, accommodation-seeking parts and exit-management parts are often deadlocked. The accommodation-seeking parts keep reformulating the request; the exit-management parts prevent action on the "know-when-to-exit" criterion because the exit costs — financial, relational, professional identity — are genuinely high. The deadlock can last for years. Self-leadership is what allows the system to hold both the reality of genuine exit cost and the reality of genuine environmental toxicity simultaneously.</p>
+    </div>
+
+    <div class="primer-section" id="self-led">
+      <div class="section-num">05</div>
+      <h2>Self-led advocacy</h2>
+
+      <h3 id="environment-correction">Environment-correction, not supplication</h3>
+      <p>From Self, advocacy begins with the Social Model substrate: the accommodation request is environment-correction. The emotional register of that request — from Self — is neutral to matter-of-fact rather than shame-organized. The difference between "I'm sorry to bring this up, I know it's a lot to ask" and "I want to make sure I can do my best work here, so I need X" is not a confidence differential. It is the medical model vs. the Social Model showing up at the disclosure layer.</p>
+
+      <h3 id="code-switching">Strategic code-switching</h3>
+      <p>Kemp and Mitchelson's distinction: assertive communication in advocacy contexts is not the elimination of accommodation of NT communication formats — it is strategic use of NT-legible communication to convey genuine ND needs. This is structurally different from masking because the goal is need-meeting, not identity concealment. A Self-led ND person who uses a formal workplace accommodation request form and delivers a clear Self-Disclosure + Request is not masking. They are using the available communication format to do advocacy oriented toward their actual needs.</p>
+
+      <h3 id="exit-criterion">The exit criterion</h3>
+      <p>When an environment systematically fails to provide reasonable accommodation after good-faith advocacy, the Self-led position is not to escalate the advocacy or pathologize the failure. It is to apply the exit criterion honestly: this environment, at this level of accommodation, is not compatible with this system's sustainable functioning. Continued adaptation at personal cost — the masking logic applied indefinitely — is not a virtue. Self-led advocacy includes the capacity to conclude that the advocacy has run its course and that the correct environmental intervention is exit.</p>
+
+      <div class="related-page">
+        <div class="related-card">
+          <div class="related-tag">Inner Terrain</div>
+          <div class="related-name">Internalized Ableism</div>
+          <div class="related-desc">The "I am the problem" conviction that forms the structural floor of most advocacy barriers — and how the Social Model update actually works.</div>
+          <a class="related-link" href="internalized-ableism.html">Read →</a>
+        </div>
+        <div class="related-card">
+          <div class="related-tag">Relational Life</div>
+          <div class="related-name">Conflict and Directness</div>
+          <div class="related-desc">The same structural barriers — protective managers, DEER, assertion-appeasement — in interpersonal conflict rather than accommodation contexts.</div>
+          <a class="related-link" href="conflict-directness.html">Read →</a>
+        </div>
+        <div class="related-card">
+          <div class="related-tag">Foundations</div>
+          <div class="related-name">Masking and Unmasking</div>
+          <div class="related-desc">Not requesting accommodation is masking continuation — the same compliance logic running at the structural level.</div>
+          <a class="related-link" href="masking-unmasking.html">Read →</a>
+        </div>
+        <div class="related-card">
+          <div class="related-tag">Inner Terrain</div>
+          <div class="related-name">Burnout, Collapse &amp; Rest</div>
+          <div class="related-desc">Sustained masking due to inadequate accommodation as a primary burnout accelerant.</div>
+          <a class="related-link" href="burnout-collapse-rest.html">Read →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="hs-footer">
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+</body>
+</html>

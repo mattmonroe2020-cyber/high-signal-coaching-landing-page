@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intimacy and Partnership | High Signal Coaching</title>
+  <meta name="description" content="ND intimate partnership difficulty is more often an architecture mismatch than a character mismatch. The double-empathy problem, hyper-empathy, and what Self-led partnership actually looks like.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dark:#1C1914; --dark2:#252019; --amber:#C8873A; --amber-light:#E4A85C;
+      --cream:#F0E6D8; --cream-muted:#B8A898; --cream-faint:#7A6E64;
+      --serif:'Cormorant Garamond',Georgia,serif; --mono:'DM Mono',monospace; --rule:#3a3228;
+    }
+    html { scroll-behavior: smooth; }
+    body { background:var(--dark); color:var(--cream); font-family:var(--serif); line-height:1.7; }
+
+    .hs-nav { display:flex; justify-content:space-between; align-items:center; padding:1.4rem 3rem; border-bottom:.5px solid var(--rule); position:sticky; top:0; background:var(--dark); z-index:100; }
+    .hs-logo { font-family:var(--serif); font-size:13px; font-weight:400; letter-spacing:.15em; text-transform:uppercase; color:var(--cream); text-decoration:none; }
+    .hs-nav-links { display:flex; gap:2.5rem; align-items:center; }
+    .hs-nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--cream-muted); text-decoration:none; font-weight:300; }
+    .hs-nav-links a:hover { color:var(--cream); }
+
+    .primer-hero { padding:4.5rem 3rem 3.5rem; border-bottom:.5px solid var(--rule); max-width:860px; }
+    .primer-eyebrow { font-family:var(--mono); font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--amber); font-weight:300; margin-bottom:1.5rem; }
+    .primer-hero h1 { font-family:var(--serif); font-size:clamp(32px,4.5vw,50px); font-weight:300; line-height:1.15; color:var(--cream); margin-bottom:1.2rem; }
+    .primer-hero h1 em { font-style:italic; color:var(--amber-light); }
+    .primer-hero-sub { font-family:var(--serif); font-size:18px; font-weight:300; color:var(--cream-muted); max-width:600px; line-height:1.75; }
+
+    .primer-body { display:grid; grid-template-columns:210px 1fr; gap:0; border-bottom:.5px solid var(--rule); }
+
+    .primer-toc { border-right:.5px solid var(--rule); padding:3rem 0; position:sticky; top:64px; align-self:start; height:calc(100vh - 64px); overflow-y:auto; }
+    .toc-section { padding:.7rem 2rem; border-bottom:.5px solid var(--rule); }
+    .toc-label { font-family:var(--mono); font-size:8px; letter-spacing:.14em; text-transform:uppercase; color:var(--cream-faint); font-weight:300; margin-bottom:.4rem; }
+    .toc-link { display:block; font-family:var(--serif); font-size:13px; font-weight:400; color:var(--cream-muted); text-decoration:none; line-height:1.4; margin-bottom:.15rem; }
+    .toc-link:hover { color:var(--cream); }
+    .toc-sub { display:block; font-family:var(--mono); font-size:8px; letter-spacing:.06em; color:var(--cream-faint); text-decoration:none; margin-top:.2rem; margin-left:.6rem; font-weight:300; line-height:1.5; }
+    .toc-sub:hover { color:var(--amber); }
+
+    .primer-content { padding:3rem; }
+    .primer-section { padding-bottom:3.5rem; border-bottom:.5px solid var(--rule); margin-bottom:3.5rem; }
+    .primer-section:last-child { border-bottom:none; margin-bottom:0; }
+
+    .section-num { font-family:var(--mono); font-size:9px; letter-spacing:.16em; text-transform:uppercase; color:var(--amber); font-weight:300; margin-bottom:.7rem; }
+    .primer-section h2 { font-family:var(--serif); font-size:clamp(24px,3vw,32px); font-weight:300; color:var(--cream); line-height:1.25; margin-bottom:1.4rem; }
+    .primer-section h2 em { font-style:italic; color:var(--amber-light); }
+    .primer-section h3 { font-family:var(--serif); font-size:18px; font-weight:400; color:var(--cream); margin-top:2rem; margin-bottom:.8rem; }
+    .primer-section h3 em { font-style:italic; color:var(--amber-light); }
+
+    .primer-section p { font-family:var(--serif); font-size:17px; font-weight:300; color:var(--cream-muted); line-height:1.85; margin-bottom:1.3rem; }
+    .primer-section p:last-child { margin-bottom:0; }
+    .primer-section p strong { font-weight:500; color:var(--cream); }
+    .primer-section p em { font-style:italic; }
+
+    .pullquote { font-family:var(--serif); font-size:19px; font-weight:300; font-style:italic; color:var(--cream); border-left:2px solid var(--amber); padding-left:1.4rem; margin:2rem 0; line-height:1.55; }
+
+    .info-box { background:var(--dark2); border-left:2px solid var(--rule); padding:1.4rem 1.8rem; margin:2rem 0; }
+    .info-box-label { font-family:var(--mono); font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:var(--cream-faint); font-weight:300; margin-bottom:.8rem; }
+    .info-box p { font-family:var(--serif); font-size:15px; font-weight:300; color:var(--cream-muted); line-height:1.75; margin-bottom:.6rem; }
+    .info-box p:last-child { margin-bottom:0; }
+
+    .cross-link-bar { display:flex; gap:1px; background:var(--rule); margin-bottom:3rem; }
+    .cross-link-item { flex:1; background:var(--dark2); padding:1.2rem 1.4rem; }
+    .cross-link-label { font-family:var(--mono); font-size:8px; letter-spacing:.12em; text-transform:uppercase; color:var(--cream-faint); font-weight:300; margin-bottom:.4rem; }
+    .cross-link-item a { font-family:var(--serif); font-size:14px; font-weight:400; color:var(--cream-muted); text-decoration:none; }
+    .cross-link-item a:hover { color:var(--amber); }
+
+    .related-page { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule); margin-top:3rem; }
+    .related-card { background:var(--dark); padding:1.5rem; }
+    .related-card:hover { background:var(--dark2); }
+    .related-tag { font-family:var(--mono); font-size:8px; letter-spacing:.1em; text-transform:uppercase; color:var(--amber); margin-bottom:.5rem; font-weight:300; }
+    .related-name { font-family:var(--serif); font-size:16px; font-weight:400; color:var(--cream); margin-bottom:.4rem; }
+    .related-desc { font-family:var(--serif); font-size:13px; font-weight:300; color:var(--cream-muted); line-height:1.6; }
+    .related-link { font-family:var(--mono); font-size:8px; letter-spacing:.08em; text-transform:uppercase; color:var(--cream-faint); text-decoration:none; margin-top:.8rem; display:inline-block; font-weight:300; }
+    .related-link:hover { color:var(--amber); }
+
+    .hs-footer { border-top:.5px solid var(--rule); }
+    .hs-footer-bottom { padding:1.4rem 3rem; display:flex; justify-content:space-between; align-items:center; }
+    .hs-footer-copy { font-family:var(--mono); font-size:9px; letter-spacing:.08em; color:var(--cream-faint); font-weight:300; }
+    .hs-footer-sign { font-family:var(--serif); font-size:14px; font-weight:300; font-style:italic; color:var(--cream-faint); }
+
+    @media(max-width:720px) {
+      .hs-nav { padding:1.2rem 1.5rem; }
+      .primer-hero, .primer-content { padding:2.5rem 1.5rem; }
+      .primer-body { grid-template-columns:1fr; }
+      .primer-toc { position:static; height:auto; border-right:none; border-bottom:.5px solid var(--rule); padding:1.5rem; }
+      .cross-link-bar { flex-direction:column; }
+      .related-page { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+    <a href="nd-glossary.html">Neurodiversity Glossary</a>
+    <a href="ef-support-interventions.html">Executive Function Support</a>
+  </div>
+</nav>
+
+<div class="primer-hero">
+  <div class="primer-eyebrow">Relational Life · IFS × Neurodivergence · ADHD · Autism · Partnership</div>
+  <h1>ND intimate partnership difficulty is more often an architecture mismatch<br>than <em>a character mismatch.</em></h1>
+  <p class="primer-hero-sub">The ND person who cannot maintain continuous interactive engagement, prefers parallel activity, infodumps on specific topics and goes quiet during others — is expressing genuine relational architecture, not deficiency. The intervention is architecture translation, not character repair.</p>
+</div>
+
+<div class="primer-body">
+
+  <nav class="primer-toc">
+    <div class="toc-section">
+      <div class="toc-label">On this page</div>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#architecture">01 · The architecture mismatch</a>
+      <a class="toc-sub" href="#double-empathy">Double-empathy problem</a>
+      <a class="toc-sub" href="#hyper-empathy">Hyper-empathy</a>
+      <a class="toc-sub" href="#parallel-play">Parallel play</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#parts">02 · Parts carrying the pattern</a>
+      <a class="toc-sub" href="#relational-architects">Genuine relational architects</a>
+      <a class="toc-sub" href="#disclosure-calibration">Disclosure-calibration managers</a>
+      <a class="toc-sub" href="#predictability-managers">Predictability managers</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#burdens">03 · Burdens</a>
+      <a class="toc-sub" href="#not-enough-connecting">My way of connecting isn't enough</a>
+      <a class="toc-sub" href="#apology-reflex">Apology reflex</a>
+      <a class="toc-sub" href="#too-much-partner">Too much for a partner</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#dynamics">04 · System dynamics</a>
+      <a class="toc-sub" href="#flooding-withdrawal">Hyper-empathy flooding-withdrawal loop</a>
+      <a class="toc-sub" href="#covert-contract">Covert-contract layer</a>
+      <a class="toc-sub" href="#parallel-vs-performance">Parallel-presence vs. performance</a>
+    </div>
+    <div class="toc-section">
+      <a class="toc-link" href="#self-led">05 · Self-led partnership</a>
+      <a class="toc-sub" href="#genuine-contact">Designing for genuine contact</a>
+      <a class="toc-sub" href="#hyper-empathy-scaffolding">Hyper-empathy scaffolding</a>
+      <a class="toc-sub" href="#disclosure-architecture">Disclosure as architecture-sharing</a>
+      <a class="toc-sub" href="#partner-selection">Partner selection</a>
+    </div>
+  </nav>
+
+  <div class="primer-content">
+
+    <div class="cross-link-bar">
+      <div class="cross-link-item">
+        <div class="cross-link-label">Relational Life</div>
+        <a href="connection-attachment.html">Connection and Attachment →</a>
+      </div>
+      <div class="cross-link-item">
+        <div class="cross-link-label">Relational Life</div>
+        <a href="fawn-approval-seeking.html">Fawn &amp; Approval-Seeking →</a>
+      </div>
+      <div class="cross-link-item">
+        <div class="cross-link-label">Inner Terrain</div>
+        <a href="shame-self-judgment.html">Shame and Self-Judgment →</a>
+      </div>
+    </div>
+
+    <div class="primer-section" id="architecture">
+      <div class="section-num">01</div>
+      <h2>The architecture mismatch</h2>
+
+      <p>The intimate partnership is the relational context where every ND architecture feature is most visible, most personal, and most available for misread. The partner can see the intermittent engagement intensity — present and absorbed one hour, gone the next. They experience the context-independent communication that does not modulate for social-intimacy conventions. They notice the parallel-presence preference, the infodump on special interest topics, the sensory and predictability requirements that shape what the household can contain. And they usually have a neurotypical relational template through which to read all of it.</p>
+
+      <h3 id="double-empathy">The double-empathy problem</h3>
+      <p>The communication mismatch is bidirectional. An NT partner reading ND parallel-presence as emotional withdrawal is not imagining the difference — there is a real architectural gap. The ND partner reading the NT's continuous-interaction preference as demanding or intrusive is also not imagining anything. Both are accurate reads of a bidirectional mismatch. The clinical error is treating one side of the mismatch as the correct baseline and the other as the deficient departure from it.</p>
+
+      <h3 id="hyper-empathy">Hyper-empathy — not empathy deficit</h3>
+      <p>Neff's framing disrupts the empathy-deficit narrative directly. The autistic person in an intimate partnership is frequently not empathically absent — they are absorbing emotional material at a volume the partnership's explicit content does not account for. The partner's unexpressed frustration, background anxiety, or disappointment registers in the autistic person's body before it is named. This porous-boundary structure is not reciprocal distance; it is reciprocal overexposure managed by protective withdrawal when the absorbed load exceeds tolerable levels. The withdrawal is frequently read as coldness precisely when it is most driven by relational overwhelm.</p>
+
+      <h3 id="parallel-play">Parallel play as adult intimacy</h3>
+      <p>For many ND people, the most reliably restorative and connective intimate experience is co-located parallel presence: being in the same space, engaged in different activities, without the demand of continuous interaction. This is not a compromise on genuine intimacy — it is, for the ND nervous system, a primary access route to the regulatory and relational benefits of attachment. Couples who discover that this is how they work best are not failing at partnership; they are finding the actual architecture under the performance of neurotypical intimacy norms.</p>
+    </div>
+
+    <div class="primer-section" id="parts">
+      <div class="section-num">02</div>
+      <h2>Parts carrying the pattern</h2>
+
+      <h3 id="relational-architects">Genuine relational architects</h3>
+      <p>Parts that have quietly figured out what authentic intimacy looks like for this system: which conditions produce real contact, which forms of togetherness restore rather than deplete, which communication modes are genuine rather than performed. These parts often know, clearly, that parallel presence works better than enforced conversation, that interest-sharing is the primary attachment channel, and that direct communication without social modulation is actually easier to sustain in intimate contexts than careful performance. They carry the architecture knowledge the system has been trained not to use.</p>
+
+      <h3 id="disclosure-calibration">Disclosure-calibration managers</h3>
+      <p>Parts tracking the timing and depth of ND disclosure to partners — when to say what, how much of the architecture to name, how to gauge whether the partner's response indicates genuine capacity for the relationship. These parts are doing real work: intimate disclosure is the most complex application of the advocacy framing, where the stakes of the three-category barrier are highest and the know-when-to-exit criterion is most costly to apply.</p>
+
+      <h3 id="predictability-managers">Predictability-requirement managers</h3>
+      <p>Parts managing the intimate partner's behavior, the household environment, and the relationship's routines in service of the sensory and predictability requirements that make presence possible. These parts' requirements are real architecture needs; they are frequently experienced by NT partners as controlling or rigid when the underlying logic — this person can only be genuinely present when the environment is within tolerance — has not been named.</p>
+    </div>
+
+    <div class="primer-section" id="burdens">
+      <div class="section-num">03</div>
+      <h2>Burdens</h2>
+
+      <h3 id="not-enough-connecting">"My way of connecting isn't enough"</h3>
+      <p>The paradigm-installed relational burden most directly applied in intimate contexts. Parts carrying this burden have absorbed the NT relational template as the standard and measured their ND relational architecture against it consistently. The parallel-presence preference is experienced as proof of emotional unavailability. The infodump is experienced as evidence of self-centeredness. The sensory requirements are experienced as imposing. These parts are not wrong that the architecture creates friction; they are wrong that the friction proves something is missing from them rather than present in the mismatch.</p>
+
+      <h3 id="apology-reflex">The apology reflex</h3>
+      <p>Downstream of hyper-empathy and RSD, the apology reflex in intimate partnership runs at high frequency: pre-emptive apologies for presence, for preferences, for requirements, for the architecture itself. Parts carrying this burden have learned that apologizing first reduces the pain-spike of anticipated partner disapproval. In intimate contexts where vulnerability is most available, the reflex can run constantly — and can produce the partner-withdrawal it is designed to prevent: partners who are repeatedly apologized at begin to feel that the ND person experiences the relationship as a burden on them.</p>
+
+      <h3 id="too-much-partner">"I am too much for an intimate partner"</h3>
+      <p>The compound burden that combines the paradigm's "too much" verdict with the relational-context intensity of ND experience. The simultaneous pull of intense connection desire — the depth-of-connection drive is frequently high in ND systems — and the protection against it: parts that have learned the partner cannot sustain the intensity, cannot match the investment, cannot tolerate the requirements. The result is managed distance inside an intimate relationship: present enough to maintain attachment, concealed enough to avoid overwhelming what's been found.</p>
+    </div>
+
+    <div class="primer-section" id="dynamics">
+      <div class="section-num">04</div>
+      <h2>System dynamics</h2>
+
+      <h3 id="flooding-withdrawal">The hyper-empathy flooding-withdrawal loop</h3>
+      <p>The most common ND intimacy dynamic that gets misread as emotional unavailability. The ND partner absorbs the NT partner's emotional state — frustration, disappointment, background anxiety — before it is explicitly named. The absorbed load floods the ND system's window of tolerance. The protective response is withdrawal. The NT partner, now feeling the ND partner's withdrawal on top of their original unexpressed state, escalates or pursues. The escalation produces more flooding. The loop intensifies. Neither partner has a frame for what is happening because the ND architecture driving the loop is invisible to both.</p>
+
+      <h3 id="covert-contract">The covert-contract layer</h3>
+      <p>The Nice Guy relational pattern applied within intimate partnership: needs expressed obliquely or not at all, emotional honesty withheld to manage predicted partner response, resentment accumulating around unmet implicit expectations. In ND systems, this architecture co-occurs with genuine architectural features — producing situations where the ND person's actual needs are doubly concealed: hidden by the covert-contract layer on top, and misread as deficiency at the architecture level below.</p>
+
+      <h3 id="parallel-vs-performance">Parallel-presence vs. performance-of-engagement</h3>
+      <p>Many ND people in NT-partnered relationships have learned to perform continuous conversational engagement rather than access parallel presence as a genuine relational mode. Parts performing engagement are running continuous load — eye contact, active listening signals, conversation tracking, affect display — while the system's actual restorative architecture is parallel co-location. The performance can sustain for extended periods and then collapse: the ND partner suddenly "checks out," which the NT partner reads as a relational signal when it is a resource-depletion event.</p>
+    </div>
+
+    <div class="primer-section" id="self-led">
+      <div class="section-num">05</div>
+      <h2>Self-led partnership</h2>
+
+      <p>The central reorientation in Self-led intimate partnership: genuine contact, not performance of the template. The question is not <em>how do I get better at neurotypical intimacy</em> but <em>what does real contact actually look and feel like between this system and this person?</em></p>
+
+      <h3 id="genuine-contact">Designing for genuine contact</h3>
+      <p>Self-led intimate design means identifying what connection actually is for the ND system and building the partnership around it. Parallel presence as primary togetherness mode, if that is what restores. Interest-based connection as attachment channel, if that is where genuine engagement lives. Direct communication without social modulation as the honest mode, with acknowledgment of what that asks of the partner. The goal is not to eliminate all performance of neurotypical intimacy norms but to stop mistaking the performance for the relationship.</p>
+
+      <h3 id="hyper-empathy-scaffolding">Hyper-empathy scaffolding</h3>
+      <p>Self-led management of hyper-empathy is not boundary-installation in the sense of shutting out the partner's emotional field. It is explicit architecture naming: I absorb your emotional state before you name it; this produces flooding in me that looks like withdrawal; the withdrawal is protective, not relational rejection. This naming makes the flooding-withdrawal loop visible to both partners and creates the possibility of a jointly-designed intervention: the partner learns to verbalize earlier, the ND partner learns to track the absorbed-load signal before flooding, the cycle is interrupted earlier.</p>
+
+      <h3 id="disclosure-architecture">ND disclosure as architecture-sharing</h3>
+      <p>The Self-led relationship to ND disclosure in intimate partnership is the advocacy framing at maximum stakes: this is who I am architecturally, these are the conditions I require to be present, and here is what that means for what partnership with me actually involves. ND disclosure in intimate context is not a risk mitigation — it is an intimacy deepening.</p>
+
+      <div class="pullquote">The partner who receives the disclosure and remains has chosen the actual person, not the managed performance.</div>
+
+      <h3 id="partner-selection">Partner selection as architecture assessment</h3>
+      <p>Self-led partner selection includes honest evaluation of architectural compatibility. Not every NT-ND pairing involves irreconcilable mismatch — many produce genuine, sustainable partnerships where both people find the architectural difference navigable and interesting. But some do not. The shame exile's burden about ND architecture being illegitimate can produce persistent over-adaptation in a relationship where genuine architectural incompatibility is making sustainability impossible. The know-when-to-exit criterion applies here too, at higher cost.</p>
+
+      <div class="related-page">
+        <div class="related-card">
+          <div class="related-tag">Relational Life</div>
+          <div class="related-name">Connection and Attachment</div>
+          <div class="related-desc">The deeper architecture — dislocation, ND relational distinctives as genuine connection forms, and the corrective relational experience.</div>
+          <a class="related-link" href="connection-attachment.html">Read →</a>
+        </div>
+        <div class="related-card">
+          <div class="related-tag">Relational Life</div>
+          <div class="related-name">Fawn, Approval-Seeking &amp; Covert Contracts</div>
+          <div class="related-desc">The covert-contract layer that doubles the concealment of authentic needs in intimate partnership.</div>
+          <a class="related-link" href="fawn-approval-seeking.html">Read →</a>
+        </div>
+        <div class="related-card">
+          <div class="related-tag">Relational Life</div>
+          <div class="related-name">Advocacy and Accommodation</div>
+          <div class="related-desc">The same three-category barrier model applied to partner disclosure — and the know-when-to-exit criterion at partnership level.</div>
+          <a class="related-link" href="advocacy-accommodation.html">Read →</a>
+        </div>
+        <div class="related-card">
+          <div class="related-tag">Inner Terrain</div>
+          <div class="related-name">Shame and Self-Judgment</div>
+          <div class="related-desc">Shame in intimate contexts as a physiological event — and the exile configurations organized around relational rejection.</div>
+          <a class="related-link" href="shame-self-judgment.html">Read →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="hs-footer">
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+</body>
+</html>
