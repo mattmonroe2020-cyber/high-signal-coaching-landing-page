@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Depolarization Protocol | High Signal Coaching</title>
+  <meta name="description" content="When two parts are working against each other, willpower picks a side and makes it worse. The Depolarization Protocol facilitates dialogue from Self instead.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:        #1C1914;
+      --dark2:       #252019;
+      --amber:       #C8873A;
+      --amber-light: #E4A85C;
+      --cream:       #F0E6D8;
+      --cream-muted: #B8A898;
+      --cream-faint: #7A6E64;
+      --serif:       'Cormorant Garamond', Georgia, serif;
+      --mono:        'DM Mono', monospace;
+      --rule:        #3a3228;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--serif);
+      line-height: 1.7;
+    }
+
+    /* ─── NAV ──────────────────────────────────────── */
+    .hs-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      border-bottom: .5px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: var(--dark);
+      z-index: 100;
+    }
+    .hs-logo {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .hs-nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .hs-nav-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .hs-nav-links a:hover { color: var(--cream); }
+
+    /* ─── ARTICLE HERO ─────────────────────────────── */
+    .article-hero {
+      padding: 4.5rem 3rem 3.5rem;
+      border-bottom: .5px solid var(--rule);
+      max-width: 760px;
+    }
+    .article-eyebrow {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .article-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4.5vw, 46px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+    }
+    .article-hero h1 em { font-style: italic; color: var(--amber-light); }
+    .article-hero-sub {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+      max-width: 580px;
+      margin-bottom: 2rem;
+    }
+    .article-meta {
+      display: flex;
+      gap: 2rem;
+      padding-top: 1.5rem;
+      border-top: .5px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .article-meta-item {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .article-meta-item span { color: var(--cream-muted); }
+
+    /* ─── ARTICLE LAYOUT ───────────────────────────── */
+    .article-wrap {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 4rem 3rem 6rem;
+    }
+
+    /* ─── BODY TEXT ────────────────────────────────── */
+    .article-wrap p {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
+    }
+    .article-wrap p:last-child { margin-bottom: 0; }
+    .article-wrap p strong { font-weight: 500; color: var(--cream); }
+    .article-wrap p em { font-style: italic; }
+
+    /* ─── SECTION BREAKS ───────────────────────────── */
+    .article-section {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .article-section:first-child { padding-top: 0; }
+    .article-section:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .article-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.3;
+      margin-bottom: 1.6rem;
+    }
+    .article-section h2 em { font-style: italic; color: var(--amber-light); }
+
+    /* ─── SECTION MARKER ───────────────────────────── */
+    .section-marker {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+
+    /* ─── PULLQUOTE ────────────────────────────────── */
+    .pullquote {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      border-left: 2px solid var(--amber);
+      padding-left: 1.5rem;
+      margin: 2.2rem 0;
+      line-height: 1.55;
+    }
+
+    /* ─── INTRO ────────────────────────────────────── */
+    .article-intro {
+      padding-bottom: 3.5rem;
+      border-bottom: .5px solid var(--rule);
+    }
+
+    /* ─── PRACTICE STEPS ────────────────────────────── */
+    .practice-steps {
+      margin: 2.5rem 0;
+    }
+    .practice-step {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 1.4rem;
+      padding: 1.5rem 0;
+      border-top: .5px solid var(--rule);
+      align-items: start;
+    }
+    .practice-step:last-child { border-bottom: .5px solid var(--rule); }
+    .practice-step-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--amber);
+      font-weight: 400;
+      padding-top: .3rem;
+      letter-spacing: .05em;
+    }
+    .practice-step-body {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.85;
+    }
+    .practice-step-body strong { font-weight: 500; color: var(--cream); }
+    .practice-step-body em { font-style: italic; }
+
+    /* ─── INFO BOX ──────────────────────────────────── */
+    .info-box {
+      background: var(--dark2);
+      border-left: 2px solid var(--rule);
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+    }
+    .info-box-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .info-box p {
+      font-family: var(--serif);
+      font-size: 15px !important;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+      margin-bottom: .6rem !important;
+    }
+    .info-box p:last-child { margin-bottom: 0 !important; }
+
+    /* ─── POLARIZATION LIST ─────────────────────────── */
+    .polarization-list {
+      margin: 1.8rem 0;
+    }
+    .polarization-item {
+      padding: 1.4rem 0;
+      border-top: .5px solid var(--rule);
+    }
+    .polarization-item:last-child { border-bottom: .5px solid var(--rule); }
+    .polarization-item p {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.85;
+      margin-bottom: 0;
+    }
+    .polarization-item p strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── CTA BLOCK ────────────────────────────────── */
+    .article-cta {
+      margin-top: 3.5rem;
+      padding: 2rem 2.2rem;
+      border: .5px solid var(--rule);
+      background: var(--dark2);
+    }
+    .article-cta-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .article-cta p {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+    .article-cta a.cta-btn {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--dark);
+      background: var(--amber);
+      padding: .65rem 1.6rem;
+      text-decoration: none;
+      font-weight: 400;
+      display: inline-block;
+    }
+    .article-cta a.cta-btn:hover { background: var(--amber-light); }
+
+    /* ─── RELATED ──────────────────────────────────── */
+    .article-related {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: .5px solid var(--rule);
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .article-related-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .article-related a {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .article-related a:hover { color: var(--amber-light); }
+
+    /* ─── FOOTER ───────────────────────────────────── */
+    .hs-footer { border-top: .5px solid var(--rule); }
+    .hs-footer-bottom {
+      padding: 1.4rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hs-footer-copy {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .hs-footer-sign {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-faint);
+    }
+
+    @media (max-width: 680px) {
+      .hs-nav { padding: 1.2rem 1.5rem; }
+      .hs-nav-links { gap: 1.2rem; }
+      .hs-nav-links a { font-size: 9px; }
+      .article-hero, .article-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .practice-step { grid-template-columns: 24px 1fr; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+    <a href="nd-glossary.html">Neurodiversity Glossary</a>
+    <a href="ef-support-interventions.html">Executive Function Support</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="article-eyebrow">Inner Terrain · Practice · IFS</div>
+  <h1>The stuck pattern isn't stubbornness.<br>It's two parts<br><em>overriding each other in turns.</em></h1>
+  <p class="article-hero-sub">Polarizations feel like moral conflicts — as if one side is right and the other is the problem. They're almost never that. They're two protective configurations that each believe their strategy is the only one preventing catastrophe. Willpower picks a side. Self facilitates dialogue.</p>
+  <div class="article-meta">
+    <div class="article-meta-item">Category <span>IFS Practice</span></div>
+    <div class="article-meta-item">Format <span>Protocol + written walkthrough</span></div>
+    <div class="article-meta-item">Time <span>60–90 min (session work)</span></div>
+    <div class="article-meta-item">Source <span>IFS · Earley · Schwartz</span></div>
+  </div>
+</div>
+
+<div class="article-wrap">
+
+  <div class="article-intro">
+    <p>The oscillation signature is the tell. The client wants to exercise — always skips it. Wants to set limits — repeatedly yields. Wants to start the project — keeps avoiding it. There is no stable landing point because two configurations are each overriding the other. Standard interventions — more accountability, better strategy, stronger willpower — don't work on oscillation because they pick a side. Both sides are still there.</p>
+  </div>
+
+  <div class="article-section">
+    <h2>Not ambivalence — <em>mutual override</em></h2>
+
+    <p>Ambivalence is having two preferences in tension. A polarization is two configurations that actively react to each other — charged, protective, organized against each other. When one imagines the other winning, it doesn't just prefer something else; it activates. The diagnostic check: ask each side "if the other side got everything it wanted, what would you be afraid would happen?" Genuine polarization produces specific, activated answers. The configurations are not merely opposed; they're each organized around preventing the other's outcome.</p>
+
+    <p>Signs: the client describes an internal argument between two "voices" or "sides." Every gain in one direction is met by a corrective pull in the other. Attempts to change through willpower produce short bursts followed by strong rebounds. There is charged energy between positions — not neutral preference, but something that feels urgent, territorial, or threatened.</p>
+  </div>
+
+  <div class="article-section">
+    <div class="section-marker">ND applications</div>
+    <h2>Common ND polarizations — <em>and why scaffolding alone doesn't touch them</em></h2>
+
+    <div class="polarization-list">
+
+      <div class="polarization-item">
+        <p><strong>Initiation / avoidance.</strong> Parts oriented toward starting tasks, alongside parts organized around avoiding the shame of failure or the overwhelm of starting. The avoidance-oriented configuration is not lazy; it is protecting against something. The initiation-oriented configuration is often running on the logic that doing enough will eventually disprove the underlying shame burden. Both are working hard. Adding an external scaffold gives the initiation side a temporary edge — until the avoidance side reasserts. The oscillation continues at a new location.</p>
+      </div>
+
+      <div class="polarization-item">
+        <p><strong>Performance / collapse.</strong> Configurations that push sustained output, alongside configurations that initiate shutdown when capacity is exceeded. The collapse is often a firefighter response to overcapacity the manager configuration created by refusing to regulate pace. The manager reads the collapse as failure and escalates pressure. The firefighter responds by going further down. This is not a motivation problem. It is a system in mutual override with no external regulation available.</p>
+      </div>
+
+      <div class="polarization-item">
+        <p><strong>Authenticity / masking.</strong> Configurations oriented toward authentic ND expression, alongside configurations that have spent years suppressing that expression for social safety. This polarization often has strong exile substrate — exiles carrying the authentic ND self that was shamed or pathologized — meaning it is more likely to require clinical work to fully resolve. Coaching scope covers the protector dialogue. Exile work belongs in clinical context.</p>
+      </div>
+
+    </div>
+
+    <div class="info-box">
+      <div class="info-box-label">Scope limit</div>
+      <p>Depolarization works at the protector layer. If exploration reveals that the polarization is sustained by an underlying exile both configurations are protecting, the depolarization cannot complete without exile work. In coaching, when this becomes visible, the appropriate move is naming what was found and holding it rather than pursuing it. The pursuit is therapy scope.</p>
+    </div>
+  </div>
+
+  <div class="article-section">
+    <div class="section-marker">The protocol</div>
+    <h2>A 9-step sequence — <em>for facilitating from Self</em></h2>
+
+    <div class="practice-steps">
+
+      <div class="practice-step">
+        <div class="practice-step-num">01</div>
+        <div class="practice-step-body">
+          <strong>Identify both configurations clearly.</strong> Name each by functional role, not evaluative label — not "the lazy part" and "the driven part," but "the configuration that pulls toward rest and avoidance" and "the configuration that pushes toward output and performance." Both descriptions should be functional. Neither should carry a verdict in its name.
+        </div>
+      </div>
+
+      <div class="practice-step">
+        <div class="practice-step-num">02</div>
+        <div class="practice-step-body">
+          <strong>Confirm the polarization.</strong> Check for charged reactions — not just opposing preferences, but genuine activation when one side imagines the other winning. The diagnostic question: "If the other side got everything it wanted, what would you be afraid would happen?" Genuine polarization produces specific, activated answers. If the response is mild preference, the dynamic may be ambivalence rather than polarization, and the protocol is different.
+        </div>
+      </div>
+
+      <div class="practice-step">
+        <div class="practice-step-num">03</div>
+        <div class="practice-step-body">
+          <strong>Unblend from each, separately.</strong> Work with each configuration first. Establish Self-presence with each. Acknowledge its concerns, let it know it will be heard. Neither side should feel preemptively dismissed before the dialogue begins. A configuration that suspects it's being set up to lose will not participate genuinely.
+        </div>
+      </div>
+
+      <div class="practice-step">
+        <div class="practice-step-num">04</div>
+        <div class="practice-step-body">
+          <strong>Clarify each configuration's role, positive intention, and fear.</strong> Each side has something it genuinely cares about protecting. Each side has a fear about what happens if the other "wins." These are not symptoms — they are the structure of the polarization. The configuration pushing output is protecting against something. The configuration pulling toward avoidance is protecting against something else. Both somethings are real.
+        </div>
+      </div>
+
+      <div class="practice-step">
+        <div class="practice-step-num">05</div>
+        <div class="practice-step-body">
+          <strong>Build trust with each configuration from Self.</strong> Not by promising the outcome each wants, but by demonstrating that Self can hold complexity without collapsing into either side. Parts that have never experienced a capable Self-presence don't know that one exists. This step is the demonstration. It often takes longer than expected — and the time is worth taking.
+        </div>
+      </div>
+
+      <div class="practice-step">
+        <div class="practice-step-num">06</div>
+        <div class="practice-step-body">
+          <strong>Check for an exile substrate.</strong> <em>(Coaching scope decision point.)</em> Is there a shared exile underlying this polarization — something both configurations are protecting against? If yes, and if the exile is accessible, the depolarization cannot reach resolution without exile contact. At this point the work requires clinical context. This is not a failure of the protocol; it is the protocol correctly identifying its scope limit.
+        </div>
+      </div>
+
+      <div class="practice-step">
+        <div class="practice-step-num">07</div>
+        <div class="practice-step-body">
+          <strong>Get each side's permission for dialogue.</strong> Before facilitating the exchange, ensure each configuration is willing to engage. Reluctance to engage is information — a configuration that refuses dialogue is protecting hard, and that protection deserves the same curiosity as any other. Ask what it would need before it could be willing to listen.
+        </div>
+      </div>
+
+      <div class="practice-step">
+        <div class="practice-step-num">08</div>
+        <div class="practice-step-body">
+          <strong>Facilitate the dialogue.</strong> Each side states its position and responds to the other — not to win, but to be understood. Self holds the space. Facilitating questions: "What do you hear the other side saying?" "What do you most want the other side to understand about why you do what you do?" The goal at this stage is mutual acknowledgment, not agreement.
+        </div>
+      </div>
+
+      <div class="practice-step">
+        <div class="practice-step-num">09</div>
+        <div class="practice-step-body">
+          <strong>Resolution.</strong> When both sides have been genuinely heard and have acknowledged each other's protective intentions, a shift often occurs — not to agreement, but to reduced charge. The polarization doesn't disappear; it becomes negotiable. Self can make a decision that neither side is actively sabotaging, because both sides have had their concerns acknowledged. That is the operational outcome.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="article-section">
+    <h2>Not agreement — <em>negotiable</em></h2>
+
+    <p>Depolarization doesn't ask the configurations to agree with each other. The configuration that has been protecting against exhaustion doesn't have to endorse the configuration that pushes output. What changes is that each side can acknowledge the other's protective intention without experiencing it as a threat.</p>
+
+    <p>When polarizations negotiate rather than override, Self can make actual decisions — decisions that don't get immediately undermined by the configuration that didn't win. That's the operational outcome: durable behavioral change that wasn't possible when the system was locked in mutual override.</p>
+
+    <p>Depolarization often unblocks task initiation and follow-through more reliably than productivity strategies alone, because it addresses the underlying configuration conflict rather than adding external scaffolding to a system that's working against itself.</p>
+
+    <div class="article-cta">
+      <div class="article-cta-label">Work with this in coaching</div>
+      <p>The Depolarization Protocol is most effective with a coach holding the space — maintaining Self-presence when one or both configurations are activated is harder alone. If oscillation is one of your stuck patterns, this is exactly the kind of work High Signal coaching addresses.</p>
+      <a class="cta-btn" href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener">Book a discovery call</a>
+    </div>
+
+    <div class="article-related">
+      <span class="article-related-label">Related</span>
+      <a href="firefighters-follow-through.html">Firefighters &amp; Follow-Through Erosion →</a>
+      <a href="unblending.html">Unblending Practice →</a>
+      <a href="ifs-primer.html">IFS Primer →</a>
+      <a href="managers-firefighters-exiles.html">Managers, Firefighters &amp; Exiles →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="hs-footer">
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+</body>
+</html>

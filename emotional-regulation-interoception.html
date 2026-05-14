@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emotional Regulation and Interoception | High Signal Coaching</title>
+  <meta name="description" content="Emotional regulation in ND systems isn't an underdeveloped skill — it's the downstream effect of how the nervous system actually receives and routes body signals.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:         #1C1914;
+      --dark2:        #252019;
+      --dark3:        #2e2820;
+      --amber:        #C8873A;
+      --amber-light:  #E4A85C;
+      --cream:        #F0E6D8;
+      --cream-muted:  #B8A898;
+      --cream-faint:  #7A6E64;
+      --serif:        'Cormorant Garamond', Georgia, serif;
+      --mono:         'DM Mono', monospace;
+      --rule:         #3a3228;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--serif);
+      line-height: 1.7;
+    }
+
+    /* ─── NAV ──────────────────────────────────────────── */
+    .hs-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      border-bottom: .5px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: var(--dark);
+      z-index: 100;
+    }
+    .hs-logo {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .hs-nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .hs-nav-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .hs-nav-links a:hover { color: var(--cream); }
+
+    /* ─── HERO ─────────────────────────────────────────── */
+    .primer-hero {
+      padding: 4.5rem 3rem 3.5rem;
+      border-bottom: .5px solid var(--rule);
+      max-width: 820px;
+    }
+    .primer-eyebrow {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .primer-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 50px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+    }
+    .primer-hero h1 em { font-style: italic; color: var(--amber-light); }
+    .primer-hero-sub {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+    .primer-meta {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: .5px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .primer-meta-item {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .primer-meta-item span { color: var(--cream-muted); }
+
+    /* ─── CROSS-LINK BANNER ─────────────────────────────── */
+    .cross-link-banner {
+      border-bottom: .5px solid var(--rule);
+      padding: 1rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .cross-link-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      flex-shrink: 0;
+    }
+    .cross-link-banner a {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .cross-link-banner a:hover { color: var(--amber-light); }
+
+    /* ─── MAIN LAYOUT ──────────────────────────────────── */
+    .primer-body {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ─── TOC ──────────────────────────────────────────── */
+    .primer-toc {
+      border-right: .5px solid var(--rule);
+      padding: 3rem 0;
+      position: sticky;
+      top: 64px;
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+    }
+    .toc-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      padding: 0 2rem 1.2rem;
+    }
+    .toc-link {
+      display: block;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .65rem 2rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      line-height: 1.5;
+    }
+    .toc-link:hover { color: var(--cream-muted); border-left-color: var(--rule); }
+    .toc-link.active { color: var(--amber); border-left-color: var(--amber); }
+    .toc-sub {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .4rem 2rem .4rem 2.8rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      opacity: .7;
+    }
+    .toc-sub:hover { color: var(--cream-faint); opacity: 1; }
+    .toc-divider {
+      border: none;
+      border-top: .5px solid var(--rule);
+      margin: 1rem 2rem;
+    }
+    .toc-related {
+      padding: 1rem 2rem 0;
+    }
+    .toc-related-label {
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .6rem;
+      opacity: .6;
+    }
+    .toc-related a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .3rem 0;
+      opacity: .8;
+    }
+    .toc-related a:hover { opacity: 1; }
+
+    /* ─── CONTENT AREA ─────────────────────────────────── */
+    .primer-content {
+      padding: 3rem 3rem 5rem 3.5rem;
+      max-width: 760px;
+    }
+
+    /* ─── SECTIONS ─────────────────────────────────────── */
+    .primer-section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .primer-section:last-child { border-bottom: none; }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .primer-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+    .primer-section h2 em { font-style: italic; color: var(--amber-light); }
+    .primer-section h3 {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-top: 2.2rem;
+      margin-bottom: .8rem;
+      line-height: 1.35;
+    }
+    .primer-section h3 em { font-style: italic; color: var(--amber-light); }
+    .primer-section p {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .primer-section p:last-child { margin-bottom: 0; }
+    .primer-section p strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── PULLQUOTE ─────────────────────────────────────── */
+    .pullquote {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      border-left: 2px solid var(--amber);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      line-height: 1.55;
+    }
+
+    /* ─── INFO BOX ──────────────────────────────────────── */
+    .info-box {
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      border-left: 3px solid var(--amber);
+      padding: 1.6rem 1.8rem;
+      margin: 1.8rem 0;
+    }
+    .info-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .info-body {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .info-body strong { font-weight: 500; color: var(--cream); }
+    .info-body p { margin-bottom: .7rem; }
+    .info-body p:last-child { margin-bottom: 0; }
+
+    /* ─── COACHING LIST ──────────────────────────────────── */
+    .coaching-list { margin: 1.8rem 0; }
+    .coaching-item {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      border-top: .5px solid var(--rule);
+    }
+    .coaching-item:last-child { border-bottom: .5px solid var(--rule); }
+    .coaching-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+      flex-shrink: 0;
+      margin-top: 8px;
+      opacity: .6;
+    }
+    .coaching-text {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .coaching-text strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── RELATED PAGE LINK ──────────────────────────────── */
+    .related-page {
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      padding: 1.6rem 1.8rem;
+      margin: 2.5rem 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      text-decoration: none;
+    }
+    .related-page:hover { background: var(--dark3); }
+    .related-page-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .4rem;
+    }
+    .related-page-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream);
+    }
+    .related-page-arrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    .hs-footer { border-top: .5px solid var(--rule); }
+    .hs-footer-top {
+      padding: 3rem 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-footer-name {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: .4rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hs-footer-tagline {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .hs-footer-contact a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-contact a:hover { color: var(--amber); }
+    .hs-footer-col-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .hs-footer-links a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-links a:hover { color: var(--cream); }
+    .hs-footer-disclaimer {
+      padding: 2rem 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-disclaimer-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .hs-disclaimer-text {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .03em;
+      color: var(--cream-faint);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 820px;
+    }
+    .hs-disclaimer-text em { font-style: normal; color: var(--cream-muted); }
+    .hs-footer-bottom {
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hs-footer-copy {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .hs-footer-sign {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-faint);
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 860px) {
+      .primer-body { grid-template-columns: 1fr; }
+      .primer-toc { display: none; }
+      .primer-content { padding: 2.5rem 1.5rem 4rem; }
+    }
+    @media (max-width: 680px) {
+      .hs-nav { padding: 1.2rem 1.5rem; }
+      .hs-nav-links { gap: 1.2rem; }
+      .hs-nav-links a { font-size: 9px; }
+      .primer-hero { padding: 3rem 1.5rem 2.5rem; }
+      .cross-link-banner { padding: 1rem 1.5rem; flex-wrap: wrap; }
+      .hs-footer-top { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.5rem; }
+      .hs-footer-disclaimer, .hs-footer-bottom { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+    <a href="nd-glossary.html">Neurodiversity Glossary</a>
+    <a href="ef-support-interventions.html">Executive Function Support</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ════════════════════════════════════════════════ -->
+<div class="primer-hero">
+  <div class="primer-eyebrow">Inner Terrain · IFS × Neurodivergence · ADHD · Autism</div>
+  <h1>Emotional regulation difficulty isn't a skills gap.<br>It's what happens when <em>the signal itself is different.</em></h1>
+  <p class="primer-hero-sub">Interoception — the body's internal sensing system — is the substrate on which emotional awareness is built. In ND systems, that substrate works differently. Before addressing regulation, you have to understand the channel.</p>
+  <div class="primer-meta">
+    <div class="primer-meta-item">Category — <span>Inner Terrain</span></div>
+    <div class="primer-meta-item">For — <span>ADHD · Autism · AuDHD</span></div>
+    <div class="primer-meta-item">Framework — <span>IFS · Polyvagal · Somatic IFS</span></div>
+  </div>
+</div>
+
+<!-- ══ CROSS-LINK ══════════════════════════════════════════ -->
+<div class="cross-link-banner">
+  <span class="cross-link-label">See also</span>
+  <a href="shame-self-judgment.html">Shame and Self-Judgment →</a>
+  <a href="burnout-collapse-rest.html">Burnout, Collapse &amp; Rest →</a>
+  <a href="prima-framework.html">PRIMA Framework →</a>
+</div>
+
+<!-- ══ BODY ════════════════════════════════════════════════ -->
+<div class="primer-body">
+
+  <!-- TOC -->
+  <nav class="primer-toc">
+    <div class="toc-label">Contents</div>
+    <a class="toc-link" href="#s1">What interoception is</a>
+    <a class="toc-link" href="#s2">Parts carrying this pattern</a>
+    <a class="toc-link" href="#s3">Burdens</a>
+    <a class="toc-link" href="#s4">System dynamics</a>
+    <a class="toc-link" href="#s5">Self-led expression</a>
+    <hr class="toc-divider">
+    <div class="toc-related">
+      <div class="toc-related-label">Related</div>
+      <a href="shame-self-judgment.html">Shame &amp; Self-Judgment →</a>
+      <a href="burnout-collapse-rest.html">Burnout &amp; Rest →</a>
+      <a href="prima-framework.html">PRIMA Framework →</a>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="primer-content">
+
+    <!-- 01 -->
+    <div class="primer-section" id="s1">
+      <div class="section-num">01 — The architecture</div>
+      <h2>Not a skills deficit — <em>an architectural difference</em></h2>
+
+      <p>Emotional regulation in ND systems is the downstream effect of how the nervous system receives, processes, and routes body signals. It is not primarily an underdeveloped emotional skill. The framing matters because it changes the entire target of intervention. Skills-gap framing points toward learning better techniques. Architectural framing points toward understanding the system that techniques would have to operate within.</p>
+
+      <p>Before a person can regulate an emotional state, three things need to be available: a legible signal from the body, enough clarity to identify a response, and regulatory tools the nervous system will actually accept. In many autistic and ADHD systems, one or more of these prerequisites is disrupted at the source — before any skill would have opportunity to function.</p>
+
+      <p>Interoception is the body's internal sensory system. It receives input from organs, muscles, fascia, and the autonomic nervous system, and it is the substrate on which emotional awareness is built. You cannot replace it with cognitive effort. A person can know intellectually that they are probably stressed — they can identify the contextual cues, apply the correct label — and still have no felt sense of the stress in their body that would allow them to respond to it directly. The cognitive knowledge and the interoceptive signal are not the same thing, and only one of them grounds an actual regulatory response.</p>
+
+      <h3>Two presentations — clinically opposite starting points</h3>
+
+      <p>The interoceptive difference in ND systems does not produce a single clinical picture. It produces two, and they require opposite initial approaches.</p>
+
+      <p>The first is the <strong>volume-too-low presentation</strong> — reduced awareness of body signals themselves (alexisomia) paired with difficulty naming emotional states because the input layer is insufficient (alexithymia). The signals are present but not reaching awareness at sufficient clarity or amplitude to produce usable information. The person may be genuinely unable to answer "what are you feeling?" — not because they are withholding, not because they are not reflective, but because the channel is not delivering a clear signal. Asking them to regulate an emotional state they cannot clearly sense is like asking someone to adjust a volume dial they cannot locate.</p>
+
+      <p>The second is the <strong>volume-too-high presentation</strong>: body signals arrive at high volume, more than the nervous system can sort and route into a coherent picture. This is not insensitivity — it is surplus. What looks like emotional dysregulation from outside is a system overwhelmed by too much information arriving faster than it can be processed. The person may be exquisitely sensitive to internal states and still appear to be dysregulated in exactly the same ways as someone with reduced access, because the problem is not input absence but input overload.</p>
+
+      <div class="info-box">
+        <div class="info-label">Two clinical pictures — two starting points</div>
+        <div class="info-body">
+          <p><strong>Volume-too-low presentation:</strong> the first clinical move is building interoceptive signal access — somatic awareness practices, body-based attention, graduated noticing. Adding more regulation techniques on top of an inaccessible channel does not help.</p>
+          <p><strong>Volume-too-high presentation:</strong> the first clinical move is signal-sorting capacity, not deepening access. The person does not need more signal — they need help distinguishing and routing the signal they already have. These require opposite starting points.</p>
+          <p>Clinical assessment determines which picture is active — and many ND systems contain both, at different times, depending on load, context, and relational conditions.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="primer-section" id="s2">
+      <div class="section-num">02 — Parts</div>
+      <h2>Which parts organize <em>around this difference</em></h2>
+
+      <p>In IFS terms, the interoceptive difference is not merely a hardware fact that parts work around. Parts develop specific configurations in response to the experience of having this kind of system — configurations that were protective and that, over time, shape the interoceptive landscape itself. Four appear most consistently in ND presentations.</p>
+
+      <h3>Scanning-and-bracing parts</h3>
+
+      <p>When a person has experienced repeated flooding — emotional states arriving without warning at high intensity — the system learns to stay prepared. Scanning-and-bracing parts maintain a state of hypervigilance directed specifically at the interoceptive system's own signals. They are watching for the internal cues that precede a flood, trying to catch it early and manage it before it arrives. These parts are not generically anxious; their vigilance has a precise object. The irony is that chronic bracing consumes regulatory capacity and increases baseline arousal — which makes the floods they are trying to prevent more likely.</p>
+
+      <h3>Disconnecting parts</h3>
+
+      <p>Disconnecting parts develop in response to an interoceptive channel that has been experienced as overwhelming or consistently unreliable, or in early environments where emotional signals brought negative consequences. The disconnection was protective: if the body sends distress signals and those signals result in punishment, correction, or dismissal, turning down internal attention is adaptive. Over time, a system trained to stop listening to itself becomes genuinely harder to hear — the disconnection that began as a protective strategy has shaped the architecture it was responding to.</p>
+
+      <h3>Masking parts</h3>
+
+      <p>Masking parts carry an enormous metabolic cost that is rarely recognized for what it is. Presenting as more emotionally legible and smoothly regulated than the internal state actually warrants requires simultaneously tracking the internal state, translating it into acceptable external output, and suppressing actual regulatory responses — all in sensorially demanding social environments where the regulation load is already elevated. These parts did not develop from self-deception or social calculation. They formed when authentic regulatory expression was consistently unwelcome, misread, or penalized. The masking is not performance; it is the adaptation of a system that learned its actual regulatory needs were not going to be met where it was.</p>
+
+      <h3>Hyper-empathy parts</h3>
+
+      <p>In some autistic systems, others' emotional states are not only perceived — they are absorbed as body sensations. The person receives someone else's distress as an internal physical event: a change in breath quality, a pressure in the chest, a shift in muscle tension. Hyper-empathy parts manage an unusually permeable boundary between self-signal and other-signal, and in doing so they may genuinely be unable to determine whether a given interoceptive experience originated internally or was absorbed from the relational field. The question "is this mine?" is not rhetorical. In social environments — precisely the environments where regulation is most demanded — these parts are receiving additional interoceptive input from every person present.</p>
+    </div>
+
+    <!-- 03 -->
+    <div class="primer-section" id="s3">
+      <div class="section-num">03 — Burdens</div>
+      <h2>The shame layer is extensive — <em>and it operates on multiple levels</em></h2>
+
+      <h3>Shame about not knowing what they feel</h3>
+
+      <p>Alexithymia has been received as immaturity or evasiveness across years of relational and professional contexts. Partners, clinicians, employers — anyone who asked "how do you feel about that?" and received a blank or approximate answer — interpreted the gap as a choice rather than an architecture. Parts carry this shame while simultaneously trying to hide the gap and compensate for it, generating plausible emotional descriptions even when those descriptions don't correspond to anything legible in the body. The compensation can look like fluency and produce accurate-sounding language while the person has no actual felt access to the state being described. The shame accumulates at the gap, and at the compensation, and at the fact of having to compensate.</p>
+
+      <h3>Shame about emotional flooding and intensity</h3>
+
+      <p>The person who floods — who moves from apparently calm to high-intensity distress with no visible build-up from outside — has received years of messages that their responses are disproportionate, excessive, or dramatic. From outside, the absence of a visible build-up makes the flood look irrational. From inside, the build-up was happening — it was happening in an interoceptive channel that was not producing adequate external signal. When the state finally crossed threshold and broke through, it broke through completely. The flooding is a direct consequence of the interoceptive architecture; it is not evidence of characterological volatility. But the shame it has accumulated treats it as exactly that. Shame drives suppression strategies that reduce visible flooding while increasing internal pressure — which deepens the very condition it was responding to.</p>
+
+      <h3>Shame about visible regulation behavior</h3>
+
+      <p>Stimming, pacing, rocking, leaving environments abruptly, needing specific sensory conditions others don't require — each of these is a legitimate regulatory response that has frequently been treated as socially unacceptable. Parts that carry shame about these behaviors suppress them in public settings, which removes the most effective regulatory tools from exactly the environments where regulation is most intensely demanded. The suppression is costly in a way that is hard to explain to the people who required it: these behaviors are not habits or preferences. They are the system's self-regulation in visible form. Requiring their suppression is requiring the person to regulate without their primary regulatory resources.</p>
+
+      <div class="pullquote">The gap between "I should know what I feel" and "I don't know what I feel" gets filled with shame rather than curiosity. That shame is itself a regulatory driver — an ANS event that adds its own load to an already taxed system.</div>
+    </div>
+
+    <!-- 04 -->
+    <div class="primer-section" id="s4">
+      <div class="section-num">04 — Dynamics</div>
+      <h2>The self-reinforcing chains — <em>and why interventions fail at the wrong link</em></h2>
+
+      <h3>The alexisomia-alexithymia-flooding loop</h3>
+
+      <p>In the short term: reduced interoceptive signal means emotional states accumulate without producing adequate regulatory cues. There is no early warning. When signal crosses threshold, it arrives as flooding — high-intensity activation without apparent build-up from outside, because the build-up was happening below the signal's legibility floor. Flooding produces behavioral and somatic responses before cognitive processing is available. Shame activates immediately after. Shame drives increased suppression of internal signals — the system learns to push down the interoceptive input that precedes flooding in order to avoid the flood. Suppression deepens the alexisomia it was designed to manage.</p>
+
+      <p>In the medium term: the system develops progressively less interoceptive access and progressively higher thresholds before signal breaks through, meaning floods become rarer and more intense. Each flood arrives with less warning than the last. The clinical implication is precise: intervening at the shame narrative, the behavioral response, or the labeling skill alone will not interrupt this chain if the interoceptive substrate is not addressed. The loop generates from below the level where those interventions operate.</p>
+
+      <h3>Shame as ANS event</h3>
+
+      <p>Shame has a specific autonomic signature: sympathetic activation — the flush, the urge to move or collapse — followed by dorsal vagal shutdown — freeze, smallness, the wish to disappear. This means shame about emotional dysregulation is itself a dysregulating event. Not metaphorically. Physiologically. The person who experiences flooding, then feels shame, and then attempts to manage the shame is running a second regulatory demand on top of the first. The nervous system has not settled from the flood before it is now inside the shame response.</p>
+
+      <p>Shame cannot be metabolized from inside the ANS state it produces. The reflective and compassionate capacities needed to process shame require ventral vagal access — a degree of nervous system settling — that the shame response has withdrawn. This is why interventions aimed at shame content (cognitive reframing, self-compassion instruction, narrative correction) reliably fail when delivered inside an active shame episode. The information is accurate and unavailable at the same time. Addressing ANS state precedes addressing the shame experience directly. Elongated exhale breathing targets ventral vagal access and is available as a first-order move. Shame cannot be met with reason until the body has somewhere to land.</p>
+
+      <h3>The terror-shame-rage triad</h3>
+
+      <p>In many ND systems with significant histories of repeated correction, social rejection, or unrecognized developmental difficulty, dysregulation presents as a tight, polarized cluster. Terror is the exile's core experience: a body-level certainty of danger, not fear of a specific outcome but an organismic sense of unsafety lodged through chronic exposure. Shame is the burden attached: "something is fundamentally wrong with me for needing what I need, for being the kind of person this keeps happening to." Rage is the firefighter response to shame's unbearability — when the exile's experience becomes intolerable, the system mobilizes.</p>
+
+      <p>These three map onto polyvagal architecture: terror is dorsal vagal freeze; shame activates sympathetic in collapse mode; rage is sympathetic fight. Autistic meltdown — rage-dominant at the surface — and autistic shutdown — terror-dominant at the surface — frequently involve this full triad simultaneously beneath the visible presentation. The meltdown's rage is running shame beneath it; the shame is running terror beneath that. The shutdown's stillness contains compressed rage and shame in layers.</p>
+
+      <p>Sequencing matters here: terror before shame, shame before rage. Working with the firefighter expression — the anger, the meltdown — without attending to the shame means working with a protector whose exile is still unprotected. It will not step back. Working with the shame without the terror beneath it means asking an exile to expose itself before it is safe to do so. The triad is not three separate presentations to choose from; it is one system that requires being held as a system.</p>
+
+      <div class="info-box">
+        <div class="info-label">The hyper-empathy feedback loop</div>
+        <div class="info-body">
+          <p>In social environments — which are precisely where regulation is most demanded — the total interoceptive volume increases because of the relational contact itself. The other person's emotional state is being registered as additional input. In a group setting, multiple people's states are being registered simultaneously.</p>
+          <p>The person who finds connection exhausting rather than replenishing is often receiving more input than the connection is generating in the way of co-regulation. They are not failing to be soothed by contact. They are processing more signal than the contact is resolving. Parts that carry the hyper-empathy configuration often also carry the burden of not being able to explain why they need more recovery time after social engagement — a need that appears, from outside, to contradict the evidence that the interaction went well.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="primer-section" id="s5">
+      <div class="section-num">05 — Self-led</div>
+      <h2>What Self-led ND regulation actually looks like</h2>
+
+      <p>Self-led regulation in ND systems does not look like smooth, invisible emotional management. It does not look like the neurotypical regulatory baseline, because it is not organized by the same interoceptive architecture. What it looks like is accurate self-knowledge about an unusual system, paired with the capacity to act from that knowledge rather than from shame about it.</p>
+
+      <p>The question "is this mine?" — distinguishing one's own interoceptive signal from absorbed relational signal — becomes a workable clinical inquiry rather than a source of permanent confusion. Not knowing is tolerable. Approaching not-knowing with curiosity rather than alarm is a form of self-contact, not a failure of self-awareness. A Self-led system can hold the uncertainty of an ambiguous interoceptive signal without needing to resolve it immediately into a verdict or a narrative.</p>
+
+      <p>Regulatory moves are chosen rather than simply happening. Stimming, movement, withdrawal from sensory load, breath work — in a Self-led system, these are available as tools rather than involuntary responses that arrive with their own shame layer attached. The Self-led person may stim more visibly than a shame-organized system, because the stimming is no longer being suppressed. What changes is not the behavior but the relationship to it. The behavior is recognized as regulation; the self doing the recognizing is not fused with the shame that previously organized around it.</p>
+
+      <p>The PRIMA sequence — Pause, Regulate, Identify, Meaning, Allow — functions differently in a Self-led system. The Pause is accessible because parts that would normally preempt it have been witnessed enough to step back. The Regulate step is trusted as the prerequisite it is, rather than treated as a detour from the "real" work of identifying the emotion. The Identify step is approached with tolerance for not-knowing — the person can sit with "I don't have clear access to this yet" without that being another data point for shame.</p>
+
+      <p>Flooding, when it occurs, is understood as a physiological event rather than as evidence of inadequacy. The flood is an event with causes, not a verdict about character. The shame-suppression chain that would normally follow is not inevitable — it was a learned sequence, not a structural necessity. When the parts that drove suppression have been witnessed and understood, the chain loses its automatic quality. The flood can happen and be met with curiosity: what was building? What crossed threshold? What does the system need now?</p>
+
+      <div class="coaching-list">
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text">Self-led ND regulation looks ND — it may include visible stimming, abrupt exits, longer recovery time after activation, non-standard emotional timing, or extended processing before an articulate response is available. The criterion is not "regulated in the way neurotypical systems regulate" but "operating from accurate self-knowledge, with available tools, without shame as the primary driver."</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text">The volume-too-low and volume-too-high distinction is not a contradiction to resolve — it is a genuine clinical distinction to hold. Assessment determines which direction applies; both directions are real, and both can be present in the same system at different times or in different contexts. Calibrating the starting point to the actual picture is the work before the work.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text">Sensory setup is the first regulatory act — not a comfort preference and not optional. The client who cannot settle their sensory environment is working with degraded interoceptive signal throughout the session, the meeting, the relationship. This is a clinical variable, not a nicety. Addressing it first is not accommodation in the watered-down sense; it is creating the conditions under which the work can reach the level where it needs to operate.</div>
+        </div>
+      </div>
+
+      <a class="related-page" href="prima-framework.html">
+        <div>
+          <div class="related-page-label">Practice</div>
+          <div class="related-page-title">PRIMA Framework — a regulation sequence calibrated to ND systems</div>
+        </div>
+        <span class="related-page-arrow">→</span>
+      </a>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════ -->
+<footer class="hs-footer">
+  <div class="hs-footer-top">
+    <div>
+      <div class="hs-footer-name">High Signal Coaching</div>
+      <div class="hs-footer-tagline">IFS-informed executive function coaching<br>ADHD/AuDHD men in tech</div>
+      <div class="hs-footer-contact">
+        <a href="mailto:matt@highsignalcoaching.com">matt@highsignalcoaching.com</a>
+        <a href="https://www.linkedin.com/in/matthew-monroe-simpson-73a0381b4" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Explore</div>
+      <div class="hs-footer-links">
+        <a href="ifs-primer.html">IFS Primer</a>
+        <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+        <a href="masking-unmasking.html">Masking and Unmasking</a>
+        <a href="burnout-collapse-rest.html">Burnout, Collapse &amp; Rest</a>
+        <a href="rejection-sensitive-dysphoria.html">Rejection-Sensitive Dysphoria</a>
+        <a href="emotional-regulation-interoception.html">Emotional Regulation &amp; Interoception</a>
+        <a href="nd-glossary.html">ND Glossary</a>
+        <a href="ef-support-interventions.html">EF Supports</a>
+        <a href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener">Book a discovery call</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Legal</div>
+      <div class="hs-footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Coaching vs. Therapy Disclaimer</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+  <div class="hs-footer-disclaimer">
+    <div class="hs-disclaimer-label">Disclaimer</div>
+    <div class="hs-disclaimer-text">
+      High Signal Coaching is a professional coaching service, not therapy or clinical treatment.
+      Framework content draws on Sweezy, Bergenfield, Neff, Kemp &amp; Mitchelson, and Dana; references do not imply clinical endorsement.
+      If you are experiencing a mental health emergency, please contact a licensed mental health professional or crisis line.
+      <em>Licensed mental health services available separately through Matthew Monroe Simpson Counseling.</em>
+    </div>
+  </div>
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+<script>
+  // TOC scroll-spy
+  (function () {
+    const sections = document.querySelectorAll('.primer-section[id]');
+    const tocLinks = document.querySelectorAll('.toc-link');
+    if (!sections.length || !tocLinks.length) return;
+
+    const sectionIds = Array.from(sections).map(s => s.id);
+
+    function getActiveId() {
+      const scrollY = window.scrollY;
+      const offset = 100;
+      let activeId = sectionIds[0];
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top + scrollY - offset <= scrollY) {
+          activeId = id;
+        }
+      }
+      return activeId;
+    }
+
+    function update() {
+      const activeId = getActiveId();
+      tocLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === '#' + activeId) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>
+
+</body>
+</html>

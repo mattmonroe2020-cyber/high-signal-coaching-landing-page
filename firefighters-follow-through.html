@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firefighters and Follow-Through Erosion | High Signal Coaching</title>
+  <meta name="description" content="Follow-through erosion in ND systems is not a motivational failure — it's the convergence of two architecturally distinct phenomena: executive function deficit and IFS firefighter activation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:         #1C1914;
+      --dark2:        #252019;
+      --dark3:        #2e2820;
+      --amber:        #C8873A;
+      --amber-light:  #E4A85C;
+      --cream:        #F0E6D8;
+      --cream-muted:  #B8A898;
+      --cream-faint:  #7A6E64;
+      --serif:        'Cormorant Garamond', Georgia, serif;
+      --mono:         'DM Mono', monospace;
+      --rule:         #3a3228;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--serif);
+      line-height: 1.7;
+    }
+
+    /* ─── NAV ──────────────────────────────────────────── */
+    .hs-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      border-bottom: .5px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: var(--dark);
+      z-index: 100;
+    }
+    .hs-logo {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .hs-nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .hs-nav-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .hs-nav-links a:hover { color: var(--cream); }
+
+    /* ─── HERO ─────────────────────────────────────────── */
+    .primer-hero {
+      padding: 4.5rem 3rem 3.5rem;
+      border-bottom: .5px solid var(--rule);
+      max-width: 820px;
+    }
+    .primer-eyebrow {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .primer-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 50px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+    }
+    .primer-hero h1 em { font-style: italic; color: var(--amber-light); }
+    .primer-hero-sub {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+    .primer-meta {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: .5px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .primer-meta-item {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .primer-meta-item span { color: var(--cream-muted); }
+
+    /* ─── CROSS-LINK BANNER ─────────────────────────────── */
+    .cross-link-banner {
+      border-bottom: .5px solid var(--rule);
+      padding: 1rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .cross-link-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      flex-shrink: 0;
+    }
+    .cross-link-banner a {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .cross-link-banner a:hover { color: var(--amber-light); }
+
+    /* ─── MAIN LAYOUT ──────────────────────────────────── */
+    .primer-body {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ─── TOC ──────────────────────────────────────────── */
+    .primer-toc {
+      border-right: .5px solid var(--rule);
+      padding: 3rem 0;
+      position: sticky;
+      top: 64px;
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+    }
+    .toc-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      padding: 0 2rem 1.2rem;
+    }
+    .toc-link {
+      display: block;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .65rem 2rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      line-height: 1.5;
+    }
+    .toc-link:hover { color: var(--cream-muted); border-left-color: var(--rule); }
+    .toc-link.active { color: var(--amber); border-left-color: var(--amber); }
+    .toc-divider {
+      border: none;
+      border-top: .5px solid var(--rule);
+      margin: 1rem 2rem;
+    }
+    .toc-related {
+      padding: 1rem 2rem 0;
+    }
+    .toc-related-label {
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .6rem;
+      opacity: .6;
+    }
+    .toc-related a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .3rem 0;
+      opacity: .8;
+    }
+    .toc-related a:hover { opacity: 1; }
+
+    /* ─── CONTENT AREA ─────────────────────────────────── */
+    .primer-content {
+      padding: 3rem 3rem 5rem 3.5rem;
+      max-width: 760px;
+    }
+
+    /* ─── SECTIONS ─────────────────────────────────────── */
+    .primer-section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .primer-section:last-child { border-bottom: none; }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .primer-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+    .primer-section h2 em { font-style: italic; color: var(--amber-light); }
+    .primer-section h3 {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-top: 2.2rem;
+      margin-bottom: .8rem;
+      line-height: 1.35;
+    }
+    .primer-section h3 em { font-style: italic; color: var(--amber-light); }
+    .primer-section p {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .primer-section p:last-child { margin-bottom: 0; }
+    .primer-section p strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── PULLQUOTE ─────────────────────────────────────── */
+    .pullquote {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      border-left: 2px solid var(--amber);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      line-height: 1.55;
+    }
+
+    /* ─── INFO BOX ──────────────────────────────────────── */
+    .info-box {
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      border-left: 3px solid var(--amber);
+      padding: 1.6rem 1.8rem;
+      margin: 1.8rem 0;
+    }
+    .info-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .info-body {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .info-body strong { font-weight: 500; color: var(--cream); }
+    .info-body p { margin-bottom: .7rem; }
+    .info-body p:last-child { margin-bottom: 0; }
+
+    /* ─── COACHING LIST ──────────────────────────────────── */
+    .coaching-list { margin: 1.8rem 0; }
+    .coaching-item {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      border-top: .5px solid var(--rule);
+    }
+    .coaching-item:last-child { border-bottom: .5px solid var(--rule); }
+    .coaching-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+      flex-shrink: 0;
+      margin-top: 8px;
+      opacity: .6;
+    }
+    .coaching-text {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .coaching-text strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── RELATED PAGE LINK ──────────────────────────────── */
+    .related-page {
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      padding: 1.6rem 1.8rem;
+      margin: 2.5rem 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      text-decoration: none;
+    }
+    .related-page:hover { background: var(--dark3); }
+    .related-page-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .4rem;
+    }
+    .related-page-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream);
+    }
+    .related-page-arrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    .hs-footer { border-top: .5px solid var(--rule); }
+    .hs-footer-top {
+      padding: 3rem 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-footer-name {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: .4rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hs-footer-tagline {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .hs-footer-contact a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-contact a:hover { color: var(--amber); }
+    .hs-footer-col-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .hs-footer-links a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-links a:hover { color: var(--cream); }
+    .hs-footer-disclaimer {
+      padding: 2rem 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-disclaimer-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .hs-disclaimer-text {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .03em;
+      color: var(--cream-faint);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 820px;
+    }
+    .hs-disclaimer-text em { font-style: normal; color: var(--cream-muted); }
+    .hs-footer-bottom {
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hs-footer-copy {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .hs-footer-sign {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-faint);
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 860px) {
+      .primer-body { grid-template-columns: 1fr; }
+      .primer-toc { display: none; }
+      .primer-content { padding: 2.5rem 1.5rem 4rem; }
+    }
+    @media (max-width: 680px) {
+      .hs-nav { padding: 1.2rem 1.5rem; }
+      .hs-nav-links { gap: 1.2rem; }
+      .hs-nav-links a { font-size: 9px; }
+      .primer-hero { padding: 3rem 1.5rem 2.5rem; }
+      .cross-link-banner { padding: 1rem 1.5rem; flex-wrap: wrap; }
+      .hs-footer-top { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.5rem; }
+      .hs-footer-disclaimer, .hs-footer-bottom { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+    <a href="nd-glossary.html">Neurodiversity Glossary</a>
+    <a href="ef-support-interventions.html">Executive Function Support</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ════════════════════════════════════════════════ -->
+<div class="primer-hero">
+  <div class="primer-eyebrow">Inner Terrain · IFS × Neurodivergence · ADHD · Autism</div>
+  <h1>You knew what needed to happen.<br>You meant to do it.<br><em>You don't know what happened.</em></h1>
+  <p class="primer-hero-sub">Follow-through erosion in ND systems requires holding two explanations at once: the neurological architecture of EF deficit, and the protective logic of firefighter activation. Both are real. Conflating them produces interventions that miss.</p>
+  <div class="primer-meta">
+    <div class="primer-meta-item">Category — <span>Inner Terrain</span></div>
+    <div class="primer-meta-item">For — <span>ADHD · Autism · AuDHD</span></div>
+    <div class="primer-meta-item">Framework — <span>IFS · Barkley · Schwartz</span></div>
+  </div>
+</div>
+
+<!-- ══ CROSS-LINK ══════════════════════════════════════════ -->
+<div class="cross-link-banner">
+  <span class="cross-link-label">See also</span>
+  <a href="energy-resource-economy.html">Energy &amp; the Resource Economy →</a>
+  <a href="shame-self-judgment.html">Shame and Self-Judgment →</a>
+  <a href="depolarization-protocol.html">Depolarization Protocol →</a>
+</div>
+
+<!-- ══ BODY ════════════════════════════════════════════════ -->
+<div class="primer-body">
+
+  <!-- TOC -->
+  <nav class="primer-toc">
+    <div class="toc-label">Contents</div>
+    <a class="toc-link" href="#s1">Two mechanisms, one behavior</a>
+    <a class="toc-link" href="#s2">Parts</a>
+    <a class="toc-link" href="#s3">Burdens</a>
+    <a class="toc-link" href="#s4">System dynamics</a>
+    <a class="toc-link" href="#s5">Self-led expression</a>
+    <hr class="toc-divider">
+    <div class="toc-related">
+      <div class="toc-related-label">Related</div>
+      <a href="shame-self-judgment.html">Shame &amp; Self-Judgment →</a>
+      <a href="depolarization-protocol.html">Depolarization Protocol →</a>
+      <a href="energy-resource-economy.html">Energy Economy →</a>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="primer-content">
+
+    <!-- 01 -->
+    <div class="primer-section" id="s1">
+      <div class="section-num">01 — The framework</div>
+      <h2>EF deficit and firefighter activation — <em>both active, both real, different interventions</em></h2>
+
+      <p>This framework holds two architecturally distinct explanations. First: Barkley's EF model describes behavioral-structural contraction in ND systems — an inability to sustain hierarchically organized action sequences toward long-term goals that is structural, not motivational. The future has less pull. Competing stimuli override deferred intentions. Long chains of interdependent actions are genuinely harder to maintain. This is architecture, not character.</p>
+
+      <p>Second: IFS describes firefighters — parts that activate reactively when an exile is threatened with activation and threatens to flood the system. Firefighters move fast, prioritize immediate relief over consequences, and are running an emergency. In ND systems, accumulated shame around follow-through failures has generated exiles with highly sensitive responses to any context resembling previous failure — meaning firefighters are readily activated by exactly the circumstances where follow-through is most needed.</p>
+
+      <p>Both are true. In most ND clients both are active simultaneously. Understanding which is primary in a given moment is the clinical work.</p>
+
+      <div class="info-box">
+        <div class="info-label">The clinical signal</div>
+        <div class="info-body">
+          <p>If performance improves meaningfully when the client is calm, stakes are low, and the work carries no shame-relevant history — and collapses specifically when evaluation is imminent, the work has visible relational stakes, or the task resembles a previous significant failure — the primary driver is likely firefighter activation. If performance inconsistency is more random across contexts, EF-architectural is more likely. Most presentations are mixed.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="primer-section" id="s2">
+      <div class="section-num">02 — Parts</div>
+      <h2>The configurations that organize <em>around follow-through</em></h2>
+
+      <h3>Override manager configurations</h3>
+      <p>Attempt to compensate for EF deficit through sustained effort and self-pressure, operating on the belief that sufficient internal force will produce the behavioral output the architecture struggles to generate. In the short run they sometimes work: deadline-driven completion, last-minute hyperfocus. In the medium run they deplete the SR resource pool and set up the collapse they were designed to prevent.</p>
+
+      <h3>Avoidance manager configurations</h3>
+      <p>Better not to try than to try and confirm the belief. When a task has the emotional signature of previous failure — similar evaluative stakes, similar relational exposure — manager-level avoidance steps in before the exile can reach threshold. The client procrastinates, fragments the task into endless sub-tasks, prepares extensively without executing. Protection logic: prevent the conditions under which the exile activates.</p>
+
+      <h3>Counterwill firefighter configurations</h3>
+      <p>Produce reflexive resistance to internally-sourced demand that feels externally imposed. When override managers escalate self-pressure, counterwill firefighters activate in response to the pressure rather than the task. The client isn't resisting the work — they're resisting the internal coercion. The distinction matters because every escalation of override pressure recruits a stronger counterwill response.</p>
+
+      <h3>Shutdown and override-collapse configurations</h3>
+      <p>Appear at the transition point between override attempt and exhaustion. When the override managers have pushed past the SR pool's actual capacity and the exile can no longer be contained, the system collapses: cognitive flatness, inability to initiate even tasks the client normally enjoys. This is a regulatory system completing an emergency response after reserves are depleted.</p>
+
+      <h3>Linchpin-exile-organized configurations</h3>
+      <p>In some clients, the avoidance architecture is organized around a single exile whose specific wound drives the entire pattern. Not diffuse avoidance, but narrowly organized around a specific type of evaluative context: public deliverables, work seen by a particular person, tasks resembling a specific earlier failure. These don't resolve with general protector work. The signature is specificity — the collapse is patterned, not random.</p>
+    </div>
+
+    <!-- 03 -->
+    <div class="primer-section" id="s3">
+      <div class="section-num">03 — Burdens</div>
+      <h2>What the exiles carry — <em>and where it accumulated</em></h2>
+
+      <h3>Shame formed at EF failure misattributed to character</h3>
+      <p>When EF deficits produce behavioral failure and no explanatory frame is available, the failure is attributed to character. "I can't follow through because I'm unreliable." "I forget because I don't care." These are exile beliefs, not accurate self-knowledge. In adults with late diagnoses, these beliefs have accumulated across years or decades in educational, professional, and relational contexts. The exile carries not one confirmed failure but a library of them, all interpreted through the same moral lens.</p>
+
+      <h3>Grief about what was lost</h3>
+      <p>Shame and grief are different. The shame exile carries a belief about the self: "I am defective." The grief parts carry an account of what that defectiveness cost: projects started and abandoned, relationships eroded by unreliability, the career that might have been. Grief often surfaces after shame begins to reduce — when the IFS reframe lands enough that the shame is metabolizable, it becomes available. It is not a sign of failed unburdening. It is the next layer, working as designed.</p>
+
+      <div class="pullquote">The firefighter's emergency is not about the task. It's about the exile the task is about to confirm.</div>
+    </div>
+
+    <!-- 04 -->
+    <div class="primer-section" id="s4">
+      <div class="section-num">04 — Dynamics</div>
+      <h2>The self-sealing patterns — <em>why standard interventions intensify the cycle</em></h2>
+
+      <h3>The shame-impulsivity loop</h3>
+      <p>Follow-through failure occurs — EF-architectural, firefighter-driven, or both. The failure is experienced as confirming the exile's core belief. Shame activates the exile. The exile threatens to flood the system. Firefighters activate — producing impulsive behavior: scrolling, binge eating, substances, sexual acting out, any rapid-relief mechanism available. The firefighter behavior becomes an additional source of shame. Intensified shame re-activates the exile; the cycle accelerates.</p>
+      <p>The loop is self-sealing: override manager effort depletes the SR pool and makes exile breakthrough more likely; shame-as-motivation accelerates the spiral; avoidance confirms the belief and defers rather than resolves activation. The only route out is Self-energy — enough calm, curiosity, and compassionate presence toward the activated parts that the exile can be approached rather than managed.</p>
+
+      <h3>EF architecture vs. firefighter behavior: the clinical distinction</h3>
+      <p>Architectural impulsivity is Barkley's inhibitory insufficiency: the capacity to defer immediate action while evaluating alternatives is structurally reduced. The distraction is environmentally driven. This is not reducible to parts work. Firefighter impulsivity is a part with high agency producing distraction or avoidance in response to exile threat. The firefighter has a reason. Understanding what it's protecting — what the exile carries and fears — is the clinical work. A behavioral scaffold outcompetes the firefighter briefly; it cannot convince the firefighter that the exile is safe now.</p>
+
+      <h3>The override-counterwill oscillation</h3>
+      <p>Override managers escalate internal pressure. Counterwill firefighters respond to the pressure itself — not to the task. Result: intense internal push followed by compulsive pull toward anything else, which the override manager attacks with shame, which recruits the exile, which intensifies both. The follow-through signature is specific: high completion rates for externally-structured, other-dependent, short-horizon tasks; low completion rates for internally-motivated, self-directed, long-horizon tasks. "The client who only works with a deadline" — misread as caring more about others than themselves; accurate read: counterwill firefighter responds differently to external demand than to internal motivation.</p>
+    </div>
+
+    <!-- 05 -->
+    <div class="primer-section" id="s5">
+      <div class="section-num">05 — Self-led</div>
+      <h2>A different relationship to the struggle — <em>not the absence of it</em></h2>
+
+      <p>Self-led expression in follow-through erosion doesn't look like a person who no longer struggles to complete tasks. It looks like a person whose relationship to the struggle has genuinely changed.</p>
+
+      <p><strong>A different aftermath.</strong> Without Self-leadership, failure activates shame, which activates the protective configuration, which either escalates override or produces the shame-impulsivity loop. With Self-leadership, failure is information: this task needed something I didn't have available. Was this EF-architectural — the structure didn't work with how this system runs — or was something activated that made starting unsafe? The aftermath is inquiry rather than verdict.</p>
+
+      <p><strong>A different relationship to firefighters.</strong> When counterwill activates, the Self-led response is neither override nor capitulation. It is a genuine question: what is this resistance protecting against? When Self can hold counterwill with curiosity rather than threat, the counterwill often has more to say than its initial "no." That information is useful. It usually points toward the exile whose activation the counterwill has been preventing.</p>
+
+      <p><strong>Scaffolding held differently.</strong> Without Self-leadership, scaffolding is often wielded by override managers against the self: "I'm putting this reminder because otherwise I know I'll fail." With Self-leadership, the scaffold is calibrated support for an architecture with specific characteristics — not a punishment, not evidence of inadequacy. The EF system needs external supports not because the person is deficient but because internalization is architecturally incomplete. That's a neutral fact about this system.</p>
+
+      <div class="coaching-list">
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>The diagnostic question in session:</strong> context-sensitivity — does performance collapse in high-stakes evaluative contexts or vary randomly? — and the internal experience description — confusion vs. directed avoidance — are the primary signals. Both EF-architectural and firefighter substrates are usually active simultaneously; the clinical task is assessing relative weight.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>The most common sequencing error:</strong> treating follow-through failure as purely behavioral (scaffolding-only) produces improvement that collapses under emotional loading. Treating it as purely parts-based produces emotional improvement with limited behavioral change. Both layers require concurrent attention.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>When scaffolding stalls</strong> and a client shows genuine comprehension but still collapses in specific high-stakes contexts: the linchpin question becomes primary — is there a specific earlier event being reactivated by this type of task? The pattern is specific, not general. The avoidance has a signature.</div>
+        </div>
+      </div>
+
+      <a class="related-page" href="depolarization-protocol.html">
+        <div>
+          <div class="related-page-label">Practice</div>
+          <div class="related-page-title">Depolarization Protocol — when two parts are working against each other</div>
+        </div>
+        <span class="related-page-arrow">→</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════ -->
+<footer class="hs-footer">
+  <div class="hs-footer-top">
+    <div>
+      <div class="hs-footer-name">High Signal Coaching</div>
+      <div class="hs-footer-tagline">IFS-informed executive function coaching<br>ADHD/AuDHD men in tech</div>
+      <div class="hs-footer-contact">
+        <a href="mailto:matt@highsignalcoaching.com">matt@highsignalcoaching.com</a>
+        <a href="https://www.linkedin.com/in/matthew-monroe-simpson-73a0381b4" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Explore</div>
+      <div class="hs-footer-links">
+        <a href="ifs-primer.html">IFS Primer</a>
+        <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+        <a href="masking-unmasking.html">Masking and Unmasking</a>
+        <a href="burnout-collapse-rest.html">Burnout, Collapse &amp; Rest</a>
+        <a href="rejection-sensitive-dysphoria.html">Rejection-Sensitive Dysphoria</a>
+        <a href="nd-glossary.html">ND Glossary</a>
+        <a href="ef-support-interventions.html">EF Supports</a>
+        <a href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener">Book a discovery call</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Legal</div>
+      <div class="hs-footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Coaching vs. Therapy Disclaimer</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+  <div class="hs-footer-disclaimer">
+    <div class="hs-disclaimer-label">Disclaimer</div>
+    <div class="hs-disclaimer-text">
+      High Signal Coaching is a professional coaching service, not therapy or clinical treatment.
+      Framework content draws on Barkley, Schwartz, Sweezy, and IFS Institute materials; references do not imply clinical endorsement.
+      If you are experiencing a mental health emergency, please contact a licensed mental health professional or crisis line.
+      <em>Licensed mental health services available separately through Matthew Monroe Simpson Counseling.</em>
+    </div>
+  </div>
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+<script>
+  // Scroll-spy TOC
+  const sections = document.querySelectorAll('.primer-section[id]');
+  const tocLinks = document.querySelectorAll('.toc-link');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, {
+    rootMargin: '-10% 0px -70% 0px',
+    threshold: 0
+  });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>

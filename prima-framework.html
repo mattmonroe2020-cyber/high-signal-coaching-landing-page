@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRIMA Framework | High Signal Coaching</title>
+  <meta name="description" content="A five-step emotion regulation sequence calibrated to the ND nervous system — beginning at the body rather than the cognitive-labeling layer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:        #1C1914;
+      --dark2:       #252019;
+      --amber:       #C8873A;
+      --amber-light: #E4A85C;
+      --cream:       #F0E6D8;
+      --cream-muted: #B8A898;
+      --cream-faint: #7A6E64;
+      --serif:       'Cormorant Garamond', Georgia, serif;
+      --mono:        'DM Mono', monospace;
+      --rule:        #3a3228;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--serif);
+      line-height: 1.7;
+    }
+
+    /* ─── NAV ──────────────────────────────────────── */
+    .hs-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      border-bottom: .5px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: var(--dark);
+      z-index: 100;
+    }
+    .hs-logo {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .hs-nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .hs-nav-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .hs-nav-links a:hover { color: var(--cream); }
+
+    /* ─── ARTICLE HERO ─────────────────────────────── */
+    .article-hero {
+      padding: 4.5rem 3rem 3.5rem;
+      border-bottom: .5px solid var(--rule);
+      max-width: 760px;
+    }
+    .article-eyebrow {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .article-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4.5vw, 46px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+    }
+    .article-hero h1 em { font-style: italic; color: var(--amber-light); }
+    .article-hero-sub {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+      max-width: 580px;
+      margin-bottom: 2rem;
+    }
+    .article-meta {
+      display: flex;
+      gap: 2rem;
+      padding-top: 1.5rem;
+      border-top: .5px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .article-meta-item {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .article-meta-item span { color: var(--cream-muted); }
+
+    /* ─── ARTICLE LAYOUT ───────────────────────────── */
+    .article-wrap {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 4rem 3rem 6rem;
+    }
+
+    /* ─── BODY TEXT ────────────────────────────────── */
+    .article-wrap p {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
+    }
+    .article-wrap p:last-child { margin-bottom: 0; }
+    .article-wrap p strong { font-weight: 500; color: var(--cream); }
+    .article-wrap p em { font-style: italic; }
+
+    /* ─── SECTION BREAKS ───────────────────────────── */
+    .article-section {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .article-section:first-child { padding-top: 0; }
+    .article-section:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .article-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.3;
+      margin-bottom: 1.6rem;
+    }
+    .article-section h2 em { font-style: italic; color: var(--amber-light); }
+
+    /* ─── SECTION MARKER ───────────────────────────── */
+    .section-marker {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+
+    /* ─── PULLQUOTE ────────────────────────────────── */
+    .pullquote {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      border-left: 2px solid var(--amber);
+      padding-left: 1.5rem;
+      margin: 2.2rem 0;
+      line-height: 1.55;
+    }
+
+    /* ─── INTRO ────────────────────────────────────── */
+    .article-intro {
+      padding-bottom: 3.5rem;
+      border-bottom: .5px solid var(--rule);
+    }
+
+    /* ─── PRACTICE STEPS ────────────────────────────── */
+    .practice-steps {
+      margin: 2.5rem 0;
+    }
+    .practice-step {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 1.4rem;
+      padding: 1.5rem 0;
+      border-top: .5px solid var(--rule);
+      align-items: start;
+    }
+    .practice-step:last-child { border-bottom: .5px solid var(--rule); }
+    .practice-step-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--amber);
+      font-weight: 400;
+      padding-top: .3rem;
+      letter-spacing: .05em;
+    }
+    .practice-step-body {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.85;
+    }
+    .practice-step-body strong { font-weight: 500; color: var(--cream); }
+    .practice-step-body em { font-style: italic; }
+
+    /* ─── INFO BOX ──────────────────────────────────── */
+    .info-box {
+      background: var(--dark2);
+      border-left: 2px solid var(--rule);
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+    }
+    .info-box-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .info-box p {
+      font-family: var(--serif);
+      font-size: 15px !important;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+      margin-bottom: .6rem !important;
+    }
+    .info-box p:last-child { margin-bottom: 0 !important; }
+
+    /* ─── CTA BLOCK ────────────────────────────────── */
+    .article-cta {
+      margin-top: 3.5rem;
+      padding: 2rem 2.2rem;
+      border: .5px solid var(--rule);
+      background: var(--dark2);
+    }
+    .article-cta-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .article-cta p {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+    .article-cta a.cta-btn {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--dark);
+      background: var(--amber);
+      padding: .65rem 1.6rem;
+      text-decoration: none;
+      font-weight: 400;
+      display: inline-block;
+    }
+    .article-cta a.cta-btn:hover { background: var(--amber-light); }
+
+    /* ─── RELATED ──────────────────────────────────── */
+    .article-related {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: .5px solid var(--rule);
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .article-related-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .article-related a {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .article-related a:hover { color: var(--amber-light); }
+
+    /* ─── FOOTER ───────────────────────────────────── */
+    .hs-footer { border-top: .5px solid var(--rule); }
+    .hs-footer-bottom {
+      padding: 1.4rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hs-footer-copy {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .hs-footer-sign {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-faint);
+    }
+
+    @media (max-width: 680px) {
+      .hs-nav { padding: 1.2rem 1.5rem; }
+      .hs-nav-links { gap: 1.2rem; }
+      .hs-nav-links a { font-size: 9px; }
+      .article-hero, .article-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .practice-step { grid-template-columns: 24px 1fr; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+    <a href="nd-glossary.html">Neurodiversity Glossary</a>
+    <a href="ef-support-interventions.html">Executive Function Support</a>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="article-eyebrow">Inner Terrain · Practice · Emotional Regulation</div>
+  <h1>Most emotion regulation instruction<br>begins at the wrong step.<br><em>PRIMA fixes the sequence.</em></h1>
+  <p class="article-hero-sub">Standard regulation instruction begins at Identify — naming the emotion, rating its intensity, applying a skill. PRIMA begins at Regulate. The structural difference makes it work for ND systems where standard approaches reliably fail.</p>
+  <div class="article-meta">
+    <div class="article-meta-item">Category <span>Practice</span></div>
+    <div class="article-meta-item">Format <span>Written walkthrough</span></div>
+    <div class="article-meta-item">Time <span>8 minutes</span></div>
+    <div class="article-meta-item">Source <span>NDSWB · Kemp &amp; Mitchelson</span></div>
+  </div>
+</div>
+
+<div class="article-wrap">
+
+  <div class="article-intro">
+    <p>The problem with most emotion regulation instruction is the sequencing assumption: by the time a ND person is aware enough to name an emotion, the nervous system has often already crossed the threshold where cognitive processing is viable. Alexithymia — difficulty labeling emotional states — and alexisomia — reduced awareness of body signals — mean the label attempt happens on insufficient input. PRIMA corrects the sequencing problem by putting regulation before identification, not after it.</p>
+  </div>
+
+  <div class="article-section">
+    <h2>The wrong order makes <em>the most demanding step first</em></h2>
+
+    <p>The standard sequence — notice, label, apply skill — assumes the nervous system is already in a window of tolerance sufficient for cognitive labeling. For ND systems, that assumption is frequently wrong. By the time a dysregulated ND person is dysregulated enough to know they're dysregulated, they may have already crossed into a state where cognitive processing — including the labeling of emotions — is unavailable. PRIMA places the body-regulation step before the cognitive step because that's the actual order in which these capacities become available.</p>
+
+    <div class="pullquote">Asking an ND system to identify its emotional state in the middle of threshold-crossing is asking it to perform the highest-demand cognitive task at the moment of lowest cognitive availability.</div>
+  </div>
+
+  <div class="article-section">
+    <div class="section-marker">The practice</div>
+    <h2>PRIMA — <em>a 5-step sequence</em></h2>
+
+    <div class="practice-steps">
+
+      <div class="practice-step">
+        <div class="practice-step-num">01</div>
+        <div class="practice-step-body">
+          <strong>Pause.</strong> Interrupt the automatic react/avoid/suppress cycle. Not meditation — just stopping what the nervous system is doing automatically. A sensory anchor works well for ND clients: a textured object to touch, a specific physical position, a sound. The pause signals to the nervous system that a different mode is available. It doesn't require calm. It just requires interruption.
+        </div>
+      </div>
+
+      <div class="practice-step">
+        <div class="practice-step-num">02</div>
+        <div class="practice-step-body">
+          <strong>Regulate.</strong> Bring the nervous system to a workable window <em>before</em> cognitive processing begins. Body-based tools: stimming — finger-tapping, rocking, fidgeting, humming, any proprioceptive or rhythmic input this system finds regulating — movement, shaking, walking, stretching, pacing; breathing, particularly extended exhale; temperature, cold water on face or wrists. This step doesn't prescribe a single regulation tool. It names the category — body-based — and lets the system find the tool that works. Standard "focus on your breath" instructions can dysregulate sensory-sensitive clients. The Regulate step respects that. Stimming is not a workaround; it is an appropriate first-line choice given the actual regulatory architecture of the ND nervous system.
+        </div>
+      </div>
+
+      <div class="practice-step">
+        <div class="practice-step-num">03</div>
+        <div class="practice-step-body">
+          <strong>Identify.</strong> Once the nervous system has moved toward a workable window, identify the emotional state and the need beneath it. The sequencing matters: Identify <em>after</em> Regulate, not before. For alexithymic clients: "What does this feel like in the body, even if you don't have a word for it?" often accesses more accurate signal than requesting an emotion label directly. "What would you need right now if it were possible to have it?" often surfaces the underlying need when the emotion itself remains unclear.
+        </div>
+      </div>
+
+      <div class="practice-step">
+        <div class="practice-step-num">04</div>
+        <div class="practice-step-body">
+          <strong>Meaning.</strong> What does this emotional state communicate about values or unmet needs? Not "why do I feel this way" — which often spirals into self-blame — but "what is this emotion pointing toward?" Anger points toward a violated value or boundary. Grief points toward something genuinely lost or absent. Shame points toward a burden, not a fact. Coaching note: if this step surfaces exile-level material — buried grief, attachment wounds, deep shame — the appropriate move is to acknowledge what was touched and hold it compassionately, not pursue it. Pursuing it is therapy work.
+        </div>
+      </div>
+
+      <div class="practice-step">
+        <div class="practice-step-num">05</div>
+        <div class="practice-step-body">
+          <strong>Allow.</strong> Practice ACT-based psychological acceptance: the emotion can exist without requiring immediate action, suppression, or resolution. The emotion is weather. The stable witnessing awareness beneath it — present to the parts system without being merged with any of it — is the sky. This is structurally the same position IFS calls Self: the ACT observing self and IFS Self are pointing at the same thing. For clients already in IFS work, the weather-and-sky metaphor can be a useful alternative when Self-energy is difficult to access directly.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="article-section">
+    <h2>Why PRIMA works where <em>standard instruction doesn't</em></h2>
+
+    <div class="info-box">
+      <div class="info-box-label">Interoceptive differences change the accessible sequence</div>
+      <p>Standard instruction assumes reliable access to interoceptive signals that feed cognitive labeling. Many ND adults have alexisomia alongside alexithymia, meaning the label attempt happens on insufficient input. PRIMA's Regulate-before-Identify structure doesn't demand reliable interoception — the regulation tools work at the body level even when conscious awareness of the emotional state is unavailable.</p>
+    </div>
+
+    <div class="info-box">
+      <div class="info-box-label">Standard regulation tools weren't designed for sensory-sensitive systems</div>
+      <p>Breath-focused mindfulness, body-scan practices, and progressive muscle relaxation assume sensory tolerances that many autistic and sensory-processing-different clients don't have. PRIMA's Regulate step validates stimming and movement as primary regulation tools — not as adaptations, but as appropriate first-line choices given the actual regulatory architecture of the ND nervous system.</p>
+    </div>
+  </div>
+
+  <div class="article-section">
+    <h2>Where PRIMA connects <em>to Self-energy</em></h2>
+
+    <p>The Allow step in PRIMA and Self-energy in IFS describe the same structural position: a stable, compassionate witnessing awareness present to whatever is happening in the internal system without being merged with it, driven by it, or needing it to resolve before it can be present. For clients entering IFS work through a prior ACT context, naming this equivalence explicitly often accelerates parts-language adoption: "The sky you practiced being in ACT — that's what IFS calls Self."</p>
+
+    <p>PRIMA is not asking parts to cope. It is asking the system to find the witness position from which parts can be attended to. That position is the prerequisite for the parts work to become possible. When a client can reliably find the Allow state — can locate the sky beneath the weather — the unblending work that IFS requires has a foundation to build on.</p>
+
+    <div class="article-cta">
+      <div class="article-cta-label">Work with this directly</div>
+      <p>If PRIMA isn't landing because the shame around the emotional experiences it surfaces is too organized, that's parts work — which is exactly what High Signal coaching addresses.</p>
+      <a class="cta-btn" href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener">Book a discovery call</a>
+    </div>
+
+    <div class="article-related">
+      <span class="article-related-label">Related</span>
+      <a href="emotional-regulation-interoception.html">Emotional Regulation &amp; Interoception →</a>
+      <a href="unblending.html">Unblending Practice →</a>
+      <a href="ifs-primer.html">IFS Primer →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="hs-footer">
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+</body>
+</html>
