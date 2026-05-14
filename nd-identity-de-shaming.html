@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neurodivergent Identity and De-Shaming | High Signal Coaching</title>
+  <meta name="description" content="ND identity isn't something you discover underneath the shame. It's something you build after you understand where the shame came from. The three-locus shame architecture, the parts that carry it, and what de-shaming actually requires.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:         #1C1914;
+      --dark2:        #252019;
+      --dark3:        #2e2820;
+      --amber:        #C8873A;
+      --amber-light:  #E4A85C;
+      --cream:        #F0E6D8;
+      --cream-muted:  #B8A898;
+      --cream-faint:  #7A6E64;
+      --serif:        'Cormorant Garamond', Georgia, serif;
+      --mono:         'DM Mono', monospace;
+      --rule:         #3a3228;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--serif);
+      line-height: 1.7;
+    }
+
+    /* ─── NAV ──────────────────────────────────────────── */
+    .hs-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      border-bottom: .5px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: var(--dark);
+      z-index: 100;
+    }
+    .hs-logo {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .hs-nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .hs-nav-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .hs-nav-links a:hover { color: var(--cream); }
+
+    /* ─── HERO ─────────────────────────────────────────── */
+    .primer-hero {
+      padding: 4.5rem 3rem 3.5rem;
+      border-bottom: .5px solid var(--rule);
+      max-width: 820px;
+    }
+    .primer-eyebrow {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .primer-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 50px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+    }
+    .primer-hero h1 em { font-style: italic; color: var(--amber-light); }
+    .primer-hero-sub {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+    .primer-meta {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: .5px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .primer-meta-item {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .primer-meta-item span { color: var(--cream-muted); }
+
+    /* ─── CROSS-LINK BANNER ─────────────────────────────── */
+    .cross-link-banner {
+      border-bottom: .5px solid var(--rule);
+      padding: 1rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .cross-link-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      flex-shrink: 0;
+    }
+    .cross-link-banner a {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .cross-link-banner a:hover { color: var(--amber-light); }
+
+    /* ─── MAIN LAYOUT ──────────────────────────────────── */
+    .primer-body {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ─── TOC ──────────────────────────────────────────── */
+    .primer-toc {
+      border-right: .5px solid var(--rule);
+      padding: 3rem 0;
+      position: sticky;
+      top: 64px;
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+    }
+    .toc-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      padding: 0 2rem 1.2rem;
+    }
+    .toc-link {
+      display: block;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .65rem 2rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      line-height: 1.5;
+    }
+    .toc-link:hover { color: var(--cream-muted); border-left-color: var(--rule); }
+    .toc-link.active { color: var(--amber); border-left-color: var(--amber); }
+    .toc-sub {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .4rem 2rem .4rem 2.8rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      opacity: .7;
+    }
+    .toc-sub:hover { color: var(--cream-faint); opacity: 1; }
+    .toc-divider {
+      border: none;
+      border-top: .5px solid var(--rule);
+      margin: 1rem 2rem;
+    }
+    .toc-related {
+      padding: 1rem 2rem 0;
+    }
+    .toc-related-label {
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .6rem;
+      opacity: .6;
+    }
+    .toc-related a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .3rem 0;
+      opacity: .8;
+    }
+    .toc-related a:hover { opacity: 1; }
+
+    /* ─── CONTENT AREA ─────────────────────────────────── */
+    .primer-content {
+      padding: 3rem 3rem 5rem 3.5rem;
+      max-width: 760px;
+    }
+
+    /* ─── SECTIONS ─────────────────────────────────────── */
+    .primer-section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .primer-section:last-child { border-bottom: none; }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .primer-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+    .primer-section h2 em { font-style: italic; color: var(--amber-light); }
+    .primer-section h3 {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-top: 2.2rem;
+      margin-bottom: .8rem;
+      line-height: 1.35;
+    }
+    .primer-section h3 em { font-style: italic; color: var(--amber-light); }
+    .primer-section p {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .primer-section p:last-child { margin-bottom: 0; }
+    .primer-section p strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── PULLQUOTE ─────────────────────────────────────── */
+    .pullquote {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      border-left: 2px solid var(--amber);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      line-height: 1.55;
+    }
+
+    /* ─── INFO BOX ──────────────────────────────────────── */
+    .info-box {
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      border-left: 3px solid var(--amber);
+      padding: 1.6rem 1.8rem;
+      margin: 1.8rem 0;
+    }
+    .info-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .info-body {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .info-body strong { font-weight: 500; color: var(--cream); }
+    .info-body p { margin-bottom: .7rem; }
+    .info-body p:last-child { margin-bottom: 0; }
+
+    /* ─── DATA TABLE ─────────────────────────────────────── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.8rem 0;
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 300;
+    }
+    .data-table thead tr {
+      border-bottom: 1px solid var(--amber);
+    }
+    .data-table th {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      padding: .7rem 1rem .7rem 0;
+      text-align: left;
+    }
+    .data-table td {
+      color: var(--cream-muted);
+      padding: .85rem 1rem .85rem 0;
+      border-bottom: .5px solid var(--rule);
+      line-height: 1.6;
+      vertical-align: top;
+    }
+    .data-table td strong { font-weight: 500; color: var(--cream); }
+    .data-table tbody tr:last-child td { border-bottom: none; }
+
+    /* ─── COACHING LIST ──────────────────────────────────── */
+    .coaching-list { margin: 1.8rem 0; }
+    .coaching-item {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      border-top: .5px solid var(--rule);
+    }
+    .coaching-item:last-child { border-bottom: .5px solid var(--rule); }
+    .coaching-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+      flex-shrink: 0;
+      margin-top: 8px;
+      opacity: .6;
+    }
+    .coaching-text {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .coaching-text strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── ARTICLE RELATED ──────────────────────────────── */
+    .article-related {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: .5px solid var(--rule);
+    }
+    .article-related-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1.2rem;
+    }
+    .article-related-grid {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .article-related-grid a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .9rem 1.2rem;
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      text-decoration: none;
+      transition: background .15s;
+    }
+    .article-related-grid a:hover { background: var(--dark3); }
+    .article-related-title {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--cream);
+    }
+    .article-related-arrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+
+    /* ─── RELATED PAGE LINK ──────────────────────────────── */
+    .related-page {
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      padding: 1.6rem 1.8rem;
+      margin: 2.5rem 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      text-decoration: none;
+    }
+    .related-page:hover { background: var(--dark3); }
+    .related-page-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .4rem;
+    }
+    .related-page-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream);
+    }
+    .related-page-arrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    .hs-footer { border-top: .5px solid var(--rule); }
+    .hs-footer-top {
+      padding: 3rem 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-footer-name {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: .4rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hs-footer-tagline {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .hs-footer-contact a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-contact a:hover { color: var(--amber); }
+    .hs-footer-col-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .hs-footer-links a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-links a:hover { color: var(--cream); }
+    .hs-footer-disclaimer {
+      padding: 2rem 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-disclaimer-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .hs-disclaimer-text {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .03em;
+      color: var(--cream-faint);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 820px;
+    }
+    .hs-disclaimer-text em { font-style: normal; color: var(--cream-muted); }
+    .hs-footer-bottom {
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hs-footer-copy {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .hs-footer-sign {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-faint);
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 860px) {
+      .primer-body { grid-template-columns: 1fr; }
+      .primer-toc { display: none; }
+      .primer-content { padding: 2.5rem 1.5rem 4rem; }
+    }
+    @media (max-width: 680px) {
+      .hs-nav { padding: 1.2rem 1.5rem; }
+      .hs-nav-links { gap: 1.2rem; }
+      .hs-nav-links a { font-size: 9px; }
+      .primer-hero { padding: 3rem 1.5rem 2.5rem; }
+      .cross-link-banner { padding: 1rem 1.5rem; flex-wrap: wrap; }
+      .hs-footer-top { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.5rem; }
+      .hs-footer-disclaimer, .hs-footer-bottom { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+    <a href="nd-glossary.html">Neurodiversity Glossary</a>
+    <a href="ef-support-interventions.html">Executive Function Support</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ════════════════════════════════════════════════ -->
+<div class="primer-hero">
+  <div class="primer-eyebrow">Foundations · Orienting Claim · Identity</div>
+  <h1>ND identity isn't something you discover underneath the shame.<br><em>It's something you build after you understand where the shame came from.</em></h1>
+  <p class="primer-hero-sub">Shame and identity are tangled in ND systems in a specific way: most ND people arrive at self-understanding having already internalized a paradigm-coherent story about what they are. The de-shaming work isn't correcting a misunderstanding — it's dismantling a complete interpretive framework that was installed before they had the language to refuse it.</p>
+  <div class="primer-meta">
+    <div class="primer-meta-item">Category — <span>Foundations</span></div>
+    <div class="primer-meta-item">Type — <span>Orienting Claim</span></div>
+    <div class="primer-meta-item">Framework — <span>IFS · ND · Identity</span></div>
+  </div>
+</div>
+
+<!-- ══ CROSS-LINK ══════════════════════════════════════════ -->
+<div class="cross-link-banner">
+  <span class="cross-link-label">See also</span>
+  <a href="pathology-paradigm.html">The Pathology Paradigm →</a>
+  <a href="shame-self-judgment.html">Shame and Self-Judgment →</a>
+  <a href="rejection-sensitive-dysphoria.html">Rejection-Sensitive Dysphoria →</a>
+</div>
+
+<!-- ══ BODY ════════════════════════════════════════════════ -->
+<div class="primer-body">
+
+  <!-- TOC -->
+  <nav class="primer-toc">
+    <div class="toc-label">Contents</div>
+    <a class="toc-link" href="#section-01">The three-locus architecture</a>
+    <a class="toc-sub" href="#locus-person-state">Person-state shame</a>
+    <a class="toc-sub" href="#locus-cultural">Cultural-system shame</a>
+    <a class="toc-sub" href="#locus-accumulation">Individual-accumulation shame</a>
+    <a class="toc-link" href="#section-02">Parts carrying the shame narrative</a>
+    <a class="toc-sub" href="#pre-recognition">Pre-recognition liminality</a>
+    <a class="toc-sub" href="#copycat-shamer">Copycat-shamer</a>
+    <a class="toc-sub" href="#identity-defender">Identity-defender managers</a>
+    <a class="toc-sub" href="#grief-carrier">Grief-carrier</a>
+    <a class="toc-sub" href="#integration-builder">Integration-builder</a>
+    <a class="toc-link" href="#section-03">Intra-system dynamics</a>
+    <a class="toc-sub" href="#secret-wrongness">The secret wrongness</a>
+    <a class="toc-sub" href="#cascade">Relief-grief-audit cascade</a>
+    <a class="toc-sub" href="#sinclair">Sinclair's reframe</a>
+    <a class="toc-sub" href="#identity-integration">Identity as integration</a>
+    <a class="toc-link" href="#section-04">The three-tier de-shaming</a>
+    <a class="toc-sub" href="#tier-cultural">Cultural-system tier</a>
+    <a class="toc-sub" href="#tier-person-state">Person-state tier</a>
+    <a class="toc-sub" href="#tier-identity">Identity-formation tier</a>
+    <a class="toc-link" href="#section-05">Self-led identity as practice</a>
+    <hr class="toc-divider">
+    <div class="toc-related">
+      <div class="toc-related-label">Related</div>
+      <a href="pathology-paradigm.html">Pathology Paradigm →</a>
+      <a href="shame-self-judgment.html">Shame →</a>
+      <a href="ifs-primer.html">IFS Primer →</a>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="primer-content">
+
+    <!-- 01 -->
+    <div class="primer-section" id="section-01">
+      <div class="section-num">01</div>
+      <h2>The Three-Locus <em>Shame Architecture</em></h2>
+
+      <p>Shame in ND systems doesn't have a single source. It operates from three distinct loci that require different responses. Collapsing them into a unified "shame problem" produces interventions that address one layer while leaving the others intact — and the intact layers reconsolidate what was worked through.</p>
+
+      <h3 id="locus-person-state">Locus 1: Person-state shame</h3>
+
+      <p>Shame arising from specific behaviors, failures, or relational ruptures. "I forgot again." "I was too much." "I didn't finish." This is the shame of individual incidents — bounded, named, tied to specific memory. Sweezy's copycat-shamer mechanism operates here: a part that learned to attack the self preemptively, before others can, using the same corrective voice the environment used. The copycat-shamer is a protector. Its logic is that internal shame is more controllable than external shame arriving uninvited and unmodulated.</p>
+
+      <h3 id="locus-cultural">Locus 2: Cultural-system shame</h3>
+
+      <p>Shame installed at the level of paradigm, not individual incident. This locus operates through the accumulated effect of living inside systems — educational, medical, social — that treat divergent neurology as deficit. Dodson's figure: ND children receive an estimated 20,000 more corrective messages than NT peers by age 10. Rejection Sensitive Dysphoria neurologically amplifies this input, so the accumulation is not merely additive — each corrective message lands harder than it would in a system without RSD's amplification profile. The shame doesn't arrive as argument. It arrives as micro-interaction, correction, and the texture of being consistently out of step with an environment calibrated for a different nervous system.</p>
+
+      <h3 id="locus-accumulation">Locus 3: Individual-accumulation shame</h3>
+
+      <p>The archive built from the client's specific history: incomplete projects, failed systems, relationships strained by ND outputs, moments of visibility that felt catastrophic. This is the evidence pile the achievement-shame exile carries. It's not cultural-abstract — it's named and specific. Each item in the archive was interpreted through whatever explanatory frame was available at the time. For most ND people without early accurate understanding, that frame was paradigm-coherent: deficit, failure, character problem.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Locus</th>
+            <th>Source</th>
+            <th>Clinical Entry Point</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Person-state</strong></td>
+            <td>Copycat-shamer mechanism</td>
+            <td>Befriending the protector (IFS)</td>
+          </tr>
+          <tr>
+            <td><strong>Cultural-system</strong></td>
+            <td>Paradigm installation, 20K corrections, RSD amplification</td>
+            <td>Paradigm refusal, accurate mirror, community</td>
+          </tr>
+          <tr>
+            <td><strong>Individual-accumulation</strong></td>
+            <td>Specific failure history + exile archive</td>
+            <td>Retroactive audit, reframe as architecture-predictable</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 02 -->
+    <div class="primer-section" id="section-02">
+      <div class="section-num">02</div>
+      <h2>Parts Carrying <em>the Shame Narrative</em></h2>
+
+      <p>Different parts carry different aspects of the shame architecture. Five configurations appear most consistently in ND systems where shame has organized significantly.</p>
+
+      <h3 id="pre-recognition">Pre-recognition liminality</h3>
+
+      <p>Before diagnosis or self-understanding, many ND people occupy a liminal position: knowing something is different, having no accurate map for what. Parts in this configuration often carry a "secret wrongness" — a private sense of deficit without a frame, an internal certainty that something is fundamentally off that cannot be named and therefore cannot be addressed. The relief of diagnosis is relief from liminality as much as relief from uncertainty. The liminal part doesn't necessarily resolve quickly once a frame exists; it has been carrying the unnamed burden long enough that the unnamed quality has become its identity.</p>
+
+      <h3 id="copycat-shamer">Copycat-shamer</h3>
+
+      <p>Sweezy's mechanism: a protector that learned the environment's critical voice and applies it internally before external shame can land. It's a preemptive strike. Clinically, it appears as relentless self-criticism, harsh internal commentary, anticipatory self-attack before any external verdict has arrived. It's not an inner critic with accurate information — it's a part trying to manage shame exposure by controlling the shaming event. The copycat-shamer is not trying to hurt the system. It's trying to protect it from something it experienced as worse: the unpredictable and unmodulated arrival of shame from outside.</p>
+
+      <h3 id="identity-defender">Identity-defender managers</h3>
+
+      <p>Once some self-understanding is in place, managers emerge to protect the developing ND identity from further paradigm-installed attack. These parts monitor for deficit framing, push back against medical-model language, defend the accuracy of the emerging self-understanding. The protective function is legitimate and often necessary. They can become rigid, interpreting any acknowledgment of genuine ND difficulty as a paradigm-coherent attack rather than as accurate description of architectural reality. A manager that cannot tolerate complexity in the emerging identity will eventually impede the integration work.</p>
+
+      <h3 id="grief-carrier">Grief-carrier</h3>
+
+      <p>The part holding retroactive grief about what the years pre-understanding cost. Not depression exactly — more specific: grief about decisions made, opportunities missed, relationships strained, while operating without an accurate map. The grief-carrier has often been carrying this material without recognition because the shame overlay made the grief feel like more evidence of failure rather than as appropriate response to genuine loss. Separating grief from shame is a prerequisite for grieving the actual losses rather than compounding them with self-blame.</p>
+
+      <h3 id="integration-builder">Integration-builder</h3>
+
+      <p>The part actively constructing a coherent identity that holds both the difficulty and the difference without resolving into either pathology narrative or superpower narrative. This is the part that becomes more active as de-shaming progresses and as the protective managers develop enough trust to allow complexity. The integration-builder is not trying to eliminate the hard parts or inflate the strengths — it's building a self-understanding accurate enough to navigate from.</p>
+    </div>
+
+    <!-- 03 -->
+    <div class="primer-section" id="section-03">
+      <div class="section-num">03</div>
+      <h2>The <em>Intra-System Dynamics</em></h2>
+
+      <h3 id="secret-wrongness">Pre-recognition liminality and the secret wrongness</h3>
+
+      <p>Before accurate language, ND experience gets interpreted through whatever frames are available. In a pathology-paradigm culture, those frames produce deficit readings. The "secret wrongness" is paradigm-installed before it's personally constructed — the person didn't arrive at "something is fundamentally wrong with me" through independent reasoning. They arrived there because every available interpretive frame pointed in that direction, and no counter-frame was offered. The secret wrongness is not a belief the person chose. It's the residue of a complete explanatory environment.</p>
+
+      <h3 id="cascade">The relief-grief-retroactive-audit cascade</h3>
+
+      <p>A common post-diagnosis (or post-self-understanding) sequence runs through three distinct phases: relief — there's a map, the divergent experience has an explanation that isn't characterological deficit — then grief, as the scope of what that explanation retroactively covers becomes visible, then retroactive audit, in which the personal history is examined through the accurate frame. The audit phase is frequently more destabilizing than the diagnosis itself. Years of self-interpretation are up for reprocessing. Parts that have been carrying shame-coherent narratives don't immediately release them when the frame changes — the protective logic that organized around the shame narrative doesn't simply dissolve because new information is available.</p>
+
+      <h3 id="sinclair">Sinclair's reframe on late-diagnosis grief</h3>
+
+      <p>Jim Sinclair's essay "Don't Mourn for Us" (1993) makes a distinction that matters clinically: the grief many parents and late-diagnosed adults experience is frequently grief for the imagined NT person who was never going to exist. Reframing: grieve the actual losses — the years of misunderstanding, the environments that didn't fit, the self-interpretation that was inaccurate — rather than grieving the absence of a neurotype that was never the person's to have. This distinction has clinical weight. One grief is about real loss, recoverable through mourning. The other is about a constructed counterfactual: grief for a self that never existed and couldn't have. Grief organized around a counterfactual doesn't resolve because there's no actual loss at its center — only the loss of an imagined alternative.</p>
+
+      <h3 id="identity-integration">Identity as integration, not discovery</h3>
+
+      <p>Price's frame: ND identity isn't buried under the shame waiting to be uncovered. It's built through active integration of the divergent system's actual profile, its history, and its relation to culture. Discovery implies the identity pre-exists the shame and just needs revealing. Integration implies construction — which is more accurate and less likely to produce the trap of "but I still feel broken, so I must not have found it yet." If the identity is something to discover, its absence as felt sense is evidence against the enterprise. If it's something to build, the ongoing construction is the enterprise, not evidence of failure.</p>
+
+      <div class="info-box">
+        <div class="info-label">Identity-First Language</div>
+        <div class="info-body">
+          <p>Identity-first language ("autistic person") versus person-first language ("person with autism") isn't merely stylistic preference — it reflects paradigm position. Person-first language was developed in disability advocacy to resist reduction to diagnosis: the person exists independently of the condition, which is separate from and additive to the person. Identity-first language, preferred by many autistic self-advocates, locates the neurology as constitutive rather than as an addendum to a separate, presumptively deficit-free person.</p>
+          <p>Both framings have users who experience them as accurate. The point isn't to mandate one over the other but to recognize what each encodes: person-first separates person from neurology; identity-first integrates them. A client's own language choice is clinical data about their current paradigm position.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="primer-section" id="section-04">
+      <div class="section-num">04</div>
+      <h2>The Three-Tier <em>De-Shaming</em></h2>
+
+      <p>De-shaming requires addressing all three loci. Working at only one leaves the others intact. The unlanguaged cultural-system shame reconsolidates person-state work. The unaddressed person-state shame impedes identity-formation. The sequence matters less than the completeness — all three tiers need engagement, and the work at each tier is distinct.</p>
+
+      <h3 id="tier-cultural">Tier 1: Cultural-system tier</h3>
+
+      <p><strong>Accurate mirror.</strong> The client needs to hear their ND profile described accurately and without deficit framing, often for the first time. The experience of being seen accurately — not normalized, not minimized, not pathologized — is itself therapeutic. This isn't validation. It's a corrective informational experience: a description of the architecture that matches what the person actually experiences, offered without the interpretive frame of deficit.</p>
+
+      <p><strong>Community.</strong> Contact with other ND people who have developed accurate self-understanding is de-shaming in a way no individual therapeutic relationship can fully replicate. The cultural-system shame was installed culturally — through accumulated contact with systems calibrated for a different neurotype. Cultural counter-evidence is the appropriate antidote. One relationship, however attuned, cannot fully undo what a culture installed. Community referral is not ancillary; it's tier-specific clinical work.</p>
+
+      <p><strong>Paradigm education.</strong> Naming the pathology paradigm explicitly — what it is, how it operates, what it installs — allows clients to locate the shame source outside the self. Shame attributed to internal deficiency behaves differently than shame located in an external paradigm. The first is about what the person is. The second is about what the environment taught them to believe about what they are.</p>
+
+      <h3 id="tier-person-state">Tier 2: Person-state tier</h3>
+
+      <p><strong>Befriending the copycat-shamer.</strong> The preemptive-attack part needs to understand that its protective strategy isn't necessary in the current context and that alternatives exist. This is IFS protector work — not fighting the critic, not dismissing it, not trying to argue it out of its position, but getting curious about what it's protecting and what it fears would happen if it stepped back. The copycat-shamer will not step back because its logic was refuted. It will step back when the exile it's protecting has enough protection from other sources that its strategy is no longer the only available option.</p>
+
+      <p><strong>Distinguishing paradigm-installed shame from accurate feedback.</strong> Not all self-critical responses are copycat-shamer output. Some self-assessment is accurate. Calibration matters — the goal is not eliminating self-critical capacity but separating the part running preemptive paradigm-coherent attacks from the capacity for accurate self-evaluation. This distinction is harder to hold than it sounds; the copycat-shamer often uses accurate information (real failures, real difficulties) while framing it in paradigm-coherent terms (deficit, character problem, permanent condition).</p>
+
+      <h3 id="tier-identity">Tier 3: Identity-formation tier</h3>
+
+      <p><strong>Integration over discovery.</strong> Working with clients to actively construct a self-understanding that holds complexity without collapse — that can acknowledge genuine difficulty without producing shame, and genuine strength without producing defensive inflation. This is construction work, not excavation.</p>
+
+      <p><strong>Retroactive audit as grief work.</strong> Reviewing personal history through the accurate frame, grieving actual losses, and releasing counterfactual grief. The audit phase requires enough stability in the new frame that re-encountering the old material doesn't fully reconsolidate the old interpretations. Pacing matters here more than in most phases.</p>
+
+      <p><strong>Burnout naming as clinical intervention.</strong> Raymaker et al.'s framework for ND burnout — naming it accurately, locating it as an architectural load-limit response rather than a characterological failure — is itself de-shaming at the identity tier. The interpretation shifts from "I fell apart" to "my system hit its load limits under conditions that exceeded what it was built to sustain." This shift is not semantic. It locates the explanation in architecture rather than in character, which changes what reparative options are available.</p>
+
+      <div class="coaching-list">
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text">When a client describes their ND profile with <strong>shame fluency</strong> — accurate description accompanied by shame-laden self-assessment — the intellectual model and the felt sense haven't merged. Knowing the accurate frame and having it available as lived experience are different things. This is ongoing work, not a completed step.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text">The <strong>retroactive audit phase</strong> is often more destabilizing than diagnosis itself. Encountering the scope of what the accurate frame retroactively reinterprets takes time. Pacing matters — moving through the audit faster than the parts system can metabolize produces overwhelm rather than integration.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Copycat-shamer befriending before identity work.</strong> The part attacking the emerging ND identity needs to be metabolized before identity integration can consolidate. Building the integration on top of an active preemptive attack part produces an identity structure that is undermined from inside.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Community referral is clinical,</strong> not social. Peer community with accurate self-understanding is not optional for cultural-tier de-shaming. What a paradigm installed culturally requires cultural counter-evidence to address. One therapeutic relationship cannot fully carry that weight.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text">Late-diagnosis clients often have <strong>decades of shame-archive</strong> to audit. Time horizons for this work are longer than conventional symptom-reduction models suggest. The audit is not a single processing event — it proceeds item by item, each re-encountered through the accurate frame, each requiring its own metabolization.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="primer-section" id="section-05">
+      <div class="section-num">05</div>
+      <h2>Self-Led Identity <em>as Ongoing Practice</em></h2>
+
+      <p>ND identity doesn't arrive at a stable endpoint. It's maintained through ongoing paradigm-refusal practice, continued parts work with shame-carriers, and community contact that provides continued accurate mirroring. The construction metaphor implies ongoing maintenance — the structure requires attention as new contexts introduce new challenges to its integrity.</p>
+
+      <p>Three reframes from Neff's work on self-compassion in ND systems apply directly to the identity maintenance question:</p>
+
+      <p><strong>Gray thinking</strong> — ND outputs are not uniformly deficient or uniformly gifted. Accurate self-assessment holds both. The pressure to resolve into one or the other comes from the paradigm (deficit framing requires uniformity) and from defensive inflation (superpower framing requires uniformity in the other direction). Gray thinking is the capacity to hold the actual profile: genuine expertise alongside genuine difficulty, both accurate, neither canceling the other.</p>
+
+      <p><strong>Deep processing</strong> — the ND tendency to process thoroughly, contextually, and with sustained attention when engaged is a genuine architectural feature, not a deficit in disguise. It produces different outputs than shallower, faster processing, and those outputs have value. Naming it accurately — as a processing style rather than as a compensation for deficit — changes the self-understanding from which the person operates.</p>
+
+      <p><strong>Context-independence thinking</strong> — evaluating ND performance in its actual context rather than against NT-context norms. A processing style calibrated for deep engagement in a single-task environment will perform differently in a multitasking, interruption-dense environment. That performance difference is context-architecture mismatch, not absolute capacity. The relevant question is not "how does this person perform against NT norms" but "what conditions does this architecture require to produce what it produces."</p>
+
+      <a class="related-page" href="pathology-paradigm.html">
+        <div>
+          <div class="related-page-label">Related framework page</div>
+          <div class="related-page-title">The Pathology Paradigm and Its Refusal — the paradigm that installs cultural-system shame before any individual incident occurs.</div>
+        </div>
+        <span class="related-page-arrow">→</span>
+      </a>
+
+      <div class="article-related">
+        <div class="article-related-label">Related pages</div>
+        <div class="article-related-grid">
+          <a href="pathology-paradigm.html">
+            <span class="article-related-title">The Pathology Paradigm and Its Refusal</span>
+            <span class="article-related-arrow">→</span>
+          </a>
+          <a href="shame-self-judgment.html">
+            <span class="article-related-title">Shame and Self-Judgment in ND Systems</span>
+            <span class="article-related-arrow">→</span>
+          </a>
+          <a href="productivity-paradox.html">
+            <span class="article-related-title">The Productivity Paradox</span>
+            <span class="article-related-arrow">→</span>
+          </a>
+          <a href="emotional-regulation-interoception.html">
+            <span class="article-related-title">Emotional Regulation and Interoception</span>
+            <span class="article-related-arrow">→</span>
+          </a>
+          <a href="ifs-primer.html">
+            <span class="article-related-title">IFS Primer</span>
+            <span class="article-related-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════ -->
+<footer class="hs-footer">
+  <div class="hs-footer-top">
+    <div>
+      <div class="hs-footer-name">High Signal Coaching</div>
+      <div class="hs-footer-tagline">IFS-informed executive function coaching<br>ADHD/AuDHD men in tech</div>
+      <div class="hs-footer-contact">
+        <a href="mailto:matt@highsignalcoaching.com">matt@highsignalcoaching.com</a>
+        <a href="https://www.linkedin.com/in/matthew-monroe-simpson-73a0381b4" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Navigate</div>
+      <div class="hs-footer-links">
+        <a href="ifs-primer.html">IFS Primer</a>
+        <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+        <a href="masking-unmasking.html">Masking and Unmasking</a>
+        <a href="burnout-collapse-rest.html">Burnout, Collapse &amp; Rest</a>
+        <a href="rejection-sensitive-dysphoria.html">Rejection-Sensitive Dysphoria</a>
+        <a href="nd-glossary.html">ND Glossary</a>
+        <a href="ef-support-interventions.html">EF Supports</a>
+        <a href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener">Book a discovery call</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Inner Terrain</div>
+      <div class="hs-footer-links">
+        <a href="shame-self-judgment.html">Shame and Self-Judgment</a>
+        <a href="nd-identity-de-shaming.html">ND Identity and De-Shaming</a>
+        <a href="pathology-paradigm.html">The Pathology Paradigm</a>
+        <a href="emotional-regulation-interoception.html">Emotional Regulation</a>
+        <a href="managers-firefighters-exiles.html">Parts Map</a>
+      </div>
+      <div class="hs-footer-col-label" style="margin-top: 1.5rem;">Relational Life</div>
+      <div class="hs-footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Coaching vs. Therapy Disclaimer</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+  <div class="hs-footer-disclaimer">
+    <div class="hs-disclaimer-label">Disclaimer</div>
+    <div class="hs-disclaimer-text">
+      High Signal Coaching is a professional coaching service, not therapy or clinical treatment.
+      Framework content draws on Sweezy, Price, Dodson, Neff, Sinclair, and Raymaker et al.; references do not imply clinical endorsement.
+      If you are experiencing a mental health emergency, please contact a licensed mental health professional or crisis line.
+      <em>Licensed mental health services available separately through Matthew Monroe Simpson Counseling.</em>
+    </div>
+  </div>
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+</body>
+</html>

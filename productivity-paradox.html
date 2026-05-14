@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Productivity Paradox | High Signal Coaching</title>
+  <meta name="description" content="Productivity frameworks are designed by and for neurotypical nervous systems. Why ND productivity failure is an architectural mismatch — not a strategy failure — and what that means for the shame cycle.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:         #1C1914;
+      --dark2:        #252019;
+      --dark3:        #2e2820;
+      --amber:        #C8873A;
+      --amber-light:  #E4A85C;
+      --cream:        #F0E6D8;
+      --cream-muted:  #B8A898;
+      --cream-faint:  #7A6E64;
+      --serif:        'Cormorant Garamond', Georgia, serif;
+      --mono:         'DM Mono', monospace;
+      --rule:         #3a3228;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--serif);
+      line-height: 1.7;
+    }
+
+    /* ─── NAV ──────────────────────────────────────────── */
+    .hs-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      border-bottom: .5px solid var(--rule);
+      position: sticky;
+      top: 0;
+      background: var(--dark);
+      z-index: 100;
+    }
+    .hs-logo {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .hs-nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .hs-nav-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .hs-nav-links a:hover { color: var(--cream); }
+
+    /* ─── HERO ─────────────────────────────────────────── */
+    .primer-hero {
+      padding: 4.5rem 3rem 3.5rem;
+      border-bottom: .5px solid var(--rule);
+      max-width: 820px;
+    }
+    .primer-eyebrow {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .primer-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 50px);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+    }
+    .primer-hero h1 em { font-style: italic; color: var(--amber-light); }
+    .primer-hero-sub {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+    .primer-meta {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: .5px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .primer-meta-item {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .primer-meta-item span { color: var(--cream-muted); }
+
+    /* ─── CROSS-LINK BANNER ─────────────────────────────── */
+    .cross-link-banner {
+      border-bottom: .5px solid var(--rule);
+      padding: 1rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .cross-link-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      flex-shrink: 0;
+    }
+    .cross-link-banner a {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .cross-link-banner a:hover { color: var(--amber-light); }
+
+    /* ─── MAIN LAYOUT ──────────────────────────────────── */
+    .primer-body {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ─── TOC ──────────────────────────────────────────── */
+    .primer-toc {
+      border-right: .5px solid var(--rule);
+      padding: 3rem 0;
+      position: sticky;
+      top: 64px;
+      height: calc(100vh - 64px);
+      overflow-y: auto;
+    }
+    .toc-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      padding: 0 2rem 1.2rem;
+    }
+    .toc-link {
+      display: block;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .65rem 2rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      line-height: 1.5;
+    }
+    .toc-link:hover { color: var(--cream-muted); border-left-color: var(--rule); }
+    .toc-link.active { color: var(--amber); border-left-color: var(--amber); }
+    .toc-sub {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .4rem 2rem .4rem 2.8rem;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+      opacity: .7;
+    }
+    .toc-sub:hover { color: var(--cream-faint); opacity: 1; }
+    .toc-divider {
+      border: none;
+      border-top: .5px solid var(--rule);
+      margin: 1rem 2rem;
+    }
+    .toc-related {
+      padding: 1rem 2rem 0;
+    }
+    .toc-related-label {
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .6rem;
+      opacity: .6;
+    }
+    .toc-related a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 300;
+      padding: .3rem 0;
+      opacity: .8;
+    }
+    .toc-related a:hover { opacity: 1; }
+
+    /* ─── CONTENT AREA ─────────────────────────────────── */
+    .primer-content {
+      padding: 3rem 3rem 5rem 3.5rem;
+      max-width: 760px;
+    }
+
+    /* ─── SECTIONS ─────────────────────────────────────── */
+    .primer-section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .primer-section:last-child { border-bottom: none; }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .primer-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+    .primer-section h2 em { font-style: italic; color: var(--amber-light); }
+    .primer-section h3 {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-top: 2.2rem;
+      margin-bottom: .8rem;
+      line-height: 1.35;
+    }
+    .primer-section h3 em { font-style: italic; color: var(--amber-light); }
+    .primer-section p {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .primer-section p:last-child { margin-bottom: 0; }
+    .primer-section p strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── PULLQUOTE ─────────────────────────────────────── */
+    .pullquote {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      border-left: 2px solid var(--amber);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      line-height: 1.55;
+    }
+
+    /* ─── INFO BOX ──────────────────────────────────────── */
+    .info-box {
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      border-left: 3px solid var(--amber);
+      padding: 1.6rem 1.8rem;
+      margin: 1.8rem 0;
+    }
+    .info-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .info-body {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .info-body strong { font-weight: 500; color: var(--cream); }
+    .info-body p { margin-bottom: .7rem; }
+    .info-body p:last-child { margin-bottom: 0; }
+
+    /* ─── COACHING LIST ──────────────────────────────────── */
+    .coaching-list { margin: 1.8rem 0; }
+    .coaching-item {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      border-top: .5px solid var(--rule);
+    }
+    .coaching-item:last-child { border-bottom: .5px solid var(--rule); }
+    .coaching-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+      flex-shrink: 0;
+      margin-top: 8px;
+      opacity: .6;
+    }
+    .coaching-text {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+    .coaching-text strong { font-weight: 500; color: var(--cream); }
+
+    /* ─── ARTICLE RELATED ────────────────────────────────── */
+    .article-related {
+      margin-top: 3rem;
+      border-top: .5px solid var(--rule);
+      padding-top: 2rem;
+    }
+    .article-related-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1.2rem;
+    }
+    .article-related-grid {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .article-related-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: .8rem 0;
+      border-bottom: .5px solid var(--rule);
+      text-decoration: none;
+    }
+    .article-related-item:last-child { border-bottom: none; }
+    .article-related-item:hover .article-related-title { color: var(--cream); }
+    .article-related-title {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.4;
+    }
+    .article-related-arrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--amber);
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+
+    /* ─── RELATED PAGE LINK ──────────────────────────────── */
+    .related-page {
+      background: var(--dark2);
+      border: .5px solid var(--rule);
+      padding: 1.6rem 1.8rem;
+      margin: 2.5rem 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      text-decoration: none;
+    }
+    .related-page:hover { background: var(--dark3); }
+    .related-page-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .4rem;
+    }
+    .related-page-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--cream);
+    }
+    .related-page-arrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--amber);
+      flex-shrink: 0;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    .hs-footer { border-top: .5px solid var(--rule); }
+    .hs-footer-top {
+      padding: 3rem 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-footer-name {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: .4rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hs-footer-tagline {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .hs-footer-contact a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-contact a:hover { color: var(--amber); }
+    .hs-footer-col-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .hs-footer-links a {
+      display: block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .06em;
+      color: var(--cream-muted);
+      text-decoration: none;
+      font-weight: 300;
+      margin-bottom: .5rem;
+    }
+    .hs-footer-links a:hover { color: var(--cream); }
+    .hs-footer-disclaimer {
+      padding: 2rem 3rem;
+      border-bottom: .5px solid var(--rule);
+    }
+    .hs-disclaimer-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cream-faint);
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .hs-disclaimer-text {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: .03em;
+      color: var(--cream-faint);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 820px;
+    }
+    .hs-disclaimer-text em { font-style: normal; color: var(--cream-muted); }
+    .hs-footer-bottom {
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hs-footer-copy {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .08em;
+      color: var(--cream-faint);
+      font-weight: 300;
+    }
+    .hs-footer-sign {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-faint);
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 860px) {
+      .primer-body { grid-template-columns: 1fr; }
+      .primer-toc { display: none; }
+      .primer-content { padding: 2.5rem 1.5rem 4rem; }
+    }
+    @media (max-width: 680px) {
+      .hs-nav { padding: 1.2rem 1.5rem; }
+      .hs-nav-links { gap: 1.2rem; }
+      .hs-nav-links a { font-size: 9px; }
+      .primer-hero { padding: 3rem 1.5rem 2.5rem; }
+      .cross-link-banner { padding: 1rem 1.5rem; flex-wrap: wrap; }
+      .hs-footer-top { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.5rem; }
+      .hs-footer-disclaimer, .hs-footer-bottom { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="hs-nav">
+  <a class="hs-logo" href="index.html">High Signal Coaching</a>
+  <div class="hs-nav-links">
+    <a href="ifs-primer.html">IFS Primer</a>
+    <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+    <a href="nd-glossary.html">Neurodiversity Glossary</a>
+    <a href="ef-support-interventions.html">Executive Function Support</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ════════════════════════════════════════════════ -->
+<div class="primer-hero">
+  <div class="primer-eyebrow">Foundations · Orienting Claim · EF and Output</div>
+  <h1>The system isn't broken because you haven't found the right system.<br><em>It's broken because the wrong question is being asked.</em></h1>
+  <p class="primer-hero-sub">Productivity frameworks are designed by and for neurotypical nervous systems. Treating productivity failure as a strategy failure — rather than an architectural mismatch — is how the shame cycle starts.</p>
+  <div class="primer-meta">
+    <div class="primer-meta-item">Category — <span>Foundations</span></div>
+    <div class="primer-meta-item">Type — <span>Orienting Claim</span></div>
+    <div class="primer-meta-item">Framework — <span>NICE · IFS · EF</span></div>
+  </div>
+</div>
+
+<!-- ══ CROSS-LINK ══════════════════════════════════════════ -->
+<div class="cross-link-banner">
+  <span class="cross-link-label">See also</span>
+  <a href="pathology-paradigm.html">The Pathology Paradigm →</a>
+  <a href="shame-self-judgment.html">Shame and Self-Judgment →</a>
+  <a href="firefighters-follow-through.html">Firefighters and Follow-Through →</a>
+</div>
+
+<!-- ══ BODY ════════════════════════════════════════════════ -->
+<div class="primer-body">
+
+  <!-- TOC -->
+  <nav class="primer-toc">
+    <div class="toc-label">Contents</div>
+    <a class="toc-link" href="#section-01">The NICE Architecture</a>
+    <a class="toc-sub" href="#performance-deficit">Performance deficit doctrine</a>
+    <a class="toc-link" href="#section-02">The Four Failed Positions</a>
+    <a class="toc-link" href="#section-03">Parts in Productivity Failure</a>
+    <a class="toc-sub" href="#adoption-loop">Adoption-failure loop</a>
+    <a class="toc-link" href="#section-04">Intra-System Dynamics</a>
+    <a class="toc-sub" href="#shame-impulsivity">Shame-impulsivity loop</a>
+    <a class="toc-sub" href="#boom-bust">Boom-bust cycle</a>
+    <a class="toc-link" href="#section-05">Self-Led Productivity</a>
+    <a class="toc-sub" href="#coaching-implications">Coaching implications</a>
+    <hr class="toc-divider">
+    <div class="toc-related">
+      <div class="toc-related-label">Related</div>
+      <a href="pathology-paradigm.html">Pathology Paradigm →</a>
+      <a href="shame-self-judgment.html">Shame →</a>
+      <a href="energy-resource-economy.html">Resource Economy →</a>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="primer-content">
+
+    <!-- intro -->
+    <div class="primer-section" style="padding-top: 1rem; border-bottom: .5px solid var(--rule);">
+      <p>Productivity frameworks are designed by and for neurotypical nervous systems. They assume that knowing what to do translates to doing it, that motivation tracks importance, and that habit formation is a reliable mechanism. None of these assumptions hold for ND systems. Treating productivity failure as a strategy failure — rather than an architectural mismatch — is how the shame cycle starts.</p>
+    </div>
+
+    <!-- 01 -->
+    <div class="primer-section" id="section-01">
+      <div class="section-num">01</div>
+      <h2>The <em>NICE Architecture</em></h2>
+
+      <p>ND systems don't run on importance or priority. They run on NICE: Interest, Novelty, Challenge, Urgency. Developed by Dodson from Barkley's foundational work on executive function:</p>
+
+      <p><strong>Interest</strong> — genuine intrinsic engagement; the part of the task that activates without force.</p>
+
+      <p><strong>Novelty</strong> — newness itself is activating; familiar tasks lose this quickly.</p>
+
+      <p><strong>Challenge</strong> — a difficulty gradient that engages the system; too easy is as deactivating as too hard.</p>
+
+      <p><strong>Urgency</strong> — time pressure, consequence proximity, stakes made immediate.</p>
+
+      <p>When a task provides none of the four, initiation fails — not because the person is unwilling but because the architecture has no on-ramp. When all four are present simultaneously, the system can produce extraordinary output. This is the paradox: the same nervous system that can't start a routine email can work 14 hours on something with all four NICE components active.</p>
+
+      <div class="info-box" id="performance-deficit">
+        <div class="info-label">Performance Deficit Doctrine (Barkley)</div>
+        <div class="info-body">
+          <p>The central insight: ND individuals typically know what needs to be done. The gap is not informational — it's the translation of knowledge into timely performance in the absence of NICE fuel. Treating this as a knowledge or motivation problem produces interventions that miss the mechanism. <strong>More information does not self-regulate.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="primer-section" id="section-02">
+      <div class="section-num">02</div>
+      <h2>The Four <em>Failed Positions</em></h2>
+
+      <p>Four paradigm-coherent responses to ND productivity difficulty — each fails because it addresses the wrong mechanism.</p>
+
+      <h3>1. Discipline and habit formation</h3>
+      <p>Conventional productivity advice. Assumes motivation can be overridden through structure and repetition. Fails because ND initiation deficit is architectural, not volitional. Habit formation requires consistent execution; consistent execution without NICE fuel is what fails.</p>
+
+      <h3>2. Time management frameworks</h3>
+      <p>Scheduling, Pomodoro, time-blocking. Useful for NT systems that have reliable initiation once they know what to do next. For ND systems, knowing what's next doesn't solve the initiation gap — it just names what won't happen.</p>
+
+      <h3>3. Superpower reframe</h3>
+      <p>"Your ADHD is actually a gift." Partial truth: ND systems do produce distinctive output under NICE conditions. But used as a primary frame, it bypasses the real difficulty, installs pressure to perform brilliantly at all times, and leaves the ordinary tasks unaddressed.</p>
+
+      <h3>4. Broken motivation</h3>
+      <p>Pathology paradigm reading: if you can't do it, you don't want it enough, or you're depressed, or you're lazy. Installs shame as the explanatory frame for an architectural phenomenon.</p>
+    </div>
+
+    <!-- 03 -->
+    <div class="primer-section" id="section-03">
+      <div class="section-num">03</div>
+      <h2>The Parts System in <em>Productivity Failure</em></h2>
+
+      <p>Five common part configurations appear in ND productivity contexts.</p>
+
+      <h3>Achievement-driving managers</h3>
+      <p>Hold the belief that the right amount of pressure, planning, and self-criticism can overcome the architectural limit. Often exhausted. Often furious when the system doesn't respond to their efforts. Carry the NT-optimization goal.</p>
+
+      <h3>Taskmaster</h3>
+      <p>A specific manager variant; holds the whip but has no understanding of the architecture; interprets any EF gap as evidence of insufficient effort; main source of the shame-impulsivity loop in productivity contexts.</p>
+
+      <h3>Urgency-producing firefighters</h3>
+      <p>Create crisis conditions to generate NICE-Urgency fuel. Procrastination until deadline, manufacturing emergencies, breaking commitments so that fixing them becomes urgent. These aren't sabotage — they're functional solutions to an initiation problem.</p>
+
+      <h3>Avoidance firefighters</h3>
+      <p>Protect from the shame of anticipated failure by preventing initiation entirely. The task never started is the task that didn't fail.</p>
+
+      <h3>Achievement-shame exile</h3>
+      <p>The part that carries the accumulated evidence of failure, incompletion, the systems that didn't work, the projects dropped mid-stream. Its burden is: <em>the evidence is in.</em> It's the target of Taskmaster's corrections and the exile that urgency-producing firefighters are protecting.</p>
+
+      <div class="info-box" id="adoption-loop">
+        <div class="info-label">The Adoption-Failure Loop</div>
+        <div class="info-body">
+          <p>Client discovers new productivity system → initial novelty provides NICE fuel → system works briefly → novelty depletes → system fails → evidence added to shame-archive → client concludes they're uniquely broken → repeat.</p>
+          <p>The loop is architecture-predictable, not a character finding.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="primer-section" id="section-04">
+      <div class="section-num">04</div>
+      <h2>The <em>Intra-System Dynamics</em></h2>
+
+      <h3 id="shame-impulsivity">The shame-impulsivity loop</h3>
+      <p>Taskmaster-driven shame triggers firefighter activation — urgency production or avoidance; firefighter behavior generates new evidence of failure; evidence feeds back to Taskmaster. The loop doesn't require the task to ever happen.</p>
+
+      <h3 id="boom-bust">The boom-bust cycle</h3>
+      <p>NICE conditions align → extended hyperfocus period → output burst → crash → recovery period during which Taskmaster interprets recovery as further laziness → shame-load increases → next hyperfocus period begins with higher baseline shame.</p>
+
+      <h3>Urgency production as adaptive solution</h3>
+      <p>The firefighter creating crisis conditions is solving the initiation problem the only way it knows how. Removing the urgency production without replacing the initiation mechanism leaves the system unable to function. The goal is not elimination of firefighters but negotiation toward lower-cost NICE fuel sources.</p>
+    </div>
+
+    <!-- 05 -->
+    <div class="primer-section" id="section-05">
+      <div class="section-num">05</div>
+      <h2>Self-Led Productivity as <em>Prosthetic Design</em></h2>
+
+      <p>The reframe: productivity support for ND systems is prosthetic design, not character development. A prosthetic isn't a crutch — it's a functional extension of what the architecture needs to work.</p>
+
+      <div class="coaching-list" id="coaching-implications">
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>NICE audit before task design:</strong> which component can be introduced or amplified? Interest via connection to genuine goal; Challenge via difficulty calibration; Novelty via variation; Urgency via artificial proximity structures.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Distinguish urgency-production firefighters from avoidance firefighters</strong> — the intervention is different. One is creating fuel; the other is preventing exposure. Treating them the same fails both.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Adoption-failure loop psychoeducation as early intervention:</strong> the client's history of system failures is architecture-predictable, not evidence of defect. Name this explicitly and early.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Recovery is not laziness.</strong> Boom periods require recovery; Taskmaster's interpretation of recovery as failure is the primary shame amplifier in high-output ND systems.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Separate output volume from worth:</strong> achievement-driving managers often hold the equation worth = output; unbundling this is central to shame-archive work before any strategy intervention lands.</div>
+        </div>
+        <div class="coaching-item">
+          <div class="coaching-dot"></div>
+          <div class="coaching-text"><strong>Late-diagnosis clients</strong> often carry decades of Taskmaster evidence; the shame-archive may be the first clinical target before any strategy work lands.</div>
+        </div>
+      </div>
+
+      <a class="related-page" href="pathology-paradigm.html">
+        <div>
+          <div class="related-page-label">Related framework page</div>
+          <div class="related-page-title">The Pathology Paradigm and Its Refusal — why the broken-motivation reading is paradigm-installed, not accurate.</div>
+        </div>
+        <span class="related-page-arrow">→</span>
+      </a>
+
+      <div class="article-related">
+        <div class="article-related-label">Related pages</div>
+        <div class="article-related-grid">
+          <a class="article-related-item" href="pathology-paradigm.html">
+            <span class="article-related-title">The Pathology Paradigm and Its Refusal</span>
+            <span class="article-related-arrow">→</span>
+          </a>
+          <a class="article-related-item" href="nd-identity-de-shaming.html">
+            <span class="article-related-title">Neurodivergent Identity and De-Shaming</span>
+            <span class="article-related-arrow">→</span>
+          </a>
+          <a class="article-related-item" href="firefighters-follow-through.html">
+            <span class="article-related-title">Firefighters and Follow-Through Erosion</span>
+            <span class="article-related-arrow">→</span>
+          </a>
+          <a class="article-related-item" href="shame-self-judgment.html">
+            <span class="article-related-title">Shame and Self-Judgment in ND Systems</span>
+            <span class="article-related-arrow">→</span>
+          </a>
+          <a class="article-related-item" href="energy-resource-economy.html">
+            <span class="article-related-title">Energy and the Resource Economy</span>
+            <span class="article-related-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════ -->
+<footer class="hs-footer">
+  <div class="hs-footer-top">
+    <div>
+      <div class="hs-footer-name">High Signal Coaching</div>
+      <div class="hs-footer-tagline">IFS-informed executive function coaching<br>ADHD/AuDHD men in tech</div>
+      <div class="hs-footer-contact">
+        <a href="mailto:matt@highsignalcoaching.com">matt@highsignalcoaching.com</a>
+        <a href="https://www.linkedin.com/in/matthew-monroe-simpson-73a0381b4" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Navigate</div>
+      <div class="hs-footer-links">
+        <a href="ifs-primer.html">IFS Primer</a>
+        <a href="ifs-adhd-autism.html">IFS for ADHD &amp; Autism</a>
+        <a href="masking-unmasking.html">Masking and Unmasking</a>
+        <a href="burnout-collapse-rest.html">Burnout, Collapse &amp; Rest</a>
+        <a href="rejection-sensitive-dysphoria.html">Rejection-Sensitive Dysphoria</a>
+        <a href="nd-glossary.html">ND Glossary</a>
+        <a href="ef-support-interventions.html">EF Supports</a>
+        <a href="https://calendly.com/matt-highsignal/30min" target="_blank" rel="noopener">Book a discovery call</a>
+      </div>
+    </div>
+    <div>
+      <div class="hs-footer-col-label">Inner Terrain</div>
+      <div class="hs-footer-links">
+        <a href="shame-self-judgment.html">Shame and Self-Judgment</a>
+        <a href="pathology-paradigm.html">The Pathology Paradigm</a>
+        <a href="productivity-paradox.html">The Productivity Paradox</a>
+        <a href="nd-identity-de-shaming.html">Identity and De-Shaming</a>
+        <a href="energy-resource-economy.html">Energy and the Resource Economy</a>
+      </div>
+      <div class="hs-footer-col-label" style="margin-top: 1.5rem;">Relational Life</div>
+      <div class="hs-footer-links">
+        <a href="firefighters-follow-through.html">Firefighters and Follow-Through</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Coaching vs. Therapy Disclaimer</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+  <div class="hs-footer-disclaimer">
+    <div class="hs-disclaimer-label">Disclaimer</div>
+    <div class="hs-disclaimer-text">
+      High Signal Coaching is a professional coaching service, not therapy or clinical treatment.
+      Framework content draws on Barkley, Dodson, and IFS principles; references do not imply clinical endorsement.
+      If you are experiencing a mental health emergency, please contact a licensed mental health professional or crisis line.
+      <em>Licensed mental health services available separately through Matthew Monroe Simpson Counseling.</em>
+    </div>
+  </div>
+  <div class="hs-footer-bottom">
+    <div class="hs-footer-copy">© 2025 High Signal Coaching · All rights reserved</div>
+    <div class="hs-footer-sign">Less grip. More signal.</div>
+  </div>
+</footer>
+
+</body>
+</html>
